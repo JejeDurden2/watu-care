@@ -114,7 +114,6 @@ export function UserForm({ onSubmit }: UserFormProps) {
 
 1. **Server Components by default** — only `'use client'` when necessary
 2. **Create reusable, typed components** — no one-off implementations
-3. **Implement mobile-first** — then scale up (sm → md → lg → xl)
 4. **Components are reusable** — no hardcoded values
 5. **Colocation** — tests and styles close to components
 6. **Named exports over default exports**

@@ -83,7 +83,7 @@ npm run test:coverage       # With coverage
 ### ALWAYS
 
 1. Create reusable, typed components — no one-off implementations
-2. Implement mobile-first, then scale up (sm → md → lg → xl)
+2. Implement responsive
 3. Add proper TypeScript types with explicit return types
 4. Consider SEO impact (metadata, structure, performance, Core Web Vitals)
 5. Use conventional commits with proper scope
@@ -198,7 +198,7 @@ Extended documentation in `.claude/skills/`:
 4. **Robots.txt**: Configure crawling
 5. **Structured Data**: JSON-LD for rich snippets
 6. **Performance**: Optimize Core Web Vitals
-7. **Mobile-First**: Responsive design
+7. **Responsive**: Responsive design
 8. **Semantic HTML**: Use proper tags
 9. **Alt Text**: All images
 10. **Internal Links**: Proper navigation
