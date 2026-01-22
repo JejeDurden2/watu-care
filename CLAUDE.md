@@ -1,18 +1,34 @@
-# Claude.md
+# Watu Care - Claude Instructions
 
 ## Project Overview
 
-Single-page application / landing page built with Next.js, TypeScript, and Tailwind CSS. Optimized for Vercel deployment with focus on performance, SEO, and user experience.
+**Watu Care** is a B2B medical wholesale landing page connecting Asia's medical manufacturers with healthcare providers across Africa and the Middle East.
+
+- **URL**: https://watu-care.com
+- **HQ**: Hong Kong
+- **Tagline**: "We deliver premium medical devices and PPE, ensuring quality and accessibility where it matters most."
 
 ## Tech Stack
 
 - **Framework**: Next.js 16+ (App Router)
 - **Language**: TypeScript (strict mode)
-- **Styling**: Tailwind CSS + shadcn/ui (optional)
-- **State Management**: TanStack Query for server state, Zustand for client state
+- **Styling**: Tailwind CSS
+- **Linting**: ESLint 9 (flat config)
 - **Testing**: Vitest + Testing Library
 - **Deployment**: Vercel
 - **Icons**: Lucide React
+
+---
+
+## Brand Colors
+
+```css
+:root {
+  --primary: 200 65% 55%;      /* Medical blue */
+  --secondary: 206 50% 13%;    /* Dark navy */
+  --accent: 175 50% 45%;       /* Teal green */
+}
+```
 
 ---
 
@@ -21,34 +37,23 @@ Single-page application / landing page built with Next.js, TypeScript, and Tailw
 ```
 /
 ├── src/
-│   ├── app/                    # App Router pages
-│   │   ├── layout.tsx          # Root layout with metadata
-│   │   ├── page.tsx            # Home page
-│   │   └── globals.css         # Global styles
-│   ├── components/             # Reusable components (create as needed)
-│   ├── lib/                    # Utilities, helpers (create as needed)
-│   └── types/                  # TypeScript types (create as needed)
-├── public/                     # Static assets
-│   └── robots.txt
-├── .claude/
-│   └── skills/                 # Claude Code skills
-├── next.config.ts
+│   ├── app/
+│   │   ├── layout.tsx          # Root layout + metadata
+│   │   ├── page.tsx            # Landing page
+│   │   └── globals.css         # CSS variables + base styles
+│   ├── components/
+│   │   ├── ui/                 # Button, Container
+│   │   ├── layout/             # Header, Footer
+│   │   └── sections/           # Hero, Mission, Stats, etc.
+│   └── lib/
+│       └── utils.ts            # cn() helper
+├── public/
+│   ├── logo.png
+│   ├── hero-medical.jpg
+│   └── fluid-management.jpg
+├── eslint.config.mjs           # ESLint 9 flat config
 ├── tailwind.config.ts
-├── tsconfig.json
 └── package.json
-```
-
----
-
-## Environment Variables
-
-Copy `.env.local.example` to `.env.local`:
-
-```env
-NEXT_PUBLIC_APP_URL="http://localhost:3000"
-NEXT_PUBLIC_APP_NAME="Your App Name"
-
-# Add more as needed
 ```
 
 ---
@@ -56,25 +61,26 @@ NEXT_PUBLIC_APP_NAME="Your App Name"
 ## Commands Reference
 
 ```bash
-# Development
-npm run dev                 # Start dev server (port 3000)
-pnpm dev                    # Or with pnpm
-
-# Build
-npm run build               # Production build
-pnpm build
-
-# Quality
-npm run lint                # Lint code
-npm run type-check          # TypeScript check
-npm run format              # Format with Prettier
-npm run format:check        # Check formatting
-
-# Testing
-npm run test                # Run tests
-npm run test:watch          # Watch mode
-npm run test:coverage       # With coverage
+npm run dev           # Start dev server (port 3000)
+npm run build         # Production build
+npm run lint          # ESLint (flat config)
+npm run type-check    # TypeScript check
+npm run format        # Prettier format
+npm run test          # Vitest
 ```
+
+---
+
+## Product Categories
+
+1. Procedure Packs & Drapes
+2. Tubes & Airway Management
+3. Anti-Infection Central Venous Catheter
+4. Dressing & Kits
+5. Laboratory Supplies
+6. Veterinary Supplies
+7. Medical Equipment
+8. Gloves & Face Protection
 
 ---
 
@@ -82,171 +88,64 @@ npm run test:coverage       # With coverage
 
 ### ALWAYS
 
-1. Create reusable, typed components — no one-off implementations
-2. Implement responsive
+1. Create reusable, typed components
+2. Implement mobile-first responsive design
 3. Add proper TypeScript types with explicit return types
-4. Consider SEO impact (metadata, structure, performance, Core Web Vitals)
+4. Consider SEO impact (metadata, Core Web Vitals)
 5. Use conventional commits with proper scope
 6. Write tests for complex logic
-7. **Self-review code before committing** (see code-quality skill)
-8. Optimize images (use Next.js Image component)
-9. Implement proper loading states and error boundaries
+7. Self-review code before committing
+8. Optimize images (Next.js Image component)
+9. Implement proper loading states
 10. Use semantic HTML for accessibility
 
 ### NEVER
 
 11. Use `any` type — use `unknown` + type guards
-12. Skip validation (use Zod for forms and API data)
-13. Hardcode values — use environment variables or constants
+12. Skip validation (use Zod)
+13. Hardcode values — use env vars or constants
 14. Commit without running lint and type-check
 15. Skip alt text on images
 16. Use generic error messages
 17. Ignore accessibility (a11y)
-18. Use inline styles (use Tailwind classes)
+18. Use inline styles (use Tailwind)
 
 ### PREFER
 
 19. Composition over inheritance
 20. Small, focused components (< 100 lines)
 21. Named exports over default exports
-22. Server Components over Client Components (use 'use client' only when needed)
+22. Server Components by default
 23. Early returns over nested conditions
 24. Explicit over implicit
-25. Colocation of related files
 
 ---
 
-## Customization Guide
+## Skills (Documentation)
 
-When starting a new project:
+Extended docs in `.claude/skills/`:
 
-### 1. Update Metadata
-
-**`src/app/layout.tsx`**:
-```tsx
-export const metadata: Metadata = {
-  title: 'Your App Name',
-  description: 'Your app description',
-  keywords: ['your', 'keywords'],
-  openGraph: {
-    title: 'Your App Name',
-    description: 'Your app description',
-    url: 'https://yourapp.com',
-    images: [{ url: '/og-image.png' }],
-  },
-};
-```
-
-### 2. Customize Colors
-
-**`tailwind.config.ts`**:
-```ts
-theme: {
-  extend: {
-    colors: {
-      primary: '#your-color',
-      secondary: '#your-color',
-    },
-  },
-},
-```
-
-### 3. Add Your Logo
-
-- Replace placeholder logo in `public/`
-- Update favicon: `public/favicon.ico`
-- Add OG image: `public/og-image.png` (1200x630px)
-
-### 4. Update Robots.txt
-
-**`public/robots.txt`**:
-```
-Sitemap: https://yourapp.com/sitemap.xml
-```
-
-### 5. Configure Environment
-
-Copy `.env.local.example` to `.env.local` and update values.
-
----
-
-## Skills (Detailed Documentation)
-
-Extended documentation in `.claude/skills/`:
-
-### Project Skills
-
-- **[frontend-architecture.md](.claude/skills/frontend-architecture.md)** - React component patterns, TanStack Query
-- **[seo.md](.claude/skills/seo.md)** - Metadata, sitemap, JSON-LD, Core Web Vitals
-- **[testing.md](.claude/skills/testing.md)** - Vitest, test patterns
-- **[code-quality.md](.claude/skills/code-quality.md)** - Pre-commit checklist, ESLint, Prettier
-- **[design-system.md](.claude/skills/design-system.md)** - Colors, typography, glassmorphism patterns
-
-### Vercel Skills (External)
-
-- **[react-best-practices](.claude/skills/react-best-practices/)** - 45 React/Next.js performance rules across 8 categories
-- **[web-design-guidelines](.claude/skills/web-design-guidelines/)** - UI compliance checker
-- **[vercel-deploy-claimable](.claude/skills/claude.ai/vercel-deploy-claimable/)** - Deploy to Vercel
-
----
-
-## SEO Best Practices
-
-1. **Metadata**: Comprehensive in every page
-2. **Open Graph**: Social media previews
-3. **Sitemap**: Auto-generate with Next.js
-4. **Robots.txt**: Configure crawling
-5. **Structured Data**: JSON-LD for rich snippets
-6. **Performance**: Optimize Core Web Vitals
-7. **Responsive**: Responsive design
-8. **Semantic HTML**: Use proper tags
-9. **Alt Text**: All images
-10. **Internal Links**: Proper navigation
-
----
-
-## Performance Optimization
-
-1. **Images**: Use Next.js `<Image>` with optimization
-2. **Fonts**: Use `next/font` for optimal loading
-3. **Code Splitting**: Dynamic imports for heavy components
-4. **Lazy Loading**: Below-the-fold content
-5. **Caching**: Leverage Vercel's edge caching
-6. **Bundle Size**: Monitor and minimize
-7. **Server Components**: Use by default
-8. **Prefetching**: Use Next.js Link component
+- **frontend-architecture.md** - React patterns, components
+- **seo.md** - Metadata, JSON-LD, Core Web Vitals
+- **code-quality.md** - ESLint, Prettier, pre-commit
+- **design-system.md** - Colors, typography, glassmorphism
 
 ---
 
 ## Deployment (Vercel)
 
-### Quick Deploy
-
 ```bash
-# Install Vercel CLI
-npm i -g vercel
-
-# Deploy
-vercel
+vercel         # Deploy preview
+vercel --prod  # Production
 ```
 
-### Via Dashboard
-
-1. Push to GitHub
-2. Import project in Vercel
-3. Set environment variables
-4. Deploy
-
-### Environment Variables (Vercel)
-
-Set in project settings:
-- `NEXT_PUBLIC_APP_URL`
-- `NEXT_PUBLIC_APP_NAME`
-- Add any others from `.env.local.example`
+Environment variables:
+- `NEXT_PUBLIC_APP_URL=https://watu-care.com`
+- `NEXT_PUBLIC_APP_NAME=Watu Care`
 
 ---
 
 ## Plan Mode
 
-- Make the plan extremely concise. Sacrifice grammar for the sake of concision.
-- At the end of each plan, give me a list of unresolved questions to answer, if any
+- Make plans extremely concise
+- List unresolved questions at end

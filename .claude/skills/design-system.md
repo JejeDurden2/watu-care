@@ -1,15 +1,15 @@
-# Design System - Beyond
+# Design System - Watu Care
 
 ## Philosophy
 
-**Refined and premium** while keeping a serious, trustworthy tone. Think private banking, not startup.
+**Warm yet professional** — a B2B medical supplier that inspires trust while showing genuine care for healthcare outcomes. Think established medical company, not sterile corporate.
 
 ### Design Principles
 
-- **Quiet confidence**: Navy and gold convey trust and heritage
-- **Depth through subtlety**: Soft shadows, fine borders, layered surfaces
-- **Intentional whitespace**: Generous padding, content breathes
-- **Micro-interactions**: Smooth transitions that feel expensive
+- **Trust through clarity**: Clean layouts, clear hierarchy, professional aesthetics
+- **People-focused warmth**: Not cold corporate, remember "Watu" means people
+- **Medical precision**: Accurate, reliable, quality-focused
+- **Accessibility**: Reaching developing economies means universal design
 
 ---
 
@@ -19,44 +19,63 @@
 
 ```css
 :root {
-  /* Beyond Brand Colors */
-  --navy-deep: 217 69% 30%; /* #173C7F - textes, headers */
-  --navy-light: 215 56% 46%; /* #3262B7 - liens, textes secondaires */
-  --gold-heritage: 43 86% 38%; /* #B8860B - accents, CTAs, bordures actives */
-  --gold-soft: 43 64% 56%; /* #D4A84B - hovers, highlights */
-  --cream: 43 50% 98%; /* #FDFBF7 - background principal */
-  --warm-gray: 40 22% 96%; /* #F7F5F2 - cards, sections alternees */
-  --slate: 215 16% 47%; /* #64748b - texte body */
+  /* Watu Care Brand Colors */
+  --primary: 200 65% 55%;           /* Medical blue - trust, healthcare */
+  --primary-foreground: 0 0% 100%;  /* White */
+
+  --secondary: 206 50% 13%;         /* Dark navy - professionalism, reliability */
+  --secondary-foreground: 0 0% 100%;
+
+  --accent: 175 50% 45%;            /* Teal green - CTAs, growth, vitality */
+  --accent-foreground: 0 0% 100%;
+
+  --background: 210 20% 98%;        /* Light gray-blue - clean, clinical */
+  --foreground: 206 50% 13%;        /* Dark navy */
+
+  --muted: 210 20% 96%;             /* Subtle backgrounds */
+  --muted-foreground: 206 20% 40%;  /* Muted text */
+
+  --border: 210 20% 90%;            /* Soft borders */
 }
 ```
 
 ### Semantic Mappings
 
-| Semantic Token       | Maps To       | Usage                 |
-| -------------------- | ------------- | --------------------- |
-| `primary`            | navy-deep     | Main text, headers    |
-| `primary-foreground` | cream         | Text on primary bg    |
-| `secondary`          | warm-gray     | Secondary backgrounds |
-| `accent`             | gold-heritage | CTAs, active states   |
-| `background`         | cream         | Main background       |
-| `foreground`         | navy-deep     | Body text             |
-| `muted`              | warm-gray     | Muted backgrounds     |
-| `muted-foreground`   | slate         | Muted text            |
+| Token                | HSL Value          | Usage                    |
+| -------------------- | ------------------ | ------------------------ |
+| `primary`            | 200 65% 55%        | Links, highlights, icons |
+| `secondary`          | 206 50% 13%        | Headings, nav, footer    |
+| `accent`             | 175 50% 45%        | CTAs, success states     |
+| `background`         | 210 20% 98%        | Page background          |
+| `muted`              | 210 20% 96%        | Section backgrounds      |
+| `muted-foreground`   | 206 20% 40%        | Secondary text           |
 
 ### Tailwind Usage
 
 ```tsx
-// Primary button (gold CTA)
-<button className="bg-gold-heritage text-cream hover:bg-gold-soft">
+// Primary CTA button (accent color)
+<button className="bg-accent text-accent-foreground hover:brightness-110">
+  Request a Quote
+</button>
 
-// Links
-<a className="text-navy-light hover:text-gold-heritage">
+// Secondary button
+<button className="bg-secondary text-secondary-foreground">
+  Learn More
+</button>
+
+// Outline button
+<button className="border-2 border-secondary text-secondary hover:bg-secondary hover:text-white">
+  Contact Us
+</button>
 
 // Cards
-<div className="bg-warm-gray border-border/50">
+<div className="bg-white border border-border shadow-soft rounded-2xl">
 
-// Headings
-<h1 className="text-navy-deep font-serif-brand">
+// Section with muted background
+<section className="bg-muted py-20">
+
+// Headings (auto-styled in globals.css)
+<h1 className="text-secondary font-semibold tracking-tight">
 ```
 
 ---
@@ -65,40 +84,33 @@
 
 ### Fonts
 
-- **Serif (headings)**: Georgia, 'Times New Roman', serif - via `font-serif-brand`
-- **Sans (body)**: Inter via `--font-sans`
-- **Display**: Fraunces via `--font-display` (alternate for special headings)
+- **Sans-serif**: Inter (via `next/font/google`)
+- **Font variable**: `--font-inter`
 
-### Font Sizes (Tailwind)
+### Font Sizes
 
-```typescript
-fontSize: {
-  'display-lg': ['3.5rem', { lineHeight: '1.1', letterSpacing: '-0.02em' }],
-  'display': ['2.5rem', { lineHeight: '1.15', letterSpacing: '-0.02em' }],
-  'display-sm': ['1.875rem', { lineHeight: '1.2', letterSpacing: '-0.01em' }],
-}
-```
+| Class    | Size    | Usage           |
+| -------- | ------- | --------------- |
+| `text-sm`| 0.875rem| Captions, meta  |
+| `text-base`| 1rem  | Body text       |
+| `text-lg`| 1.125rem| Lead paragraphs |
+| `text-xl`| 1.25rem | Subheadings     |
+| `text-3xl`| 1.875rem| Section titles |
+| `text-4xl`| 2.25rem | Page titles    |
+| `text-5xl`| 3rem   | Hero headlines  |
 
 ### Usage
 
 ```tsx
-<h1 className="font-serif-brand text-display-lg text-navy-deep">Hero Title</h1>
-<h2 className="font-serif-brand text-display-sm text-navy-deep">Section Title</h2>
-<p className="text-slate text-lg leading-relaxed">Body text</p>
-```
-
----
-
-## Logo
-
-The `Logo` component in `components/ui/Logo.tsx` supports three variants:
-
-```tsx
-import { Logo } from '@/components/ui';
-
-<Logo variant="full" />     // Full logo with symbol + text (default)
-<Logo variant="symbol" />   // Symbol only (for mobile/favicon)
-<Logo variant="text" />     // Text only with underline
+<h1 className="text-4xl font-bold tracking-tight sm:text-5xl">
+  Hero Title
+</h1>
+<h2 className="text-3xl font-bold tracking-tight">
+  Section Title
+</h2>
+<p className="text-lg text-muted-foreground leading-relaxed">
+  Body text with good readability
+</p>
 ```
 
 ---
@@ -110,110 +122,8 @@ boxShadow: {
   'soft': '0 2px 8px -2px rgba(0,0,0,0.05), 0 4px 16px -4px rgba(0,0,0,0.05)',
   'soft-md': '0 4px 12px -4px rgba(0,0,0,0.08), 0 8px 24px -8px rgba(0,0,0,0.06)',
   'soft-lg': '0 8px 24px -8px rgba(0,0,0,0.1), 0 16px 48px -16px rgba(0,0,0,0.08)',
-  'inner-soft': 'inset 0 2px 4px 0 rgba(0,0,0,0.02)',
 }
 ```
-
----
-
-## Glassmorphism
-
-Our premium aesthetic uses glassmorphism for cards, modals, and elevated UI elements. This creates depth while maintaining the refined, trustworthy feel.
-
-### Core Principles
-
-1. **Layered structure**: Gradient background -> Glass overlay -> Border -> Content
-2. **Subtle colors**: Use very low opacity color tints (40-60%)
-3. **Soft blur**: `backdrop-blur-[2px]` for subtle, `backdrop-blur-md` for modals
-4. **White overlay**: Semi-transparent white creates the frosted effect
-5. **Colored glow**: Subtle colored shadows add depth without harshness
-
-### Glass Card Pattern
-
-```tsx
-<div className="relative rounded-2xl overflow-hidden shadow-lg">
-  {/* 1. Gradient background with color tint */}
-  <div className="absolute inset-0 bg-gradient-to-br from-amber-50/40 via-orange-50/20 to-white/10" />
-
-  {/* 2. Glass overlay */}
-  <div className="absolute inset-0 bg-white/30 backdrop-blur-[2px]" />
-
-  {/* 3. Subtle border */}
-  <div className="absolute inset-0 rounded-2xl border border-white/40" />
-
-  {/* 4. Content */}
-  <div className="relative p-6">{children}</div>
-</div>
-```
-
-### Glass Accent Colors
-
-| Accent  | Gradient                                        | Border                  | Glow                    |
-| ------- | ----------------------------------------------- | ----------------------- | ----------------------- |
-| neutral | `from-slate-50/40 via-gray-50/20 to-white/10`   | `border-white/40`       | none                    |
-| gold    | `from-amber-50/40 via-orange-50/20 to-white/10` | `border-amber-100/20`   | `shadow-amber-100/10`   |
-| emerald | `from-emerald-50/40 via-teal-50/20 to-white/10` | `border-emerald-100/20` | `shadow-emerald-100/10` |
-| amber   | `from-amber-50/50 via-yellow-50/25 to-white/10` | `border-amber-200/30`   | `shadow-amber-100/15`   |
-
-### Using BentoCard with Glass
-
-```tsx
-import { BentoCard } from '@/components/features/dashboard';
-
-// Default glass (neutral)
-<BentoCard>Content</BentoCard>
-
-// Gold accent (keepsakes, CTAs)
-<BentoCard glassAccent="gold">Content</BentoCard>
-
-// Emerald accent (success states)
-<BentoCard glassAccent="emerald">Content</BentoCard>
-
-// Solid variant (no glass, original styling)
-<BentoCard variant="solid">Content</BentoCard>
-```
-
-### Glass Modal Pattern
-
-```tsx
-<div className="fixed inset-0 bg-navy-deep/30 backdrop-blur-sm flex items-center justify-center">
-  <div className="relative rounded-2xl overflow-hidden shadow-xl max-w-md">
-    {/* Glass background - stronger blur for modals */}
-    <div className="absolute inset-0 bg-gradient-to-br from-slate-50/80 via-gray-50/60 to-white/40" />
-    <div className="absolute inset-0 bg-white/50 backdrop-blur-md" />
-    <div className="absolute inset-0 rounded-2xl border border-white/60" />
-
-    {/* Content */}
-    <div className="relative p-6">{children}</div>
-  </div>
-</div>
-```
-
-### Glass Icon Container
-
-```tsx
-<div className="w-10 h-10 rounded-full bg-gold-heritage/10 backdrop-blur-sm border border-gold-heritage/20 flex items-center justify-center">
-  <Icon className="w-5 h-5 text-gold-heritage" />
-</div>
-```
-
-### When to Use Glassmorphism
-
-**Use glass for:**
-
-- Dashboard cards (BentoCard)
-- Keepsake cards
-- Modal dialogs
-- Floating panels
-- Status badges
-- Icon containers
-
-**Keep solid for:**
-
-- Form inputs (need clear boundaries)
-- Primary buttons (need visual weight)
-- Navigation (already has blur)
-- Footer (grounding element)
 
 ---
 
@@ -224,6 +134,85 @@ borderRadius: {
   xl: '1rem',
   '2xl': '1.25rem',
 }
+```
+
+---
+
+## Component Patterns
+
+### Cards
+
+```tsx
+<div className="rounded-2xl border border-border bg-white p-6 shadow-soft transition-shadow hover:shadow-soft-md">
+  {/* content */}
+</div>
+```
+
+### Primary Button (Accent CTA)
+
+```tsx
+<button className="bg-accent text-accent-foreground rounded-xl px-8 py-4 font-medium shadow-soft transition-all hover:shadow-soft-md hover:brightness-110">
+  Request a Quote
+</button>
+```
+
+### Secondary Button
+
+```tsx
+<button className="bg-secondary text-secondary-foreground rounded-xl px-8 py-4 font-medium shadow-soft transition-all hover:shadow-soft-md hover:brightness-110">
+  Learn More
+</button>
+```
+
+### Outline Button
+
+```tsx
+<button className="border-2 border-secondary text-secondary rounded-xl px-8 py-4 font-medium transition-colors hover:bg-secondary hover:text-white">
+  Contact Us
+</button>
+```
+
+### Section Spacing
+
+```tsx
+<section className="py-20 lg:py-28">
+  <Container>
+    {/* content */}
+  </Container>
+</section>
+```
+
+### Header/Navbar
+
+```tsx
+<header className="sticky top-0 z-50 border-b border-border/50 bg-background/80 backdrop-blur-md">
+```
+
+### Footer
+
+```tsx
+<footer className="border-t border-border bg-secondary text-secondary-foreground">
+```
+
+---
+
+## Icon Usage
+
+Using **Lucide React** for consistent iconography:
+
+```tsx
+import { Package, Globe2, ShieldCheck, Headphones } from 'lucide-react';
+
+// In icon containers
+<div className="flex h-14 w-14 items-center justify-center rounded-xl bg-primary/10">
+  <Package className="h-7 w-7 text-primary" />
+</div>
+
+// Inline with text
+<div className="flex items-center gap-2">
+  <Mail className="h-4 w-4 text-accent" />
+  <span>contact@watu-care.com</span>
+</div>
 ```
 
 ---
@@ -241,91 +230,15 @@ All interactive elements use `transition-all duration-200 ease-out`.
 
 ---
 
-## Component Patterns
-
-### Cards
-
-```tsx
-<div className="bg-warm-gray rounded-2xl border border-border/50 shadow-soft p-8 transition-shadow duration-200 ease-out hover:shadow-soft-md">
-  {/* content */}
-</div>
-```
-
-### Primary Button (Gold CTA)
-
-```tsx
-<button className="bg-gold-heritage text-cream hover:bg-gold-soft rounded-xl px-8 py-4 font-medium shadow-soft transition-all duration-200 ease-out hover:shadow-soft-md">
-  Get Started
-</button>
-```
-
-### Secondary Button
-
-```tsx
-<button className="border border-border/60 text-foreground rounded-xl px-8 py-4 font-medium transition-colors duration-200 ease-out hover:bg-muted/50">
-  Learn More
-</button>
-```
-
-### Links
-
-```tsx
-<a className="text-navy-light hover:text-gold-heritage transition-colors duration-200 ease-out">
-  Click here
-</a>
-```
-
-### Inputs
-
-```tsx
-<input className="rounded-xl border-border/60 bg-background px-4 py-3 shadow-inner-soft focus:border-gold-heritage focus:ring-gold-heritage/50 transition-colors" />
-```
-
-### Section Spacing
-
-```tsx
-<section className="py-24 px-6">
-  <div className="max-w-4xl mx-auto space-y-16">{/* content */}</div>
-</section>
-```
-
-### Header/Navbar
-
-```tsx
-<header className="border-b border-warm-gray bg-cream/80 backdrop-blur-sm sticky top-0 z-50">
-```
-
----
-
-## Selection Styling
-
-```css
-::selection {
-  @apply bg-gold-heritage/20 text-foreground;
-}
-```
-
----
-
-## Focus Rings
-
-```css
-focus:ring-gold-heritage/50
-focus:border-gold-heritage
-```
-
----
-
 ## Key Rules
 
-1. **Headings**: Always use `font-serif-brand` for h1, h2
-2. **CTAs**: Use `bg-gold-heritage` with `text-cream`
-3. **Links**: Use `text-navy-light hover:text-gold-heritage`
-4. **Cards**: Use glassmorphism (BentoCard) for dashboard cards, keepsakes
-5. **Modals**: Use glass pattern with `backdrop-blur-md` and layered structure
+1. **CTAs**: Use `bg-accent` with `text-accent-foreground`
+2. **Headings**: Use `text-secondary font-semibold tracking-tight`
+3. **Body text**: Use `text-muted-foreground` for secondary content
+4. **Cards**: White background, `shadow-soft`, `rounded-2xl`
+5. **Sections**: Alternate between `bg-background` and `bg-muted`
 6. **Transitions**: Always `duration-200 ease-out`
-7. **Borders**: Use `border-white/40` for glass, `border-border/50` for solid
-8. **Shadows**: Replace harsh shadows with `shadow-soft` variants
-9. **Spacing**: Generous - sections get `py-24`, cards get `p-6`
-10. **Focus states**: Use `ring-gold-heritage/50`
-11. **Glass accents**: Use gold for keepsakes/CTAs, emerald for success, amber for warnings
+7. **Spacing**: Generous - sections get `py-20 lg:py-28`
+8. **Focus states**: Use `ring-2 ring-primary ring-offset-2`
+9. **Icons**: Use `primary` color in `bg-primary/10` containers
+10. **Mobile-first**: Start with mobile, scale up with `sm:`, `md:`, `lg:`
