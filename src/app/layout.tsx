@@ -1,24 +1,46 @@
 import type { Metadata } from 'next';
+import { Inter } from 'next/font/google';
 import './globals.css';
 
-// TODO: Customize metadata when starting your project
+const inter = Inter({
+  subsets: ['latin'],
+  variable: '--font-inter',
+  display: 'swap',
+});
+
 export const metadata: Metadata = {
-  title: 'Your App Name - Change Me',
-  description: 'Your app description - Change Me',
-  keywords: ['keyword1', 'keyword2'],
-  authors: [{ name: 'Your Name' }],
+  title: 'Watu Care - Premium Medical Devices & PPE Wholesale',
+  description:
+    'We deliver premium medical devices and PPE, ensuring quality and accessibility where it matters most. Connecting Asia\'s manufacturers with healthcare providers across Africa and the Middle East.',
+  keywords: [
+    'medical devices',
+    'PPE',
+    'wholesale medical supplies',
+    'B2B medical',
+    'healthcare equipment',
+    'medical consumables',
+    'Africa healthcare',
+    'Middle East medical supplies',
+  ],
+  authors: [{ name: 'Watu Care' }],
   openGraph: {
-    title: 'Your App Name',
-    description: 'Your app description',
+    title: 'Watu Care - Premium Medical Devices & PPE Wholesale',
+    description:
+      'Connecting Asia\'s leading manufacturers with healthcare providers across Africa and the Middle East.',
     type: 'website',
-    // url: 'https://yourapp.com',
-    // images: [{ url: '/og-image.png' }],
+    url: 'https://watu-care.com',
+    siteName: 'Watu Care',
+    locale: 'en_US',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Your App Name',
-    description: 'Your app description',
-    // images: ['/og-image.png'],
+    title: 'Watu Care - Premium Medical Devices & PPE',
+    description:
+      'Quality and accessibility where it matters most.',
+  },
+  robots: {
+    index: true,
+    follow: true,
   },
 };
 
@@ -28,8 +50,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body>{children}</body>
+    <html lang="en" className={inter.variable}>
+      <body className="font-sans">{children}</body>
     </html>
   );
 }

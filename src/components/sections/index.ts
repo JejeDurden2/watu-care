@@ -1,0 +1,9 @@
+export { Hero } from './Hero';
+export { Mission } from './Mission';
+export { Stats } from './Stats';
+export { ValueProps } from './ValueProps';
+export { Categories } from './Categories';
+export { Featured } from './Featured';
+export { HowItWorks } from './HowItWorks';
+export { Testimonials } from './Testimonials';
+export { CTA } from './CTA';

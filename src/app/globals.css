@@ -3,24 +3,57 @@
 @tailwind utilities;
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  /* Watu Care Brand Colors */
+  --primary: 200 65% 55%;           /* Medical blue */
+  --primary-foreground: 0 0% 100%;  /* White */
+
+  --secondary: 206 50% 13%;         /* Dark navy */
+  --secondary-foreground: 0 0% 100%; /* White */
+
+  --accent: 175 50% 45%;            /* Teal green */
+  --accent-foreground: 0 0% 100%;   /* White */
+
+  --background: 210 20% 98%;        /* Light gray-blue */
+  --foreground: 206 50% 13%;        /* Dark navy */
+
+  --muted: 210 20% 96%;             /* Muted background */
+  --muted-foreground: 206 20% 40%;  /* Muted text */
+
+  --border: 210 20% 90%;            /* Border color */
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply text-secondary font-semibold tracking-tight;
   }
 }
 
-body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu',
-    'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
 }
 
-/* Add your custom styles here */
+/* Selection styling */
+::selection {
+  @apply bg-primary/20 text-foreground;
+}
+
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Focus visible styles */
+:focus-visible {
+  @apply outline-none ring-2 ring-primary ring-offset-2;
+}
