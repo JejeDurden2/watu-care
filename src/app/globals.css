@@ -58,71 +58,74 @@ html {
   @apply outline-none ring-2 ring-primary ring-offset-2;
 }
 
-/* Parallax hero background */
-.parallax-bg {
-  background-attachment: fixed;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-}
-
-@supports (-webkit-touch-callout: none) {
-  /* iOS doesn't support background-attachment: fixed */
-  .parallax-bg {
-    background-attachment: scroll;
-  }
-}
-
-/* Subtle animations */
-@keyframes float {
+/* Hero animations */
+@keyframes float-up {
   0%, 100% {
-    transform: translateY(0);
+    transform: translateY(0) scale(1);
   }
   50% {
-    transform: translateY(-10px);
+    transform: translateY(-40px) scale(1.05);
   }
 }
 
-@keyframes float-slow {
+@keyframes float-diagonal {
   0%, 100% {
-    transform: translateY(0) rotate(0deg);
+    transform: translate(0, 0) scale(1);
   }
   50% {
-    transform: translateY(-15px) rotate(1deg);
+    transform: translate(30px, -50px) scale(1.08);
   }
 }
 
-@keyframes pulse-soft {
+@keyframes float-reverse {
   0%, 100% {
-    opacity: 0.4;
+    transform: translate(0, 0) scale(1);
   }
   50% {
-    opacity: 0.6;
+    transform: translate(-25px, -35px) scale(1.03);
+  }
+}
+
+@keyframes pulse-glow {
+  0%, 100% {
+    opacity: 0.15;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.3;
+    transform: scale(1.1);
   }
 }
 
 @keyframes gradient-shift {
-  0%, 100% {
+  0% {
     background-position: 0% 50%;
   }
   50% {
     background-position: 100% 50%;
   }
+  100% {
+    background-position: 0% 50%;
+  }
 }
 
-.animate-float {
-  animation: float 6s ease-in-out infinite;
+.animate-float-up {
+  animation: float-up 8s ease-in-out infinite;
 }
 
-.animate-float-slow {
-  animation: float-slow 8s ease-in-out infinite;
+.animate-float-diagonal {
+  animation: float-diagonal 10s ease-in-out infinite;
 }
 
-.animate-pulse-soft {
-  animation: pulse-soft 4s ease-in-out infinite;
+.animate-float-reverse {
+  animation: float-reverse 12s ease-in-out infinite;
+}
+
+.animate-pulse-glow {
+  animation: pulse-glow 6s ease-in-out infinite;
 }
 
 .animate-gradient {
   background-size: 200% 200%;
-  animation: gradient-shift 15s ease infinite;
+  animation: gradient-shift 12s ease infinite;
 }
