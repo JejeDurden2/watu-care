@@ -1,0 +1,129 @@
+{
+  "meta": {
+    "title": "Watu Care - Dispositifs Médicaux & EPI en Gros",
+    "description": "Nous fournissons des dispositifs médicaux et des EPI de qualité, garantissant qualité et accessibilité là où cela compte le plus. Nous connectons les fabricants asiatiques aux prestataires de santé en Afrique et au Moyen-Orient."
+  },
+  "nav": {
+    "products": "Produits",
+    "about": "À propos",
+    "contact": "Contact",
+    "requestQuote": "Demander un devis"
+  },
+  "hero": {
+    "title": "Dispositifs Médicaux & EPI Premium,",
+    "titleHighlight": "Là Où Ça Compte",
+    "subtitle": "Nous connectons les principaux fabricants asiatiques aux prestataires de soins de santé en Afrique et au Moyen-Orient. Qualité et accessibilité pour ceux qui en ont le plus besoin.",
+    "cta": "Demander un devis",
+    "ctaSecondary": "Découvrir nos produits"
+  },
+  "stats": {
+    "products": "Produits",
+    "productsDesc": "Dans notre catalogue",
+    "countries": "Pays",
+    "countriesDesc": "Desservis dans le monde",
+    "facilities": "Établissements de santé",
+    "facilitiesDesc": "Nous font confiance",
+    "orders": "Commandes livrées",
+    "ordersDesc": "Expédiées avec succès"
+  },
+  "mission": {
+    "title": "signifie",
+    "titleHighlight": "Personnes",
+    "titleEnd": "en Swahili",
+    "description1": "Et c'est exactement ce qui nous motive. Chez Watu Care, nous comprenons que derrière chaque commande de fournitures médicales se trouve un",
+    "highlight1": "professionnel de santé qui s'efforce de sauver des vies",
+    "and": "et un",
+    "highlight2": "patient qui espère guérir",
+    "description2": "Basés à Hong Kong, nous connectons stratégiquement les principaux fabricants médicaux d'Asie aux prestataires de soins de santé en Afrique et au Moyen-Orient, devenant un partenaire de confiance pour les hôpitaux et cliniques des économies en développement.",
+    "asiaHub": "Hub Asie",
+    "asiaHubDesc": "Siège à Hong Kong",
+    "healthcareFocus": "Focus Santé",
+    "healthcareFocusDesc": "L'humain d'abord",
+    "developingEconomies": "Économies en développement",
+    "developingEconomiesDesc": "Afrique & Moyen-Orient"
+  },
+  "valueProps": {
+    "title": "Pourquoi choisir Watu Care ?",
+    "subtitle": "Nous faisons le lien entre les fabricants médicaux de classe mondiale et les prestataires de santé qui ont besoin de fournitures fiables et de qualité.",
+    "strategicLocation": "Emplacement stratégique",
+    "strategicLocationDesc": "Hub à Hong Kong connectant les meilleurs fabricants d'Asie directement à votre établissement, garantissant des prix compétitifs et des chaînes d'approvisionnement fiables.",
+    "qualityAssurance": "Assurance qualité",
+    "qualityAssuranceDesc": "Dispositifs médicaux et EPI premium conformes aux normes internationales. Nous ne travaillons qu'avec des fabricants certifiés.",
+    "accessibilityFocus": "Focus accessibilité",
+    "accessibilityFocusDesc": "Dédiés à servir les économies en développement avec des prix équitables et des commandes flexibles pour répondre aux besoins uniques des systèmes de santé en croissance.",
+    "dedicatedSupport": "Support dédié",
+    "dedicatedSupportDesc": "Des gestionnaires de compte personnels qui comprennent les achats dans le secteur de la santé. Nous vous accompagnons du devis à la livraison."
+  },
+  "categories": {
+    "title": "Nos catégories de produits",
+    "subtitle": "Une gamme complète de fournitures médicales provenant des principaux fabricants asiatiques.",
+    "procedurePacks": "Packs de procédure & Champs",
+    "procedurePacksDesc": "Kits stériles pour interventions chirurgicales",
+    "tubesAirway": "Tubes & Gestion des voies aériennes",
+    "tubesAirwayDesc": "Solutions de soins respiratoires",
+    "catheter": "Cathéter veineux central anti-infection",
+    "catheterDesc": "Accès IV résistant aux infections",
+    "dressing": "Pansements & Kits",
+    "dressingDesc": "Essentiels pour le soin des plaies",
+    "laboratory": "Fournitures de laboratoire",
+    "laboratoryDesc": "Équipement de diagnostic et de laboratoire",
+    "veterinary": "Fournitures vétérinaires",
+    "veterinaryDesc": "Produits de santé animale",
+    "equipment": "Équipement médical",
+    "equipmentDesc": "Instruments de diagnostic",
+    "gloves": "Gants & Protection faciale",
+    "glovesDesc": "Équipements de protection individuelle",
+    "customRequest": "Vous ne trouvez pas ce que vous cherchez ?",
+    "customRequestLink": "Contactez-nous pour des demandes personnalisées"
+  },
+  "featured": {
+    "badge": "Solutions spécialisées",
+    "title": "Gestion des fluides & Consommables médicaux",
+    "description": "Des solutions IV aux consommables chirurgicaux, nous fournissons aux établissements de santé les fournitures essentielles dont ils ont besoin pour offrir des soins de qualité aux patients. Nos produits respectent les normes de sécurité internationales et proviennent de fabricants certifiés.",
+    "cta": "Obtenir un devis"
+  },
+  "howItWorks": {
+    "title": "Comment ça marche",
+    "subtitle": "Obtenir des fournitures médicales premium n'a jamais été aussi simple. Trois étapes simples vers un équipement de santé de qualité.",
+    "step1": "Soumettez votre demande",
+    "step1Desc": "Dites-nous ce dont vous avez besoin. Partagez vos exigences produits, quantités et lieu de livraison via notre formulaire de devis simple.",
+    "step2": "Recevez votre devis",
+    "step2Desc": "Notre équipe examine votre demande et vous fournit un devis compétitif sous 24-48 heures, incluant les détails d'expédition et de logistique.",
+    "step3": "Recevez vos produits",
+    "step3Desc": "Une fois approuvé, nous gérons l'approvisionnement, les contrôles qualité et l'expédition. Suivez votre commande jusqu'à son arrivée dans votre établissement."
+  },
+  "testimonials": {
+    "title": "La confiance des prestataires de santé",
+    "subtitle": "Découvrez les témoignages d'hôpitaux et de cliniques qui comptent sur Watu Care pour leurs besoins en fournitures médicales.",
+    "quote1": "Watu Care a joué un rôle déterminant pour nous aider à maintenir un approvisionnement régulier en équipements médicaux de qualité. Leur compréhension de nos défis en tant qu'hôpital en croissance en Afrique de l'Est les distingue.",
+    "author1": "Dr. Amina Hassan",
+    "role1": "Directrice médicale",
+    "org1": "Centre Médical Régional, Kenya",
+    "quote2": "L'équipe de Watu Care tient ses promesses. Prix compétitifs, expédition fiable et véritable souci des résultats en matière de santé. Ils sont plus qu'un fournisseur — ils sont un partenaire.",
+    "author2": "Mohammed Al-Rashid",
+    "role2": "Responsable des achats",
+    "org2": "Groupe Hospitalier Privé, EAU",
+    "quote3": "Trouver un fournisseur fiable pour les fournitures médicales vétérinaires était un défi jusqu'à ce que nous connections avec Watu Care. Leur gamme de produits et leur service réactif ont fait une vraie différence.",
+    "author3": "Dr. Fatou Diallo",
+    "role3": "Vétérinaire en chef",
+    "org3": "Agence de Développement Agricole, Sénégal"
+  },
+  "cta": {
+    "title": "Prêt à améliorer l'accès aux soins de santé ?",
+    "subtitle": "Devenez partenaire de Watu Care et obtenez des devis compétitifs pour des fournitures médicales premium. Notre équipe est prête à vous aider à mieux servir vos patients.",
+    "button": "Demander un devis",
+    "buttonSecondary": "Nous contacter",
+    "trustLine": "Réponse sous 24-48 heures. Aucun engagement requis."
+  },
+  "footer": {
+    "description": "Nous connectons les principaux fabricants asiatiques aux prestataires de soins de santé en Afrique et au Moyen-Orient.",
+    "quickLinks": "Liens rapides",
+    "products": "Produits",
+    "aboutUs": "À propos",
+    "howItWorks": "Comment ça marche",
+    "requestQuote": "Demander un devis",
+    "productsTitle": "Produits",
+    "contact": "Contact",
+    "copyright": "Watu Care. Tous droits réservés."
+  }
+}

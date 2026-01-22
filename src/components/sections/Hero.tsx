@@ -1,8 +1,10 @@
 import Image from 'next/image';
-import Link from 'next/link';
+import { getTranslations } from 'next-intl/server';
 import { Button, Container } from '@/components/ui';
 
-export function Hero(): React.ReactElement {
+export async function Hero(): Promise<React.ReactElement> {
+  const t = await getTranslations('hero');
+
   return (
     <section className="relative min-h-[90vh] overflow-hidden">
       {/* Background Image */}
@@ -23,22 +25,25 @@ export function Hero(): React.ReactElement {
       <Container className="relative z-10 flex min-h-[90vh] flex-col justify-center py-20">
         <div className="max-w-2xl space-y-6">
           <h1 className="text-4xl font-bold leading-tight tracking-tight text-white sm:text-5xl lg:text-6xl">
-            Premium Medical Devices & PPE,{' '}
-            <span className="text-accent">Where It Matters Most</span>
+            {t('title')}{' '}
+            <span className="text-accent">{t('titleHighlight')}</span>
           </h1>
 
           <p className="text-lg leading-relaxed text-white/80 sm:text-xl">
-            Connecting Asia&apos;s leading manufacturers with healthcare providers
-            across Africa and the Middle East. Quality and accessibility for those
-            who need it most.
+            {t('subtitle')}
           </p>
 
           <div className="flex flex-col gap-4 pt-4 sm:flex-row">
             <Button size="lg" asChild>
-              <Link href="#quote">Request a Quote</Link>
+              <a href="#quote">{t('cta')}</a>
             </Button>
-            <Button size="lg" variant="outline" className="border-white text-white hover:bg-white hover:text-secondary" asChild>
-              <Link href="#products">Explore Products</Link>
+            <Button
+              size="lg"
+              variant="outline"
+              className="border-white text-white hover:bg-white hover:text-secondary"
+              asChild
+            >
+              <a href="#products">{t('ctaSecondary')}</a>
             </Button>
           </div>
         </div>

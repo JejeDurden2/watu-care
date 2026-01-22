@@ -1,8 +1,11 @@
 import Image from 'next/image';
-import Link from 'next/link';
+import { getTranslations } from 'next-intl/server';
+import { Link } from '@/i18n/routing';
 import { Button, Container } from '@/components/ui';
 
-export function Featured(): React.ReactElement {
+export async function Featured(): Promise<React.ReactElement> {
+  const t = await getTranslations('featured');
+
   return (
     <section className="relative overflow-hidden py-20 lg:py-0">
       <div className="grid lg:grid-cols-2">
@@ -22,19 +25,16 @@ export function Featured(): React.ReactElement {
         <div className="flex items-center bg-secondary py-12 lg:py-20">
           <Container className="lg:max-w-xl lg:pl-12">
             <span className="mb-4 inline-block rounded-full bg-accent/20 px-4 py-1.5 text-sm font-medium text-accent">
-              Specialized Solutions
+              {t('badge')}
             </span>
             <h2 className="mb-4 text-3xl font-bold tracking-tight text-white sm:text-4xl">
-              Fluid Management & Medical Consumables
+              {t('title')}
             </h2>
             <p className="mb-8 text-lg leading-relaxed text-white/80">
-              From IV solutions to surgical consumables, we provide healthcare
-              facilities with the essential supplies they need to deliver quality
-              patient care. Our products meet international safety standards and
-              are sourced from certified manufacturers.
+              {t('description')}
             </p>
             <Button size="lg" asChild>
-              <Link href="#quote">Get a Quote</Link>
+              <Link href="#quote">{t('cta')}</Link>
             </Button>
           </Container>
         </div>

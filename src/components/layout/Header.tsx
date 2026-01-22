@@ -2,84 +2,90 @@
 
 import { useState } from 'react';
 import Image from 'next/image';
-import Link from 'next/link';
+import { useTranslations } from 'next-intl';
 import { Menu, X } from 'lucide-react';
-import { Button, Container } from '@/components/ui';
+import { Link } from '@/i18n/routing';
+import { Button, Container, LanguageSwitcher } from '@/components/ui';
 import { cn } from '@/lib/utils';
-
-const navLinks = [
-  { href: '#products', label: 'Products' },
-  { href: '#about', label: 'About' },
-  { href: '#contact', label: 'Contact' },
-];
 
 export function Header(): React.ReactElement {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const t = useTranslations('nav');
+
+  const navLinks = [
+    { href: '#products', label: t('products') },
+    { href: '#about', label: t('about') },
+    { href: '#contact', label: t('contact') },
+  ];
 
   return (
     <header className="sticky top-0 z-50 border-b border-border/50 bg-background/80 backdrop-blur-md">
       <Container>
-        <nav className="flex h-16 items-center justify-between md:h-20">
-          {/* Logo */}
+        <nav className="flex h-18 items-center justify-between md:h-24">
+          {/* Logo - Made bigger */}
           <Link href="/" className="flex items-center gap-2">
             <Image
               src="/logo.png"
               alt="Watu Care"
-              width={140}
-              height={40}
-              className="h-8 w-auto md:h-10"
+              width={180}
+              height={52}
+              className="h-11 w-auto md:h-14"
               priority
             />
           </Link>
 
           {/* Desktop Navigation */}
-          <div className="hidden items-center gap-8 md:flex">
+          <div className="hidden items-center gap-6 lg:flex">
             {navLinks.map((link) => (
-              <Link
+              <a
                 key={link.href}
                 href={link.href}
                 className="text-sm font-medium text-muted-foreground transition-colors hover:text-secondary"
               >
                 {link.label}
-              </Link>
+              </a>
             ))}
+            <LanguageSwitcher />
             <Button size="sm" asChild>
-              <Link href="#quote">Request a Quote</Link>
+              <a href="#quote">{t('requestQuote')}</a>
             </Button>
           </div>
 
-          {/* Mobile Menu Button */}
-          <button
-            type="button"
-            className="inline-flex items-center justify-center rounded-lg p-2 text-secondary md:hidden"
-            onClick={() => setIsMenuOpen(!isMenuOpen)}
-            aria-expanded={isMenuOpen}
-            aria-label="Toggle navigation menu"
-          >
-            {isMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
-          </button>
+          {/* Mobile: Language Switcher + Menu Button */}
+          <div className="flex items-center gap-3 lg:hidden">
+            <LanguageSwitcher />
+            <button
+              type="button"
+              className="inline-flex items-center justify-center rounded-lg p-2 text-secondary"
+              onClick={() => setIsMenuOpen(!isMenuOpen)}
+              aria-expanded={isMenuOpen}
+              aria-label="Toggle navigation menu"
+            >
+              {isMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
+            </button>
+          </div>
         </nav>
 
         {/* Mobile Navigation */}
         <div
           className={cn(
-            'overflow-hidden transition-all duration-300 ease-in-out md:hidden',
+            'overflow-hidden transition-all duration-300 ease-in-out lg:hidden',
             isMenuOpen ? 'max-h-64 pb-4' : 'max-h-0'
           )}
         >
           <div className="flex flex-col gap-4 pt-2">
             {navLinks.map((link) => (
-              <Link
+              <a
                 key={link.href}
                 href={link.href}
                 className="text-sm font-medium text-muted-foreground transition-colors hover:text-secondary"
                 onClick={() => setIsMenuOpen(false)}
               >
                 {link.label}
-              </Link>
+              </a>
             ))}
             <Button size="sm" className="w-full" asChild>
-              <Link href="#quote">Request a Quote</Link>
+              <a href="#quote">{t('requestQuote')}</a>
             </Button>
           </div>
         </div>

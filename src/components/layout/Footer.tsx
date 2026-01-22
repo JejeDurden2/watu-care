@@ -1,23 +1,27 @@
 import Image from 'next/image';
-import Link from 'next/link';
 import { Mail, MapPin, Phone } from 'lucide-react';
+import { getTranslations } from 'next-intl/server';
+import { Link } from '@/i18n/routing';
 import { Container } from '@/components/ui';
 
-const quickLinks = [
-  { href: '#products', label: 'Products' },
-  { href: '#about', label: 'About Us' },
-  { href: '#how-it-works', label: 'How It Works' },
-  { href: '#quote', label: 'Request Quote' },
+const quickLinksKeys = [
+  { href: '#products', key: 'products' },
+  { href: '#about', key: 'aboutUs' },
+  { href: '#how-it-works', key: 'howItWorks' },
+  { href: '#quote', key: 'requestQuote' },
 ];
 
-const productCategories = [
-  'Procedure Packs & Drapes',
-  'Tubes & Airway Management',
-  'Dressing & Kits',
-  'Medical Equipment',
+const productCategoryKeys = [
+  'procedurePacks',
+  'tubesAirway',
+  'dressing',
+  'equipment',
 ];
 
-export function Footer(): React.ReactElement {
+export async function Footer(): Promise<React.ReactElement> {
+  const t = await getTranslations('footer');
+  const tCategories = await getTranslations('categories');
+
   return (
     <footer className="border-t border-border bg-secondary text-secondary-foreground">
       <Container>
@@ -32,24 +36,23 @@ export function Footer(): React.ReactElement {
               className="h-10 w-auto brightness-0 invert"
             />
             <p className="text-sm leading-relaxed text-secondary-foreground/80">
-              Connecting Asia&apos;s leading manufacturers with healthcare providers
-              across Africa and the Middle East.
+              {t('description')}
             </p>
           </div>
 
           {/* Quick Links */}
           <div>
             <h4 className="mb-4 text-sm font-semibold uppercase tracking-wider text-secondary-foreground">
-              Quick Links
+              {t('quickLinks')}
             </h4>
             <ul className="space-y-2">
-              {quickLinks.map((link) => (
+              {quickLinksKeys.map((link) => (
                 <li key={link.href}>
                   <Link
                     href={link.href}
                     className="text-sm text-secondary-foreground/70 transition-colors hover:text-secondary-foreground"
                   >
-                    {link.label}
+                    {t(link.key)}
                   </Link>
                 </li>
               ))}
@@ -59,13 +62,13 @@ export function Footer(): React.ReactElement {
           {/* Products */}
           <div>
             <h4 className="mb-4 text-sm font-semibold uppercase tracking-wider text-secondary-foreground">
-              Products
+              {t('productsTitle')}
             </h4>
             <ul className="space-y-2">
-              {productCategories.map((category) => (
-                <li key={category}>
+              {productCategoryKeys.map((key) => (
+                <li key={key}>
                   <span className="text-sm text-secondary-foreground/70">
-                    {category}
+                    {tCategories(key)}
                   </span>
                 </li>
               ))}
@@ -75,7 +78,7 @@ export function Footer(): React.ReactElement {
           {/* Contact */}
           <div>
             <h4 className="mb-4 text-sm font-semibold uppercase tracking-wider text-secondary-foreground">
-              Contact
+              {t('contact')}
             </h4>
             <ul className="space-y-3">
               <li className="flex items-start gap-3">
@@ -106,7 +109,7 @@ export function Footer(): React.ReactElement {
         {/* Bottom Bar */}
         <div className="border-t border-secondary-foreground/10 py-6">
           <p className="text-center text-sm text-secondary-foreground/60">
-            &copy; {new Date().getFullYear()} Watu Care. All rights reserved.
+            &copy; {new Date().getFullYear()} {t('copyright')}
           </p>
         </div>
       </Container>

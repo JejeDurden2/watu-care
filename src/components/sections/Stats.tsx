@@ -1,34 +1,37 @@
 import { Package, Globe2, Building2, TruckIcon } from 'lucide-react';
+import { getTranslations } from 'next-intl/server';
 import { Container } from '@/components/ui';
 
-const stats = [
-  {
-    icon: Package,
-    value: '500+',
-    label: 'Products',
-    description: 'In our catalog',
-  },
-  {
-    icon: Globe2,
-    value: '25+',
-    label: 'Countries',
-    description: 'Served worldwide',
-  },
-  {
-    icon: Building2,
-    value: '100+',
-    label: 'Healthcare Facilities',
-    description: 'Trust our supplies',
-  },
-  {
-    icon: TruckIcon,
-    value: '10K+',
-    label: 'Orders Delivered',
-    description: 'Successfully shipped',
-  },
-];
+export async function Stats(): Promise<React.ReactElement> {
+  const t = await getTranslations('stats');
 
-export function Stats(): React.ReactElement {
+  const stats = [
+    {
+      icon: Package,
+      value: '500+',
+      label: t('products'),
+      description: t('productsDesc'),
+    },
+    {
+      icon: Globe2,
+      value: '25+',
+      label: t('countries'),
+      description: t('countriesDesc'),
+    },
+    {
+      icon: Building2,
+      value: '100+',
+      label: t('facilities'),
+      description: t('facilitiesDesc'),
+    },
+    {
+      icon: TruckIcon,
+      value: '10K+',
+      label: t('orders'),
+      description: t('ordersDesc'),
+    },
+  ];
+
   return (
     <section className="border-y border-border bg-white py-16 lg:py-20">
       <Container>

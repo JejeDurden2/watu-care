@@ -1,8 +1,11 @@
-import Link from 'next/link';
 import { ArrowRight, Mail } from 'lucide-react';
+import { getTranslations } from 'next-intl/server';
+import { Link } from '@/i18n/routing';
 import { Button, Container } from '@/components/ui';
 
-export function CTA(): React.ReactElement {
+export async function CTA(): Promise<React.ReactElement> {
+  const t = await getTranslations('cta');
+
   return (
     <section
       id="quote"
@@ -22,14 +25,11 @@ export function CTA(): React.ReactElement {
 
           {/* Heading */}
           <h2 className="mb-4 text-3xl font-bold tracking-tight text-white sm:text-4xl lg:text-5xl">
-            Ready to Improve Healthcare Access?
+            {t('title')}
           </h2>
 
           {/* Subheading */}
-          <p className="mb-8 text-lg text-white/80 lg:text-xl">
-            Partner with Watu Care and get competitive quotes for premium medical
-            supplies. Our team is ready to help you serve your patients better.
-          </p>
+          <p className="mb-8 text-lg text-white/80 lg:text-xl">{t('subtitle')}</p>
 
           {/* CTA Buttons */}
           <div className="flex flex-col items-center justify-center gap-4 sm:flex-row">
@@ -39,7 +39,7 @@ export function CTA(): React.ReactElement {
               asChild
             >
               <Link href="mailto:contact@watu-care.com">
-                Request a Quote
+                {t('button')}
                 <ArrowRight className="h-5 w-5" />
               </Link>
             </Button>
@@ -49,14 +49,12 @@ export function CTA(): React.ReactElement {
               className="w-full border-white/30 text-white hover:bg-white/10 sm:w-auto"
               asChild
             >
-              <Link href="#contact">Contact Us</Link>
+              <Link href="#contact">{t('buttonSecondary')}</Link>
             </Button>
           </div>
 
           {/* Trust Line */}
-          <p className="mt-8 text-sm text-white/60">
-            Response within 24-48 hours. No commitment required.
-          </p>
+          <p className="mt-8 text-sm text-white/60">{t('trustLine')}</p>
         </div>
       </Container>
     </section>

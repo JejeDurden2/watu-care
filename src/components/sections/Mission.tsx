@@ -1,7 +1,10 @@
 import { Heart, Globe, Users } from 'lucide-react';
+import { getTranslations } from 'next-intl/server';
 import { Container } from '@/components/ui';
 
-export function Mission(): React.ReactElement {
+export async function Mission(): Promise<React.ReactElement> {
+  const t = await getTranslations('mission');
+
   return (
     <section id="about" className="bg-muted py-20 lg:py-28">
       <Container>
@@ -13,22 +16,19 @@ export function Mission(): React.ReactElement {
 
           {/* Title */}
           <h2 className="mb-6 text-3xl font-bold tracking-tight sm:text-4xl lg:text-5xl">
-            <span className="text-accent">&ldquo;Watu&rdquo;</span> means{' '}
-            <span className="text-secondary">People</span> in Swahili
+            <span className="text-accent">&ldquo;Watu&rdquo;</span> {t('title')}{' '}
+            <span className="text-secondary">{t('titleHighlight')}</span> {t('titleEnd')}
           </h2>
 
           {/* Story */}
           <p className="mb-8 text-lg leading-relaxed text-muted-foreground">
-            And that is exactly what drives us. At Watu Care, we understand that
-            behind every medical supply order is a{' '}
-            <strong className="text-secondary">healthcare worker striving to save lives</strong> and a{' '}
-            <strong className="text-secondary">patient hoping for recovery</strong>.
+            {t('description1')}{' '}
+            <strong className="text-secondary">{t('highlight1')}</strong> {t('and')}{' '}
+            <strong className="text-secondary">{t('highlight2')}</strong>.
           </p>
 
           <p className="text-lg leading-relaxed text-muted-foreground">
-            Based in Hong Kong, we strategically connect Asia&apos;s leading medical
-            manufacturers with healthcare providers across Africa and the Middle East,
-            growing into a trusted partner for hospitals and clinics in developing economies.
+            {t('description2')}
           </p>
 
           {/* Visual Elements */}
@@ -37,24 +37,24 @@ export function Mission(): React.ReactElement {
               <div className="flex h-12 w-12 items-center justify-center rounded-full bg-primary/10">
                 <Globe className="h-6 w-6 text-primary" />
               </div>
-              <p className="font-medium text-secondary">Asia Hub</p>
-              <p className="text-sm text-muted-foreground">Hong Kong headquarters</p>
+              <p className="font-medium text-secondary">{t('asiaHub')}</p>
+              <p className="text-sm text-muted-foreground">{t('asiaHubDesc')}</p>
             </div>
 
             <div className="flex flex-col items-center gap-3">
               <div className="flex h-12 w-12 items-center justify-center rounded-full bg-accent/10">
                 <Heart className="h-6 w-6 text-accent" />
               </div>
-              <p className="font-medium text-secondary">Healthcare Focus</p>
-              <p className="text-sm text-muted-foreground">People-first approach</p>
+              <p className="font-medium text-secondary">{t('healthcareFocus')}</p>
+              <p className="text-sm text-muted-foreground">{t('healthcareFocusDesc')}</p>
             </div>
 
             <div className="flex flex-col items-center gap-3">
               <div className="flex h-12 w-12 items-center justify-center rounded-full bg-primary/10">
                 <Users className="h-6 w-6 text-primary" />
               </div>
-              <p className="font-medium text-secondary">Developing Economies</p>
-              <p className="text-sm text-muted-foreground">Africa & Middle East</p>
+              <p className="font-medium text-secondary">{t('developingEconomies')}</p>
+              <p className="text-sm text-muted-foreground">{t('developingEconomiesDesc')}</p>
             </div>
           </div>
         </div>
