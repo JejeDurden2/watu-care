@@ -3,11 +3,9 @@ import {
   Hero,
   Mission,
   Stats,
-  ValueProps,
   Categories,
   Featured,
   HowItWorks,
-  Testimonials,
   CTA,
 } from '@/components/sections';
 
@@ -19,11 +17,9 @@ export default function Home(): React.ReactElement {
         <Hero />
         <Stats />
         <Mission />
-        <ValueProps />
         <Categories />
         <Featured />
         <HowItWorks />
-        <Testimonials />
         <CTA />
       </main>
       <Footer />
