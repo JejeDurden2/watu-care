@@ -110,22 +110,22 @@ html {
 }
 
 .animate-float-up {
-  animation: float-up 8s ease-in-out infinite;
+  animation: float-up 5s ease-in-out infinite;
 }
 
 .animate-float-diagonal {
-  animation: float-diagonal 10s ease-in-out infinite;
+  animation: float-diagonal 6s ease-in-out infinite;
 }
 
 .animate-float-reverse {
-  animation: float-reverse 12s ease-in-out infinite;
+  animation: float-reverse 7s ease-in-out infinite;
 }
 
 .animate-pulse-glow {
-  animation: pulse-glow 6s ease-in-out infinite;
+  animation: pulse-glow 4s ease-in-out infinite;
 }
 
 .animate-gradient {
   background-size: 200% 200%;
-  animation: gradient-shift 12s ease infinite;
+  animation: gradient-shift 8s ease infinite;
 }

@@ -11,18 +11,18 @@ export async function Hero(): Promise<React.ReactElement> {
 
       {/* Animated Decorative Elements */}
       <div className="absolute inset-0 overflow-hidden">
-        {/* Large floating orbs - less blur, more visible */}
-        <div className="animate-float-diagonal absolute -right-20 -top-20 h-[400px] w-[400px] rounded-full bg-gradient-to-br from-primary/30 to-accent/20 blur-2xl" />
-        <div className="animate-float-reverse absolute -bottom-32 -left-32 h-[500px] w-[500px] rounded-full bg-gradient-to-tr from-accent/25 to-primary/15 blur-2xl" />
+        {/* Large floating orbs */}
+        <div className="animate-float-diagonal absolute -right-20 -top-20 h-[400px] w-[400px] rounded-full bg-gradient-to-br from-primary/35 to-accent/25 blur-xl" />
+        <div className="animate-float-reverse absolute -bottom-32 -left-32 h-[500px] w-[500px] rounded-full bg-gradient-to-tr from-accent/30 to-primary/20 blur-xl" />
 
         {/* Medium orbs */}
-        <div className="animate-float-up absolute right-1/4 top-1/4 h-64 w-64 rounded-full bg-primary/25 blur-xl" />
-        <div className="animate-pulse-glow absolute bottom-1/3 left-1/4 h-72 w-72 rounded-full bg-accent/20 blur-xl" />
+        <div className="animate-float-up absolute right-1/4 top-1/4 h-64 w-64 rounded-full bg-primary/30 blur-lg" />
+        <div className="animate-pulse-glow absolute bottom-1/3 left-1/4 h-72 w-72 rounded-full bg-accent/25 blur-lg" />
 
         {/* Smaller accent orbs */}
-        <div className="animate-float-diagonal absolute right-1/3 top-1/2 h-40 w-40 rounded-full bg-accent/30 blur-lg" />
-        <div className="animate-float-reverse absolute bottom-1/4 right-1/5 h-32 w-32 rounded-full bg-primary/25 blur-lg" />
-        <div className="animate-pulse-glow absolute left-1/3 top-1/3 h-24 w-24 rounded-full bg-white/10 blur-md" />
+        <div className="animate-float-diagonal absolute right-1/3 top-1/2 h-40 w-40 rounded-full bg-accent/35 blur-md" />
+        <div className="animate-float-reverse absolute bottom-1/4 right-1/5 h-32 w-32 rounded-full bg-primary/30 blur-md" />
+        <div className="animate-pulse-glow absolute left-1/3 top-1/3 h-24 w-24 rounded-full bg-white/15 blur-sm" />
 
         {/* Subtle grid pattern */}
         <div
