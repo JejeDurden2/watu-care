@@ -76,6 +76,10 @@
     "customRequest": "Don't see what you need?",
     "customRequestLink": "Contact us for custom requests"
   },
+  "products": {
+    "title": "Our Products",
+    "subtitle": "Comprehensive medical supply solutions across 10 specialized categories"
+  },
   "featured": {
     "badge": "Specialized Solutions",
     "title": "Fluid Management & Medical Consumables",

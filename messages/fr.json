@@ -76,6 +76,10 @@
     "customRequest": "Vous ne trouvez pas ce que vous cherchez ?",
     "customRequestLink": "Contactez-nous pour des demandes personnalisées"
   },
+  "products": {
+    "title": "Nos produits",
+    "subtitle": "Solutions complètes de fournitures médicales dans 10 catégories spécialisées"
+  },
   "featured": {
     "badge": "Solutions spécialisées",
     "title": "Gestion des fluides & Consommables médicaux",
