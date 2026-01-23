@@ -4,6 +4,7 @@ import { getTranslations } from 'next-intl/server';
 import { Container } from '@/components/ui';
 import {
   Breadcrumb,
+  CategoryIcon,
   ProductCard,
   ProductGrid,
 } from '@/components/products';
@@ -54,8 +55,6 @@ export default async function CategoryPage({
     notFound();
   }
 
-  const Icon = category.icon;
-
   return (
     <main className="py-16">
       <Container>
@@ -74,7 +73,7 @@ export default async function CategoryPage({
           <div
             className={`mb-4 inline-flex h-16 w-16 items-center justify-center rounded-lg ${category.color}`}
           >
-            <Icon className="h-8 w-8" />
+            <CategoryIcon slug={category.iconSlug} className="h-8 w-8" />
           </div>
           <h1 className="mb-4 text-4xl font-bold text-secondary md:text-5xl">
             {category.title}

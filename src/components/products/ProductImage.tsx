@@ -2,12 +2,12 @@
 
 import { useState } from 'react';
 import Image from 'next/image';
-import type { LucideIcon } from 'lucide-react';
+import { getCategoryIcon } from '@/lib/product-images';
 
 interface ProductImageProps {
   src?: string;
   alt: string;
-  icon: LucideIcon;
+  iconSlug: string;
   fallbackGradient?: string;
   className?: string;
   priority?: boolean;
@@ -16,12 +16,13 @@ interface ProductImageProps {
 export function ProductImage({
   src,
   alt,
-  icon: Icon,
+  iconSlug,
   fallbackGradient = 'from-primary to-accent',
   className = '',
   priority = false,
 }: ProductImageProps): React.ReactElement {
   const [imageError, setImageError] = useState(false);
+  const Icon = getCategoryIcon(iconSlug);
 
   if (!src || imageError) {
     // Fallback: elegant gradient with icon

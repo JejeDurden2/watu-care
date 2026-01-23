@@ -3,6 +3,7 @@ import { FileText } from 'lucide-react';
 import type { Product, ProductCategory } from '@/types/product';
 import { ProductImage } from './ProductImage';
 import { getProductImageUrl, getCategoryGradient } from '@/lib/product-images';
+import { AddToListButton } from '@/components/quote';
 
 interface ProductCardProps {
   product: Product;
@@ -20,16 +21,21 @@ export function ProductCard({
   const fallbackGradient = getCategoryGradient(category.slug);
 
   return (
-    <Link
-      href={`/${locale}/products/${category.slug}/${product.id}`}
-      className="group block h-full overflow-hidden rounded-xl border border-white/20 bg-white/70 backdrop-blur-sm transition-all hover:border-primary/50 hover:shadow-soft-md"
-    >
-      <div className="flex h-full flex-col">
+    <div className="group relative h-full overflow-hidden rounded-xl border border-white/20 bg-white/70 backdrop-blur-sm transition-all hover:border-primary/50 hover:shadow-soft-md">
+      {/* Add to List Button - Overlay */}
+      <div className="absolute right-3 top-3 z-10 opacity-0 transition-opacity group-hover:opacity-100 sm:opacity-100">
+        <AddToListButton product={product} category={category} variant="icon" />
+      </div>
+
+      <Link
+        href={`/${locale}/products/${category.slug}/${product.id}`}
+        className="flex h-full flex-col"
+      >
         {/* Product Image */}
         <ProductImage
           src={imageUrl}
           alt={product.name}
-          icon={category.icon}
+          iconSlug={category.iconSlug}
           fallbackGradient={fallbackGradient}
           className="h-48 w-full"
         />
@@ -63,7 +69,7 @@ export function ProductCard({
             </div>
           )}
         </div>
-      </div>
-    </Link>
+      </Link>
+    </div>
   );
 }

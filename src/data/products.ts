@@ -1,21 +1,9 @@
-import {
-  Package,
-  Activity,
-  Syringe,
-  Bandage,
-  TestTube,
-  Dog,
-  Bed,
-  Hand,
-  ShieldCheck,
-  Recycle,
-} from 'lucide-react';
 import type { ProductCategory } from '@/types/product';
 
 export const productCategories: ProductCategory[] = [
   {
     id: 'surgical',
-    icon: Package,
+    iconSlug: 'surgical',
     title: 'Procedure Packs & Drapes',
     slug: 'surgical',
     description:
@@ -359,7 +347,7 @@ export const productCategories: ProductCategory[] = [
   },
   {
     id: 'tube',
-    icon: Activity,
+    iconSlug: 'tube',
     title: 'Tube',
     slug: 'tube',
     description:
@@ -505,7 +493,7 @@ export const productCategories: ProductCategory[] = [
   },
   {
     id: 'central-venous-catheter',
-    icon: Syringe,
+    iconSlug: 'central-venous-catheter',
     title: 'Anti-Infection Central Venous Catheter',
     slug: 'central-venous-catheter',
     description:
@@ -587,7 +575,7 @@ export const productCategories: ProductCategory[] = [
   },
   {
     id: 'dressing',
-    icon: Bandage,
+    iconSlug: 'dressing',
     title: 'Dressing & Kits',
     slug: 'dressing',
     description: 'Medical dressings, wound care kits, and adhesive solutions',
@@ -790,7 +778,7 @@ export const productCategories: ProductCategory[] = [
   },
   {
     id: 'laboratory-supplies',
-    icon: TestTube,
+    iconSlug: 'laboratory-supplies',
     title: 'Laboratory Supplies',
     slug: 'laboratory-supplies',
     description: 'Specimen collection and laboratory testing supplies',
@@ -916,7 +904,7 @@ export const productCategories: ProductCategory[] = [
   },
   {
     id: 'veterinary-products',
-    icon: Dog,
+    iconSlug: 'veterinary-products',
     title: 'Veterinary Products',
     slug: 'veterinary-products',
     description:
@@ -1043,7 +1031,7 @@ export const productCategories: ProductCategory[] = [
   },
   {
     id: 'medical-equipment',
-    icon: Bed,
+    iconSlug: 'medical-equipment',
     title: 'Medical Equipment',
     slug: 'medical-equipment',
     description:
@@ -1176,7 +1164,7 @@ export const productCategories: ProductCategory[] = [
   },
   {
     id: 'gloves',
-    icon: Hand,
+    iconSlug: 'gloves',
     title: 'Gloves',
     slug: 'gloves',
     description:
@@ -1391,7 +1379,7 @@ export const productCategories: ProductCategory[] = [
   },
   {
     id: 'face-protection',
-    icon: ShieldCheck,
+    iconSlug: 'face-protection',
     title: 'Face Protection',
     slug: 'face-protection',
     description: 'Surgical masks and face shields for infection control',
@@ -1435,7 +1423,7 @@ export const productCategories: ProductCategory[] = [
   },
   {
     id: 'bodily-waste-management',
-    icon: Recycle,
+    iconSlug: 'bodily-waste-management',
     title: 'Bodily Waste Management',
     slug: 'bodily-waste-management',
     description:

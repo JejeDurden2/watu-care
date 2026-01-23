@@ -6,11 +6,14 @@ import { useTranslations } from 'next-intl';
 import { Menu, X } from 'lucide-react';
 import { Link } from '@/i18n/routing';
 import { Button, Container, LanguageSwitcher } from '@/components/ui';
+import { QuoteListBadge } from '@/components/quote';
+import { useQuoteStore } from '@/lib/quote-store';
 import { cn } from '@/lib/utils';
 
 export function Header(): React.ReactElement {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const t = useTranslations('nav');
+  const openModal = useQuoteStore((state) => state.openModal);
 
   const navLinks = [
     { href: '#products', label: t('products') },
@@ -49,8 +52,9 @@ export function Header(): React.ReactElement {
               </a>
             ))}
             <LanguageSwitcher />
-            <Button size="sm" asChild>
-              <a href="#quote">{t('requestQuote')}</a>
+            <QuoteListBadge />
+            <Button size="sm" onClick={openModal}>
+              {t('requestQuote')}
             </Button>
           </div>
 
@@ -87,8 +91,9 @@ export function Header(): React.ReactElement {
                 {link.label}
               </a>
             ))}
-            <Button size="sm" className="w-full" asChild>
-              <a href="#quote">{t('requestQuote')}</a>
+            <QuoteListBadge />
+            <Button size="sm" className="w-full" onClick={() => { setIsMenuOpen(false); openModal(); }}>
+              {t('requestQuote')}
             </Button>
           </div>
         </div>

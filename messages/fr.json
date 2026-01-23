@@ -80,6 +80,45 @@
     "title": "Nos produits",
     "subtitle": "Solutions complètes de fournitures médicales dans 10 catégories spécialisées"
   },
+  "quote": {
+    "listTitle": "Votre liste de produits",
+    "emptyList": "Aucun produit dans votre liste",
+    "emptyListDesc": "Parcourez notre catalogue et ajoutez les produits qui vous intéressent.",
+    "browseProducts": "Parcourir les produits",
+    "addToList": "Ajouter à la liste",
+    "addedToList": "Ajouté à la liste",
+    "removeFromList": "Supprimer",
+    "itemCount": "{count} produit(s)",
+    "requestQuote": "Demander un devis",
+    "continueAdding": "Continuer à parcourir",
+    "back": "Retour",
+    "form": {
+      "title": "Demander un devis",
+      "company": "Nom de l'entreprise",
+      "companyPlaceholder": "Votre entreprise",
+      "email": "Email",
+      "emailPlaceholder": "votre@email.com",
+      "country": "Pays",
+      "countryPlaceholder": "Sélectionnez votre pays",
+      "message": "Message (optionnel)",
+      "messagePlaceholder": "Quantités, spécifications, questions...",
+      "submit": "Envoyer la demande",
+      "submitting": "Envoi en cours..."
+    },
+    "success": {
+      "title": "Demande envoyée !",
+      "message": "Nous vous contacterons sous 24-48 heures.",
+      "close": "Fermer"
+    },
+    "toast": {
+      "added": "Produit ajouté à votre liste",
+      "removed": "Produit supprimé de votre liste"
+    },
+    "regions": {
+      "africa": "Afrique",
+      "middleEast": "Moyen-Orient"
+    }
+  },
   "featured": {
     "badge": "Solutions spécialisées",
     "title": "Gestion des fluides & Consommables médicaux",

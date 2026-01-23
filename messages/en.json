@@ -80,6 +80,45 @@
     "title": "Our Products",
     "subtitle": "Comprehensive medical supply solutions across 10 specialized categories"
   },
+  "quote": {
+    "listTitle": "Your Product List",
+    "emptyList": "No products in your list",
+    "emptyListDesc": "Browse our catalog and add products you're interested in.",
+    "browseProducts": "Browse Products",
+    "addToList": "Add to List",
+    "addedToList": "Added to List",
+    "removeFromList": "Remove",
+    "itemCount": "{count} product(s)",
+    "requestQuote": "Request a Quote",
+    "continueAdding": "Continue Browsing",
+    "back": "Back",
+    "form": {
+      "title": "Request a Quote",
+      "company": "Company Name",
+      "companyPlaceholder": "Your company",
+      "email": "Email",
+      "emailPlaceholder": "your@email.com",
+      "country": "Country",
+      "countryPlaceholder": "Select your country",
+      "message": "Message (optional)",
+      "messagePlaceholder": "Quantities, specifications, questions...",
+      "submit": "Send Request",
+      "submitting": "Sending..."
+    },
+    "success": {
+      "title": "Request Sent!",
+      "message": "We'll contact you within 24-48 hours.",
+      "close": "Close"
+    },
+    "toast": {
+      "added": "Product added to your list",
+      "removed": "Product removed from your list"
+    },
+    "regions": {
+      "africa": "Africa",
+      "middleEast": "Middle East"
+    }
+  },
   "featured": {
     "badge": "Specialized Solutions",
     "title": "Fluid Management & Medical Consumables",

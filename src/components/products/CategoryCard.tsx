@@ -1,7 +1,13 @@
+'use client';
+
 import Link from 'next/link';
 import type { ProductCategory } from '@/types/product';
 import { ProductImage } from './ProductImage';
-import { getCategoryImageUrl, getCategoryGradient } from '@/lib/product-images';
+import {
+  getCategoryImageUrl,
+  getCategoryGradient,
+  getCategoryIcon,
+} from '@/lib/product-images';
 
 interface CategoryCardProps {
   category: ProductCategory;
@@ -12,7 +18,7 @@ export function CategoryCard({
   category,
   locale,
 }: CategoryCardProps): React.ReactElement {
-  const Icon = category.icon;
+  const Icon = getCategoryIcon(category.iconSlug);
   const imageUrl = category.image || getCategoryImageUrl(category.slug);
   const fallbackGradient = getCategoryGradient(category.slug);
 
@@ -26,7 +32,7 @@ export function CategoryCard({
         <ProductImage
           src={imageUrl}
           alt={category.title}
-          icon={Icon}
+          iconSlug={category.iconSlug}
           fallbackGradient={fallbackGradient}
           className="h-48 w-full"
         />

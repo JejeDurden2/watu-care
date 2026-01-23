@@ -1,8 +1,26 @@
+'use client';
+
 import type { Product, ProductCategory } from '@/types/product';
 import { Button } from '@/components/ui';
 import { ProductSpecs } from './ProductSpecs';
 import { ProductImage } from './ProductImage';
-import { getProductImageUrl, getCategoryGradient } from '@/lib/product-images';
+import {
+  getProductImageUrl,
+  getCategoryGradient,
+  getCategoryIcon,
+} from '@/lib/product-images';
+import { AddToListButton } from '@/components/quote';
+import { useQuoteStore } from '@/lib/quote-store';
+
+function RequestQuoteButton(): React.ReactElement {
+  const openModal = useQuoteStore((state) => state.openModal);
+
+  return (
+    <Button size="lg" onClick={openModal} className="w-full sm:w-auto">
+      Request a Quote
+    </Button>
+  );
+}
 
 interface ProductDetailProps {
   product: Product;
@@ -14,7 +32,7 @@ export function ProductDetail({
   product,
   category,
 }: ProductDetailProps): React.ReactElement {
-  const Icon = category.icon;
+  const Icon = getCategoryIcon(category.iconSlug);
   const imageUrl =
     product.image || getProductImageUrl(category.slug, product.name);
   const fallbackGradient = getCategoryGradient(category.slug);
@@ -28,7 +46,7 @@ export function ProductDetail({
           <ProductImage
             src={imageUrl}
             alt={product.name}
-            icon={Icon}
+            iconSlug={category.iconSlug}
             fallbackGradient={fallbackGradient}
             className="aspect-square w-full"
             priority
@@ -53,10 +71,16 @@ export function ProductDetail({
             {product.description}
           </p>
 
-          {/* CTA Button */}
-          <Button size="lg" className="w-full sm:w-auto" asChild>
-            <a href="#quote">Request a Quote</a>
-          </Button>
+{/* CTA Buttons */}
+          <div className="flex flex-col gap-3 sm:flex-row">
+            <AddToListButton
+              product={product}
+              category={category}
+              variant="full"
+              className="h-12 px-6 text-base"
+            />
+            <RequestQuoteButton />
+          </div>
         </div>
       </div>
 

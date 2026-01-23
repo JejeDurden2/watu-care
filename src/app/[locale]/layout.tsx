@@ -5,6 +5,8 @@ import { notFound } from 'next/navigation';
 import { routing } from '@/i18n/routing';
 import { locales, type Locale } from '@/i18n/config';
 import { Header, Footer } from '@/components/layout';
+import { QuoteProvider } from '@/components/providers/QuoteProvider';
+import { QuoteModal } from '@/components/quote';
 
 interface Props {
   children: React.ReactNode;
@@ -73,9 +75,12 @@ export default async function LocaleLayout({
 
   return (
     <NextIntlClientProvider messages={messages}>
-      <Header />
-      {children}
-      <Footer />
+      <QuoteProvider>
+        <Header />
+        {children}
+        <Footer />
+        <QuoteModal />
+      </QuoteProvider>
     </NextIntlClientProvider>
   );
 }

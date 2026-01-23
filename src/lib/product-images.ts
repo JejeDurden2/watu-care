@@ -3,6 +3,44 @@
  * Uses Unsplash Source API as temporary solution
  */
 
+import {
+  Package,
+  Activity,
+  Syringe,
+  Bandage,
+  TestTube,
+  Dog,
+  Bed,
+  Hand,
+  ShieldCheck,
+  Recycle,
+  type LucideIcon,
+} from 'lucide-react';
+
+/**
+ * Map category slug to Lucide icon component
+ * Use this in Client Components to render icons from serialized category data
+ */
+export const categoryIconMap: Record<string, LucideIcon> = {
+  surgical: Package,
+  tube: Activity,
+  'central-venous-catheter': Syringe,
+  dressing: Bandage,
+  'laboratory-supplies': TestTube,
+  'veterinary-products': Dog,
+  'medical-equipment': Bed,
+  gloves: Hand,
+  'face-protection': ShieldCheck,
+  'bodily-waste-management': Recycle,
+};
+
+/**
+ * Get icon component from slug (with fallback)
+ */
+export function getCategoryIcon(slug: string): LucideIcon {
+  return categoryIconMap[slug] ?? Package;
+}
+
 /**
  * Generate Unsplash Source URL based on keywords
  * Format: https://source.unsplash.com/WIDTHxHEIGHT/?keyword1,keyword2

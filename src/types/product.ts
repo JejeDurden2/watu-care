@@ -1,5 +1,3 @@
-import type { LucideIcon } from 'lucide-react';
-
 export interface Product {
   id: string;
   name: string;
@@ -12,7 +10,7 @@ export interface Product {
 
 export interface ProductCategory {
   id: string;
-  icon: LucideIcon;
+  iconSlug: string;
   title: string;
   slug: string;
   description: string;
