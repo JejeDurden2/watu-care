@@ -10,14 +10,12 @@
     "requestQuote": "Demander un devis"
   },
   "hero": {
-    "badge": "Partenaire Santé de Confiance",
-    "headline1": "Connecter",
-    "headline2": "les Marchés,",
-    "headline3": "Livrer les Soins",
-    "subtitle": "Nous connectons les principaux fabricants asiatiques aux prestataires de soins de santé en Afrique et au Moyen-Orient. Dispositifs médicaux et EPI premium, garantissant qualité et accessibilité là où cela compte.",
-    "trustIndicator": "Plus de 100 établissements nous font confiance",
-    "cta": "Demander un devis",
-    "ctaSecondary": "Découvrir nos produits"
+    "badge": "Grossiste Médical B2B",
+    "headline1": "Fournitures Médicales de Qualité,",
+    "headline2": "Livrées",
+    "subtitle": "De l'Asie vers l'Afrique et le Moyen-Orient.",
+    "cta": "Obtenir un devis",
+    "ctaSecondary": "Voir les produits"
   },
   "trustBar": {
     "isoCertified": "Partenaires certifiés ISO",

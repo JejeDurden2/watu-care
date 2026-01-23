@@ -10,14 +10,12 @@
     "requestQuote": "Request a Quote"
   },
   "hero": {
-    "badge": "Trusted Healthcare Partner",
-    "headline1": "Bridging",
-    "headline2": "Markets,",
-    "headline3": "Delivering Care",
-    "subtitle": "Connecting Asia's leading manufacturers with healthcare providers across Africa and the Middle East. Premium medical devices & PPE, ensuring quality and accessibility where it matters most.",
-    "trustIndicator": "Trusted by 100+ healthcare facilities",
-    "cta": "Request a Quote",
-    "ctaSecondary": "Explore Products"
+    "badge": "B2B Medical Wholesale",
+    "headline1": "Quality Medical Supplies,",
+    "headline2": "Delivered",
+    "subtitle": "From Asia to Africa & the Middle East.",
+    "cta": "Get a Quote",
+    "ctaSecondary": "View Products"
   },
   "trustBar": {
     "isoCertified": "ISO Certified Partners",

@@ -1,4 +1,3 @@
-import { Package, Globe2, Building2, TruckIcon } from 'lucide-react';
 import { getTranslations } from 'next-intl/server';
 import { Container } from '@/components/ui';
 
@@ -6,47 +5,28 @@ export async function Stats(): Promise<React.ReactElement> {
   const t = await getTranslations('stats');
 
   const stats = [
-    {
-      icon: Package,
-      value: '500+',
-      label: t('products'),
-      description: t('productsDesc'),
-    },
-    {
-      icon: Globe2,
-      value: '25+',
-      label: t('countries'),
-      description: t('countriesDesc'),
-    },
-    {
-      icon: Building2,
-      value: '100+',
-      label: t('facilities'),
-      description: t('facilitiesDesc'),
-    },
-    {
-      icon: TruckIcon,
-      value: '10K+',
-      label: t('orders'),
-      description: t('ordersDesc'),
-    },
+    { value: '500+', label: t('products') },
+    { value: '25+', label: t('countries') },
+    { value: '100+', label: t('facilities') },
+    { value: '10K+', label: t('orders') },
   ];
 
   return (
-    <section className="bg-muted py-16 lg:py-20">
+    <section className="border-y border-border/50 bg-white py-12">
       <Container>
-        <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
-          {stats.map((stat) => (
-            <div
-              key={stat.label}
-              className="glass group flex flex-col items-center rounded-2xl p-6 text-center transition-all hover:-translate-y-1 hover:shadow-soft-md"
-            >
-              <div className="mb-4 flex h-14 w-14 items-center justify-center rounded-xl bg-primary/10 transition-colors group-hover:bg-primary group-hover:text-white">
-                <stat.icon className="h-7 w-7 text-primary transition-colors group-hover:text-white" />
-              </div>
-              <p className="text-4xl font-bold text-secondary">{stat.value}</p>
-              <p className="mt-1 font-medium text-secondary">{stat.label}</p>
-              <p className="text-sm text-muted-foreground">{stat.description}</p>
+        <div className="grid grid-cols-2 gap-8 lg:grid-cols-4 lg:gap-12">
+          {stats.map((stat, index) => (
+            <div key={stat.label} className="relative text-center">
+              {/* Divider on desktop (except first) */}
+              {index > 0 && (
+                <div className="absolute -left-4 top-1/2 hidden h-12 w-px -translate-y-1/2 bg-border lg:block lg:-left-6" />
+              )}
+              <p className="text-4xl font-bold text-secondary lg:text-5xl">
+                {stat.value}
+              </p>
+              <p className="mt-1 text-sm font-medium uppercase tracking-wider text-muted-foreground">
+                {stat.label}
+              </p>
             </div>
           ))}
         </div>
