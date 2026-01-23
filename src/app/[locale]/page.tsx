@@ -1,4 +1,3 @@
-import { Header, Footer } from '@/components/layout';
 import {
   Hero,
   Mission,
@@ -11,18 +10,14 @@ import {
 
 export default function Home(): React.ReactElement {
   return (
-    <>
-      <Header />
-      <main>
-        <Hero />
-        <Stats />
-        <Mission />
-        <Categories />
-        <Featured />
-        <HowItWorks />
-        <CTA />
-      </main>
-      <Footer />
-    </>
+    <main>
+      <Hero />
+      <Stats />
+      <Mission />
+      <Categories />
+      <Featured />
+      <HowItWorks />
+      <CTA />
+    </main>
   );
 }
