@@ -143,8 +143,7 @@ export function Header(): React.ReactElement {
         <div className="fixed inset-0 z-[60] lg:hidden">
           {/* Backdrop */}
           <div
-            className="absolute inset-0 bg-secondary/40 backdrop-blur-sm"
-            style={{ animation: 'fadeIn 0.2s ease-out' }}
+            className="absolute inset-0 bg-black/40"
             onClick={closeMenu}
             aria-hidden="true"
           />
@@ -156,17 +155,10 @@ export function Header(): React.ReactElement {
             role="dialog"
             aria-modal="true"
             aria-label="Mobile navigation"
-            className="absolute right-0 top-0 h-full w-full max-w-[300px] shadow-2xl flex flex-col"
-            style={{
-              backgroundColor: '#ffffff',
-              animation: 'slideInRight 0.3s ease-out',
-            }}
+            className="absolute right-0 top-0 h-full w-full max-w-[300px] shadow-2xl flex flex-col bg-white"
           >
             {/* Drawer Header */}
-            <div
-              className="flex h-16 items-center justify-between border-b border-gray-100 px-5"
-              style={{ backgroundColor: '#ffffff' }}
-            >
+            <div className="flex h-16 items-center justify-between border-b border-gray-100 px-5 bg-white">
               <Image
                 src="/logo.png"
                 alt="Watu Care"
@@ -185,10 +177,7 @@ export function Header(): React.ReactElement {
             </div>
 
             {/* Navigation Links */}
-            <nav
-              className="flex-1 overflow-y-auto px-3 py-4"
-              style={{ backgroundColor: '#ffffff' }}
-            >
+            <nav className="flex-1 overflow-y-auto px-3 py-4 bg-white">
               <div className="space-y-1">
                 {navLinks.map((link) => (
                   <Link
@@ -216,10 +205,7 @@ export function Header(): React.ReactElement {
             </nav>
 
             {/* Drawer Footer */}
-            <div
-              className="border-t border-gray-100 px-5 py-4"
-              style={{ backgroundColor: '#fafafa' }}
-            >
+            <div className="border-t border-gray-100 px-5 py-4 bg-gray-50">
               <p className="text-center text-xs text-gray-400">
                 © {new Date().getFullYear()} Watu Care
               </p>
