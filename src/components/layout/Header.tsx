@@ -8,7 +8,6 @@ import { Link } from '@/i18n/routing';
 import { Button, Container, LanguageSwitcher } from '@/components/ui';
 import { QuoteListBadge } from '@/components/quote';
 import { useQuoteStore } from '@/lib/quote-store';
-import { cn } from '@/lib/utils';
 
 export function Header(): React.ReactElement {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -119,9 +118,8 @@ export function Header(): React.ReactElement {
 
           {/* Mobile: Actions + Menu Button */}
           <div className="flex items-center gap-2 lg:hidden">
-            <LanguageSwitcher />
             <QuoteListBadge />
-            <Button size="sm" onClick={openModal} className="hidden sm:inline-flex">
+            <Button size="sm" onClick={openModal}>
               {t('requestQuote')}
             </Button>
             <button
@@ -141,52 +139,45 @@ export function Header(): React.ReactElement {
       </Container>
 
       {/* Mobile Navigation Drawer */}
-      <div
-        className={cn(
-          'fixed inset-0 z-40 lg:hidden',
-          'transition-visibility duration-300',
-          isMenuOpen ? 'visible' : 'invisible'
-        )}
-      >
-        {/* Backdrop */}
-        <div
-          className={cn(
-            'absolute inset-0 bg-secondary/60 backdrop-blur-sm',
-            'transition-opacity duration-300',
-            isMenuOpen ? 'opacity-100' : 'opacity-0'
-          )}
-          onClick={closeMenu}
-          aria-hidden="true"
-        />
+      {isMenuOpen && (
+        <div className="fixed inset-0 z-40 lg:hidden">
+          {/* Backdrop */}
+          <div
+            className="absolute inset-0 bg-secondary/60 backdrop-blur-sm animate-fade-in"
+            onClick={closeMenu}
+            aria-hidden="true"
+          />
 
-        {/* Drawer Panel */}
-        <div
-          ref={menuRef}
-          id="mobile-menu"
-          role="dialog"
-          aria-modal="true"
-          aria-label="Mobile navigation"
-          className={cn(
-            'absolute right-0 top-0 h-full w-full max-w-sm bg-background shadow-2xl',
-            'flex flex-col pt-24',
-            'transition-transform duration-300 ease-out',
-            isMenuOpen ? 'translate-x-0' : 'translate-x-full'
-          )}
-        >
-          <nav className="flex flex-1 flex-col gap-2 px-6">
-            {navLinks.map((link) => (
-              <Link
-                key={link.href}
-                href={link.href}
-                className="rounded-lg px-4 py-3 text-lg font-medium text-secondary transition-colors hover:bg-secondary/5"
-                onClick={closeMenu}
-              >
-                {link.label}
-              </Link>
-            ))}
-          </nav>
+          {/* Drawer Panel */}
+          <div
+            ref={menuRef}
+            id="mobile-menu"
+            role="dialog"
+            aria-modal="true"
+            aria-label="Mobile navigation"
+            className="absolute right-0 top-0 h-full w-full max-w-sm bg-background shadow-2xl flex flex-col pt-24 animate-slide-in-right"
+          >
+            <nav className="flex flex-1 flex-col gap-2 px-6">
+              {navLinks.map((link) => (
+                <Link
+                  key={link.href}
+                  href={link.href}
+                  className="rounded-lg px-4 py-3 text-lg font-medium text-secondary transition-colors hover:bg-secondary/5"
+                  onClick={closeMenu}
+                >
+                  {link.label}
+                </Link>
+              ))}
+
+              <div className="my-4 h-px bg-border" />
+
+              <div className="px-4">
+                <LanguageSwitcher />
+              </div>
+            </nav>
+          </div>
         </div>
-      </div>
+      )}
     </header>
   );
 }
