@@ -43,6 +43,21 @@
   }
 }
 
+@layer components {
+  /* Glassmorphism styles */
+  .glass {
+    @apply border border-white/20 bg-white/70 backdrop-blur-sm shadow-soft;
+  }
+
+  .glass-dark {
+    @apply border border-white/10 bg-secondary/80 backdrop-blur-sm;
+  }
+
+  .glass-accent {
+    @apply border border-accent/20 bg-accent/5 backdrop-blur-sm;
+  }
+}
+
 /* Selection styling */
 ::selection {
   @apply bg-primary/20 text-foreground;

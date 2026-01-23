@@ -10,11 +10,37 @@
     "requestQuote": "Demander un devis"
   },
   "hero": {
-    "title": "Dispositifs Médicaux & EPI Premium,",
-    "titleHighlight": "Là Où Ça Compte",
-    "subtitle": "Nous connectons les principaux fabricants asiatiques aux prestataires de soins de santé en Afrique et au Moyen-Orient. Qualité et accessibilité pour ceux qui en ont le plus besoin.",
+    "badge": "Partenaire Santé de Confiance",
+    "headline1": "Connecter",
+    "headline2": "les Marchés,",
+    "headline3": "Livrer les Soins",
+    "subtitle": "Nous connectons les principaux fabricants asiatiques aux prestataires de soins de santé en Afrique et au Moyen-Orient. Dispositifs médicaux et EPI premium, garantissant qualité et accessibilité là où cela compte.",
+    "trustIndicator": "Plus de 100 établissements nous font confiance",
     "cta": "Demander un devis",
     "ctaSecondary": "Découvrir nos produits"
+  },
+  "trustBar": {
+    "isoCertified": "Partenaires certifiés ISO",
+    "countries": "25+ pays desservis",
+    "responseTime": "Réponse sous 24-48h",
+    "qualityGuaranteed": "Qualité garantie"
+  },
+  "whyUs": {
+    "sectionLabel": "Pourquoi nous choisir",
+    "title": "Votre Partenaire de Confiance en Santé",
+    "subtitle": "Nous allons au-delà de la simple fourniture de produits. Nous construisons des partenariats durables avec les prestataires de santé pour assurer leur succès.",
+    "certifiedTitle": "Qualité Certifiée",
+    "certifiedDesc": "Tous nos produits respectent les normes et certifications internationales de santé.",
+    "globalTitle": "De l'Asie à l'Afrique et au Moyen-Orient",
+    "globalDesc": "Nous connectons les fabricants asiatiques de confiance aux prestataires de santé des économies en développement.",
+    "supportTitle": "Support 24/7",
+    "supportDesc": "Une équipe de service client dédiée prête à vous aider à tout moment.",
+    "pricesTitle": "Prix Compétitifs",
+    "pricesDesc": "Accès direct aux fabricants sans compromis sur la qualité.",
+    "responseTitle": "Réponse Rapide",
+    "responseDesc": "Traitement rapide des devis et communication réactive.",
+    "warrantyTitle": "Garantie Incluse",
+    "warrantyDesc": "Garantie complète sur tous les équipements et commandes en gros."
   },
   "stats": {
     "products": "Produits",

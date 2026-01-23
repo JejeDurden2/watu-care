@@ -36,17 +36,29 @@ export async function Hero(): Promise<React.ReactElement> {
 
       {/* Content */}
       <Container className="relative z-10 flex min-h-[90vh] flex-col justify-center py-20">
-        <div className="max-w-2xl space-y-6">
-          <h1 className="text-4xl font-bold leading-tight tracking-tight text-white sm:text-5xl lg:text-6xl">
-            {t('title')}{' '}
-            <span className="text-accent">{t('titleHighlight')}</span>
+        <div className="max-w-3xl space-y-6">
+          {/* Badge */}
+          <div className="inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/10 px-4 py-2 backdrop-blur-sm">
+            <span className="h-2 w-2 rounded-full bg-accent" />
+            <span className="text-sm font-medium text-white/90">
+              {t('badge')}
+            </span>
+          </div>
+
+          {/* Headline */}
+          <h1 className="text-4xl font-bold leading-tight tracking-tight text-white sm:text-5xl lg:text-7xl">
+            {t('headline1')}{' '}
+            <span className="text-accent">{t('headline2')}</span>
+            <br />
+            <span className="text-white/90">{t('headline3')}</span>
           </h1>
 
-          <p className="text-lg leading-relaxed text-white/80 sm:text-xl">
+          <p className="max-w-xl text-lg leading-relaxed text-white/80 sm:text-xl">
             {t('subtitle')}
           </p>
 
-          <div className="flex flex-col gap-4 pt-4 sm:flex-row">
+          {/* CTAs */}
+          <div className="flex flex-col gap-4 pt-4 sm:flex-row sm:items-center">
             <Button size="lg" asChild>
               <a href="#quote">{t('cta')}</a>
             </Button>
@@ -59,6 +71,9 @@ export async function Hero(): Promise<React.ReactElement> {
               <a href="#products">{t('ctaSecondary')}</a>
             </Button>
           </div>
+
+          {/* Trust Indicator */}
+          <p className="pt-2 text-sm text-white/60">{t('trustIndicator')}</p>
         </div>
       </Container>
 

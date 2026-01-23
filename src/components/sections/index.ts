@@ -1,7 +1,7 @@
 export { Hero } from './Hero';
-export { Mission } from './Mission';
+export { TrustBar } from './TrustBar';
 export { Stats } from './Stats';
+export { WhyUs } from './WhyUs';
 export { Categories } from './Categories';
-export { Featured } from './Featured';
 export { HowItWorks } from './HowItWorks';
 export { CTA } from './CTA';

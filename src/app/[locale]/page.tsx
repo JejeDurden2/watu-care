@@ -1,9 +1,9 @@
 import {
   Hero,
-  Mission,
+  TrustBar,
   Stats,
+  WhyUs,
   Categories,
-  Featured,
   HowItWorks,
   CTA,
 } from '@/components/sections';
@@ -12,10 +12,10 @@ export default function Home(): React.ReactElement {
   return (
     <main>
       <Hero />
+      <TrustBar />
       <Stats />
-      <Mission />
+      <WhyUs />
       <Categories />
-      <Featured />
       <HowItWorks />
       <CTA />
     </main>

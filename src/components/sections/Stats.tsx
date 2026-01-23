@@ -33,16 +33,16 @@ export async function Stats(): Promise<React.ReactElement> {
   ];
 
   return (
-    <section className="border-y border-border bg-white py-16 lg:py-20">
+    <section className="bg-muted py-16 lg:py-20">
       <Container>
-        <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
+        <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
           {stats.map((stat) => (
             <div
               key={stat.label}
-              className="group flex flex-col items-center text-center"
+              className="glass group flex flex-col items-center rounded-2xl p-6 text-center transition-all hover:-translate-y-1 hover:shadow-soft-md"
             >
-              <div className="mb-4 flex h-14 w-14 items-center justify-center rounded-xl bg-primary/10 transition-colors group-hover:bg-primary/20">
-                <stat.icon className="h-7 w-7 text-primary" />
+              <div className="mb-4 flex h-14 w-14 items-center justify-center rounded-xl bg-primary/10 transition-colors group-hover:bg-primary group-hover:text-white">
+                <stat.icon className="h-7 w-7 text-primary transition-colors group-hover:text-white" />
               </div>
               <p className="text-4xl font-bold text-secondary">{stat.value}</p>
               <p className="mt-1 font-medium text-secondary">{stat.label}</p>
