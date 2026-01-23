@@ -117,9 +117,13 @@ export function Header(): React.ReactElement {
             </Button>
           </div>
 
-          {/* Mobile: Language Switcher + Menu Button */}
-          <div className="flex items-center gap-3 lg:hidden">
+          {/* Mobile: Actions + Menu Button */}
+          <div className="flex items-center gap-2 lg:hidden">
             <LanguageSwitcher />
+            <QuoteListBadge />
+            <Button size="sm" onClick={openModal} className="hidden sm:inline-flex">
+              {t('requestQuote')}
+            </Button>
             <button
               ref={menuButtonRef}
               type="button"
@@ -180,25 +184,6 @@ export function Header(): React.ReactElement {
                 {link.label}
               </Link>
             ))}
-
-            <div className="my-4 h-px bg-border" />
-
-            <div className="px-4">
-              <QuoteListBadge />
-            </div>
-
-            <div className="mt-auto px-4 pb-8">
-              <Button
-                size="lg"
-                className="w-full"
-                onClick={() => {
-                  closeMenu();
-                  openModal();
-                }}
-              >
-                {t('requestQuote')}
-              </Button>
-            </div>
           </nav>
         </div>
       </div>
