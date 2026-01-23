@@ -41,14 +41,14 @@ export async function Hero(): Promise<React.ReactElement> {
           </div>
 
           {/* Headline */}
-          <h1 className="text-4xl font-bold leading-tight tracking-tight text-white sm:text-5xl lg:text-7xl">
+          <h1 className="text-3xl font-bold leading-tight tracking-tight text-white sm:text-4xl lg:text-5xl">
             {t('headline1')}
             <br />
             <span className="text-accent">{t('headline2')}</span>
           </h1>
 
           {/* Subtitle */}
-          <p className="text-xl text-white/70 sm:text-2xl">{t('subtitle')}</p>
+          <p className="text-lg text-white/70 sm:text-xl">{t('subtitle')}</p>
 
           {/* CTAs */}
           <div className="flex flex-col gap-4 pt-2 sm:flex-row sm:items-center">
