@@ -98,7 +98,7 @@ export async function Footer(): Promise<React.ReactElement> {
               <li className="flex items-center gap-3">
                 <Phone className="h-4 w-4 shrink-0 text-accent" />
                 <span className="text-sm text-secondary-foreground/70">
-                  +852 XXXX XXXX
+                  +212 662 258 045
                 </span>
               </li>
             </ul>

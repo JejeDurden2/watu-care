@@ -1,6 +1,6 @@
 import type { Metadata } from 'next';
 import { getTranslations } from 'next-intl/server';
-import { Mail, MapPin, Phone, Clock } from 'lucide-react';
+import { Mail, MapPin, Phone } from 'lucide-react';
 import { Container, Button } from '@/components/ui';
 import { Link } from '@/i18n/routing';
 
@@ -30,12 +30,7 @@ export default async function ContactPage(): Promise<React.ReactElement> {
     {
       icon: Phone,
       title: t('info.phone'),
-      value: '+852 XXXX XXXX',
-    },
-    {
-      icon: Clock,
-      title: t('info.hours'),
-      value: t('info.hoursValue'),
+      value: '+212 662 258 045',
     },
   ];
 
