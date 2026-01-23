@@ -143,7 +143,7 @@ export function Header(): React.ReactElement {
         <div className="fixed inset-0 z-[60] lg:hidden">
           {/* Backdrop */}
           <div
-            className="absolute inset-0 bg-secondary/60 backdrop-blur-sm animate-fade-in"
+            className="absolute inset-0 bg-black/50"
             onClick={closeMenu}
             aria-hidden="true"
           />
@@ -155,10 +155,11 @@ export function Header(): React.ReactElement {
             role="dialog"
             aria-modal="true"
             aria-label="Mobile navigation"
-            className="absolute right-0 top-0 h-full w-full max-w-sm bg-background shadow-2xl flex flex-col animate-slide-in-right"
+            className="absolute right-0 top-0 h-full w-full max-w-xs bg-white shadow-2xl"
           >
             {/* Drawer Header */}
-            <div className="flex h-20 items-center justify-end px-4 md:h-28">
+            <div className="flex h-20 items-center justify-between border-b border-border px-4">
+              <span className="text-sm font-medium text-muted-foreground">Menu</span>
               <button
                 type="button"
                 onClick={closeMenu}
@@ -169,19 +170,19 @@ export function Header(): React.ReactElement {
               </button>
             </div>
 
-            <nav className="flex flex-1 flex-col gap-2 px-6">
+            <nav className="flex flex-col gap-1 p-4">
               {navLinks.map((link) => (
                 <Link
                   key={link.href}
                   href={link.href}
-                  className="rounded-lg px-4 py-3 text-lg font-medium text-secondary transition-colors hover:bg-secondary/5"
+                  className="rounded-lg px-4 py-3 text-base font-medium text-secondary transition-colors hover:bg-secondary/5"
                   onClick={closeMenu}
                 >
                   {link.label}
                 </Link>
               ))}
 
-              <div className="my-4 h-px bg-border" />
+              <div className="my-3 h-px bg-border" />
 
               <div className="px-4">
                 <LanguageSwitcher />
