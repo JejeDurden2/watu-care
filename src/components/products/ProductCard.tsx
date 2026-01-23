@@ -22,7 +22,7 @@ export function ProductCard({
   return (
     <Link
       href={`/${locale}/products/${category.slug}/${product.id}`}
-      className="group block h-full overflow-hidden rounded-lg border border-border bg-background transition-all hover:border-primary hover:shadow-lg"
+      className="group block h-full overflow-hidden rounded-xl border border-white/20 bg-white/70 backdrop-blur-sm transition-all hover:border-primary/50 hover:shadow-soft-md"
     >
       <div className="flex h-full flex-col">
         {/* Product Image */}
