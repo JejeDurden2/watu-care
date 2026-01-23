@@ -7,6 +7,13 @@ import { locales, type Locale } from '@/i18n/config';
 import { Header, Footer } from '@/components/layout';
 import { QuoteProvider } from '@/components/providers/QuoteProvider';
 import { QuoteModal } from '@/components/quote';
+import {
+  generateOrganizationSchema,
+  generateWebSiteSchema,
+  generateMedicalBusinessSchema,
+} from '@/lib/schema';
+
+const BASE_URL = 'https://watu-care.com';
 
 interface Props {
   children: React.ReactNode;
@@ -21,43 +28,80 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { locale } = await params;
   const t = await getTranslations({ locale, namespace: 'meta' });
 
+  const title = t('title');
+  const description = t('description');
+
   return {
-    title: t('title'),
-    description: t('description'),
+    title: {
+      default: title,
+      template: `%s | Watu Care`,
+    },
+    description,
     keywords: [
       'medical devices',
       'PPE',
+      'personal protective equipment',
       'wholesale medical supplies',
       'B2B medical',
       'healthcare equipment',
       'Africa healthcare',
       'Middle East medical supplies',
+      'medical wholesale Hong Kong',
+      'surgical supplies',
+      'hospital equipment',
+      'medical consumables',
     ],
-    authors: [{ name: 'Watu Care' }],
+    authors: [{ name: 'Watu Care', url: BASE_URL }],
+    creator: 'Watu Care',
+    publisher: 'Watu Care',
+    metadataBase: new URL(BASE_URL),
     openGraph: {
-      title: t('title'),
-      description: t('description'),
+      title,
+      description,
       type: 'website',
-      url: `https://watu-care.com/${locale}`,
+      url: `${BASE_URL}/${locale}`,
       siteName: 'Watu Care',
       locale: locale === 'fr' ? 'fr_FR' : 'en_US',
+      images: [
+        {
+          url: `${BASE_URL}/og-image.png`,
+          width: 1200,
+          height: 630,
+          alt: 'Watu Care - Premium Medical Devices & PPE Wholesale',
+        },
+      ],
     },
     twitter: {
       card: 'summary_large_image',
-      title: t('title'),
-      description: t('description'),
+      title,
+      description,
+      images: [`${BASE_URL}/og-image.png`],
+      creator: '@watucare',
     },
     alternates: {
-      canonical: `https://watu-care.com/${locale}`,
+      canonical: `${BASE_URL}/${locale}`,
       languages: {
-        en: 'https://watu-care.com/en',
-        fr: 'https://watu-care.com/fr',
+        en: `${BASE_URL}/en`,
+        fr: `${BASE_URL}/fr`,
       },
     },
     robots: {
       index: true,
       follow: true,
+      googleBot: {
+        index: true,
+        follow: true,
+        'max-video-preview': -1,
+        'max-image-preview': 'large',
+        'max-snippet': -1,
+      },
     },
+    verification: {
+      // Add these when you have the verification codes
+      // google: 'your-google-verification-code',
+      // yandex: 'your-yandex-verification-code',
+    },
+    category: 'Medical Supplies',
   };
 }
 
@@ -73,9 +117,33 @@ export default async function LocaleLayout({
 
   const messages = await getMessages();
 
+  // Generate JSON-LD structured data
+  const organizationSchema = generateOrganizationSchema();
+  const webSiteSchema = generateWebSiteSchema(locale);
+  const medicalBusinessSchema = generateMedicalBusinessSchema();
+
   return (
     <NextIntlClientProvider messages={messages}>
       <QuoteProvider>
+        {/* JSON-LD Structured Data */}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(organizationSchema),
+          }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(webSiteSchema),
+          }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(medicalBusinessSchema),
+          }}
+        />
         <Header />
         {children}
         <Footer />

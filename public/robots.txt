@@ -1,6 +1,13 @@
+# Watu Care - Medical Devices & PPE Wholesale
+# https://watu-care.com
+
 # Allow all crawlers
 User-agent: *
 Allow: /
 
+# Disallow admin and API routes
+Disallow: /api/
+Disallow: /_next/
+
 # Sitemap
-Sitemap: https://yourapp.com/sitemap.xml
+Sitemap: https://watu-care.com/sitemap.xml
