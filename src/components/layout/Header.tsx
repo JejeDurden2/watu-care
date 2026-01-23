@@ -155,10 +155,14 @@ export function Header(): React.ReactElement {
             role="dialog"
             aria-modal="true"
             aria-label="Mobile navigation"
-            className="absolute right-0 top-0 h-full w-full max-w-xs bg-white shadow-2xl"
+            className="absolute right-0 top-0 h-full w-full max-w-xs shadow-2xl"
+            style={{ backgroundColor: '#ffffff' }}
           >
             {/* Drawer Header */}
-            <div className="flex h-20 items-center justify-between border-b border-border px-4">
+            <div
+              className="flex h-20 items-center justify-between border-b border-border px-4"
+              style={{ backgroundColor: '#ffffff' }}
+            >
               <span className="text-sm font-medium text-muted-foreground">Menu</span>
               <button
                 type="button"
@@ -170,7 +174,10 @@ export function Header(): React.ReactElement {
               </button>
             </div>
 
-            <nav className="flex flex-col gap-1 p-4">
+            <nav
+              className="flex flex-col gap-1 p-4"
+              style={{ backgroundColor: '#ffffff' }}
+            >
               {navLinks.map((link) => (
                 <Link
                   key={link.href}
