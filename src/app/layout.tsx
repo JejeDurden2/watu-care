@@ -1,5 +1,6 @@
 import { Inter } from 'next/font/google';
 import './globals.css';
+import { FloatingWhatsApp } from '@/components/ui/FloatingWhatsApp';
 
 const inter = Inter({
   subsets: ['latin'],
@@ -14,7 +15,10 @@ export default function RootLayout({
 }>): React.ReactElement {
   return (
     <html lang="en" className={inter.variable} suppressHydrationWarning>
-      <body className="font-sans">{children}</body>
+      <body className="font-sans">
+        {children}
+        <FloatingWhatsApp />
+      </body>
     </html>
   );
 }
