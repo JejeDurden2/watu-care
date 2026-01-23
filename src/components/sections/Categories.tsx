@@ -1,32 +1,11 @@
-import {
-  Package,
-  Wind,
-  Syringe,
-  Bandage,
-  FlaskConical,
-  Dog,
-  Stethoscope,
-  Shield,
-} from 'lucide-react';
 import { getTranslations } from 'next-intl/server';
 import { Link } from '@/i18n/routing';
 import { Container } from '@/components/ui';
-
-const icons = [Package, Wind, Syringe, Bandage, FlaskConical, Dog, Stethoscope, Shield];
-
-const categoryKeys = [
-  { nameKey: 'procedurePacks', descKey: 'procedurePacksDesc' },
-  { nameKey: 'tubesAirway', descKey: 'tubesAirwayDesc' },
-  { nameKey: 'catheter', descKey: 'catheterDesc' },
-  { nameKey: 'dressing', descKey: 'dressingDesc' },
-  { nameKey: 'laboratory', descKey: 'laboratoryDesc' },
-  { nameKey: 'veterinary', descKey: 'veterinaryDesc' },
-  { nameKey: 'equipment', descKey: 'equipmentDesc' },
-  { nameKey: 'gloves', descKey: 'glovesDesc' },
-];
+import { getAllCategories } from '@/lib/products';
 
 export async function Categories(): Promise<React.ReactElement> {
   const t = await getTranslations('categories');
+  const categories = getAllCategories();
 
   return (
     <section id="products" className="bg-muted py-20 lg:py-28">
@@ -40,22 +19,24 @@ export async function Categories(): Promise<React.ReactElement> {
         </div>
 
         {/* Categories Grid */}
-        <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
-          {categoryKeys.map((category, index) => {
-            const Icon = icons[index];
+        <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4 xl:grid-cols-5">
+          {categories.map((category) => {
+            const Icon = category.icon;
             return (
               <Link
-                key={category.nameKey}
-                href="#quote"
+                key={category.id}
+                href={`/products/${category.slug}`}
                 className="group flex flex-col items-center rounded-xl border border-border bg-white p-6 text-center shadow-soft transition-all duration-200 hover:-translate-y-1 hover:shadow-soft-md"
               >
                 <div className="mb-4 flex h-14 w-14 items-center justify-center rounded-xl bg-primary/10 transition-colors group-hover:bg-primary group-hover:text-white">
                   <Icon className="h-7 w-7 text-primary group-hover:text-white" />
                 </div>
                 <h3 className="mb-1 font-semibold text-secondary">
-                  {t(category.nameKey)}
+                  {category.title}
                 </h3>
-                <p className="text-sm text-muted-foreground">{t(category.descKey)}</p>
+                <p className="text-sm text-muted-foreground">
+                  {category.description}
+                </p>
               </Link>
             );
           })}
