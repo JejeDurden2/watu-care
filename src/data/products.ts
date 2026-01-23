@@ -1174,4 +1174,331 @@ export const productCategories: ProductCategory[] = [
       },
     ],
   },
+  {
+    id: 'gloves',
+    icon: Hand,
+    title: 'Gloves',
+    slug: 'gloves',
+    description:
+      'Examination and surgical gloves for healthcare professionals',
+    longDescription:
+      'Our comprehensive gloves range includes latex, nitrile, and vinyl options for examination and surgical use. Providing optimal protection, comfort, and dexterity for healthcare workers across all clinical settings.',
+    color: 'bg-accent/10 text-accent',
+    products: [
+      {
+        id: 'latex-exam-gloves-powdered',
+        name: 'Latex Examination Gloves - Powdered',
+        description:
+          'Ambidextrous latex gloves with cornstarch powder for easy donning',
+        specifications: [
+          'Natural rubber latex',
+          'Lightly powdered with cornstarch',
+          'Ambidextrous design',
+          'Beaded cuff for added strength',
+          'Textured fingertips for grip',
+          'Single-use, non-sterile',
+        ],
+        sizes: ['XS', 'S', 'M', 'L', 'XL'],
+      },
+      {
+        id: 'latex-exam-gloves-powder-free',
+        name: 'Latex Examination Gloves - Powder-Free',
+        description:
+          'Powder-free latex gloves for users with powder sensitivity',
+        specifications: [
+          'Natural rubber latex',
+          'Powder-free (chlorinated or polymer coated)',
+          'Ambidextrous design',
+          'Beaded cuff',
+          'Textured surface',
+          'Single-use, non-sterile',
+        ],
+        sizes: ['XS', 'S', 'M', 'L', 'XL'],
+      },
+      {
+        id: 'nitrile-exam-gloves-powder-free',
+        name: 'Nitrile Examination Gloves - Powder-Free',
+        description:
+          'Latex-free nitrile gloves offering superior chemical resistance',
+        specifications: [
+          'Synthetic nitrile rubber (latex-free)',
+          'Powder-free',
+          'Ambidextrous design',
+          'Textured fingertips for excellent grip',
+          'High resistance to punctures and chemicals',
+          'Single-use, non-sterile',
+        ],
+        sizes: ['XS', 'S', 'M', 'L', 'XL'],
+      },
+      {
+        id: 'nitrile-exam-gloves-extended-cuff',
+        name: 'Nitrile Examination Gloves - Extended Cuff',
+        description:
+          'Extended length nitrile gloves for added forearm protection',
+        specifications: [
+          'Synthetic nitrile rubber (latex-free)',
+          'Powder-free',
+          'Extended cuff length (30cm)',
+          'Ambidextrous',
+          'Textured grip',
+          'Ideal for obstetrics, veterinary, and laboratory use',
+        ],
+        sizes: ['S', 'M', 'L', 'XL'],
+      },
+      {
+        id: 'vinyl-exam-gloves-powder-free',
+        name: 'Vinyl Examination Gloves - Powder-Free',
+        description:
+          'Economical vinyl gloves for low-risk, short-duration tasks',
+        specifications: [
+          'Polyvinyl chloride (PVC)',
+          'Powder-free',
+          'Latex-free (suitable for latex allergies)',
+          'Ambidextrous',
+          'Smooth finish',
+          'Single-use, non-sterile',
+        ],
+        sizes: ['S', 'M', 'L', 'XL'],
+      },
+      {
+        id: 'surgical-gloves-latex-powdered',
+        name: 'Surgical Gloves - Latex, Powdered, Sterile',
+        description:
+          'Sterile latex surgical gloves with anatomical design',
+        specifications: [
+          'Natural rubber latex',
+          'Lightly powdered',
+          'Anatomical (left/right hand specific)',
+          'Sterile, single-pair packaging',
+          'Textured surface for instrument grip',
+          'Micro-roughened or fully textured',
+        ],
+        sizes: ['5.5', '6.0', '6.5', '7.0', '7.5', '8.0', '8.5', '9.0'],
+      },
+      {
+        id: 'surgical-gloves-latex-powder-free',
+        name: 'Surgical Gloves - Latex, Powder-Free, Sterile',
+        description:
+          'Powder-free sterile latex surgical gloves',
+        specifications: [
+          'Natural rubber latex',
+          'Powder-free (polymer coated)',
+          'Anatomical design',
+          'Sterile, single-pair packaging',
+          'Textured for secure grip',
+          'Low protein content for reduced allergy risk',
+        ],
+        sizes: ['5.5', '6.0', '6.5', '7.0', '7.5', '8.0', '8.5', '9.0'],
+      },
+      {
+        id: 'surgical-gloves-nitrile-powder-free',
+        name: 'Surgical Gloves - Nitrile, Powder-Free, Sterile',
+        description:
+          'Latex-free nitrile surgical gloves for sensitive users',
+        specifications: [
+          'Synthetic nitrile (latex-free)',
+          'Powder-free',
+          'Anatomical design',
+          'Sterile, single-pair packaging',
+          'Excellent chemical resistance',
+          'Textured surface',
+        ],
+        sizes: ['5.5', '6.0', '6.5', '7.0', '7.5', '8.0', '8.5', '9.0'],
+      },
+      {
+        id: 'surgical-gloves-double-gloving',
+        name: 'Surgical Gloves - Double Gloving System',
+        description:
+          'Color-coded double gloving system for high-risk procedures',
+        specifications: [
+          'Outer glove: Natural or colored',
+          'Inner glove: Contrasting color (e.g., green)',
+          'Latex or nitrile options',
+          'Sterile, paired packaging',
+          'Indicator system for glove perforation detection',
+        ],
+        sizes: ['6.0', '6.5', '7.0', '7.5', '8.0', '8.5'],
+      },
+      {
+        id: 'orthopedic-surgical-gloves',
+        name: 'Orthopedic Surgical Gloves (Neoprene or Polyisoprene)',
+        description:
+          'Heavy-duty gloves for orthopedic and high-stress procedures',
+        specifications: [
+          'Neoprene or synthetic polyisoprene',
+          'Extra thickness for puncture resistance',
+          'Latex-free options available',
+          'Sterile, anatomical design',
+          'Enhanced durability',
+        ],
+        sizes: ['6.5', '7.0', '7.5', '8.0', '8.5', '9.0'],
+      },
+      {
+        id: 'heavy-duty-utility-gloves',
+        name: 'Heavy-Duty Utility Gloves (Reusable)',
+        description:
+          'Reusable rubber gloves for cleaning and disinfection tasks',
+        specifications: [
+          'Natural rubber or nitrile',
+          'Textured palm and fingers for grip',
+          'Extended cuff (flock-lined or unlined)',
+          'Chemical-resistant',
+          'Reusable (after proper cleaning)',
+        ],
+        sizes: ['S', 'M', 'L', 'XL'],
+      },
+      {
+        id: 'cpe-gloves',
+        name: 'CPE (Cast Polyethylene) Gloves',
+        description:
+          'Disposable plastic gloves for food handling and light tasks',
+        specifications: [
+          'Cast polyethylene (CPE)',
+          'Ambidextrous',
+          'Loose fit',
+          'Economical',
+          'Single-use, non-sterile',
+        ],
+        sizes: ['One size (universal)'],
+      },
+      {
+        id: 'glove-liners-cotton',
+        name: 'Glove Liners - Cotton',
+        description:
+          'Absorbent cotton liners to wear under gloves for comfort',
+        specifications: [
+          '100% cotton',
+          'Absorbs moisture and perspiration',
+          'Improves comfort during prolonged glove use',
+          'Reusable (washable)',
+        ],
+        sizes: ['S', 'M', 'L'],
+      },
+      {
+        id: 'radiation-protection-gloves',
+        name: 'Radiation Protection Gloves (Lead-Free or Lead)',
+        description:
+          'Protective gloves for use during fluoroscopy and radiology',
+        specifications: [
+          'Lead-free (composite materials) or lead-lined',
+          'Attenuation: 0.5mm Pb equivalent or higher',
+          'Sterile or non-sterile options',
+          'Flexible for dexterity',
+        ],
+        sizes: ['6.5', '7.0', '7.5', '8.0', '8.5'],
+      },
+    ],
+  },
+  {
+    id: 'face-protection',
+    icon: ShieldCheck,
+    title: 'Face Protection',
+    slug: 'face-protection',
+    description: 'Surgical masks and face shields for infection control',
+    longDescription:
+      'Our face protection range provides essential barrier protection for healthcare workers and patients. Including surgical masks with high bacterial filtration efficiency and reusable face shields for comprehensive facial protection.',
+    color: 'bg-primary/10 text-primary',
+    products: [
+      {
+        id: 'surgical-mask-3ply',
+        name: 'Surgical Face Mask - 3-Ply',
+        description:
+          'Disposable 3-layer surgical mask with ear loops',
+        specifications: [
+          '3-ply construction: outer spunbond, middle meltblown filter, inner soft layer',
+          'Bacterial Filtration Efficiency (BFE) ≥ 95% or ≥ 98%',
+          'Breathability (Delta P) < 5 mmH2O/cm²',
+          'Fluid resistance (optional, for surgical use)',
+          'Nose clip for secure fit',
+          'Ear loops or tie-on straps',
+        ],
+        materials: [
+          'Non-woven polypropylene',
+          'Meltblown filter layer',
+        ],
+      },
+      {
+        id: 'face-shield-reusable',
+        name: 'Face Shield - Reusable',
+        description:
+          'Full-face protective shield with adjustable headband',
+        specifications: [
+          'Clear PET or polycarbonate visor',
+          'Full-face coverage (chin to forehead)',
+          'Anti-fog coating',
+          'Adjustable foam headband',
+          'Reusable (cleanable and disinfectable)',
+          'Lightweight and comfortable',
+        ],
+      },
+    ],
+  },
+  {
+    id: 'bodily-waste-management',
+    icon: Recycle,
+    title: 'Bodily Waste Management',
+    slug: 'bodily-waste-management',
+    description:
+      'Vomit bags, bedpans, and waste management solutions',
+    longDescription:
+      'Our bodily waste management products ensure hygienic and dignified patient care. From disposable emesis bags to reusable bedpans and urinals, designed for comfort and ease of use in clinical settings.',
+    color: 'bg-accent/10 text-accent',
+    products: [
+      {
+        id: 'emesis-bag-vomit-bag',
+        name: 'Emesis Bag (Vomit Bag)',
+        description:
+          'Disposable leak-proof bag for nausea and motion sickness',
+        specifications: [
+          'Graduated volume markings',
+          'Leak-proof seal',
+          'Wide mouth opening',
+          'Compact and portable',
+          'Disposable, single-use',
+        ],
+        sizes: ['500ml', '1000ml'],
+      },
+      {
+        id: 'bedpan-reusable',
+        name: 'Bedpan - Reusable (Stainless Steel or Plastic)',
+        description:
+          'Durable bedpan for bedridden patients',
+        specifications: [
+          'Stainless steel or high-density polyethylene',
+          'Smooth, easy-to-clean surface',
+          'Contoured design for patient comfort',
+          'Autoclavable (stainless steel) or chemical disinfectable (plastic)',
+        ],
+        materials: ['Stainless steel', 'High-density polyethylene (HDPE)'],
+      },
+      {
+        id: 'urinal-bottle-reusable',
+        name: 'Urinal Bottle - Reusable (Male)',
+        description:
+          'Graduated urinal for male patients',
+        specifications: [
+          'Clear or translucent plastic for volume monitoring',
+          'Graduated markings',
+          'Ergonomic handle',
+          'Leak-proof cap',
+          'Reusable (autoclavable or chemical disinfectable)',
+        ],
+        sizes: ['1000ml', '2000ml'],
+      },
+      {
+        id: 'urine-bag-drainage',
+        name: 'Urine Drainage Bag',
+        description:
+          'Sterile closed drainage bag for catheterized patients',
+        specifications: [
+          'Sterile, single-use',
+          'Anti-reflux valve to prevent backflow',
+          'Graduation markings for accurate measurement',
+          'Drainage tap or valve',
+          'Hanger for bedside attachment',
+        ],
+        sizes: ['2000ml (standard)', '500ml (leg bag)'],
+      },
+    ],
+  },
 ];
