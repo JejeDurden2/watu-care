@@ -1,7 +1,7 @@
 import { ImageResponse } from 'next/og';
 
 export const runtime = 'edge';
-export const alt = 'Watu Care - Premium Medical Devices & PPE Wholesale';
+export const alt = 'Watu Care - Premium Medical Supplies for Africa & Middle East';
 export const size = { width: 1200, height: 630 };
 export const contentType = 'image/png';
 
@@ -64,7 +64,7 @@ export default function OGImage(): ImageResponse {
               }}
             />
             <span style={{ color: 'rgba(255, 255, 255, 0.9)', fontSize: '18px' }}>
-              Trusted Healthcare Partner
+              B2B Medical Wholesale
             </span>
           </div>
 
@@ -90,18 +90,19 @@ export default function OGImage(): ImageResponse {
               maxWidth: '800px',
             }}
           >
-            Premium Medical Devices & PPE Wholesale
+            Premium Medical Supplies
           </p>
 
           {/* Subtitle */}
           <p
             style={{
-              fontSize: '20px',
-              color: 'rgba(255, 255, 255, 0.7)',
-              margin: '12px 0 0 0',
+              fontSize: '22px',
+              color: '#5fb8a5',
+              margin: '8px 0 0 0',
+              fontWeight: 500,
             }}
           >
-            Asia → Africa & Middle East
+            for Africa & Middle East
           </p>
         </div>
 

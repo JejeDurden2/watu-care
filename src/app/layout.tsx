@@ -22,11 +22,11 @@ export const viewport: Viewport = {
 export const metadata: Metadata = {
   metadataBase: new URL('https://watu-care.com'),
   title: {
-    default: 'Watu Care - Premium Medical Devices & PPE Wholesale',
+    default: 'Watu Care - Premium Medical Supplies for Africa & Middle East',
     template: '%s | Watu Care',
   },
   description:
-    "Bridging Asia's leading manufacturers with healthcare providers across Africa and the Middle East. Premium medical devices and PPE wholesale.",
+    "Premium medical devices and PPE from Asia's top manufacturers. B2B wholesale for healthcare facilities in Africa and the Middle East.",
   applicationName: 'Watu Care',
   manifest: '/site.webmanifest',
   icons: {

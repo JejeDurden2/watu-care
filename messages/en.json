@@ -1,7 +1,7 @@
 {
   "meta": {
-    "title": "Watu Care - Premium Medical Devices & PPE Wholesale",
-    "description": "We deliver premium medical devices and PPE, ensuring quality and accessibility where it matters most. Connecting Asia's manufacturers with healthcare providers across Africa and the Middle East."
+    "title": "Watu Care - Premium Medical Supplies for Africa & Middle East",
+    "description": "Premium medical devices and PPE from Asia's top manufacturers. B2B wholesale for healthcare facilities in Africa and the Middle East."
   },
   "nav": {
     "products": "Products",
@@ -11,9 +11,9 @@
   },
   "hero": {
     "badge": "B2B Medical Wholesale",
-    "headline1": "Quality Medical Supplies,",
-    "headline2": "Delivered",
-    "subtitle": "From Asia to Africa & the Middle East.",
+    "headline1": "Premium Medical Supplies",
+    "headline2": "for Africa & Middle East",
+    "subtitle": "From Asia's top manufacturers to your facility.",
     "cta": "Get a Quote",
     "ctaSecondary": "View Products"
   },
