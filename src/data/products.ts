@@ -585,4 +585,593 @@ export const productCategories: ProductCategory[] = [
       },
     ],
   },
+  {
+    id: 'dressing',
+    icon: Bandage,
+    title: 'Dressing & Kits',
+    slug: 'dressing',
+    description: 'Medical dressings, wound care kits, and adhesive solutions',
+    longDescription:
+      'Our comprehensive dressing and kits range includes advanced wound care solutions, from hydrocolloid and alginate dressings to complete procedure kits. Designed for optimal healing and infection prevention.',
+    color: 'bg-accent/10 text-accent',
+    products: [
+      {
+        id: 'hydrocolloid-dressing',
+        name: 'Hydrocolloid Dressing',
+        description:
+          'Advanced wound dressing for moist wound healing environment',
+        specifications: [
+          'Sterile, self-adhesive',
+          'Waterproof outer layer',
+          'Promotes autolytic debridement',
+          'Reduces pain and trauma during dressing changes',
+        ],
+        sizes: ['5x5cm', '10x10cm', '15x15cm', '20x20cm'],
+      },
+      {
+        id: 'alginate-dressing',
+        name: 'Alginate Dressing',
+        description: 'Highly absorbent dressing for moderate to heavy exudate',
+        specifications: [
+          'Derived from seaweed (calcium alginate)',
+          'High absorbency capacity',
+          'Forms gel on contact with wound exudate',
+          'Hemostatic properties',
+        ],
+        sizes: ['5x5cm', '10x10cm', '10x20cm'],
+      },
+      {
+        id: 'transparent-film-dressing',
+        name: 'Transparent Film Dressing',
+        description:
+          'Breathable, waterproof film for IV sites and minor wounds',
+        specifications: [
+          'Semi-permeable polyurethane film',
+          'Waterproof and bacteria-proof',
+          'Allows oxygen and moisture vapor transmission',
+          'Transparent for wound observation',
+        ],
+        sizes: ['6x7cm', '10x12cm', '15x20cm'],
+      },
+      {
+        id: 'foam-dressing',
+        name: 'Foam Dressing',
+        description: 'Absorbent polyurethane foam for moderate exudate wounds',
+        specifications: [
+          'Soft polyurethane foam',
+          'Absorbs and retains exudate',
+          'Maintains moist wound environment',
+          'Non-adherent wound contact layer',
+        ],
+        sizes: ['10x10cm', '15x15cm', '20x20cm'],
+      },
+      {
+        id: 'island-dressing',
+        name: 'Island Dressing',
+        description:
+          'Sterile adhesive dressing with central absorbent pad',
+        specifications: [
+          'Central non-adherent pad',
+          'Adhesive border for secure fixation',
+          'Breathable backing',
+          'Individually wrapped and sterile',
+        ],
+        sizes: ['6x7cm', '9x10cm', '9x15cm', '9x25cm', '9x35cm'],
+      },
+      {
+        id: 'non-woven-swabs',
+        name: 'Non-Woven Swabs',
+        description: 'Soft, absorbent swabs for wound cleaning and dressing',
+        specifications: [
+          'Non-woven fabric (viscose/polyester blend)',
+          'High absorbency',
+          'Low linting',
+          'Sterile or non-sterile options',
+        ],
+        sizes: ['5x5cm', '7.5x7.5cm', '10x10cm'],
+      },
+      {
+        id: 'gauze-swabs',
+        name: 'Gauze Swabs',
+        description: 'Traditional cotton gauze for wound care',
+        specifications: [
+          '100% cotton gauze',
+          '12-ply or 16-ply',
+          'X-ray detectable thread option',
+          'Sterile or non-sterile',
+        ],
+        sizes: ['7.5x7.5cm', '10x10cm'],
+      },
+      {
+        id: 'adhesive-wound-plaster',
+        name: 'Adhesive Wound Plaster',
+        description:
+          'Ready-to-use adhesive plasters for minor cuts and abrasions',
+        specifications: [
+          'Hypoallergenic adhesive',
+          'Non-adherent wound pad',
+          'Breathable fabric or plastic backing',
+          'Various shapes (strips, knuckle, fingertip)',
+        ],
+        sizes: [
+          '72x19mm strips',
+          '72x25mm strips',
+          'Knuckle plasters',
+          'Fingertip plasters',
+        ],
+      },
+      {
+        id: 'skin-closure-strips',
+        name: 'Skin Closure Strips (Steri-Strips)',
+        description:
+          'Non-invasive wound closure strips for superficial lacerations',
+        specifications: [
+          'Reinforced adhesive strips',
+          'Hypoallergenic',
+          'Provides secure wound closure',
+          'Reduces scarring',
+        ],
+        sizes: ['6x75mm', '12x100mm'],
+      },
+      {
+        id: 'surgical-tape-paper',
+        name: 'Surgical Tape - Paper',
+        description:
+          'Hypoallergenic paper tape for sensitive skin and general use',
+        specifications: [
+          'Microporous paper backing',
+          'Hypoallergenic acrylic adhesive',
+          'Easy to tear by hand',
+          'Breathable',
+        ],
+        sizes: ['1.25cm x 9.1m', '2.5cm x 9.1m', '5cm x 9.1m'],
+      },
+      {
+        id: 'surgical-tape-silk',
+        name: 'Surgical Tape - Silk',
+        description:
+          'Strong, flexible silk tape for secure dressing fixation',
+        specifications: [
+          'Silk-like fabric backing',
+          'High tensile strength',
+          'Conformable and flexible',
+          'Hand-tearable',
+        ],
+        sizes: ['1.25cm x 9.1m', '2.5cm x 9.1m', '5cm x 9.1m'],
+      },
+      {
+        id: 'elastic-adhesive-bandage',
+        name: 'Elastic Adhesive Bandage',
+        description: 'Elastic tape for compression and support',
+        specifications: [
+          'Elastic cotton/polyester blend',
+          'Zinc oxide adhesive',
+          'Provides compression and support',
+          'Conforms to body contours',
+        ],
+        sizes: ['5cm x 4.5m', '7.5cm x 4.5m', '10cm x 4.5m'],
+      },
+      {
+        id: 'dressing-retention-tape',
+        name: 'Dressing Retention Tape (Hypafix)',
+        description: 'Wide, self-adhesive tape for securing large dressings',
+        specifications: [
+          'Non-woven polyester backing',
+          'Hypoallergenic adhesive',
+          'High wearing comfort',
+          'Radiolucent',
+        ],
+        sizes: ['5cm x 10m', '10cm x 10m', '15cm x 10m'],
+      },
+      {
+        id: 'tracheostomy-dressing',
+        name: 'Tracheostomy Dressing',
+        description: 'Pre-cut dressing for tracheostomy sites',
+        specifications: [
+          'Keyhole design for tube placement',
+          'Non-woven, absorbent material',
+          'Non-fraying edges',
+          'Sterile, single-use',
+        ],
+        sizes: ['8x8cm'],
+      },
+      {
+        id: 'dressing-pack-sterile',
+        name: 'Sterile Dressing Pack',
+        description: 'Complete sterile kit for wound dressing procedures',
+        specifications: [
+          'Contents: Gloves, gauze swabs, non-woven swabs, disposal bag',
+          'Optional: Sterile drape, forceps, gallipot',
+          'Individually wrapped and sterile',
+          'Ready-to-use',
+        ],
+      },
+    ],
+  },
+  {
+    id: 'laboratory-supplies',
+    icon: TestTube,
+    title: 'Laboratory Supplies',
+    slug: 'laboratory-supplies',
+    description: 'Specimen collection and laboratory testing supplies',
+    longDescription:
+      'Our laboratory supplies range covers all essential specimen collection and testing needs, from blood collection systems to urine containers and culture swabs. Ensuring accuracy and safety in diagnostic procedures.',
+    color: 'bg-primary/10 text-primary',
+    products: [
+      {
+        id: 'blood-collection-tube-edta',
+        name: 'Blood Collection Tube - EDTA (Purple Cap)',
+        description:
+          'Vacuum tube with EDTA anticoagulant for hematology testing',
+        specifications: [
+          'K2EDTA or K3EDTA anticoagulant',
+          'Sterile, evacuated tube',
+          'Purple cap for identification',
+          'ISO 13485 certified',
+        ],
+        sizes: ['2ml', '3ml', '4ml', '5ml', '6ml'],
+      },
+      {
+        id: 'blood-collection-tube-serum',
+        name: 'Blood Collection Tube - Plain/Serum (Red Cap)',
+        description:
+          'Vacuum tube for serum collection (chemistry, serology)',
+        specifications: [
+          'No additives (plain) or clot activator',
+          'Sterile, evacuated tube',
+          'Red cap for identification',
+          'Clear or gel separator options',
+        ],
+        sizes: ['2ml', '3ml', '4ml', '5ml', '6ml', '10ml'],
+      },
+      {
+        id: 'blood-collection-tube-sodium-citrate',
+        name: 'Blood Collection Tube - Sodium Citrate (Blue Cap)',
+        description: 'Vacuum tube for coagulation testing (PT, APTT)',
+        specifications: [
+          '3.2% or 3.8% sodium citrate',
+          'Sterile, evacuated tube',
+          'Blue cap for identification',
+          'Precise blood-to-anticoagulant ratio (9:1)',
+        ],
+        sizes: ['1.8ml', '2.7ml', '4.5ml'],
+      },
+      {
+        id: 'blood-collection-tube-fluoride',
+        name: 'Blood Collection Tube - Sodium Fluoride (Gray Cap)',
+        description:
+          'Vacuum tube with glycolysis inhibitor for glucose testing',
+        specifications: [
+          'Sodium fluoride + potassium oxalate',
+          'Prevents glycolysis',
+          'Sterile, evacuated tube',
+          'Gray cap for identification',
+        ],
+        sizes: ['2ml', '3ml', '4ml', '5ml'],
+      },
+      {
+        id: 'safety-blood-collection-needle',
+        name: 'Safety Blood Collection Needle',
+        description:
+          'Single-use safety needle for vacuum tube blood collection',
+        specifications: [
+          'Safety shield mechanism to prevent needlestick injuries',
+          'Ultra-thin wall for patient comfort',
+          'Compatible with standard vacuum tube holders',
+          'Color-coded hub',
+        ],
+        sizes: ['21G', '22G', '23G'],
+      },
+      {
+        id: 'urine-container-sterile',
+        name: 'Sterile Urine Container',
+        description:
+          'Leak-proof container for urine specimen collection',
+        specifications: [
+          'Sterile, single-use',
+          'Screw-cap lid with leak-proof seal',
+          'Graduated markings',
+          'Label area for patient information',
+        ],
+        sizes: ['30ml', '60ml', '100ml', '120ml'],
+      },
+      {
+        id: 'stool-container',
+        name: 'Stool Specimen Container',
+        description:
+          'Container with integrated spoon for fecal specimen collection',
+        specifications: [
+          'Screw-cap lid with attached spoon',
+          'Leak-proof design',
+          'Wide mouth for easy collection',
+          'Label area',
+        ],
+        sizes: ['30ml', '60ml'],
+      },
+      {
+        id: 'transport-swab-viral',
+        name: 'Viral Transport Swab (VTM)',
+        description:
+          'Flocked swab with viral transport medium for virus detection',
+        specifications: [
+          'Nylon flocked swab tip',
+          'Viral transport medium (VTM) preserves viral integrity',
+          'Breakpoint shaft for secure closure',
+          'Sterile, individually wrapped',
+        ],
+      },
+      {
+        id: 'culture-swab-bacterial',
+        name: 'Bacterial Culture Swab (Amies or Stuart Medium)',
+        description:
+          'Swab with transport medium for bacterial culture',
+        specifications: [
+          'Rayon or cotton swab tip',
+          'Amies or Stuart transport medium',
+          'Maintains bacterial viability during transport',
+          'Sterile, individually wrapped',
+        ],
+      },
+    ],
+  },
+  {
+    id: 'veterinary-products',
+    icon: Dog,
+    title: 'Veterinary Products',
+    slug: 'veterinary-products',
+    description:
+      'Specialized medical supplies for veterinary care and animal health',
+    longDescription:
+      'Our veterinary product line provides high-quality medical supplies specifically designed for animal healthcare, from surgical drapes to endotracheal tubes and IV catheters. Trusted by veterinary professionals across the region.',
+    color: 'bg-accent/10 text-accent',
+    products: [
+      {
+        id: 'vet-surgical-drape-pack',
+        name: 'Veterinary Surgical Drape Pack',
+        description:
+          'Sterile drape pack for veterinary surgical procedures',
+        specifications: [
+          'Includes: Table cover, instrument cover, surgical drapes',
+          'SMS or spunlace non-woven material',
+          'Fluid-resistant',
+          'Sterile, single-use',
+        ],
+      },
+      {
+        id: 'vet-endotracheal-tube',
+        name: 'Veterinary Endotracheal Tube',
+        description:
+          'Cuffed or uncuffed tubes for animal airway management',
+        specifications: [
+          'Medical-grade PVC',
+          'Clear tube for visual confirmation',
+          'Murphy eye for ventilation safety',
+          'Inflatable cuff with pilot balloon (cuffed versions)',
+        ],
+        sizes: [
+          '2.0mm',
+          '2.5mm',
+          '3.0mm',
+          '4.0mm',
+          '5.0mm',
+          '6.0mm',
+          '7.0mm',
+          '8.0mm',
+          '10.0mm',
+          '12.0mm',
+        ],
+      },
+      {
+        id: 'vet-iv-catheter',
+        name: 'Veterinary IV Catheter',
+        description:
+          'Peripheral IV catheter designed for animal use',
+        specifications: [
+          'PTFE or FEP catheter material',
+          'Color-coded hub for size identification',
+          'Ultra-sharp needle for easy insertion',
+          'Injection port',
+        ],
+        sizes: ['18G', '20G', '22G', '24G'],
+      },
+      {
+        id: 'vet-feeding-tube',
+        name: 'Veterinary Feeding Tube',
+        description:
+          'Nasogastric or orogastric feeding tube for animals',
+        specifications: [
+          'Medical-grade PVC or silicone',
+          'Smooth, atraumatic tip',
+          'Radiopaque line for X-ray visibility',
+          'Graduated markings',
+        ],
+        sizes: ['5Fr', '8Fr', '10Fr', '12Fr', '14Fr', '16Fr'],
+      },
+      {
+        id: 'vet-urinary-catheter',
+        name: 'Veterinary Urinary Catheter',
+        description:
+          'Sterile catheter for urinary drainage in animals',
+        specifications: [
+          'Medical-grade PVC or silicone',
+          'Smooth, rounded tip',
+          'Dual drainage eyes',
+          'Sterile, single-use',
+        ],
+        sizes: ['3.5Fr', '5Fr', '6Fr', '8Fr', '10Fr'],
+      },
+      {
+        id: 'vet-surgical-gloves',
+        name: 'Veterinary Surgical Gloves',
+        description:
+          'Sterile latex or nitrile gloves for veterinary surgery',
+        specifications: [
+          'Latex or powder-free nitrile',
+          'Fully textured or smooth',
+          'Sterile, single-pair packaging',
+          'Ambidextrous or anatomical shape',
+        ],
+        sizes: ['6.0', '6.5', '7.0', '7.5', '8.0', '8.5', '9.0'],
+      },
+      {
+        id: 'vet-wound-dressing',
+        name: 'Veterinary Wound Dressing',
+        description:
+          'Absorbent dressings for animal wound care',
+        specifications: [
+          'Non-adherent wound pad',
+          'Highly absorbent',
+          'Breathable backing',
+          'Sterile or non-sterile options',
+        ],
+        sizes: ['5x5cm', '10x10cm', '10x20cm'],
+      },
+      {
+        id: 'vet-bandage-cohesive',
+        name: 'Veterinary Cohesive Bandage',
+        description:
+          'Self-adherent elastic bandage for animal use (does not stick to fur)',
+        specifications: [
+          'Non-woven elastic material',
+          'Self-adherent (sticks to itself, not fur)',
+          'Provides compression and support',
+          'Available in various colors',
+        ],
+        sizes: ['5cm x 4.5m', '7.5cm x 4.5m', '10cm x 4.5m'],
+      },
+    ],
+  },
+  {
+    id: 'medical-equipment',
+    icon: Bed,
+    title: 'Medical Equipment',
+    slug: 'medical-equipment',
+    description:
+      'Patient monitoring, diagnostic tools, and hospital equipment',
+    longDescription:
+      'Our medical equipment range includes essential diagnostic and monitoring devices for healthcare facilities. From thermometers and blood pressure monitors to patient care beds and examination lights.',
+    color: 'bg-primary/10 text-primary',
+    products: [
+      {
+        id: 'digital-thermometer',
+        name: 'Digital Thermometer',
+        description:
+          'Fast, accurate digital thermometer for oral, axillary, or rectal use',
+        specifications: [
+          'LCD display',
+          'Measurement range: 32°C - 42°C',
+          'Accuracy: ±0.1°C',
+          'Audible fever alarm',
+          'Memory recall of last reading',
+          'Waterproof (some models)',
+        ],
+      },
+      {
+        id: 'infrared-forehead-thermometer',
+        name: 'Infrared Forehead Thermometer',
+        description:
+          'Non-contact infrared thermometer for quick temperature screening',
+        specifications: [
+          'Infrared technology (non-contact)',
+          'Measurement time: 1 second',
+          'Measurement range: 32°C - 42.9°C',
+          'LCD backlight display',
+          'Fever alarm',
+          'Memory storage (10-30 readings)',
+        ],
+      },
+      {
+        id: 'blood-pressure-monitor-digital',
+        name: 'Digital Blood Pressure Monitor (Automatic)',
+        description:
+          'Automatic upper arm blood pressure monitor for home or clinical use',
+        specifications: [
+          'Oscillometric measurement method',
+          'LCD display (SYS, DIA, Pulse)',
+          'Irregular heartbeat detection',
+          'Memory storage (30-90 readings)',
+          'Cuff size: 22-42cm (standard adult)',
+        ],
+      },
+      {
+        id: 'pulse-oximeter-fingertip',
+        name: 'Fingertip Pulse Oximeter',
+        description:
+          'Portable pulse oximeter for SpO2 and pulse rate monitoring',
+        specifications: [
+          'Measures SpO2 (oxygen saturation) and pulse rate',
+          'OLED or LED display',
+          'Measurement range: SpO2 70%-100%, Pulse 30-250 bpm',
+          'Low battery indicator',
+          'Auto power-off',
+        ],
+      },
+      {
+        id: 'stethoscope-dual-head',
+        name: 'Dual Head Stethoscope',
+        description:
+          'Classic acoustic stethoscope with dual-head chest piece',
+        specifications: [
+          'Dual-head chest piece (diaphragm and bell)',
+          'Stainless steel chest piece',
+          'Latex-free tubing',
+          'Comfortable ear tips',
+          'Length: 27-28 inches',
+        ],
+      },
+      {
+        id: 'nebulizer-compressor',
+        name: 'Compressor Nebulizer',
+        description:
+          'Electric compressor nebulizer for respiratory medication delivery',
+        specifications: [
+          'Compressor technology',
+          'Nebulization rate: 0.2-0.5 ml/min',
+          'Particle size: 0.5-10 μm MMAD',
+          'Includes adult and pediatric masks, mouthpiece',
+          'Quiet operation',
+        ],
+      },
+      {
+        id: 'oxygen-concentrator',
+        name: 'Oxygen Concentrator (Portable or Stationary)',
+        description:
+          'Medical-grade oxygen concentrator for oxygen therapy',
+        specifications: [
+          'Oxygen concentration: 90-96%',
+          'Flow rate: 1-5 LPM or 1-10 LPM',
+          'Alarm for low oxygen, power failure',
+          'Stationary or portable models',
+          'Noise level: <45 dB',
+        ],
+      },
+      {
+        id: 'examination-light-led',
+        name: 'LED Examination Light',
+        description:
+          'Mobile or wall-mounted LED light for medical examinations',
+        specifications: [
+          'LED light source (cool white, 4000-5000K)',
+          'Adjustable arm and head',
+          'Intensity control',
+          'Shadow-free illumination',
+          'Mobile base or wall-mounted',
+        ],
+      },
+      {
+        id: 'hospital-bed-manual',
+        name: 'Manual Hospital Bed (2-Crank or 3-Crank)',
+        description:
+          'Adjustable hospital bed with manual crank system',
+        specifications: [
+          'Steel frame with powder-coated finish',
+          '2-crank (head and foot adjustment) or 3-crank (+ height)',
+          'Side rails (collapsible)',
+          'Castor wheels with brakes',
+          'Maximum load capacity: 180-250 kg',
+          'Mattress size: 190x90cm or 200x90cm',
+        ],
+      },
+    ],
+  },
 ];
