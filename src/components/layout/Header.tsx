@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect, useCallback, useRef } from 'react';
 import Image from 'next/image';
 import { useTranslations } from 'next-intl';
 import { Menu, X } from 'lucide-react';
@@ -12,6 +12,8 @@ import { cn } from '@/lib/utils';
 
 export function Header(): React.ReactElement {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const menuRef = useRef<HTMLDivElement>(null);
+  const menuButtonRef = useRef<HTMLButtonElement>(null);
   const t = useTranslations('nav');
   const openModal = useQuoteStore((state) => state.openModal);
 
@@ -21,14 +23,71 @@ export function Header(): React.ReactElement {
     { href: '/contact', label: t('contact') },
   ];
 
+  const closeMenu = useCallback(() => {
+    setIsMenuOpen(false);
+    menuButtonRef.current?.focus();
+  }, []);
+
+  // Scroll lock when menu is open
+  useEffect(() => {
+    if (isMenuOpen) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = '';
+    }
+    return () => {
+      document.body.style.overflow = '';
+    };
+  }, [isMenuOpen]);
+
+  // Close on Escape key
+  useEffect(() => {
+    const handleKeyDown = (event: KeyboardEvent) => {
+      if (event.key === 'Escape' && isMenuOpen) {
+        closeMenu();
+      }
+    };
+
+    document.addEventListener('keydown', handleKeyDown);
+    return () => document.removeEventListener('keydown', handleKeyDown);
+  }, [isMenuOpen, closeMenu]);
+
+  // Focus trap within mobile menu
+  useEffect(() => {
+    if (!isMenuOpen || !menuRef.current) return;
+
+    const focusableElements = menuRef.current.querySelectorAll<HTMLElement>(
+      'a[href], button:not([disabled]), [tabindex]:not([tabindex="-1"])'
+    );
+    const firstElement = focusableElements[0];
+    const lastElement = focusableElements[focusableElements.length - 1];
+
+    const handleTabKey = (event: KeyboardEvent) => {
+      if (event.key !== 'Tab') return;
+
+      if (event.shiftKey && document.activeElement === firstElement) {
+        event.preventDefault();
+        lastElement?.focus();
+      } else if (!event.shiftKey && document.activeElement === lastElement) {
+        event.preventDefault();
+        firstElement?.focus();
+      }
+    };
+
+    document.addEventListener('keydown', handleTabKey);
+    firstElement?.focus();
+
+    return () => document.removeEventListener('keydown', handleTabKey);
+  }, [isMenuOpen]);
+
   return (
     <header className="sticky top-0 z-50 border-b border-border/50 bg-background/80 backdrop-blur-md">
       <Container>
         <nav className="flex h-20 items-center justify-between md:h-28">
-          {/* Logo - Enhanced visibility */}
+          {/* Logo */}
           <Link
             href="/"
-            className="flex items-center gap-2 rounded-lg transition-transform hover:scale-105"
+            className="relative z-50 flex items-center gap-2 rounded-lg transition-transform hover:scale-105"
           >
             <Image
               src="/logo.png"
@@ -62,42 +121,87 @@ export function Header(): React.ReactElement {
           <div className="flex items-center gap-3 lg:hidden">
             <LanguageSwitcher />
             <button
+              ref={menuButtonRef}
               type="button"
-              className="inline-flex items-center justify-center rounded-lg p-2 text-secondary"
+              className="relative z-50 inline-flex items-center justify-center rounded-lg p-2 text-secondary transition-colors hover:bg-secondary/10"
               onClick={() => setIsMenuOpen(!isMenuOpen)}
               aria-expanded={isMenuOpen}
-              aria-label="Toggle navigation menu"
+              aria-controls="mobile-menu"
+              aria-label={isMenuOpen ? 'Close navigation menu' : 'Open navigation menu'}
             >
+              <span className="sr-only">{isMenuOpen ? 'Close menu' : 'Open menu'}</span>
               {isMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
             </button>
           </div>
         </nav>
+      </Container>
 
-        {/* Mobile Navigation */}
+      {/* Mobile Navigation Drawer */}
+      <div
+        className={cn(
+          'fixed inset-0 z-40 lg:hidden',
+          'transition-visibility duration-300',
+          isMenuOpen ? 'visible' : 'invisible'
+        )}
+      >
+        {/* Backdrop */}
         <div
           className={cn(
-            'overflow-hidden transition-all duration-300 ease-in-out lg:hidden',
-            isMenuOpen ? 'max-h-64 pb-4' : 'max-h-0'
+            'absolute inset-0 bg-secondary/60 backdrop-blur-sm',
+            'transition-opacity duration-300',
+            isMenuOpen ? 'opacity-100' : 'opacity-0'
+          )}
+          onClick={closeMenu}
+          aria-hidden="true"
+        />
+
+        {/* Drawer Panel */}
+        <div
+          ref={menuRef}
+          id="mobile-menu"
+          role="dialog"
+          aria-modal="true"
+          aria-label="Mobile navigation"
+          className={cn(
+            'absolute right-0 top-0 h-full w-full max-w-sm bg-background shadow-2xl',
+            'flex flex-col pt-24',
+            'transition-transform duration-300 ease-out',
+            isMenuOpen ? 'translate-x-0' : 'translate-x-full'
           )}
         >
-          <div className="flex flex-col gap-4 pt-2">
+          <nav className="flex flex-1 flex-col gap-2 px-6">
             {navLinks.map((link) => (
               <Link
                 key={link.href}
                 href={link.href}
-                className="text-sm font-medium text-muted-foreground transition-colors hover:text-secondary"
-                onClick={() => setIsMenuOpen(false)}
+                className="rounded-lg px-4 py-3 text-lg font-medium text-secondary transition-colors hover:bg-secondary/5"
+                onClick={closeMenu}
               >
                 {link.label}
               </Link>
             ))}
-            <QuoteListBadge />
-            <Button size="sm" className="w-full" onClick={() => { setIsMenuOpen(false); openModal(); }}>
-              {t('requestQuote')}
-            </Button>
-          </div>
+
+            <div className="my-4 h-px bg-border" />
+
+            <div className="px-4">
+              <QuoteListBadge />
+            </div>
+
+            <div className="mt-auto px-4 pb-8">
+              <Button
+                size="lg"
+                className="w-full"
+                onClick={() => {
+                  closeMenu();
+                  openModal();
+                }}
+              >
+                {t('requestQuote')}
+              </Button>
+            </div>
+          </nav>
         </div>
-      </Container>
+      </div>
     </header>
   );
 }
