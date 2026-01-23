@@ -1,6 +1,8 @@
 import type { Product, ProductCategory } from '@/types/product';
 import { Button } from '@/components/ui';
 import { ProductSpecs } from './ProductSpecs';
+import { ProductImage } from './ProductImage';
+import { getProductImageUrl, getCategoryGradient } from '@/lib/product-images';
 
 interface ProductDetailProps {
   product: Product;
@@ -13,14 +15,30 @@ export function ProductDetail({
   category,
 }: ProductDetailProps): React.ReactElement {
   const Icon = category.icon;
+  const imageUrl =
+    product.image || getProductImageUrl(category.slug, product.name);
+  const fallbackGradient = getCategoryGradient(category.slug);
 
   return (
     <div className="space-y-8">
-      {/* Product Header */}
-      <div className="flex flex-col gap-6 md:flex-row md:items-start md:justify-between">
-        <div className="flex-1">
+      {/* Product Header with Image */}
+      <div className="grid gap-8 lg:grid-cols-2">
+        {/* Product Image */}
+        <div className="rounded-lg overflow-hidden">
+          <ProductImage
+            src={imageUrl}
+            alt={product.name}
+            icon={Icon}
+            fallbackGradient={fallbackGradient}
+            className="aspect-square w-full"
+            priority
+          />
+        </div>
+
+        {/* Product Info */}
+        <div className="flex flex-col">
           {/* Category Badge */}
-          <div className="mb-4 inline-flex items-center gap-2 rounded-lg bg-primary/10 px-3 py-1 text-sm font-medium text-primary">
+          <div className="mb-4 inline-flex w-fit items-center gap-2 rounded-lg bg-primary/10 px-3 py-1 text-sm font-medium text-primary">
             <Icon className="h-4 w-4" />
             <span>{category.title}</span>
           </div>
@@ -31,13 +49,15 @@ export function ProductDetail({
           </h1>
 
           {/* Product Description */}
-          <p className="text-lg text-foreground/80">{product.description}</p>
-        </div>
+          <p className="mb-6 text-lg text-foreground/80">
+            {product.description}
+          </p>
 
-        {/* CTA Button */}
-        <Button size="lg" className="shrink-0" asChild>
-          <a href="#quote">Request a Quote</a>
-        </Button>
+          {/* CTA Button */}
+          <Button size="lg" className="w-full sm:w-auto" asChild>
+            <a href="#quote">Request a Quote</a>
+          </Button>
+        </div>
       </div>
 
       {/* Divider */}

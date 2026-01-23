@@ -1,5 +1,7 @@
 import Link from 'next/link';
 import type { ProductCategory } from '@/types/product';
+import { ProductImage } from './ProductImage';
+import { getCategoryImageUrl, getCategoryGradient } from '@/lib/product-images';
 
 interface CategoryCardProps {
   category: ProductCategory;
@@ -11,34 +13,48 @@ export function CategoryCard({
   locale,
 }: CategoryCardProps): React.ReactElement {
   const Icon = category.icon;
+  const imageUrl = category.image || getCategoryImageUrl(category.slug);
+  const fallbackGradient = getCategoryGradient(category.slug);
 
   return (
     <Link
       href={`/${locale}/products/${category.slug}`}
-      className="group block h-full rounded-lg border border-border bg-background p-6 transition-all hover:border-primary hover:shadow-lg"
+      className="group block h-full overflow-hidden rounded-lg border border-border bg-background transition-all hover:border-primary hover:shadow-lg"
     >
       <div className="flex h-full flex-col">
-        {/* Icon */}
-        <div
-          className={`mb-4 inline-flex h-12 w-12 items-center justify-center rounded-lg ${category.color}`}
-        >
-          <Icon className="h-6 w-6" />
-        </div>
+        {/* Category Image */}
+        <ProductImage
+          src={imageUrl}
+          alt={category.title}
+          icon={Icon}
+          fallbackGradient={fallbackGradient}
+          className="h-48 w-full"
+        />
 
-        {/* Category Title */}
-        <h3 className="mb-3 text-xl font-semibold text-secondary transition-colors group-hover:text-primary">
-          {category.title}
-        </h3>
+        {/* Category Content */}
+        <div className="flex flex-1 flex-col p-6">
+          {/* Icon Badge */}
+          <div
+            className={`mb-4 inline-flex h-12 w-12 items-center justify-center rounded-lg ${category.color}`}
+          >
+            <Icon className="h-6 w-6" />
+          </div>
 
-        {/* Category Description */}
-        <p className="mb-4 flex-grow text-sm text-foreground/70">
-          {category.description}
-        </p>
+          {/* Category Title */}
+          <h3 className="mb-3 text-xl font-semibold text-secondary transition-colors group-hover:text-primary">
+            {category.title}
+          </h3>
 
-        {/* Product Count */}
-        <div className="text-sm font-medium text-primary">
-          {category.products.length} product
-          {category.products.length !== 1 ? 's' : ''}
+          {/* Category Description */}
+          <p className="mb-4 flex-grow text-sm text-foreground/70">
+            {category.description}
+          </p>
+
+          {/* Product Count */}
+          <div className="text-sm font-medium text-primary">
+            {category.products.length} product
+            {category.products.length !== 1 ? 's' : ''}
+          </div>
         </div>
       </div>
     </Link>

@@ -1,4 +1,4 @@
-import { getRelatedProducts } from '@/lib/products';
+import { getRelatedProducts, getCategoryBySlug } from '@/lib/products';
 import { ProductCard } from './ProductCard';
 import { ProductGrid } from './ProductGrid';
 
@@ -15,13 +15,14 @@ export function RelatedProducts({
   locale,
   limit = 4,
 }: RelatedProductsProps): React.ReactElement | null {
+  const category = getCategoryBySlug(categorySlug);
   const relatedProducts = getRelatedProducts(
     categorySlug,
     currentProductId,
     limit,
   );
 
-  if (relatedProducts.length === 0) {
+  if (!category || relatedProducts.length === 0) {
     return null;
   }
 
@@ -35,7 +36,7 @@ export function RelatedProducts({
           <ProductCard
             key={product.id}
             product={product}
-            categorySlug={categorySlug}
+            category={category}
             locale={locale}
           />
         ))}
