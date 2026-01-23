@@ -164,9 +164,55 @@
     "products": "Produits",
     "aboutUs": "À propos",
     "howItWorks": "Comment ça marche",
-    "requestQuote": "Demander un devis",
+    "requestQuote": "Contact",
     "productsTitle": "Produits",
     "contact": "Contact",
     "copyright": "Watu Care. Tous droits réservés."
+  },
+  "about": {
+    "meta": {
+      "title": "À propos | Watu Care",
+      "description": "Découvrez la mission de Watu Care : connecter les fabricants médicaux asiatiques aux prestataires de santé en Afrique et au Moyen-Orient."
+    },
+    "hero": {
+      "title": "À propos de Watu Care",
+      "subtitle": "Faire le lien entre les fabricants médicaux de classe mondiale et les prestataires de santé qui ont besoin de fournitures fiables et de qualité."
+    },
+    "values": {
+      "title": "Nos valeurs",
+      "subtitle": "Les principes qui guident tout ce que nous faisons chez Watu Care.",
+      "quality": "La qualité d'abord",
+      "qualityDesc": "Nous ne travaillons qu'avec des fabricants certifiés qui respectent les normes internationales, garantissant que chaque produit que nous livrons est sûr et efficace.",
+      "reliability": "Chaîne d'approvisionnement fiable",
+      "reliabilityDesc": "Notre hub à Hong Kong assure une logistique efficace et des livraisons régulières, pour que vous puissiez compter sur l'arrivée de vos fournitures quand vous en avez besoin.",
+      "support": "Support dédié",
+      "supportDesc": "Des gestionnaires de compte personnels qui comprennent les achats dans le secteur de la santé. Nous vous accompagnons du devis à la livraison."
+    }
+  },
+  "contact": {
+    "meta": {
+      "title": "Contactez-nous | Watu Care",
+      "description": "Contactez Watu Care pour vos fournitures médicales, devis et demandes de partenariat."
+    },
+    "hero": {
+      "title": "Contactez-nous",
+      "subtitle": "Nous sommes là pour vous aider à obtenir les fournitures médicales dont vous avez besoin. Contactez notre équipe."
+    },
+    "getInTouch": "Nous contacter",
+    "description": "Vous avez des questions sur nos produits ou souhaitez demander un devis ? Notre équipe est prête à vous aider à trouver les bonnes solutions pour votre établissement de santé.",
+    "info": {
+      "location": "Localisation",
+      "email": "Email",
+      "phone": "Téléphone",
+      "hours": "Horaires d'ouverture",
+      "hoursValue": "Lun - Ven, 9h00 - 18h00 (HKT)"
+    },
+    "cta": {
+      "title": "Prêt à commencer ?",
+      "description": "Envoyez-nous un email avec vos besoins et notre équipe vous répondra sous 24-48 heures avec un devis compétitif.",
+      "emailButton": "Envoyer un email",
+      "productsButton": "Parcourir les produits",
+      "response": "Réponse sous 24-48 heures. Aucun engagement requis."
+    }
   }
 }

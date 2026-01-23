@@ -164,9 +164,55 @@
     "products": "Products",
     "aboutUs": "About Us",
     "howItWorks": "How It Works",
-    "requestQuote": "Request Quote",
+    "requestQuote": "Contact",
     "productsTitle": "Products",
     "contact": "Contact",
     "copyright": "Watu Care. All rights reserved."
+  },
+  "about": {
+    "meta": {
+      "title": "About Us | Watu Care",
+      "description": "Learn about Watu Care's mission to connect Asia's medical manufacturers with healthcare providers across Africa and the Middle East."
+    },
+    "hero": {
+      "title": "About Watu Care",
+      "subtitle": "Bridging the gap between world-class medical manufacturers and healthcare providers who need reliable, quality supplies."
+    },
+    "values": {
+      "title": "Our Values",
+      "subtitle": "The principles that guide everything we do at Watu Care.",
+      "quality": "Quality First",
+      "qualityDesc": "We partner only with certified manufacturers who meet international standards, ensuring every product we deliver is safe and effective.",
+      "reliability": "Reliable Supply Chain",
+      "reliabilityDesc": "Our Hong Kong hub ensures efficient logistics and consistent delivery, so you can count on your supplies arriving when you need them.",
+      "support": "Dedicated Support",
+      "supportDesc": "Personal account managers who understand healthcare procurement. We're here to support you from quote to delivery."
+    }
+  },
+  "contact": {
+    "meta": {
+      "title": "Contact Us | Watu Care",
+      "description": "Get in touch with Watu Care for medical supplies, quotes, and partnership inquiries."
+    },
+    "hero": {
+      "title": "Contact Us",
+      "subtitle": "We're here to help you get the medical supplies you need. Reach out to our team."
+    },
+    "getInTouch": "Get in Touch",
+    "description": "Have questions about our products or want to request a quote? Our team is ready to help you find the right solutions for your healthcare facility.",
+    "info": {
+      "location": "Location",
+      "email": "Email",
+      "phone": "Phone",
+      "hours": "Business Hours",
+      "hoursValue": "Mon - Fri, 9:00 AM - 6:00 PM (HKT)"
+    },
+    "cta": {
+      "title": "Ready to Get Started?",
+      "description": "Send us an email with your requirements and our team will get back to you within 24-48 hours with a competitive quote.",
+      "emailButton": "Send Email",
+      "productsButton": "Browse Products",
+      "response": "Response within 24-48 hours. No commitment required."
+    }
   }
 }

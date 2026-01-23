@@ -5,10 +5,9 @@ import { Link } from '@/i18n/routing';
 import { Container } from '@/components/ui';
 
 const quickLinksKeys = [
-  { href: '#products', key: 'products' },
-  { href: '#about', key: 'aboutUs' },
-  { href: '#how-it-works', key: 'howItWorks' },
-  { href: '#quote', key: 'requestQuote' },
+  { href: '/products', key: 'products' },
+  { href: '/about', key: 'aboutUs' },
+  { href: '/contact', key: 'requestQuote' },
 ];
 
 const productCategoryKeys = [

@@ -16,9 +16,9 @@ export function Header(): React.ReactElement {
   const openModal = useQuoteStore((state) => state.openModal);
 
   const navLinks = [
-    { href: '#products', label: t('products') },
-    { href: '#about', label: t('about') },
-    { href: '#contact', label: t('contact') },
+    { href: '/products', label: t('products') },
+    { href: '/about', label: t('about') },
+    { href: '/contact', label: t('contact') },
   ];
 
   return (
@@ -43,13 +43,13 @@ export function Header(): React.ReactElement {
           {/* Desktop Navigation */}
           <div className="hidden items-center gap-6 lg:flex">
             {navLinks.map((link) => (
-              <a
+              <Link
                 key={link.href}
                 href={link.href}
                 className="text-sm font-medium text-muted-foreground transition-colors hover:text-secondary"
               >
                 {link.label}
-              </a>
+              </Link>
             ))}
             <LanguageSwitcher />
             <QuoteListBadge />
@@ -82,14 +82,14 @@ export function Header(): React.ReactElement {
         >
           <div className="flex flex-col gap-4 pt-2">
             {navLinks.map((link) => (
-              <a
+              <Link
                 key={link.href}
                 href={link.href}
                 className="text-sm font-medium text-muted-foreground transition-colors hover:text-secondary"
                 onClick={() => setIsMenuOpen(false)}
               >
                 {link.label}
-              </a>
+              </Link>
             ))}
             <QuoteListBadge />
             <Button size="sm" className="w-full" onClick={() => { setIsMenuOpen(false); openModal(); }}>
