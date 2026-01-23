@@ -21,15 +21,18 @@ export function Header(): React.ReactElement {
   return (
     <header className="sticky top-0 z-50 border-b border-border/50 bg-background/80 backdrop-blur-md">
       <Container>
-        <nav className="flex h-18 items-center justify-between md:h-24">
-          {/* Logo - Made bigger */}
-          <Link href="/" className="flex items-center gap-2">
+        <nav className="flex h-20 items-center justify-between md:h-28">
+          {/* Logo - Enhanced visibility */}
+          <Link
+            href="/"
+            className="flex items-center gap-2 rounded-lg transition-transform hover:scale-105"
+          >
             <Image
               src="/logo.png"
               alt="Watu Care"
-              width={180}
-              height={52}
-              className="h-11 w-auto md:h-14"
+              width={240}
+              height={70}
+              className="h-16 w-auto drop-shadow-lg md:h-20"
               priority
             />
           </Link>
