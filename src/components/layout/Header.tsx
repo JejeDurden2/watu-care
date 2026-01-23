@@ -3,7 +3,7 @@
 import { useState, useEffect, useCallback, useRef } from 'react';
 import Image from 'next/image';
 import { useTranslations } from 'next-intl';
-import { Menu, X } from 'lucide-react';
+import { Menu, X, ChevronRight, Globe } from 'lucide-react';
 import { Link } from '@/i18n/routing';
 import { Button, Container, LanguageSwitcher } from '@/components/ui';
 import { QuoteListBadge } from '@/components/quote';
@@ -143,7 +143,8 @@ export function Header(): React.ReactElement {
         <div className="fixed inset-0 z-[60] lg:hidden">
           {/* Backdrop */}
           <div
-            className="absolute inset-0 bg-black/50"
+            className="absolute inset-0 bg-secondary/40 backdrop-blur-sm"
+            style={{ animation: 'fadeIn 0.2s ease-out' }}
             onClick={closeMenu}
             aria-hidden="true"
           />
@@ -155,46 +156,74 @@ export function Header(): React.ReactElement {
             role="dialog"
             aria-modal="true"
             aria-label="Mobile navigation"
-            className="absolute right-0 top-0 h-full w-full max-w-xs shadow-2xl"
-            style={{ backgroundColor: '#ffffff' }}
+            className="absolute right-0 top-0 h-full w-full max-w-[300px] shadow-2xl flex flex-col"
+            style={{
+              backgroundColor: '#ffffff',
+              animation: 'slideInRight 0.3s ease-out',
+            }}
           >
             {/* Drawer Header */}
             <div
-              className="flex h-20 items-center justify-between border-b border-border px-4"
+              className="flex h-16 items-center justify-between border-b border-gray-100 px-5"
               style={{ backgroundColor: '#ffffff' }}
             >
-              <span className="text-sm font-medium text-muted-foreground">Menu</span>
+              <Image
+                src="/logo.png"
+                alt="Watu Care"
+                width={120}
+                height={35}
+                className="h-8 w-auto"
+              />
               <button
                 type="button"
                 onClick={closeMenu}
-                className="inline-flex items-center justify-center rounded-lg p-2 text-secondary transition-colors hover:bg-secondary/10"
+                className="inline-flex h-10 w-10 items-center justify-center rounded-full text-gray-500 transition-colors hover:bg-gray-100"
                 aria-label="Close navigation menu"
               >
-                <X className="h-6 w-6" />
+                <X className="h-5 w-5" />
               </button>
             </div>
 
+            {/* Navigation Links */}
             <nav
-              className="flex flex-col gap-1 p-4"
+              className="flex-1 overflow-y-auto px-3 py-4"
               style={{ backgroundColor: '#ffffff' }}
             >
-              {navLinks.map((link) => (
-                <Link
-                  key={link.href}
-                  href={link.href}
-                  className="rounded-lg px-4 py-3 text-base font-medium text-secondary transition-colors hover:bg-secondary/5"
-                  onClick={closeMenu}
-                >
-                  {link.label}
-                </Link>
-              ))}
+              <div className="space-y-1">
+                {navLinks.map((link) => (
+                  <Link
+                    key={link.href}
+                    href={link.href}
+                    className="flex items-center justify-between rounded-xl px-4 py-3.5 text-[15px] font-medium text-gray-900 transition-all hover:bg-gray-50 active:scale-[0.98]"
+                    onClick={closeMenu}
+                  >
+                    {link.label}
+                    <ChevronRight className="h-4 w-4 text-gray-400" />
+                  </Link>
+                ))}
+              </div>
 
-              <div className="my-3 h-px bg-border" />
-
-              <div className="px-4">
-                <LanguageSwitcher />
+              {/* Language Section */}
+              <div className="mt-6 border-t border-gray-100 pt-6">
+                <div className="mb-3 flex items-center gap-2 px-4 text-xs font-medium uppercase tracking-wider text-gray-400">
+                  <Globe className="h-3.5 w-3.5" />
+                  {t('language') || 'Language'}
+                </div>
+                <div className="px-2">
+                  <LanguageSwitcher />
+                </div>
               </div>
             </nav>
+
+            {/* Drawer Footer */}
+            <div
+              className="border-t border-gray-100 px-5 py-4"
+              style={{ backgroundColor: '#fafafa' }}
+            >
+              <p className="text-center text-xs text-gray-400">
+                © {new Date().getFullYear()} Watu Care
+              </p>
+            </div>
           </div>
         </div>
       )}
