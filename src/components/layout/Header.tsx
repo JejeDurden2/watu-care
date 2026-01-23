@@ -140,7 +140,7 @@ export function Header(): React.ReactElement {
 
       {/* Mobile Navigation Drawer */}
       {isMenuOpen && (
-        <div className="fixed inset-0 z-40 lg:hidden">
+        <div className="fixed inset-0 z-[60] lg:hidden">
           {/* Backdrop */}
           <div
             className="absolute inset-0 bg-secondary/60 backdrop-blur-sm animate-fade-in"
@@ -155,8 +155,20 @@ export function Header(): React.ReactElement {
             role="dialog"
             aria-modal="true"
             aria-label="Mobile navigation"
-            className="absolute right-0 top-0 h-full w-full max-w-sm bg-background shadow-2xl flex flex-col pt-24 animate-slide-in-right"
+            className="absolute right-0 top-0 h-full w-full max-w-sm bg-background shadow-2xl flex flex-col animate-slide-in-right"
           >
+            {/* Drawer Header */}
+            <div className="flex h-20 items-center justify-end px-4 md:h-28">
+              <button
+                type="button"
+                onClick={closeMenu}
+                className="inline-flex items-center justify-center rounded-lg p-2 text-secondary transition-colors hover:bg-secondary/10"
+                aria-label="Close navigation menu"
+              >
+                <X className="h-6 w-6" />
+              </button>
+            </div>
+
             <nav className="flex flex-1 flex-col gap-2 px-6">
               {navLinks.map((link) => (
                 <Link
