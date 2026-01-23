@@ -134,7 +134,7 @@ export function generateWebSiteSchema(locale: string): WebSiteSchema {
 export function generateProductSchema(
   product: Product,
   category: ProductCategory,
-  locale: string,
+  _locale: string,
 ): ProductSchema {
   return {
     '@context': 'https://schema.org',

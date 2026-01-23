@@ -1,7 +1,7 @@
 'use client';
 
 import { useEffect, useState } from 'react';
-import { List } from 'lucide-react';
+import { ClipboardList } from 'lucide-react';
 import { useQuoteStore } from '@/lib/quote-store';
 
 export function QuoteListBadge(): React.ReactElement {
@@ -35,7 +35,7 @@ export function QuoteListBadge(): React.ReactElement {
       className="relative flex h-10 w-10 items-center justify-center rounded-full text-foreground transition-colors hover:bg-muted"
       aria-label={`Product list (${count} items)`}
     >
-      <List className="h-5 w-5" />
+      <ClipboardList className="h-5 w-5" />
       {hydrated && count > 0 && (
         <span
           className={`absolute -right-1 -top-1 flex h-5 min-w-5 items-center justify-center rounded-full bg-accent px-1 text-xs font-bold text-white ${
