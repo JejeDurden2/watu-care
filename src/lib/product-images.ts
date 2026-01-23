@@ -1,6 +1,6 @@
 /**
  * Utility functions for product images
- * Uses Unsplash Source API as temporary solution
+ * Uses Picsum Photos API as temporary solution
  */
 
 import {
@@ -42,17 +42,23 @@ export function getCategoryIcon(slug: string): LucideIcon {
 }
 
 /**
- * Generate Unsplash Source URL based on keywords
- * Format: https://source.unsplash.com/WIDTHxHEIGHT/?keyword1,keyword2
+ * Generate Picsum Photos URL based on keywords
+ * Uses seeded URLs for consistent images per keyword set
+ * Format: https://picsum.photos/seed/SEED/WIDTH/HEIGHT
  */
-export function getUnsplashImage(
+export function getPlaceholderImage(
   keywords: string[],
   width = 800,
   height = 600,
 ): string {
-  const keywordString = keywords.join(',');
-  return `https://source.unsplash.com/${width}x${height}/?${keywordString}`;
+  const seed = keywords.join('-');
+  return `https://picsum.photos/seed/${seed}/${width}/${height}`;
 }
+
+/**
+ * @deprecated Use getPlaceholderImage instead
+ */
+export const getUnsplashImage = getPlaceholderImage;
 
 /**
  * Get image URL for a category
@@ -72,7 +78,7 @@ export function getCategoryImageUrl(categorySlug: string): string {
   };
 
   const keywords = categoryKeywords[categorySlug] || ['medical', 'healthcare'];
-  return getUnsplashImage(keywords, 1200, 800);
+  return getPlaceholderImage(keywords, 1200, 800);
 }
 
 /**
@@ -109,7 +115,7 @@ export function getProductImageUrl(
   if (nameLower.includes('catheter')) keywords.push('catheter');
   if (nameLower.includes('dressing') || nameLower.includes('bandage')) keywords.push('bandage');
 
-  return getUnsplashImage(keywords, 800, 600);
+  return getPlaceholderImage(keywords, 800, 600);
 }
 
 /**
