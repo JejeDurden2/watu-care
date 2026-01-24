@@ -80,65 +80,67 @@ export function Header(): React.ReactElement {
   }, [isMenuOpen]);
 
   return (
-    <header className="sticky top-0 z-50 border-b border-border/50 bg-background/80 backdrop-blur-md">
-      <Container>
-        <nav className="flex h-20 items-center justify-between md:h-28">
-          {/* Logo */}
-          <Link
-            href="/"
-            className="relative z-50 flex items-center gap-2 rounded-lg transition-transform hover:scale-105"
-          >
-            <Image
-              src="/logo.png"
-              alt="Watu Care"
-              width={240}
-              height={70}
-              className="h-16 w-auto drop-shadow-lg md:h-20"
-              priority
-            />
-          </Link>
-
-          {/* Desktop Navigation */}
-          <div className="hidden items-center gap-6 lg:flex">
-            {navLinks.map((link) => (
-              <Link
-                key={link.href}
-                href={link.href}
-                className="text-sm font-medium text-muted-foreground transition-colors hover:text-secondary"
-              >
-                {link.label}
-              </Link>
-            ))}
-            <LanguageSwitcher />
-            <QuoteListBadge />
-            <Button size="sm" onClick={openModal}>
-              {t('requestQuote')}
-            </Button>
-          </div>
-
-          {/* Mobile: Actions + Menu Button */}
-          <div className="flex items-center gap-2 lg:hidden">
-            <QuoteListBadge />
-            <Button size="sm" onClick={openModal}>
-              {t('requestQuote')}
-            </Button>
-            <button
-              ref={menuButtonRef}
-              type="button"
-              className="relative z-50 inline-flex items-center justify-center rounded-lg p-2 text-secondary transition-colors hover:bg-secondary/10"
-              onClick={() => setIsMenuOpen(!isMenuOpen)}
-              aria-expanded={isMenuOpen}
-              aria-controls="mobile-menu"
-              aria-label={isMenuOpen ? 'Close navigation menu' : 'Open navigation menu'}
+    <>
+      <header className="sticky top-0 z-50 border-b border-border/50 bg-background/80 backdrop-blur-md">
+        <Container>
+          <nav className="flex h-20 items-center justify-between md:h-28">
+            {/* Logo */}
+            <Link
+              href="/"
+              className="relative z-50 flex items-center gap-2 rounded-lg transition-transform hover:scale-105"
             >
-              <span className="sr-only">{isMenuOpen ? 'Close menu' : 'Open menu'}</span>
-              {isMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
-            </button>
-          </div>
-        </nav>
-      </Container>
+              <Image
+                src="/logo.png"
+                alt="Watu Care"
+                width={240}
+                height={70}
+                className="h-16 w-auto drop-shadow-lg md:h-20"
+                priority
+              />
+            </Link>
 
-      {/* Mobile Navigation Drawer */}
+            {/* Desktop Navigation */}
+            <div className="hidden items-center gap-6 lg:flex">
+              {navLinks.map((link) => (
+                <Link
+                  key={link.href}
+                  href={link.href}
+                  className="text-sm font-medium text-muted-foreground transition-colors hover:text-secondary"
+                >
+                  {link.label}
+                </Link>
+              ))}
+              <LanguageSwitcher />
+              <QuoteListBadge />
+              <Button size="sm" onClick={openModal}>
+                {t('requestQuote')}
+              </Button>
+            </div>
+
+            {/* Mobile: Actions + Menu Button */}
+            <div className="flex items-center gap-2 lg:hidden">
+              <QuoteListBadge />
+              <Button size="sm" onClick={openModal}>
+                {t('requestQuote')}
+              </Button>
+              <button
+                ref={menuButtonRef}
+                type="button"
+                className="relative z-50 inline-flex items-center justify-center rounded-lg p-2 text-secondary transition-colors hover:bg-secondary/10"
+                onClick={() => setIsMenuOpen(!isMenuOpen)}
+                aria-expanded={isMenuOpen}
+                aria-controls="mobile-menu"
+                aria-label={isMenuOpen ? 'Close navigation menu' : 'Open navigation menu'}
+              >
+                <span className="sr-only">{isMenuOpen ? 'Close menu' : 'Open menu'}</span>
+                {isMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
+              </button>
+            </div>
+          </nav>
+        </Container>
+      </header>
+
+      {/* Mobile Navigation Drawer - Outside header to avoid backdrop-filter containment */}
       {isMenuOpen && (
         <div className="fixed inset-0 z-[60] lg:hidden">
           {/* Backdrop */}
@@ -213,6 +215,6 @@ export function Header(): React.ReactElement {
           </div>
         </div>
       )}
-    </header>
+    </>
   );
 }
