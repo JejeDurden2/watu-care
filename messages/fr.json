@@ -553,6 +553,69 @@
     "dedicatedSupport": "Support dédié",
     "dedicatedSupportDesc": "Notre équipe vous accompagne du devis à la livraison."
   },
+  "suppliers": {
+    "meta": {
+      "titleTemplate": "Fournisseur de Matériel Médical en {country} | Watu Care",
+      "descriptionTemplate": "Fournisseur de matériel médical de confiance pour les établissements de santé en {country}. Équipement chirurgical, EPI, fournitures de laboratoire et plus encore, provenant de fabricants asiatiques certifiés.",
+      "categoryTitleTemplate": "Fournisseur de {category} en {country} | Watu Care",
+      "categoryDescriptionTemplate": "{category} de qualité pour les établissements de santé en {country}. Directement des fabricants asiatiques certifiés avec des prix compétitifs et une livraison fiable."
+    },
+    "breadcrumb": {
+      "suppliers": "Fournisseurs",
+      "home": "Accueil"
+    },
+    "hero": {
+      "titlePrefix": "Matériel Médical en",
+      "subtitle": "Partenaire grossiste de confiance pour les établissements de santé. Dispositifs médicaux et EPI de qualité provenant de fabricants asiatiques certifiés.",
+      "categoryTitleTemplate": "{category} en {country}",
+      "categorySubtitleTemplate": "{category} de qualité pour les prestataires de santé en {country}. Directement des fabricants certifiés."
+    },
+    "content": {
+      "whyChooseTitle": "Pourquoi Choisir Watu Care en {country}",
+      "whyChooseIntro": "Les établissements de santé en {country} font confiance à Watu Care pour des partenariats fiables en fournitures médicales.",
+      "healthcareMarketTitle": "Marché de la Santé en {country}",
+      "keyFacilitiesTitle": "Nous Servons des Établissements Comme",
+      "marketHighlightsTitle": "Points Forts du Marché",
+      "categoriesTitle": "Catégories de Produits Disponibles en {country}",
+      "categoriesSubtitle": "Parcourez notre gamme complète de fournitures médicales disponibles pour livraison en {country}.",
+      "categoryProductsTitle": "Produits {category}",
+      "categoryProductsSubtitle": "Parcourez notre sélection de {category} disponible pour les établissements de santé en {country}.",
+      "relatedCategoriesTitle": "Autres Produits Disponibles en {country}",
+      "otherCountriesTitle": "Nous Servons Également",
+      "requestQuoteTitle": "Demander un Devis pour {country}",
+      "requestQuoteSubtitle": "Obtenez des prix compétitifs sur les fournitures médicales livrées en {country}. Notre équipe répond sous 24-48 heures."
+    },
+    "features": {
+      "fastResponse": "Réponse en 24-48h",
+      "fastResponseDesc": "Devis rapide pour les demandes en {country}",
+      "directShipping": "Expédition Directe",
+      "directShippingDesc": "Logistique efficace vers {country} depuis notre hub de Hong Kong",
+      "qualityProducts": "Qualité Garantie",
+      "qualityProductsDesc": "Fabricants certifiés ISO répondant aux normes internationales",
+      "competitivePricing": "Prix Compétitifs",
+      "competitivePricingDesc": "Relations directes avec les fabricants pour le meilleur rapport qualité-prix"
+    },
+    "countries": {
+      "uae": "Émirats Arabes Unis",
+      "saudi-arabia": "Arabie Saoudite",
+      "kenya": "Kenya",
+      "south-africa": "Afrique du Sud",
+      "nigeria": "Nigéria",
+      "qatar": "Qatar",
+      "kuwait": "Koweït",
+      "egypt": "Égypte",
+      "ghana": "Ghana",
+      "tanzania": "Tanzanie"
+    },
+    "regions": {
+      "africa": "Afrique",
+      "middle-east": "Moyen-Orient",
+      "gulf-states": "États du Golfe",
+      "east-africa": "Afrique de l'Est",
+      "west-africa": "Afrique de l'Ouest",
+      "southern-africa": "Afrique Australe"
+    }
+  },
   "faq": {
     "title": "Questions fréquentes",
     "subtitle": "Trouvez les réponses aux questions courantes sur notre collaboration.",

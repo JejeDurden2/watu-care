@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import { ChevronRight } from 'lucide-react';
+import { cn } from '@/lib/utils';
 
 interface BreadcrumbItem {
   label: string;
@@ -9,12 +10,25 @@ interface BreadcrumbItem {
 interface BreadcrumbProps {
   items: BreadcrumbItem[];
   locale: string;
+  /** Use 'light' variant for dark backgrounds */
+  variant?: 'default' | 'light';
 }
 
-export function Breadcrumb({ items, locale }: BreadcrumbProps): React.ReactElement {
+export function Breadcrumb({
+  items,
+  locale,
+  variant = 'default',
+}: BreadcrumbProps): React.ReactElement {
+  const isLight = variant === 'light';
+
   return (
     <nav aria-label="Breadcrumb" className="mb-8">
-      <ol className="flex flex-wrap items-center gap-2 text-sm text-muted-foreground">
+      <ol
+        className={cn(
+          'flex flex-wrap items-center gap-2 text-sm',
+          isLight ? 'text-white/70' : 'text-muted-foreground'
+        )}
+      >
         {items.map((item, index) => {
           const isLast = index === items.length - 1;
 
@@ -23,12 +37,20 @@ export function Breadcrumb({ items, locale }: BreadcrumbProps): React.ReactEleme
               {item.href && !isLast ? (
                 <Link
                   href={`/${locale}${item.href}`}
-                  className="transition-colors hover:text-foreground"
+                  className={cn(
+                    'transition-colors',
+                    isLight ? 'hover:text-white' : 'hover:text-foreground'
+                  )}
                 >
                   {item.label}
                 </Link>
               ) : (
-                <span className={isLast ? 'font-medium text-foreground' : ''}>
+                <span
+                  className={cn(
+                    isLast && 'font-medium',
+                    isLast && (isLight ? 'text-white' : 'text-foreground')
+                  )}
+                >
                   {item.label}
                 </span>
               )}

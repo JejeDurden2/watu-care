@@ -34,6 +34,8 @@ interface CategoryCardProps {
   title: string;
   description: string;
   productCount?: number;
+  /** Custom href path. If provided, uses this instead of /products/${slug} */
+  href?: string;
 }
 
 export function CategoryCard({
@@ -41,12 +43,15 @@ export function CategoryCard({
   title,
   description,
   productCount,
+  href,
 }: CategoryCardProps): React.ReactElement {
-  const Icon = iconMap[slug] ?? Package;
+  // Extract the category slug for icon lookup (handles paths like "suppliers/kenya/gloves")
+  const iconSlug = slug.includes('/') ? slug.split('/').pop() ?? slug : slug;
+  const Icon = iconMap[iconSlug] ?? Package;
 
   return (
     <Link
-      href={`/products/${slug}`}
+      href={href ?? `/products/${slug}`}
       className="group relative flex flex-col overflow-hidden rounded-2xl border border-border bg-white p-6 transition-all duration-200 hover:-translate-y-1 hover:border-primary/30 hover:shadow-soft-lg"
     >
       {/* Subtle gradient accent in corner */}

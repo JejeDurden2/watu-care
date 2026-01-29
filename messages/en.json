@@ -553,6 +553,69 @@
     "dedicatedSupport": "Dedicated Support",
     "dedicatedSupportDesc": "Our team is here to support you from quote to delivery."
   },
+  "suppliers": {
+    "meta": {
+      "titleTemplate": "Medical Supplies Supplier in {country} | Watu Care",
+      "descriptionTemplate": "Trusted medical supplies supplier for healthcare facilities in {country}. Surgical equipment, PPE, laboratory supplies, and more from certified Asian manufacturers.",
+      "categoryTitleTemplate": "{category} Supplier in {country} | Watu Care",
+      "categoryDescriptionTemplate": "Quality {category} for healthcare facilities in {country}. Direct from certified Asian manufacturers with competitive pricing and reliable delivery."
+    },
+    "breadcrumb": {
+      "suppliers": "Suppliers",
+      "home": "Home"
+    },
+    "hero": {
+      "titlePrefix": "Medical Supplies in",
+      "subtitle": "Trusted wholesale partner for healthcare facilities. Quality medical devices and PPE from certified Asian manufacturers.",
+      "categoryTitleTemplate": "{category} in {country}",
+      "categorySubtitleTemplate": "Quality {category} for healthcare providers in {country}. Direct from certified manufacturers."
+    },
+    "content": {
+      "whyChooseTitle": "Why Choose Watu Care in {country}",
+      "whyChooseIntro": "Healthcare facilities in {country} trust Watu Care for reliable medical supply partnerships.",
+      "healthcareMarketTitle": "Healthcare Market in {country}",
+      "keyFacilitiesTitle": "We Serve Facilities Like",
+      "marketHighlightsTitle": "Market Highlights",
+      "categoriesTitle": "Product Categories Available in {country}",
+      "categoriesSubtitle": "Browse our full range of medical supplies available for delivery to {country}.",
+      "categoryProductsTitle": "{category} Products",
+      "categoryProductsSubtitle": "Browse our selection of {category} available for healthcare facilities in {country}.",
+      "relatedCategoriesTitle": "Other Products Available in {country}",
+      "otherCountriesTitle": "We Also Serve",
+      "requestQuoteTitle": "Request a Quote for {country}",
+      "requestQuoteSubtitle": "Get competitive pricing on medical supplies delivered to {country}. Our team responds within 24-48 hours."
+    },
+    "features": {
+      "fastResponse": "24-48 Hour Response",
+      "fastResponseDesc": "Quick quote turnaround for {country} inquiries",
+      "directShipping": "Direct Shipping",
+      "directShippingDesc": "Efficient logistics to {country} from our Hong Kong hub",
+      "qualityProducts": "Quality Assured",
+      "qualityProductsDesc": "ISO-certified manufacturers meeting international standards",
+      "competitivePricing": "Competitive Pricing",
+      "competitivePricingDesc": "Direct manufacturer relationships for best value"
+    },
+    "countries": {
+      "uae": "United Arab Emirates",
+      "saudi-arabia": "Saudi Arabia",
+      "kenya": "Kenya",
+      "south-africa": "South Africa",
+      "nigeria": "Nigeria",
+      "qatar": "Qatar",
+      "kuwait": "Kuwait",
+      "egypt": "Egypt",
+      "ghana": "Ghana",
+      "tanzania": "Tanzania"
+    },
+    "regions": {
+      "africa": "Africa",
+      "middle-east": "Middle East",
+      "gulf-states": "Gulf States",
+      "east-africa": "East Africa",
+      "west-africa": "West Africa",
+      "southern-africa": "Southern Africa"
+    }
+  },
   "faq": {
     "title": "Frequently Asked Questions",
     "subtitle": "Find answers to common questions about working with Watu Care.",

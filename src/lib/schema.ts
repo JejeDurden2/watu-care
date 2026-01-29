@@ -371,6 +371,114 @@ export function generateFAQSchema(
 }
 
 /**
+ * Generate LocalBusiness schema for country-specific pages
+ * Indicates service availability in a specific geographic area
+ */
+export function generateLocalBusinessSchema(
+  countryName: string,
+  countryCode: string,
+  locale: string,
+): Record<string, unknown> {
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'MedicalBusiness',
+    name: `Watu Care - Medical Supplies in ${countryName}`,
+    url: `${BASE_URL}/${locale}/suppliers/${countryCode.toLowerCase()}`,
+    logo: `${BASE_URL}/logo.png`,
+    description: `Trusted medical supplies supplier for healthcare facilities in ${countryName}. Quality medical devices and PPE from certified Asian manufacturers.`,
+    address: {
+      '@type': 'PostalAddress',
+      addressLocality: 'Hong Kong',
+      addressCountry: 'HK',
+    },
+    areaServed: {
+      '@type': 'Country',
+      name: countryName,
+    },
+    serviceArea: {
+      '@type': 'Country',
+      name: countryName,
+    },
+    priceRange: '$$',
+    hasOfferCatalog: {
+      '@type': 'OfferCatalog',
+      name: `Medical Supplies for ${countryName}`,
+      itemListElement: [
+        { '@type': 'Offer', itemOffered: { '@type': 'Product', name: 'Personal Protective Equipment' } },
+        { '@type': 'Offer', itemOffered: { '@type': 'Product', name: 'Medical Devices' } },
+        { '@type': 'Offer', itemOffered: { '@type': 'Product', name: 'Laboratory Supplies' } },
+        { '@type': 'Offer', itemOffered: { '@type': 'Product', name: 'Surgical Equipment' } },
+      ],
+    },
+  };
+}
+
+/**
+ * Generate Service schema for category-country pages
+ * Shows specific product category availability in a country
+ */
+export function generateServiceSchema(
+  categoryName: string,
+  countryName: string,
+  countrySlug: string,
+  categorySlug: string,
+  locale: string,
+): Record<string, unknown> {
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'Service',
+    name: `${categoryName} Supply in ${countryName}`,
+    url: `${BASE_URL}/${locale}/suppliers/${countrySlug}/${categorySlug}`,
+    provider: {
+      '@type': 'Organization',
+      name: 'Watu Care',
+      url: BASE_URL,
+    },
+    areaServed: {
+      '@type': 'Country',
+      name: countryName,
+    },
+    serviceType: 'Medical Supply Distribution',
+    description: `Quality ${categoryName} for healthcare facilities in ${countryName}. Direct from certified Asian manufacturers with competitive pricing and reliable delivery.`,
+    offers: {
+      '@type': 'Offer',
+      availability: 'https://schema.org/InStock',
+      priceCurrency: 'USD',
+      priceSpecification: {
+        '@type': 'PriceSpecification',
+        priceCurrency: 'USD',
+        eligibleQuantity: {
+          '@type': 'QuantitativeValue',
+          unitText: 'wholesale',
+        },
+      },
+    },
+  };
+}
+
+/**
+ * Generate ItemList schema for products available in a country/category
+ */
+export function generateSupplierItemListSchema(
+  items: Array<{ name: string; url: string; description?: string }>,
+  listName: string,
+): Record<string, unknown> {
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'ItemList',
+    name: listName,
+    numberOfItems: items.length,
+    itemListElement: items.map((item, index) => ({
+      '@type': 'ListItem',
+      position: index + 1,
+      name: item.name,
+      url: item.url,
+      ...(item.description && { description: item.description }),
+    })),
+  };
+}
+
+/**
  * Combine multiple schemas into a @graph structure
  * This is the recommended way to include multiple schemas on a page
  */
