@@ -9,7 +9,16 @@
     "about": "About",
     "contact": "Contact",
     "requestQuote": "Request a Quote",
-    "language": "Language"
+    "language": "Language",
+    "search": "Search"
+  },
+  "search": {
+    "placeholder": "Search products...",
+    "noResults": "No products found",
+    "viewAll": "View all {count} results",
+    "clear": "Clear search",
+    "cancel": "Cancel",
+    "startTyping": "Start typing to search products"
   },
   "hero": {
     "headline1": "Medical Supplies",

@@ -9,7 +9,16 @@
     "about": "À propos",
     "contact": "Contact",
     "requestQuote": "Demander un devis",
-    "language": "Langue"
+    "language": "Langue",
+    "search": "Rechercher"
+  },
+  "search": {
+    "placeholder": "Rechercher des produits...",
+    "noResults": "Aucun produit trouvé",
+    "viewAll": "Voir les {count} résultats",
+    "clear": "Effacer la recherche",
+    "cancel": "Annuler",
+    "startTyping": "Commencez à taper pour rechercher"
   },
   "hero": {
     "headline1": "Équipement Médical",

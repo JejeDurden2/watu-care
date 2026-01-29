@@ -3,14 +3,16 @@
 import { useState, useEffect, useCallback, useRef } from 'react';
 import Image from 'next/image';
 import { useTranslations } from 'next-intl';
-import { Menu, X, ChevronRight, Globe } from 'lucide-react';
+import { Menu, X, ChevronRight, Globe, Search } from 'lucide-react';
 import { Link } from '@/i18n/routing';
 import { Button, Container, LanguageSwitcher } from '@/components/ui';
 import { QuoteListBadge } from '@/components/quote';
 import { useQuoteStore } from '@/lib/quote-store';
+import { SearchBar, MobileSearchOverlay } from '@/components/layout/SearchBar';
 
 export function Header(): React.ReactElement {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isSearchOpen, setIsSearchOpen] = useState(false);
   const menuRef = useRef<HTMLDivElement>(null);
   const menuButtonRef = useRef<HTMLButtonElement>(null);
   const t = useTranslations('nav');
@@ -110,6 +112,7 @@ export function Header(): React.ReactElement {
                   {link.label}
                 </Link>
               ))}
+              <SearchBar className="w-48 xl:w-56" />
               <LanguageSwitcher />
               <QuoteListBadge />
               <Button size="sm" onClick={openModal}>
@@ -119,6 +122,14 @@ export function Header(): React.ReactElement {
 
             {/* Mobile: Actions + Menu Button */}
             <div className="flex items-center gap-2 lg:hidden">
+              <button
+                type="button"
+                onClick={() => setIsSearchOpen(true)}
+                className="inline-flex items-center justify-center rounded-lg p-2 text-secondary transition-colors hover:bg-secondary/10"
+                aria-label={t('search')}
+              >
+                <Search className="h-5 w-5" />
+              </button>
               <QuoteListBadge />
               <Button size="sm" onClick={openModal}>
                 {t('requestQuote')}
@@ -215,6 +226,9 @@ export function Header(): React.ReactElement {
           </div>
         </div>
       )}
+
+      {/* Mobile Search Overlay */}
+      <MobileSearchOverlay isOpen={isSearchOpen} onClose={() => setIsSearchOpen(false)} />
     </>
   );
 }
