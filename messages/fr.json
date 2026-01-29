@@ -453,6 +453,11 @@
     "regions": {
       "africa": "Afrique",
       "middleEast": "Moyen-Orient"
+    },
+    "validation": {
+      "companyRequired": "Le nom de l'entreprise est requis",
+      "emailInvalid": "Veuillez entrer un email valide",
+      "countryRequired": "Veuillez sélectionner un pays"
     }
   },
   "howItWorks": {

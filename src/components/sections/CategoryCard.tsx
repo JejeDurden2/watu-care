@@ -1,6 +1,7 @@
 'use client';
 
 import { Link } from '@/i18n/routing';
+import { useTranslations } from 'next-intl';
 import { ArrowRight } from 'lucide-react';
 import {
   Package,
@@ -45,6 +46,7 @@ export function CategoryCard({
   productCount,
   href,
 }: CategoryCardProps): React.ReactElement {
+  const t = useTranslations('products');
   // Extract the category slug for icon lookup (handles paths like "suppliers/kenya/gloves")
   const iconSlug = slug.includes('/') ? slug.split('/').pop() ?? slug : slug;
   const Icon = iconMap[iconSlug] ?? Package;
@@ -74,11 +76,11 @@ export function CategoryCard({
       <div className="relative flex items-center gap-2 text-sm font-medium text-primary">
         {productCount !== undefined ? (
           <span className="rounded-full bg-accent/10 px-3 py-1 text-accent">
-            {productCount} products
+            {t('productCount', { count: productCount })}
           </span>
         ) : (
           <span className="flex items-center gap-1.5 transition-transform duration-200 group-hover:translate-x-1">
-            View products
+            {t('viewProducts')}
             <ArrowRight className="h-4 w-4" />
           </span>
         )}
