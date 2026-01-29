@@ -104,6 +104,7 @@ export function ProductDetail({
 
       {/* Product Specifications */}
       <ProductSpecs
+        productId={product.id}
         specifications={product.specifications}
         sizes={product.sizes}
         materials={product.materials}

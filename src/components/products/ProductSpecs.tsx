@@ -4,6 +4,7 @@ import { useTranslations } from 'next-intl';
 import { CheckCircle2 } from 'lucide-react';
 
 interface ProductSpecsProps {
+  productId: string;
   specifications: string[];
   sizes?: string[];
   materials?: string[];
@@ -11,12 +12,18 @@ interface ProductSpecsProps {
 }
 
 export function ProductSpecs({
+  productId,
   specifications,
   sizes,
   materials,
   className = '',
 }: ProductSpecsProps): React.ReactElement {
   const t = useTranslations('products');
+
+  // Get translated specifications if available
+  const translatedSpecs = t.has(`items.${productId}.specifications`)
+    ? (t.raw(`items.${productId}.specifications`) as string[])
+    : specifications;
 
   return (
     <div className={`space-y-6 ${className}`}>
@@ -26,7 +33,7 @@ export function ProductSpecs({
           {t('specifications')}
         </h3>
         <ul className="space-y-2">
-          {specifications.map((spec, index) => (
+          {translatedSpecs.map((spec, index) => (
             <li key={index} className="flex items-start gap-3">
               <CheckCircle2 className="mt-0.5 h-5 w-5 flex-shrink-0 text-primary" />
               <span className="text-foreground/80">{spec}</span>
