@@ -4,6 +4,7 @@
     "description": "Medical devices and PPE from Asian manufacturers. B2B wholesale for healthcare facilities in Africa and the Middle East. Based in Hong Kong."
   },
   "nav": {
+    "home": "Home",
     "products": "Products",
     "about": "About",
     "contact": "Contact",
@@ -54,7 +55,58 @@
   },
   "products": {
     "title": "Our Products",
-    "subtitle": "Medical supply solutions across specialized categories"
+    "subtitle": "Medical supply solutions across specialized categories",
+    "productCount": "{count, plural, one {# product} other {# products}}",
+    "sizes": "{count} sizes",
+    "specs": "{count} specs",
+    "specifications": "Specifications",
+    "availableSizes": "Available Sizes",
+    "materials": "Materials",
+    "viewProducts": "View products",
+    "available": "available",
+    "moreInCategory": "More in this category",
+    "categories": {
+      "surgical": {
+        "title": "Procedure Packs & Drapes",
+        "description": "Surgical drape packs, gowns, warming blankets, and procedure-specific kits."
+      },
+      "tube": {
+        "title": "Tubes & Airway Management",
+        "description": "Comprehensive range of respiratory care solutions."
+      },
+      "central-venous-catheter": {
+        "title": "Anti-Infection Central Venous Catheter",
+        "description": "Infection-resistant intravenous access devices."
+      },
+      "dressing": {
+        "title": "Dressing & Kits",
+        "description": "Wound care essentials and specialized dressing kits."
+      },
+      "laboratory-supplies": {
+        "title": "Laboratory Supplies",
+        "description": "Diagnostic and laboratory equipment."
+      },
+      "veterinary-products": {
+        "title": "Veterinary Products",
+        "description": "Animal healthcare products and supplies."
+      },
+      "medical-equipment": {
+        "title": "Medical Equipment",
+        "description": "Diagnostic instruments and medical devices."
+      },
+      "gloves": {
+        "title": "Gloves",
+        "description": "Medical-grade protective gloves."
+      },
+      "face-protection": {
+        "title": "Face Protection",
+        "description": "Face masks, shields, and respiratory protection."
+      },
+      "bodily-waste-management": {
+        "title": "Bodily Waste Management",
+        "description": "Hygiene and waste management solutions."
+      }
+    }
   },
   "quote": {
     "listTitle": "Your Product List",
@@ -194,5 +246,21 @@
     "accessibilityFocusDesc": "Serving healthcare facilities across Africa and the Middle East.",
     "dedicatedSupport": "Dedicated Support",
     "dedicatedSupportDesc": "Our team is here to support you from quote to delivery."
+  },
+  "faq": {
+    "title": "Frequently Asked Questions",
+    "subtitle": "Find answers to common questions about working with Watu Care.",
+    "moqQuestion": "What is the minimum order quantity (MOQ)?",
+    "moqAnswer": "MOQ varies by product category. For most items, we work with quantities suitable for healthcare facilities of all sizes. Contact us with your specific needs and we'll provide tailored options.",
+    "deliveryQuestion": "What are the delivery times?",
+    "deliveryAnswer": "Delivery times depend on your location and order size. Typically, orders to Africa and the Middle East take 2-4 weeks after confirmation. We provide tracking information for all shipments.",
+    "regionsQuestion": "Which regions do you deliver to?",
+    "regionsAnswer": "We deliver to healthcare facilities across Africa and the Middle East. Our Hong Kong hub enables efficient shipping to major ports and logistics centers throughout these regions.",
+    "certificationsQuestion": "What certifications do your products have?",
+    "certificationsAnswer": "Our products come from manufacturers that meet international quality standards including CE marking and ISO certifications. We can provide specific certification documents upon request.",
+    "paymentQuestion": "What payment methods do you accept?",
+    "paymentAnswer": "We accept bank transfers (T/T) and letters of credit (L/C) for larger orders. Payment terms are discussed during the quotation process based on order size and relationship.",
+    "supportQuestion": "What after-sales support do you provide?",
+    "supportAnswer": "Our team provides support throughout the order process and after delivery. We assist with product inquiries, documentation, and any issues that may arise with your order."
   }
 }

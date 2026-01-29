@@ -2,6 +2,14 @@ import type { Product, ProductCategory } from '@/types/product';
 
 const BASE_URL = 'https://watu-care.com';
 
+// Schema.org type definitions
+type SchemaType = Record<string, unknown>;
+
+export interface GraphSchema {
+  '@context': 'https://schema.org';
+  '@graph': SchemaType[];
+}
+
 export interface OrganizationSchema {
   '@context': 'https://schema.org';
   '@type': 'Organization';
@@ -10,6 +18,7 @@ export interface OrganizationSchema {
   logo: string;
   description: string;
   email: string;
+  telephone: string;
   address: {
     '@type': 'PostalAddress';
     addressLocality: string;
@@ -26,16 +35,40 @@ export interface ProductSchema {
   name: string;
   description: string;
   image?: string;
+  url?: string;
   brand: {
     '@type': 'Brand';
     name: string;
+  };
+  manufacturer?: {
+    '@type': 'Organization';
+    name: string;
+    url: string;
   };
   offers: {
     '@type': 'Offer';
     availability: string;
     priceCurrency: string;
+    priceSpecification?: {
+      '@type': 'PriceSpecification';
+      priceCurrency: string;
+      eligibleQuantity?: {
+        '@type': 'QuantitativeValue';
+        unitText: string;
+      };
+    };
+    seller?: {
+      '@type': 'Organization';
+      name: string;
+    };
+    itemCondition?: string;
+    businessFunction?: string;
   };
   category: string;
+  isRelatedTo?: {
+    '@type': 'ProductGroup';
+    name: string;
+  };
 }
 
 export interface BreadcrumbSchema {
@@ -66,6 +99,19 @@ export interface WebSiteSchema {
   };
 }
 
+export interface FAQSchema {
+  '@context': 'https://schema.org';
+  '@type': 'FAQPage';
+  mainEntity: Array<{
+    '@type': 'Question';
+    name: string;
+    acceptedAnswer: {
+      '@type': 'Answer';
+      text: string;
+    };
+  }>;
+}
+
 /**
  * Generate Organization schema for the company
  */
@@ -79,6 +125,7 @@ export function generateOrganizationSchema(): OrganizationSchema {
     description:
       'Connecting Asian manufacturers with healthcare providers across Africa and the Middle East. Medical devices and PPE wholesale. Based in Hong Kong.',
     email: 'contact@watu-care.com',
+    telephone: '+212-662-258-045',
     address: {
       '@type': 'PostalAddress',
       addressLocality: 'Hong Kong',
@@ -86,7 +133,10 @@ export function generateOrganizationSchema(): OrganizationSchema {
       addressCountry: 'HK',
     },
     areaServed: ['Africa', 'Middle East'],
-    sameAs: [],
+    sameAs: [
+      // Add social media links when available:
+      // 'https://www.linkedin.com/company/watu-care',
+    ],
   };
 }
 
@@ -115,28 +165,54 @@ export function generateWebSiteSchema(locale: string): WebSiteSchema {
 
 /**
  * Generate Product schema for a product page
+ * For B2B wholesale, we use priceSpecification to indicate quote-based pricing
  */
 export function generateProductSchema(
   product: Product,
   category: ProductCategory,
-  _locale: string,
+  locale: string,
+  translatedDescription?: string,
 ): ProductSchema {
   return {
     '@context': 'https://schema.org',
     '@type': 'Product',
     name: product.name,
-    description: product.description,
+    description: translatedDescription || product.description,
     image: product.image || `${BASE_URL}/logo.png`,
+    url: `${BASE_URL}/${locale}/products/${category.slug}/${product.id}`,
     brand: {
       '@type': 'Brand',
       name: 'Watu Care',
+    },
+    manufacturer: {
+      '@type': 'Organization',
+      name: 'Watu Care',
+      url: BASE_URL,
     },
     offers: {
       '@type': 'Offer',
       availability: 'https://schema.org/InStock',
       priceCurrency: 'USD',
+      priceSpecification: {
+        '@type': 'PriceSpecification',
+        priceCurrency: 'USD',
+        eligibleQuantity: {
+          '@type': 'QuantitativeValue',
+          unitText: 'wholesale',
+        },
+      },
+      seller: {
+        '@type': 'Organization',
+        name: 'Watu Care',
+      },
+      itemCondition: 'https://schema.org/NewCondition',
+      businessFunction: 'http://purl.org/goodrelations/v1#Sell',
     },
     category: category.title,
+    isRelatedTo: {
+      '@type': 'ProductGroup',
+      name: category.title,
+    },
   };
 }
 
@@ -199,5 +275,128 @@ export function generateMedicalBusinessSchema(): Record<string, unknown> {
         },
       ],
     },
+  };
+}
+
+/**
+ * Generate ContactPage schema
+ */
+export function generateContactPageSchema(locale: string): Record<string, unknown> {
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'ContactPage',
+    name: 'Contact Watu Care',
+    url: `${BASE_URL}/${locale}/contact`,
+    description: 'Contact Watu Care for B2B medical supplies inquiries. Get a quote within 24-48 hours.',
+    mainEntity: {
+      '@type': 'Organization',
+      name: 'Watu Care',
+      email: 'contact@watu-care.com',
+      telephone: '+212-662-258-045',
+      address: {
+        '@type': 'PostalAddress',
+        addressLocality: 'Hong Kong',
+        addressCountry: 'HK',
+      },
+      contactPoint: {
+        '@type': 'ContactPoint',
+        contactType: 'sales',
+        email: 'contact@watu-care.com',
+        telephone: '+212-662-258-045',
+        areaServed: ['Africa', 'Middle East'],
+        availableLanguage: ['English', 'French'],
+      },
+    },
+  };
+}
+
+/**
+ * Generate AboutPage schema
+ */
+export function generateAboutPageSchema(locale: string): Record<string, unknown> {
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'AboutPage',
+    name: 'About Watu Care',
+    url: `${BASE_URL}/${locale}/about`,
+    description: 'Learn about Watu Care - connecting Asian medical manufacturers with healthcare providers across Africa and the Middle East.',
+    mainEntity: {
+      '@type': 'Organization',
+      '@id': `${BASE_URL}/#organization`,
+      name: 'Watu Care',
+      url: BASE_URL,
+      logo: `${BASE_URL}/logo.png`,
+      foundingLocation: {
+        '@type': 'Place',
+        name: 'Hong Kong',
+      },
+      areaServed: [
+        {
+          '@type': 'Continent',
+          name: 'Africa',
+        },
+        {
+          '@type': 'Place',
+          name: 'Middle East',
+        },
+      ],
+      knowsAbout: [
+        'Medical devices',
+        'Personal protective equipment',
+        'Healthcare supplies',
+        'B2B medical wholesale',
+      ],
+    },
+  };
+}
+
+/**
+ * Generate FAQ schema for rich snippets
+ */
+export function generateFAQSchema(
+  items: Array<{ question: string; answer: string }>,
+): FAQSchema {
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: items.map((item) => ({
+      '@type': 'Question',
+      name: item.question,
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: item.answer,
+      },
+    })),
+  };
+}
+
+/**
+ * Combine multiple schemas into a @graph structure
+ * This is the recommended way to include multiple schemas on a page
+ */
+export function combineSchemas(
+  ...schemas: Array<
+    | OrganizationSchema
+    | WebSiteSchema
+    | ProductSchema
+    | BreadcrumbSchema
+    | FAQSchema
+    | Record<string, unknown>
+  >
+): GraphSchema {
+  // Remove @context from individual schemas and combine into @graph
+  const graphItems = schemas.map((schema) => {
+    const result: SchemaType = {};
+    for (const [key, value] of Object.entries(schema)) {
+      if (key !== '@context') {
+        result[key] = value;
+      }
+    }
+    return result;
+  });
+
+  return {
+    '@context': 'https://schema.org',
+    '@graph': graphItems,
   };
 }

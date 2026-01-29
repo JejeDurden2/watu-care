@@ -4,6 +4,7 @@
     "description": "Dispositifs médicaux et EPI de fabricants asiatiques. Grossiste B2B pour les établissements de santé en Afrique et au Moyen-Orient. Basé à Hong Kong."
   },
   "nav": {
+    "home": "Accueil",
     "products": "Produits",
     "about": "À propos",
     "contact": "Contact",
@@ -54,7 +55,58 @@
   },
   "products": {
     "title": "Nos Produits",
-    "subtitle": "Solutions de fournitures médicales dans des catégories spécialisées"
+    "subtitle": "Solutions de fournitures médicales dans des catégories spécialisées",
+    "productCount": "{count, plural, one {# produit} other {# produits}}",
+    "sizes": "{count} tailles",
+    "specs": "{count} specs",
+    "specifications": "Spécifications",
+    "availableSizes": "Tailles disponibles",
+    "materials": "Matériaux",
+    "viewProducts": "Voir les produits",
+    "available": "disponible(s)",
+    "moreInCategory": "Autres produits de cette catégorie",
+    "categories": {
+      "surgical": {
+        "title": "Packs de procédure & Champs",
+        "description": "Packs de champs chirurgicaux, blouses, couvertures chauffantes et kits de procédure."
+      },
+      "tube": {
+        "title": "Tubes & Gestion des voies aériennes",
+        "description": "Gamme complète de solutions de soins respiratoires."
+      },
+      "central-venous-catheter": {
+        "title": "Cathéter veineux central anti-infection",
+        "description": "Dispositifs d'accès intraveineux résistants aux infections."
+      },
+      "dressing": {
+        "title": "Pansements & Kits",
+        "description": "Essentiels pour le soin des plaies et kits de pansements spécialisés."
+      },
+      "laboratory-supplies": {
+        "title": "Fournitures de laboratoire",
+        "description": "Équipement de diagnostic et de laboratoire."
+      },
+      "veterinary-products": {
+        "title": "Produits vétérinaires",
+        "description": "Produits et fournitures de santé animale."
+      },
+      "medical-equipment": {
+        "title": "Équipement médical",
+        "description": "Instruments de diagnostic et dispositifs médicaux."
+      },
+      "gloves": {
+        "title": "Gants",
+        "description": "Gants de protection de grade médical."
+      },
+      "face-protection": {
+        "title": "Protection faciale",
+        "description": "Masques faciaux, écrans et protection respiratoire."
+      },
+      "bodily-waste-management": {
+        "title": "Gestion des déchets corporels",
+        "description": "Solutions d'hygiène et de gestion des déchets."
+      }
+    }
   },
   "quote": {
     "listTitle": "Votre liste de produits",
@@ -194,5 +246,21 @@
     "accessibilityFocusDesc": "Nous desservons les établissements de santé en Afrique et au Moyen-Orient.",
     "dedicatedSupport": "Support dédié",
     "dedicatedSupportDesc": "Notre équipe vous accompagne du devis à la livraison."
+  },
+  "faq": {
+    "title": "Questions fréquentes",
+    "subtitle": "Trouvez les réponses aux questions courantes sur notre collaboration.",
+    "moqQuestion": "Quelle est la quantité minimum de commande (MOQ) ?",
+    "moqAnswer": "La MOQ varie selon la catégorie de produits. Pour la plupart des articles, nous travaillons avec des quantités adaptées aux établissements de santé de toutes tailles. Contactez-nous avec vos besoins spécifiques et nous vous proposerons des options sur mesure.",
+    "deliveryQuestion": "Quels sont les délais de livraison ?",
+    "deliveryAnswer": "Les délais de livraison dépendent de votre localisation et de la taille de la commande. En général, les commandes vers l'Afrique et le Moyen-Orient prennent 2 à 4 semaines après confirmation. Nous fournissons un suivi pour toutes les expéditions.",
+    "regionsQuestion": "Dans quelles régions livrez-vous ?",
+    "regionsAnswer": "Nous livrons aux établissements de santé en Afrique et au Moyen-Orient. Notre hub à Hong Kong permet une expédition efficace vers les principaux ports et centres logistiques de ces régions.",
+    "certificationsQuestion": "Quelles certifications ont vos produits ?",
+    "certificationsAnswer": "Nos produits proviennent de fabricants qui respectent les normes de qualité internationales, notamment le marquage CE et les certifications ISO. Nous pouvons fournir les documents de certification spécifiques sur demande.",
+    "paymentQuestion": "Quels modes de paiement acceptez-vous ?",
+    "paymentAnswer": "Nous acceptons les virements bancaires (T/T) et les lettres de crédit (L/C) pour les commandes importantes. Les conditions de paiement sont discutées lors du processus de devis selon la taille de la commande et la relation.",
+    "supportQuestion": "Quel support après-vente proposez-vous ?",
+    "supportAnswer": "Notre équipe vous accompagne tout au long du processus de commande et après la livraison. Nous vous assistons pour les questions sur les produits, la documentation et tout problème éventuel."
   }
 }
