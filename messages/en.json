@@ -68,43 +68,340 @@
     "categories": {
       "surgical": {
         "title": "Procedure Packs & Drapes",
-        "description": "Surgical drape packs, gowns, warming blankets, and procedure-specific kits."
+        "description": "Pre-assembled sterile kits for surgical procedures.",
+        "longDescription": "Complete range of sterile surgical packs including drapes, gowns, and procedure-specific kits. Available in standard and custom configurations to match your facility's protocols."
       },
       "tube": {
         "title": "Tubes & Airway Management",
-        "description": "Comprehensive range of respiratory care solutions."
+        "description": "Endotracheal tubes, masks, and breathing circuits.",
+        "longDescription": "Full selection of airway management products including endotracheal tubes, oxygen masks, laryngeal masks, and anesthesia circuits. Multiple sizes available for pediatric to adult patients."
       },
       "central-venous-catheter": {
         "title": "Anti-Infection Central Venous Catheter",
-        "description": "Infection-resistant intravenous access devices."
+        "description": "Antimicrobial-coated central line catheters.",
+        "longDescription": "Central venous catheters with antimicrobial coating to reduce catheter-related infections. Available in single, double, triple, and quad lumen configurations with complete kit options."
       },
       "dressing": {
         "title": "Dressing & Kits",
-        "description": "Wound care essentials and specialized dressing kits."
+        "description": "Wound care dressings and sterile procedure kits.",
+        "longDescription": "Comprehensive wound care solutions including hydrocolloid, alginate, foam, and film dressings. Also available: surgical tapes, swabs, and complete sterile dressing packs."
       },
       "laboratory-supplies": {
         "title": "Laboratory Supplies",
-        "description": "Diagnostic and laboratory equipment."
+        "description": "Specimen collection tubes and diagnostic supplies.",
+        "longDescription": "Laboratory specimen collection products including vacuum blood collection tubes, urine containers, culture swabs, and safety needles. ISO-certified for diagnostic accuracy."
       },
       "veterinary-products": {
         "title": "Veterinary Products",
-        "description": "Animal healthcare products and supplies."
+        "description": "Medical supplies for veterinary practices.",
+        "longDescription": "Dedicated veterinary product line including surgical drapes, endotracheal tubes, IV catheters, feeding tubes, and wound care supplies. Sized for various animal patients."
       },
       "medical-equipment": {
         "title": "Medical Equipment",
-        "description": "Diagnostic instruments and medical devices."
+        "description": "Diagnostic devices and patient care equipment.",
+        "longDescription": "Essential medical equipment for healthcare facilities including thermometers, blood pressure monitors, pulse oximeters, nebulizers, and hospital beds."
       },
       "gloves": {
         "title": "Gloves",
-        "description": "Medical-grade protective gloves."
+        "description": "Examination and surgical gloves in latex, nitrile, and vinyl.",
+        "longDescription": "Full range of medical gloves including latex, nitrile, and vinyl options. Available in examination and sterile surgical grades, powdered or powder-free."
       },
       "face-protection": {
         "title": "Face Protection",
-        "description": "Face masks, shields, and respiratory protection."
+        "description": "Surgical masks and protective face shields.",
+        "longDescription": "Infection control products including 3-ply surgical masks with high bacterial filtration efficiency and reusable face shields for comprehensive facial protection."
       },
       "bodily-waste-management": {
         "title": "Bodily Waste Management",
-        "description": "Hygiene and waste management solutions."
+        "description": "Emesis bags, bedpans, and drainage systems.",
+        "longDescription": "Patient care products for waste management including emesis bags, reusable bedpans and urinals, and sterile urine drainage systems."
+      }
+    },
+    "items": {
+      "basic-universal-pack": {
+        "description": "Standard surgical drape kit for general procedures. Includes table covers, drapes, hand towels, and OP-tape in a single sterile pack."
+      },
+      "reinforced-universal-pack": {
+        "description": "Universal surgical pack with reinforced gowns for enhanced barrier protection during general surgical procedures."
+      },
+      "craniotomy-pack": {
+        "description": "Specialized neurosurgery pack with dedicated craniotomy drape and reinforced gowns for brain surgery procedures."
+      },
+      "dental-pack": {
+        "description": "Complete dental procedure kit with dental drape, tube covers, gowns, and hand towels."
+      },
+      "shoulder-pack": {
+        "description": "Orthopedic pack configured for shoulder surgery with specialized shoulder drape and suture collection bag."
+      },
+      "laparoscopy-pack": {
+        "description": "Minimally invasive surgery kit with laparoscopy drape, yankauer suction set, and lap sponges."
+      },
+      "caesarean-section-pack": {
+        "description": "Complete C-section kit including baby wrapper, bulb syringe, umbilical cord clamp, and specialized drapes."
+      },
+      "delivery-pack": {
+        "description": "Standard delivery kit with underbuttock drape, leggings, baby wrapper, and essential delivery supplies."
+      },
+      "extremity-pack": {
+        "description": "Surgical pack for upper and lower extremity procedures with extremity drape and leggings."
+      },
+      "knee-arthroscopy-pack": {
+        "description": "Arthroscopic surgery kit for knee procedures with dedicated drape and U-split drapes for optimal access."
+      },
+      "tur-pack": {
+        "description": "Transurethral resection pack with specialized TUR drape for urological procedures."
+      },
+      "ent-pack": {
+        "description": "Ear, nose, and throat surgery pack with U-split drape, head drape, and procedure accessories."
+      },
+      "hip-pack": {
+        "description": "Hip surgery kit with U-split drape, elastic bandage, and skin marker for orthopedic procedures."
+      },
+      "cardiovascular-pack": {
+        "description": "Cardiac surgery pack with large cardiovascular drape and tube cover for heart procedures."
+      },
+      "gynecology-pack": {
+        "description": "Gynecological procedure kit with specialized drape and gauze swabs for OB/GYN procedures."
+      },
+      "cystoscopy-pack": {
+        "description": "Urological pack for cystoscopy procedures with specialized drape and leggings."
+      },
+      "orthopedic-pack": {
+        "description": "Comprehensive orthopedic surgery kit with multiple U-split drapes, yankauer suction, and skin marker."
+      },
+      "care-kit": {
+        "description": "Patient care kit with spunlace drape and arm holder accessories for patient positioning."
+      },
+      "welcome-pack": {
+        "description": "Patient admission kit with bed cover, quilt cover, pillow, patient gown, and disposable slippers."
+      },
+      "warm-air-unit": {
+        "description": "Medical warming unit with LCD display, 8-speed fan, and plasma air purification. For ICU, OR, and ward use."
+      },
+      "full-body-blanket": {
+        "description": "Warming blanket compatible with warm air units. For full body temperature management in clinical settings."
+      },
+      "endotracheal-tube": {
+        "description": "High-volume, low-pressure cuffed tubes with radiopaque line for accurate X-ray positioning."
+      },
+      "adaptive-cuff-ett": {
+        "description": "Advanced cuff technology that adjusts with respiratory frequency to prevent airway mucosal damage."
+      },
+      "reinforced-ett": {
+        "description": "Wire-reinforced tubes resistant to kinking while maintaining flexibility for difficult airways."
+      },
+      "oxygen-mask": {
+        "description": "Flexible oxygen delivery masks with elastic strap. Delivers 60-80% oxygen concentration."
+      },
+      "venturi-mask": {
+        "description": "Precision oxygen masks with color-coded connectors for accurate concentration settings from 24% to 50%."
+      },
+      "suction-catheter": {
+        "description": "Yankauer-style suction catheters with lateral eyes for continuous suction flow during procedures."
+      },
+      "laryngeal-mask": {
+        "description": "Medical-grade silicone laryngeal mask airway. MRI compatible with colored pilot balloon."
+      },
+      "breathing-circuits": {
+        "description": "Anesthesia breathing circuits in corrugated and smoothbore types. ISO standard interfaces."
+      },
+      "hme-filters": {
+        "description": "Heat and moisture exchange filters with >99.99% bacterial/viral filtration efficiency."
+      },
+      "disposable-cvc": {
+        "description": "Latex-free TPU central venous catheter with soft tip design to reduce vessel trauma."
+      },
+      "anti-infection-cvc": {
+        "description": "Antimicrobial-coated catheter with rifampicin and minocycline to reduce infection risk."
+      },
+      "hemodialysis-catheter": {
+        "description": "Hemodialysis catheter in TPU and silicone. Precurved and straight options available."
+      },
+      "cvc-complete-kit": {
+        "description": "Complete CVC insertion kit with catheter, guidewire, dilator, scalpel, syringes, and drapes."
+      },
+      "hydrocolloid-dressing": {
+        "description": "Self-adhesive waterproof dressing that promotes moist wound healing and autolytic debridement."
+      },
+      "alginate-dressing": {
+        "description": "High-absorbency calcium alginate dressing for moderate to heavily exuding wounds."
+      },
+      "transparent-film-dressing": {
+        "description": "Breathable semi-permeable film for IV sites and minor wounds. Allows wound observation."
+      },
+      "foam-dressing": {
+        "description": "Polyurethane foam dressing with non-adherent contact layer for moderate exudate wounds."
+      },
+      "island-dressing": {
+        "description": "Sterile adhesive dressing with central absorbent pad and breathable backing."
+      },
+      "non-woven-swabs": {
+        "description": "Soft, low-lint non-woven swabs for wound cleaning and dressing procedures."
+      },
+      "gauze-swabs": {
+        "description": "Cotton gauze swabs in 12-ply and 16-ply. X-ray detectable thread option available."
+      },
+      "adhesive-wound-plaster": {
+        "description": "Ready-to-use adhesive plasters with non-adherent pad for minor cuts and abrasions."
+      },
+      "skin-closure-strips": {
+        "description": "Reinforced adhesive strips for non-invasive wound closure. Reduces scarring."
+      },
+      "surgical-tape-paper": {
+        "description": "Hypoallergenic microporous paper tape for sensitive skin. Easy to tear by hand."
+      },
+      "surgical-tape-silk": {
+        "description": "High-tensile silk tape for secure dressing fixation. Conformable and hand-tearable."
+      },
+      "elastic-adhesive-bandage": {
+        "description": "Elastic compression tape with zinc oxide adhesive for support and compression."
+      },
+      "dressing-retention-tape": {
+        "description": "Wide non-woven tape for securing large dressings. Hypoallergenic and radiolucent."
+      },
+      "tracheostomy-dressing": {
+        "description": "Pre-cut keyhole dressing designed for tracheostomy sites. Non-fraying edges."
+      },
+      "dressing-pack-sterile": {
+        "description": "Complete sterile dressing kit with gloves, swabs, and disposal bag. Ready to use."
+      },
+      "blood-collection-tube-edta": {
+        "description": "EDTA vacuum tube for hematology testing. K2 or K3 EDTA anticoagulant."
+      },
+      "blood-collection-tube-serum": {
+        "description": "Plain vacuum tube for serum collection. Clot activator and gel separator options."
+      },
+      "blood-collection-tube-sodium-citrate": {
+        "description": "Sodium citrate tube for coagulation testing (PT, APTT). Precise 9:1 blood ratio."
+      },
+      "blood-collection-tube-fluoride": {
+        "description": "Sodium fluoride tube with glycolysis inhibitor for accurate glucose testing."
+      },
+      "safety-blood-collection-needle": {
+        "description": "Safety needle with shield mechanism to prevent needlestick injuries. Ultra-thin wall."
+      },
+      "urine-container-sterile": {
+        "description": "Leak-proof sterile container with screw cap and graduated markings for urine collection."
+      },
+      "stool-container": {
+        "description": "Specimen container with integrated spoon for fecal sample collection. Wide mouth design."
+      },
+      "transport-swab-viral": {
+        "description": "Nylon flocked swab with viral transport medium for virus detection and PCR testing."
+      },
+      "culture-swab-bacterial": {
+        "description": "Culture swab with Amies or Stuart transport medium for bacterial specimen collection."
+      },
+      "vet-surgical-drape-pack": {
+        "description": "Sterile surgical drape pack for veterinary procedures. SMS or spunlace material."
+      },
+      "vet-endotracheal-tube": {
+        "description": "Veterinary endotracheal tubes in wide size range for various animal patients."
+      },
+      "vet-iv-catheter": {
+        "description": "Peripheral IV catheter for veterinary use with color-coded hub and ultra-sharp needle."
+      },
+      "vet-feeding-tube": {
+        "description": "Nasogastric or orogastric feeding tube for animal patients. Radiopaque with graduated markings."
+      },
+      "vet-urinary-catheter": {
+        "description": "Sterile urinary catheter for veterinary drainage. Smooth rounded tip with dual eyes."
+      },
+      "vet-surgical-gloves": {
+        "description": "Sterile surgical gloves for veterinary surgery. Latex or nitrile options."
+      },
+      "vet-wound-dressing": {
+        "description": "Absorbent wound dressings for animal wound care. Non-adherent pad with breathable backing."
+      },
+      "vet-bandage-cohesive": {
+        "description": "Self-adherent elastic bandage that sticks to itself, not to fur. Multiple colors available."
+      },
+      "digital-thermometer": {
+        "description": "Fast digital thermometer for oral, axillary, or rectal use. Accuracy ±0.1°C."
+      },
+      "infrared-forehead-thermometer": {
+        "description": "Non-contact infrared thermometer for quick temperature screening. 1-second reading."
+      },
+      "blood-pressure-monitor-digital": {
+        "description": "Automatic upper arm blood pressure monitor with irregular heartbeat detection."
+      },
+      "pulse-oximeter-fingertip": {
+        "description": "Portable pulse oximeter for SpO2 and pulse rate monitoring. OLED display."
+      },
+      "stethoscope-dual-head": {
+        "description": "Classic dual-head acoustic stethoscope with stainless steel chest piece."
+      },
+      "nebulizer-compressor": {
+        "description": "Electric compressor nebulizer for respiratory medication delivery. Includes adult and pediatric masks."
+      },
+      "oxygen-concentrator": {
+        "description": "Medical-grade oxygen concentrator delivering 90-96% oxygen. Portable and stationary models."
+      },
+      "examination-light-led": {
+        "description": "LED examination light with adjustable arm. Shadow-free illumination for clinical exams."
+      },
+      "hospital-bed-manual": {
+        "description": "Manual hospital bed with 2-crank or 3-crank adjustment. Steel frame with side rails."
+      },
+      "latex-exam-gloves-powdered": {
+        "description": "Ambidextrous latex exam gloves with cornstarch powder for easy donning."
+      },
+      "latex-exam-gloves-powder-free": {
+        "description": "Powder-free latex exam gloves. Polymer coated for easy donning without powder."
+      },
+      "nitrile-exam-gloves-powder-free": {
+        "description": "Latex-free nitrile gloves with superior puncture and chemical resistance."
+      },
+      "nitrile-exam-gloves-extended-cuff": {
+        "description": "Extended cuff nitrile gloves (30cm) for added forearm protection."
+      },
+      "vinyl-exam-gloves-powder-free": {
+        "description": "Economical vinyl gloves for low-risk, short-duration tasks. Latex-free."
+      },
+      "surgical-gloves-latex-powdered": {
+        "description": "Sterile anatomical latex surgical gloves with textured surface for instrument grip."
+      },
+      "surgical-gloves-latex-powder-free": {
+        "description": "Powder-free sterile latex surgical gloves with low protein content."
+      },
+      "surgical-gloves-nitrile-powder-free": {
+        "description": "Latex-free nitrile surgical gloves with excellent chemical resistance."
+      },
+      "surgical-gloves-double-gloving": {
+        "description": "Color-coded double gloving system for puncture detection in high-risk procedures."
+      },
+      "orthopedic-surgical-gloves": {
+        "description": "Extra-thick surgical gloves in neoprene or polyisoprene for orthopedic procedures."
+      },
+      "heavy-duty-utility-gloves": {
+        "description": "Reusable rubber gloves for cleaning and disinfection. Chemical-resistant."
+      },
+      "cpe-gloves": {
+        "description": "Disposable polyethylene gloves for food handling and light-duty tasks."
+      },
+      "glove-liners-cotton": {
+        "description": "Absorbent cotton liners to improve comfort during prolonged glove use. Washable."
+      },
+      "radiation-protection-gloves": {
+        "description": "Lead or lead-free protective gloves for radiology and fluoroscopy procedures."
+      },
+      "surgical-mask-3ply": {
+        "description": "Disposable 3-ply surgical mask with BFE ≥95%. Nose clip and ear loops included."
+      },
+      "face-shield-reusable": {
+        "description": "Full-face protective shield with anti-fog coating. Adjustable headband, reusable."
+      },
+      "emesis-bag-vomit-bag": {
+        "description": "Disposable leak-proof emesis bag with graduated markings. Compact and portable."
+      },
+      "bedpan-reusable": {
+        "description": "Durable bedpan in stainless steel or plastic. Contoured design for patient comfort."
+      },
+      "urinal-bottle-reusable": {
+        "description": "Graduated urinal for male patients with ergonomic handle and leak-proof cap."
+      },
+      "urine-bag-drainage": {
+        "description": "Sterile closed drainage bag with anti-reflux valve for catheterized patients."
       }
     }
   },

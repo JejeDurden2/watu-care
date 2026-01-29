@@ -68,43 +68,340 @@
     "categories": {
       "surgical": {
         "title": "Packs de procédure & Champs",
-        "description": "Packs de champs chirurgicaux, blouses, couvertures chauffantes et kits de procédure."
+        "description": "Kits stériles pré-assemblés pour procédures chirurgicales.",
+        "longDescription": "Gamme complète de packs chirurgicaux stériles incluant champs, blouses et kits spécifiques par procédure. Disponibles en configurations standard et personnalisées selon les protocoles de votre établissement."
       },
       "tube": {
         "title": "Tubes & Gestion des voies aériennes",
-        "description": "Gamme complète de solutions de soins respiratoires."
+        "description": "Tubes endotrachéaux, masques et circuits respiratoires.",
+        "longDescription": "Sélection complète de produits de gestion des voies aériennes : tubes endotrachéaux, masques à oxygène, masques laryngés et circuits d'anesthésie. Multiples tailles disponibles du pédiatrique à l'adulte."
       },
       "central-venous-catheter": {
         "title": "Cathéter veineux central anti-infection",
-        "description": "Dispositifs d'accès intraveineux résistants aux infections."
+        "description": "Cathéters centraux avec revêtement antimicrobien.",
+        "longDescription": "Cathéters veineux centraux avec revêtement antimicrobien pour réduire les infections liées aux cathéters. Disponibles en configurations simple, double, triple et quadruple lumière avec options de kits complets."
       },
       "dressing": {
         "title": "Pansements & Kits",
-        "description": "Essentiels pour le soin des plaies et kits de pansements spécialisés."
+        "description": "Pansements pour le soin des plaies et kits stériles.",
+        "longDescription": "Solutions complètes pour le soin des plaies : pansements hydrocolloïdes, alginates, mousses et films. Également disponibles : rubans chirurgicaux, compresses et packs de pansements stériles."
       },
       "laboratory-supplies": {
         "title": "Fournitures de laboratoire",
-        "description": "Équipement de diagnostic et de laboratoire."
+        "description": "Tubes de prélèvement et fournitures de diagnostic.",
+        "longDescription": "Produits de prélèvement pour laboratoire : tubes de prélèvement sanguin sous vide, récipients à urine, écouvillons de culture et aiguilles de sécurité. Certifiés ISO pour la précision diagnostique."
       },
       "veterinary-products": {
         "title": "Produits vétérinaires",
-        "description": "Produits et fournitures de santé animale."
+        "description": "Fournitures médicales pour cabinets vétérinaires.",
+        "longDescription": "Gamme dédiée aux produits vétérinaires : champs chirurgicaux, tubes endotrachéaux, cathéters IV, sondes d'alimentation et pansements. Dimensionnés pour différents patients animaux."
       },
       "medical-equipment": {
         "title": "Équipement médical",
-        "description": "Instruments de diagnostic et dispositifs médicaux."
+        "description": "Dispositifs de diagnostic et équipements de soins.",
+        "longDescription": "Équipements médicaux essentiels pour les établissements de santé : thermomètres, tensiomètres, oxymètres de pouls, nébuliseurs et lits d'hôpital."
       },
       "gloves": {
         "title": "Gants",
-        "description": "Gants de protection de grade médical."
+        "description": "Gants d'examen et chirurgicaux en latex, nitrile et vinyle.",
+        "longDescription": "Gamme complète de gants médicaux : latex, nitrile et vinyle. Disponibles en grades examen et chirurgical stérile, poudrés ou non poudrés."
       },
       "face-protection": {
         "title": "Protection faciale",
-        "description": "Masques faciaux, écrans et protection respiratoire."
+        "description": "Masques chirurgicaux et écrans faciaux de protection.",
+        "longDescription": "Produits de contrôle des infections : masques chirurgicaux 3 plis à haute efficacité de filtration bactérienne et écrans faciaux réutilisables pour une protection faciale complète."
       },
       "bodily-waste-management": {
         "title": "Gestion des déchets corporels",
-        "description": "Solutions d'hygiène et de gestion des déchets."
+        "description": "Sacs à vomissement, bassins et systèmes de drainage.",
+        "longDescription": "Produits de soins aux patients pour la gestion des déchets : sacs à vomissement, bassins et urinaux réutilisables, et systèmes de drainage urinaire stériles."
+      }
+    },
+    "items": {
+      "basic-universal-pack": {
+        "description": "Kit de champs chirurgicaux standard pour procédures générales. Comprend housses de table, champs, essuie-mains et ruban OP dans un pack stérile."
+      },
+      "reinforced-universal-pack": {
+        "description": "Pack chirurgical universel avec blouses renforcées pour une protection barrière accrue lors des procédures chirurgicales générales."
+      },
+      "craniotomy-pack": {
+        "description": "Pack de neurochirurgie spécialisé avec champ de craniotomie dédié et blouses renforcées pour les chirurgies cérébrales."
+      },
+      "dental-pack": {
+        "description": "Kit complet pour procédures dentaires avec champ dentaire, housses de tubes, blouses et essuie-mains."
+      },
+      "shoulder-pack": {
+        "description": "Pack orthopédique configuré pour la chirurgie de l'épaule avec champ spécialisé et sac de collecte des sutures."
+      },
+      "laparoscopy-pack": {
+        "description": "Kit de chirurgie mini-invasive avec champ de laparoscopie, set d'aspiration Yankauer et compresses abdominales."
+      },
+      "caesarean-section-pack": {
+        "description": "Kit césarienne complet incluant couverture bébé, poire d'aspiration, clamp de cordon ombilical et champs spécialisés."
+      },
+      "delivery-pack": {
+        "description": "Kit d'accouchement standard avec champ sous-fessier, jambières, couverture bébé et fournitures essentielles."
+      },
+      "extremity-pack": {
+        "description": "Pack chirurgical pour procédures des membres supérieurs et inférieurs avec champ d'extrémité et jambières."
+      },
+      "knee-arthroscopy-pack": {
+        "description": "Kit de chirurgie arthroscopique du genou avec champ dédié et champs fendus en U pour un accès optimal."
+      },
+      "tur-pack": {
+        "description": "Pack de résection transurétrale avec champ TUR spécialisé pour les procédures urologiques."
+      },
+      "ent-pack": {
+        "description": "Pack de chirurgie ORL avec champ fendu en U, couvre-tête et accessoires de procédure."
+      },
+      "hip-pack": {
+        "description": "Kit de chirurgie de la hanche avec champ fendu en U, bande élastique et marqueur cutané pour procédures orthopédiques."
+      },
+      "cardiovascular-pack": {
+        "description": "Pack de chirurgie cardiaque avec grand champ cardiovasculaire et housse de tube pour les interventions cardiaques."
+      },
+      "gynecology-pack": {
+        "description": "Kit de procédure gynécologique avec champ spécialisé et compresses de gaze pour les procédures obstétricales et gynécologiques."
+      },
+      "cystoscopy-pack": {
+        "description": "Pack urologique pour procédures de cystoscopie avec champ spécialisé et jambières."
+      },
+      "orthopedic-pack": {
+        "description": "Kit complet de chirurgie orthopédique avec multiples champs fendus en U, aspiration Yankauer et marqueur cutané."
+      },
+      "care-kit": {
+        "description": "Kit de soins aux patients avec champ en spunlace et accessoires de maintien des bras pour le positionnement."
+      },
+      "welcome-pack": {
+        "description": "Kit d'admission patient avec housse de lit, housse de couette, oreiller, blouse patient et chaussons jetables."
+      },
+      "warm-air-unit": {
+        "description": "Unité de réchauffement médical avec écran LCD, ventilateur 8 vitesses et purification d'air par plasma. Pour USI, bloc opératoire et services."
+      },
+      "full-body-blanket": {
+        "description": "Couverture chauffante compatible avec les unités d'air chaud. Pour la gestion de la température corporelle en milieu clinique."
+      },
+      "endotracheal-tube": {
+        "description": "Tubes à ballonnet haute volume basse pression avec ligne radio-opaque pour un positionnement précis aux rayons X."
+      },
+      "adaptive-cuff-ett": {
+        "description": "Technologie de ballonnet adaptatif qui s'ajuste avec la fréquence respiratoire pour prévenir les dommages muqueux."
+      },
+      "reinforced-ett": {
+        "description": "Tubes renforcés par fil résistants à l'écrasement tout en maintenant la flexibilité pour les voies aériennes difficiles."
+      },
+      "oxygen-mask": {
+        "description": "Masques à oxygène flexibles avec sangle élastique. Délivrent une concentration d'oxygène de 60-80%."
+      },
+      "venturi-mask": {
+        "description": "Masques à oxygène de précision avec connecteurs codés par couleur pour des réglages précis de 24% à 50%."
+      },
+      "suction-catheter": {
+        "description": "Cathéters d'aspiration type Yankauer avec orifices latéraux pour un flux d'aspiration continu pendant les procédures."
+      },
+      "laryngeal-mask": {
+        "description": "Masque laryngé en silicone de grade médical. Compatible IRM avec ballon pilote coloré."
+      },
+      "breathing-circuits": {
+        "description": "Circuits respiratoires d'anesthésie en types ondulés et lisses. Interfaces aux normes ISO."
+      },
+      "hme-filters": {
+        "description": "Filtres échangeurs de chaleur et d'humidité avec efficacité de filtration bactérienne/virale >99,99%."
+      },
+      "disposable-cvc": {
+        "description": "Cathéter veineux central en TPU sans latex avec pointe souple pour réduire les traumatismes vasculaires."
+      },
+      "anti-infection-cvc": {
+        "description": "Cathéter avec revêtement antimicrobien à la rifampicine et minocycline pour réduire le risque infectieux."
+      },
+      "hemodialysis-catheter": {
+        "description": "Cathéter d'hémodialyse en TPU et silicone. Options précourbées et droites disponibles."
+      },
+      "cvc-complete-kit": {
+        "description": "Kit complet d'insertion CVC avec cathéter, guide, dilatateur, scalpel, seringues et champs."
+      },
+      "hydrocolloid-dressing": {
+        "description": "Pansement auto-adhésif étanche qui favorise la cicatrisation en milieu humide et le débridement autolytique."
+      },
+      "alginate-dressing": {
+        "description": "Pansement alginate de calcium à haute absorption pour plaies modérément à fortement exsudatives."
+      },
+      "transparent-film-dressing": {
+        "description": "Film semi-perméable respirant pour sites IV et plaies mineures. Permet l'observation de la plaie."
+      },
+      "foam-dressing": {
+        "description": "Pansement mousse polyuréthane avec couche de contact non adhérente pour plaies à exsudat modéré."
+      },
+      "island-dressing": {
+        "description": "Pansement adhésif stérile avec compresse centrale absorbante et support respirant."
+      },
+      "non-woven-swabs": {
+        "description": "Compresses non tissées douces et peu pelucheuses pour le nettoyage des plaies et les procédures de pansement."
+      },
+      "gauze-swabs": {
+        "description": "Compresses de gaze en coton 12 plis et 16 plis. Option fil radio-détectable disponible."
+      },
+      "adhesive-wound-plaster": {
+        "description": "Pansements adhésifs prêts à l'emploi avec compresse non adhérente pour coupures et abrasions mineures."
+      },
+      "skin-closure-strips": {
+        "description": "Bandelettes adhésives renforcées pour fermeture non invasive des plaies. Réduit les cicatrices."
+      },
+      "surgical-tape-paper": {
+        "description": "Ruban papier microporeux hypoallergénique pour peaux sensibles. Se déchire facilement à la main."
+      },
+      "surgical-tape-silk": {
+        "description": "Ruban soie haute résistance pour fixation sécurisée des pansements. Conformable et déchirable à la main."
+      },
+      "elastic-adhesive-bandage": {
+        "description": "Ruban élastique de compression avec adhésif à l'oxyde de zinc pour soutien et compression."
+      },
+      "dressing-retention-tape": {
+        "description": "Ruban non tissé large pour fixer les grands pansements. Hypoallergénique et radio-transparent."
+      },
+      "tracheostomy-dressing": {
+        "description": "Pansement prédécoupé en forme de trou de serrure conçu pour les sites de trachéotomie. Bords non effilochés."
+      },
+      "dressing-pack-sterile": {
+        "description": "Kit de pansement stérile complet avec gants, compresses et sac d'élimination. Prêt à l'emploi."
+      },
+      "blood-collection-tube-edta": {
+        "description": "Tube sous vide EDTA pour tests hématologiques. Anticoagulant K2 ou K3 EDTA."
+      },
+      "blood-collection-tube-serum": {
+        "description": "Tube sous vide simple pour collecte de sérum. Options activateur de coagulation et séparateur gel."
+      },
+      "blood-collection-tube-sodium-citrate": {
+        "description": "Tube citrate de sodium pour tests de coagulation (TP, TCA). Ratio sanguin précis 9:1."
+      },
+      "blood-collection-tube-fluoride": {
+        "description": "Tube fluorure de sodium avec inhibiteur de glycolyse pour dosage précis de la glycémie."
+      },
+      "safety-blood-collection-needle": {
+        "description": "Aiguille de sécurité avec mécanisme de protection contre les piqûres accidentelles. Paroi ultra-fine."
+      },
+      "urine-container-sterile": {
+        "description": "Récipient stérile étanche avec bouchon à vis et graduations pour collecte d'urine."
+      },
+      "stool-container": {
+        "description": "Récipient pour échantillon avec cuillère intégrée pour collecte de selles. Large ouverture."
+      },
+      "transport-swab-viral": {
+        "description": "Écouvillon floqué nylon avec milieu de transport viral pour détection virale et tests PCR."
+      },
+      "culture-swab-bacterial": {
+        "description": "Écouvillon de culture avec milieu de transport Amies ou Stuart pour prélèvement bactérien."
+      },
+      "vet-surgical-drape-pack": {
+        "description": "Pack de champs chirurgicaux stériles pour procédures vétérinaires. Matériau SMS ou spunlace."
+      },
+      "vet-endotracheal-tube": {
+        "description": "Tubes endotrachéaux vétérinaires en large gamme de tailles pour différents patients animaux."
+      },
+      "vet-iv-catheter": {
+        "description": "Cathéter IV périphérique pour usage vétérinaire avec embase codée par couleur et aiguille ultra-tranchante."
+      },
+      "vet-feeding-tube": {
+        "description": "Sonde d'alimentation nasogastrique ou orogastrique pour patients animaux. Radio-opaque avec graduations."
+      },
+      "vet-urinary-catheter": {
+        "description": "Cathéter urinaire stérile pour drainage vétérinaire. Pointe arrondie lisse avec double orifice."
+      },
+      "vet-surgical-gloves": {
+        "description": "Gants chirurgicaux stériles pour chirurgie vétérinaire. Options latex ou nitrile."
+      },
+      "vet-wound-dressing": {
+        "description": "Pansements absorbants pour soins des plaies animales. Compresse non adhérente avec support respirant."
+      },
+      "vet-bandage-cohesive": {
+        "description": "Bandage élastique auto-adhérent qui colle sur lui-même, pas sur la fourrure. Plusieurs couleurs disponibles."
+      },
+      "digital-thermometer": {
+        "description": "Thermomètre digital rapide pour usage oral, axillaire ou rectal. Précision ±0,1°C."
+      },
+      "infrared-forehead-thermometer": {
+        "description": "Thermomètre infrarouge sans contact pour dépistage rapide de température. Lecture en 1 seconde."
+      },
+      "blood-pressure-monitor-digital": {
+        "description": "Tensiomètre automatique au bras avec détection des battements irréguliers."
+      },
+      "pulse-oximeter-fingertip": {
+        "description": "Oxymètre de pouls portable pour surveillance SpO2 et fréquence cardiaque. Écran OLED."
+      },
+      "stethoscope-dual-head": {
+        "description": "Stéthoscope acoustique classique double pavillon avec pièce thoracique en acier inoxydable."
+      },
+      "nebulizer-compressor": {
+        "description": "Nébuliseur électrique à compresseur pour administration de médicaments respiratoires. Masques adulte et pédiatrique inclus."
+      },
+      "oxygen-concentrator": {
+        "description": "Concentrateur d'oxygène de grade médical délivrant 90-96% d'oxygène. Modèles portables et fixes."
+      },
+      "examination-light-led": {
+        "description": "Lampe d'examen LED avec bras réglable. Éclairage sans ombre pour examens cliniques."
+      },
+      "hospital-bed-manual": {
+        "description": "Lit d'hôpital manuel avec réglage 2 ou 3 manivelles. Châssis acier avec barrières latérales."
+      },
+      "latex-exam-gloves-powdered": {
+        "description": "Gants d'examen latex ambidextres avec poudre d'amidon de maïs pour enfilage facile."
+      },
+      "latex-exam-gloves-powder-free": {
+        "description": "Gants d'examen latex non poudrés. Revêtement polymère pour enfilage facile sans poudre."
+      },
+      "nitrile-exam-gloves-powder-free": {
+        "description": "Gants nitrile sans latex avec résistance supérieure aux perforations et aux produits chimiques."
+      },
+      "nitrile-exam-gloves-extended-cuff": {
+        "description": "Gants nitrile à manchette étendue (30cm) pour protection accrue de l'avant-bras."
+      },
+      "vinyl-exam-gloves-powder-free": {
+        "description": "Gants vinyle économiques pour tâches à faible risque et courte durée. Sans latex."
+      },
+      "surgical-gloves-latex-powdered": {
+        "description": "Gants chirurgicaux latex stériles anatomiques avec surface texturée pour prise d'instruments."
+      },
+      "surgical-gloves-latex-powder-free": {
+        "description": "Gants chirurgicaux latex stériles non poudrés à faible teneur en protéines."
+      },
+      "surgical-gloves-nitrile-powder-free": {
+        "description": "Gants chirurgicaux nitrile sans latex avec excellente résistance chimique."
+      },
+      "surgical-gloves-double-gloving": {
+        "description": "Système de double gantage codé par couleur pour détection des perforations lors des procédures à haut risque."
+      },
+      "orthopedic-surgical-gloves": {
+        "description": "Gants chirurgicaux extra-épais en néoprène ou polyisoprène pour procédures orthopédiques."
+      },
+      "heavy-duty-utility-gloves": {
+        "description": "Gants caoutchouc réutilisables pour nettoyage et désinfection. Résistants aux produits chimiques."
+      },
+      "cpe-gloves": {
+        "description": "Gants polyéthylène jetables pour manipulation alimentaire et tâches légères."
+      },
+      "glove-liners-cotton": {
+        "description": "Sous-gants coton absorbants pour améliorer le confort lors d'un port prolongé. Lavables."
+      },
+      "radiation-protection-gloves": {
+        "description": "Gants de protection plombés ou sans plomb pour radiologie et procédures de fluoroscopie."
+      },
+      "surgical-mask-3ply": {
+        "description": "Masque chirurgical jetable 3 plis avec EFB ≥95%. Barrette nasale et élastiques inclus."
+      },
+      "face-shield-reusable": {
+        "description": "Écran facial de protection intégrale avec revêtement anti-buée. Bandeau réglable, réutilisable."
+      },
+      "emesis-bag-vomit-bag": {
+        "description": "Sac à vomissement jetable étanche avec graduations. Compact et portable."
+      },
+      "bedpan-reusable": {
+        "description": "Bassin durable en acier inoxydable ou plastique. Design profilé pour le confort du patient."
+      },
+      "urinal-bottle-reusable": {
+        "description": "Urinal gradué pour patients masculins avec poignée ergonomique et bouchon étanche."
+      },
+      "urine-bag-drainage": {
+        "description": "Poche de drainage stérile fermée avec valve anti-reflux pour patients sondés."
       }
     }
   },

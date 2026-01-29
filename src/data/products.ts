@@ -9,7 +9,7 @@ export const productCategories: ProductCategory[] = [
     description:
       'Surgical drape packs, gowns, warming blankets, and procedure-specific kits.',
     longDescription:
-      'Our comprehensive surgical line includes high-quality drape packs, surgical gowns, warming blankets, and customized procedure kits. Designed by Nanyang Major Medical, we specialize in disposable medical consumables with full customization options.',
+      'Complete range of sterile surgical packs including drapes, gowns, and procedure-specific kits. Available in standard and custom configurations to match your facility protocols.',
     color: 'bg-primary/10 text-primary',
     products: [
       {
