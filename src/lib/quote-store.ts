@@ -17,6 +17,7 @@ interface QuoteStore {
   removeItem: (productId: string) => void;
   clearItems: () => void;
   openModal: () => void;
+  openModalWithForm: () => void;
   closeModal: () => void;
   setShowForm: (show: boolean) => void;
   isInList: (productId: string) => boolean;
@@ -48,6 +49,8 @@ export const useQuoteStore = create<QuoteStore>()(
       clearItems: () => set({ items: [], showForm: false }),
 
       openModal: () => set({ isModalOpen: true }),
+
+      openModalWithForm: () => set({ isModalOpen: true, showForm: true }),
 
       closeModal: () => set({ isModalOpen: false, showForm: false }),
 

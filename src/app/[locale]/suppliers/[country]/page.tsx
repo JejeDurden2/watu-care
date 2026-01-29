@@ -8,12 +8,11 @@ import {
   Shield,
   DollarSign,
   Building2,
-  ArrowRight,
   CheckCircle,
 } from 'lucide-react';
 import { Container, Button } from '@/components/ui';
 import { Breadcrumb } from '@/components/products';
-import { CategoryCard } from '@/components/sections';
+import { CategoryCard, SupplierHeroGraphic } from '@/components/sections';
 import { getAllCategories } from '@/lib/products';
 import { getTier1Countries, getCountryBySlug } from '@/data/countries';
 import {
@@ -24,6 +23,7 @@ import {
 } from '@/lib/schema';
 import { Link } from '@/i18n/routing';
 import { locales, type Locale } from '@/i18n/config';
+import { SupplierQuoteButton } from './SupplierQuoteButton';
 
 const BASE_URL = 'https://watu-care.com';
 
@@ -198,40 +198,38 @@ export default async function CountrySupplierPage({
             variant="light"
           />
 
-          <div className="mt-8 max-w-3xl">
-            <div className="mb-4 inline-flex items-center gap-2 rounded-full bg-white/10 px-4 py-2 text-sm text-white/90">
-              <MapPin className="h-4 w-4" />
-              {country.subRegion}
+          <div className="mt-8 grid items-center gap-12 lg:grid-cols-2">
+            <div className="max-w-xl">
+              <div className="mb-4 inline-flex items-center gap-2 rounded-full bg-white/10 px-4 py-2 text-sm text-white/90">
+                <MapPin className="h-4 w-4" />
+                {country.subRegion}
+              </div>
+
+              <h1 className="mb-6 text-4xl font-bold text-white md:text-5xl lg:text-6xl">
+                {t('hero.titlePrefix')}{' '}
+                <span className="text-accent">{countryName}</span>
+              </h1>
+
+              <p className="mb-8 text-lg text-white/80 md:text-xl">
+                {t('hero.subtitle')}
+              </p>
+
+              <div className="flex flex-col gap-4 sm:flex-row">
+                <SupplierQuoteButton variant="white" />
+                <Button
+                  size="lg"
+                  variant="outline"
+                  className="border-white/30 text-white hover:bg-white/10"
+                  asChild
+                >
+                  <Link href="/products">{tNav('products')}</Link>
+                </Button>
+              </div>
             </div>
 
-            <h1 className="mb-6 text-4xl font-bold text-white md:text-5xl lg:text-6xl">
-              {t('hero.titlePrefix')}{' '}
-              <span className="text-accent">{countryName}</span>
-            </h1>
-
-            <p className="mb-8 text-lg text-white/80 md:text-xl">
-              {t('hero.subtitle')}
-            </p>
-
-            <div className="flex flex-col gap-4 sm:flex-row">
-              <Button
-                size="lg"
-                className="bg-white text-secondary hover:bg-white/90"
-                asChild
-              >
-                <Link href="mailto:contact@watu-care.com">
-                  {tNav('requestQuote')}
-                  <ArrowRight className="h-5 w-5" />
-                </Link>
-              </Button>
-              <Button
-                size="lg"
-                variant="outline"
-                className="border-white/30 text-white hover:bg-white/10"
-                asChild
-              >
-                <Link href="/products">{tNav('products')}</Link>
-              </Button>
+            {/* Hero Graphic */}
+            <div className="hidden h-72 lg:block lg:h-80">
+              <SupplierHeroGraphic countryName={countryName} />
             </div>
           </div>
         </Container>
@@ -390,16 +388,7 @@ export default async function CountrySupplierPage({
             <p className="mb-8 text-lg text-white/80">
               {t('content.requestQuoteSubtitle', { country: countryName })}
             </p>
-            <Button
-              size="lg"
-              className="bg-white text-secondary hover:bg-white/90"
-              asChild
-            >
-              <Link href="mailto:contact@watu-care.com">
-                {tNav('requestQuote')}
-                <ArrowRight className="h-5 w-5" />
-              </Link>
-            </Button>
+            <SupplierQuoteButton variant="white" />
           </div>
         </Container>
       </section>

@@ -1,5 +1,6 @@
 export { Hero } from './Hero';
 export { HeroGraphic } from './HeroGraphic';
+export { SupplierHeroGraphic } from './SupplierHeroGraphic';
 export { WhyUs } from './WhyUs';
 export { Categories } from './Categories';
 export { CategoryCard } from './CategoryCard';

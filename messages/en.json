@@ -426,8 +426,10 @@
     "requestQuote": "Request a Quote",
     "continueAdding": "Continue Browsing",
     "back": "Back",
+    "skipProducts": "Skip product selection",
     "form": {
       "title": "Request a Quote",
+      "noProductsSelected": "Tell us what you need and we'll get back to you.",
       "company": "Company Name",
       "companyPlaceholder": "Your company",
       "email": "Email",

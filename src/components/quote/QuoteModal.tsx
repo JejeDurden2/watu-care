@@ -2,7 +2,8 @@
 
 import { useEffect, useState } from 'react';
 import * as Dialog from '@radix-ui/react-dialog';
-import { X, ArrowLeft, ShoppingBag, CheckCircle2, ListX } from 'lucide-react';
+import { X, ArrowLeft, ShoppingBag, CheckCircle2, ListX, SkipForward } from 'lucide-react';
+import { useTranslations } from 'next-intl';
 import { useQuoteStore } from '@/lib/quote-store';
 import { Button } from '@/components/ui';
 import { QuoteItem } from './QuoteItem';
@@ -12,6 +13,7 @@ import { Link } from '@/i18n/routing';
 type ModalState = 'list' | 'form' | 'success';
 
 export function QuoteModal(): React.ReactElement {
+  const t = useTranslations('quote');
   const { items, isModalOpen, closeModal, showForm, setShowForm } = useQuoteStore();
   const [hydrated, setHydrated] = useState(false);
   const [modalState, setModalState] = useState<ModalState>('list');
@@ -82,7 +84,7 @@ export function QuoteModal(): React.ReactElement {
           {modalState === 'list' && (
             <>
               <Dialog.Title className="mb-6 pr-8 text-xl font-bold text-secondary">
-                Your Product List
+                {t('listTitle')}
               </Dialog.Title>
 
               {items.length === 0 ? (
@@ -91,24 +93,29 @@ export function QuoteModal(): React.ReactElement {
                     <ListX className="h-8 w-8 text-muted-foreground" />
                   </div>
                   <h3 className="mb-2 font-medium text-secondary">
-                    No products in your list
+                    {t('emptyList')}
                   </h3>
                   <p className="mb-6 text-sm text-muted-foreground">
-                    Browse our catalog and add products you&apos;re interested in.
+                    {t('emptyListDesc')}
                   </p>
-                  <Dialog.Close asChild>
-                    <Button asChild>
-                      <Link href="/products">
-                        <ShoppingBag className="mr-2 h-4 w-4" />
-                        Browse Products
-                      </Link>
+                  <div className="flex flex-col gap-3 sm:flex-row sm:justify-center">
+                    <Dialog.Close asChild>
+                      <Button variant="outline" asChild>
+                        <Link href="/products">
+                          <ShoppingBag className="mr-2 h-4 w-4" />
+                          {t('browseProducts')}
+                        </Link>
+                      </Button>
+                    </Dialog.Close>
+                    <Button onClick={handleRequestQuote}>
+                      {t('requestQuote')}
                     </Button>
-                  </Dialog.Close>
+                  </div>
                 </div>
               ) : (
                 <>
                   <div className="mb-4 text-sm text-muted-foreground">
-                    {items.length} product{items.length !== 1 ? 's' : ''} selected
+                    {t('itemCount', { count: items.length })}
                   </div>
 
                   <div className="mb-6 max-h-64 space-y-2 overflow-y-auto">
@@ -117,15 +124,24 @@ export function QuoteModal(): React.ReactElement {
                     ))}
                   </div>
 
-                  <div className="flex flex-col gap-3 sm:flex-row">
-                    <Dialog.Close asChild>
-                      <Button variant="outline" className="flex-1">
-                        Continue Browsing
+                  <div className="flex flex-col gap-3">
+                    <div className="flex flex-col gap-3 sm:flex-row">
+                      <Dialog.Close asChild>
+                        <Button variant="outline" className="flex-1">
+                          {t('continueAdding')}
+                        </Button>
+                      </Dialog.Close>
+                      <Button onClick={handleRequestQuote} className="flex-1">
+                        {t('requestQuote')}
                       </Button>
-                    </Dialog.Close>
-                    <Button onClick={handleRequestQuote} className="flex-1">
-                      Request a Quote
-                    </Button>
+                    </div>
+                    <button
+                      onClick={handleRequestQuote}
+                      className="flex items-center justify-center gap-2 text-sm text-muted-foreground transition-colors hover:text-foreground"
+                    >
+                      <SkipForward className="h-4 w-4" />
+                      {t('skipProducts')}
+                    </button>
                   </div>
                 </>
               )}
@@ -135,19 +151,24 @@ export function QuoteModal(): React.ReactElement {
           {/* Form View */}
           {modalState === 'form' && (
             <>
-              <button
-                onClick={handleBackToList}
-                className="mb-4 flex items-center gap-2 text-sm text-muted-foreground transition-colors hover:text-foreground"
-              >
-                <ArrowLeft className="h-4 w-4" />
-                Back to list
-              </button>
+              {items.length > 0 && (
+                <button
+                  onClick={handleBackToList}
+                  className="mb-4 flex items-center gap-2 text-sm text-muted-foreground transition-colors hover:text-foreground"
+                >
+                  <ArrowLeft className="h-4 w-4" />
+                  {t('back')}
+                </button>
+              )}
 
               <Dialog.Title className="mb-2 pr-8 text-xl font-bold text-secondary">
-                Request a Quote
+                {t('form.title')}
               </Dialog.Title>
               <p className="mb-6 text-sm text-muted-foreground">
-                Fill in your details and we&apos;ll get back to you within 24-48 hours.
+                {items.length > 0
+                  ? t('itemCount', { count: items.length })
+                  : t('form.noProductsSelected')
+                }
               </p>
 
               <QuoteForm onSuccess={handleFormSuccess} />
@@ -161,12 +182,12 @@ export function QuoteModal(): React.ReactElement {
                 <CheckCircle2 className="h-8 w-8 text-accent" />
               </div>
               <Dialog.Title className="mb-2 text-xl font-bold text-secondary">
-                Request Sent!
+                {t('success.title')}
               </Dialog.Title>
               <p className="mb-6 text-muted-foreground">
-                We&apos;ll contact you within 24-48 hours.
+                {t('success.message')}
               </p>
-              <Button onClick={handleCloseSuccess}>Close</Button>
+              <Button onClick={handleCloseSuccess}>{t('success.close')}</Button>
             </div>
           )}
         </Dialog.Content>

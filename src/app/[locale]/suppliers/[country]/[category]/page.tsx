@@ -20,6 +20,7 @@ import {
 } from '@/lib/schema';
 import { Link } from '@/i18n/routing';
 import { locales, type Locale } from '@/i18n/config';
+import { SupplierQuoteButton } from '../SupplierQuoteButton';
 
 const BASE_URL = 'https://watu-care.com';
 
@@ -316,16 +317,7 @@ export default async function CategoryCountryPage({
             <p className="mb-8 text-white/80">
               {t('content.requestQuoteSubtitle', { country: countryName })}
             </p>
-            <Button
-              size="lg"
-              className="bg-white text-secondary hover:bg-white/90"
-              asChild
-            >
-              <Link href="mailto:contact@watu-care.com">
-                {tNav('requestQuote')}
-                <ArrowRight className="h-5 w-5" />
-              </Link>
-            </Button>
+            <SupplierQuoteButton variant="white" />
           </div>
         </Container>
       </section>

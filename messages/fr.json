@@ -426,8 +426,10 @@
     "requestQuote": "Demander un devis",
     "continueAdding": "Continuer à parcourir",
     "back": "Retour",
+    "skipProducts": "Passer la sélection de produits",
     "form": {
       "title": "Demander un devis",
+      "noProductsSelected": "Dites-nous ce dont vous avez besoin et nous vous répondrons.",
       "company": "Nom de l'entreprise",
       "companyPlaceholder": "Votre entreprise",
       "email": "Email",
