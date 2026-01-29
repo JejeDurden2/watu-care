@@ -149,18 +149,139 @@ const tier1Countries: Country[] = [
       'Reddington Hospital',
     ],
   },
+  // Tier 2 promoted to Tier 1
+  {
+    code: 'QA',
+    name: 'Qatar',
+    slug: 'qatar',
+    nameLocal: 'قطر',
+    region: 'middle-east',
+    subRegion: 'Gulf States',
+    capital: 'Doha',
+    currency: 'QAR',
+    languages: ['Arabic', 'English'],
+    tier: 1,
+    healthcareContext:
+      'Qatar has rapidly developed its healthcare infrastructure, positioning itself as a regional medical hub. The country hosts world-class facilities and has invested heavily in healthcare technology and specialist services, with strict quality standards for medical supplies.',
+    marketHighlights: [
+      'Highest GDP per capita globally',
+      'Rapid healthcare expansion',
+      'World-class medical facilities',
+      'MOPH regulatory standards',
+    ],
+    keyFacilities: [
+      'Hamad Medical Corporation',
+      'Sidra Medicine',
+      'Qatar Red Crescent',
+      'Aspetar Sports Medicine Hospital',
+    ],
+  },
+  {
+    code: 'KW',
+    name: 'Kuwait',
+    slug: 'kuwait',
+    nameLocal: 'الكويت',
+    region: 'middle-east',
+    subRegion: 'Gulf States',
+    capital: 'Kuwait City',
+    currency: 'KWD',
+    languages: ['Arabic', 'English'],
+    tier: 1,
+    healthcareContext:
+      'Kuwait offers free healthcare to citizens and has a well-developed public hospital system. The country is expanding private healthcare options and modernizing medical infrastructure, creating demand for quality medical supplies and equipment.',
+    marketHighlights: [
+      'Strong public healthcare system',
+      'Growing private sector',
+      'High healthcare spending per capita',
+      'MOH procurement standards',
+    ],
+    keyFacilities: [
+      'Kuwait Ministry of Health Hospitals',
+      'Dar Al Shifa Hospital',
+      'Al Salam International Hospital',
+      'New Mowasat Hospital',
+    ],
+  },
+  {
+    code: 'EG',
+    name: 'Egypt',
+    slug: 'egypt',
+    nameLocal: 'مصر',
+    region: 'africa',
+    subRegion: 'North Africa',
+    capital: 'Cairo',
+    currency: 'EGP',
+    languages: ['Arabic'],
+    tier: 1,
+    healthcareContext:
+      'Egypt is the most populous Arab country with over 100 million people and a large healthcare sector. The government is investing in universal health coverage and expanding hospital capacity, creating significant demand for medical supplies across public and private facilities.',
+    marketHighlights: [
+      'Largest Arab population',
+      'Universal health coverage expansion',
+      'Growing medical tourism',
+      'EDA regulatory framework',
+    ],
+    keyFacilities: [
+      'Ain Shams University Hospitals',
+      'Cairo University Hospitals',
+      'As-Salam International Hospital',
+      'Cleopatra Hospital Group',
+    ],
+  },
+  {
+    code: 'GH',
+    name: 'Ghana',
+    slug: 'ghana',
+    region: 'africa',
+    subRegion: 'West Africa',
+    capital: 'Accra',
+    currency: 'GHS',
+    languages: ['English'],
+    tier: 1,
+    healthcareContext:
+      'Ghana is one of the most stable economies in West Africa with a growing healthcare sector. The country has implemented national health insurance and is expanding healthcare access, driving demand for quality medical supplies across its hospital network.',
+    marketHighlights: [
+      'Stable West African economy',
+      'National health insurance system',
+      'Growing private healthcare',
+      'FDA Ghana regulatory oversight',
+    ],
+    keyFacilities: [
+      'Korle Bu Teaching Hospital',
+      'Komfo Anokye Teaching Hospital',
+      '37 Military Hospital',
+      'Nyaho Medical Centre',
+    ],
+  },
+  {
+    code: 'TZ',
+    name: 'Tanzania',
+    slug: 'tanzania',
+    region: 'africa',
+    subRegion: 'East Africa',
+    capital: 'Dodoma',
+    currency: 'TZS',
+    languages: ['Swahili', 'English'],
+    tier: 1,
+    healthcareContext:
+      'Tanzania is a growing East African economy with improving healthcare infrastructure. The government is investing in healthcare facilities across the country, and the private sector is expanding to meet rising demand for quality medical services and supplies.',
+    marketHighlights: [
+      'Growing East African economy',
+      'Healthcare infrastructure investment',
+      'Expanding private hospital sector',
+      'TFDA regulatory framework',
+    ],
+    keyFacilities: [
+      'Muhimbili National Hospital',
+      'Aga Khan Hospital Dar es Salaam',
+      'Bugando Medical Centre',
+      'Regency Medical Centre',
+    ],
+  },
 ];
 
-// Tier 2 & 3 countries (basic data only)
+// Tier 3 countries (basic data only)
 const otherCountries: Country[] = [
-  // Tier 2 - Secondary markets
-  { code: 'QA', name: 'Qatar', slug: 'qatar', region: 'middle-east', tier: 2 },
-  { code: 'KW', name: 'Kuwait', slug: 'kuwait', region: 'middle-east', tier: 2 },
-  { code: 'EG', name: 'Egypt', slug: 'egypt', region: 'africa', tier: 2 },
-  { code: 'GH', name: 'Ghana', slug: 'ghana', region: 'africa', tier: 2 },
-  { code: 'TZ', name: 'Tanzania', slug: 'tanzania', region: 'africa', tier: 2 },
-
-  // Tier 3 - All other served countries
   { code: 'DZ', name: 'Algeria', slug: 'algeria', region: 'africa', tier: 3 },
   { code: 'AO', name: 'Angola', slug: 'angola', region: 'africa', tier: 3 },
   { code: 'BJ', name: 'Benin', slug: 'benin', region: 'africa', tier: 3 },
