@@ -62,10 +62,6 @@ export async function Hero(): Promise<React.ReactElement> {
               </Button>
             </div>
 
-            {/* Simple info line */}
-            <p className="text-body-sm text-white/50">
-              {t('location')}
-            </p>
           </div>
 
           {/* Right Column - Graphic */}
