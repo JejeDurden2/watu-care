@@ -605,7 +605,19 @@
       "kuwait": "Kuwait",
       "egypt": "Egypt",
       "ghana": "Ghana",
-      "tanzania": "Tanzania"
+      "tanzania": "Tanzania",
+      "morocco": "Morocco",
+      "ethiopia": "Ethiopia",
+      "uganda": "Uganda",
+      "rwanda": "Rwanda",
+      "senegal": "Senegal",
+      "cote-divoire": "Côte d'Ivoire",
+      "tunisia": "Tunisia",
+      "cameroon": "Cameroon",
+      "oman": "Oman",
+      "bahrain": "Bahrain",
+      "jordan": "Jordan",
+      "iraq": "Iraq"
     },
     "regions": {
       "africa": "Africa",
@@ -613,7 +625,10 @@
       "gulf-states": "Gulf States",
       "east-africa": "East Africa",
       "west-africa": "West Africa",
-      "southern-africa": "Southern Africa"
+      "southern-africa": "Southern Africa",
+      "north-africa": "North Africa",
+      "central-africa": "Central Africa",
+      "levant": "Levant"
     }
   },
   "faq": {
