@@ -1,6 +1,7 @@
 'use client';
 
 import { useEffect, useState } from 'react';
+import { useTranslations } from 'next-intl';
 import { ListPlus, ListCheck } from 'lucide-react';
 import { toast } from 'sonner';
 import { useQuoteStore } from '@/lib/quote-store';
@@ -20,6 +21,7 @@ export function AddToListButton({
   variant = 'icon',
   className = '',
 }: AddToListButtonProps): React.ReactElement {
+  const t = useTranslations('quote');
   const { addItem, removeItem, isInList } = useQuoteStore();
   const [hydrated, setHydrated] = useState(false);
   const [inList, setInList] = useState(false);
@@ -45,7 +47,7 @@ export function AddToListButton({
 
     if (inList) {
       removeItem(product.id);
-      toast.success('Product removed from your list');
+      toast.success(t('toast.removed'));
     } else {
       addItem({
         productId: product.id,
@@ -53,7 +55,7 @@ export function AddToListButton({
         categorySlug: category.slug,
         categoryTitle: category.title,
       });
-      toast.success('Product added to your list');
+      toast.success(t('toast.added'));
     }
   };
 
@@ -72,7 +74,7 @@ export function AddToListButton({
     return (
       <Button variant="outline" className={className} disabled>
         <ListPlus className="mr-2 h-4 w-4" />
-        Add to List
+        {t('addToList')}
       </Button>
     );
   }
@@ -82,8 +84,8 @@ export function AddToListButton({
       <button
         onClick={handleClick}
         className={`flex h-10 w-10 items-center justify-center rounded-full bg-white/90 shadow-md backdrop-blur-sm transition-all hover:scale-110 hover:bg-white ${className}`}
-        aria-label={inList ? 'Remove from list' : 'Add to list'}
-        title={inList ? 'Remove from list' : 'Add to list'}
+        aria-label={inList ? t('removeFromList') : t('addToList')}
+        title={inList ? t('removeFromList') : t('addToList')}
       >
         {inList ? (
           <ListCheck className="h-5 w-5 text-accent" />
@@ -103,12 +105,12 @@ export function AddToListButton({
       {inList ? (
         <>
           <ListCheck className="mr-2 h-4 w-4" />
-          Added to List
+          {t('addedToList')}
         </>
       ) : (
         <>
           <ListPlus className="mr-2 h-4 w-4" />
-          Add to List
+          {t('addToList')}
         </>
       )}
     </Button>

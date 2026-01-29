@@ -2,18 +2,79 @@ import type { Metadata } from 'next';
 import { getTranslations } from 'next-intl/server';
 import { Heart, Globe, Users, Shield, Truck, Headphones } from 'lucide-react';
 import { Container } from '@/components/ui';
+import {
+  generateAboutPageSchema,
+  generateBreadcrumbSchema,
+  combineSchemas,
+} from '@/lib/schema';
 
-export async function generateMetadata(): Promise<Metadata> {
-  const t = await getTranslations('about');
+const BASE_URL = 'https://watu-care.com';
+
+interface AboutPageProps {
+  params: Promise<{
+    locale: string;
+  }>;
+}
+
+export async function generateMetadata({
+  params,
+}: AboutPageProps): Promise<Metadata> {
+  const { locale } = await params;
+  const t = await getTranslations({ locale, namespace: 'about' });
+
+  const title = t('meta.title');
+  const description = t('meta.description');
+
   return {
-    title: t('meta.title'),
-    description: t('meta.description'),
+    title,
+    description,
+    keywords: [
+      'Watu Care',
+      'medical supplies company',
+      'B2B healthcare',
+      'Hong Kong medical distributor',
+      'Africa healthcare partner',
+      'Middle East medical supplies',
+    ],
+    openGraph: {
+      title,
+      description,
+      type: 'website',
+      url: `${BASE_URL}/${locale}/about`,
+      images: [
+        {
+          url: `${BASE_URL}/opengraph-image`,
+          width: 1200,
+          height: 630,
+          alt: 'About Watu Care',
+        },
+      ],
+    },
+    alternates: {
+      canonical: `${BASE_URL}/${locale}/about`,
+      languages: {
+        en: `${BASE_URL}/en/about`,
+        fr: `${BASE_URL}/fr/about`,
+      },
+    },
   };
 }
 
-export default async function AboutPage(): Promise<React.ReactElement> {
+export default async function AboutPage({
+  params,
+}: AboutPageProps): Promise<React.ReactElement> {
+  const { locale } = await params;
   const t = await getTranslations('about');
   const tMission = await getTranslations('mission');
+
+  // Generate JSON-LD schemas
+  const pageSchema = combineSchemas(
+    generateAboutPageSchema(locale),
+    generateBreadcrumbSchema([
+      { name: 'Home', url: `${BASE_URL}/${locale}` },
+      { name: t('meta.title') },
+    ]),
+  );
 
   const values = [
     {
@@ -35,6 +96,14 @@ export default async function AboutPage(): Promise<React.ReactElement> {
 
   return (
     <main>
+      {/* JSON-LD Structured Data */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(pageSchema),
+        }}
+      />
+
       {/* Hero Section */}
       <section className="bg-gradient-to-br from-secondary via-secondary to-primary/80 py-20 lg:py-28">
         <Container>

@@ -62,8 +62,15 @@ export async function generateMetadata({
     };
   }
 
+  const t = await getTranslations({ locale, namespace: 'products' });
+
+  // Get translated product description for metadata
+  const productDesc = t.has(`items.${productId}.description`)
+    ? t(`items.${productId}.description`)
+    : product.description;
+
   const title = `${product.name} - ${category.title}`;
-  const description = `${product.description} Available from Watu Care - your trusted B2B medical supplies partner.`;
+  const description = `${productDesc} Available from Watu Care - your trusted B2B medical supplies partner.`;
 
   return {
     title,
@@ -90,11 +97,6 @@ export async function generateMetadata({
         },
       ],
     },
-    twitter: {
-      card: 'summary_large_image',
-      title: `${product.name} | Watu Care`,
-      description,
-    },
     alternates: {
       canonical: `${BASE_URL}/${locale}/products/${categorySlug}/${productId}`,
       languages: {
@@ -110,6 +112,7 @@ export default async function ProductPage({
 }: ProductPageProps): Promise<React.ReactElement> {
   const { locale, category: categorySlug, product: productId } = await params;
   const t = await getTranslations('products');
+  const tNav = await getTranslations('nav');
   const category = getCategoryBySlug(categorySlug);
   const product = getProductBySlug(categorySlug, productId);
 
@@ -117,12 +120,22 @@ export default async function ProductPage({
     notFound();
   }
 
+  // Get translated category title
+  const categoryTitle = t.has(`categories.${categorySlug}.title`)
+    ? t(`categories.${categorySlug}.title`)
+    : category.title;
+
+  // Get translated product description
+  const productDescription = t.has(`items.${productId}.description`)
+    ? t(`items.${productId}.description`)
+    : product.description;
+
   // Generate JSON-LD schemas
-  const productSchema = generateProductSchema(product, category, locale);
+  const productSchema = generateProductSchema(product, category, locale, productDescription);
   const breadcrumbSchema = generateBreadcrumbSchema([
-    { name: 'Home', url: `${BASE_URL}/${locale}` },
+    { name: tNav('home'), url: `${BASE_URL}/${locale}` },
     { name: t('title'), url: `${BASE_URL}/${locale}/products` },
-    { name: category.title, url: `${BASE_URL}/${locale}/products/${category.slug}` },
+    { name: categoryTitle, url: `${BASE_URL}/${locale}/products/${category.slug}` },
     { name: product.name },
   ]);
 
@@ -148,9 +161,9 @@ export default async function ProductPage({
         <Breadcrumb
           locale={locale}
           items={[
-            { label: 'Home', href: '/' },
+            { label: tNav('home'), href: '/' },
             { label: t('title'), href: '/products' },
-            { label: category.title, href: `/products/${category.slug}` },
+            { label: categoryTitle, href: `/products/${category.slug}` },
             { label: product.name },
           ]}
         />

@@ -1,4 +1,7 @@
+'use client';
+
 import Link from 'next/link';
+import { useTranslations } from 'next-intl';
 import type { Product, ProductCategory } from '@/types/product';
 import { getCategoryIcon, getCategoryGradient } from '@/lib/product-images';
 import { AddToListButton } from '@/components/quote';
@@ -14,6 +17,7 @@ export function ProductCard({
   category,
   locale,
 }: ProductCardProps): React.ReactElement {
+  const t = useTranslations('products');
   const Icon = getCategoryIcon(category.slug);
   const gradientClass = getCategoryGradient(category.slug);
 
@@ -39,12 +43,12 @@ export function ProductCard({
           <div className="relative flex flex-wrap gap-2">
             {product.sizes && product.sizes.length > 0 && (
               <span className="rounded-full bg-white/20 px-2.5 py-1 text-xs font-medium text-white backdrop-blur-sm">
-                {product.sizes.length} sizes
+                {t('sizes', { count: product.sizes.length })}
               </span>
             )}
             {product.specifications.length > 0 && (
               <span className="rounded-full bg-white/20 px-2.5 py-1 text-xs font-medium text-white backdrop-blur-sm">
-                {product.specifications.length} specs
+                {t('specs', { count: product.specifications.length })}
               </span>
             )}
           </div>
@@ -59,7 +63,9 @@ export function ProductCard({
 
           {/* Product Description */}
           <p className="line-clamp-2 flex-grow text-sm leading-relaxed text-muted-foreground">
-            {product.description}
+            {t.has(`items.${product.id}.description`)
+              ? t(`items.${product.id}.description`)
+              : product.description}
           </p>
         </div>
       </Link>

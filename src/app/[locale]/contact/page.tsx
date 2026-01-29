@@ -3,17 +3,77 @@ import { getTranslations } from 'next-intl/server';
 import { Mail, MapPin, Phone } from 'lucide-react';
 import { Container, Button } from '@/components/ui';
 import { Link } from '@/i18n/routing';
+import {
+  generateContactPageSchema,
+  generateBreadcrumbSchema,
+  combineSchemas,
+} from '@/lib/schema';
 
-export async function generateMetadata(): Promise<Metadata> {
-  const t = await getTranslations('contact');
+const BASE_URL = 'https://watu-care.com';
+
+interface ContactPageProps {
+  params: Promise<{
+    locale: string;
+  }>;
+}
+
+export async function generateMetadata({
+  params,
+}: ContactPageProps): Promise<Metadata> {
+  const { locale } = await params;
+  const t = await getTranslations({ locale, namespace: 'contact' });
+
+  const title = t('meta.title');
+  const description = t('meta.description');
+
   return {
-    title: t('meta.title'),
-    description: t('meta.description'),
+    title,
+    description,
+    keywords: [
+      'contact Watu Care',
+      'medical supplies quote',
+      'B2B healthcare inquiry',
+      'wholesale medical contact',
+      'Africa medical supplier contact',
+    ],
+    openGraph: {
+      title,
+      description,
+      type: 'website',
+      url: `${BASE_URL}/${locale}/contact`,
+      images: [
+        {
+          url: `${BASE_URL}/opengraph-image`,
+          width: 1200,
+          height: 630,
+          alt: 'Contact Watu Care',
+        },
+      ],
+    },
+    alternates: {
+      canonical: `${BASE_URL}/${locale}/contact`,
+      languages: {
+        en: `${BASE_URL}/en/contact`,
+        fr: `${BASE_URL}/fr/contact`,
+      },
+    },
   };
 }
 
-export default async function ContactPage(): Promise<React.ReactElement> {
+export default async function ContactPage({
+  params,
+}: ContactPageProps): Promise<React.ReactElement> {
+  const { locale } = await params;
   const t = await getTranslations('contact');
+
+  // Generate JSON-LD schemas
+  const pageSchema = combineSchemas(
+    generateContactPageSchema(locale),
+    generateBreadcrumbSchema([
+      { name: 'Home', url: `${BASE_URL}/${locale}` },
+      { name: t('meta.title') },
+    ]),
+  );
 
   const contactInfo = [
     {
@@ -36,6 +96,14 @@ export default async function ContactPage(): Promise<React.ReactElement> {
 
   return (
     <main>
+      {/* JSON-LD Structured Data */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(pageSchema),
+        }}
+      />
+
       {/* Hero Section */}
       <section className="bg-gradient-to-br from-secondary via-secondary to-primary/80 py-20 lg:py-28">
         <Container>

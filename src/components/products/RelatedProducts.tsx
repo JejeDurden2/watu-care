@@ -1,3 +1,6 @@
+'use client';
+
+import { useTranslations } from 'next-intl';
 import { getRelatedProducts, getCategoryBySlug } from '@/lib/products';
 import { ProductCard } from './ProductCard';
 import { ProductGrid } from './ProductGrid';
@@ -15,6 +18,7 @@ export function RelatedProducts({
   locale,
   limit = 4,
 }: RelatedProductsProps): React.ReactElement | null {
+  const t = useTranslations('products');
   const category = getCategoryBySlug(categorySlug);
   const relatedProducts = getRelatedProducts(
     categorySlug,
@@ -29,7 +33,7 @@ export function RelatedProducts({
   return (
     <section className="mt-16">
       <h2 className="mb-8 text-2xl font-bold text-secondary">
-        More in this category
+        {t('moreInCategory')}
       </h2>
       <ProductGrid>
         {relatedProducts.map((product) => (

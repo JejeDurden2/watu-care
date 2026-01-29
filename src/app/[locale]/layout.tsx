@@ -11,6 +11,7 @@ import {
   generateOrganizationSchema,
   generateWebSiteSchema,
   generateMedicalBusinessSchema,
+  combineSchemas,
 } from '@/lib/schema';
 
 const BASE_URL = 'https://watu-care.com';
@@ -71,12 +72,6 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
         },
       ],
     },
-    twitter: {
-      card: 'summary_large_image',
-      title,
-      description,
-      images: [`${BASE_URL}/opengraph-image`],
-    },
     alternates: {
       canonical: `${BASE_URL}/${locale}`,
       languages: {
@@ -116,31 +111,21 @@ export default async function LocaleLayout({
 
   const messages = await getMessages();
 
-  // Generate JSON-LD structured data
-  const organizationSchema = generateOrganizationSchema();
-  const webSiteSchema = generateWebSiteSchema(locale);
-  const medicalBusinessSchema = generateMedicalBusinessSchema();
+  // Generate JSON-LD structured data using @graph for cleaner implementation
+  const globalSchema = combineSchemas(
+    generateOrganizationSchema(),
+    generateWebSiteSchema(locale),
+    generateMedicalBusinessSchema(),
+  );
 
   return (
     <NextIntlClientProvider messages={messages}>
       <QuoteProvider>
-        {/* JSON-LD Structured Data */}
+        {/* JSON-LD Structured Data (consolidated @graph) */}
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
-            __html: JSON.stringify(organizationSchema),
-          }}
-        />
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{
-            __html: JSON.stringify(webSiteSchema),
-          }}
-        />
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{
-            __html: JSON.stringify(medicalBusinessSchema),
+            __html: JSON.stringify(globalSchema),
           }}
         />
         <Header />

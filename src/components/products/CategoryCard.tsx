@@ -1,6 +1,7 @@
 'use client';
 
 import Link from 'next/link';
+import { useTranslations } from 'next-intl';
 import type { ProductCategory } from '@/types/product';
 import { ProductImage } from './ProductImage';
 import {
@@ -18,9 +19,18 @@ export function CategoryCard({
   category,
   locale,
 }: CategoryCardProps): React.ReactElement {
+  const t = useTranslations('products');
   const Icon = getCategoryIcon(category.iconSlug);
   const imageUrl = category.image || getCategoryImageUrl(category.slug);
   const fallbackGradient = getCategoryGradient(category.slug);
+
+  // Get translated title and description, fallback to category data
+  const title = t.has(`categories.${category.slug}.title`)
+    ? t(`categories.${category.slug}.title`)
+    : category.title;
+  const description = t.has(`categories.${category.slug}.description`)
+    ? t(`categories.${category.slug}.description`)
+    : category.description;
 
   return (
     <Link
@@ -31,7 +41,7 @@ export function CategoryCard({
         {/* Category Image */}
         <ProductImage
           src={imageUrl}
-          alt={category.title}
+          alt={title}
           iconSlug={category.iconSlug}
           fallbackGradient={fallbackGradient}
           className="h-48 w-full"
@@ -48,18 +58,17 @@ export function CategoryCard({
 
           {/* Category Title */}
           <h3 className="mb-3 text-xl font-semibold text-secondary transition-colors group-hover:text-primary">
-            {category.title}
+            {title}
           </h3>
 
           {/* Category Description */}
           <p className="mb-4 flex-grow text-sm text-foreground/70">
-            {category.description}
+            {description}
           </p>
 
           {/* Product Count */}
           <div className="text-sm font-medium text-primary">
-            {category.products.length} product
-            {category.products.length !== 1 ? 's' : ''}
+            {t('productCount', { count: category.products.length })}
           </div>
         </div>
       </div>

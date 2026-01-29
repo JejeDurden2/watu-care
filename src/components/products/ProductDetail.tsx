@@ -1,5 +1,6 @@
 'use client';
 
+import { useTranslations } from 'next-intl';
 import type { Product, ProductCategory } from '@/types/product';
 import { Button } from '@/components/ui';
 import { ProductSpecs } from './ProductSpecs';
@@ -13,11 +14,12 @@ import { AddToListButton } from '@/components/quote';
 import { useQuoteStore } from '@/lib/quote-store';
 
 function RequestQuoteButton(): React.ReactElement {
+  const t = useTranslations('quote');
   const openModal = useQuoteStore((state) => state.openModal);
 
   return (
     <Button size="lg" onClick={openModal} className="w-full sm:w-auto">
-      Request a Quote
+      {t('requestQuote')}
     </Button>
   );
 }
@@ -32,10 +34,16 @@ export function ProductDetail({
   product,
   category,
 }: ProductDetailProps): React.ReactElement {
+  const t = useTranslations('products');
   const Icon = getCategoryIcon(category.iconSlug);
   const imageUrl =
     product.image || getProductImageUrl(category.slug, product.name);
   const fallbackGradient = getCategoryGradient(category.slug);
+
+  // Get translated category title
+  const categoryTitle = t.has(`categories.${category.slug}.title`)
+    ? t(`categories.${category.slug}.title`)
+    : category.title;
 
   return (
     <div className="space-y-8">
@@ -58,7 +66,7 @@ export function ProductDetail({
           {/* Category Badge */}
           <div className="mb-4 inline-flex w-fit items-center gap-2 rounded-lg bg-primary/10 px-3 py-1 text-sm font-medium text-primary">
             <Icon className="h-4 w-4" />
-            <span>{category.title}</span>
+            <span>{categoryTitle}</span>
           </div>
 
           {/* Product Name */}
@@ -68,7 +76,9 @@ export function ProductDetail({
 
           {/* Product Description */}
           <p className="mb-6 text-lg text-foreground/80">
-            {product.description}
+            {t.has(`items.${product.id}.description`)
+              ? t(`items.${product.id}.description`)
+              : product.description}
           </p>
 
 {/* CTA Buttons */}

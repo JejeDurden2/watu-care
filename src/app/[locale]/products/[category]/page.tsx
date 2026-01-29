@@ -33,6 +33,7 @@ export async function generateMetadata({
   params,
 }: CategoryPageProps): Promise<Metadata> {
   const { locale, category: categorySlug } = await params;
+  const t = await getTranslations({ locale, namespace: 'products' });
   const category = getCategoryBySlug(categorySlug);
 
   if (!category) {
@@ -41,8 +42,18 @@ export async function generateMetadata({
     };
   }
 
-  const title = `${category.title} - Medical Supplies`;
-  const description = `${category.longDescription} Shop ${category.products.length} products from Watu Care.`;
+  // Get translated category title
+  const categoryTitle = t.has(`categories.${categorySlug}.title`)
+    ? t(`categories.${categorySlug}.title`)
+    : category.title;
+
+  // Get translated long description for metadata
+  const categoryLongDesc = t.has(`categories.${categorySlug}.longDescription`)
+    ? t(`categories.${categorySlug}.longDescription`)
+    : category.longDescription;
+
+  const title = `${categoryTitle} - Medical Supplies`;
+  const description = `${categoryLongDesc} Shop ${category.products.length} products from Watu Care.`;
 
   return {
     title,
@@ -70,11 +81,6 @@ export async function generateMetadata({
         },
       ],
     },
-    twitter: {
-      card: 'summary_large_image',
-      title: `${category.title} | Watu Care`,
-      description,
-    },
     alternates: {
       canonical: `${BASE_URL}/${locale}/products/${categorySlug}`,
       languages: {
@@ -90,25 +96,40 @@ export default async function CategoryPage({
 }: CategoryPageProps): Promise<React.ReactElement> {
   const { locale, category: categorySlug } = await params;
   const t = await getTranslations('products');
+  const tNav = await getTranslations('nav');
   const category = getCategoryBySlug(categorySlug);
 
   if (!category) {
     notFound();
   }
 
+  // Get translated category title and description
+  const categoryTitle = t.has(`categories.${categorySlug}.title`)
+    ? t(`categories.${categorySlug}.title`)
+    : category.title;
+  const categoryDescription = t.has(`categories.${categorySlug}.longDescription`)
+    ? t(`categories.${categorySlug}.longDescription`)
+    : category.longDescription;
+
+  // Helper to get translated product description
+  const getProductDescription = (productId: string, fallback: string): string =>
+    t.has(`items.${productId}.description`)
+      ? t(`items.${productId}.description`)
+      : fallback;
+
   // Generate Breadcrumb JSON-LD
   const breadcrumbSchema = generateBreadcrumbSchema([
-    { name: 'Home', url: `${BASE_URL}/${locale}` },
+    { name: tNav('home'), url: `${BASE_URL}/${locale}` },
     { name: t('title'), url: `${BASE_URL}/${locale}/products` },
-    { name: category.title },
+    { name: categoryTitle },
   ]);
 
   // Generate ItemList schema for products
   const itemListSchema = {
     '@context': 'https://schema.org',
     '@type': 'ItemList',
-    name: category.title,
-    description: category.longDescription,
+    name: categoryTitle,
+    description: categoryDescription,
     numberOfItems: category.products.length,
     itemListElement: category.products.map((product, index) => ({
       '@type': 'ListItem',
@@ -116,7 +137,7 @@ export default async function CategoryPage({
       item: {
         '@type': 'Product',
         name: product.name,
-        description: product.description,
+        description: getProductDescription(product.id, product.description),
         url: `${BASE_URL}/${locale}/products/${category.slug}/${product.id}`,
       },
     })),
@@ -144,9 +165,9 @@ export default async function CategoryPage({
         <Breadcrumb
           locale={locale}
           items={[
-            { label: 'Home', href: '/' },
+            { label: tNav('home'), href: '/' },
             { label: t('title'), href: '/products' },
-            { label: category.title },
+            { label: categoryTitle },
           ]}
         />
 
@@ -158,14 +179,14 @@ export default async function CategoryPage({
             <CategoryIcon slug={category.iconSlug} className="h-8 w-8" />
           </div>
           <h1 className="mb-4 text-4xl font-bold text-secondary md:text-5xl">
-            {category.title}
+            {categoryTitle}
           </h1>
           <p className="max-w-3xl text-lg text-foreground/70">
-            {category.longDescription}
+            {categoryDescription}
           </p>
           <p className="mt-4 text-sm font-medium text-primary">
-            {category.products.length} product
-            {category.products.length !== 1 ? 's' : ''} available
+            {t('productCount', { count: category.products.length })}{' '}
+            {t('available')}
           </p>
         </div>
 
