@@ -1,7 +1,7 @@
 {
   "meta": {
-    "title": "Watu Care - Premium Medical Supplies for Africa & Middle East",
-    "description": "Premium medical devices and PPE from Asia's top manufacturers. B2B wholesale for healthcare facilities in Africa and the Middle East."
+    "title": "Watu Care - Medical Supplies for Africa & Middle East",
+    "description": "Medical devices and PPE from Asian manufacturers. B2B wholesale for healthcare facilities in Africa and the Middle East. Based in Hong Kong."
   },
   "nav": {
     "products": "Products",
@@ -11,77 +11,28 @@
     "language": "Language"
   },
   "hero": {
-    "badge": "B2B Medical Wholesale",
-    "headline1": "Premium Medical Supplies",
+    "headline1": "Medical Supplies",
     "headline2": "for Africa & Middle East",
-    "subtitle": "From Asia's top manufacturers to your facility.",
-    "cta": "Get a Quote",
-    "ctaSecondary": "View Products"
-  },
-  "trustBar": {
-    "isoCertified": "ISO Certified Partners",
-    "countries": "25+ Countries Served",
-    "responseTime": "24-48h Response",
-    "qualityGuaranteed": "Quality Guaranteed"
+    "subtitle": "Connecting healthcare providers with quality medical devices and PPE from Asian manufacturers. Based in Hong Kong.",
+    "cta": "Request a Quote",
+    "ctaSecondary": "View Products",
+    "location": "Hong Kong SAR"
   },
   "whyUs": {
-    "sectionLabel": "Why Choose Us",
-    "title": "Your Trusted Partner in Healthcare",
-    "subtitle": "We go beyond just supplying products. We build lasting partnerships with healthcare providers to ensure their success.",
-    "certifiedTitle": "Certified Quality",
-    "certifiedDesc": "All products meet international healthcare standards and certifications.",
-    "globalTitle": "Asia to Africa & Middle East",
-    "globalDesc": "Bridging trusted Asian manufacturers with healthcare providers across developing economies.",
-    "supportTitle": "24/7 Support",
-    "supportDesc": "Dedicated customer service team ready to assist anytime.",
-    "pricesTitle": "Competitive Pricing",
-    "pricesDesc": "Direct manufacturer access without compromising on quality.",
-    "responseTitle": "Fast Response",
-    "responseDesc": "Quick quote processing and responsive customer communication.",
-    "warrantyTitle": "Warranty Protected",
-    "warrantyDesc": "Full warranty on all equipment and bulk orders."
-  },
-  "stats": {
-    "products": "Products",
-    "productsDesc": "In our catalog",
-    "countries": "Countries",
-    "countriesDesc": "Served worldwide",
-    "facilities": "Healthcare Facilities",
-    "facilitiesDesc": "Trust our supplies",
-    "orders": "Orders Delivered",
-    "ordersDesc": "Successfully shipped"
-  },
-  "mission": {
-    "title": "means",
-    "titleHighlight": "People",
-    "titleEnd": "in Swahili",
-    "description1": "And that is exactly what drives us. At Watu Care, we understand that behind every medical supply order is a",
-    "highlight1": "healthcare worker striving to save lives",
-    "and": "and a",
-    "highlight2": "patient hoping for recovery",
-    "description2": "Based in Hong Kong, we strategically connect Asia's leading medical manufacturers with healthcare providers across Africa and the Middle East, growing into a trusted partner for hospitals and clinics in developing economies.",
-    "asiaHub": "Asia Hub",
-    "asiaHubDesc": "Hong Kong headquarters",
-    "healthcareFocus": "Healthcare Focus",
-    "healthcareFocusDesc": "People-first approach",
-    "developingEconomies": "Developing Economies",
-    "developingEconomiesDesc": "Africa & Middle East"
-  },
-  "valueProps": {
-    "title": "Why Partner with Watu Care?",
-    "subtitle": "We bridge the gap between world-class medical manufacturers and healthcare providers who need reliable, quality supplies.",
-    "strategicLocation": "Strategic Location",
-    "strategicLocationDesc": "Hong Kong hub connecting Asia's top manufacturers directly to your facility, ensuring competitive pricing and reliable supply chains.",
-    "qualityAssurance": "Quality Assurance",
-    "qualityAssuranceDesc": "Premium medical devices and PPE that meet international standards. We partner only with certified manufacturers.",
-    "accessibilityFocus": "Accessibility Focus",
-    "accessibilityFocusDesc": "Dedicated to serving developing economies with fair pricing and flexible ordering to meet the unique needs of growing healthcare systems.",
-    "dedicatedSupport": "Dedicated Support",
-    "dedicatedSupportDesc": "Personal account managers who understand healthcare procurement. We're here to support you from quote to delivery."
+    "title": "Why Watu Care",
+    "subtitle": "We connect healthcare providers with quality medical supplies from Asia.",
+    "hubTitle": "Hong Kong Hub",
+    "hubDesc": "Strategic location connecting Asian manufacturers directly to healthcare facilities across Africa and the Middle East.",
+    "directTitle": "Direct Relationships",
+    "directDesc": "We work directly with manufacturers to ensure quality products and competitive pricing.",
+    "serviceTitle": "Responsive Service",
+    "serviceDesc": "Quick quote turnaround and dedicated support throughout your order process.",
+    "catalogTitle": "Wide Catalog",
+    "catalogDesc": "Comprehensive range of medical supplies across multiple categories to meet your facility's needs."
   },
   "categories": {
-    "title": "Our Product Categories",
-    "subtitle": "Comprehensive range of medical supplies sourced from Asia's leading manufacturers.",
+    "title": "Our Products",
+    "subtitle": "Explore our range of medical supplies from Asian manufacturers.",
     "procedurePacks": "Procedure Packs & Drapes",
     "procedurePacksDesc": "Sterile kits for surgical procedures",
     "tubesAirway": "Tubes & Airway Management",
@@ -103,7 +54,7 @@
   },
   "products": {
     "title": "Our Products",
-    "subtitle": "Comprehensive medical supply solutions across 10 specialized categories"
+    "subtitle": "Medical supply solutions across specialized categories"
   },
   "quote": {
     "listTitle": "Your Product List",
@@ -144,47 +95,24 @@
       "middleEast": "Middle East"
     }
   },
-  "featured": {
-    "badge": "Specialized Solutions",
-    "title": "Fluid Management & Medical Consumables",
-    "description": "From IV solutions to surgical consumables, we provide healthcare facilities with the essential supplies they need to deliver quality patient care. Our products meet international safety standards and are sourced from certified manufacturers.",
-    "cta": "Get a Quote"
-  },
   "howItWorks": {
     "title": "How It Works",
-    "subtitle": "Getting premium medical supplies has never been easier. Three simple steps to quality healthcare equipment.",
+    "subtitle": "Three steps to get the medical supplies you need.",
     "step1": "Submit Your Request",
-    "step1Desc": "Tell us what you need. Share your product requirements, quantities, and delivery location through our simple quote form.",
+    "step1Desc": "Share your product requirements, quantities, and delivery location through our quote form.",
     "step2": "Receive Your Quote",
-    "step2Desc": "Our team reviews your request and provides a competitive quote within 24-48 hours, including shipping and logistics details.",
+    "step2Desc": "Our team reviews your request and provides a quote with shipping and logistics details.",
     "step3": "Get Your Products",
-    "step3Desc": "Once approved, we handle procurement, quality checks, and shipping. Track your order until it arrives at your facility."
-  },
-  "testimonials": {
-    "title": "Trusted by Healthcare Providers",
-    "subtitle": "Hear from hospitals and clinics who rely on Watu Care for their medical supply needs.",
-    "quote1": "Watu Care has been instrumental in helping us maintain a steady supply of quality medical equipment. Their understanding of our challenges as a growing hospital in East Africa sets them apart.",
-    "author1": "Dr. Amina Hassan",
-    "role1": "Medical Director",
-    "org1": "Regional Medical Center, Kenya",
-    "quote2": "The team at Watu Care delivers on their promises. Competitive pricing, reliable shipping, and genuine care for healthcare outcomes. They're more than a supplier—they're a partner.",
-    "author2": "Mohammed Al-Rashid",
-    "role2": "Procurement Manager",
-    "org2": "Private Hospital Group, UAE",
-    "quote3": "Finding a reliable supplier for veterinary medical supplies was challenging until we connected with Watu Care. Their range of products and responsive service have made a real difference.",
-    "author3": "Dr. Fatou Diallo",
-    "role3": "Chief Veterinary Officer",
-    "org3": "Agricultural Development Agency, Senegal"
+    "step3Desc": "Once approved, we handle procurement and shipping until your order arrives."
   },
   "cta": {
-    "title": "Ready to Improve Healthcare Access?",
-    "subtitle": "Partner with Watu Care and get competitive quotes for premium medical supplies. Our team is ready to help you serve your patients better.",
+    "title": "Ready to Get Started?",
+    "subtitle": "Request a quote for the medical supplies you need. Our team will respond within 24-48 hours.",
     "button": "Request a Quote",
-    "buttonSecondary": "Contact Us",
-    "trustLine": "Response within 24-48 hours. No commitment required."
+    "buttonSecondary": "Contact Us"
   },
   "footer": {
-    "description": "Connecting Asia's leading manufacturers with healthcare providers across Africa and the Middle East.",
+    "description": "Connecting Asian manufacturers with healthcare providers across Africa and the Middle East.",
     "quickLinks": "Quick Links",
     "products": "Products",
     "aboutUs": "About Us",
@@ -197,21 +125,21 @@
   "about": {
     "meta": {
       "title": "About Us | Watu Care",
-      "description": "Learn about Watu Care's mission to connect Asia's medical manufacturers with healthcare providers across Africa and the Middle East."
+      "description": "Learn about Watu Care's mission to connect Asian medical manufacturers with healthcare providers across Africa and the Middle East."
     },
     "hero": {
       "title": "About Watu Care",
-      "subtitle": "Bridging the gap between world-class medical manufacturers and healthcare providers who need reliable, quality supplies."
+      "subtitle": "Connecting healthcare providers with quality medical supplies."
     },
     "values": {
       "title": "Our Values",
       "subtitle": "The principles that guide everything we do at Watu Care.",
-      "quality": "Quality First",
-      "qualityDesc": "We partner only with certified manufacturers who meet international standards, ensuring every product we deliver is safe and effective.",
+      "quality": "Quality Focus",
+      "qualityDesc": "We partner with manufacturers who meet quality standards, ensuring products that are safe and effective.",
       "reliability": "Reliable Supply Chain",
-      "reliabilityDesc": "Our Hong Kong hub ensures efficient logistics and consistent delivery, so you can count on your supplies arriving when you need them.",
+      "reliabilityDesc": "Our Hong Kong hub provides efficient logistics and consistent delivery.",
       "support": "Dedicated Support",
-      "supportDesc": "Personal account managers who understand healthcare procurement. We're here to support you from quote to delivery."
+      "supportDesc": "Our team is here to support you from quote to delivery."
     }
   },
   "contact": {
@@ -221,10 +149,10 @@
     },
     "hero": {
       "title": "Contact Us",
-      "subtitle": "We're here to help you get the medical supplies you need. Reach out to our team."
+      "subtitle": "We're here to help you get the medical supplies you need."
     },
     "getInTouch": "Get in Touch",
-    "description": "Have questions about our products or want to request a quote? Our team is ready to help you find the right solutions for your healthcare facility.",
+    "description": "Have questions about our products or want to request a quote? Our team is ready to help.",
     "info": {
       "location": "Location",
       "email": "Email",
@@ -234,10 +162,37 @@
     },
     "cta": {
       "title": "Ready to Get Started?",
-      "description": "Send us an email with your requirements and our team will get back to you within 24-48 hours with a competitive quote.",
+      "description": "Send us an email with your requirements and our team will get back to you.",
       "emailButton": "Send Email",
-      "productsButton": "Browse Products",
-      "response": "Response within 24-48 hours. No commitment required."
+      "productsButton": "Browse Products"
     }
+  },
+  "mission": {
+    "title": "means",
+    "titleHighlight": "People",
+    "titleEnd": "in Swahili",
+    "description1": "And that is exactly what drives us. At Watu Care, we understand that behind every medical supply order is a",
+    "highlight1": "healthcare worker striving to save lives",
+    "and": "and a",
+    "highlight2": "patient hoping for recovery",
+    "description2": "Based in Hong Kong, we connect Asian medical manufacturers with healthcare providers across Africa and the Middle East.",
+    "asiaHub": "Asia Hub",
+    "asiaHubDesc": "Hong Kong headquarters",
+    "healthcareFocus": "Healthcare Focus",
+    "healthcareFocusDesc": "People-first approach",
+    "developingEconomies": "Emerging Markets",
+    "developingEconomiesDesc": "Africa & Middle East"
+  },
+  "valueProps": {
+    "title": "Why Partner with Watu Care?",
+    "subtitle": "We connect healthcare providers with quality medical supplies.",
+    "strategicLocation": "Strategic Location",
+    "strategicLocationDesc": "Hong Kong hub connecting Asian manufacturers directly to your facility.",
+    "qualityAssurance": "Quality Focus",
+    "qualityAssuranceDesc": "Medical devices and PPE that meet quality standards.",
+    "accessibilityFocus": "Wide Reach",
+    "accessibilityFocusDesc": "Serving healthcare facilities across Africa and the Middle East.",
+    "dedicatedSupport": "Dedicated Support",
+    "dedicatedSupportDesc": "Our team is here to support you from quote to delivery."
   }
 }

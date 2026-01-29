@@ -10,7 +10,6 @@ export interface OrganizationSchema {
   logo: string;
   description: string;
   email: string;
-  telephone: string;
   address: {
     '@type': 'PostalAddress';
     addressLocality: string;
@@ -35,10 +34,6 @@ export interface ProductSchema {
     '@type': 'Offer';
     availability: string;
     priceCurrency: string;
-    priceSpecification: {
-      '@type': 'PriceSpecification';
-      priceCurrency: string;
-    };
   };
   category: string;
 }
@@ -82,25 +77,15 @@ export function generateOrganizationSchema(): OrganizationSchema {
     url: BASE_URL,
     logo: `${BASE_URL}/logo.png`,
     description:
-      "Bridging Asia's leading manufacturers with healthcare providers across Africa and the Middle East. Premium medical devices and PPE wholesale.",
+      'Connecting Asian manufacturers with healthcare providers across Africa and the Middle East. Medical devices and PPE wholesale. Based in Hong Kong.',
     email: 'contact@watu-care.com',
-    telephone: '+852-9876-5432',
     address: {
       '@type': 'PostalAddress',
       addressLocality: 'Hong Kong',
       addressRegion: 'Hong Kong',
       addressCountry: 'HK',
     },
-    areaServed: [
-      'Africa',
-      'Middle East',
-      'Kenya',
-      'Nigeria',
-      'South Africa',
-      'UAE',
-      'Saudi Arabia',
-      'Egypt',
-    ],
+    areaServed: ['Africa', 'Middle East'],
     sameAs: [],
   };
 }
@@ -115,7 +100,7 @@ export function generateWebSiteSchema(locale: string): WebSiteSchema {
     name: 'Watu Care',
     url: `${BASE_URL}/${locale}`,
     description:
-      "Premium medical devices and PPE wholesale. Connecting Asia's manufacturers with healthcare providers in Africa and the Middle East.",
+      'Medical devices and PPE wholesale. Connecting Asian manufacturers with healthcare providers in Africa and the Middle East.',
     inLanguage: ['en', 'fr'],
     publisher: {
       '@type': 'Organization',
@@ -141,7 +126,7 @@ export function generateProductSchema(
     '@type': 'Product',
     name: product.name,
     description: product.description,
-    image: product.image || `${BASE_URL}/hero-medical.jpg`,
+    image: product.image || `${BASE_URL}/logo.png`,
     brand: {
       '@type': 'Brand',
       name: 'Watu Care',
@@ -150,10 +135,6 @@ export function generateProductSchema(
       '@type': 'Offer',
       availability: 'https://schema.org/InStock',
       priceCurrency: 'USD',
-      priceSpecification: {
-        '@type': 'PriceSpecification',
-        priceCurrency: 'USD',
-      },
     },
     category: category.title,
   };
@@ -188,8 +169,7 @@ export function generateMedicalBusinessSchema(): Record<string, unknown> {
     url: BASE_URL,
     logo: `${BASE_URL}/logo.png`,
     description:
-      'B2B medical devices and PPE wholesale supplier serving healthcare providers in Africa and the Middle East.',
-    priceRange: '$$',
+      'B2B medical devices and PPE wholesale supplier. Serving healthcare providers in Africa and the Middle East. Based in Hong Kong.',
     address: {
       '@type': 'PostalAddress',
       addressLocality: 'Hong Kong',
@@ -200,17 +180,7 @@ export function generateMedicalBusinessSchema(): Record<string, unknown> {
       latitude: 22.3193,
       longitude: 114.1694,
     },
-    areaServed: [
-      {
-        '@type': 'GeoCircle',
-        geoMidpoint: {
-          '@type': 'GeoCoordinates',
-          latitude: 0,
-          longitude: 20,
-        },
-        geoRadius: '5000',
-      },
-    ],
+    areaServed: ['Africa', 'Middle East'],
     hasOfferCatalog: {
       '@type': 'OfferCatalog',
       name: 'Medical Supplies Catalog',

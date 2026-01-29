@@ -1,7 +1,7 @@
 {
   "meta": {
-    "title": "Watu Care - Équipement Médical Premium pour l'Afrique et le Moyen-Orient",
-    "description": "Dispositifs médicaux et EPI premium des meilleurs fabricants d'Asie. Grossiste B2B pour les établissements de santé en Afrique et au Moyen-Orient."
+    "title": "Watu Care - Équipement Médical pour l'Afrique et le Moyen-Orient",
+    "description": "Dispositifs médicaux et EPI de fabricants asiatiques. Grossiste B2B pour les établissements de santé en Afrique et au Moyen-Orient. Basé à Hong Kong."
   },
   "nav": {
     "products": "Produits",
@@ -11,77 +11,28 @@
     "language": "Langue"
   },
   "hero": {
-    "badge": "Grossiste Médical B2B",
-    "headline1": "Équipement Médical Premium",
+    "headline1": "Équipement Médical",
     "headline2": "pour l'Afrique et le Moyen-Orient",
-    "subtitle": "Des meilleurs fabricants d'Asie à votre établissement.",
-    "cta": "Obtenir un devis",
-    "ctaSecondary": "Voir les produits"
-  },
-  "trustBar": {
-    "isoCertified": "Partenaires certifiés ISO",
-    "countries": "25+ pays desservis",
-    "responseTime": "Réponse sous 24-48h",
-    "qualityGuaranteed": "Qualité garantie"
+    "subtitle": "Nous connectons les prestataires de santé avec des dispositifs médicaux et EPI de qualité provenant de fabricants asiatiques. Basé à Hong Kong.",
+    "cta": "Demander un devis",
+    "ctaSecondary": "Voir les produits",
+    "location": "Hong Kong SAR"
   },
   "whyUs": {
-    "sectionLabel": "Pourquoi nous choisir",
-    "title": "Votre Partenaire de Confiance en Santé",
-    "subtitle": "Nous allons au-delà de la simple fourniture de produits. Nous construisons des partenariats durables avec les prestataires de santé pour assurer leur succès.",
-    "certifiedTitle": "Qualité Certifiée",
-    "certifiedDesc": "Tous nos produits respectent les normes et certifications internationales de santé.",
-    "globalTitle": "De l'Asie à l'Afrique et au Moyen-Orient",
-    "globalDesc": "Nous connectons les fabricants asiatiques de confiance aux prestataires de santé des économies en développement.",
-    "supportTitle": "Support 24/7",
-    "supportDesc": "Une équipe de service client dédiée prête à vous aider à tout moment.",
-    "pricesTitle": "Prix Compétitifs",
-    "pricesDesc": "Accès direct aux fabricants sans compromis sur la qualité.",
-    "responseTitle": "Réponse Rapide",
-    "responseDesc": "Traitement rapide des devis et communication réactive.",
-    "warrantyTitle": "Garantie Incluse",
-    "warrantyDesc": "Garantie complète sur tous les équipements et commandes en gros."
-  },
-  "stats": {
-    "products": "Produits",
-    "productsDesc": "Dans notre catalogue",
-    "countries": "Pays",
-    "countriesDesc": "Desservis dans le monde",
-    "facilities": "Établissements de santé",
-    "facilitiesDesc": "Nous font confiance",
-    "orders": "Commandes livrées",
-    "ordersDesc": "Expédiées avec succès"
-  },
-  "mission": {
-    "title": "signifie",
-    "titleHighlight": "Personnes",
-    "titleEnd": "en Swahili",
-    "description1": "Et c'est exactement ce qui nous motive. Chez Watu Care, nous comprenons que derrière chaque commande de fournitures médicales se trouve un",
-    "highlight1": "professionnel de santé qui s'efforce de sauver des vies",
-    "and": "et un",
-    "highlight2": "patient qui espère guérir",
-    "description2": "Basés à Hong Kong, nous connectons stratégiquement les principaux fabricants médicaux d'Asie aux prestataires de soins de santé en Afrique et au Moyen-Orient, devenant un partenaire de confiance pour les hôpitaux et cliniques des économies en développement.",
-    "asiaHub": "Hub Asie",
-    "asiaHubDesc": "Siège à Hong Kong",
-    "healthcareFocus": "Focus Santé",
-    "healthcareFocusDesc": "L'humain d'abord",
-    "developingEconomies": "Économies en développement",
-    "developingEconomiesDesc": "Afrique & Moyen-Orient"
-  },
-  "valueProps": {
-    "title": "Pourquoi choisir Watu Care ?",
-    "subtitle": "Nous faisons le lien entre les fabricants médicaux de classe mondiale et les prestataires de santé qui ont besoin de fournitures fiables et de qualité.",
-    "strategicLocation": "Emplacement stratégique",
-    "strategicLocationDesc": "Hub à Hong Kong connectant les meilleurs fabricants d'Asie directement à votre établissement, garantissant des prix compétitifs et des chaînes d'approvisionnement fiables.",
-    "qualityAssurance": "Assurance qualité",
-    "qualityAssuranceDesc": "Dispositifs médicaux et EPI premium conformes aux normes internationales. Nous ne travaillons qu'avec des fabricants certifiés.",
-    "accessibilityFocus": "Focus accessibilité",
-    "accessibilityFocusDesc": "Dédiés à servir les économies en développement avec des prix équitables et des commandes flexibles pour répondre aux besoins uniques des systèmes de santé en croissance.",
-    "dedicatedSupport": "Support dédié",
-    "dedicatedSupportDesc": "Des gestionnaires de compte personnels qui comprennent les achats dans le secteur de la santé. Nous vous accompagnons du devis à la livraison."
+    "title": "Pourquoi Watu Care",
+    "subtitle": "Nous connectons les prestataires de santé avec des fournitures médicales de qualité provenant d'Asie.",
+    "hubTitle": "Hub Hong Kong",
+    "hubDesc": "Emplacement stratégique reliant les fabricants asiatiques aux établissements de santé en Afrique et au Moyen-Orient.",
+    "directTitle": "Relations Directes",
+    "directDesc": "Nous travaillons directement avec les fabricants pour garantir des produits de qualité à prix compétitifs.",
+    "serviceTitle": "Service Réactif",
+    "serviceDesc": "Réponse rapide aux devis et support dédié tout au long de votre commande.",
+    "catalogTitle": "Large Catalogue",
+    "catalogDesc": "Gamme complète de fournitures médicales dans plusieurs catégories pour répondre aux besoins de votre établissement."
   },
   "categories": {
-    "title": "Nos catégories de produits",
-    "subtitle": "Une gamme complète de fournitures médicales provenant des principaux fabricants asiatiques.",
+    "title": "Nos Produits",
+    "subtitle": "Découvrez notre gamme de fournitures médicales de fabricants asiatiques.",
     "procedurePacks": "Packs de procédure & Champs",
     "procedurePacksDesc": "Kits stériles pour interventions chirurgicales",
     "tubesAirway": "Tubes & Gestion des voies aériennes",
@@ -102,8 +53,8 @@
     "customRequestLink": "Contactez-nous pour des demandes personnalisées"
   },
   "products": {
-    "title": "Nos produits",
-    "subtitle": "Solutions complètes de fournitures médicales dans 10 catégories spécialisées"
+    "title": "Nos Produits",
+    "subtitle": "Solutions de fournitures médicales dans des catégories spécialisées"
   },
   "quote": {
     "listTitle": "Votre liste de produits",
@@ -144,47 +95,24 @@
       "middleEast": "Moyen-Orient"
     }
   },
-  "featured": {
-    "badge": "Solutions spécialisées",
-    "title": "Gestion des fluides & Consommables médicaux",
-    "description": "Des solutions IV aux consommables chirurgicaux, nous fournissons aux établissements de santé les fournitures essentielles dont ils ont besoin pour offrir des soins de qualité aux patients. Nos produits respectent les normes de sécurité internationales et proviennent de fabricants certifiés.",
-    "cta": "Obtenir un devis"
-  },
   "howItWorks": {
     "title": "Comment ça marche",
-    "subtitle": "Obtenir des fournitures médicales premium n'a jamais été aussi simple. Trois étapes simples vers un équipement de santé de qualité.",
+    "subtitle": "Trois étapes pour obtenir les fournitures médicales dont vous avez besoin.",
     "step1": "Soumettez votre demande",
-    "step1Desc": "Dites-nous ce dont vous avez besoin. Partagez vos exigences produits, quantités et lieu de livraison via notre formulaire de devis simple.",
+    "step1Desc": "Partagez vos besoins en produits, quantités et lieu de livraison via notre formulaire de devis.",
     "step2": "Recevez votre devis",
-    "step2Desc": "Notre équipe examine votre demande et vous fournit un devis compétitif sous 24-48 heures, incluant les détails d'expédition et de logistique.",
+    "step2Desc": "Notre équipe examine votre demande et vous fournit un devis avec les détails d'expédition et de logistique.",
     "step3": "Recevez vos produits",
-    "step3Desc": "Une fois approuvé, nous gérons l'approvisionnement, les contrôles qualité et l'expédition. Suivez votre commande jusqu'à son arrivée dans votre établissement."
-  },
-  "testimonials": {
-    "title": "La confiance des prestataires de santé",
-    "subtitle": "Découvrez les témoignages d'hôpitaux et de cliniques qui comptent sur Watu Care pour leurs besoins en fournitures médicales.",
-    "quote1": "Watu Care a joué un rôle déterminant pour nous aider à maintenir un approvisionnement régulier en équipements médicaux de qualité. Leur compréhension de nos défis en tant qu'hôpital en croissance en Afrique de l'Est les distingue.",
-    "author1": "Dr. Amina Hassan",
-    "role1": "Directrice médicale",
-    "org1": "Centre Médical Régional, Kenya",
-    "quote2": "L'équipe de Watu Care tient ses promesses. Prix compétitifs, expédition fiable et véritable souci des résultats en matière de santé. Ils sont plus qu'un fournisseur — ils sont un partenaire.",
-    "author2": "Mohammed Al-Rashid",
-    "role2": "Responsable des achats",
-    "org2": "Groupe Hospitalier Privé, EAU",
-    "quote3": "Trouver un fournisseur fiable pour les fournitures médicales vétérinaires était un défi jusqu'à ce que nous connections avec Watu Care. Leur gamme de produits et leur service réactif ont fait une vraie différence.",
-    "author3": "Dr. Fatou Diallo",
-    "role3": "Vétérinaire en chef",
-    "org3": "Agence de Développement Agricole, Sénégal"
+    "step3Desc": "Une fois approuvé, nous gérons l'approvisionnement et l'expédition jusqu'à l'arrivée de votre commande."
   },
   "cta": {
-    "title": "Prêt à améliorer l'accès aux soins de santé ?",
-    "subtitle": "Devenez partenaire de Watu Care et obtenez des devis compétitifs pour des fournitures médicales premium. Notre équipe est prête à vous aider à mieux servir vos patients.",
+    "title": "Prêt à commencer ?",
+    "subtitle": "Demandez un devis pour les fournitures médicales dont vous avez besoin. Notre équipe vous répondra sous 24-48 heures.",
     "button": "Demander un devis",
-    "buttonSecondary": "Nous contacter",
-    "trustLine": "Réponse sous 24-48 heures. Aucun engagement requis."
+    "buttonSecondary": "Nous contacter"
   },
   "footer": {
-    "description": "Nous connectons les principaux fabricants asiatiques aux prestataires de soins de santé en Afrique et au Moyen-Orient.",
+    "description": "Nous connectons les fabricants asiatiques aux prestataires de soins de santé en Afrique et au Moyen-Orient.",
     "quickLinks": "Liens rapides",
     "products": "Produits",
     "aboutUs": "À propos",
@@ -201,17 +129,17 @@
     },
     "hero": {
       "title": "À propos de Watu Care",
-      "subtitle": "Faire le lien entre les fabricants médicaux de classe mondiale et les prestataires de santé qui ont besoin de fournitures fiables et de qualité."
+      "subtitle": "Nous connectons les prestataires de santé avec des fournitures médicales de qualité."
     },
     "values": {
       "title": "Nos valeurs",
       "subtitle": "Les principes qui guident tout ce que nous faisons chez Watu Care.",
-      "quality": "La qualité d'abord",
-      "qualityDesc": "Nous ne travaillons qu'avec des fabricants certifiés qui respectent les normes internationales, garantissant que chaque produit que nous livrons est sûr et efficace.",
+      "quality": "Focus Qualité",
+      "qualityDesc": "Nous travaillons avec des fabricants qui respectent les normes de qualité, garantissant des produits sûrs et efficaces.",
       "reliability": "Chaîne d'approvisionnement fiable",
-      "reliabilityDesc": "Notre hub à Hong Kong assure une logistique efficace et des livraisons régulières, pour que vous puissiez compter sur l'arrivée de vos fournitures quand vous en avez besoin.",
+      "reliabilityDesc": "Notre hub à Hong Kong assure une logistique efficace et des livraisons régulières.",
       "support": "Support dédié",
-      "supportDesc": "Des gestionnaires de compte personnels qui comprennent les achats dans le secteur de la santé. Nous vous accompagnons du devis à la livraison."
+      "supportDesc": "Notre équipe vous accompagne du devis à la livraison."
     }
   },
   "contact": {
@@ -221,10 +149,10 @@
     },
     "hero": {
       "title": "Contactez-nous",
-      "subtitle": "Nous sommes là pour vous aider à obtenir les fournitures médicales dont vous avez besoin. Contactez notre équipe."
+      "subtitle": "Nous sommes là pour vous aider à obtenir les fournitures médicales dont vous avez besoin."
     },
     "getInTouch": "Nous contacter",
-    "description": "Vous avez des questions sur nos produits ou souhaitez demander un devis ? Notre équipe est prête à vous aider à trouver les bonnes solutions pour votre établissement de santé.",
+    "description": "Vous avez des questions sur nos produits ou souhaitez demander un devis ? Notre équipe est prête à vous aider.",
     "info": {
       "location": "Localisation",
       "email": "Email",
@@ -234,10 +162,37 @@
     },
     "cta": {
       "title": "Prêt à commencer ?",
-      "description": "Envoyez-nous un email avec vos besoins et notre équipe vous répondra sous 24-48 heures avec un devis compétitif.",
+      "description": "Envoyez-nous un email avec vos besoins et notre équipe vous répondra.",
       "emailButton": "Envoyer un email",
-      "productsButton": "Parcourir les produits",
-      "response": "Réponse sous 24-48 heures. Aucun engagement requis."
+      "productsButton": "Parcourir les produits"
     }
+  },
+  "mission": {
+    "title": "signifie",
+    "titleHighlight": "Personnes",
+    "titleEnd": "en Swahili",
+    "description1": "Et c'est exactement ce qui nous motive. Chez Watu Care, nous comprenons que derrière chaque commande de fournitures médicales se trouve un",
+    "highlight1": "professionnel de santé qui s'efforce de sauver des vies",
+    "and": "et un",
+    "highlight2": "patient qui espère guérir",
+    "description2": "Basés à Hong Kong, nous connectons les fabricants médicaux asiatiques aux prestataires de soins de santé en Afrique et au Moyen-Orient.",
+    "asiaHub": "Hub Asie",
+    "asiaHubDesc": "Siège à Hong Kong",
+    "healthcareFocus": "Focus Santé",
+    "healthcareFocusDesc": "L'humain d'abord",
+    "developingEconomies": "Marchés émergents",
+    "developingEconomiesDesc": "Afrique & Moyen-Orient"
+  },
+  "valueProps": {
+    "title": "Pourquoi choisir Watu Care ?",
+    "subtitle": "Nous connectons les prestataires de santé avec des fournitures médicales de qualité.",
+    "strategicLocation": "Emplacement stratégique",
+    "strategicLocationDesc": "Hub à Hong Kong connectant les fabricants asiatiques directement à votre établissement.",
+    "qualityAssurance": "Focus Qualité",
+    "qualityAssuranceDesc": "Dispositifs médicaux et EPI répondant aux normes de qualité.",
+    "accessibilityFocus": "Large couverture",
+    "accessibilityFocusDesc": "Nous desservons les établissements de santé en Afrique et au Moyen-Orient.",
+    "dedicatedSupport": "Support dédié",
+    "dedicatedSupportDesc": "Notre équipe vous accompagne du devis à la livraison."
   }
 }

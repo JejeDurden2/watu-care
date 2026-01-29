@@ -64,10 +64,10 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       locale: locale === 'fr' ? 'fr_FR' : 'en_US',
       images: [
         {
-          url: `${BASE_URL}/og-image.png`,
+          url: `${BASE_URL}/opengraph-image`,
           width: 1200,
           height: 630,
-          alt: 'Watu Care - Premium Medical Devices & PPE Wholesale',
+          alt: 'Watu Care - Medical Supplies for Africa & Middle East',
         },
       ],
     },
@@ -75,8 +75,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       card: 'summary_large_image',
       title,
       description,
-      images: [`${BASE_URL}/og-image.png`],
-      creator: '@watucare',
+      images: [`${BASE_URL}/opengraph-image`],
     },
     alternates: {
       canonical: `${BASE_URL}/${locale}`,

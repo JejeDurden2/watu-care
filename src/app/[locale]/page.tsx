@@ -1,7 +1,5 @@
 import {
   Hero,
-  TrustBar,
-  Stats,
   WhyUs,
   Categories,
   HowItWorks,
@@ -12,10 +10,8 @@ export default function Home(): React.ReactElement {
   return (
     <main>
       <Hero />
-      <TrustBar />
-      <Stats />
-      <WhyUs />
       <Categories />
+      <WhyUs />
       <HowItWorks />
       <CTA />
     </main>

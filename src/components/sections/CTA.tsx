@@ -24,12 +24,12 @@ export async function CTA(): Promise<React.ReactElement> {
           </div>
 
           {/* Heading */}
-          <h2 className="mb-4 text-3xl font-bold tracking-tight text-white sm:text-4xl lg:text-5xl">
+          <h2 className="mb-4 text-heading-lg text-white lg:text-display-sm">
             {t('title')}
           </h2>
 
           {/* Subheading */}
-          <p className="mb-8 text-lg text-white/80 lg:text-xl">{t('subtitle')}</p>
+          <p className="mb-8 text-body-lg text-white/80">{t('subtitle')}</p>
 
           {/* CTA Buttons */}
           <div className="flex flex-col items-center justify-center gap-4 sm:flex-row">
@@ -52,9 +52,6 @@ export async function CTA(): Promise<React.ReactElement> {
               <Link href="#contact">{t('buttonSecondary')}</Link>
             </Button>
           </div>
-
-          {/* Trust Line */}
-          <p className="mt-8 text-sm text-white/60">{t('trustLine')}</p>
         </div>
       </Container>
     </section>

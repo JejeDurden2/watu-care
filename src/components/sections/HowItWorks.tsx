@@ -18,10 +18,10 @@ export async function HowItWorks(): Promise<React.ReactElement> {
       <Container>
         {/* Header */}
         <div className="mx-auto mb-12 max-w-2xl text-center lg:mb-16">
-          <h2 className="mb-4 text-3xl font-bold tracking-tight sm:text-4xl">
+          <h2 className="mb-4 text-heading-lg lg:text-display-sm">
             {t('title')}
           </h2>
-          <p className="text-lg text-muted-foreground">{t('subtitle')}</p>
+          <p className="text-body-lg text-muted-foreground">{t('subtitle')}</p>
         </div>
 
         {/* Steps */}
