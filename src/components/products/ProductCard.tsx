@@ -58,7 +58,9 @@ export function ProductCard({
         <div className="flex flex-1 flex-col p-5">
           {/* Product Name */}
           <h3 className="mb-2 font-semibold text-secondary transition-colors group-hover:text-primary">
-            {product.name}
+            {t.has(`items.${product.id}.name`)
+              ? t(`items.${product.id}.name`)
+              : product.name}
           </h3>
 
           {/* Product Description */}

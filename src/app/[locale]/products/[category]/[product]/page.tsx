@@ -64,27 +64,33 @@ export async function generateMetadata({
 
   const t = await getTranslations({ locale, namespace: 'products' });
 
-  // Get translated product description for metadata
+  // Get translated product name and description for metadata
+  const productName = t.has(`items.${productId}.name`)
+    ? t(`items.${productId}.name`)
+    : product.name;
   const productDesc = t.has(`items.${productId}.description`)
     ? t(`items.${productId}.description`)
     : product.description;
+  const categoryTitle = t.has(`categories.${categorySlug}.title`)
+    ? t(`categories.${categorySlug}.title`)
+    : category.title;
 
-  const title = `${product.name} - ${category.title}`;
+  const title = `${productName} - ${categoryTitle}`;
   const description = `${productDesc} Available from Watu Care - your trusted B2B medical supplies partner.`;
 
   return {
     title,
     description,
     keywords: [
-      product.name,
-      category.title,
+      productName,
+      categoryTitle,
       'medical supplies',
       'wholesale',
       'B2B',
       ...(product.materials || []),
     ],
     openGraph: {
-      title: `${product.name} | Watu Care`,
+      title: `${productName} | Watu Care`,
       description,
       type: 'website',
       url: `${BASE_URL}/${locale}/products/${categorySlug}/${productId}`,
@@ -93,7 +99,7 @@ export async function generateMetadata({
           url: product.image || `${BASE_URL}/og-image.png`,
           width: 1200,
           height: 630,
-          alt: product.name,
+          alt: productName,
         },
       ],
     },
@@ -125,6 +131,11 @@ export default async function ProductPage({
     ? t(`categories.${categorySlug}.title`)
     : category.title;
 
+  // Get translated product name
+  const productName = t.has(`items.${productId}.name`)
+    ? t(`items.${productId}.name`)
+    : product.name;
+
   // Get translated product description
   const productDescription = t.has(`items.${productId}.description`)
     ? t(`items.${productId}.description`)
@@ -136,7 +147,7 @@ export default async function ProductPage({
     { name: tNav('home'), url: `${BASE_URL}/${locale}` },
     { name: t('title'), url: `${BASE_URL}/${locale}/products` },
     { name: categoryTitle, url: `${BASE_URL}/${locale}/products/${category.slug}` },
-    { name: product.name },
+    { name: productName },
   ]);
 
   return (
@@ -164,7 +175,7 @@ export default async function ProductPage({
             { label: tNav('home'), href: '/' },
             { label: t('title'), href: '/products' },
             { label: categoryTitle, href: `/products/${category.slug}` },
-            { label: product.name },
+            { label: productName },
           ]}
         />
 

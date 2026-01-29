@@ -45,6 +45,11 @@ export function ProductDetail({
     ? t(`categories.${category.slug}.title`)
     : category.title;
 
+  // Get translated product name
+  const productName = t.has(`items.${product.id}.name`)
+    ? t(`items.${product.id}.name`)
+    : product.name;
+
   return (
     <div className="space-y-8">
       {/* Product Header with Image */}
@@ -53,7 +58,7 @@ export function ProductDetail({
         <div className="rounded-lg overflow-hidden">
           <ProductImage
             src={imageUrl}
-            alt={product.name}
+            alt={productName}
             iconSlug={category.iconSlug}
             fallbackGradient={fallbackGradient}
             className="aspect-square w-full"
@@ -71,7 +76,7 @@ export function ProductDetail({
 
           {/* Product Name */}
           <h1 className="mb-4 text-3xl font-bold text-secondary md:text-4xl">
-            {product.name}
+            {productName}
           </h1>
 
           {/* Product Description */}
