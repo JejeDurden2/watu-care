@@ -30,7 +30,9 @@ const config: Config = {
         border: 'hsl(var(--border))',
       },
       fontFamily: {
-        sans: ['var(--font-inter)', 'system-ui', 'sans-serif'],
+        display: ['var(--font-display)', 'system-ui', 'sans-serif'],
+        body: ['var(--font-body)', 'system-ui', 'sans-serif'],
+        sans: ['var(--font-body)', 'system-ui', 'sans-serif'], // Default
       },
       fontSize: {
         'display-lg': ['4.5rem', { lineHeight: '1.1', letterSpacing: '-0.02em', fontWeight: '800' }],
@@ -50,6 +52,10 @@ const config: Config = {
         'soft-xl': '0 12px 32px -12px rgba(0,0,0,0.12), 0 24px 64px -24px rgba(0,0,0,0.1)',
         'glow-primary': '0 0 24px -4px hsl(var(--primary) / 0.3)',
         'glow-accent': '0 0 24px -4px hsl(var(--accent) / 0.3)',
+        // Enhanced depth system
+        'depth-sm': '0 1px 2px rgba(0,0,0,0.04), 0 2px 8px rgba(0,0,0,0.06), 0 8px 24px rgba(0,0,0,0.04)',
+        'depth-md': '0 2px 4px rgba(0,0,0,0.06), 0 8px 16px rgba(0,0,0,0.08), 0 16px 48px rgba(0,0,0,0.06)',
+        'depth-lg': '0 4px 8px rgba(0,0,0,0.08), 0 16px 32px rgba(0,0,0,0.10), 0 32px 64px rgba(0,0,0,0.08)',
       },
       borderRadius: {
         xl: '1rem',

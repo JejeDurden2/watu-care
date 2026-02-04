@@ -54,14 +54,12 @@ export function CategoryCard({
   return (
     <Link
       href={href ?? `/products/${slug}`}
-      className="group relative flex flex-col overflow-hidden rounded-2xl border border-border bg-white p-6 transition-all duration-200 hover:-translate-y-1 hover:border-primary/30 hover:shadow-soft-lg"
+      className="group relative flex flex-col overflow-hidden rounded-2xl border border-border bg-white p-6 transition-all duration-300 hover:-translate-y-2 hover:border-primary/30 hover:shadow-depth-md"
     >
-      {/* Subtle gradient accent in corner */}
-      <div className="absolute -right-8 -top-8 h-24 w-24 rounded-full bg-gradient-to-br from-primary/10 to-accent/5 blur-2xl transition-all duration-300 group-hover:scale-150 group-hover:opacity-80" />
 
-      {/* Icon */}
-      <div className="relative mb-5 flex h-16 w-16 items-center justify-center rounded-2xl bg-primary/10 transition-colors duration-200 group-hover:bg-primary">
-        <Icon className="h-8 w-8 text-primary transition-colors duration-200 group-hover:text-white" />
+      {/* Animated icon badge */}
+      <div className="relative mb-5 flex h-16 w-16 items-center justify-center rounded-2xl bg-primary/10 transition-all duration-300 group-hover:bg-primary group-hover:scale-110 group-hover:rotate-3">
+        <Icon className="h-8 w-8 text-primary transition-all duration-300 group-hover:text-white group-hover:scale-110" />
       </div>
 
       {/* Content */}

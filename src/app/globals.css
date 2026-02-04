@@ -29,26 +29,38 @@
 
   body {
     @apply bg-background text-foreground antialiased;
+    font-family: var(--font-body), system-ui, sans-serif;
     font-feature-settings: "rlig" 1, "calt" 1;
   }
 
   /* Enhanced Typography */
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-display), system-ui, sans-serif;
+  }
+
   h1 {
     @apply text-4xl font-extrabold tracking-tight md:text-5xl lg:text-6xl;
-    letter-spacing: -0.02em;
+    letter-spacing: -0.03em;
   }
 
   h2 {
     @apply text-2xl font-bold tracking-tight md:text-3xl lg:text-4xl;
-    letter-spacing: -0.01em;
+    letter-spacing: -0.03em;
   }
 
   h3 {
     @apply text-xl font-semibold md:text-2xl;
+    letter-spacing: -0.02em;
   }
 
   h4, h5, h6 {
     @apply text-secondary font-semibold tracking-tight;
+    letter-spacing: -0.01em;
+  }
+
+  /* Apply display font to buttons and UI elements */
+  button, .nav-item, .ui-label {
+    font-family: var(--font-display), system-ui, sans-serif;
   }
 }
 
@@ -108,6 +120,19 @@
 
   .gradient-subtle {
     background: linear-gradient(180deg, hsl(var(--background)) 0%, hsl(210 20% 95%) 100%);
+  }
+
+  /* Glassmorphism */
+  .glass-card {
+    background: rgba(255, 255, 255, 0.7);
+    backdrop-filter: blur(12px) saturate(180%);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+  }
+
+  .glass-card-dark {
+    background: rgba(26, 58, 82, 0.4);
+    backdrop-filter: blur(12px) saturate(180%);
+    border: 1px solid rgba(255, 255, 255, 0.1);
   }
 
   /* Section backgrounds */
@@ -236,6 +261,74 @@ html {
 .delay-300 { animation-delay: 300ms; }
 .delay-400 { animation-delay: 400ms; }
 .delay-500 { animation-delay: 500ms; }
+
+/* Staggered entrance animations */
+@keyframes fade-in-up-stagger {
+  0% {
+    opacity: 0;
+    transform: translateY(32px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.stagger-item {
+  opacity: 0;
+  animation: fade-in-up-stagger 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+/* Stagger delay utilities */
+.stagger-delay-1 { animation-delay: 0ms; }
+.stagger-delay-2 { animation-delay: 100ms; }
+.stagger-delay-3 { animation-delay: 200ms; }
+.stagger-delay-4 { animation-delay: 300ms; }
+.stagger-delay-5 { animation-delay: 400ms; }
+.stagger-delay-6 { animation-delay: 500ms; }
+.stagger-delay-7 { animation-delay: 600ms; }
+.stagger-delay-8 { animation-delay: 700ms; }
+.stagger-delay-9 { animation-delay: 800ms; }
+
+/* Button enhancements */
+@keyframes button-press {
+  0% { transform: scale(1); }
+  50% { transform: scale(0.96); }
+  100% { transform: scale(1); }
+}
+
+.button-enhanced {
+  position: relative;
+  overflow: hidden;
+}
+
+.button-enhanced::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.3);
+  transform: translate(-50%, -50%);
+  transition: width 0.6s ease-out, height 0.6s ease-out;
+  pointer-events: none;
+}
+
+.button-enhanced:hover::before {
+  width: 300px;
+  height: 300px;
+}
+
+.button-enhanced:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px -8px rgba(0,0,0,0.2), 0 16px 48px -16px rgba(0,0,0,0.15);
+}
+
+.button-press:active {
+  animation: button-press 200ms ease-out;
+}
 
 /* Reduced motion */
 @media (prefers-reduced-motion: reduce) {

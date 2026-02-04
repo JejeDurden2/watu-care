@@ -12,9 +12,6 @@ export async function Hero(): Promise<React.ReactElement> {
         {/* Subtle dot pattern */}
         <div className="pattern-dots-light absolute inset-0 text-white" />
 
-        {/* Gradient overlay */}
-        <div className="absolute inset-0 bg-gradient-to-br from-secondary via-secondary/95 to-primary/20" />
-
         {/* Diagonal accent lines - bottom right */}
         <div
           className="absolute bottom-0 right-0 h-1/2 w-1/2 opacity-[0.03]"
@@ -32,9 +29,9 @@ export async function Hero(): Promise<React.ReactElement> {
 
       {/* Content */}
       <Container className="relative z-10">
-        <div className="grid min-h-[85vh] items-center gap-12 py-20 lg:grid-cols-[1.1fr_0.9fr] lg:gap-16">
+        <div className="grid min-h-[85vh] items-center gap-12 py-20 lg:grid-cols-[1.2fr_0.8fr] lg:gap-20">
           {/* Left Column - Text Content */}
-          <div className="space-y-8">
+          <div className="space-y-8 lg:pr-8">
             {/* Headline */}
             <h1 className="text-display-sm text-white md:text-display lg:text-display-lg">
               {t('headline1')}
@@ -65,14 +62,11 @@ export async function Hero(): Promise<React.ReactElement> {
           </div>
 
           {/* Right Column - Graphic */}
-          <div className="hidden h-[400px] lg:block lg:h-[450px]">
+          <div className="relative hidden h-[400px] lg:block lg:h-[500px] lg:-mr-12 lg:mt-12">
             <HeroGraphic />
           </div>
         </div>
       </Container>
-
-      {/* Bottom fade */}
-      <div className="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-background to-transparent" />
 
       {/* Corner accents */}
       <div className="absolute left-8 top-32 hidden opacity-20 lg:block">

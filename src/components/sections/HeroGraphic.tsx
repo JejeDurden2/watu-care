@@ -31,16 +31,13 @@ export function HeroGraphic(): React.ReactElement {
             <circle cx="2" cy="2" r="1" fill="currentColor" opacity="0.1" />
           </pattern>
 
-          {/* Gradient for connecting lines */}
-          <linearGradient id="lineGradient" x1="0%" y1="0%" x2="100%" y2="0%">
-            <stop offset="0%" stopColor="hsl(200, 65%, 55%)" />
-            <stop offset="100%" stopColor="hsl(175, 50%, 45%)" />
-          </linearGradient>
-
-          {/* Glow filter */}
+          {/* Enhanced glow filter */}
           <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
-            <feGaussianBlur stdDeviation="3" result="blur" />
+            <feGaussianBlur stdDeviation="4" result="blur" />
+            <feFlood floodColor="hsl(200, 65%, 55%)" floodOpacity="0.8" />
+            <feComposite in2="blur" operator="in" result="color" />
             <feMerge>
+              <feMergeNode in="color" />
               <feMergeNode in="blur" />
               <feMergeNode in="SourceGraphic" />
             </feMerge>
@@ -55,7 +52,7 @@ export function HeroGraphic(): React.ReactElement {
           {/* Asia to Hong Kong */}
           <path
             d="M 80 150 Q 140 120 200 150"
-            stroke="url(#lineGradient)"
+            stroke="hsl(200, 65%, 55%)"
             strokeWidth="2"
             strokeDasharray="8 4"
             fill="none"
@@ -66,7 +63,7 @@ export function HeroGraphic(): React.ReactElement {
           {/* Hong Kong to Africa */}
           <path
             d="M 200 150 Q 260 180 320 150"
-            stroke="url(#lineGradient)"
+            stroke="hsl(175, 50%, 45%)"
             strokeWidth="2"
             strokeDasharray="8 4"
             fill="none"
@@ -75,24 +72,30 @@ export function HeroGraphic(): React.ReactElement {
           />
         </g>
 
-        {/* Traveling dots on paths */}
+        {/* Multiple traveling dots on paths for density */}
         <g className={`transition-opacity duration-500 ${isVisible ? 'opacity-100' : 'opacity-0'}`} style={{ animationDelay: '1.5s' }}>
-          <circle r="4" fill="hsl(200, 65%, 55%)" filter="url(#glow)">
-            <animateMotion
-              dur="3s"
-              repeatCount="indefinite"
-              path="M 80 150 Q 140 120 200 150"
-              begin="1.5s"
-            />
-          </circle>
-          <circle r="4" fill="hsl(175, 50%, 45%)" filter="url(#glow)">
-            <animateMotion
-              dur="3s"
-              repeatCount="indefinite"
-              path="M 200 150 Q 260 180 320 150"
-              begin="2.5s"
-            />
-          </circle>
+          {/* Path 1: Asia to Hong Kong - 3 dots */}
+          {[0, 1, 2].map((i) => (
+            <circle key={`p1-${i}`} r="3" fill="hsl(200, 65%, 55%)" filter="url(#glow)">
+              <animateMotion
+                dur="4s"
+                repeatCount="indefinite"
+                path="M 80 150 Q 140 120 200 150"
+                begin={`${1.5 + i * 1.3}s`}
+              />
+            </circle>
+          ))}
+          {/* Path 2: Hong Kong to Africa - 3 dots */}
+          {[0, 1, 2].map((i) => (
+            <circle key={`p2-${i}`} r="3" fill="hsl(175, 50%, 45%)" filter="url(#glow)">
+              <animateMotion
+                dur="4s"
+                repeatCount="indefinite"
+                path="M 200 150 Q 260 180 320 150"
+                begin={`${2.5 + i * 1.3}s`}
+              />
+            </circle>
+          ))}
         </g>
 
         {/* Node 1: Asia (Manufacturers) */}
@@ -180,7 +183,7 @@ export function HeroGraphic(): React.ReactElement {
             strokeWidth="1"
             opacity="0.4"
           />
-          {/* Inner circle - main */}
+          {/* Inner circle - main with pulse */}
           <circle
             cx="200"
             cy="150"
@@ -188,6 +191,7 @@ export function HeroGraphic(): React.ReactElement {
             fill="hsl(175, 50%, 45%)"
             stroke="white"
             strokeWidth="2"
+            className="animate-pulse-subtle"
           />
           {/* Icon: Shield/Check (Quality) */}
           <g transform="translate(188, 138)">
