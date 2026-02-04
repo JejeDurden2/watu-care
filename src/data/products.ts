@@ -26,6 +26,7 @@ export const productCategories: ProductCategory[] = [
           '4PCS Hand towel 30x40cm',
           '1PC OP-tape 10x50cm',
         ],
+        image: '/products/Weixin Image_20251030041333.jpg',
       },
       {
         id: 'reinforced-universal-pack',
@@ -42,6 +43,7 @@ export const productCategories: ProductCategory[] = [
           '1PC OP-tape 10x50cm',
           '2PCS Reinforced surgical gown XL',
         ],
+        image: '/products/Weixin Image_20251030041403.jpg',
       },
       {
         id: 'craniotomy-pack',
@@ -483,8 +485,10 @@ export const productCategories: ProductCategory[] = [
           'Maintains flexibility',
           'Ideal for difficult airways',
           'Available with stylet',
+          'Nasal and oral configurations',
         ],
         sizes: ['6.0mm', '6.5mm', '7.0mm', '7.5mm'],
+        image: '/products/Nasal ET with cuff.JPG',
       },
       {
         id: 'oxygen-mask',
@@ -1363,6 +1367,7 @@ export const productCategories: ProductCategory[] = [
         images: [
           '/products/Nitrile gloves.jpg',
           '/products/nitrile gloves(1).jpg',
+          '/products/Weixin Image_20251030041418.jpg',
         ],
       },
       {
