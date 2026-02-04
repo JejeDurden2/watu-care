@@ -343,6 +343,82 @@ export const productCategories: ProductCategory[] = [
           'Compatible with Warm Air Unit',
         ],
       },
+      {
+        id: 'disposable-surgical-gown',
+        name: 'Disposable Surgical Gown',
+        description:
+          'Protective surgical gown with reinforced zones for maximum protection',
+        specifications: [
+          'SMS or spunlace non-woven material',
+          'Fluid-resistant',
+          'Reinforced sleeves and chest area',
+          'Tie closures at neck and waist',
+          'Sterile, single-use',
+        ],
+        sizes: ['M', 'L', 'XL', 'XXL'],
+        image: '/products/classification gown.png',
+      },
+      {
+        id: 'disposable-bouffant-cap',
+        name: 'Disposable Bouffant Cap',
+        description:
+          'Non-woven surgical cap for hair coverage',
+        specifications: [
+          'Non-woven polypropylene',
+          'Elastic band for secure fit',
+          'Latex-free',
+          'Lightweight and breathable',
+          'Single-use, non-sterile',
+        ],
+        image: '/products/bouffant cap.jpg',
+      },
+      {
+        id: 'disposable-shoe-covers',
+        name: 'Disposable Shoe Covers',
+        description:
+          'Non-slip shoe covers for contamination control',
+        specifications: [
+          'Non-woven polypropylene or CPE',
+          'Elastic ankle band',
+          'Non-slip sole (optional)',
+          'Universal size',
+          'Single-use',
+        ],
+        image: '/products/shoe cover.jpg',
+      },
+      {
+        id: 'super-absorbent-pad',
+        name: 'Super Absorbent Pad',
+        description:
+          'High-capacity absorbent pad for fluid management',
+        specifications: [
+          'Super absorbent polymer core',
+          'Non-woven surface layer',
+          'Waterproof backing',
+          'High fluid retention capacity',
+          'Multiple sizes available',
+        ],
+        sizes: ['60x90cm', '60x120cm', '80x140cm'],
+        image: '/products/sap.jpg',
+        images: [
+          '/products/sap.jpg',
+          '/products/Absorbent pad.jpg',
+        ],
+      },
+      {
+        id: 'skin-traction-kit',
+        name: 'Skin Traction Kit',
+        description:
+          'Complete kit for applying skin traction to lower extremities',
+        specifications: [
+          'Foam-backed traction strips',
+          'Spreader bar',
+          'Rope and pulley system',
+          'Weight bag',
+          'Instructions for use',
+        ],
+        image: '/products/Skin Traction Kit.jpg',
+      },
     ],
   },
   {
@@ -369,6 +445,18 @@ export const productCategories: ProductCategory[] = [
           'Normal side holes design',
         ],
         sizes: ['6.0mm', '6.5mm', '7.0mm', '7.5mm', '8.0mm', '8.5mm'],
+        image: '/products/ET TUBE.jpg',
+        images: [
+          '/products/ET TUBE.jpg',
+          '/products/ET TUBE with cuff.jpg',
+          '/products/Endotracheal Tubes 1.jpg',
+          '/products/Endotracheal Tubes 2.jpg',
+          '/products/Endotracheal Tubes 3.png',
+          '/products/Endotracheal Tubes 4.jpg',
+          '/products/Endotracheal Tubes 5.jpg',
+          '/products/Endotracheal Tubes 6.jpg',
+          '/products/Endotracheal Tubes 7.jpg',
+        ],
       },
       {
         id: 'adaptive-cuff-ett',
@@ -411,6 +499,15 @@ export const productCategories: ProductCategory[] = [
           'Available in multiple sizes',
         ],
         sizes: ['Infant', 'Child', 'Adult'],
+        image: '/products/oxygen mask  (1).jpg',
+        images: [
+          '/products/oxygen mask  (1).jpg',
+          '/products/oxygen mask  (2).jpg',
+          '/products/oxygen mask  (3).jpg',
+          '/products/oxygen mask  (4).jpg',
+          '/products/oxygen mask  (5).jpg',
+          '/products/Oxygen Mask-3.jpg',
+        ],
       },
       {
         id: 'venturi-mask',
@@ -425,6 +522,11 @@ export const productCategories: ProductCategory[] = [
           'Available for all ages',
         ],
         sizes: ['Infant', 'Child', 'Adult'],
+        image: '/products/Venturi Oxygen Masks.png',
+        images: [
+          '/products/Venturi Oxygen Masks.png',
+          '/products/V MASK.png',
+        ],
       },
       {
         id: 'suction-catheter',
@@ -439,6 +541,7 @@ export const productCategories: ProductCategory[] = [
           'Pre-operative secretion removal',
         ],
         sizes: ['6F', '8F', '10F', '12F', '14F', '16F', '18F'],
+        image: '/products/Suction catheter.png',
       },
       {
         id: 'laryngeal-mask',
@@ -657,6 +760,14 @@ export const productCategories: ProductCategory[] = [
           'Sterile or non-sterile options',
         ],
         sizes: ['5x5cm', '7.5x7.5cm', '10x10cm'],
+        image: '/products/wound dressing roll non woven material 1.jpg',
+        images: [
+          '/products/wound dressing roll non woven material 1.jpg',
+          '/products/wound dressing roll non woven material 2.jpg',
+          '/products/wound dressing roll non woven material 3.jpg',
+          '/products/wound dressing roll non woven material 4.jpg',
+          '/products/wound dressing roll non woven material 5.jpg',
+        ],
       },
       {
         id: 'gauze-swabs',
@@ -687,6 +798,7 @@ export const productCategories: ProductCategory[] = [
           'Knuckle plasters',
           'Fingertip plasters',
         ],
+        image: '/products/Adhesive bandage 2.jpg',
       },
       {
         id: 'skin-closure-strips',
@@ -713,6 +825,7 @@ export const productCategories: ProductCategory[] = [
           'Breathable',
         ],
         sizes: ['1.25cm x 9.1m', '2.5cm x 9.1m', '5cm x 9.1m'],
+        image: '/products/tape.jpg',
       },
       {
         id: 'surgical-tape-silk',
@@ -1095,6 +1208,29 @@ export const productCategories: ProductCategory[] = [
         ],
       },
       {
+        id: 'disposable-ecg-electrodes',
+        name: 'Disposable ECG Electrodes',
+        description:
+          'Pre-gelled disposable electrodes for ECG monitoring',
+        specifications: [
+          'Pre-gelled for immediate use',
+          'Excellent signal quality',
+          'Low impedance',
+          'Hypoallergenic adhesive',
+          'Available in adult and pediatric sizes',
+          'Round and tab configurations',
+        ],
+        sizes: ['Adult', 'Child'],
+        image: '/products/DISPOSABLE ECG Adult.jpg',
+        images: [
+          '/products/DISPOSABLE ECG Adult.jpg',
+          '/products/DISPOSABLE ECG Adult 2.jpg',
+          '/products/DISPOSABLE ECG Adult round shape.jpg',
+          '/products/DISPOSABLE ECG Child.jpg',
+          '/products/DISPOSABLE ECG Child 2.jpg',
+        ],
+      },
+      {
         id: 'stethoscope-dual-head',
         name: 'Dual Head Stethoscope',
         description:
@@ -1187,6 +1323,12 @@ export const productCategories: ProductCategory[] = [
           'Single-use, non-sterile',
         ],
         sizes: ['XS', 'S', 'M', 'L', 'XL'],
+        image: '/products/Latex Gloves.jpg',
+        images: [
+          '/products/Latex Gloves.jpg',
+          '/products/Latex Gloves 2.jpg',
+          '/products/high risk latex gloves.png',
+        ],
       },
       {
         id: 'latex-exam-gloves-powder-free',
@@ -1217,6 +1359,11 @@ export const productCategories: ProductCategory[] = [
           'Single-use, non-sterile',
         ],
         sizes: ['XS', 'S', 'M', 'L', 'XL'],
+        image: '/products/Nitrile gloves.jpg',
+        images: [
+          '/products/Nitrile gloves.jpg',
+          '/products/nitrile gloves(1).jpg',
+        ],
       },
       {
         id: 'nitrile-exam-gloves-extended-cuff',
@@ -1247,6 +1394,7 @@ export const productCategories: ProductCategory[] = [
           'Single-use, non-sterile',
         ],
         sizes: ['S', 'M', 'L', 'XL'],
+        image: '/products/vynil gloves.jpg',
       },
       {
         id: 'surgical-gloves-latex-powdered',
@@ -1262,6 +1410,11 @@ export const productCategories: ProductCategory[] = [
           'Micro-roughened or fully textured',
         ],
         sizes: ['5.5', '6.0', '6.5', '7.0', '7.5', '8.0', '8.5', '9.0'],
+        image: '/products/Dry glove.jpg',
+        images: [
+          '/products/Dry glove.jpg',
+          '/products/wet gloves.jpg',
+        ],
       },
       {
         id: 'surgical-gloves-latex-powder-free',
@@ -1404,6 +1557,15 @@ export const productCategories: ProductCategory[] = [
           'Non-woven polypropylene',
           'Meltblown filter layer',
         ],
+        image: '/products/口罩.jpg',
+        images: [
+          '/products/口罩.jpg',
+          '/products/口罩1.jpg',
+          '/products/口罩2.jpg',
+          '/products/口罩3.jpg',
+          '/products/口罩4.jpg',
+          '/products/口罩5.jpg',
+        ],
       },
       {
         id: 'face-shield-reusable',
@@ -1445,6 +1607,11 @@ export const productCategories: ProductCategory[] = [
           'Disposable, single-use',
         ],
         sizes: ['500ml', '1000ml'],
+        image: '/products/emesis bag.jpg',
+        images: [
+          '/products/emesis bag.jpg',
+          '/products/vomit-bag.jpg',
+        ],
       },
       {
         id: 'bedpan-reusable',
@@ -1458,6 +1625,11 @@ export const productCategories: ProductCategory[] = [
           'Autoclavable (stainless steel) or chemical disinfectable (plastic)',
         ],
         materials: ['Stainless steel', 'High-density polyethylene (HDPE)'],
+        image: '/products/Bedpan liner.jpg',
+        images: [
+          '/products/Bedpan liner.jpg',
+          '/products/commode-liners.webp',
+        ],
       },
       {
         id: 'urinal-bottle-reusable',
@@ -1486,6 +1658,7 @@ export const productCategories: ProductCategory[] = [
           'Hanger for bedside attachment',
         ],
         sizes: ['2000ml (standard)', '500ml (leg bag)'],
+        image: '/products/Urinal bag.jpg',
       },
     ],
   },

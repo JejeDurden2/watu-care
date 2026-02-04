@@ -6,6 +6,7 @@ export interface Product {
   sizes?: string[];
   materials?: string[];
   image?: string;
+  images?: string[];
 }
 
 export interface ProductCategory {
