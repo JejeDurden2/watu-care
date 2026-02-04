@@ -5,6 +5,7 @@ import type { Product, ProductCategory } from '@/types/product';
 import { Button } from '@/components/ui';
 import { ProductSpecs } from './ProductSpecs';
 import { ProductImage } from './ProductImage';
+import { ProductImageGallery } from './ProductImageGallery';
 import {
   getProductImageUrl,
   getCategoryGradient,
@@ -39,6 +40,7 @@ export function ProductDetail({
   const imageUrl =
     product.image || getProductImageUrl(category.slug, product.name);
   const fallbackGradient = getCategoryGradient(category.slug);
+  const hasMultipleImages = product.images && product.images.length > 1;
 
   // Get translated category title
   const categoryTitle = t.has(`categories.${category.slug}.title`)
@@ -54,16 +56,26 @@ export function ProductDetail({
     <div className="space-y-8">
       {/* Product Header with Image */}
       <div className="grid gap-8 lg:grid-cols-2">
-        {/* Product Image */}
-        <div className="rounded-lg overflow-hidden">
-          <ProductImage
-            src={imageUrl}
-            alt={productName}
-            iconSlug={category.iconSlug}
-            fallbackGradient={fallbackGradient}
-            className="aspect-square w-full"
-            priority
-          />
+        {/* Product Image or Gallery */}
+        <div className="overflow-hidden rounded-lg">
+          {hasMultipleImages ? (
+            <ProductImageGallery
+              images={product.images!}
+              alt={productName}
+              iconSlug={category.iconSlug}
+              fallbackGradient={fallbackGradient}
+              priority
+            />
+          ) : (
+            <ProductImage
+              src={imageUrl}
+              alt={productName}
+              iconSlug={category.iconSlug}
+              fallbackGradient={fallbackGradient}
+              className="aspect-square w-full"
+              priority
+            />
+          )}
         </div>
 
         {/* Product Info */}

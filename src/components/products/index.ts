@@ -5,5 +5,6 @@ export { ProductCard } from './ProductCard';
 export { ProductDetail } from './ProductDetail';
 export { ProductGrid } from './ProductGrid';
 export { ProductImage } from './ProductImage';
+export { ProductImageGallery } from './ProductImageGallery';
 export { ProductSpecs } from './ProductSpecs';
 export { RelatedProducts } from './RelatedProducts';
