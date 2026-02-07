@@ -55,7 +55,7 @@
 - Hong Kong hub = direct Asia-Africa/ME logistics advantage
 - 24-48 hour response time (faster than competitors)
 - Deep understanding of developing healthcare market challenges
-- 500+ products across 10 categories including veterinary
+- 70+ products across 10 categories
 - Direct manufacturer relationships = competitive pricing
 
 **Why customers choose us:** Partnership approach, reliability, quality-price balance, responsive service
@@ -96,7 +96,7 @@
 
 ## Proof Points
 **Metrics:**
-- 500+ products
+- 70+ products
 - 25+ countries served
 - 100+ healthcare facilities
 - 10K+ orders delivered
