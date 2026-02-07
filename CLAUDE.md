@@ -73,14 +73,16 @@ npm run test          # Vitest
 
 ## Product Categories
 
-1. Procedure Packs & Drapes
-2. Tubes & Airway Management
-3. Anti-Infection Central Venous Catheter
-4. Dressing & Kits
-5. Laboratory Supplies
-6. Veterinary Supplies
-7. Medical Equipment
-8. Gloves & Face Protection
+1. Gloves
+2. Infection Prevention & PPE
+3. Bodily Waste & Excreta Management
+4. Surgical & Procedure Packs
+5. Wound Care & Dressing
+6. Clinical Consumables
+7. Vascular Access & Catheters
+8. Airway & Respiratory
+9. Surgical Instruments & Sutures
+10. Patient Care & Basic Equipment
 
 ---
 

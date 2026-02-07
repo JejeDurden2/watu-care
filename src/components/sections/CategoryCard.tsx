@@ -8,26 +8,26 @@ import {
   Activity,
   Syringe,
   Bandage,
-  TestTube,
-  Dog,
-  Bed,
   Hand,
   ShieldCheck,
   Recycle,
+  Wind,
+  Scissors,
+  Stethoscope,
   type LucideIcon,
 } from 'lucide-react';
 
 const iconMap: Record<string, LucideIcon> = {
-  surgical: Package,
-  tube: Activity,
-  'central-venous-catheter': Syringe,
-  dressing: Bandage,
-  'laboratory-supplies': TestTube,
-  'veterinary-products': Dog,
-  'medical-equipment': Bed,
   gloves: Hand,
-  'face-protection': ShieldCheck,
+  'infection-prevention-ppe': ShieldCheck,
   'bodily-waste-management': Recycle,
+  surgical: Package,
+  'wound-care': Bandage,
+  'clinical-consumables': Syringe,
+  'vascular-access-catheters': Activity,
+  'airway-respiratory': Wind,
+  'surgical-instruments-sutures': Scissors,
+  'patient-care-equipment': Stethoscope,
 };
 
 interface CategoryCardProps {

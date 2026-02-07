@@ -8,12 +8,12 @@ import {
   Activity,
   Syringe,
   Bandage,
-  TestTube,
-  Dog,
-  Bed,
   Hand,
   ShieldCheck,
   Recycle,
+  Wind,
+  Scissors,
+  Stethoscope,
   type LucideIcon,
 } from 'lucide-react';
 
@@ -22,16 +22,16 @@ import {
  * Use this in Client Components to render icons from serialized category data
  */
 export const categoryIconMap: Record<string, LucideIcon> = {
-  surgical: Package,
-  tube: Activity,
-  'central-venous-catheter': Syringe,
-  dressing: Bandage,
-  'laboratory-supplies': TestTube,
-  'veterinary-products': Dog,
-  'medical-equipment': Bed,
   gloves: Hand,
-  'face-protection': ShieldCheck,
+  'infection-prevention-ppe': ShieldCheck,
   'bodily-waste-management': Recycle,
+  surgical: Package,
+  'wound-care': Bandage,
+  'clinical-consumables': Syringe,
+  'vascular-access-catheters': Activity,
+  'airway-respiratory': Wind,
+  'surgical-instruments-sutures': Scissors,
+  'patient-care-equipment': Stethoscope,
 };
 
 /**
@@ -65,16 +65,16 @@ export const getUnsplashImage = getPlaceholderImage;
  */
 export function getCategoryImageUrl(categorySlug: string): string {
   const categoryKeywords: Record<string, string[]> = {
-    surgical: ['surgical', 'medical', 'sterile', 'drapes'],
-    tube: ['medical', 'tube', 'oxygen', 'respiratory'],
-    'central-venous-catheter': ['iv', 'catheter', 'medical', 'infusion'],
-    dressing: ['bandage', 'wound', 'medical', 'dressing'],
-    'laboratory-supplies': ['laboratory', 'medical', 'test', 'specimen'],
-    'veterinary-products': ['veterinary', 'animal', 'medical', 'care'],
-    'medical-equipment': ['medical', 'equipment', 'stethoscope', 'hospital'],
     gloves: ['medical', 'gloves', 'ppe', 'healthcare'],
-    'face-protection': ['mask', 'medical', 'ppe', 'protection'],
+    'infection-prevention-ppe': ['mask', 'medical', 'ppe', 'protection'],
     'bodily-waste-management': ['medical', 'hospital', 'healthcare', 'supplies'],
+    surgical: ['surgical', 'medical', 'sterile', 'drapes'],
+    'wound-care': ['bandage', 'wound', 'medical', 'dressing'],
+    'clinical-consumables': ['syringe', 'medical', 'clinical', 'supplies'],
+    'vascular-access-catheters': ['iv', 'catheter', 'medical', 'infusion'],
+    'airway-respiratory': ['medical', 'tube', 'oxygen', 'respiratory'],
+    'surgical-instruments-sutures': ['surgical', 'instruments', 'suture', 'blade'],
+    'patient-care-equipment': ['medical', 'equipment', 'stethoscope', 'hospital'],
   };
 
   const keywords = categoryKeywords[categorySlug] || ['medical', 'healthcare'];
@@ -93,16 +93,16 @@ export function getProductImageUrl(
 
   // Base keywords from category
   const baseKeywords: Record<string, string[]> = {
-    surgical: ['surgical', 'sterile'],
-    tube: ['medical', 'tube'],
-    'central-venous-catheter': ['catheter', 'iv'],
-    dressing: ['bandage', 'medical'],
-    'laboratory-supplies': ['laboratory', 'medical'],
-    'veterinary-products': ['veterinary', 'medical'],
-    'medical-equipment': ['medical', 'equipment'],
     gloves: ['gloves', 'medical'],
-    'face-protection': ['mask', 'medical'],
+    'infection-prevention-ppe': ['ppe', 'medical'],
     'bodily-waste-management': ['medical', 'hospital'],
+    surgical: ['surgical', 'sterile'],
+    'wound-care': ['bandage', 'medical'],
+    'clinical-consumables': ['syringe', 'medical'],
+    'vascular-access-catheters': ['catheter', 'iv'],
+    'airway-respiratory': ['medical', 'tube'],
+    'surgical-instruments-sutures': ['surgical', 'instruments'],
+    'patient-care-equipment': ['medical', 'equipment'],
   };
 
   // Add specific keywords based on product name
@@ -114,6 +114,8 @@ export function getProductImageUrl(
   if (nameLower.includes('tube')) keywords.push('tube');
   if (nameLower.includes('catheter')) keywords.push('catheter');
   if (nameLower.includes('dressing') || nameLower.includes('bandage')) keywords.push('bandage');
+  if (nameLower.includes('syringe')) keywords.push('syringe');
+  if (nameLower.includes('suture')) keywords.push('suture');
 
   return getPlaceholderImage(keywords, 800, 600);
 }
@@ -123,16 +125,16 @@ export function getProductImageUrl(
  */
 export function getCategoryGradient(categorySlug: string): string {
   const gradients: Record<string, string> = {
-    surgical: 'from-blue-500 to-blue-700',
-    tube: 'from-cyan-500 to-cyan-700',
-    'central-venous-catheter': 'from-indigo-500 to-indigo-700',
-    dressing: 'from-teal-500 to-teal-700',
-    'laboratory-supplies': 'from-purple-500 to-purple-700',
-    'veterinary-products': 'from-green-500 to-green-700',
-    'medical-equipment': 'from-sky-500 to-sky-700',
     gloves: 'from-emerald-500 to-emerald-700',
-    'face-protection': 'from-blue-500 to-blue-700',
+    'infection-prevention-ppe': 'from-blue-500 to-blue-700',
     'bodily-waste-management': 'from-slate-500 to-slate-700',
+    surgical: 'from-blue-500 to-blue-700',
+    'wound-care': 'from-teal-500 to-teal-700',
+    'clinical-consumables': 'from-violet-500 to-violet-700',
+    'vascular-access-catheters': 'from-indigo-500 to-indigo-700',
+    'airway-respiratory': 'from-cyan-500 to-cyan-700',
+    'surgical-instruments-sutures': 'from-rose-500 to-rose-700',
+    'patient-care-equipment': 'from-sky-500 to-sky-700',
   };
 
   return gradients[categorySlug] || 'from-primary to-accent';
