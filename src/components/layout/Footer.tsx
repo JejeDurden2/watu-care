@@ -11,15 +11,17 @@ const quickLinksKeys = [
 ];
 
 const productCategoryLinks = [
-  { key: 'procedurePacks', href: '/products/surgical' },
-  { key: 'tubesAirway', href: '/products/tube' },
-  { key: 'dressing', href: '/products/dressing' },
-  { key: 'equipment', href: '/products/medical-equipment' },
+  { slug: 'gloves', href: '/products/gloves' },
+  { slug: 'infection-prevention-ppe', href: '/products/infection-prevention-ppe' },
+  { slug: 'surgical', href: '/products/surgical' },
+  { slug: 'wound-care', href: '/products/wound-care' },
+  { slug: 'airway-respiratory', href: '/products/airway-respiratory' },
+  { slug: 'patient-care-equipment', href: '/products/patient-care-equipment' },
 ];
 
 export async function Footer(): Promise<React.ReactElement> {
   const t = await getTranslations('footer');
-  const tCategories = await getTranslations('categories');
+  const tProducts = await getTranslations('products');
 
   return (
     <footer className="border-t border-border bg-secondary text-secondary-foreground">
@@ -65,12 +67,12 @@ export async function Footer(): Promise<React.ReactElement> {
             </h4>
             <ul className="space-y-2">
               {productCategoryLinks.map((item) => (
-                <li key={item.key}>
+                <li key={item.slug}>
                   <Link
                     href={item.href}
                     className="text-sm text-secondary-foreground/70 transition-colors hover:text-secondary-foreground"
                   >
-                    {tCategories(item.key)}
+                    {tProducts(`categories.${item.slug}.title`)}
                   </Link>
                 </li>
               ))}

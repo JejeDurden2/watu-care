@@ -96,6 +96,12 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
         fr: `${BASE_URL}/fr`,
       },
     },
+    twitter: {
+      card: 'summary_large_image',
+      title,
+      description,
+      images: [`${BASE_URL}/opengraph-image`],
+    },
     robots: {
       index: true,
       follow: true,
@@ -143,7 +149,7 @@ export default async function LocaleLayout({
               }}
             />
             <Header />
-            {children}
+            <main>{children}</main>
             <Footer />
             <QuoteModal />
           </QuoteProvider>
