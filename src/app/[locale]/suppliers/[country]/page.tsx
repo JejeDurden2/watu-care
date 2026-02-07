@@ -83,7 +83,7 @@ export async function generateMetadata({
       url: `${BASE_URL}/${locale}/suppliers/${countrySlug}`,
       images: [
         {
-          url: `${BASE_URL}/og-image.png`,
+          url: `${BASE_URL}/opengraph-image`,
           width: 1200,
           height: 630,
           alt: `Medical Supplies in ${countryName}`,
@@ -93,6 +93,7 @@ export async function generateMetadata({
     alternates: {
       canonical: `${BASE_URL}/${locale}/suppliers/${countrySlug}`,
       languages: {
+        'x-default': `${BASE_URL}/en/suppliers/${countrySlug}`,
         en: `${BASE_URL}/en/suppliers/${countrySlug}`,
         fr: `${BASE_URL}/fr/suppliers/${countrySlug}`,
       },

@@ -1,21 +1,5 @@
 import type { Metadata, Viewport } from 'next';
-import { Space_Grotesk, IBM_Plex_Sans } from 'next/font/google';
 import './globals.css';
-import { FloatingWhatsApp } from '@/components/ui/FloatingWhatsApp';
-
-const spaceGrotesk = Space_Grotesk({
-  subsets: ['latin'],
-  variable: '--font-display',
-  display: 'swap',
-  weight: ['400', '500', '600', '700'],
-});
-
-const ibmPlexSans = IBM_Plex_Sans({
-  subsets: ['latin'],
-  variable: '--font-body',
-  display: 'swap',
-  weight: ['400', '500', '600', '700'],
-});
 
 export const viewport: Viewport = {
   width: 'device-width',
@@ -61,12 +45,5 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>): React.ReactElement {
-  return (
-    <html lang="en" className={`${spaceGrotesk.variable} ${ibmPlexSans.variable}`} suppressHydrationWarning>
-      <body className="font-sans">
-        {children}
-        <FloatingWhatsApp />
-      </body>
-    </html>
-  );
+  return children as React.ReactElement;
 }

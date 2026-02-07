@@ -96,7 +96,7 @@ export async function generateMetadata({
       url: `${BASE_URL}/${locale}/products/${categorySlug}/${productId}`,
       images: [
         {
-          url: product.image || `${BASE_URL}/og-image.png`,
+          url: product.image || `${BASE_URL}/opengraph-image`,
           width: 1200,
           height: 630,
           alt: productName,
@@ -106,6 +106,7 @@ export async function generateMetadata({
     alternates: {
       canonical: `${BASE_URL}/${locale}/products/${categorySlug}/${productId}`,
       languages: {
+        'x-default': `${BASE_URL}/en/products/${categorySlug}/${productId}`,
         en: `${BASE_URL}/en/products/${categorySlug}/${productId}`,
         fr: `${BASE_URL}/fr/products/${categorySlug}/${productId}`,
       },

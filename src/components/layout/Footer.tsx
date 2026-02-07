@@ -10,11 +10,11 @@ const quickLinksKeys = [
   { href: '/contact', key: 'requestQuote' },
 ];
 
-const productCategoryKeys = [
-  'procedurePacks',
-  'tubesAirway',
-  'dressing',
-  'equipment',
+const productCategoryLinks = [
+  { key: 'procedurePacks', href: '/products/surgical' },
+  { key: 'tubesAirway', href: '/products/tube' },
+  { key: 'dressing', href: '/products/dressing' },
+  { key: 'equipment', href: '/products/medical-equipment' },
 ];
 
 export async function Footer(): Promise<React.ReactElement> {
@@ -64,11 +64,14 @@ export async function Footer(): Promise<React.ReactElement> {
               {t('productsTitle')}
             </h4>
             <ul className="space-y-2">
-              {productCategoryKeys.map((key) => (
-                <li key={key}>
-                  <span className="text-sm text-secondary-foreground/70">
-                    {tCategories(key)}
-                  </span>
+              {productCategoryLinks.map((item) => (
+                <li key={item.key}>
+                  <Link
+                    href={item.href}
+                    className="text-sm text-secondary-foreground/70 transition-colors hover:text-secondary-foreground"
+                  >
+                    {tCategories(item.key)}
+                  </Link>
                 </li>
               ))}
             </ul>
@@ -110,6 +113,14 @@ export async function Footer(): Promise<React.ReactElement> {
           <p className="text-center text-sm text-secondary-foreground/60">
             &copy; {new Date().getFullYear()} {t('copyright')}
           </p>
+          <div className="mt-2 flex justify-center gap-4">
+            <Link href="/privacy" className="text-xs text-secondary-foreground/40 transition-colors hover:text-secondary-foreground/70">
+              {t('privacy')}
+            </Link>
+            <Link href="/terms" className="text-xs text-secondary-foreground/40 transition-colors hover:text-secondary-foreground/70">
+              {t('terms')}
+            </Link>
+          </div>
         </div>
       </Container>
     </footer>
