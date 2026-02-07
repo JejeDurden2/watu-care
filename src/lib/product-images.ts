@@ -1,6 +1,5 @@
 /**
  * Utility functions for product images
- * Uses Picsum Photos API as temporary solution
  */
 
 import {
@@ -41,84 +40,6 @@ export function getCategoryIcon(slug: string): LucideIcon {
   return categoryIconMap[slug] ?? Package;
 }
 
-/**
- * Generate Picsum Photos URL based on keywords
- * Uses seeded URLs for consistent images per keyword set
- * Format: https://picsum.photos/seed/SEED/WIDTH/HEIGHT
- */
-export function getPlaceholderImage(
-  keywords: string[],
-  width = 800,
-  height = 600,
-): string {
-  const seed = keywords.join('-');
-  return `https://picsum.photos/seed/${seed}/${width}/${height}`;
-}
-
-/**
- * @deprecated Use getPlaceholderImage instead
- */
-export const getUnsplashImage = getPlaceholderImage;
-
-/**
- * Get image URL for a category
- */
-export function getCategoryImageUrl(categorySlug: string): string {
-  const categoryKeywords: Record<string, string[]> = {
-    gloves: ['medical', 'gloves', 'ppe', 'healthcare'],
-    'infection-prevention-ppe': ['mask', 'medical', 'ppe', 'protection'],
-    'bodily-waste-management': ['medical', 'hospital', 'healthcare', 'supplies'],
-    surgical: ['surgical', 'medical', 'sterile', 'drapes'],
-    'wound-care': ['bandage', 'wound', 'medical', 'dressing'],
-    'clinical-consumables': ['syringe', 'medical', 'clinical', 'supplies'],
-    'vascular-access-catheters': ['iv', 'catheter', 'medical', 'infusion'],
-    'airway-respiratory': ['medical', 'tube', 'oxygen', 'respiratory'],
-    'surgical-instruments-sutures': ['surgical', 'instruments', 'suture', 'blade'],
-    'patient-care-equipment': ['medical', 'equipment', 'stethoscope', 'hospital'],
-  };
-
-  const keywords = categoryKeywords[categorySlug] || ['medical', 'healthcare'];
-  return getPlaceholderImage(keywords, 1200, 800);
-}
-
-/**
- * Get image URL for a product based on its category and name
- */
-export function getProductImageUrl(
-  categorySlug: string,
-  productName: string,
-): string {
-  // Extract key terms from product name
-  const nameLower = productName.toLowerCase();
-
-  // Base keywords from category
-  const baseKeywords: Record<string, string[]> = {
-    gloves: ['gloves', 'medical'],
-    'infection-prevention-ppe': ['ppe', 'medical'],
-    'bodily-waste-management': ['medical', 'hospital'],
-    surgical: ['surgical', 'sterile'],
-    'wound-care': ['bandage', 'medical'],
-    'clinical-consumables': ['syringe', 'medical'],
-    'vascular-access-catheters': ['catheter', 'iv'],
-    'airway-respiratory': ['medical', 'tube'],
-    'surgical-instruments-sutures': ['surgical', 'instruments'],
-    'patient-care-equipment': ['medical', 'equipment'],
-  };
-
-  // Add specific keywords based on product name
-  const keywords = [...(baseKeywords[categorySlug] || ['medical'])];
-
-  if (nameLower.includes('glove')) keywords.push('gloves');
-  if (nameLower.includes('mask')) keywords.push('mask');
-  if (nameLower.includes('surgical')) keywords.push('surgical');
-  if (nameLower.includes('tube')) keywords.push('tube');
-  if (nameLower.includes('catheter')) keywords.push('catheter');
-  if (nameLower.includes('dressing') || nameLower.includes('bandage')) keywords.push('bandage');
-  if (nameLower.includes('syringe')) keywords.push('syringe');
-  if (nameLower.includes('suture')) keywords.push('suture');
-
-  return getPlaceholderImage(keywords, 800, 600);
-}
 
 /**
  * Generate gradient background as fallback

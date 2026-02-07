@@ -46,11 +46,11 @@ export function ProductCard({
               className="h-full w-full"
             />
           ) : (
-            <div className={`relative h-full bg-gradient-to-br ${gradientClass} p-6`}>
-              {/* Large watermark icon */}
-              <div className="absolute right-4 top-1/2 -translate-y-1/2 opacity-20">
-                <Icon className="h-20 w-20 text-white" />
-              </div>
+            <div className={`relative flex h-full flex-col items-center justify-center gap-2 bg-gradient-to-br ${gradientClass}`}>
+              <Icon className="h-10 w-10 text-white/80" strokeWidth={1.5} />
+              <span className="rounded-full bg-white/15 px-2.5 py-0.5 text-[10px] font-medium tracking-wide text-white/90">
+                Photos coming soon
+              </span>
             </div>
           )}
 

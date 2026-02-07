@@ -7,7 +7,6 @@ import { ProductSpecs } from './ProductSpecs';
 import { ProductImage } from './ProductImage';
 import { ProductImageGallery } from './ProductImageGallery';
 import {
-  getProductImageUrl,
   getCategoryGradient,
   getCategoryIcon,
 } from '@/lib/product-images';
@@ -37,8 +36,7 @@ export function ProductDetail({
 }: ProductDetailProps): React.ReactElement {
   const t = useTranslations('products');
   const Icon = getCategoryIcon(category.iconSlug);
-  const imageUrl =
-    product.image || getProductImageUrl(category.slug, product.name);
+  const imageUrl = product.image || undefined;
   const fallbackGradient = getCategoryGradient(category.slug);
   const hasMultipleImages = product.images && product.images.length > 1;
 
