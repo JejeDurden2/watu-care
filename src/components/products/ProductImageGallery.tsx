@@ -26,12 +26,15 @@ export function ProductImageGallery({
   const Icon = getCategoryIcon(iconSlug);
 
   if (images.length === 0 || imageError) {
-    // Fallback: elegant gradient with icon
+    // Fallback: gradient with icon and "Photos Coming Soon" text
     return (
       <div
-        className={`flex items-center justify-center bg-gradient-to-br ${fallbackGradient} ${className}`}
+        className={`flex flex-col items-center justify-center gap-3 bg-gradient-to-br ${fallbackGradient} ${className}`}
       >
-        <Icon className="h-1/3 w-1/3 text-white/90" strokeWidth={1.5} />
+        <Icon className="h-1/4 w-1/4 text-white/80" strokeWidth={1.5} />
+        <span className="rounded-full bg-white/15 px-3 py-1 text-xs font-medium tracking-wide text-white/90">
+          Photos coming soon
+        </span>
       </div>
     );
   }

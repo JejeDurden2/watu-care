@@ -5,7 +5,6 @@ import { useTranslations } from 'next-intl';
 import type { ProductCategory } from '@/types/product';
 import { ProductImage } from './ProductImage';
 import {
-  getCategoryImageUrl,
   getCategoryGradient,
   getCategoryIcon,
 } from '@/lib/product-images';
@@ -21,7 +20,7 @@ export function CategoryCard({
 }: CategoryCardProps): React.ReactElement {
   const t = useTranslations('products');
   const Icon = getCategoryIcon(category.iconSlug);
-  const imageUrl = category.image || getCategoryImageUrl(category.slug);
+  const imageUrl = category.image || undefined;
   const fallbackGradient = getCategoryGradient(category.slug);
 
   // Get translated title and description, fallback to category data
