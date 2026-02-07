@@ -2,12 +2,12 @@
 
 import { useState } from 'react';
 import Image from 'next/image';
-import { getCategoryIcon } from '@/lib/product-images';
+import { Camera } from 'lucide-react';
 
 interface ProductImageProps {
   src?: string;
   alt: string;
-  iconSlug: string;
+  iconSlug?: string;
   fallbackGradient?: string;
   className?: string;
   priority?: boolean;
@@ -16,22 +16,20 @@ interface ProductImageProps {
 export function ProductImage({
   src,
   alt,
-  iconSlug,
-  fallbackGradient = 'from-primary to-accent',
   className = '',
   priority = false,
 }: ProductImageProps): React.ReactElement {
   const [imageError, setImageError] = useState(false);
-  const Icon = getCategoryIcon(iconSlug);
 
   if (!src || imageError) {
-    // Fallback: gradient with icon and "Photos Coming Soon" text
     return (
       <div
-        className={`flex flex-col items-center justify-center gap-3 bg-gradient-to-br ${fallbackGradient} ${className}`}
+        className={`flex flex-col items-center justify-center gap-4 bg-primary ${className}`}
       >
-        <Icon className="h-1/4 w-1/4 text-white/80" strokeWidth={1.5} />
-        <span className="rounded-full bg-white/15 px-3 py-1 text-xs font-medium tracking-wide text-white/90">
+        <div className="flex h-14 w-14 items-center justify-center rounded-full bg-white/15">
+          <Camera className="h-7 w-7 text-white/80" strokeWidth={1.5} />
+        </div>
+        <span className="text-sm font-medium tracking-wide text-white/90">
           Photos coming soon
         </span>
       </div>
