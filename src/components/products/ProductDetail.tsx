@@ -6,10 +6,7 @@ import { Button } from '@/components/ui';
 import { ProductSpecs } from './ProductSpecs';
 import { ProductImage } from './ProductImage';
 import { ProductImageGallery } from './ProductImageGallery';
-import {
-  getCategoryGradient,
-  getCategoryIcon,
-} from '@/lib/product-images';
+import { getCategoryIcon } from '@/lib/product-images';
 import { AddToListButton } from '@/components/quote';
 import { useQuoteStore } from '@/lib/quote-store';
 
@@ -37,7 +34,6 @@ export function ProductDetail({
   const t = useTranslations('products');
   const Icon = getCategoryIcon(category.iconSlug);
   const imageUrl = product.image || undefined;
-  const fallbackGradient = getCategoryGradient(category.slug);
   const hasMultipleImages = product.images && product.images.length > 1;
 
   // Get translated category title
@@ -60,16 +56,12 @@ export function ProductDetail({
             <ProductImageGallery
               images={product.images!}
               alt={productName}
-              iconSlug={category.iconSlug}
-              fallbackGradient={fallbackGradient}
               priority
             />
           ) : (
             <ProductImage
               src={imageUrl}
               alt={productName}
-              iconSlug={category.iconSlug}
-              fallbackGradient={fallbackGradient}
               className="aspect-square w-full"
               priority
             />

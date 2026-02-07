@@ -3,7 +3,7 @@
 import Link from 'next/link';
 import { useTranslations } from 'next-intl';
 import type { Product, ProductCategory } from '@/types/product';
-import { getCategoryIcon, getCategoryGradient } from '@/lib/product-images';
+import { Camera } from 'lucide-react';
 import { AddToListButton } from '@/components/quote';
 import { ProductImage } from './ProductImage';
 
@@ -19,8 +19,6 @@ export function ProductCard({
   locale,
 }: ProductCardProps): React.ReactElement {
   const t = useTranslations('products');
-  const Icon = getCategoryIcon(category.slug);
-  const gradientClass = getCategoryGradient(category.slug);
 
   return (
     <div className="group relative h-full overflow-hidden rounded-2xl border border-border bg-white transition-all duration-300 hover:-translate-y-2 hover:border-primary/30 hover:shadow-depth-md">
@@ -41,14 +39,14 @@ export function ProductCard({
             <ProductImage
               src={product.image}
               alt={product.name}
-              iconSlug={category.iconSlug}
-              fallbackGradient={gradientClass}
               className="h-full w-full"
             />
           ) : (
-            <div className={`relative flex h-full flex-col items-center justify-center gap-2 bg-gradient-to-br ${gradientClass}`}>
-              <Icon className="h-10 w-10 text-white/80" strokeWidth={1.5} />
-              <span className="rounded-full bg-white/15 px-2.5 py-0.5 text-[10px] font-medium tracking-wide text-white/90">
+            <div className="flex h-full flex-col items-center justify-center gap-2 bg-primary">
+              <div className="flex h-10 w-10 items-center justify-center rounded-full bg-white/15">
+                <Camera className="h-5 w-5 text-white/80" strokeWidth={1.5} />
+              </div>
+              <span className="text-[11px] font-medium tracking-wide text-white/90">
                 Photos coming soon
               </span>
             </div>

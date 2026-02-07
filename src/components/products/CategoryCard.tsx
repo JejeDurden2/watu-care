@@ -4,10 +4,7 @@ import Link from 'next/link';
 import { useTranslations } from 'next-intl';
 import type { ProductCategory } from '@/types/product';
 import { ProductImage } from './ProductImage';
-import {
-  getCategoryGradient,
-  getCategoryIcon,
-} from '@/lib/product-images';
+import { getCategoryIcon } from '@/lib/product-images';
 
 interface CategoryCardProps {
   category: ProductCategory;
@@ -21,7 +18,6 @@ export function CategoryCard({
   const t = useTranslations('products');
   const Icon = getCategoryIcon(category.iconSlug);
   const imageUrl = category.image || undefined;
-  const fallbackGradient = getCategoryGradient(category.slug);
 
   // Get translated title and description, fallback to category data
   const title = t.has(`categories.${category.slug}.title`)
@@ -41,8 +37,6 @@ export function CategoryCard({
         <ProductImage
           src={imageUrl}
           alt={title}
-          iconSlug={category.iconSlug}
-          fallbackGradient={fallbackGradient}
           className="h-48 w-full"
         />
 
