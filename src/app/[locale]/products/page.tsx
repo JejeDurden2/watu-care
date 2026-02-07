@@ -19,9 +19,8 @@ export async function generateMetadata({
   const { locale } = await params;
   const t = await getTranslations({ locale, namespace: 'products' });
 
-  const title = `${t('title')} | Watu Care`;
-  const description =
-    'Browse our comprehensive range of medical devices, PPE, and healthcare supplies across 10 categories. Premium quality products from leading Asian manufacturers.';
+  const title = t('title');
+  const description = t('subtitle');
 
   return {
     title,
@@ -53,6 +52,7 @@ export async function generateMetadata({
     alternates: {
       canonical: `${BASE_URL}/${locale}/products`,
       languages: {
+        'x-default': `${BASE_URL}/en/products`,
         en: `${BASE_URL}/en/products`,
         fr: `${BASE_URL}/fr/products`,
       },

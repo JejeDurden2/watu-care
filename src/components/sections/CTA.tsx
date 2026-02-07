@@ -49,7 +49,7 @@ export async function CTA(): Promise<React.ReactElement> {
               className="w-full border-white/30 text-white hover:bg-white/10 sm:w-auto"
               asChild
             >
-              <Link href="#contact">{t('buttonSecondary')}</Link>
+              <Link href="/contact">{t('buttonSecondary')}</Link>
             </Button>
           </div>
         </div>

@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import { Space_Grotesk, IBM_Plex_Sans } from 'next/font/google';
 import { NextIntlClientProvider } from 'next-intl';
 import { getMessages, getTranslations } from 'next-intl/server';
 import { notFound } from 'next/navigation';
@@ -7,6 +8,7 @@ import { locales, type Locale } from '@/i18n/config';
 import { Header, Footer } from '@/components/layout';
 import { QuoteProvider } from '@/components/providers/QuoteProvider';
 import { QuoteModal } from '@/components/quote';
+import { FloatingWhatsApp } from '@/components/ui/FloatingWhatsApp';
 import {
   generateOrganizationSchema,
   generateWebSiteSchema,
@@ -15,6 +17,20 @@ import {
 } from '@/lib/schema';
 
 const BASE_URL = 'https://watu-care.com';
+
+const spaceGrotesk = Space_Grotesk({
+  subsets: ['latin'],
+  variable: '--font-display',
+  display: 'swap',
+  weight: ['400', '500', '600', '700'],
+});
+
+const ibmPlexSans = IBM_Plex_Sans({
+  subsets: ['latin'],
+  variable: '--font-body',
+  display: 'swap',
+  weight: ['400', '500', '600', '700'],
+});
 
 interface Props {
   children: React.ReactNode;
@@ -75,6 +91,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     alternates: {
       canonical: `${BASE_URL}/${locale}`,
       languages: {
+        'x-default': `${BASE_URL}/en`,
         en: `${BASE_URL}/en`,
         fr: `${BASE_URL}/fr`,
       },
@@ -89,11 +106,6 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
         'max-image-preview': 'large',
         'max-snippet': -1,
       },
-    },
-    verification: {
-      // Add these when you have the verification codes
-      // google: 'your-google-verification-code',
-      // yandex: 'your-yandex-verification-code',
     },
     category: 'Medical Supplies',
   };
@@ -119,20 +131,25 @@ export default async function LocaleLayout({
   );
 
   return (
-    <NextIntlClientProvider messages={messages}>
-      <QuoteProvider>
-        {/* JSON-LD Structured Data (consolidated @graph) */}
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{
-            __html: JSON.stringify(globalSchema),
-          }}
-        />
-        <Header />
-        {children}
-        <Footer />
-        <QuoteModal />
-      </QuoteProvider>
-    </NextIntlClientProvider>
+    <html lang={locale} className={`${spaceGrotesk.variable} ${ibmPlexSans.variable}`} suppressHydrationWarning>
+      <body className="font-sans">
+        <NextIntlClientProvider messages={messages}>
+          <QuoteProvider>
+            {/* JSON-LD Structured Data (consolidated @graph) */}
+            <script
+              type="application/ld+json"
+              dangerouslySetInnerHTML={{
+                __html: JSON.stringify(globalSchema),
+              }}
+            />
+            <Header />
+            {children}
+            <Footer />
+            <QuoteModal />
+          </QuoteProvider>
+        </NextIntlClientProvider>
+        <FloatingWhatsApp />
+      </body>
+    </html>
   );
 }

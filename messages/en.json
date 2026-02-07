@@ -580,7 +580,9 @@
     "requestQuote": "Contact",
     "productsTitle": "Products",
     "contact": "Contact",
-    "copyright": "Watu Care. All rights reserved."
+    "copyright": "Watu Care. All rights reserved.",
+    "privacy": "Privacy Policy",
+    "terms": "Terms of Service"
   },
   "about": {
     "meta": {
@@ -731,6 +733,16 @@
       "north-africa": "North Africa",
       "central-africa": "Central Africa",
       "levant": "Levant"
+    },
+    "index": {
+      "title": "Medical Supplies by Country",
+      "description": "Quality medical devices and PPE delivered to healthcare facilities across Africa and the Middle East.",
+      "meta": {
+        "title": "Medical Supplies by Country",
+        "description": "Find medical supplies for your country. Watu Care delivers quality medical devices and PPE to 25+ countries across Africa and the Middle East."
+      },
+      "countriesCount": "{count} countries served",
+      "viewCountry": "View supplies"
     }
   },
   "faq": {
@@ -748,5 +760,86 @@
     "paymentAnswer": "We accept bank transfers (T/T) and letters of credit (L/C) for larger orders. Payment terms are discussed during the quotation process based on order size and relationship.",
     "supportQuestion": "What after-sales support do you provide?",
     "supportAnswer": "Our team provides support throughout the order process and after delivery. We assist with product inquiries, documentation, and any issues that may arise with your order."
+  },
+  "notFound": {
+    "title": "Page Not Found",
+    "description": "The page you are looking for does not exist or has been moved.",
+    "backHome": "Back to Home",
+    "viewProducts": "View Products",
+    "contactUs": "Contact Us"
+  },
+  "privacy": {
+    "meta": {
+      "title": "Privacy Policy",
+      "description": "Watu Care privacy policy. How we collect, use, and protect your personal data."
+    },
+    "title": "Privacy Policy",
+    "lastUpdated": "Last updated: February 2026",
+    "intro": "Watu Care (\"we\", \"us\", \"our\") respects your privacy. This policy explains how we handle information when you use our website.",
+    "sections": {
+      "collect": {
+        "title": "Information We Collect",
+        "content": "We collect information you provide when requesting quotes, including your name, email address, organization, and product requirements. We also collect standard website usage data through cookies and analytics."
+      },
+      "use": {
+        "title": "How We Use Your Information",
+        "content": "We use your information to respond to quote requests, communicate about orders, improve our services, and send relevant product updates. We do not sell your personal data to third parties."
+      },
+      "sharing": {
+        "title": "Information Sharing",
+        "content": "We may share your information with manufacturing partners solely to fulfill orders. We may also share data when required by law or to protect our rights."
+      },
+      "cookies": {
+        "title": "Cookies",
+        "content": "We use essential cookies for website functionality and analytics cookies to understand how visitors use our site. You can control cookie preferences through your browser settings."
+      },
+      "security": {
+        "title": "Data Security",
+        "content": "We implement appropriate technical and organizational measures to protect your personal data. Our website uses HTTPS encryption for all data transmission."
+      },
+      "contact": {
+        "title": "Contact Us",
+        "content": "For privacy-related questions, contact us at contact@watu-care.com."
+      }
+    }
+  },
+  "terms": {
+    "meta": {
+      "title": "Terms of Service",
+      "description": "Watu Care terms of service for B2B medical wholesale."
+    },
+    "title": "Terms of Service",
+    "lastUpdated": "Last updated: February 2026",
+    "intro": "These terms govern your use of the Watu Care website and services. By using our website, you agree to these terms.",
+    "sections": {
+      "services": {
+        "title": "Our Services",
+        "content": "Watu Care provides B2B medical supply wholesale services. All products are intended for professional healthcare use. Pricing is quote-based and subject to order volume, product selection, and delivery destination."
+      },
+      "quotes": {
+        "title": "Quotes and Orders",
+        "content": "Quote requests are not binding. Pricing and availability are confirmed upon formal quotation. Orders are subject to our acceptance and product availability from manufacturing partners."
+      },
+      "products": {
+        "title": "Products and Quality",
+        "content": "We source products from manufacturers meeting international quality standards (CE, ISO). Product specifications and certifications are provided upon request. Images on our website are representative and actual products may vary slightly."
+      },
+      "liability": {
+        "title": "Limitation of Liability",
+        "content": "Watu Care acts as a wholesale distributor. While we ensure quality sourcing, product liability follows applicable manufacturer warranties and international trade terms agreed upon in each order."
+      },
+      "ip": {
+        "title": "Intellectual Property",
+        "content": "All content on this website, including text, images, and branding, is owned by Watu Care. Unauthorized reproduction is prohibited."
+      },
+      "governing": {
+        "title": "Governing Law",
+        "content": "These terms are governed by the laws of Hong Kong SAR. Disputes will be resolved through arbitration in Hong Kong."
+      },
+      "contact": {
+        "title": "Contact",
+        "content": "Questions about these terms can be directed to contact@watu-care.com."
+      }
+    }
   }
 }

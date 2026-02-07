@@ -98,7 +98,7 @@ export async function generateMetadata({
       url: `${BASE_URL}/${locale}/suppliers/${countrySlug}/${categorySlug}`,
       images: [
         {
-          url: category.image || `${BASE_URL}/og-image.png`,
+          url: category.image || `${BASE_URL}/opengraph-image`,
           width: 1200,
           height: 630,
           alt: `${categoryName} in ${countryName}`,
@@ -108,6 +108,7 @@ export async function generateMetadata({
     alternates: {
       canonical: `${BASE_URL}/${locale}/suppliers/${countrySlug}/${categorySlug}`,
       languages: {
+        'x-default': `${BASE_URL}/en/suppliers/${countrySlug}/${categorySlug}`,
         en: `${BASE_URL}/en/suppliers/${countrySlug}/${categorySlug}`,
         fr: `${BASE_URL}/fr/suppliers/${countrySlug}/${categorySlug}`,
       },

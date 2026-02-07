@@ -1288,7 +1288,9 @@
     "requestQuote": "Contact",
     "productsTitle": "Produits",
     "contact": "Contact",
-    "copyright": "Watu Care. Tous droits réservés."
+    "copyright": "Watu Care. Tous droits réservés.",
+    "privacy": "Politique de confidentialité",
+    "terms": "Conditions d'utilisation"
   },
   "about": {
     "meta": {
@@ -1439,6 +1441,16 @@
       "north-africa": "Afrique du Nord",
       "central-africa": "Afrique Centrale",
       "levant": "Levant"
+    },
+    "index": {
+      "title": "Fournitures médicales par pays",
+      "description": "Dispositifs médicaux et EPI de qualité livrés aux établissements de santé en Afrique et au Moyen-Orient.",
+      "meta": {
+        "title": "Fournitures médicales par pays",
+        "description": "Trouvez des fournitures médicales pour votre pays. Watu Care livre des dispositifs médicaux et EPI de qualité dans plus de 25 pays en Afrique et au Moyen-Orient."
+      },
+      "countriesCount": "{count} pays desservis",
+      "viewCountry": "Voir les fournitures"
     }
   },
   "faq": {
@@ -1456,5 +1468,86 @@
     "paymentAnswer": "Nous acceptons les virements bancaires (T/T) et les lettres de crédit (L/C) pour les commandes importantes. Les conditions de paiement sont discutées lors du processus de devis selon la taille de la commande et la relation.",
     "supportQuestion": "Quel support après-vente proposez-vous ?",
     "supportAnswer": "Notre équipe vous accompagne tout au long du processus de commande et après la livraison. Nous vous assistons pour les questions sur les produits, la documentation et tout problème éventuel."
+  },
+  "notFound": {
+    "title": "Page introuvable",
+    "description": "La page que vous recherchez n'existe pas ou a été déplacée.",
+    "backHome": "Retour à l'accueil",
+    "viewProducts": "Voir les produits",
+    "contactUs": "Nous contacter"
+  },
+  "privacy": {
+    "meta": {
+      "title": "Politique de confidentialité",
+      "description": "Politique de confidentialité de Watu Care. Comment nous collectons, utilisons et protégeons vos données personnelles."
+    },
+    "title": "Politique de confidentialité",
+    "lastUpdated": "Dernière mise à jour : février 2026",
+    "intro": "Watu Care (« nous », « notre ») respecte votre vie privée. Cette politique explique comment nous traitons les informations lorsque vous utilisez notre site web.",
+    "sections": {
+      "collect": {
+        "title": "Informations collectées",
+        "content": "Nous collectons les informations que vous fournissez lors de demandes de devis, notamment votre nom, adresse e-mail, organisation et besoins en produits. Nous collectons également des données d'utilisation standard du site via des cookies et des outils d'analyse."
+      },
+      "use": {
+        "title": "Utilisation de vos informations",
+        "content": "Nous utilisons vos informations pour répondre aux demandes de devis, communiquer sur les commandes, améliorer nos services et envoyer des mises à jour pertinentes. Nous ne vendons pas vos données personnelles à des tiers."
+      },
+      "sharing": {
+        "title": "Partage des informations",
+        "content": "Nous pouvons partager vos informations avec nos partenaires fabricants uniquement pour exécuter les commandes. Nous pouvons également partager des données lorsque la loi l'exige ou pour protéger nos droits."
+      },
+      "cookies": {
+        "title": "Cookies",
+        "content": "Nous utilisons des cookies essentiels pour le fonctionnement du site et des cookies d'analyse pour comprendre comment les visiteurs utilisent notre site. Vous pouvez gérer vos préférences de cookies via les paramètres de votre navigateur."
+      },
+      "security": {
+        "title": "Sécurité des données",
+        "content": "Nous mettons en œuvre des mesures techniques et organisationnelles appropriées pour protéger vos données personnelles. Notre site utilise le chiffrement HTTPS pour toute transmission de données."
+      },
+      "contact": {
+        "title": "Nous contacter",
+        "content": "Pour toute question relative à la confidentialité, contactez-nous à contact@watu-care.com."
+      }
+    }
+  },
+  "terms": {
+    "meta": {
+      "title": "Conditions d'utilisation",
+      "description": "Conditions d'utilisation de Watu Care pour la vente en gros de fournitures médicales B2B."
+    },
+    "title": "Conditions d'utilisation",
+    "lastUpdated": "Dernière mise à jour : février 2026",
+    "intro": "Ces conditions régissent votre utilisation du site web et des services Watu Care. En utilisant notre site, vous acceptez ces conditions.",
+    "sections": {
+      "services": {
+        "title": "Nos services",
+        "content": "Watu Care fournit des services de vente en gros de fournitures médicales B2B. Tous les produits sont destinés à un usage professionnel de santé. Les prix sont basés sur devis et dépendent du volume, de la sélection de produits et de la destination."
+      },
+      "quotes": {
+        "title": "Devis et commandes",
+        "content": "Les demandes de devis ne sont pas contraignantes. Les prix et la disponibilité sont confirmés lors du devis formel. Les commandes sont soumises à notre acceptation et à la disponibilité des produits auprès de nos partenaires fabricants."
+      },
+      "products": {
+        "title": "Produits et qualité",
+        "content": "Nous sourçons des produits auprès de fabricants respectant les normes de qualité internationales (CE, ISO). Les spécifications et certifications des produits sont fournies sur demande. Les images sur notre site sont représentatives et les produits réels peuvent varier légèrement."
+      },
+      "liability": {
+        "title": "Limitation de responsabilité",
+        "content": "Watu Care agit en tant que distributeur grossiste. Bien que nous assurons un approvisionnement de qualité, la responsabilité produit suit les garanties fabricant applicables et les termes du commerce international convenus pour chaque commande."
+      },
+      "ip": {
+        "title": "Propriété intellectuelle",
+        "content": "Tout le contenu de ce site, y compris les textes, images et marques, est la propriété de Watu Care. Toute reproduction non autorisée est interdite."
+      },
+      "governing": {
+        "title": "Droit applicable",
+        "content": "Ces conditions sont régies par les lois de Hong Kong RAS. Les litiges seront résolus par arbitrage à Hong Kong."
+      },
+      "contact": {
+        "title": "Contact",
+        "content": "Les questions sur ces conditions peuvent être adressées à contact@watu-care.com."
+      }
+    }
   }
 }

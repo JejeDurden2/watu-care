@@ -8,8 +8,18 @@ import {
   FAQ,
   CTA,
 } from '@/components/sections';
+import { generateFAQSchema } from '@/lib/schema';
 
 const BASE_URL = 'https://watu-care.com';
+
+const faqKeys = [
+  'moq',
+  'delivery',
+  'regions',
+  'certifications',
+  'payment',
+  'support',
+] as const;
 
 interface HomePageProps {
   params: Promise<{
@@ -59,6 +69,7 @@ export async function generateMetadata({
     alternates: {
       canonical: `${BASE_URL}/${locale}`,
       languages: {
+        'x-default': `${BASE_URL}/en`,
         en: `${BASE_URL}/en`,
         fr: `${BASE_URL}/fr`,
       },
@@ -66,9 +77,29 @@ export async function generateMetadata({
   };
 }
 
-export default function Home(): React.ReactElement {
+export default async function Home({
+  params,
+}: HomePageProps): Promise<React.ReactElement> {
+  const { locale } = await params;
+  const t = await getTranslations({ locale, namespace: 'faq' });
+
+  // Generate FAQ schema for rich snippets
+  const faqSchema = generateFAQSchema(
+    faqKeys.map((key) => ({
+      question: t(`${key}Question`),
+      answer: t(`${key}Answer`),
+    })),
+  );
+
   return (
     <main>
+      {/* FAQ JSON-LD for rich snippets */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(faqSchema),
+        }}
+      />
       <Hero />
       <Categories />
       <WhyUs />
