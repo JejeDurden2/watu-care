@@ -84,7 +84,6 @@ export async function generateMetadata({
     alternates: {
       canonical: `${BASE_URL}/${locale}/products/${categorySlug}`,
       languages: {
-        'x-default': `${BASE_URL}/en/products/${categorySlug}`,
         en: `${BASE_URL}/en/products/${categorySlug}`,
         fr: `${BASE_URL}/fr/products/${categorySlug}`,
       },
