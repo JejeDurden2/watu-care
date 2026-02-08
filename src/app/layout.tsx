@@ -14,7 +14,7 @@ export const viewport: Viewport = {
 export const metadata: Metadata = {
   metadataBase: new URL('https://watu-care.com'),
   title: {
-    default: 'Watu Care - Premium Medical Supplies for Africa & Middle East',
+    default: 'Watu Care - Medical Supplies for Africa & Middle East',
     template: '%s | Watu Care',
   },
   description:

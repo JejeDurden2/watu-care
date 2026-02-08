@@ -474,7 +474,7 @@
   },
   "about": {
     "meta": {
-      "title": "About Us | Watu Care",
+      "title": "About Us",
       "description": "Learn about Watu Care's mission to connect Asian medical manufacturers with healthcare providers across Africa and the Middle East."
     },
     "hero": {
@@ -494,7 +494,7 @@
   },
   "contact": {
     "meta": {
-      "title": "Contact Us | Watu Care",
+      "title": "Contact Us",
       "description": "Get in touch with Watu Care for medical supplies, quotes, and partnership inquiries."
     },
     "hero": {
@@ -547,10 +547,10 @@
   },
   "suppliers": {
     "meta": {
-      "titleTemplate": "Medical Supplies Supplier in {country} | Watu Care",
-      "descriptionTemplate": "Trusted medical supplies supplier for healthcare facilities in {country}. Surgical equipment, PPE, laboratory supplies, and more from certified Asian manufacturers.",
-      "categoryTitleTemplate": "{category} Supplier in {country} | Watu Care",
-      "categoryDescriptionTemplate": "Quality {category} for healthcare facilities in {country}. Direct from certified Asian manufacturers with competitive pricing and reliable delivery."
+      "titleTemplate": "Medical Supplies in {country}",
+      "descriptionTemplate": "Medical supplies for healthcare facilities in {country}. PPE, surgical equipment, and lab supplies from certified Asian manufacturers.",
+      "categoryTitleTemplate": "{category} in {country}",
+      "categoryDescriptionTemplate": "Quality {category} for healthcare in {country}. From certified Asian manufacturers with competitive pricing."
     },
     "breadcrumb": {
       "suppliers": "Suppliers",

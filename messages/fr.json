@@ -542,7 +542,7 @@
   },
   "about": {
     "meta": {
-      "title": "À propos | Watu Care",
+      "title": "À propos",
       "description": "Découvrez la mission de Watu Care : connecter les fabricants médicaux asiatiques aux prestataires de santé en Afrique et au Moyen-Orient."
     },
     "hero": {
@@ -562,7 +562,7 @@
   },
   "contact": {
     "meta": {
-      "title": "Contactez-nous | Watu Care",
+      "title": "Contactez-nous",
       "description": "Contactez Watu Care pour vos fournitures médicales, devis et demandes de partenariat."
     },
     "hero": {
@@ -615,10 +615,10 @@
   },
   "suppliers": {
     "meta": {
-      "titleTemplate": "Fournisseur de Matériel Médical en {country} | Watu Care",
-      "descriptionTemplate": "Fournisseur de matériel médical de confiance pour les établissements de santé en {country}. Équipement chirurgical, EPI, fournitures de laboratoire et plus encore, provenant de fabricants asiatiques certifiés.",
-      "categoryTitleTemplate": "Fournisseur de {category} en {country} | Watu Care",
-      "categoryDescriptionTemplate": "{category} de qualité pour les établissements de santé en {country}. Directement des fabricants asiatiques certifiés avec des prix compétitifs et une livraison fiable."
+      "titleTemplate": "Matériel Médical en {country}",
+      "descriptionTemplate": "Matériel médical pour les établissements de santé en {country}. EPI, équipement chirurgical et fournitures de fabricants asiatiques certifiés.",
+      "categoryTitleTemplate": "{category} en {country}",
+      "categoryDescriptionTemplate": "{category} de qualité pour la santé en {country}. Fabricants asiatiques certifiés, prix compétitifs."
     },
     "breadcrumb": {
       "suppliers": "Fournisseurs",
