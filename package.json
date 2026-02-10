@@ -13,7 +13,10 @@
     "test": "vitest run --passWithNoTests",
     "test:watch": "vitest",
     "test:coverage": "vitest run --coverage",
-    "prepare": "husky"
+    "prepare": "husky",
+    "optimize:images": "node scripts/optimize-images.mjs",
+    "normalize:paths": "node scripts/normalize-paths.mjs",
+    "generate:blur-placeholders": "node scripts/generate-blur-placeholders.mjs"
   },
   "dependencies": {
     "@radix-ui/react-dialog": "^1.1.15",
@@ -39,6 +42,7 @@
     "@types/node": "^22.10.2",
     "@types/react": "^19.0.2",
     "@types/react-dom": "^19.0.2",
+    "@types/sharp": "^0.31.1",
     "@typescript-eslint/eslint-plugin": "^8.18.2",
     "@typescript-eslint/parser": "^8.18.2",
     "@vitejs/plugin-react": "^4.3.4",
@@ -56,6 +60,7 @@
     "lint-staged": "^16.2.7",
     "postcss": "^8.4.49",
     "prettier": "^3.2.5",
+    "sharp": "^0.34.5",
     "tailwindcss": "^3.4.17",
     "typescript": "^5.7.2",
     "typescript-eslint": "^8.53.1",
