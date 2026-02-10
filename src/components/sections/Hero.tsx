@@ -36,7 +36,7 @@ export async function Hero(): Promise<React.ReactElement> {
             <h1 className="text-display-sm text-white md:text-display lg:text-display-lg">
               {t('headline1')}
               <br />
-              <span className="text-accent">{t('headline2')}</span>
+              <span className="text-primary">{t('headline2')}</span>
             </h1>
 
             {/* Subtitle */}

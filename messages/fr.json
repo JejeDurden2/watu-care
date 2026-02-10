@@ -550,14 +550,9 @@
       "subtitle": "Nous connectons les prestataires de santé avec des fournitures médicales de qualité."
     },
     "values": {
-      "title": "Nos valeurs",
-      "subtitle": "Les principes qui guident tout ce que nous faisons chez Watu Care.",
-      "quality": "Focus Qualité",
-      "qualityDesc": "Nous travaillons avec des fabricants qui respectent les normes de qualité, garantissant des produits sûrs et efficaces.",
-      "reliability": "Chaîne d'approvisionnement fiable",
-      "reliabilityDesc": "Notre hub à Hong Kong assure une logistique efficace et des livraisons régulières.",
-      "support": "Support dédié",
-      "supportDesc": "Notre équipe vous accompagne du devis à la livraison."
+      "title": "Et qui sommes-nous ?",
+      "subtitle": "Nous sommes des experts en fournitures de dispositifs médicaux, opérant en Asie, Afrique et au Moyen-Orient.",
+      "mission": "Notre mission est de permettre un accès durable aux dispositifs médicaux essentiels grâce à un approvisionnement conforme, des chaînes logistiques structurées et des partenariats solides."
     }
   },
   "contact": {
@@ -586,32 +581,31 @@
     }
   },
   "mission": {
-    "title": "signifie",
-    "titleHighlight": "Personnes",
-    "titleEnd": "en Swahili",
-    "description1": "Et c'est exactement ce qui nous motive. Chez Watu Care, nous comprenons que derrière chaque commande de fournitures médicales se trouve un",
-    "highlight1": "professionnel de santé qui s'efforce de sauver des vies",
-    "and": "et un",
-    "highlight2": "patient qui espère guérir",
-    "description2": "Basés à Hong Kong, nous connectons les fabricants médicaux asiatiques aux prestataires de soins de santé en Afrique et au Moyen-Orient.",
-    "asiaHub": "Hub Asie",
-    "asiaHubDesc": "Siège à Hong Kong",
-    "healthcareFocus": "Focus Santé",
-    "healthcareFocusDesc": "L'humain d'abord",
-    "developingEconomies": "Marchés émergents",
-    "developingEconomiesDesc": "Afrique & Moyen-Orient"
+    "title": "Pourquoi",
+    "titleHighlight": "Watu",
+    "subtitle": "« Watu » signifie Personnes en swahili — et c'est exactement ce qui nous anime.",
+    "story1": "Watu Care est né d'une conviction simple : l'accès aux soins ne devrait jamais être limité par la géographie, l'origine ou le contexte.",
+    "story2": "Notre équipe vient de différents pays, cultures et parcours professionnels, mais nous partageons un objectif commun : rendre l'accès aux dispositifs médicaux essentiels possible pour tous, partout.",
+    "story3": "Chez Watu Care, nous croyons que la santé est, avant tout, une histoire humaine.",
+    "story4": "Derrière chaque dispositif médical, chaque commande et chaque livraison, il y a un professionnel de santé qui fait de son mieux — et un patient qui espère recevoir de meilleurs soins.",
+    "story5": "« Watu » nous rappelle chaque jour que les personnes passent en premier.",
+    "story6": "Pas les marchés. Pas les volumes. Pas les marges.",
+    "story7": "Mais les médecins, infirmières, acheteurs, logisticiens — et les patients qu'ils servent.",
+    "story8": "Chez Watu Care, nous ne faisons pas que déplacer des produits. Nous construisons des ponts entre les personnes, les marchés et de meilleurs soins de santé."
   },
   "valueProps": {
     "title": "Pourquoi choisir Watu Care ?",
     "subtitle": "Nous connectons les prestataires de santé avec des fournitures médicales de qualité.",
-    "strategicLocation": "Emplacement stratégique",
-    "strategicLocationDesc": "Hub à Hong Kong connectant les fabricants asiatiques directement à votre établissement.",
-    "qualityAssurance": "Focus Qualité",
-    "qualityAssuranceDesc": "Dispositifs médicaux et EPI répondant aux normes de qualité.",
-    "accessibilityFocus": "Large couverture",
-    "accessibilityFocusDesc": "Nous desservons les établissements de santé en Afrique et au Moyen-Orient.",
-    "dedicatedSupport": "Support dédié",
-    "dedicatedSupportDesc": "Notre équipe vous accompagne du devis à la livraison."
+    "qualityFirst": "La qualité avant tout",
+    "qualityFirstDesc": "Nous travaillons exclusivement avec des fabricants approuvés et de confiance en Asie, garantissant des dispositifs médicaux conformes aux normes internationales et offrant des performances constantes et fiables.",
+    "priceCommitment": "Engagement sur les prix",
+    "priceCommitmentDesc": "Nous nous engageons à des prix justes, stables et transparents. En travaillant directement avec les fabricants et en optimisant notre modèle d'approvisionnement, nous garantissons une efficacité économique sans compromis sur la qualité ou la conformité.",
+    "supplyChain": "Chaîne d'approvisionnement fiable et transparente",
+    "supplyChainDesc": "Notre modèle d'approvisionnement est construit directement avec des fabricants sélectionnés, nous permettant d'assurer une traçabilité complète, une logistique maîtrisée et une livraison fiable en Afrique et au Moyen-Orient.",
+    "rdFocus": "Focus Recherche & Développement",
+    "rdFocusDesc": "Nous collaborons activement avec nos partenaires fabricants sur l'amélioration des produits, l'adaptation aux besoins locaux et la conformité réglementaire. Notre approche R&D garantit que les dispositifs sont non seulement conformes, mais aussi pertinents, pratiques et évolutifs pour les marchés que nous servons.",
+    "humanSupport": "Support centré sur l'humain",
+    "humanSupportDesc": "Du devis à la livraison, notre équipe vous accompagne à chaque étape avec réactivité, clarté et engagement à long terme."
   },
   "suppliers": {
     "meta": {
@@ -707,9 +701,9 @@
     "moqQuestion": "Quelle est la quantité minimum de commande (MOQ) ?",
     "moqAnswer": "La MOQ varie selon la catégorie de produits. Pour la plupart des articles, nous travaillons avec des quantités adaptées aux établissements de santé de toutes tailles. Contactez-nous avec vos besoins spécifiques et nous vous proposerons des options sur mesure.",
     "deliveryQuestion": "Quels sont les délais de livraison ?",
-    "deliveryAnswer": "Les délais de livraison dépendent de votre localisation et de la taille de la commande. En général, les commandes vers l'Afrique et le Moyen-Orient prennent 2 à 4 semaines après confirmation. Nous fournissons un suivi pour toutes les expéditions.",
+    "deliveryAnswer": "Les délais de livraison dépendent du mode d'expédition que vous choisissez. Le fret maritime prend généralement entre 30 et 50 jours, tandis que les options de fret aérien permettent une livraison en 6 à 9 jours.",
     "regionsQuestion": "Dans quelles régions livrez-vous ?",
-    "regionsAnswer": "Nous livrons aux établissements de santé en Afrique et au Moyen-Orient. Notre hub à Hong Kong permet une expédition efficace vers les principaux ports et centres logistiques de ces régions.",
+    "regionsAnswer": "Nous livrons aux établissements de santé en Afrique et au Moyen-Orient, et nous pouvons également fournir des devis pour d'autres pays dans le monde sur demande. Notre équipe accompagne les expéditions internationales avec des partenaires logistiques fiables, garantissant une livraison efficace et bien gérée où que nos clients opèrent.",
     "certificationsQuestion": "Quelles certifications ont vos produits ?",
     "certificationsAnswer": "Nos produits proviennent de fabricants qui respectent les normes de qualité internationales, notamment le marquage CE et les certifications ISO. Nous pouvons fournir les documents de certification spécifiques sur demande.",
     "paymentQuestion": "Quels modes de paiement acceptez-vous ?",

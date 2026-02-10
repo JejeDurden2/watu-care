@@ -265,7 +265,7 @@ export function HeroGraphic(): React.ReactElement {
             fontWeight="600"
             opacity="0.9"
           >
-            AFRICA & ME
+            AFRICA & MIDDLE EAST
           </text>
           <text
             x="320"

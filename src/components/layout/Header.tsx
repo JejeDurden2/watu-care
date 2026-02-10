@@ -107,7 +107,7 @@ export function Header(): React.ReactElement {
                 <Link
                   key={link.href}
                   href={link.href}
-                  className="text-sm font-medium text-muted-foreground transition-colors hover:text-secondary"
+                  className="text-base font-medium text-muted-foreground transition-colors hover:text-secondary"
                 >
                   {link.label}
                 </Link>
@@ -196,7 +196,7 @@ export function Header(): React.ReactElement {
                   <Link
                     key={link.href}
                     href={link.href}
-                    className="flex items-center justify-between rounded-xl px-4 py-3.5 text-[15px] font-medium text-gray-900 transition-all hover:bg-gray-50 active:scale-[0.98]"
+                    className="flex items-center justify-between rounded-xl px-4 py-3.5 text-base font-medium text-gray-900 transition-all hover:bg-gray-50 active:scale-[0.98]"
                     onClick={closeMenu}
                   >
                     {link.label}

@@ -482,14 +482,9 @@
       "subtitle": "Connecting healthcare providers with quality medical supplies."
     },
     "values": {
-      "title": "Our Values",
-      "subtitle": "The principles that guide everything we do at Watu Care.",
-      "quality": "Quality Focus",
-      "qualityDesc": "We partner with manufacturers who meet quality standards, ensuring products that are safe and effective.",
-      "reliability": "Reliable Supply Chain",
-      "reliabilityDesc": "Our Hong Kong hub provides efficient logistics and consistent delivery.",
-      "support": "Dedicated Support",
-      "supportDesc": "Our team is here to support you from quote to delivery."
+      "title": "And who are we?",
+      "subtitle": "We are Medical Device Supply Experts, operating across Asia, Africa and the Middle East.",
+      "mission": "Our mission is to enable sustainable access to essential medical devices through compliant sourcing, structured supply chains and strong partnerships."
     }
   },
   "contact": {
@@ -518,32 +513,31 @@
     }
   },
   "mission": {
-    "title": "means",
-    "titleHighlight": "People",
-    "titleEnd": "in Swahili",
-    "description1": "And that is exactly what drives us. At Watu Care, we understand that behind every medical supply order is a",
-    "highlight1": "healthcare worker striving to save lives",
-    "and": "and a",
-    "highlight2": "patient hoping for recovery",
-    "description2": "Based in Hong Kong, we connect Asian medical manufacturers with healthcare providers across Africa and the Middle East.",
-    "asiaHub": "Asia Hub",
-    "asiaHubDesc": "Hong Kong headquarters",
-    "healthcareFocus": "Healthcare Focus",
-    "healthcareFocusDesc": "People-first approach",
-    "developingEconomies": "Emerging Markets",
-    "developingEconomiesDesc": "Africa & Middle East"
+    "title": "Why",
+    "titleHighlight": "Watu",
+    "subtitle": "\"Watu\" means People in Swahili — and that is exactly what drives us.",
+    "story1": "Watu Care was born from a simple belief: healthcare should never be limited by geography, origin or background.",
+    "story2": "Our team comes from different countries, cultures and professional paths, but we share one common purpose - to make access to essential medical supplies possible for everyone, everywhere.",
+    "story3": "At Watu Care, we believe healthcare is, above all, a human story.",
+    "story4": "Behind every medical device, every order and every shipment, there is a healthcare professional doing their best — and a patient hoping for better care.",
+    "story5": "\"Watu\" reminds us every day that people come first.",
+    "story6": "Not markets. Not volumes. Not margins.",
+    "story7": "But doctors, nurses, buyers, logisticians — and the patients they serve.",
+    "story8": "At Watu Care, we don't just move products. We build bridges between people, markets, and better healthcare."
   },
   "valueProps": {
     "title": "Why Partner with Watu Care?",
     "subtitle": "We connect healthcare providers with quality medical supplies.",
-    "strategicLocation": "Strategic Location",
-    "strategicLocationDesc": "Hong Kong hub connecting Asian manufacturers directly to your facility.",
-    "qualityAssurance": "Quality Focus",
-    "qualityAssuranceDesc": "Medical devices and PPE that meet quality standards.",
-    "accessibilityFocus": "Wide Reach",
-    "accessibilityFocusDesc": "Serving healthcare facilities across Africa and the Middle East.",
-    "dedicatedSupport": "Dedicated Support",
-    "dedicatedSupportDesc": "Our team is here to support you from quote to delivery."
+    "qualityFirst": "Quality First",
+    "qualityFirstDesc": "We work exclusively with approved and trusted manufacturers in Asia, ensuring medical devices that meet international standards and deliver consistent, reliable performance.",
+    "priceCommitment": "Price Commitment",
+    "priceCommitmentDesc": "We are committed to fair, stable and transparent pricing. By working directly with manufacturers and optimizing our sourcing model, we ensure cost-efficiency without compromising on quality or compliance.",
+    "supplyChain": "Reliable & Transparent Supply Chain",
+    "supplyChainDesc": "Our sourcing model is built directly with selected manufacturers, allowing us to ensure full traceability, controlled logistics and dependable delivery across Africa and the Middle East.",
+    "rdFocus": "Research & Development Focus",
+    "rdFocusDesc": "We actively collaborate with our manufacturing partners on product improvement, adaptation to local needs and regulatory alignment. Our R&D approach ensures that devices are not only compliant, but also relevant, practical and scalable for the markets we serve.",
+    "humanSupport": "Human-Centered Support",
+    "humanSupportDesc": "From quotation to delivery, our team supports you at every step with responsiveness, clarity and long-term commitment."
   },
   "suppliers": {
     "meta": {
@@ -639,9 +633,9 @@
     "moqQuestion": "What is the minimum order quantity (MOQ)?",
     "moqAnswer": "MOQ varies by product category. For most items, we work with quantities suitable for healthcare facilities of all sizes. Contact us with your specific needs and we'll provide tailored options.",
     "deliveryQuestion": "What are the delivery times?",
-    "deliveryAnswer": "Delivery times depend on your location and order size. Typically, orders to Africa and the Middle East take 2-4 weeks after confirmation. We provide tracking information for all shipments.",
+    "deliveryAnswer": "Delivery timelines depend on the shipping method you choose. Sea freight usually takes around 30–50 days, while air freight options allow delivery within 6–9 days.",
     "regionsQuestion": "Which regions do you deliver to?",
-    "regionsAnswer": "We deliver to healthcare facilities across Africa and the Middle East. Our Hong Kong hub enables efficient shipping to major ports and logistics centers throughout these regions.",
+    "regionsAnswer": "We deliver to healthcare facilities across Africa and the Middle East, and we can also provide quotations for other countries worldwide upon request. Our team supports international shipments through reliable logistics partners, ensuring efficient and well-managed delivery wherever our clients operate.",
     "certificationsQuestion": "What certifications do your products have?",
     "certificationsAnswer": "Our products come from manufacturers that meet international quality standards including CE marking and ISO certifications. We can provide specific certification documents upon request.",
     "paymentQuestion": "What payment methods do you accept?",
