@@ -484,7 +484,13 @@
     "values": {
       "title": "And who are we?",
       "subtitle": "We are Medical Device Supply Experts, operating across Asia, Africa and the Middle East.",
-      "mission": "Our mission is to enable sustainable access to essential medical devices through compliant sourcing, structured supply chains and strong partnerships."
+      "mission": "Our mission is to enable sustainable access to essential medical devices through compliant sourcing, structured supply chains and strong partnerships.",
+      "quality": "Quality First",
+      "qualityDesc": "We work exclusively with approved and trusted manufacturers in Asia, ensuring medical devices that meet international standards and deliver consistent, reliable performance.",
+      "reliability": "Reliable Supply Chain",
+      "reliabilityDesc": "Our sourcing model is built directly with selected manufacturers, allowing us to ensure full traceability, controlled logistics and dependable delivery across Africa and the Middle East.",
+      "support": "Human-Centered Support",
+      "supportDesc": "From quotation to delivery, our team supports you at every step with responsiveness, clarity and long-term commitment."
     }
   },
   "contact": {
@@ -515,7 +521,19 @@
   "mission": {
     "title": "Why",
     "titleHighlight": "Watu",
+    "titleEnd": "",
     "subtitle": "\"Watu\" means People in Swahili — and that is exactly what drives us.",
+    "description1": "Watu Care was born from a simple belief:",
+    "highlight1": "healthcare should never be limited by geography, origin or background",
+    "and": "and",
+    "highlight2": "access to essential medical supplies should be possible for everyone, everywhere",
+    "description2": "Our team comes from different countries, cultures and professional paths, but we share one common purpose — to make access to essential medical supplies possible for everyone, everywhere.",
+    "asiaHub": "Asia Hub",
+    "asiaHubDesc": "Based in Hong Kong, we connect Asian manufacturers directly to healthcare facilities.",
+    "healthcareFocus": "Healthcare Focus",
+    "healthcareFocusDesc": "At Watu Care, we believe healthcare is, above all, a human story.",
+    "developingEconomies": "Emerging Markets",
+    "developingEconomiesDesc": "We serve healthcare facilities across Africa and the Middle East.",
     "story1": "Watu Care was born from a simple belief: healthcare should never be limited by geography, origin or background.",
     "story2": "Our team comes from different countries, cultures and professional paths, but we share one common purpose - to make access to essential medical supplies possible for everyone, everywhere.",
     "story3": "At Watu Care, we believe healthcare is, above all, a human story.",

@@ -552,7 +552,13 @@
     "values": {
       "title": "Et qui sommes-nous ?",
       "subtitle": "Nous sommes des experts en fournitures de dispositifs médicaux, opérant en Asie, Afrique et au Moyen-Orient.",
-      "mission": "Notre mission est de permettre un accès durable aux dispositifs médicaux essentiels grâce à un approvisionnement conforme, des chaînes logistiques structurées et des partenariats solides."
+      "mission": "Notre mission est de permettre un accès durable aux dispositifs médicaux essentiels grâce à un approvisionnement conforme, des chaînes logistiques structurées et des partenariats solides.",
+      "quality": "La qualité avant tout",
+      "qualityDesc": "Nous travaillons exclusivement avec des fabricants approuvés et de confiance en Asie, garantissant des dispositifs médicaux conformes aux normes internationales et offrant des performances constantes et fiables.",
+      "reliability": "Chaîne d'approvisionnement fiable",
+      "reliabilityDesc": "Notre modèle d'approvisionnement est construit directement avec des fabricants sélectionnés, nous permettant d'assurer une traçabilité complète, une logistique maîtrisée et une livraison fiable en Afrique et au Moyen-Orient.",
+      "support": "Support centré sur l'humain",
+      "supportDesc": "Du devis à la livraison, notre équipe vous accompagne à chaque étape avec réactivité, clarté et engagement à long terme."
     }
   },
   "contact": {
@@ -583,15 +589,27 @@
   "mission": {
     "title": "Pourquoi",
     "titleHighlight": "Watu",
+    "titleEnd": "",
     "subtitle": "« Watu » signifie Personnes en swahili — et c'est exactement ce qui nous anime.",
-    "story1": "Watu Care est né d'une conviction simple : l'accès aux soins ne devrait jamais être limité par la géographie, l'origine ou le contexte.",
-    "story2": "Notre équipe vient de différents pays, cultures et parcours professionnels, mais nous partageons un objectif commun : rendre l'accès aux dispositifs médicaux essentiels possible pour tous, partout.",
-    "story3": "Chez Watu Care, nous croyons que la santé est, avant tout, une histoire humaine.",
-    "story4": "Derrière chaque dispositif médical, chaque commande et chaque livraison, il y a un professionnel de santé qui fait de son mieux — et un patient qui espère recevoir de meilleurs soins.",
+    "description1": "Watu Care est né d'une conviction simple :",
+    "highlight1": "les soins de santé ne devraient jamais être limités par la géographie, l'origine ou le contexte",
+    "and": "et",
+    "highlight2": "l'accès aux fournitures médicales essentielles devrait être possible pour tous, partout",
+    "description2": "Notre équipe vient de différents pays, de différentes cultures et de parcours professionnels variés, mais nous partageons un objectif commun : rendre l'accès aux fournitures médicales essentielles possible pour tous, partout.",
+    "asiaHub": "Hub Asiatique",
+    "asiaHubDesc": "Basés à Hong Kong, nous connectons directement les fabricants asiatiques aux établissements de santé.",
+    "healthcareFocus": "Focus Santé",
+    "healthcareFocusDesc": "Chez Watu Care, les soins de santé sont, avant tout, une histoire humaine.",
+    "developingEconomies": "Marchés Émergents",
+    "developingEconomiesDesc": "Nous servons les établissements de santé en Afrique et au Moyen-Orient.",
+    "story1": "Watu Care est né d'une conviction simple : les soins de santé ne devraient jamais être limités par la géographie, l'origine ou le contexte.",
+    "story2": "Notre équipe vient de différents pays, de différentes cultures et de parcours professionnels variés, mais nous partageons un objectif commun : rendre l'accès aux fournitures médicales essentielles possible pour tous, partout.",
+    "story3": "Chez Watu Care, nous croyons que les soins de santé sont, avant tout, une histoire humaine.",
+    "story4": "Derrière chaque dispositif médical, chaque commande et chaque livraison, se trouve un professionnel de santé qui fait de son mieux — et un patient qui espère recevoir de meilleurs soins.",
     "story5": "« Watu » nous rappelle chaque jour que les personnes passent en premier.",
     "story6": "Pas les marchés. Pas les volumes. Pas les marges.",
-    "story7": "Mais les médecins, infirmières, acheteurs, logisticiens — et les patients qu'ils servent.",
-    "story8": "Chez Watu Care, nous ne faisons pas que déplacer des produits. Nous construisons des ponts entre les personnes, les marchés et de meilleurs soins de santé."
+    "story7": "Mais les médecins, les infirmières, les acheteurs, les logisticiens — et les patients qu'ils servent.",
+    "story8": "Chez Watu Care, nous ne faisons pas que transporter des produits. Nous construisons des ponts entre les personnes, les marchés et de meilleurs soins de santé."
   },
   "valueProps": {
     "title": "Pourquoi choisir Watu Care ?",
