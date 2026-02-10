@@ -1,5 +1,5 @@
 import Image from 'next/image';
-import { Mail, MapPin, Phone } from 'lucide-react';
+import { Mail, MapPin, Phone, Linkedin } from 'lucide-react';
 import { getTranslations } from 'next-intl/server';
 import { Link } from '@/i18n/routing';
 import { Container } from '@/components/ui';
@@ -107,6 +107,21 @@ export async function Footer(): Promise<React.ReactElement> {
                 </span>
               </li>
             </ul>
+          </div>
+        </div>
+
+        {/* Social Media */}
+        <div className="border-t border-secondary-foreground/10 py-8">
+          <div className="flex items-center justify-center gap-6">
+            <a
+              href="https://www.linkedin.com/company/watu-care"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-secondary-foreground/60 transition-colors hover:text-primary"
+              aria-label="LinkedIn"
+            >
+              <Linkedin className="h-6 w-6" />
+            </a>
           </div>
         </div>
 

@@ -133,10 +133,7 @@ export function generateOrganizationSchema(): OrganizationSchema {
       addressCountry: 'HK',
     },
     areaServed: ['Africa', 'Middle East'],
-    sameAs: [
-      // Add social media links when available:
-      // 'https://www.linkedin.com/company/watu-care',
-    ],
+    sameAs: ['https://www.linkedin.com/company/watu-care'],
   };
 }
 
