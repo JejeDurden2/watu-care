@@ -9,10 +9,12 @@ import { Button, Container, LanguageSwitcher } from '@/components/ui';
 import { QuoteListBadge } from '@/components/quote';
 import { useQuoteStore } from '@/lib/quote-store';
 import { SearchBar, MobileSearchOverlay } from '@/components/layout/SearchBar';
+import { cn } from '@/lib/utils';
 
 export function Header(): React.ReactElement {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isSearchOpen, setIsSearchOpen] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
   const menuRef = useRef<HTMLDivElement>(null);
   const menuButtonRef = useRef<HTMLButtonElement>(null);
   const t = useTranslations('nav');
@@ -27,6 +29,18 @@ export function Header(): React.ReactElement {
   const closeMenu = useCallback(() => {
     setIsMenuOpen(false);
     menuButtonRef.current?.focus();
+  }, []);
+
+  // Scroll detection for header state
+  useEffect(() => {
+    const handleScroll = (): void => {
+      setIsScrolled(window.scrollY > 20);
+    };
+
+    handleScroll();
+
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
   // Scroll lock when menu is open
@@ -83,49 +97,77 @@ export function Header(): React.ReactElement {
 
   return (
     <>
-      <header className="sticky top-0 z-50 border-b border-border/50 bg-background/80 backdrop-blur-md">
+      <header
+        className={cn(
+          'sticky top-0 z-50 header-glass',
+          isScrolled && 'header-glass-scrolled'
+        )}
+      >
         <Container>
-          <nav className="flex h-20 items-center justify-between md:h-28">
+          <nav
+            className={cn(
+              'flex items-center justify-between transition-[height] duration-300 ease-out',
+              isScrolled ? 'h-14 lg:h-16' : 'h-16 lg:h-20'
+            )}
+          >
             {/* Logo */}
             <Link
               href="/"
-              className="relative z-50 flex items-center gap-2 rounded-lg transition-transform hover:scale-105"
+              className="relative z-50 flex items-center gap-2 rounded-lg"
             >
               <Image
                 src="/logo.png"
                 alt="Watu Care"
                 width={240}
                 height={70}
-                className="h-16 w-auto drop-shadow-lg md:h-20"
+                className={cn(
+                  'h-12 w-auto drop-shadow-sm header-logo md:h-14',
+                  isScrolled && 'header-logo-scrolled'
+                )}
+                style={{ width: 'auto' }}
                 priority
               />
             </Link>
 
             {/* Desktop Navigation */}
-            <div className="hidden items-center gap-6 lg:flex">
-              {navLinks.map((link) => (
-                <Link
-                  key={link.href}
-                  href={link.href}
-                  className="text-base font-medium text-muted-foreground transition-colors hover:text-secondary"
+            <div className="hidden items-center lg:flex">
+              <div className="flex items-center gap-1">
+                {navLinks.map((link) => (
+                  <Link
+                    key={link.href}
+                    href={link.href}
+                    className="nav-link-underline rounded-lg px-3 py-2 text-sm font-medium text-secondary/70 transition-colors hover:text-secondary active:scale-[0.98]"
+                  >
+                    {link.label}
+                  </Link>
+                ))}
+              </div>
+
+              <div className="mx-4 h-5 w-px bg-border/60" aria-hidden="true" />
+
+              <div className="flex items-center gap-3">
+                <SearchBar className="w-44 xl:w-52" />
+                <LanguageSwitcher />
+                <QuoteListBadge />
+              </div>
+
+              <div className="ml-4">
+                <Button
+                  size="sm"
+                  onClick={openModal}
+                  className="shadow-[0_2px_12px_-3px_hsl(var(--accent)/0.4)]"
                 >
-                  {link.label}
-                </Link>
-              ))}
-              <SearchBar className="w-48 xl:w-56" />
-              <LanguageSwitcher />
-              <QuoteListBadge />
-              <Button size="sm" onClick={openModal}>
-                {t('requestQuote')}
-              </Button>
+                  {t('requestQuote')}
+                </Button>
+              </div>
             </div>
 
             {/* Mobile: Actions + Menu Button */}
-            <div className="flex items-center gap-2 lg:hidden">
+            <div className="flex items-center gap-1.5 lg:hidden">
               <button
                 type="button"
                 onClick={() => setIsSearchOpen(true)}
-                className="inline-flex items-center justify-center rounded-lg p-2 text-secondary transition-colors hover:bg-secondary/10"
+                className="inline-flex h-9 w-9 items-center justify-center rounded-lg text-secondary/70 transition-colors hover:bg-secondary/5 hover:text-secondary active:scale-[0.97]"
                 aria-label={t('search')}
               >
                 <Search className="h-5 w-5" />
@@ -137,14 +179,14 @@ export function Header(): React.ReactElement {
               <button
                 ref={menuButtonRef}
                 type="button"
-                className="relative z-50 inline-flex items-center justify-center rounded-lg p-2 text-secondary transition-colors hover:bg-secondary/10"
+                className="relative z-50 inline-flex h-9 w-9 items-center justify-center rounded-lg text-secondary/70 transition-colors hover:bg-secondary/5 hover:text-secondary active:scale-[0.97]"
                 onClick={() => setIsMenuOpen(!isMenuOpen)}
                 aria-expanded={isMenuOpen}
                 aria-controls="mobile-menu"
-                aria-label={isMenuOpen ? 'Close navigation menu' : 'Open navigation menu'}
+                aria-label={isMenuOpen ? t('closeNavigation') : t('openNavigation')}
               >
-                <span className="sr-only">{isMenuOpen ? 'Close menu' : 'Open menu'}</span>
-                {isMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
+                <span className="sr-only">{isMenuOpen ? t('closeMenu') : t('openMenu')}</span>
+                {isMenuOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
               </button>
             </div>
           </nav>
@@ -156,7 +198,7 @@ export function Header(): React.ReactElement {
         <div className="fixed inset-0 z-[60] lg:hidden">
           {/* Backdrop */}
           <div
-            className="absolute inset-0 bg-black/40"
+            className="absolute inset-0 bg-secondary/30 animate-backdrop-fade-in"
             onClick={closeMenu}
             aria-hidden="true"
           />
@@ -167,60 +209,69 @@ export function Header(): React.ReactElement {
             id="mobile-menu"
             role="dialog"
             aria-modal="true"
-            aria-label="Mobile navigation"
-            className="absolute right-0 top-0 h-full w-full max-w-[300px] shadow-2xl flex flex-col bg-white"
+            aria-label={t('mobileNav')}
+            className="absolute right-0 top-0 h-full w-full max-w-[300px] animate-slide-in-right flex flex-col bg-white/95 backdrop-blur-xl shadow-depth-lg"
           >
             {/* Drawer Header */}
-            <div className="flex h-16 items-center justify-between border-b border-gray-100 px-5 bg-white">
+            <div className="flex h-14 items-center justify-between border-b border-border/30 px-5">
               <Image
                 src="/logo.png"
                 alt="Watu Care"
                 width={120}
                 height={35}
-                className="h-8 w-auto"
+                className="h-7 w-auto"
+                style={{ width: 'auto' }}
               />
               <button
                 type="button"
                 onClick={closeMenu}
-                className="inline-flex h-10 w-10 items-center justify-center rounded-full text-gray-500 transition-colors hover:bg-gray-100"
-                aria-label="Close navigation menu"
+                className="inline-flex h-9 w-9 items-center justify-center rounded-full text-secondary/60 transition-colors hover:bg-secondary/5 hover:text-secondary active:scale-[0.95]"
+                aria-label={t('closeNavigation')}
               >
-                <X className="h-5 w-5" />
+                <X className="h-4 w-4" />
               </button>
             </div>
 
             {/* Navigation Links */}
-            <nav className="flex-1 overflow-y-auto px-3 py-4 bg-white">
-              <div className="space-y-1">
-                {navLinks.map((link) => (
+            <nav className="flex-1 overflow-y-auto px-3 py-5">
+              <div className="space-y-0.5">
+                {navLinks.map((link, index) => (
                   <Link
                     key={link.href}
                     href={link.href}
-                    className="flex items-center justify-between rounded-xl px-4 py-3.5 text-base font-medium text-gray-900 transition-all hover:bg-gray-50 active:scale-[0.98]"
+                    className={cn(
+                      'stagger-item flex items-center justify-between rounded-xl px-4 py-3.5 text-base font-medium text-secondary transition-all hover:bg-secondary/5 active:scale-[0.98]',
+                      `stagger-delay-${index + 1}`
+                    )}
                     onClick={closeMenu}
                   >
                     {link.label}
-                    <ChevronRight className="h-4 w-4 text-gray-400" />
+                    <ChevronRight className="h-4 w-4 text-secondary/30" />
                   </Link>
                 ))}
               </div>
 
               {/* Language Section */}
-              <div className="mt-6 border-t border-gray-100 pt-6">
-                <div className="mb-3 flex items-center gap-2 px-4 text-xs font-medium uppercase tracking-wider text-gray-400">
+              <div className="mt-8 border-t border-border/30 pt-6">
+                <div
+                  className={cn(
+                    'stagger-item mb-3 flex items-center gap-2 px-4 text-xs font-medium uppercase tracking-wider text-secondary/40',
+                    'stagger-delay-4'
+                  )}
+                >
                   <Globe className="h-3.5 w-3.5" />
-                  {t('language') || 'Language'}
+                  {t('language')}
                 </div>
-                <div className="px-2">
+                <div className={cn('stagger-item px-2', 'stagger-delay-5')}>
                   <LanguageSwitcher />
                 </div>
               </div>
             </nav>
 
             {/* Drawer Footer */}
-            <div className="border-t border-gray-100 px-5 py-4 bg-gray-50">
-              <p className="text-center text-xs text-gray-400">
-                © {new Date().getFullYear()} Watu Care
+            <div className="border-t border-border/30 px-5 py-4 bg-muted/30">
+              <p className="text-center text-xs text-secondary/30">
+                &copy; {new Date().getFullYear()} Watu Care
               </p>
             </div>
           </div>

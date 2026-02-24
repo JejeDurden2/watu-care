@@ -1,8 +1,8 @@
 import type { Metadata } from 'next';
 import { getTranslations } from 'next-intl/server';
-import { Container } from '@/components/ui';
-import { CategoryCard, ProductGrid } from '@/components/products';
-import { getAllCategories } from '@/lib/products';
+import { Container, QuoteModalButton } from '@/components/ui';
+import { CategoryCard } from '@/components/products';
+import { getAllCategories, getTotalProductCount } from '@/lib/products';
 import { generateBreadcrumbSchema } from '@/lib/schema';
 
 const BASE_URL = 'https://watu-care.com';
@@ -65,7 +65,9 @@ export default async function ProductsPage({
 }: ProductsPageProps): Promise<React.ReactElement> {
   const { locale } = await params;
   const t = await getTranslations('products');
+  const tNav = await getTranslations('nav');
   const categories = getAllCategories();
+  const totalCount = getTotalProductCount();
 
   // Generate Breadcrumb JSON-LD
   const breadcrumbSchema = generateBreadcrumbSchema([
@@ -74,7 +76,7 @@ export default async function ProductsPage({
   ]);
 
   return (
-    <main className="py-16">
+    <main className="min-h-[100dvh] py-16">
       {/* Breadcrumb JSON-LD */}
       <script
         type="application/ld+json"
@@ -84,26 +86,43 @@ export default async function ProductsPage({
       />
 
       <Container>
-        {/* Page Header */}
-        <div className="mb-12 text-center">
-          <h1 className="mb-4 text-4xl font-bold text-secondary md:text-5xl">
-            {t('title')}
-          </h1>
-          <p className="mx-auto max-w-2xl text-lg text-foreground/70">
-            {t('subtitle')}
-          </p>
+        {/* Asymmetric split header — left-aligned H1, right CTA */}
+        <div className="mb-16 grid gap-8 lg:grid-cols-[2fr_1fr] lg:items-end">
+          <div>
+            <div className="mb-5 h-px w-12 bg-accent" />
+            <h1 className="stagger-item stagger-delay-1 text-4xl font-bold text-secondary md:text-5xl lg:text-6xl">
+              {t('title')}
+            </h1>
+            <p className="stagger-item stagger-delay-2 mt-4 max-w-lg text-lg text-foreground/70">
+              {t('subtitle')}
+            </p>
+          </div>
+          <div className="stagger-item stagger-delay-3 flex flex-col items-start gap-4 lg:items-end lg:pb-1">
+            <p className="text-sm font-medium uppercase tracking-wider text-muted-foreground">
+              {totalCount}+ products · {categories.length} categories
+            </p>
+            <QuoteModalButton size="md">{tNav('requestQuote')}</QuoteModalButton>
+          </div>
         </div>
 
-        {/* Categories Grid */}
-        <ProductGrid>
-          {categories.map((category) => (
-            <CategoryCard
+        {/* Categories grid — auto-fill, staggered */}
+        <div
+          className="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-[repeat(auto-fill,minmax(300px,1fr))]"
+          data-animate
+        >
+          {categories.map((category, index) => (
+            <div
               key={category.id}
-              category={category}
-              locale={locale}
-            />
+              className="stagger-item"
+              style={{ animationDelay: `${index * 70}ms` } as React.CSSProperties}
+            >
+              <CategoryCard
+                category={category}
+                locale={locale}
+              />
+            </div>
           ))}
-        </ProductGrid>
+        </div>
       </Container>
     </main>
   );

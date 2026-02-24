@@ -239,24 +239,24 @@ export default async function CountrySupplierPage({
       {/* Features Grid */}
       <section className="border-b border-border py-12">
         <Container>
-          <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+          <dl className="grid gap-px bg-border sm:grid-cols-2 lg:grid-cols-4">
             {features.map((feature) => (
               <div
                 key={feature.title}
-                className="flex items-start gap-4 rounded-xl bg-background p-4"
+                className="flex items-start gap-4 bg-background px-6 py-8"
               >
-                <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-lg bg-primary/10">
-                  <feature.icon className="h-6 w-6 text-primary" />
+                <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-primary/10">
+                  <feature.icon className="h-5 w-5 text-primary" />
                 </div>
                 <div>
-                  <h3 className="font-semibold text-secondary">{feature.title}</h3>
-                  <p className="mt-1 text-sm text-muted-foreground">
+                  <dt className="font-semibold text-secondary">{feature.title}</dt>
+                  <dd className="mt-1 text-sm text-muted-foreground">
                     {feature.description}
-                  </p>
+                  </dd>
                 </div>
               </div>
             ))}
-          </div>
+          </dl>
         </Container>
       </section>
 
@@ -319,11 +319,11 @@ export default async function CountrySupplierPage({
       {/* Product Categories */}
       <section className="bg-muted/30 py-16">
         <Container>
-          <div className="mb-12 text-center">
+          <div className="mb-12">
             <h2 className="mb-4 text-3xl font-bold text-secondary md:text-4xl">
               {t('content.categoriesTitle', { country: countryName })}
             </h2>
-            <p className="mx-auto max-w-2xl text-lg text-muted-foreground">
+            <p className="max-w-2xl text-lg text-muted-foreground">
               {t('content.categoriesSubtitle', { country: countryName })}
             </p>
           </div>

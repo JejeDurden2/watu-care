@@ -10,7 +10,12 @@
     "contact": "Contact",
     "requestQuote": "Request a Quote",
     "language": "Language",
-    "search": "Search"
+    "search": "Search",
+    "openMenu": "Open menu",
+    "closeMenu": "Close menu",
+    "openNavigation": "Open navigation menu",
+    "closeNavigation": "Close navigation menu",
+    "mobileNav": "Mobile navigation"
   },
   "search": {
     "placeholder": "Search products...",
@@ -21,13 +26,21 @@
     "startTyping": "Start typing to search products"
   },
   "hero": {
-    "badge": "Trusted Medical Wholesale Partner",
     "headline1": "Medical Supplies",
     "headline2": "for Africa & Middle East",
-    "subtitle": "Quality medical devices and PPE from Asia.",
-    "cta": "Request a Quote",
+    "subtitle": "500+ product lines. Direct from certified Asian manufacturers. Delivered to healthcare facilities across Africa and the Middle East.",
+    "cta": "Get a Free Quote",
     "ctaSecondary": "View Products",
-    "location": "Hong Kong SAR"
+    "reassurance": "Free quote · Response within 48h",
+    "location": "Hong Kong SAR",
+    "trustMarquee": {
+      "countries": "Countries served",
+      "iso": "Certified suppliers",
+      "units": "Units delivered",
+      "products": "Product lines",
+      "response": "Quote response",
+      "facilities": "Facilities supplied"
+    }
   },
   "whyUs": {
     "title": "Why Watu Care",
@@ -58,8 +71,10 @@
     "materials": "Materials",
     "viewProducts": "View products",
     "available": "available",
+    "backToCategories": "Back to All Categories",
     "moreInCategory": "More in this category",
     "categories": {
+      "title": "Ready to order?",
       "gloves": {
         "title": "Gloves",
         "description": "Examination and surgical gloves in latex, nitrile, and vinyl.",
@@ -448,17 +463,21 @@
     "title": "How It Works",
     "subtitle": "Three steps to get the medical supplies you need.",
     "step1": "Submit Your Request",
-    "step1Desc": "Share your product requirements, quantities, and delivery location through our quote form.",
+    "step1Desc": "Tell us what you need — products, quantities, and delivery destination. Our form takes under 2 minutes.",
     "step2": "Receive Your Quote",
-    "step2Desc": "Our team reviews your request and provides a quote with shipping and logistics details.",
+    "step2Desc": "Within 48 hours, receive a detailed quote including product pricing, shipping options, and delivery timeline.",
     "step3": "Get Your Products",
-    "step3Desc": "Once approved, we handle procurement and shipping until your order arrives."
+    "step3Desc": "We manage everything — manufacturer coordination, quality checks, and logistics — until your order is delivered."
   },
   "cta": {
     "title": "Ready to Get Started?",
     "subtitle": "Request a quote for the medical supplies you need. Our team will respond within 24-48 hours.",
-    "button": "Request a Quote",
-    "buttonSecondary": "Contact Us"
+    "button": "Get a Free Quote",
+    "buttonSecondary": "Contact Us",
+    "reassurance": "Response within 48 hours",
+    "trustIso": "Certified products",
+    "trustQuote": "Quote response",
+    "trustCountries": "Countries served"
   },
   "footer": {
     "description": "Connecting Asian manufacturers with healthcare providers across Africa and the Middle East.",
@@ -472,7 +491,10 @@
     "followUs": "Follow Us",
     "copyright": "Watu Care. All rights reserved.",
     "privacy": "Privacy Policy",
-    "terms": "Terms of Service"
+    "terms": "Terms of Service",
+    "location": "Hong Kong SAR",
+    "email": "contact@watu-care.com",
+    "phone": "+212 662 258 045"
   },
   "about": {
     "meta": {
@@ -517,7 +539,8 @@
       "title": "Ready to Get Started?",
       "description": "Send us an email with your requirements and our team will get back to you.",
       "emailButton": "Send Email",
-      "productsButton": "Browse Products"
+      "productsButton": "Browse Products",
+      "response": "We respond to all inquiries within 24-48 hours."
     }
   },
   "mission": {
@@ -662,6 +685,22 @@
     "paymentAnswer": "We accept bank transfers (T/T) and letters of credit (L/C) for larger orders. Payment terms are discussed during the quotation process based on order size and relationship.",
     "supportQuestion": "What after-sales support do you provide?",
     "supportAnswer": "Our team provides support throughout the order process and after delivery. We assist with product inquiries, documentation, and any issues that may arise with your order."
+  },
+  "stats": {
+    "products": "Product lines",
+    "countries": "Countries served",
+    "facilities": "Healthcare facilities",
+    "orders": "Orders delivered"
+  },
+  "trustBar": {
+    "isoCertified": "ISO Certified Products",
+    "countries": "25+ Countries Served",
+    "responseTime": "48h Quote Response",
+    "qualityGuaranteed": "Quality Guaranteed"
+  },
+  "whatsapp": {
+    "chatWithUs": "Chat with us",
+    "ariaLabel": "Chat on WhatsApp"
   },
   "notFound": {
     "title": "Page Not Found",

@@ -130,7 +130,7 @@ export default async function LocaleLayout({
   );
 
   return (
-    <html lang={locale} className={`${nunito.variable} ${ibmPlexSans.variable}`} suppressHydrationWarning>
+    <html lang={locale} className={`${nunito.variable} ${ibmPlexSans.variable}`} suppressHydrationWarning data-scroll-behavior="smooth">
       <body className="font-sans" suppressHydrationWarning>
         <NextIntlClientProvider messages={messages}>
           <QuoteProvider>

@@ -1,8 +1,11 @@
 'use client';
 
 import { useEffect } from 'react';
+import { usePathname } from 'next/navigation';
 
 export function ScrollAnimations(): null {
+  const pathname = usePathname();
+
   useEffect(() => {
     const elements = document.querySelectorAll<HTMLElement>('[data-animate]');
 
@@ -25,7 +28,7 @@ export function ScrollAnimations(): null {
     }
 
     return () => observer.disconnect();
-  }, []);
+  }, [pathname]);
 
   return null;
 }

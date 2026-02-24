@@ -24,7 +24,6 @@ function RequestQuoteButton(): React.ReactElement {
 interface ProductDetailProps {
   product: Product;
   category: ProductCategory;
-  locale: string;
 }
 
 export function ProductDetail({
@@ -49,7 +48,7 @@ export function ProductDetail({
   return (
     <div className="space-y-8">
       {/* Product Header with Image */}
-      <div className="grid gap-8 lg:grid-cols-2">
+      <div className="grid gap-8 lg:grid-cols-[3fr_2fr]">
         {/* Product Image or Gallery */}
         <div className="overflow-hidden rounded-lg">
           {hasMultipleImages ? (
@@ -71,25 +70,25 @@ export function ProductDetail({
         {/* Product Info */}
         <div className="flex flex-col">
           {/* Category Badge */}
-          <div className="mb-4 inline-flex w-fit items-center gap-2 rounded-lg bg-primary/10 px-3 py-1 text-sm font-medium text-primary">
+          <div className="stagger-item stagger-delay-1 mb-4 inline-flex w-fit items-center gap-2 rounded-lg bg-primary/10 px-3 py-1 text-sm font-medium text-primary">
             <Icon className="h-4 w-4" />
             <span>{categoryTitle}</span>
           </div>
 
           {/* Product Name */}
-          <h1 className="mb-4 text-3xl font-bold text-secondary md:text-4xl">
+          <h1 className="stagger-item stagger-delay-2 mb-4 text-3xl font-bold text-secondary md:text-4xl">
             {productName}
           </h1>
 
           {/* Product Description */}
-          <p className="mb-6 text-lg text-foreground/80">
+          <p className="stagger-item stagger-delay-3 mb-6 text-lg text-foreground/80">
             {t.has(`items.${product.id}.description`)
               ? t(`items.${product.id}.description`)
               : product.description}
           </p>
 
-{/* CTA Buttons */}
-          <div className="flex flex-col gap-3 sm:flex-row">
+          {/* CTA Buttons */}
+          <div className="stagger-item stagger-delay-4 flex flex-col gap-3 sm:flex-row">
             <AddToListButton
               product={product}
               category={category}

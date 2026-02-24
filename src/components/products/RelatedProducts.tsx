@@ -8,14 +8,12 @@ import { ProductGrid } from './ProductGrid';
 interface RelatedProductsProps {
   categorySlug: string;
   currentProductId: string;
-  locale: string;
   limit?: number;
 }
 
 export function RelatedProducts({
   categorySlug,
   currentProductId,
-  locale,
   limit = 4,
 }: RelatedProductsProps): React.ReactElement | null {
   const t = useTranslations('products');
@@ -41,7 +39,6 @@ export function RelatedProducts({
             key={product.id}
             product={product}
             category={category}
-            locale={locale}
           />
         ))}
       </ProductGrid>

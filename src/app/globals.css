@@ -135,6 +135,67 @@
     border: 1px solid rgba(255, 255, 255, 0.1);
   }
 
+  /* Header glass surface — default state (top of page) */
+  .header-glass {
+    background: rgba(255, 255, 255, 0.6);
+    backdrop-filter: blur(16px) saturate(140%);
+    -webkit-backdrop-filter: blur(16px) saturate(140%);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+    box-shadow:
+      inset 0 1px 0 rgba(255, 255, 255, 0.1),
+      0 1px 3px rgba(0, 0, 0, 0.02);
+    transition:
+      background 0.35s cubic-bezier(0.16, 1, 0.3, 1),
+      backdrop-filter 0.35s cubic-bezier(0.16, 1, 0.3, 1),
+      box-shadow 0.35s cubic-bezier(0.16, 1, 0.3, 1),
+      border-color 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  /* Header glass surface — scrolled state (compacted) */
+  .header-glass-scrolled {
+    background: rgba(255, 255, 255, 0.82);
+    backdrop-filter: blur(24px) saturate(180%);
+    -webkit-backdrop-filter: blur(24px) saturate(180%);
+    border-bottom: 1px solid hsl(var(--border) / 0.5);
+    box-shadow:
+      inset 0 1px 0 rgba(255, 255, 255, 0.12),
+      0 4px 20px -4px rgba(0, 0, 0, 0.06),
+      0 1px 3px rgba(0, 0, 0, 0.04);
+  }
+
+  /* Nav link hover underline — scale-x from center */
+  .nav-link-underline {
+    position: relative;
+  }
+
+  .nav-link-underline::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: hsl(var(--accent));
+    border-radius: 1px;
+    transform: scaleX(0);
+    transform-origin: center;
+    transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  .nav-link-underline:hover::after {
+    transform: scaleX(1);
+  }
+
+  /* Logo smooth scale on scroll */
+  .header-logo {
+    transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+    transform-origin: left center;
+  }
+
+  .header-logo-scrolled {
+    transform: scale(0.85);
+  }
+
   /* Section backgrounds */
   .section-light {
     @apply bg-background;
@@ -146,6 +207,26 @@
 
   .section-dark {
     @apply gradient-hero text-white;
+  }
+
+  /* Footer gradient top border */
+  .footer-accent-border {
+    border-top: 1px solid transparent;
+    background-image:
+      linear-gradient(hsl(var(--secondary)), hsl(var(--secondary))),
+      linear-gradient(90deg, hsl(var(--primary) / 0.55) 0%, hsl(var(--accent) / 0.45) 40%, transparent 70%);
+    background-origin: border-box;
+    background-clip: padding-box, border-box;
+  }
+
+  /* Hero directional text-protection overlay */
+  .hero-text-guard {
+    background: linear-gradient(
+      90deg,
+      hsl(var(--secondary) / 0.97) 0%,
+      hsl(var(--secondary) / 0.82) 50%,
+      transparent 100%
+    );
   }
 }
 
@@ -239,6 +320,15 @@ html {
 
 .animate-slide-in-right {
   animation: slide-in-right 0.3s ease-out forwards;
+}
+
+@keyframes backdrop-fade-in {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+.animate-backdrop-fade-in {
+  animation: backdrop-fade-in 0.25s ease-out forwards;
 }
 
 .animate-pulse-subtle {
@@ -345,6 +435,97 @@ html {
 [data-animate][data-animate-delay="100"] { transition-delay: 100ms; }
 [data-animate][data-animate-delay="200"] { transition-delay: 200ms; }
 [data-animate][data-animate-delay="300"] { transition-delay: 300ms; }
+
+/* Hero redesign — accent line reveal (scaleX from left) */
+@keyframes reveal-line {
+  0% {
+    transform: scaleX(0);
+  }
+  100% {
+    transform: scaleX(1);
+  }
+}
+
+.animate-reveal-line {
+  transform-origin: left;
+  opacity: 0;
+  animation: fade-in 0.3s ease-out forwards, reveal-line 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+/* Hero redesign — hub node outer ring pulse */
+@keyframes hero-pulse-ring {
+  0%, 100% {
+    transform: scale(1);
+    opacity: 0.25;
+  }
+  50% {
+    transform: scale(1.15);
+    opacity: 0.06;
+  }
+}
+
+.animate-hero-pulse-ring {
+  animation: hero-pulse-ring 3.5s ease-in-out infinite;
+}
+
+/* Hero redesign — trust marquee infinite scroll */
+@keyframes marquee-scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-marquee {
+  animation: marquee-scroll 35s linear infinite;
+}
+
+/* Hero redesign — background gradient mesh drift */
+@keyframes gradient-drift {
+  0%, 100% {
+    background-position: 0% 50%;
+  }
+  25% {
+    background-position: 50% 0%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  75% {
+    background-position: 50% 100%;
+  }
+}
+
+.animate-gradient-drift {
+  animation: gradient-drift 20s ease-in-out infinite;
+  background-size: 200% 200%;
+}
+
+/* Hero redesign — dramatic stagger (deeper travel, slower) */
+@keyframes fade-in-up-dramatic {
+  0% {
+    opacity: 0;
+    transform: translateY(48px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.stagger-item-dramatic {
+  opacity: 0;
+  animation: fade-in-up-dramatic 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+/* Hero redesign — glass band for trust marquee */
+.hero-glass-band {
+  background: rgba(255, 255, 255, 0.03);
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.06);
+}
 
 /* Reduced motion */
 @media (prefers-reduced-motion: reduce) {

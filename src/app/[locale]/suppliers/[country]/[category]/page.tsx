@@ -258,7 +258,6 @@ export default async function CategoryCountryPage({
                 key={product.id}
                 product={product}
                 category={category}
-                locale={locale}
               />
             ))}
           </ProductGrid>

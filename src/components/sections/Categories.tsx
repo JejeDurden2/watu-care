@@ -1,6 +1,5 @@
 import { getTranslations } from 'next-intl/server';
-import { Link } from '@/i18n/routing';
-import { Container } from '@/components/ui';
+import { Container, QuoteModalButton } from '@/components/ui';
 import { getAllCategories } from '@/lib/products';
 import { CategoryCard } from './CategoryCard';
 
@@ -11,12 +10,14 @@ export async function Categories(): Promise<React.ReactElement> {
   return (
     <section id="products" className="bg-muted py-20 lg:py-28" data-animate>
       <Container>
-        {/* Header */}
-        <div className="mx-auto mb-12 max-w-2xl text-center lg:mb-16">
-          <h2 className="mb-4 text-heading-lg lg:text-display-sm">
+        {/* Left-aligned header with accent bar */}
+        <div className="mb-14 border-l-4 border-accent pl-6 lg:mb-16">
+          <h2 className="font-display text-4xl font-bold tracking-tighter text-secondary lg:text-5xl">
             {t('title')}
           </h2>
-          <p className="text-body-lg text-muted-foreground">{t('subtitle')}</p>
+          <p className="mt-3 max-w-lg font-body text-lg leading-relaxed text-muted-foreground">
+            {t('subtitle')}
+          </p>
         </div>
 
         {/* Categories Grid */}
@@ -34,12 +35,13 @@ export async function Categories(): Promise<React.ReactElement> {
         {/* CTA */}
         <p className="mt-10 text-center text-muted-foreground">
           {t('customRequest')}{' '}
-          <Link
-            href="#quote"
-            className="font-medium text-accent underline-offset-4 hover:underline"
+          <QuoteModalButton
+            variant="ghost"
+            size="sm"
+            className="inline h-auto p-0 font-medium text-accent underline-offset-4 hover:bg-transparent hover:underline"
           >
             {t('customRequestLink')}
-          </Link>
+          </QuoteModalButton>
         </p>
       </Container>
     </section>

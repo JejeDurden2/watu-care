@@ -15,85 +15,90 @@ const faqKeys = [
 
 export function FAQ(): React.ReactElement {
   const t = useTranslations('faq');
-  const [openIndex, setOpenIndex] = useState<number | null>(null);
-
-  const toggle = (index: number): void => {
-    setOpenIndex(openIndex === index ? null : index);
-  };
+  const [activeIndex, setActiveIndex] = useState<number>(0);
 
   return (
-    <section id="faq" className="py-20 lg:py-28 bg-muted/30" data-animate>
+    <section id="faq" className="bg-muted/40 py-20 lg:py-28" data-animate>
       <Container>
-        {/* Header */}
-        <div className="mx-auto mb-12 max-w-2xl text-center lg:mb-16">
-          <h2 className="mb-4 text-heading-lg lg:text-display-sm">
+        {/* Left-aligned header */}
+        <div className="mb-14 max-w-xl lg:mb-16">
+          <div className="mb-5 h-px w-16 bg-accent" />
+          <h2 className="font-display text-4xl font-bold tracking-tighter text-secondary lg:text-5xl">
             {t('title')}
           </h2>
-          <p className="text-body-lg text-muted-foreground">{t('subtitle')}</p>
+          <p className="mt-4 max-w-lg font-body text-lg leading-relaxed text-muted-foreground">
+            {t('subtitle')}
+          </p>
         </div>
 
-        {/* FAQ Items */}
-        <div className="mx-auto max-w-3xl space-y-2">
-          {faqKeys.map((key, index) => {
-            const isOpen = openIndex === index;
-            const number = String(index + 1).padStart(2, '0');
+        {/* Split-screen layout */}
+        <div className="grid gap-8 lg:grid-cols-[1fr_1.2fr] lg:gap-16">
 
-            return (
-              <div
-                key={key}
-                className={`rounded-xl transition-all duration-300 ${
-                  isOpen
-                    ? 'bg-white shadow-soft-md'
-                    : 'hover:bg-white/60'
-                }`}
-              >
+          {/* Left: question list */}
+          <div className="divide-y divide-border">
+            {faqKeys.map((key, index) => {
+              const isActive = activeIndex === index;
+              return (
                 <button
+                  key={key}
                   type="button"
-                  onClick={() => toggle(index)}
-                  className="flex w-full items-start gap-4 px-6 py-5 text-left"
-                  aria-expanded={isOpen}
+                  onClick={() => setActiveIndex(index)}
+                  className="flex w-full items-start gap-4 py-5 text-left transition-colors duration-200"
+                  aria-expanded={isActive}
+                  aria-controls={`faq-answer-${index}`}
                 >
-                  {/* Number */}
+                  {/* Active indicator */}
                   <span
-                    className={`font-display mt-0.5 shrink-0 text-sm font-bold tabular-nums transition-colors duration-200 ${
-                      isOpen ? 'text-accent' : 'text-accent/30'
+                    className={`mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full transition-colors duration-200 ${
+                      isActive ? 'bg-accent' : 'bg-border'
                     }`}
-                  >
-                    {number}
-                  </span>
-
-                  {/* Question */}
+                  />
                   <span
-                    className={`flex-1 text-lg font-semibold transition-colors duration-200 ${
-                      isOpen ? 'text-secondary' : 'text-secondary/80'
+                    className={`font-body text-base transition-all duration-200 ${
+                      isActive
+                        ? 'font-semibold text-secondary'
+                        : 'font-normal text-muted-foreground hover:text-secondary/70'
                     }`}
                   >
                     {t(`${key}Question`)}
                   </span>
-
-                  {/* Toggle icon */}
-                  <span
-                    className={`font-body ml-2 mt-0.5 shrink-0 text-xl font-light leading-none transition-all duration-200 ${
-                      isOpen ? 'text-accent' : 'text-muted-foreground'
-                    }`}
-                  >
-                    {isOpen ? '−' : '+'}
-                  </span>
                 </button>
+              );
+            })}
+          </div>
 
-                {/* Answer */}
+          {/* Right: answer panel */}
+          <div className="relative lg:sticky lg:top-8 lg:self-start">
+            {faqKeys.map((key, index) => {
+              const isActive = activeIndex === index;
+              return (
                 <div
-                  className={`overflow-hidden transition-all duration-300 ${
-                    isOpen ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'
+                  key={key}
+                  id={`faq-answer-${index}`}
+                  role="region"
+                  aria-label={t(`${key}Question`)}
+                  className={`absolute inset-0 rounded-3xl border border-border/60 bg-white p-8 shadow-depth-sm transition-all duration-300 lg:p-10 ${
+                    isActive
+                      ? 'opacity-100 translate-y-0 pointer-events-auto'
+                      : 'opacity-0 translate-y-2 pointer-events-none'
                   }`}
+                  style={{ position: index === 0 ? 'relative' : 'absolute' }}
                 >
-                  <p className="px-6 pb-6 pl-16 leading-relaxed text-muted-foreground">
+                  {/* Question as sub-heading */}
+                  <h3 className="mb-6 font-display text-xl font-semibold tracking-tight text-secondary lg:text-2xl">
+                    {t(`${key}Question`)}
+                  </h3>
+                  {/* Divider */}
+                  <div className="mb-6 h-px w-12 bg-accent" />
+                  {/* Answer */}
+                  <p className="font-body text-base leading-relaxed text-muted-foreground">
                     {t(`${key}Answer`)}
                   </p>
                 </div>
-              </div>
-            );
-          })}
+              );
+            })}
+          </div>
+
         </div>
       </Container>
     </section>

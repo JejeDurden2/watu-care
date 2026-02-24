@@ -8,13 +8,13 @@ const BASE_URL = 'https://watu-care.com';
 // Use stable dates so crawlers can detect actual content changes.
 // Update these when the corresponding content is modified.
 const LAST_MODIFIED = {
-  homepage: new Date('2026-02-07'),
-  products: new Date('2026-02-07'),
-  suppliers: new Date('2026-02-07'),
-  about: new Date('2026-01-29'),
-  contact: new Date('2026-01-29'),
-  privacy: new Date('2025-12-01'),
-  terms: new Date('2025-12-01'),
+  homepage: new Date('2026-02-24'),
+  products: new Date('2026-02-24'),
+  suppliers: new Date('2026-02-24'),
+  about: new Date('2026-02-08'),
+  contact: new Date('2026-02-08'),
+  privacy: new Date('2026-02-08'),
+  terms: new Date('2026-02-08'),
 } as const;
 
 export default function sitemap(): MetadataRoute.Sitemap {

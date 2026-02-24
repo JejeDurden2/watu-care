@@ -76,7 +76,7 @@ export async function generateMetadata({
     : category.title;
 
   const title = `${productName} - ${categoryTitle}`;
-  const description = `${productDesc} Available from Watu Care - your trusted B2B medical supplies partner.`;
+  const description = `${productDesc} Source in bulk from Watu Care — wholesale B2B medical supplier for Africa and the Middle East.`;
 
   return {
     title,
@@ -152,7 +152,7 @@ export default async function ProductPage({
   ]);
 
   return (
-    <main className="py-16">
+    <main className="min-h-[100dvh] pb-24 pt-0">
       {/* Product JSON-LD */}
       <script
         type="application/ld+json"
@@ -168,29 +168,37 @@ export default async function ProductPage({
         }}
       />
 
-      <Container>
-        {/* Breadcrumb */}
-        <Breadcrumb
-          locale={locale}
-          items={[
-            { label: tNav('home'), href: '/' },
-            { label: t('title'), href: '/products' },
-            { label: categoryTitle, href: `/products/${category.slug}` },
-            { label: productName },
-          ]}
-        />
+      {/* Thin accent strip */}
+      <div className="h-0.5 bg-primary" />
 
-        {/* Product Detail */}
-        <ProductDetail product={product} category={category} locale={locale} />
+      <div className="pt-10">
+        <Container>
+          {/* Breadcrumb */}
+          <Breadcrumb
+            locale={locale}
+            items={[
+              { label: tNav('home'), href: '/' },
+              { label: t('title'), href: '/products' },
+              { label: categoryTitle, href: `/products/${category.slug}` },
+              { label: productName },
+            ]}
+          />
 
-        {/* Related Products */}
-        <RelatedProducts
-          categorySlug={categorySlug}
-          currentProductId={productId}
-          locale={locale}
-          limit={3}
-        />
-      </Container>
+          {/* Product Detail */}
+          <div className="stagger-item stagger-delay-1">
+            <ProductDetail product={product} category={category} />
+          </div>
+
+          {/* Related Products */}
+          <div className="stagger-item stagger-delay-3">
+            <RelatedProducts
+              categorySlug={categorySlug}
+              currentProductId={productId}
+              limit={3}
+            />
+          </div>
+        </Container>
+      </div>
     </main>
   );
 }

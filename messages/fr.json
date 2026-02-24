@@ -10,7 +10,12 @@
     "contact": "Contact",
     "requestQuote": "Demander un devis",
     "language": "Langue",
-    "search": "Rechercher"
+    "search": "Rechercher",
+    "openMenu": "Ouvrir le menu",
+    "closeMenu": "Fermer le menu",
+    "openNavigation": "Ouvrir le menu de navigation",
+    "closeNavigation": "Fermer le menu de navigation",
+    "mobileNav": "Navigation mobile"
   },
   "search": {
     "placeholder": "Rechercher des produits...",
@@ -21,13 +26,21 @@
     "startTyping": "Commencez à taper pour rechercher"
   },
   "hero": {
-    "badge": "Partenaire Grossiste Médical de Confiance",
     "headline1": "Équipement Médical",
     "headline2": "pour l'Afrique et le Moyen-Orient",
-    "subtitle": "Dispositifs médicaux et EPI de qualité depuis l'Asie.",
-    "cta": "Demander un devis",
+    "subtitle": "Plus de 500 références. Directement auprès de fabricants asiatiques certifiés. Livré aux établissements de santé en Afrique et au Moyen-Orient.",
+    "cta": "Obtenir un devis gratuit",
     "ctaSecondary": "Voir les produits",
-    "location": "Hong Kong SAR"
+    "reassurance": "Devis gratuit · Réponse sous 48h",
+    "location": "Hong Kong SAR",
+    "trustMarquee": {
+      "countries": "Pays desservis",
+      "iso": "Fournisseurs certifiés",
+      "units": "Unités livrées",
+      "products": "Références produits",
+      "response": "Délai de réponse",
+      "facilities": "Établissements fournis"
+    }
   },
   "whyUs": {
     "title": "Pourquoi Watu Care",
@@ -58,8 +71,10 @@
     "materials": "Matériaux",
     "viewProducts": "Voir les produits",
     "available": "disponible(s)",
+    "backToCategories": "Retour aux catégories",
     "moreInCategory": "Autres produits de cette catégorie",
     "categories": {
+      "title": "Prêt à commander ?",
       "gloves": {
         "title": "Gants",
         "description": "Gants d'examen et chirurgicaux en latex, nitrile et vinyle.",
@@ -516,17 +531,21 @@
     "title": "Comment ça marche",
     "subtitle": "Trois étapes pour obtenir les fournitures médicales dont vous avez besoin.",
     "step1": "Soumettez votre demande",
-    "step1Desc": "Partagez vos besoins en produits, quantités et lieu de livraison via notre formulaire de devis.",
+    "step1Desc": "Dites-nous ce dont vous avez besoin — produits, quantités et destination de livraison. Notre formulaire prend moins de 2 minutes.",
     "step2": "Recevez votre devis",
-    "step2Desc": "Notre équipe examine votre demande et vous fournit un devis avec les détails d'expédition et de logistique.",
+    "step2Desc": "Sous 48 heures, recevez un devis détaillé incluant les prix, les options d'expédition et les délais de livraison.",
     "step3": "Recevez vos produits",
-    "step3Desc": "Une fois approuvé, nous gérons l'approvisionnement et l'expédition jusqu'à l'arrivée de votre commande."
+    "step3Desc": "Nous gérons tout — coordination avec les fabricants, contrôle qualité et logistique — jusqu'à la livraison de votre commande."
   },
   "cta": {
     "title": "Prêt à commencer ?",
     "subtitle": "Demandez un devis pour les fournitures médicales dont vous avez besoin. Notre équipe vous répondra sous 24-48 heures.",
-    "button": "Demander un devis",
-    "buttonSecondary": "Nous contacter"
+    "button": "Obtenir un devis gratuit",
+    "buttonSecondary": "Nous contacter",
+    "reassurance": "Réponse sous 48 heures",
+    "trustIso": "Produits certifiés",
+    "trustQuote": "Réponse au devis",
+    "trustCountries": "Pays servis"
   },
   "footer": {
     "description": "Nous connectons les fabricants asiatiques aux prestataires de soins de santé en Afrique et au Moyen-Orient.",
@@ -540,7 +559,10 @@
     "followUs": "Suivez-nous",
     "copyright": "Watu Care. Tous droits réservés.",
     "privacy": "Politique de confidentialité",
-    "terms": "Conditions d'utilisation"
+    "terms": "Conditions d'utilisation",
+    "location": "Hong Kong SAR",
+    "email": "contact@watu-care.com",
+    "phone": "+212 662 258 045"
   },
   "about": {
     "meta": {
@@ -585,7 +607,8 @@
       "title": "Prêt à commencer ?",
       "description": "Envoyez-nous un email avec vos besoins et notre équipe vous répondra.",
       "emailButton": "Envoyer un email",
-      "productsButton": "Parcourir les produits"
+      "productsButton": "Parcourir les produits",
+      "response": "Nous répondons à toutes les demandes sous 24-48 heures."
     }
   },
   "mission": {
@@ -730,6 +753,22 @@
     "paymentAnswer": "Nous acceptons les virements bancaires (T/T) et les lettres de crédit (L/C) pour les commandes importantes. Les conditions de paiement sont discutées lors du processus de devis selon la taille de la commande et la relation.",
     "supportQuestion": "Quel support après-vente proposez-vous ?",
     "supportAnswer": "Notre équipe vous accompagne tout au long du processus de commande et après la livraison. Nous vous assistons pour les questions sur les produits, la documentation et tout problème éventuel."
+  },
+  "stats": {
+    "products": "Références produits",
+    "countries": "Pays desservis",
+    "facilities": "Établissements de santé",
+    "orders": "Commandes livrées"
+  },
+  "trustBar": {
+    "isoCertified": "Produits certifiés ISO",
+    "countries": "Plus de 25 pays desservis",
+    "responseTime": "Réponse devis en 48h",
+    "qualityGuaranteed": "Qualité garantie"
+  },
+  "whatsapp": {
+    "chatWithUs": "Discutez avec nous",
+    "ariaLabel": "Discuter sur WhatsApp"
   },
   "notFound": {
     "title": "Page introuvable",

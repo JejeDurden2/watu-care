@@ -1,12 +1,12 @@
 import type { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 import { getTranslations } from 'next-intl/server';
-import { Container } from '@/components/ui';
+import { Container, Button, QuoteModalButton } from '@/components/ui';
+import { Link } from '@/i18n/routing';
 import {
   Breadcrumb,
   CategoryIcon,
   ProductCard,
-  ProductGrid,
 } from '@/components/products';
 import { getAllCategories, getCategoryBySlug } from '@/lib/products';
 import { generateBreadcrumbSchema } from '@/lib/schema';
@@ -53,7 +53,7 @@ export async function generateMetadata({
     : category.longDescription;
 
   const title = `${categoryTitle} - Medical Supplies`;
-  const description = `${categoryLongDesc} Shop ${category.products.length} products from Watu Care.`;
+  const description = `${categoryLongDesc} ${category.products.length} products available — request a wholesale quote from Watu Care.`;
 
   return {
     title,
@@ -145,7 +145,7 @@ export default async function CategoryPage({
   };
 
   return (
-    <main className="py-16">
+    <main className="min-h-[100dvh]">
       {/* Breadcrumb JSON-LD */}
       <script
         type="application/ld+json"
@@ -161,48 +161,86 @@ export default async function CategoryPage({
         }}
       />
 
-      <Container>
-        {/* Breadcrumb */}
-        <Breadcrumb
-          locale={locale}
-          items={[
-            { label: tNav('home'), href: '/' },
-            { label: t('title'), href: '/products' },
-            { label: categoryTitle },
-          ]}
-        />
+      {/* Gradient hero band */}
+      <section className="gradient-hero py-16 lg:py-24">
+        <Container>
+          <Breadcrumb
+            locale={locale}
+            variant="light"
+            items={[
+              { label: tNav('home'), href: '/' },
+              { label: t('title'), href: '/products' },
+              { label: categoryTitle },
+            ]}
+          />
 
-        {/* Category Header */}
-        <div className="mb-12">
-          <div
-            className={`mb-4 inline-flex h-16 w-16 items-center justify-center rounded-lg ${category.color}`}
-          >
-            <CategoryIcon slug={category.iconSlug} className="h-8 w-8" />
+          {/* Asymmetric split: content left, count + CTA right */}
+          <div className="grid gap-8 lg:grid-cols-[1fr_auto] lg:items-end">
+            <div>
+              {/* Icon badge */}
+              <div
+                className={`mb-6 inline-flex h-14 w-14 items-center justify-center rounded-xl ${category.color}`}
+              >
+                <CategoryIcon slug={category.iconSlug} className="h-7 w-7" />
+              </div>
+
+              {/* Accent rule */}
+              <div className="mb-4 h-px w-12 bg-accent" />
+
+              <h1 className="stagger-item stagger-delay-1 text-4xl font-bold text-white md:text-5xl lg:text-6xl">
+                {categoryTitle}
+              </h1>
+              <p className="stagger-item stagger-delay-2 mt-4 max-w-2xl text-lg leading-relaxed text-white/70">
+                {categoryDescription}
+              </p>
+            </div>
+
+            {/* Right: count + quote CTA */}
+            <div className="stagger-item stagger-delay-3 flex flex-col items-start gap-4 lg:items-end lg:pb-1">
+              <div className="rounded-full border border-white/20 bg-white/10 px-5 py-2 text-sm font-medium text-white backdrop-blur-sm">
+                {t('productCount', { count: category.products.length })}{' '}
+                {t('available')}
+              </div>
+              <QuoteModalButton size="md" className="bg-white text-secondary hover:bg-white/90">
+                {tNav('requestQuote')}
+              </QuoteModalButton>
+            </div>
           </div>
-          <h1 className="mb-4 text-4xl font-bold text-secondary md:text-5xl">
-            {categoryTitle}
-          </h1>
-          <p className="max-w-3xl text-lg text-foreground/70">
-            {categoryDescription}
-          </p>
-          <p className="mt-4 text-sm font-medium text-primary">
-            {t('productCount', { count: category.products.length })}{' '}
-            {t('available')}
-          </p>
-        </div>
+        </Container>
+      </section>
 
-        {/* Products Grid */}
-        <ProductGrid>
-          {category.products.map((product) => (
-            <ProductCard
-              key={product.id}
-              product={product}
-              category={category}
-              locale={locale}
-            />
-          ))}
-        </ProductGrid>
-      </Container>
+      {/* Products grid section */}
+      <section className="py-16 lg:py-24">
+        <Container>
+          <div
+            className="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-[repeat(auto-fill,minmax(300px,1fr))]"
+            data-animate
+          >
+            {category.products.map((product, index) => (
+              <div
+                key={product.id}
+                className="stagger-item"
+                style={{ animationDelay: `${index * 60}ms` } as React.CSSProperties}
+              >
+                <ProductCard product={product} category={category} />
+              </div>
+            ))}
+          </div>
+
+          {/* Bottom CTA strip */}
+          <div className="mt-20 border-t border-border pt-12">
+            <p className="mb-5 text-sm font-medium uppercase tracking-wider text-muted-foreground">
+              {t('categories.title')}
+            </p>
+            <div className="flex flex-col gap-3 sm:flex-row">
+              <QuoteModalButton size="lg">{tNav('requestQuote')}</QuoteModalButton>
+              <Button variant="outline" size="lg" asChild>
+                <Link href="/products">{t('backToCategories')}</Link>
+              </Button>
+            </div>
+          </div>
+        </Container>
+      </section>
     </main>
   );
 }

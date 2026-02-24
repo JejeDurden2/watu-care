@@ -1,13 +1,16 @@
 import { MessageCircle } from 'lucide-react';
+import { getTranslations } from 'next-intl/server';
 import { cn } from '@/lib/utils';
 
-export const FloatingWhatsApp = () => {
+export const FloatingWhatsApp = async () => {
+  const t = await getTranslations('whatsapp');
+
   return (
     <a
       href="https://wa.me/212662258045"
       target="_blank"
       rel="noopener noreferrer"
-      aria-label="Chat on WhatsApp"
+      aria-label={t('ariaLabel')}
       className={cn(
         'fixed bottom-6 right-6 z-50',
         'flex h-14 w-14 items-center justify-center',
@@ -32,7 +35,7 @@ export const FloatingWhatsApp = () => {
           'whitespace-nowrap'
         )}
       >
-        Chat with us
+        {t('chatWithUs')}
       </span>
     </a>
   );

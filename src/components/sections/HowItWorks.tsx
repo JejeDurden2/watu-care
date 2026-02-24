@@ -14,56 +14,51 @@ export async function HowItWorks(): Promise<React.ReactElement> {
   const t = await getTranslations('howItWorks');
 
   return (
-    <section id="how-it-works" className="py-20 lg:py-28" data-animate>
+    <section id="how-it-works" className="overflow-hidden bg-background py-20 lg:py-28" data-animate>
       <Container>
-        {/* Header */}
-        <div className="mx-auto mb-12 max-w-2xl text-center lg:mb-16">
-          <h2 className="mb-4 text-heading-lg lg:text-display-sm">
+        {/* Left-aligned header */}
+        <div className="mb-14 max-w-xl lg:mb-16">
+          <div className="mb-5 h-px w-16 bg-primary" />
+          <h2 className="font-display text-4xl font-bold tracking-tighter text-secondary lg:text-5xl">
             {t('title')}
           </h2>
-          <p className="text-body-lg text-muted-foreground">{t('subtitle')}</p>
+          <p className="mt-4 max-w-lg font-body text-lg leading-relaxed text-muted-foreground">
+            {t('subtitle')}
+          </p>
         </div>
 
-        {/* Steps */}
-        <div className="relative">
-          {/* Connector Line (Desktop) */}
-          <div className="absolute left-0 right-0 top-20 hidden h-0.5 bg-gradient-to-r from-transparent via-border to-transparent lg:block" />
+        {/* Steps — horizontal layout with large decorative numerals */}
+        <div className="grid gap-0 lg:grid-cols-3">
+          {stepsKeys.map((step, index) => {
+            const Icon = icons[index];
+            const stepNumeral = String(index + 1);
+            const isLast = index === stepsKeys.length - 1;
 
-          <div className="grid gap-8 lg:grid-cols-3 lg:gap-12">
-            {stepsKeys.map((step, index) => {
-              const Icon = icons[index];
-              const stepNumber = String(index + 1).padStart(2, '0');
+            return (
+              <div
+                key={step.titleKey}
+                className={`group relative py-8 ${index > 0 ? 'border-t border-border lg:border-l lg:border-t-0' : ''} lg:px-10 ${index === 0 ? 'lg:pl-0' : ''} ${isLast ? 'lg:pr-0' : ''}`}
+              >
+                {/* Decorative large numeral */}
+                <p className="pointer-events-none mb-2 font-display text-8xl font-bold leading-none tracking-tighter text-border/60 transition-colors duration-300 group-hover:text-primary/15 lg:text-9xl">
+                  {stepNumeral}
+                </p>
 
-              return (
-                <div key={step.titleKey} className="relative text-center">
-                  {/* Step Number Badge */}
-                  <div className="relative z-10 mx-auto mb-6 flex h-16 w-16 items-center justify-center rounded-full bg-accent text-xl font-bold text-white shadow-soft-md">
-                    {stepNumber}
-                  </div>
-
-                  {/* Icon */}
-                  <div className="mx-auto mb-4 flex h-14 w-14 items-center justify-center rounded-xl bg-primary/10">
-                    <Icon className="h-7 w-7 text-primary" />
-                  </div>
-
-                  {/* Content */}
-                  <h3 className="mb-2 text-xl font-semibold text-secondary">
-                    {t(step.titleKey)}
-                  </h3>
-                  <p className="leading-relaxed text-muted-foreground">
-                    {t(step.descKey)}
-                  </p>
-
-                  {/* Arrow (Mobile) */}
-                  {index < stepsKeys.length - 1 && (
-                    <div className="my-6 flex justify-center lg:hidden">
-                      <div className="h-8 w-0.5 bg-border" />
-                    </div>
-                  )}
+                {/* Icon */}
+                <div className="mb-5 flex h-12 w-12 items-center justify-center rounded-2xl bg-primary/10 text-primary transition-colors duration-300 group-hover:bg-primary group-hover:text-white">
+                  <Icon className="h-6 w-6" />
                 </div>
-              );
-            })}
-          </div>
+
+                {/* Content */}
+                <h3 className="mb-3 font-display text-xl font-semibold tracking-tight text-secondary">
+                  {t(step.titleKey)}
+                </h3>
+                <p className="font-body text-base leading-relaxed text-muted-foreground">
+                  {t(step.descKey)}
+                </p>
+              </div>
+            );
+          })}
         </div>
       </Container>
     </section>
