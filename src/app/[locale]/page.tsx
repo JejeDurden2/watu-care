@@ -4,6 +4,7 @@ import {
   Hero,
   WhyUs,
   Categories,
+  Stats,
   HowItWorks,
   FAQ,
   CTA,
@@ -92,7 +93,7 @@ export default async function Home({
   );
 
   return (
-    <main>
+    <>
       {/* FAQ JSON-LD for rich snippets */}
       <script
         type="application/ld+json"
@@ -104,8 +105,9 @@ export default async function Home({
       <Categories />
       <WhyUs />
       <HowItWorks />
+      <Stats />
       <FAQ />
       <CTA />
-    </main>
+    </>
   );
 }

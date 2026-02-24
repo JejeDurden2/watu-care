@@ -1,5 +1,5 @@
 import type { Metadata } from 'next';
-import { Fraunces, IBM_Plex_Sans } from 'next/font/google';
+import { Nunito, IBM_Plex_Sans } from 'next/font/google';
 import { NextIntlClientProvider } from 'next-intl';
 import { getMessages, getTranslations } from 'next-intl/server';
 import { notFound } from 'next/navigation';
@@ -19,12 +19,11 @@ import {
 
 const BASE_URL = 'https://watu-care.com';
 
-const fraunces = Fraunces({
+const nunito = Nunito({
   subsets: ['latin'],
   variable: '--font-display',
   display: 'swap',
-  weight: ['300', '400', '600', '700'],
-  style: ['normal', 'italic'],
+  weight: ['400', '600', '700', '800'],
 });
 
 const ibmPlexSans = IBM_Plex_Sans({
@@ -131,8 +130,8 @@ export default async function LocaleLayout({
   );
 
   return (
-    <html lang={locale} className={`${fraunces.variable} ${ibmPlexSans.variable}`} suppressHydrationWarning>
-      <body className="font-sans">
+    <html lang={locale} className={`${nunito.variable} ${ibmPlexSans.variable}`} suppressHydrationWarning>
+      <body className="font-sans" suppressHydrationWarning>
         <NextIntlClientProvider messages={messages}>
           <QuoteProvider>
             {/* JSON-LD Structured Data (consolidated @graph) */}
