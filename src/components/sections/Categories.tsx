@@ -5,6 +5,7 @@ import { CategoryCard } from './CategoryCard';
 
 export async function Categories(): Promise<React.ReactElement> {
   const t = await getTranslations('categories');
+  const tProducts = await getTranslations('products');
   const categories = getAllCategories();
 
   return (
@@ -26,8 +27,8 @@ export async function Categories(): Promise<React.ReactElement> {
             <CategoryCard
               key={category.id}
               slug={category.slug}
-              title={category.title}
-              description={category.description}
+              title={tProducts(`categories.${category.slug}.title`)}
+              description={tProducts(`categories.${category.slug}.description`)}
             />
           ))}
         </div>
