@@ -32,20 +32,28 @@ export async function Hero(): Promise<React.ReactElement> {
         <div className="grid min-h-[85vh] items-center gap-12 py-20 lg:grid-cols-[1.2fr_0.8fr] lg:gap-20">
           {/* Left Column - Text Content */}
           <div className="space-y-8 lg:pr-8">
+            {/* Eyebrow badge */}
+            <div className="animate-fade-in inline-flex items-center gap-2 rounded-full border border-primary/30 bg-primary/10 px-4 py-1.5">
+              <span className="h-1.5 w-1.5 rounded-full bg-accent" />
+              <span className="font-body text-sm font-medium text-primary">
+                {t('badge')}
+              </span>
+            </div>
+
             {/* Headline */}
-            <h1 className="text-display-sm text-white md:text-display lg:text-display-lg">
+            <h1 className="animate-fade-in-up delay-100 text-display-sm text-white md:text-display lg:text-display-lg">
               {t('headline1')}
               <br />
-              <span className="text-primary">{t('headline2')}</span>
+              <span className="italic text-primary">{t('headline2')}</span>
             </h1>
 
             {/* Subtitle */}
-            <p className="max-w-xl text-body-lg text-white/70">
+            <p className="animate-fade-in-up delay-200 max-w-xl text-body-lg text-white/70">
               {t('subtitle')}
             </p>
 
             {/* CTAs */}
-            <div className="flex flex-col gap-4 pt-2 sm:flex-row sm:items-center">
+            <div className="animate-fade-in-up delay-300 flex flex-col gap-4 pt-2 sm:flex-row sm:items-center">
               <Button size="lg" asChild>
                 <a href="#quote">{t('cta')}</a>
               </Button>

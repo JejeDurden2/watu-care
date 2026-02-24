@@ -39,28 +39,28 @@
   }
 
   h1 {
-    @apply text-4xl font-extrabold tracking-tight md:text-5xl lg:text-6xl;
-    letter-spacing: -0.03em;
+    @apply text-4xl font-bold tracking-tight md:text-5xl lg:text-6xl;
+    letter-spacing: -0.04em;
   }
 
   h2 {
     @apply text-2xl font-bold tracking-tight md:text-3xl lg:text-4xl;
-    letter-spacing: -0.03em;
+    letter-spacing: -0.04em;
   }
 
   h3 {
     @apply text-xl font-semibold md:text-2xl;
-    letter-spacing: -0.02em;
+    letter-spacing: -0.025em;
   }
 
   h4, h5, h6 {
     @apply text-secondary font-semibold tracking-tight;
-    letter-spacing: -0.01em;
+    letter-spacing: -0.015em;
   }
 
-  /* Apply display font to buttons and UI elements */
+  /* UI elements use body font (IBM Plex Sans) — display font is serif */
   button, .nav-item, .ui-label {
-    font-family: var(--font-display), system-ui, sans-serif;
+    font-family: var(--font-body), system-ui, sans-serif;
   }
 }
 
@@ -329,6 +329,22 @@ html {
 .button-press:active {
   animation: button-press 200ms ease-out;
 }
+
+/* Scroll-triggered entrance animations */
+[data-animate] {
+  opacity: 0;
+  transform: translateY(28px);
+  transition: opacity 0.65s cubic-bezier(0.16, 1, 0.3, 1), transform 0.65s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+[data-animate].is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+[data-animate][data-animate-delay="100"] { transition-delay: 100ms; }
+[data-animate][data-animate-delay="200"] { transition-delay: 200ms; }
+[data-animate][data-animate-delay="300"] { transition-delay: 300ms; }
 
 /* Reduced motion */
 @media (prefers-reduced-motion: reduce) {

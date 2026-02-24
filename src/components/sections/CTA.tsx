@@ -10,6 +10,7 @@ export async function CTA(): Promise<React.ReactElement> {
     <section
       id="quote"
       className="relative overflow-hidden bg-gradient-to-br from-secondary via-secondary to-primary/80 py-20 lg:py-28"
+      data-animate
     >
       {/* Background Pattern */}
       <div className="absolute inset-0 opacity-5">

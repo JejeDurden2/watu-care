@@ -36,6 +36,7 @@ export async function WhyUs(): Promise<React.ReactElement> {
     <section
       id="why-us"
       className="relative overflow-hidden bg-secondary py-20 lg:py-28"
+      data-animate
     >
       {/* Background pattern */}
       <div className="pattern-dots-light absolute inset-0 text-white" />

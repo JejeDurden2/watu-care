@@ -14,7 +14,7 @@ export async function HowItWorks(): Promise<React.ReactElement> {
   const t = await getTranslations('howItWorks');
 
   return (
-    <section id="how-it-works" className="py-20 lg:py-28">
+    <section id="how-it-works" className="py-20 lg:py-28" data-animate>
       <Container>
         {/* Header */}
         <div className="mx-auto mb-12 max-w-2xl text-center lg:mb-16">

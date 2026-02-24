@@ -9,7 +9,7 @@ export async function Categories(): Promise<React.ReactElement> {
   const categories = getAllCategories();
 
   return (
-    <section id="products" className="bg-muted py-20 lg:py-28">
+    <section id="products" className="bg-muted py-20 lg:py-28" data-animate>
       <Container>
         {/* Header */}
         <div className="mx-auto mb-12 max-w-2xl text-center lg:mb-16">

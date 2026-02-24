@@ -1,5 +1,5 @@
 import type { Metadata } from 'next';
-import { Space_Grotesk, IBM_Plex_Sans } from 'next/font/google';
+import { Fraunces, IBM_Plex_Sans } from 'next/font/google';
 import { NextIntlClientProvider } from 'next-intl';
 import { getMessages, getTranslations } from 'next-intl/server';
 import { notFound } from 'next/navigation';
@@ -7,6 +7,7 @@ import { routing } from '@/i18n/routing';
 import { locales, type Locale } from '@/i18n/config';
 import { Header, Footer } from '@/components/layout';
 import { QuoteProvider } from '@/components/providers/QuoteProvider';
+import { ScrollAnimations } from '@/components/providers/ScrollAnimations';
 import { QuoteModal } from '@/components/quote';
 import { FloatingWhatsApp } from '@/components/ui/FloatingWhatsApp';
 import {
@@ -18,11 +19,12 @@ import {
 
 const BASE_URL = 'https://watu-care.com';
 
-const spaceGrotesk = Space_Grotesk({
+const fraunces = Fraunces({
   subsets: ['latin'],
   variable: '--font-display',
   display: 'swap',
-  weight: ['400', '500', '600', '700'],
+  weight: ['300', '400', '600', '700'],
+  style: ['normal', 'italic'],
 });
 
 const ibmPlexSans = IBM_Plex_Sans({
@@ -129,7 +131,7 @@ export default async function LocaleLayout({
   );
 
   return (
-    <html lang={locale} className={`${spaceGrotesk.variable} ${ibmPlexSans.variable}`} suppressHydrationWarning>
+    <html lang={locale} className={`${fraunces.variable} ${ibmPlexSans.variable}`} suppressHydrationWarning>
       <body className="font-sans">
         <NextIntlClientProvider messages={messages}>
           <QuoteProvider>
@@ -144,6 +146,7 @@ export default async function LocaleLayout({
             <main>{children}</main>
             <Footer />
             <QuoteModal />
+            <ScrollAnimations />
           </QuoteProvider>
         </NextIntlClientProvider>
         <FloatingWhatsApp />

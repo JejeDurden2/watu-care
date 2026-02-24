@@ -13,6 +13,7 @@ export interface GraphSchema {
 export interface OrganizationSchema {
   '@context': 'https://schema.org';
   '@type': 'Organization';
+  '@id'?: string;
   name: string;
   url: string;
   logo: string;
@@ -39,11 +40,6 @@ export interface ProductSchema {
   brand: {
     '@type': 'Brand';
     name: string;
-  };
-  manufacturer?: {
-    '@type': 'Organization';
-    name: string;
-    url: string;
   };
   offers: {
     '@type': 'Offer';
@@ -119,6 +115,7 @@ export function generateOrganizationSchema(): OrganizationSchema {
   return {
     '@context': 'https://schema.org',
     '@type': 'Organization',
+    '@id': `${BASE_URL}/#organization`,
     name: 'Watu Care',
     url: BASE_URL,
     logo: `${BASE_URL}/logo.png`,
@@ -140,12 +137,12 @@ export function generateOrganizationSchema(): OrganizationSchema {
 /**
  * Generate WebSite schema
  */
-export function generateWebSiteSchema(locale: string): WebSiteSchema {
+export function generateWebSiteSchema(_locale: string): WebSiteSchema {
   return {
     '@context': 'https://schema.org',
     '@type': 'WebSite',
     name: 'Watu Care',
-    url: `${BASE_URL}/${locale}`,
+    url: BASE_URL,
     description:
       'Medical devices and PPE wholesale. Connecting Asian manufacturers with healthcare providers in Africa and the Middle East.',
     inLanguage: ['en', 'fr'],
@@ -180,11 +177,6 @@ export function generateProductSchema(
     brand: {
       '@type': 'Brand',
       name: 'Watu Care',
-    },
-    manufacturer: {
-      '@type': 'Organization',
-      name: 'Watu Care',
-      url: BASE_URL,
     },
     offers: {
       '@type': 'Offer',
@@ -258,18 +250,16 @@ export function generateMedicalBusinessSchema(): Record<string, unknown> {
       '@type': 'OfferCatalog',
       name: 'Medical Supplies Catalog',
       itemListElement: [
-        {
-          '@type': 'OfferCatalog',
-          name: 'Personal Protective Equipment',
-        },
-        {
-          '@type': 'OfferCatalog',
-          name: 'Medical Devices',
-        },
-        {
-          '@type': 'OfferCatalog',
-          name: 'Laboratory Supplies',
-        },
+        { '@type': 'OfferCatalog', name: 'Gloves' },
+        { '@type': 'OfferCatalog', name: 'Infection Prevention & PPE' },
+        { '@type': 'OfferCatalog', name: 'Bodily Waste & Excreta Management' },
+        { '@type': 'OfferCatalog', name: 'Surgical & Procedure Packs' },
+        { '@type': 'OfferCatalog', name: 'Wound Care & Dressing' },
+        { '@type': 'OfferCatalog', name: 'Clinical Consumables' },
+        { '@type': 'OfferCatalog', name: 'Vascular Access & Catheters' },
+        { '@type': 'OfferCatalog', name: 'Airway & Respiratory' },
+        { '@type': 'OfferCatalog', name: 'Surgical Instruments & Sutures' },
+        { '@type': 'OfferCatalog', name: 'Patient Care & Basic Equipment' },
       ],
     },
   };
@@ -396,7 +386,6 @@ export function generateLocalBusinessSchema(
       '@type': 'Country',
       name: countryName,
     },
-    priceRange: '$$',
     hasOfferCatalog: {
       '@type': 'OfferCatalog',
       name: `Medical Supplies for ${countryName}`,
