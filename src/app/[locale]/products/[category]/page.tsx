@@ -20,12 +20,13 @@ interface CategoryPageProps {
 }
 
 export async function generateStaticParams(): Promise<
-  Array<{ category: string }>
+  Array<{ locale: string; category: string }>
 > {
+  const { locales } = await import('@/i18n/config');
   const categories = getAllCategories();
-  return categories.map((category) => ({
-    category: category.slug,
-  }));
+  return locales.flatMap((locale) =>
+    categories.map((category) => ({ locale, category: category.slug }))
+  );
 }
 
 export async function generateMetadata({

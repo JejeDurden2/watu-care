@@ -27,17 +27,21 @@ interface ProductPageProps {
 }
 
 export async function generateStaticParams(): Promise<
-  Array<{ category: string; product: string }>
+  Array<{ locale: string; category: string; product: string }>
 > {
+  const { locales } = await import('@/i18n/config');
   const categories = getAllCategories();
-  const params: Array<{ category: string; product: string }> = [];
+  const params: Array<{ locale: string; category: string; product: string }> = [];
 
-  for (const category of categories) {
-    for (const product of category.products) {
-      params.push({
-        category: category.slug,
-        product: product.id,
-      });
+  for (const locale of locales) {
+    for (const category of categories) {
+      for (const product of category.products) {
+        params.push({
+          locale,
+          category: category.slug,
+          product: product.id,
+        });
+      }
     }
   }
 
