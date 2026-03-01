@@ -16,8 +16,7 @@ import {
   generateProductSchema,
   generateBreadcrumbSchema,
 } from '@/lib/schema';
-
-const BASE_URL = 'https://watu-care.com';
+import { BASE_URL } from '@/lib/constants';
 
 interface ProductPageProps {
   params: Promise<{
@@ -175,7 +174,6 @@ export default async function ProductPage({
         <Container>
           {/* Breadcrumb */}
           <Breadcrumb
-            locale={locale}
             items={[
               { label: tNav('home'), href: '/' },
               { label: t('title'), href: '/products' },

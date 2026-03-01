@@ -456,7 +456,8 @@
     "validation": {
       "companyRequired": "Company name is required",
       "emailInvalid": "Please enter a valid email",
-      "countryRequired": "Please select a country"
+      "countryRequired": "Please select a country",
+      "submitError": "Something went wrong. Please try again."
     }
   },
   "howItWorks": {
@@ -515,6 +516,19 @@
       "reliabilityDesc": "Our sourcing model is built directly with selected manufacturers, allowing us to ensure full traceability, controlled logistics and dependable delivery across Africa and the Middle East.",
       "support": "Human-Centered Support",
       "supportDesc": "From quotation to delivery, our team supports you at every step with responsiveness, clarity and long-term commitment."
+    },
+    "ourStory": "Our Story",
+    "whyWatu": "Why Watu",
+    "howWeWork": "How We Work",
+    "getInTouch": "Get in Touch",
+    "browseProducts": "Browse Products",
+    "stats": {
+      "skus": "500+",
+      "skusLabel": "Medical SKUs",
+      "countries": "30+",
+      "countriesLabel": "Countries Served",
+      "units": "10M+",
+      "unitsLabel": "Units Delivered"
     }
   },
   "contact": {
@@ -541,6 +555,14 @@
       "emailButton": "Send Email",
       "productsButton": "Browse Products",
       "response": "We respond to all inquiries within 24-48 hours."
+    },
+    "stats": {
+      "iso": "ISO",
+      "isoLabel": "Certified products",
+      "response": "48h",
+      "responseLabel": "Response time",
+      "countries": "30+",
+      "countriesLabel": "Countries served"
     }
   },
   "mission": {
@@ -782,5 +804,16 @@
         "content": "Questions about these terms can be directed to contact@watu-care.com."
       }
     }
+  },
+  "errors": {
+    "categoryLoad": "Could not load this category",
+    "categoryLoadDesc": "Something went wrong while loading the product list. Please try again.",
+    "productLoad": "Could not load this product",
+    "productLoadDesc": "Something went wrong while loading the product details. Please try again.",
+    "pageLoad": "Could not load this page",
+    "pageLoadDesc": "Something went wrong while loading this page. Please try again.",
+    "tryAgain": "Try again",
+    "genericTitle": "Something went wrong",
+    "genericDesc": "An unexpected error occurred. Please try again."
   }
 }

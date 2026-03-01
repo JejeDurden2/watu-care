@@ -1,4 +1,4 @@
-import Link from 'next/link';
+import { Link } from '@/i18n/routing';
 import { ChevronRight } from 'lucide-react';
 import { cn } from '@/lib/utils';
 
@@ -9,14 +9,12 @@ interface BreadcrumbItem {
 
 interface BreadcrumbProps {
   items: BreadcrumbItem[];
-  locale: string;
   /** Use 'light' variant for dark backgrounds */
   variant?: 'default' | 'light';
 }
 
 export function Breadcrumb({
   items,
-  locale,
   variant = 'default',
 }: BreadcrumbProps): React.ReactElement {
   const isLight = variant === 'light';
@@ -36,7 +34,7 @@ export function Breadcrumb({
             <li key={index} className="flex items-center gap-2">
               {item.href && !isLast ? (
                 <Link
-                  href={`/${locale}${item.href}`}
+                  href={item.href}
                   className={cn(
                     'transition-colors',
                     isLight ? 'hover:text-white' : 'hover:text-foreground'

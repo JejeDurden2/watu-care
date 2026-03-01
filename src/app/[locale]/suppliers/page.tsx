@@ -6,8 +6,7 @@ import { Breadcrumb } from '@/components/products';
 import { getTier1Countries } from '@/data/countries';
 import { generateBreadcrumbSchema } from '@/lib/schema';
 import { Link } from '@/i18n/routing';
-
-const BASE_URL = 'https://watu-care.com';
+import { BASE_URL } from '@/lib/constants';
 
 interface SuppliersPageProps {
   params: Promise<{
@@ -86,7 +85,6 @@ export default async function SuppliersPage({
       <section className="bg-gradient-to-br from-secondary via-secondary to-primary/20 py-16 lg:py-24">
         <Container>
           <Breadcrumb
-            locale={locale}
             items={[
               { label: tNav('home'), href: '/' },
               { label: t('breadcrumb.suppliers') },

@@ -4,8 +4,7 @@ import { Container, QuoteModalButton } from '@/components/ui';
 import { CategoryCard } from '@/components/products';
 import { getAllCategories, getTotalProductCount } from '@/lib/products';
 import { generateBreadcrumbSchema } from '@/lib/schema';
-
-const BASE_URL = 'https://watu-care.com';
+import { BASE_URL } from '@/lib/constants';
 
 interface ProductsPageProps {
   params: Promise<{

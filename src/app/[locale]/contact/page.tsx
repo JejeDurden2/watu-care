@@ -8,8 +8,7 @@ import {
   generateBreadcrumbSchema,
   combineSchemas,
 } from '@/lib/schema';
-
-const BASE_URL = 'https://watu-care.com';
+import { BASE_URL } from '@/lib/constants';
 
 interface ContactPageProps {
   params: Promise<{
@@ -230,37 +229,32 @@ export default async function ContactPage({
           {/* Right — trust stats */}
           <div className="relative flex flex-col justify-center bg-white/5 px-8 py-16 lg:px-16 lg:py-20">
             <div
-              className="pointer-events-none absolute inset-0 opacity-[0.04]"
-              style={{
-                backgroundImage:
-                  'radial-gradient(circle at 1px 1px, white 1px, transparent 1px)',
-                backgroundSize: '32px 32px',
-              }}
+              className="pattern-dots-light pointer-events-none absolute inset-0 opacity-[0.04]"
               aria-hidden="true"
             />
             <div className="relative space-y-10">
               <div className="border-l-2 border-accent/40 pl-5">
                 <p className="font-display text-4xl font-bold tracking-tighter text-white">
-                  ISO
+                  {t('stats.iso')}
                 </p>
                 <p className="mt-1 font-body text-xs font-semibold uppercase tracking-[0.18em] text-white/40">
-                  Certified products
+                  {t('stats.isoLabel')}
                 </p>
               </div>
               <div className="border-l-2 border-accent/40 pl-5">
                 <p className="font-display text-4xl font-bold tracking-tighter text-white">
-                  48h
+                  {t('stats.response')}
                 </p>
                 <p className="mt-1 font-body text-xs font-semibold uppercase tracking-[0.18em] text-white/40">
-                  Response time
+                  {t('stats.responseLabel')}
                 </p>
               </div>
               <div className="border-l-2 border-accent/40 pl-5">
                 <p className="font-display text-4xl font-bold tracking-tighter text-white">
-                  30+
+                  {t('stats.countries')}
                 </p>
                 <p className="mt-1 font-body text-xs font-semibold uppercase tracking-[0.18em] text-white/40">
-                  Countries served
+                  {t('stats.countriesLabel')}
                 </p>
               </div>
             </div>

@@ -2,8 +2,7 @@ import type { MetadataRoute } from 'next';
 import { getAllCategories } from '@/lib/products';
 import { getTier1Countries } from '@/data/countries';
 import { locales } from '@/i18n/config';
-
-const BASE_URL = 'https://watu-care.com';
+import { BASE_URL } from '@/lib/constants';
 
 // Use stable dates so crawlers can detect actual content changes.
 // Update these when the corresponding content is modified.

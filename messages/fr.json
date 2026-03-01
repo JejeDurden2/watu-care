@@ -524,7 +524,8 @@
     "validation": {
       "companyRequired": "Le nom de l'entreprise est requis",
       "emailInvalid": "Veuillez entrer un email valide",
-      "countryRequired": "Veuillez sélectionner un pays"
+      "countryRequired": "Veuillez sélectionner un pays",
+      "submitError": "Une erreur est survenue. Veuillez réessayer."
     }
   },
   "howItWorks": {
@@ -583,6 +584,19 @@
       "reliabilityDesc": "Notre modèle d'approvisionnement est construit directement avec des fabricants sélectionnés, nous permettant d'assurer une traçabilité complète, une logistique maîtrisée et une livraison fiable en Afrique et au Moyen-Orient.",
       "support": "Support centré sur l'humain",
       "supportDesc": "Du devis à la livraison, notre équipe vous accompagne à chaque étape avec réactivité, clarté et engagement à long terme."
+    },
+    "ourStory": "Notre histoire",
+    "whyWatu": "Pourquoi Watu",
+    "howWeWork": "Notre approche",
+    "getInTouch": "Nous contacter",
+    "browseProducts": "Voir les produits",
+    "stats": {
+      "skus": "500+",
+      "skusLabel": "Références médicales",
+      "countries": "30+",
+      "countriesLabel": "Pays desservis",
+      "units": "10M+",
+      "unitsLabel": "Unités livrées"
     }
   },
   "contact": {
@@ -609,6 +623,14 @@
       "emailButton": "Envoyer un email",
       "productsButton": "Parcourir les produits",
       "response": "Nous répondons à toutes les demandes sous 24-48 heures."
+    },
+    "stats": {
+      "iso": "ISO",
+      "isoLabel": "Produits certifiés",
+      "response": "48h",
+      "responseLabel": "Délai de réponse",
+      "countries": "30+",
+      "countriesLabel": "Pays desservis"
     }
   },
   "mission": {
@@ -850,5 +872,16 @@
         "content": "Les questions sur ces conditions peuvent être adressées à contact@watu-care.com."
       }
     }
+  },
+  "errors": {
+    "categoryLoad": "Impossible de charger cette catégorie",
+    "categoryLoadDesc": "Une erreur est survenue lors du chargement de la liste des produits. Veuillez réessayer.",
+    "productLoad": "Impossible de charger ce produit",
+    "productLoadDesc": "Une erreur est survenue lors du chargement des détails du produit. Veuillez réessayer.",
+    "pageLoad": "Impossible de charger cette page",
+    "pageLoadDesc": "Une erreur est survenue lors du chargement de cette page. Veuillez réessayer.",
+    "tryAgain": "Réessayer",
+    "genericTitle": "Une erreur est survenue",
+    "genericDesc": "Une erreur inattendue s'est produite. Veuillez réessayer."
   }
 }

@@ -8,8 +8,7 @@ import {
   generateBreadcrumbSchema,
   combineSchemas,
 } from '@/lib/schema';
-
-const BASE_URL = 'https://watu-care.com';
+import { BASE_URL } from '@/lib/constants';
 
 interface AboutPageProps {
   params: Promise<{
@@ -120,7 +119,7 @@ export default async function AboutPage({
               <div className="stagger-item stagger-delay-1 mb-6 flex items-center gap-3">
                 <div className="h-px w-12 bg-accent" />
                 <span className="font-body text-xs font-semibold uppercase tracking-[0.18em] text-accent">
-                  Our Story
+                  {t('ourStory')}
                 </span>
               </div>
 
@@ -134,7 +133,7 @@ export default async function AboutPage({
 
               <div className="stagger-item stagger-delay-4 mt-10 flex flex-col gap-4 sm:flex-row">
                 <Button size="lg" asChild>
-                  <Link href="/contact">Get in Touch</Link>
+                  <Link href="/contact">{t('getInTouch')}</Link>
                 </Button>
                 <Button
                   size="lg"
@@ -142,7 +141,7 @@ export default async function AboutPage({
                   className="border-white/20 text-white hover:bg-white hover:text-secondary"
                   asChild
                 >
-                  <Link href="/products">Browse Products</Link>
+                  <Link href="/products">{t('browseProducts')}</Link>
                 </Button>
               </div>
             </div>
@@ -153,26 +152,26 @@ export default async function AboutPage({
                 <div className="divide-y divide-white/10">
                   <div className="bg-white/4 px-8 py-8">
                     <p className="font-display text-6xl font-bold tracking-tighter text-white">
-                      500+
+                      {t('stats.skus')}
                     </p>
                     <p className="mt-2 font-body text-xs font-semibold uppercase tracking-[0.18em] text-white/35">
-                      Medical SKUs
+                      {t('stats.skusLabel')}
                     </p>
                   </div>
                   <div className="px-8 py-8">
                     <p className="font-display text-6xl font-bold tracking-tighter text-accent">
-                      30+
+                      {t('stats.countries')}
                     </p>
                     <p className="mt-2 font-body text-xs font-semibold uppercase tracking-[0.18em] text-white/35">
-                      Countries Served
+                      {t('stats.countriesLabel')}
                     </p>
                   </div>
                   <div className="px-8 py-8">
                     <p className="font-display text-6xl font-bold tracking-tighter text-white">
-                      10M+
+                      {t('stats.units')}
                     </p>
                     <p className="mt-2 font-body text-xs font-semibold uppercase tracking-[0.18em] text-white/35">
-                      Units Delivered
+                      {t('stats.unitsLabel')}
                     </p>
                   </div>
                 </div>
@@ -201,7 +200,7 @@ export default async function AboutPage({
                   className="font-body text-xs font-semibold uppercase tracking-[0.22em] text-muted-foreground"
                   style={{ writingMode: 'vertical-rl', transform: 'rotate(180deg)' }}
                 >
-                  Our Story
+                  {t('ourStory')}
                 </p>
               </div>
             </div>
@@ -211,7 +210,7 @@ export default async function AboutPage({
               <div className="mb-8 flex items-center gap-3">
                 <div className="h-px w-10 bg-accent" />
                 <span className="font-body text-xs font-semibold uppercase tracking-[0.18em] text-accent">
-                  Why Watu
+                  {t('whyWatu')}
                 </span>
               </div>
 
@@ -312,7 +311,7 @@ export default async function AboutPage({
           <div className="mb-14 flex items-center gap-4">
             <div className="h-px w-12 bg-accent" />
             <span className="font-body text-xs font-semibold uppercase tracking-[0.18em] text-accent">
-              How We Work
+              {t('howWeWork')}
             </span>
           </div>
 

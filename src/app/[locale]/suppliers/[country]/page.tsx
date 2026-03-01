@@ -24,8 +24,7 @@ import {
 import { Link } from '@/i18n/routing';
 import { locales, type Locale } from '@/i18n/config';
 import { SupplierQuoteButton } from './SupplierQuoteButton';
-
-const BASE_URL = 'https://watu-care.com';
+import { BASE_URL } from '@/lib/constants';
 
 interface CountryPageProps {
   params: Promise<{
@@ -190,7 +189,6 @@ export default async function CountrySupplierPage({
 
         <Container className="relative z-10">
           <Breadcrumb
-            locale={locale}
             items={[
               { label: tNav('home'), href: '/' },
               { label: t('breadcrumb.suppliers'), href: '/suppliers' },

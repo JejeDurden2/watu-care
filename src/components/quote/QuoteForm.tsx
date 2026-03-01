@@ -1,12 +1,13 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useMemo } from 'react';
 import { z } from 'zod';
 import { Send, Loader2 } from 'lucide-react';
 import { useTranslations } from 'next-intl';
 import { Button } from '@/components/ui';
 import { countries } from '@/data/countries';
 import { useQuoteStore } from '@/lib/quote-store';
+import { cn } from '@/lib/utils';
 
 interface QuoteFormData {
   companyName: string;
@@ -24,6 +25,9 @@ function createQuoteFormSchema(t: (key: string) => string) {
   });
 }
 
+const africaCountries = countries.filter((c) => c.region === 'africa');
+const middleEastCountries = countries.filter((c) => c.region === 'middle-east');
+
 interface QuoteFormProps {
   onSuccess: () => void;
 }
@@ -33,7 +37,7 @@ export function QuoteForm({ onSuccess }: QuoteFormProps): React.ReactElement {
   const { items, clearItems } = useQuoteStore();
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [errors, setErrors] = useState<Partial<Record<keyof QuoteFormData, string>>>({});
-  const quoteFormSchema = createQuoteFormSchema(t);
+  const quoteFormSchema = useMemo(() => createQuoteFormSchema(t), [t]);
   const [formData, setFormData] = useState<QuoteFormData>({
     companyName: '',
     email: '',
@@ -46,7 +50,6 @@ export function QuoteForm({ onSuccess }: QuoteFormProps): React.ReactElement {
   ): void => {
     const { name, value } = e.target;
     setFormData((prev: QuoteFormData) => ({ ...prev, [name]: value }));
-    // Clear error when user types
     if (errors[name as keyof QuoteFormData]) {
       setErrors((prev: Partial<Record<keyof QuoteFormData, string>>) => ({ ...prev, [name]: undefined }));
     }
@@ -56,7 +59,6 @@ export function QuoteForm({ onSuccess }: QuoteFormProps): React.ReactElement {
     e.preventDefault();
     setErrors({});
 
-    // Validate form
     const result = quoteFormSchema.safeParse(formData);
     if (!result.success) {
       const fieldErrors: Partial<Record<keyof QuoteFormData, string>> = {};
@@ -70,26 +72,34 @@ export function QuoteForm({ onSuccess }: QuoteFormProps): React.ReactElement {
 
     setIsSubmitting(true);
 
-    // Log the submission data (ready for future API integration)
-    const submissionData = {
-      ...formData,
-      products: items.map((item) => ({
-        productId: item.productId,
-        productName: item.productName,
-        category: item.categoryTitle,
-      })),
-      submittedAt: new Date().toISOString(),
-    };
+    try {
+      const response = await fetch('/api/quote', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          ...formData,
+          products: items.map((item) => ({
+            productId: item.productId,
+            productName: item.productName,
+            category: item.categoryTitle,
+          })),
+        }),
+      });
 
-    console.log('Quote Request Submitted:', submissionData);
+      if (!response.ok) {
+        throw new Error('Failed to submit quote request');
+      }
 
-    // Simulate API call
-    await new Promise((resolve) => setTimeout(resolve, 1000));
-
-    setIsSubmitting(false);
-    clearItems();
-    onSuccess();
+      clearItems();
+      onSuccess();
+    } catch {
+      setErrors({ companyName: t('validation.submitError') });
+    } finally {
+      setIsSubmitting(false);
+    }
   };
+
+  const inputClasses = 'w-full rounded-lg border bg-background px-4 py-3 text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary';
 
   return (
     <form onSubmit={handleSubmit} className="space-y-4">
@@ -108,9 +118,7 @@ export function QuoteForm({ onSuccess }: QuoteFormProps): React.ReactElement {
           value={formData.companyName}
           onChange={handleChange}
           placeholder={t('form.companyPlaceholder')}
-          className={`w-full rounded-lg border bg-background px-4 py-3 text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary ${
-            errors.companyName ? 'border-red-500' : 'border-border'
-          }`}
+          className={cn(inputClasses, errors.companyName ? 'border-red-500' : 'border-border')}
         />
         {errors.companyName && (
           <p className="mt-1 text-sm text-red-500">{errors.companyName}</p>
@@ -132,9 +140,7 @@ export function QuoteForm({ onSuccess }: QuoteFormProps): React.ReactElement {
           value={formData.email}
           onChange={handleChange}
           placeholder={t('form.emailPlaceholder')}
-          className={`w-full rounded-lg border bg-background px-4 py-3 text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary ${
-            errors.email ? 'border-red-500' : 'border-border'
-          }`}
+          className={cn(inputClasses, errors.email ? 'border-red-500' : 'border-border')}
         />
         {errors.email && (
           <p className="mt-1 text-sm text-red-500">{errors.email}</p>
@@ -154,28 +160,22 @@ export function QuoteForm({ onSuccess }: QuoteFormProps): React.ReactElement {
           name="country"
           value={formData.country}
           onChange={handleChange}
-          className={`w-full rounded-lg border bg-background px-4 py-3 text-foreground focus:outline-none focus:ring-2 focus:ring-primary ${
-            errors.country ? 'border-red-500' : 'border-border'
-          }`}
+          className={cn(inputClasses, errors.country ? 'border-red-500' : 'border-border')}
         >
           <option value="">{t('form.countryPlaceholder')}</option>
           <optgroup label={t('regions.africa')}>
-            {countries
-              .filter((c) => c.region === 'africa')
-              .map((country) => (
-                <option key={country.code} value={country.code}>
-                  {country.name}
-                </option>
-              ))}
+            {africaCountries.map((country) => (
+              <option key={country.code} value={country.code}>
+                {country.name}
+              </option>
+            ))}
           </optgroup>
           <optgroup label={t('regions.middleEast')}>
-            {countries
-              .filter((c) => c.region === 'middle-east')
-              .map((country) => (
-                <option key={country.code} value={country.code}>
-                  {country.name}
-                </option>
-              ))}
+            {middleEastCountries.map((country) => (
+              <option key={country.code} value={country.code}>
+                {country.name}
+              </option>
+            ))}
           </optgroup>
         </select>
         {errors.country && (

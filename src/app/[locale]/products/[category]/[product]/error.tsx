@@ -1,6 +1,7 @@
 'use client';
 
 import { useEffect } from 'react';
+import { useTranslations } from 'next-intl';
 import { Container, Button } from '@/components/ui';
 
 interface ErrorProps {
@@ -12,6 +13,8 @@ export default function ProductError({
   error,
   reset,
 }: ErrorProps): React.ReactElement {
+  const t = useTranslations('errors');
+
   useEffect(() => {
     console.error(error);
   }, [error]);
@@ -21,13 +24,12 @@ export default function ProductError({
       <Container>
         <div className="mx-auto max-w-md">
           <h2 className="mb-2 text-2xl font-bold text-secondary">
-            Could not load this product
+            {t('productLoad')}
           </h2>
           <p className="mb-8 text-muted-foreground">
-            Something went wrong while loading the product details. Please try
-            again.
+            {t('productLoadDesc')}
           </p>
-          <Button onClick={reset}>Try again</Button>
+          <Button onClick={reset}>{t('tryAgain')}</Button>
         </div>
       </Container>
     </main>

@@ -10,8 +10,7 @@ import {
 } from '@/components/products';
 import { getAllCategories, getCategoryBySlug } from '@/lib/products';
 import { generateBreadcrumbSchema } from '@/lib/schema';
-
-const BASE_URL = 'https://watu-care.com';
+import { BASE_URL } from '@/lib/constants';
 
 interface CategoryPageProps {
   params: Promise<{
@@ -165,7 +164,6 @@ export default async function CategoryPage({
       <section className="gradient-hero py-16 lg:py-24">
         <Container>
           <Breadcrumb
-            locale={locale}
             variant="light"
             items={[
               { label: tNav('home'), href: '/' },

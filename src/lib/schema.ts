@@ -1,6 +1,5 @@
 import type { Product, ProductCategory } from '@/types/product';
-
-const BASE_URL = 'https://watu-care.com';
+import { BASE_URL } from '@/lib/constants';
 
 // Schema.org type definitions
 type SchemaType = Record<string, unknown>;

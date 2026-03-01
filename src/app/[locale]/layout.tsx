@@ -16,8 +16,7 @@ import {
   generateMedicalBusinessSchema,
   combineSchemas,
 } from '@/lib/schema';
-
-const BASE_URL = 'https://watu-care.com';
+import { BASE_URL } from '@/lib/constants';
 
 const nunito = Nunito({
   subsets: ['latin'],

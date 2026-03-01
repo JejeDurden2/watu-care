@@ -9,7 +9,7 @@ interface ErrorProps {
   reset: () => void;
 }
 
-export default function CountrySupplierError({
+export default function LocaleError({
   error,
   reset,
 }: ErrorProps): React.ReactElement {
@@ -20,18 +20,18 @@ export default function CountrySupplierError({
   }, [error]);
 
   return (
-    <main className="py-24">
+    <section className="py-24">
       <Container>
-        <div className="mx-auto max-w-md">
+        <div className="mx-auto max-w-md text-center">
           <h2 className="mb-2 text-2xl font-bold text-secondary">
-            {t('pageLoad')}
+            {t('genericTitle')}
           </h2>
           <p className="mb-8 text-muted-foreground">
-            {t('pageLoadDesc')}
+            {t('genericDesc')}
           </p>
           <Button onClick={reset}>{t('tryAgain')}</Button>
         </div>
       </Container>
-    </main>
+    </section>
   );
 }

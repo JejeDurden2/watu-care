@@ -2,6 +2,7 @@
 
 import { Trash2 } from 'lucide-react';
 import { toast } from 'sonner';
+import { useTranslations } from 'next-intl';
 import { useQuoteStore, type QuoteItem as QuoteItemType } from '@/lib/quote-store';
 
 interface QuoteItemProps {
@@ -10,10 +11,11 @@ interface QuoteItemProps {
 
 export function QuoteItem({ item }: QuoteItemProps): React.ReactElement {
   const { removeItem } = useQuoteStore();
+  const t = useTranslations('quote');
 
   const handleRemove = (): void => {
     removeItem(item.productId);
-    toast.success('Product removed from your list');
+    toast.success(t('toast.removed'));
   };
 
   return (
@@ -25,7 +27,7 @@ export function QuoteItem({ item }: QuoteItemProps): React.ReactElement {
       <button
         onClick={handleRemove}
         className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full text-muted-foreground transition-colors hover:bg-red-50 hover:text-red-500"
-        aria-label="Remove from list"
+        aria-label={t('removeFromList')}
       >
         <Trash2 className="h-4 w-4" />
       </button>

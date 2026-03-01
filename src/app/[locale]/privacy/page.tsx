@@ -2,8 +2,7 @@ import type { Metadata } from 'next';
 import { getTranslations } from 'next-intl/server';
 import { Container } from '@/components/ui';
 import { generateBreadcrumbSchema } from '@/lib/schema';
-
-const BASE_URL = 'https://watu-care.com';
+import { BASE_URL } from '@/lib/constants';
 
 interface PrivacyPageProps {
   params: Promise<{ locale: string }>;

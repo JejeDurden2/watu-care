@@ -10,8 +10,7 @@ import {
   CTA,
 } from '@/components/sections';
 import { generateFAQSchema } from '@/lib/schema';
-
-const BASE_URL = 'https://watu-care.com';
+import { BASE_URL } from '@/lib/constants';
 
 const faqKeys = [
   'moq',
