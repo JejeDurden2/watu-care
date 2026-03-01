@@ -3,13 +3,14 @@
 import { useEffect, useState } from 'react';
 
 /* ------------------------------------------------------------------ */
-/*  Path definitions (hourglass convergence at center hub 500,110)    */
+/*  Path definitions — converge at center hub (500,110), then split    */
+/*  upper → Africa node, middle → between, lower → Middle East node    */
 /* ------------------------------------------------------------------ */
 
 const PATHS = {
-  upper: 'M 190 85 C 290 30, 420 45, 500 110 C 580 175, 710 185, 810 100',
-  middle: 'M 190 110 C 310 80, 400 130, 500 110 C 600 90, 690 140, 810 115',
-  lower: 'M 165 145 C 280 175, 420 140, 500 110 C 580 80, 720 65, 835 95',
+  upper: 'M 185 85 C 300 30, 420 50, 500 110 C 580 170, 700 135, 810 78',
+  middle: 'M 185 110 C 310 85, 400 125, 500 110 C 600 95, 700 108, 810 100',
+  lower: 'M 160 148 C 280 175, 420 140, 500 110 C 580 80, 740 100, 855 147',
 } as const;
 
 /* ------------------------------------------------------------------ */
@@ -62,7 +63,7 @@ function SvgDefs(): React.ReactElement {
       </radialGradient>
 
       {/* Destination glow */}
-      <radialGradient id="hgDestGlow" cx="840" cy="100" r="100" gradientUnits="userSpaceOnUse">
+      <radialGradient id="hgDestGlow" cx="840" cy="110" r="110" gradientUnits="userSpaceOnUse">
         <stop offset="0%" stopColor="hsl(175, 50%, 45%)" stopOpacity="0.06" />
         <stop offset="100%" stopColor="hsl(175, 50%, 45%)" stopOpacity="0" />
       </radialGradient>
@@ -118,7 +119,7 @@ function BackgroundAtmosphere({ isVisible }: { isVisible: boolean }): React.Reac
       <rect width="1000" height="220" fill="url(#hgDotGrid)" />
       <ellipse cx="160" cy="100" rx="100" ry="80" fill="url(#hgSourceGlow)" />
       <ellipse cx="500" cy="110" rx="130" ry="100" fill="url(#hgCenterGlow)" />
-      <ellipse cx="840" cy="100" rx="100" ry="80" fill="url(#hgDestGlow)" />
+      <ellipse cx="840" cy="110" rx="110" ry="90" fill="url(#hgDestGlow)" />
     </g>
   );
 }
@@ -129,9 +130,9 @@ function BackgroundAtmosphere({ isVisible }: { isVisible: boolean }): React.Reac
 
 function NetworkPaths({ isVisible }: { isVisible: boolean }): React.ReactElement {
   const pathConfigs = [
-    { d: PATHS.upper, opacity: 0.15, dash: '6 8', delay: '0.1s', speed: '' },
-    { d: PATHS.middle, opacity: 0.35, dash: '10 6', delay: '0.2s', speed: '' },
-    { d: PATHS.lower, opacity: 0.2, dash: '4 10', delay: '0.3s', speed: 'slow' },
+    { d: PATHS.upper, opacity: 0.2, dash: '6 8', delay: '0.1s', speed: '' },
+    { d: PATHS.middle, opacity: 0.4, dash: '10 6', delay: '0.2s', speed: '' },
+    { d: PATHS.lower, opacity: 0.25, dash: '4 10', delay: '0.3s', speed: 'slow' },
   ];
 
   return (
@@ -145,7 +146,6 @@ function NetworkPaths({ isVisible }: { isVisible: boolean }): React.ReactElement
           strokeDasharray={p.dash}
           strokeLinecap="round"
           fill="none"
-          opacity={p.opacity}
           className={isVisible ? (p.speed === 'slow' ? 'animate-hero-net-flow-slow' : 'animate-hero-net-flow') : ''}
           style={{
             opacity: isVisible ? p.opacity : 0,
@@ -172,8 +172,8 @@ function TravelingParticles({
     { path: PATHS.upper, dur: '6s', begin: '1.6s', r: 3, filter: 'hgGlow' },
     { path: PATHS.upper, dur: '6s', begin: '4.8s', r: 2.5, filter: 'hgGlow' },
     { path: PATHS.middle, dur: '5s', begin: '1.8s', r: 3.5, filter: 'hgGlow' },
-    { path: PATHS.middle, dur: '5s', begin: '4.2s', r: 2.5, filter: 'hgGlowAccent' },
     { path: PATHS.lower, dur: '7s', begin: '2.2s', r: 3, filter: 'hgGlowAccent' },
+    { path: PATHS.lower, dur: '7s', begin: '5.5s', r: 2.5, filter: 'hgGlowAccent' },
   ];
 
   return (
@@ -211,10 +211,9 @@ function SourceCluster({ isVisible }: { isVisible: boolean }): React.ReactElemen
     <g>
       {/* Primary node — Asia */}
       <g
-        transform="translate(105, 58)"
         style={{
           opacity: isVisible ? 1 : 0,
-          transform: isVisible ? 'translate(105px, 58px)' : 'translate(75px, 58px)',
+          transform: isVisible ? 'translate(105px, 55px)' : 'translate(75px, 55px)',
           transition: 'opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1) 0.4s, transform 0.6s cubic-bezier(0.16, 1, 0.3, 1) 0.4s',
         }}
       >
@@ -246,7 +245,7 @@ function SourceCluster({ isVisible }: { isVisible: boolean }): React.ReactElemen
       <g
         style={{
           opacity: isVisible ? 1 : 0,
-          transform: isVisible ? 'translate(68px, 132px)' : 'translate(38px, 132px)',
+          transform: isVisible ? 'translate(65px, 128px)' : 'translate(35px, 128px)',
           transition: 'opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1) 0.5s, transform 0.6s cubic-bezier(0.16, 1, 0.3, 1) 0.5s',
         }}
       >
@@ -292,6 +291,7 @@ function CenterHub({
         style={{
           opacity: isVisible ? 0.25 : 0,
           transition: 'opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1) 0.5s',
+          transformOrigin: '500px 110px',
         }}
       />
 
@@ -350,7 +350,7 @@ function DestinationCluster({ isVisible }: { isVisible: boolean }): React.ReactE
       <g
         style={{
           opacity: isVisible ? 1 : 0,
-          transform: isVisible ? 'translate(810px, 53px)' : 'translate(840px, 53px)',
+          transform: isVisible ? 'translate(810px, 50px)' : 'translate(840px, 50px)',
           transition: 'opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1) 0.7s, transform 0.6s cubic-bezier(0.16, 1, 0.3, 1) 0.7s',
         }}
       >
@@ -399,8 +399,8 @@ function DestinationCluster({ isVisible }: { isVisible: boolean }): React.ReactE
 
 function DataBadges({ isVisible }: { isVisible: boolean }): React.ReactElement {
   const badges = [
-    { x: 320, y: 38, label: 'ISO 13485', delay: '1s', animClass: 'animate-hero-net-float' },
-    { x: 630, y: 170, label: '25+ Countries', delay: '1.2s', animClass: 'animate-hero-net-float-alt' },
+    { x: 310, y: 38, label: 'ISO 13485', width: 74, delay: '1s', animClass: 'animate-hero-net-float' },
+    { x: 625, y: 170, label: '25+ Countries', width: 96, delay: '1.2s', animClass: 'animate-hero-net-float-alt' },
   ];
 
   return (
@@ -414,15 +414,15 @@ function DataBadges({ isVisible }: { isVisible: boolean }): React.ReactElement {
             transition: `opacity 0.5s cubic-bezier(0.16, 1, 0.3, 1) ${b.delay}`,
           }}
         >
-          <rect x={b.x} y={b.y} width={b.label.length * 6.5 + 16} height="22" rx="11"
+          <rect x={b.x} y={b.y} width={b.width} height="22" rx="11"
             fill="hsl(206, 50%, 16%)" fillOpacity="0.85"
             stroke="hsl(175, 50%, 45%)" strokeWidth="0.6" strokeOpacity="0.25" />
           <line
-            x1={b.x + 10} y1={b.y + 1} x2={b.x + b.label.length * 6.5 + 6} y2={b.y + 1}
+            x1={b.x + 10} y1={b.y + 1} x2={b.x + b.width - 10} y2={b.y + 1}
             stroke="white" strokeOpacity="0.06" strokeWidth="0.8"
           />
           <text
-            x={b.x + (b.label.length * 6.5 + 16) / 2} y={b.y + 14.5}
+            x={b.x + b.width / 2} y={b.y + 14.5}
             textAnchor="middle" fill="hsl(175, 50%, 60%)" fontSize="8"
             fontWeight="600" letterSpacing="0.8"
             fontFamily="var(--font-body), system-ui, sans-serif"
