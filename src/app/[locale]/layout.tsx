@@ -63,7 +63,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       'healthcare equipment',
       'Africa healthcare',
       'Middle East medical supplies',
-      'medical wholesale Hong Kong',
+      'medical wholesale',
       'surgical supplies',
       'hospital equipment',
       'medical consumables',

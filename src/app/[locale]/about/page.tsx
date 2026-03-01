@@ -32,7 +32,7 @@ export async function generateMetadata({
       'Watu Care',
       'medical supplies company',
       'B2B healthcare',
-      'Hong Kong medical distributor',
+      'medical supply distributor',
       'Africa healthcare partner',
       'Middle East medical supplies',
     ],

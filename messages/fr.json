@@ -1,7 +1,7 @@
 {
   "meta": {
     "title": "Watu Care - Équipement Médical pour l'Afrique et le Moyen-Orient",
-    "description": "Dispositifs médicaux et EPI de fabricants asiatiques. Grossiste B2B pour les établissements de santé en Afrique et au Moyen-Orient. Basé à Hong Kong."
+    "description": "Dispositifs médicaux et EPI de fabricants asiatiques. Grossiste B2B pour les établissements de santé en Afrique et au Moyen-Orient."
   },
   "nav": {
     "home": "Accueil",
@@ -32,7 +32,6 @@
     "cta": "Obtenir un devis gratuit",
     "ctaSecondary": "Voir les produits",
     "reassurance": "Devis gratuit · Réponse sous 48h",
-    "location": "Hong Kong SAR",
     "trustMarquee": {
       "countries": "Pays desservis",
       "iso": "Fournisseurs certifiés",
@@ -45,8 +44,8 @@
   "whyUs": {
     "title": "Pourquoi Watu Care",
     "subtitle": "Nous connectons les prestataires de santé avec des fournitures médicales de qualité provenant d'Asie.",
-    "hubTitle": "Hub Hong Kong",
-    "hubDesc": "Emplacement stratégique reliant les fabricants asiatiques aux établissements de santé en Afrique et au Moyen-Orient.",
+    "hubTitle": "Sourcing Direct",
+    "hubDesc": "Les produits sont expédiés directement depuis les fabricants asiatiques certifiés vers les établissements de santé en Afrique et au Moyen-Orient — sans intermédiaire, sans coûts supplémentaires.",
     "directTitle": "Relations Directes",
     "directDesc": "Nous travaillons directement avec les fabricants pour garantir des produits de qualité à prix compétitifs.",
     "serviceTitle": "Service Réactif",
@@ -509,9 +508,15 @@
       "submitting": "Envoi en cours..."
     },
     "success": {
-      "title": "Demande envoyée !",
-      "message": "Nous vous contacterons sous 24-48 heures.",
-      "close": "Fermer"
+      "title": "Demande envoyée avec succès !",
+      "message": "Merci de nous avoir contactés. Notre équipe à Hong Kong a bien reçu votre demande et reviendra vers vous rapidement.",
+      "step1Title": "Email de confirmation envoyé",
+      "step1Desc": "Vérifiez votre boîte de réception pour une copie de votre demande.",
+      "step2Title": "Devis sous 24–48 heures",
+      "step2Desc": "Un responsable de compte dédié préparera votre devis personnalisé.",
+      "step3Title": "Proposition détaillée",
+      "step3Desc": "Vous recevrez les tarifs, délais et options de livraison pour votre région.",
+      "close": "Terminé"
     },
     "toast": {
       "added": "Produit ajouté à votre liste",
@@ -643,8 +648,8 @@
     "and": "et",
     "highlight2": "l'accès aux fournitures médicales essentielles devrait être possible pour tous, partout",
     "description2": "Notre équipe vient de différents pays, de différentes cultures et de parcours professionnels variés, mais nous partageons un objectif commun : rendre l'accès aux fournitures médicales essentielles possible pour tous, partout.",
-    "asiaHub": "Hub Asiatique",
-    "asiaHubDesc": "Basés à Hong Kong, nous connectons directement les fabricants asiatiques aux établissements de santé.",
+    "asiaHub": "Sourcing Asie",
+    "asiaHubDesc": "Nous connectons les fabricants asiatiques certifiés directement aux établissements de santé — les produits sont expédiés depuis la source.",
     "healthcareFocus": "Focus Santé",
     "healthcareFocusDesc": "Chez Watu Care, les soins de santé sont, avant tout, une histoire humaine.",
     "developingEconomies": "Marchés Émergents",
@@ -708,7 +713,7 @@
       "fastResponse": "Réponse en 24-48h",
       "fastResponseDesc": "Devis rapide pour les demandes en {country}",
       "directShipping": "Expédition Directe",
-      "directShippingDesc": "Logistique efficace vers {country} depuis notre hub de Hong Kong",
+      "directShippingDesc": "Logistique efficace vers {country} directement depuis les fabricants asiatiques certifiés",
       "qualityProducts": "Qualité Garantie",
       "qualityProductsDesc": "Fabricants certifiés ISO répondant aux normes internationales",
       "competitivePricing": "Prix Compétitifs",

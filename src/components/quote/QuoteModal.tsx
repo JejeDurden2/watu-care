@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from 'react';
 import * as Dialog from '@radix-ui/react-dialog';
-import { X, ArrowLeft, ShoppingBag, CheckCircle2, ListX, SkipForward } from 'lucide-react';
+import { X, ArrowLeft, ShoppingBag, CheckCircle2, ListX, SkipForward, Clock, Mail, FileText } from 'lucide-react';
 import { useTranslations } from 'next-intl';
 import { useQuoteStore } from '@/lib/quote-store';
 import { Button } from '@/components/ui';
@@ -177,7 +177,7 @@ export function QuoteModal(): React.ReactElement {
 
           {/* Success View */}
           {modalState === 'success' && (
-            <div className="py-8 text-center">
+            <div className="py-6 text-center">
               <div className="mx-auto mb-4 flex h-16 w-16 items-center justify-center rounded-full bg-accent/10">
                 <CheckCircle2 className="h-8 w-8 text-accent" />
               </div>
@@ -187,7 +187,33 @@ export function QuoteModal(): React.ReactElement {
               <p className="mb-6 text-muted-foreground">
                 {t('success.message')}
               </p>
-              <Button onClick={handleCloseSuccess}>{t('success.close')}</Button>
+
+              {/* Next steps */}
+              <div className="mb-6 space-y-3 text-left">
+                <div className="flex items-start gap-3 rounded-lg bg-muted/50 p-3">
+                  <Mail className="mt-0.5 h-5 w-5 shrink-0 text-primary" />
+                  <div>
+                    <p className="text-sm font-medium text-secondary">{t('success.step1Title')}</p>
+                    <p className="text-xs text-muted-foreground">{t('success.step1Desc')}</p>
+                  </div>
+                </div>
+                <div className="flex items-start gap-3 rounded-lg bg-muted/50 p-3">
+                  <Clock className="mt-0.5 h-5 w-5 shrink-0 text-primary" />
+                  <div>
+                    <p className="text-sm font-medium text-secondary">{t('success.step2Title')}</p>
+                    <p className="text-xs text-muted-foreground">{t('success.step2Desc')}</p>
+                  </div>
+                </div>
+                <div className="flex items-start gap-3 rounded-lg bg-muted/50 p-3">
+                  <FileText className="mt-0.5 h-5 w-5 shrink-0 text-primary" />
+                  <div>
+                    <p className="text-sm font-medium text-secondary">{t('success.step3Title')}</p>
+                    <p className="text-xs text-muted-foreground">{t('success.step3Desc')}</p>
+                  </div>
+                </div>
+              </div>
+
+              <Button onClick={handleCloseSuccess} className="w-full">{t('success.close')}</Button>
             </div>
           )}
         </Dialog.Content>

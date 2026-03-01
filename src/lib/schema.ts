@@ -119,7 +119,7 @@ export function generateOrganizationSchema(): OrganizationSchema {
     url: BASE_URL,
     logo: `${BASE_URL}/logo.png`,
     description:
-      'Connecting Asian manufacturers with healthcare providers across Africa and the Middle East. Medical devices and PPE wholesale. Based in Hong Kong.',
+      'Connecting Asian manufacturers with healthcare providers across Africa and the Middle East. Medical devices and PPE wholesale.',
     email: 'contact@watu-care.com',
     telephone: '+212-662-258-045',
     address: {
@@ -233,7 +233,7 @@ export function generateMedicalBusinessSchema(): Record<string, unknown> {
     url: BASE_URL,
     logo: `${BASE_URL}/logo.png`,
     description:
-      'B2B medical devices and PPE wholesale supplier. Serving healthcare providers in Africa and the Middle East. Based in Hong Kong.',
+      'B2B medical devices and PPE wholesale supplier. Serving healthcare providers in Africa and the Middle East.',
     address: {
       '@type': 'PostalAddress',
       addressLocality: 'Hong Kong',

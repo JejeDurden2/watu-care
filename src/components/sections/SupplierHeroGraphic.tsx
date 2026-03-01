@@ -38,7 +38,7 @@ export function SupplierHeroGraphic({ countryName }: SupplierHeroGraphicProps): 
             <circle cx="2" cy="2" r="1" fill="currentColor" opacity="0.1" />
           </pattern>
 
-          {/* Gradient for connecting lines */}
+          {/* Gradient for connecting line */}
           <linearGradient id="lineGradientSupplier" x1="0%" y1="0%" x2="100%" y2="0%">
             <stop offset="0%" stopColor="hsl(200, 65%, 55%)" />
             <stop offset="100%" stopColor="hsl(175, 50%, 45%)" />
@@ -57,11 +57,10 @@ export function SupplierHeroGraphic({ countryName }: SupplierHeroGraphicProps): 
         {/* Background dots */}
         <rect width="400" height="300" fill="url(#dotPatternSupplier)" className="text-white" />
 
-        {/* Connecting Lines */}
+        {/* Connecting Line: Asia → Country (gentle S-curve) */}
         <g className={`transition-opacity duration-1000 ${isVisible ? 'opacity-100' : 'opacity-0'}`}>
-          {/* Asia to Hong Kong */}
           <path
-            d="M 80 150 Q 140 120 200 150"
+            d="M 110 150 C 170 110, 230 190, 290 150"
             stroke="url(#lineGradientSupplier)"
             strokeWidth="2"
             strokeDasharray="8 4"
@@ -69,35 +68,16 @@ export function SupplierHeroGraphic({ countryName }: SupplierHeroGraphicProps): 
             className={isVisible ? 'animate-draw-line' : ''}
             style={{ animationDelay: '0.5s' }}
           />
-
-          {/* Hong Kong to Country */}
-          <path
-            d="M 200 150 Q 260 180 320 150"
-            stroke="url(#lineGradientSupplier)"
-            strokeWidth="2"
-            strokeDasharray="8 4"
-            fill="none"
-            className={isVisible ? 'animate-draw-line' : ''}
-            style={{ animationDelay: '1s' }}
-          />
         </g>
 
-        {/* Traveling dots on paths */}
+        {/* Traveling dots on path */}
         <g className={`transition-opacity duration-500 ${isVisible ? 'opacity-100' : 'opacity-0'}`} style={{ animationDelay: '1.5s' }}>
           <circle r="4" fill="hsl(200, 65%, 55%)" filter="url(#glowSupplier)">
             <animateMotion
-              dur="3s"
+              dur="4s"
               repeatCount="indefinite"
-              path="M 80 150 Q 140 120 200 150"
+              path="M 110 150 C 170 110, 230 190, 290 150"
               begin="1.5s"
-            />
-          </circle>
-          <circle r="4" fill="hsl(175, 50%, 45%)" filter="url(#glowSupplier)">
-            <animateMotion
-              dur="3s"
-              repeatCount="indefinite"
-              path="M 200 150 Q 260 180 320 150"
-              begin="2.5s"
             />
           </circle>
         </g>
@@ -161,75 +141,18 @@ export function SupplierHeroGraphic({ countryName }: SupplierHeroGraphicProps): 
           </text>
         </g>
 
-        {/* Node 2: Hong Kong (Watu Care Hub) */}
+        {/* Center facilitator badge: Watu Care */}
         <g
           className={`transition-all duration-500 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}`}
           style={{ transitionDelay: '0.4s' }}
         >
-          {/* Outer ring - pulsing */}
-          <circle
-            cx="200"
-            cy="150"
-            r="44"
-            fill="none"
-            stroke="hsl(175, 50%, 45%)"
-            strokeWidth="1"
-            opacity="0.2"
-            className="animate-pulse-subtle"
-          />
-          {/* Middle ring */}
-          <circle
-            cx="200"
-            cy="150"
-            r="36"
-            fill="none"
-            stroke="hsl(175, 50%, 45%)"
-            strokeWidth="1"
-            opacity="0.4"
-          />
-          {/* Inner circle - main */}
-          <circle
-            cx="200"
-            cy="150"
-            r="28"
-            fill="hsl(175, 50%, 45%)"
-            stroke="white"
-            strokeWidth="2"
-          />
-          {/* Icon: Shield/Check (Quality) */}
-          <g transform="translate(188, 138)">
-            <path
-              d="M 12 2 L 22 6 L 22 14 C 22 18 18 21 12 24 C 6 21 2 18 2 14 L 2 6 L 12 2 Z"
-              fill="none"
-              stroke="white"
-              strokeWidth="1.5"
-            />
-            <path d="M 7 13 L 10 16 L 17 9" stroke="white" strokeWidth="2" fill="none" strokeLinecap="round" strokeLinejoin="round" />
-          </g>
-          {/* Label */}
-          <text
-            x="200"
-            y="208"
-            textAnchor="middle"
-            fill="hsl(175, 50%, 45%)"
-            fontSize="12"
-            fontWeight="700"
-          >
-            HONG KONG
-          </text>
-          <text
-            x="200"
-            y="222"
-            textAnchor="middle"
-            fill="white"
-            fontSize="9"
-            opacity="0.6"
-          >
-            Watu Care Hub
+          <rect x="160" y="116" width="80" height="22" rx="11" fill="hsl(206, 50%, 18%)" stroke="hsl(175, 50%, 45%)" strokeWidth="1" opacity="0.9" />
+          <text x="200" y="131" textAnchor="middle" fill="hsl(175, 50%, 65%)" fontSize="8" fontWeight="700" letterSpacing="1">
+            WATU CARE
           </text>
         </g>
 
-        {/* Node 3: Country (Healthcare) */}
+        {/* Node 2: Country (Healthcare) */}
         <g
           className={`transition-all duration-500 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}`}
           style={{ transitionDelay: '0.6s' }}
@@ -240,7 +163,7 @@ export function SupplierHeroGraphic({ countryName }: SupplierHeroGraphicProps): 
             cy="150"
             r="36"
             fill="none"
-            stroke="hsl(200, 65%, 55%)"
+            stroke="hsl(175, 50%, 45%)"
             strokeWidth="1"
             opacity="0.3"
           />
@@ -250,7 +173,7 @@ export function SupplierHeroGraphic({ countryName }: SupplierHeroGraphicProps): 
             cy="150"
             r="28"
             fill="hsl(206, 50%, 18%)"
-            stroke="hsl(200, 65%, 55%)"
+            stroke="hsl(175, 50%, 45%)"
             strokeWidth="2"
           />
           {/* Icon: Medical Cross */}

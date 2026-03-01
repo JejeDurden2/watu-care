@@ -1,7 +1,7 @@
 {
   "meta": {
     "title": "Watu Care - Medical Supplies for Africa & Middle East",
-    "description": "Medical devices and PPE from Asian manufacturers. B2B wholesale for healthcare facilities in Africa and the Middle East. Based in Hong Kong."
+    "description": "Medical devices and PPE from Asian manufacturers. B2B wholesale for healthcare facilities in Africa and the Middle East."
   },
   "nav": {
     "home": "Home",
@@ -32,7 +32,6 @@
     "cta": "Get a Free Quote",
     "ctaSecondary": "View Products",
     "reassurance": "Free quote · Response within 48h",
-    "location": "Hong Kong SAR",
     "trustMarquee": {
       "countries": "Countries served",
       "iso": "Certified suppliers",
@@ -45,8 +44,8 @@
   "whyUs": {
     "title": "Why Watu Care",
     "subtitle": "We connect healthcare providers with quality medical supplies from Asia.",
-    "hubTitle": "Hong Kong Hub",
-    "hubDesc": "Strategic location connecting Asian manufacturers directly to healthcare facilities across Africa and the Middle East.",
+    "hubTitle": "Direct Sourcing",
+    "hubDesc": "Products ship directly from certified Asian manufacturers to healthcare facilities across Africa and the Middle East — no intermediary, no extra costs.",
     "directTitle": "Direct Relationships",
     "directDesc": "We work directly with manufacturers to ensure quality products and competitive pricing.",
     "serviceTitle": "Responsive Service",
@@ -441,9 +440,15 @@
       "submitting": "Sending..."
     },
     "success": {
-      "title": "Request Sent!",
-      "message": "We'll contact you within 24-48 hours.",
-      "close": "Close"
+      "title": "Request Sent Successfully!",
+      "message": "Thank you for reaching out. Our team in Hong Kong has received your request and will be in touch shortly.",
+      "step1Title": "Confirmation email sent",
+      "step1Desc": "Check your inbox for a copy of your request.",
+      "step2Title": "Quote within 24–48 hours",
+      "step2Desc": "A dedicated account manager will prepare your personalized quote.",
+      "step3Title": "Detailed proposal",
+      "step3Desc": "You'll receive pricing, lead times, and shipping options for your region.",
+      "close": "Done"
     },
     "toast": {
       "added": "Product added to your list",
@@ -575,8 +580,8 @@
     "and": "and",
     "highlight2": "access to essential medical supplies should be possible for everyone, everywhere",
     "description2": "Our team comes from different countries, cultures and professional paths, but we share one common purpose — to make access to essential medical supplies possible for everyone, everywhere.",
-    "asiaHub": "Asia Hub",
-    "asiaHubDesc": "Based in Hong Kong, we connect Asian manufacturers directly to healthcare facilities.",
+    "asiaHub": "Asia Sourcing",
+    "asiaHubDesc": "We connect certified Asian manufacturers directly to healthcare facilities — products ship straight from the source.",
     "healthcareFocus": "Healthcare Focus",
     "healthcareFocusDesc": "At Watu Care, we believe healthcare is, above all, a human story.",
     "developingEconomies": "Emerging Markets",
@@ -640,7 +645,7 @@
       "fastResponse": "24-48 Hour Response",
       "fastResponseDesc": "Quick quote turnaround for {country} inquiries",
       "directShipping": "Direct Shipping",
-      "directShippingDesc": "Efficient logistics to {country} from our Hong Kong hub",
+      "directShippingDesc": "Efficient logistics to {country} direct from certified Asian manufacturers",
       "qualityProducts": "Quality Assured",
       "qualityProductsDesc": "ISO-certified manufacturers meeting international standards",
       "competitivePricing": "Competitive Pricing",

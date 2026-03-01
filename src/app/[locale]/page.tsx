@@ -46,7 +46,7 @@ export async function generateMetadata({
       'medical devices Middle East',
       'PPE wholesale',
       'B2B medical equipment',
-      'healthcare supplies Hong Kong',
+      'healthcare supplies Asia',
       'wholesale medical devices',
       'hospital equipment supplier',
       'medical consumables Africa',

@@ -44,7 +44,7 @@ export async function Footer(): Promise<React.ReactElement> {
             </p>
             {/* Geographic tagline */}
             <p className="text-xs tracking-widest text-accent/60 uppercase">
-              Hong Kong &middot; Africa &middot; Middle East
+              Asia &middot; Africa &middot; Middle East
             </p>
             {/* LinkedIn — integrated in brand column */}
             <div className="pt-1">

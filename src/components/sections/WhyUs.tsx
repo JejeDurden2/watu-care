@@ -1,4 +1,4 @@
-import { MapPin, Handshake, MessageCircle, LayoutGrid } from 'lucide-react';
+import { ArrowRightLeft, Handshake, MessageCircle, LayoutGrid } from 'lucide-react';
 import { getTranslations } from 'next-intl/server';
 import { Container } from '@/components/ui';
 
@@ -35,7 +35,7 @@ export async function WhyUs(): Promise<React.ReactElement> {
           {/* Anchor card — row-span-2 on desktop */}
           <div className="group relative row-span-2 overflow-hidden rounded-3xl border border-white/10 bg-white/5 p-10 transition-all duration-300 hover:border-white/20 hover:bg-white/8">
             <div className="mb-6 flex h-16 w-16 items-center justify-center rounded-2xl bg-accent/20 text-accent transition-colors duration-300 group-hover:bg-accent/30">
-              <MapPin className="h-8 w-8" />
+              <ArrowRightLeft className="h-8 w-8" />
             </div>
             <h3 className="mb-4 font-display text-2xl font-bold tracking-tight text-white lg:text-3xl">
               {t('hubTitle')}
