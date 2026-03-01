@@ -111,7 +111,7 @@ export async function Hero(): Promise<React.ReactElement> {
         </div>
 
         {/* Row 2: Full-width supply chain graphic band */}
-        <div className="stagger-item stagger-delay-6 w-full shrink-0 pb-16 pt-2 lg:pb-18 lg:pt-4">
+        <div className="stagger-item stagger-delay-6 w-full shrink-0 pb-12 pt-2 lg:pb-14 lg:pt-4">
           <Container>
             <HeroGraphic />
           </Container>

@@ -539,6 +539,80 @@ html {
   box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.06);
 }
 
+/* Hero network — flowing dash animation for paths */
+@keyframes hero-net-flow {
+  0% { stroke-dashoffset: 0; }
+  100% { stroke-dashoffset: -40; }
+}
+
+.animate-hero-net-flow {
+  animation: hero-net-flow 2.5s linear infinite;
+}
+
+.animate-hero-net-flow-slow {
+  animation: hero-net-flow 4s linear infinite;
+}
+
+/* Hero network — slow float for badges and nodes */
+@keyframes hero-net-float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-6px); }
+}
+
+.animate-hero-net-float {
+  animation: hero-net-float 4s ease-in-out infinite;
+}
+
+.animate-hero-net-float-alt {
+  animation: hero-net-float 4.5s ease-in-out infinite;
+  animation-delay: 1.5s;
+}
+
+/* Hero network — orbital ring rotation */
+@keyframes hero-net-orbit {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.animate-hero-net-orbit {
+  animation: hero-net-orbit 12s linear infinite;
+  transform-origin: center;
+}
+
+/* Hero network — entrance: slide from left */
+@keyframes hero-net-enter-left {
+  0% { opacity: 0; transform: translateX(-30px); }
+  100% { opacity: 1; transform: translateX(0); }
+}
+
+/* Hero network — entrance: slide from right */
+@keyframes hero-net-enter-right {
+  0% { opacity: 0; transform: translateX(30px); }
+  100% { opacity: 1; transform: translateX(0); }
+}
+
+/* Hero network — entrance: scale from center */
+@keyframes hero-net-enter-scale {
+  0% { opacity: 0; transform: scale(0.7); }
+  100% { opacity: 1; transform: scale(1); }
+}
+
+/* Hero network — entrance: fade in */
+@keyframes hero-net-enter-fade {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+/* Hero network — node border breathing */
+@keyframes hero-net-breathe {
+  0%, 100% { stroke-opacity: 0.4; }
+  50% { stroke-opacity: 0.8; }
+}
+
+.animate-hero-net-breathe {
+  animation: hero-net-breathe 3s ease-in-out infinite;
+}
+
 /* Reduced motion */
 @media (prefers-reduced-motion: reduce) {
   *,
