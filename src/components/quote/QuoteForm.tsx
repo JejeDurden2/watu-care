@@ -37,6 +37,7 @@ export function QuoteForm({ onSuccess }: QuoteFormProps): React.ReactElement {
   const { items, clearItems } = useQuoteStore();
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [errors, setErrors] = useState<Partial<Record<keyof QuoteFormData, string>>>({});
+  const [submitError, setSubmitError] = useState<string | null>(null);
   const quoteFormSchema = useMemo(() => createQuoteFormSchema(t), [t]);
   const [formData, setFormData] = useState<QuoteFormData>({
     companyName: '',
@@ -58,6 +59,7 @@ export function QuoteForm({ onSuccess }: QuoteFormProps): React.ReactElement {
   const handleSubmit = async (e: React.FormEvent): Promise<void> => {
     e.preventDefault();
     setErrors({});
+    setSubmitError(null);
 
     const result = quoteFormSchema.safeParse(formData);
     if (!result.success) {
@@ -93,7 +95,7 @@ export function QuoteForm({ onSuccess }: QuoteFormProps): React.ReactElement {
       clearItems();
       onSuccess();
     } catch {
-      setErrors({ companyName: t('validation.submitError') });
+      setSubmitError(t('validation.submitError'));
     } finally {
       setIsSubmitting(false);
     }
@@ -201,6 +203,13 @@ export function QuoteForm({ onSuccess }: QuoteFormProps): React.ReactElement {
           className="w-full resize-none rounded-lg border border-border bg-background px-4 py-3 text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary"
         />
       </div>
+
+      {/* Submit Error */}
+      {submitError && (
+        <div className="rounded-lg border border-red-200 bg-red-50 px-4 py-3 text-sm text-red-700" role="alert">
+          {submitError}
+        </div>
+      )}
 
       {/* Submit Button */}
       <Button

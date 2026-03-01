@@ -74,7 +74,7 @@ describe('useQuoteStore', () => {
   });
 
   describe('clearItems', () => {
-    it('removes all items and resets showForm', () => {
+    it('removes all items without resetting showForm', () => {
       useQuoteStore.getState().addItem(mockItem);
       useQuoteStore.getState().addItem(mockItem2);
       useQuoteStore.getState().setShowForm(true);
@@ -82,7 +82,7 @@ describe('useQuoteStore', () => {
       const { items, showForm } = useQuoteStore.getState();
 
       expect(items).toHaveLength(0);
-      expect(showForm).toBe(false);
+      expect(showForm).toBe(true);
     });
   });
 

@@ -46,7 +46,7 @@ export const useQuoteStore = create<QuoteStore>()(
           items: state.items.filter((i) => i.productId !== productId),
         })),
 
-      clearItems: () => set({ items: [], showForm: false }),
+      clearItems: () => set({ items: [] }),
 
       openModal: () => set({ isModalOpen: true }),
 
