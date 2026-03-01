@@ -225,7 +225,7 @@ export async function POST(request: Request): Promise<NextResponse> {
     const productCount = data.products?.length ?? 0;
     const subjectSuffix = productCount > 0 ? ` (${productCount} products)` : '';
     const { error } = await resendClient.emails.send({
-      from: 'Watu Care Quotes <onboarding@resend.dev>',
+      from: 'Watu Care Quotes <jerome@coucou-ia.com>',
       to: recipient,
       replyTo: data.email,
       subject: `Quote Request: ${data.companyName}${subjectSuffix}`,
