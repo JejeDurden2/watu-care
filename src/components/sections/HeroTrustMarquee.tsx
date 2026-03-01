@@ -15,10 +15,10 @@ export function HeroTrustMarquee(): React.ReactElement {
   const t = useTranslations('hero.trustMarquee');
 
   return (
-    <div className="hero-glass-band relative overflow-hidden py-4">
-      {/* Marquee track: duplicated for seamless infinite loop */}
-      <div className="animate-marquee flex w-max gap-12">
-        {[...trustItems, ...trustItems].map((item, i) => (
+    <div className="group hero-glass-band relative overflow-hidden py-4">
+      {/* Marquee track: tripled for seamless loop on ultrawide viewports */}
+      <div className="animate-marquee flex w-max gap-12 group-hover:[animation-play-state:paused]">
+        {[...trustItems, ...trustItems, ...trustItems].map((item, i) => (
           <div key={`${item.value}-${i}`} className="flex items-center gap-3">
             <span className="font-display text-lg font-bold tracking-tight text-white">
               {item.value}

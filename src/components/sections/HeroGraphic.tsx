@@ -126,7 +126,7 @@ export function HeroGraphic(): React.ReactElement {
               fill="hsl(175, 50%, 58%)"
               fontSize="9"
               letterSpacing="2"
-              fontFamily="system-ui, sans-serif"
+              fontFamily="var(--font-body), system-ui, sans-serif"
               fontWeight="500"
             >
               DIRECT SUPPLY
@@ -149,7 +149,7 @@ export function HeroGraphic(): React.ReactElement {
 
           {/* Node 1: Asia */}
           <g
-            className={`transition-all duration-700 ${isVisible ? 'opacity-100' : 'opacity-0'}`}
+            className={`transition-opacity duration-700 ${isVisible ? 'opacity-100' : 'opacity-0'}`}
             style={{ transitionDelay: '0.15s' }}
           >
             <circle cx="160" cy="80" r="44" fill="none" stroke="hsl(200, 65%, 55%)" strokeWidth="1" opacity="0.15" />
@@ -164,28 +164,28 @@ export function HeroGraphic(): React.ReactElement {
               <rect x="19" y="17" width="4" height="4" fill="white" opacity="0.6" rx="0.5" />
               <path d="M 16 8 L 16 4 L 21 4 L 21 8" stroke="white" strokeWidth="1.5" fill="none" strokeLinecap="round" opacity="0.85" />
             </g>
-            <text x="160" y="138" textAnchor="middle" fill="white" fontSize="10" fontWeight="700" letterSpacing="2" fontFamily="system-ui, sans-serif" opacity="0.9">
+            <text x="160" y="138" textAnchor="middle" fill="white" fontSize="10" fontWeight="700" letterSpacing="2" fontFamily="var(--font-body), system-ui, sans-serif" opacity="0.9">
               ASIA
             </text>
-            <text x="160" y="152" textAnchor="middle" fill="white" fontSize="9" fontFamily="system-ui, sans-serif" opacity="0.45">
+            <text x="160" y="152" textAnchor="middle" fill="white" fontSize="9" fontFamily="var(--font-body), system-ui, sans-serif" opacity="0.45">
               Manufacturers
             </text>
           </g>
 
           {/* Center facilitator badge: Watu Care */}
           <g
-            className={`transition-all duration-700 ${isVisible ? 'opacity-100' : 'opacity-0'}`}
+            className={`transition-opacity duration-700 ${isVisible ? 'opacity-100' : 'opacity-0'}`}
             style={{ transitionDelay: '0.35s' }}
           >
             <rect x="440" y="88" width="120" height="28" rx="14" fill="hsl(206, 50%, 16%)" stroke="hsl(175, 50%, 45%)" strokeWidth="1" opacity="0.9" />
-            <text x="500" y="106" textAnchor="middle" fill="hsl(175, 50%, 65%)" fontSize="9" fontWeight="700" letterSpacing="1.5" fontFamily="system-ui, sans-serif">
+            <text x="500" y="106" textAnchor="middle" fill="hsl(175, 50%, 65%)" fontSize="9" fontWeight="700" letterSpacing="1.5" fontFamily="var(--font-body), system-ui, sans-serif">
               WATU CARE
             </text>
           </g>
 
           {/* Node 2: Africa & Middle East */}
           <g
-            className={`transition-all duration-700 ${isVisible ? 'opacity-100' : 'opacity-0'}`}
+            className={`transition-opacity duration-700 ${isVisible ? 'opacity-100' : 'opacity-0'}`}
             style={{ transitionDelay: '0.55s' }}
           >
             <circle cx="840" cy="80" r="44" fill="none" stroke="hsl(175, 50%, 45%)" strokeWidth="1" opacity="0.15" />
@@ -195,10 +195,10 @@ export function HeroGraphic(): React.ReactElement {
               <rect x="10" y="3" width="6" height="20" fill="white" rx="1.5" opacity="0.85" />
               <rect x="3" y="10" width="20" height="6" fill="white" rx="1.5" opacity="0.85" />
             </g>
-            <text x="840" y="138" textAnchor="middle" fill="white" fontSize="9" fontWeight="700" letterSpacing="1.5" fontFamily="system-ui, sans-serif" opacity="0.9">
+            <text x="840" y="138" textAnchor="middle" fill="white" fontSize="9" fontWeight="700" letterSpacing="1.5" fontFamily="var(--font-body), system-ui, sans-serif" opacity="0.9">
               AFRICA &middot; MIDDLE EAST
             </text>
-            <text x="840" y="152" textAnchor="middle" fill="white" fontSize="9" fontFamily="system-ui, sans-serif" opacity="0.45">
+            <text x="840" y="152" textAnchor="middle" fill="white" fontSize="9" fontFamily="var(--font-body), system-ui, sans-serif" opacity="0.45">
               Healthcare
             </text>
           </g>

@@ -380,6 +380,14 @@ html {
 .stagger-delay-8 { animation-delay: 700ms; }
 .stagger-delay-9 { animation-delay: 800ms; }
 
+/* Fallback: ensure content visible if CSS animations fail to fire */
+@supports not (animation-fill-mode: forwards) {
+  .stagger-item,
+  .stagger-item-dramatic {
+    opacity: 1;
+  }
+}
+
 /* Button enhancements */
 @keyframes button-press {
   0% { transform: scale(1); }
@@ -397,18 +405,17 @@ html {
   position: absolute;
   top: 50%;
   left: 50%;
-  width: 0;
-  height: 0;
+  width: 300px;
+  height: 300px;
   border-radius: 50%;
   background: rgba(255, 255, 255, 0.3);
-  transform: translate(-50%, -50%);
-  transition: width 0.6s ease-out, height 0.6s ease-out;
+  transform: translate(-50%, -50%) scale(0);
+  transition: transform 0.6s ease-out;
   pointer-events: none;
 }
 
 .button-enhanced:hover::before {
-  width: 300px;
-  height: 300px;
+  transform: translate(-50%, -50%) scale(1);
 }
 
 .button-enhanced:hover {
@@ -439,9 +446,14 @@ html {
 /* Hero redesign — accent line reveal (scaleX from left) */
 @keyframes reveal-line {
   0% {
+    opacity: 0;
     transform: scaleX(0);
   }
+  30% {
+    opacity: 1;
+  }
   100% {
+    opacity: 1;
     transform: scaleX(1);
   }
 }
@@ -449,7 +461,7 @@ html {
 .animate-reveal-line {
   transform-origin: left;
   opacity: 0;
-  animation: fade-in 0.3s ease-out forwards, reveal-line 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  animation: reveal-line 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
 }
 
 /* Hero redesign — hub node outer ring pulse */

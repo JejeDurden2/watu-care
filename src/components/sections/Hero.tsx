@@ -37,7 +37,7 @@ export async function Hero(): Promise<React.ReactElement> {
       </div>
 
       {/* Main content — pinned to remaining viewport after sticky header (h-16 mobile / h-20 desktop) */}
-      <div className="relative z-10 flex h-[calc(100dvh-4rem)] w-full flex-col overflow-hidden lg:h-[calc(100dvh-5rem)]">
+      <div className="relative z-10 flex h-[calc(100dvh-4rem)] w-full flex-col overflow-clip lg:h-[calc(100dvh-5rem)]">
 
         {/* Row 1: Text content — shrinks to fit, pushes content to bottom */}
         <div className="flex min-h-0 flex-1 flex-col justify-center overflow-hidden">
