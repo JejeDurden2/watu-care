@@ -52,7 +52,7 @@ export async function generateMetadata({
     ? t(`categories.${categorySlug}.longDescription`)
     : category.longDescription;
 
-  const title = `${categoryTitle} - Medical Supplies`;
+  const title = `Wholesale ${categoryTitle} Supplier - Africa & Middle East`;
   const description = `${categoryLongDesc} ${category.products.length} products available — request a wholesale quote from Watu Care.`;
 
   return {

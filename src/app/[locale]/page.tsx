@@ -92,7 +92,7 @@ export default async function Home({
   );
 
   return (
-    <>
+    <main>
       {/* FAQ JSON-LD for rich snippets */}
       <script
         type="application/ld+json"
@@ -107,6 +107,6 @@ export default async function Home({
       <Stats />
       <FAQ />
       <CTA />
-    </>
+    </main>
   );
 }

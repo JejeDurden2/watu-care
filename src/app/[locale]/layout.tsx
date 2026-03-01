@@ -124,7 +124,7 @@ export default async function LocaleLayout({
   // Generate JSON-LD structured data using @graph for cleaner implementation
   const globalSchema = combineSchemas(
     generateOrganizationSchema(),
-    generateWebSiteSchema(locale),
+    generateWebSiteSchema(),
     generateMedicalBusinessSchema(),
   );
 
@@ -141,7 +141,7 @@ export default async function LocaleLayout({
               }}
             />
             <Header />
-            <main>{children}</main>
+            {children}
             <Footer />
             <QuoteModal />
             <ScrollAnimations />

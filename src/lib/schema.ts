@@ -36,10 +36,6 @@ export interface ProductSchema {
   description: string;
   image?: string;
   url?: string;
-  brand: {
-    '@type': 'Brand';
-    name: string;
-  };
   offers: {
     '@type': 'Offer';
     availability: string;
@@ -121,7 +117,7 @@ export function generateOrganizationSchema(): OrganizationSchema {
     description:
       'Connecting Asian manufacturers with healthcare providers across Africa and the Middle East. Medical devices and PPE wholesale.',
     email: 'contact@watu-care.com',
-    telephone: '+212-662-258-045',
+    telephone: '+212662258045',
     address: {
       '@type': 'PostalAddress',
       addressLocality: 'Hong Kong',
@@ -136,7 +132,7 @@ export function generateOrganizationSchema(): OrganizationSchema {
 /**
  * Generate WebSite schema
  */
-export function generateWebSiteSchema(_locale: string): WebSiteSchema {
+export function generateWebSiteSchema(): WebSiteSchema {
   return {
     '@context': 'https://schema.org',
     '@type': 'WebSite',
@@ -173,10 +169,6 @@ export function generateProductSchema(
     description: translatedDescription || product.description,
     image: product.image || `${BASE_URL}/logo.png`,
     url: `${BASE_URL}/${locale}/products/${category.slug}/${product.id}`,
-    brand: {
-      '@type': 'Brand',
-      name: 'Watu Care',
-    },
     offers: {
       '@type': 'Offer',
       availability: 'https://schema.org/InStock',
@@ -278,7 +270,7 @@ export function generateContactPageSchema(locale: string): Record<string, unknow
       '@type': 'Organization',
       name: 'Watu Care',
       email: 'contact@watu-care.com',
-      telephone: '+212-662-258-045',
+      telephone: '+212662258045',
       address: {
         '@type': 'PostalAddress',
         addressLocality: 'Hong Kong',
@@ -288,7 +280,7 @@ export function generateContactPageSchema(locale: string): Record<string, unknow
         '@type': 'ContactPoint',
         contactType: 'sales',
         email: 'contact@watu-care.com',
-        telephone: '+212-662-258-045',
+        telephone: '+212662258045',
         areaServed: ['Africa', 'Middle East'],
         availableLanguage: ['English', 'French'],
       },
