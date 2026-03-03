@@ -905,5 +905,398 @@
     "tryAgain": "Réessayer",
     "genericTitle": "Une erreur est survenue",
     "genericDesc": "Une erreur inattendue s'est produite. Veuillez réessayer."
+  },
+  "personas": {
+    "breadcrumbLabel": "Solutions",
+    "hospitals": {
+      "meta": {
+        "title": "Fournitures médicales pour hôpitaux — Grossiste depuis l'Asie",
+        "description": "Dispositifs médicaux et EPI en gros pour les équipes d'achat hospitalières en Afrique et au Moyen-Orient. Plus de 500 références, directement des fabricants asiatiques certifiés.",
+        "keywords": "fournitures médicales hôpitaux, équipement médical hospitalier gros, fournisseur EPI hôpital Afrique, achat dispositifs médicaux hôpital"
+      },
+      "hero": {
+        "eyebrow": "Pour les hôpitaux",
+        "title": "Fournitures médicales pour hôpitaux",
+        "subtitle": "Partenaire de confiance des équipes d'achat hospitalières en Afrique et au Moyen-Orient. Approvisionnement direct auprès de fabricants certifiés — sans intermédiaires, sans surcoûts.",
+        "cta": "Demander un devis"
+      },
+      "painPoints": {
+        "title": "Les défis que nous résolvons pour les hôpitaux",
+        "items": [
+          {
+            "title": "Ruptures d'approvisionnement",
+            "description": "Les distributeurs locaux peu fiables créent des pénuries critiques. Nous expédions directement depuis les fabricants, contournant les chaînes d'approvisionnement locales fragiles."
+          },
+          {
+            "title": "Contraintes budgétaires",
+            "description": "Les services d'achat hospitaliers font face à des contraintes de coûts permanentes. Notre modèle direct fabricant élimine les marges des distributeurs."
+          },
+          {
+            "title": "Conformité qualité",
+            "description": "S'assurer que les produits respectent les normes OMS et réglementaires locales est incontournable. Tous nos fournisseurs sont certifiés ISO 13485."
+          },
+          {
+            "title": "Processus de devis lents",
+            "description": "Les cycles d'achat perdent du temps en attendant les réponses des fournisseurs. Nous répondons à toutes les demandes de devis sous 48 heures."
+          }
+        ]
+      },
+      "howWeHelp": {
+        "title": "Comment Watu Care accompagne les hôpitaux",
+        "items": [
+          {
+            "title": "Gestion des commandes en volume",
+            "description": "Gérez des commandes à fort volume et multi-références avec un seul interlocuteur et une expédition consolidée."
+          },
+          {
+            "title": "Produits certifiés",
+            "description": "Fabricants certifiés ISO 13485 et dossiers documentaires complets pour les audits de conformité hospitaliers."
+          },
+          {
+            "title": "Livraison flexible",
+            "description": "Livraison directe à vos magasins centraux ou sur plusieurs sites de votre réseau hospitalier."
+          },
+          {
+            "title": "Support dédié",
+            "description": "Un interlocuteur dédié gère vos commandes du devis à la livraison, réduisant la charge administrative."
+          }
+        ]
+      },
+      "categories": {
+        "title": "Produits recommandés pour les hôpitaux",
+        "subtitle": "Nos catégories les plus demandées pour les achats hospitaliers."
+      },
+      "trust": {
+        "title": "La confiance des établissements de santé",
+        "stat1Value": "500+",
+        "stat1Label": "Références disponibles",
+        "stat2Value": "48h",
+        "stat2Label": "Délai de réponse devis",
+        "stat3Value": "25+",
+        "stat3Label": "Pays desservis"
+      },
+      "markets": {
+        "title": "Marchés desservis",
+        "subtitle": "Nous livrons les réseaux hospitaliers en Afrique et au Moyen-Orient."
+      },
+      "cta": {
+        "title": "Prêt à optimiser vos achats hospitaliers ?",
+        "subtitle": "Recevez un devis gratuit sous 48 heures. Sans engagement.",
+        "primary": "Demander un devis",
+        "secondary": "Voir tous les produits"
+      }
+    },
+    "clinics": {
+      "meta": {
+        "title": "Équipement médical pour cliniques et centres de santé — Grossiste",
+        "description": "Fournitures médicales abordables pour cliniques et centres de santé en Afrique et au Moyen-Orient. Gants d'examen, soins des plaies, consommables cliniques et plus.",
+        "keywords": "fournitures médicales cliniques, équipement médical centre de santé, consommables cliniques gros, EPI petite clinique Afrique"
+      },
+      "hero": {
+        "eyebrow": "Pour les cliniques",
+        "title": "Équipement médical pour cliniques et centres de santé",
+        "subtitle": "Des commandes adaptées à la taille de votre clinique. Accédez aux mêmes produits de qualité que les grands hôpitaux, en volumes qui vous conviennent.",
+        "cta": "Demander un devis"
+      },
+      "painPoints": {
+        "title": "Les défis que nous résolvons pour les cliniques",
+        "items": [
+          {
+            "title": "Barrières de quantité minimum",
+            "description": "La plupart des grossistes exigent des volumes massifs. Nous offrons des MOQ flexibles adaptés aux besoins des cliniques."
+          },
+          {
+            "title": "Accès limité aux produits",
+            "description": "Les cliniques en zones isolées peinent à trouver des fournitures de qualité. Nous livrons les établissements de santé de toutes tailles, où que vous soyez."
+          },
+          {
+            "title": "Contraintes budgétaires",
+            "description": "Les petites structures doivent optimiser chaque dépense. Les prix directs fabricant éliminent les marges des distributeurs."
+          },
+          {
+            "title": "Qualité irrégulière",
+            "description": "Les produits du marché local varient en qualité. Tous nos produits proviennent de fabricants certifiés ISO avec des standards constants."
+          }
+        ]
+      },
+      "howWeHelp": {
+        "title": "Comment Watu Care accompagne les cliniques",
+        "items": [
+          {
+            "title": "Quantités flexibles",
+            "description": "Des volumes de commande adaptés à la consommation de votre clinique, sans les MOQ rigides des grossistes traditionnels."
+          },
+          {
+            "title": "Gamme essentielle",
+            "description": "Sélection de produits couvrant les besoins cliniques quotidiens — gants, consommables, soins des plaies et équipement de base."
+          },
+          {
+            "title": "Livraison fiable",
+            "description": "Chaîne d'approvisionnement constante avec suivi de livraison pour ne jamais manquer de fournitures essentielles."
+          },
+          {
+            "title": "Commande simplifiée",
+            "description": "Un contact, un devis, une expédition. Nous gérons la coordination avec les fabricants et la logistique pour vous."
+          }
+        ]
+      },
+      "categories": {
+        "title": "Produits recommandés pour les cliniques",
+        "subtitle": "Catégories essentielles pour les opérations cliniques quotidiennes."
+      },
+      "trust": {
+        "title": "La confiance des établissements de santé",
+        "stat1Value": "500+",
+        "stat1Label": "Références disponibles",
+        "stat2Value": "48h",
+        "stat2Label": "Délai de réponse devis",
+        "stat3Value": "25+",
+        "stat3Label": "Pays desservis"
+      },
+      "markets": {
+        "title": "Marchés desservis",
+        "subtitle": "Nous livrons les cliniques et centres de santé en Afrique et au Moyen-Orient."
+      },
+      "cta": {
+        "title": "Prêt à équiper votre clinique ?",
+        "subtitle": "Recevez un devis gratuit sous 48 heures. Sans engagement, sans surprise sur les quantités minimum.",
+        "primary": "Demander un devis",
+        "secondary": "Voir tous les produits"
+      }
+    },
+    "ngos": {
+      "meta": {
+        "title": "Fournitures médicales pour ONG et organisations humanitaires",
+        "description": "Approvisionnement fiable en fournitures médicales pour ONG, organisations d'aide et missions humanitaires en Afrique et au Moyen-Orient. EPI en volume, soins des plaies et kits chirurgicaux.",
+        "keywords": "fournitures médicales ONG, équipement médical humanitaire, fournisseur EPI ONG, fournitures médicales organisations aide Afrique"
+      },
+      "hero": {
+        "eyebrow": "Pour les ONG et organisations humanitaires",
+        "title": "Fournitures médicales pour ONG et organisations humanitaires",
+        "subtitle": "Approvisionnement médical rapide et fiable pour les missions humanitaires. Quand des vies dépendent de l'arrivée de vos fournitures à temps, vous avez besoin d'un partenaire de confiance.",
+        "cta": "Demander un devis"
+      },
+      "painPoints": {
+        "title": "Les défis que nous résolvons pour les ONG",
+        "items": [
+          {
+            "title": "Délais de déploiement urgents",
+            "description": "Les missions humanitaires ne peuvent pas attendre des semaines pour un devis. Nous répondons sous 48 heures et priorisons les commandes urgentes."
+          },
+          {
+            "title": "Lieux de livraison isolés",
+            "description": "Les opérations terrain sont souvent loin des ports principaux. Nous coordonnons la logistique pour atteindre même les destinations les plus difficiles."
+          },
+          {
+            "title": "Responsabilité budgétaire",
+            "description": "Les budgets financés par les donateurs exigent une tarification transparente. Nos prix directs fabricant offrent des structures de coûts claires et auditables."
+          },
+          {
+            "title": "Documentation de conformité",
+            "description": "La conformité aux exigences des donateurs et réglementaires demande une documentation complète. Nous fournissons certificats, rapports de tests et dossiers de traçabilité."
+          }
+        ]
+      },
+      "howWeHelp": {
+        "title": "Comment Watu Care accompagne les ONG",
+        "items": [
+          {
+            "title": "Traitement prioritaire",
+            "description": "Devis et traitement de commandes accélérés pour les opérations humanitaires urgentes."
+          },
+          {
+            "title": "Documentation complète",
+            "description": "Certificats ISO, marquages CE, rapports de tests et documentation douanière inclus avec chaque expédition."
+          },
+          {
+            "title": "Livraison multi-sites",
+            "description": "Coordonnez les expéditions vers plusieurs sites terrain, entrepôts ou centres de distribution en une seule commande."
+          },
+          {
+            "title": "Tarification transparente",
+            "description": "Prix détaillés et clairs sans frais cachés — prêts pour les rapports aux donateurs et les audits d'achat."
+          }
+        ]
+      },
+      "categories": {
+        "title": "Produits recommandés pour les ONG",
+        "subtitle": "Catégories essentielles pour les opérations sanitaires humanitaires."
+      },
+      "trust": {
+        "title": "La confiance des organisations de santé",
+        "stat1Value": "500+",
+        "stat1Label": "Références disponibles",
+        "stat2Value": "48h",
+        "stat2Label": "Délai de réponse devis",
+        "stat3Value": "25+",
+        "stat3Label": "Pays desservis"
+      },
+      "markets": {
+        "title": "Marchés desservis",
+        "subtitle": "Nous livrons les opérations humanitaires en Afrique et au Moyen-Orient."
+      },
+      "cta": {
+        "title": "Besoin de fournitures pour votre mission ?",
+        "subtitle": "Recevez un devis gratuit sous 48 heures. Traitement prioritaire pour les organisations humanitaires.",
+        "primary": "Demander un devis",
+        "secondary": "Voir tous les produits"
+      }
+    },
+    "pharmacies": {
+      "meta": {
+        "title": "Fournitures médicales en gros pour pharmacies et distributeurs",
+        "description": "Consommables et équipements médicaux en gros pour pharmacies et distributeurs en Afrique et au Moyen-Orient. Directement des fabricants asiatiques certifiés.",
+        "keywords": "fournitures médicales gros pharmacies, distributeur équipement médical pharmacie, consommables médicaux volume Afrique, EPI gros pharmacie"
+      },
+      "hero": {
+        "eyebrow": "Pour pharmacies et distributeurs",
+        "title": "Fournitures médicales en gros pour pharmacies et distributeurs",
+        "subtitle": "Approvisionnez vos rayons avec des produits médicaux de qualité à des prix de gros compétitifs. Directement des fabricants asiatiques certifiés, livrés dans votre entrepôt.",
+        "cta": "Demander un devis"
+      },
+      "painPoints": {
+        "title": "Les défis que nous résolvons pour les pharmacies",
+        "items": [
+          {
+            "title": "Pression sur les marges",
+            "description": "Les intermédiaires multiples érodent vos marges. Notre modèle d'approvisionnement direct vous offre la meilleure base de coûts possible."
+          },
+          {
+            "title": "Authenticité des produits",
+            "description": "Les produits médicaux contrefaits menacent la sécurité des patients et votre réputation. Chaque produit que nous expédions est accompagné de la documentation complète du fabricant."
+          },
+          {
+            "title": "Gestion des stocks",
+            "description": "Équilibrer les niveaux de stock et la trésorerie est critique. Nous offrons des tailles de commande flexibles pour correspondre à votre rythme de vente."
+          },
+          {
+            "title": "Fiabilité des fournisseurs",
+            "description": "Les ruptures de stock nuisent à la confiance des clients. Nos relations stables avec les fabricants assurent un approvisionnement et une qualité constants."
+          }
+        ]
+      },
+      "howWeHelp": {
+        "title": "Comment Watu Care accompagne les pharmacies",
+        "items": [
+          {
+            "title": "Prix compétitifs",
+            "description": "L'accès direct aux fabricants élimine les intermédiaires, vous donnant la marge nécessaire pour être compétitif."
+          },
+          {
+            "title": "Produits vérifiés",
+            "description": "Documentation de certification complète pour chaque produit — marquage CE, certificats ISO et traçabilité des lots."
+          },
+          {
+            "title": "Commandes flexibles",
+            "description": "Commandez dans plusieurs catégories de produits en une seule expédition pour optimiser vos coûts logistiques."
+          },
+          {
+            "title": "Support de réapprovisionnement",
+            "description": "Processus de réapprovisionnement simplifié pour vos articles réguliers, gardant vos rayons constamment approvisionnés."
+          }
+        ]
+      },
+      "categories": {
+        "title": "Produits recommandés pour les pharmacies",
+        "subtitle": "Catégories à forte demande pour les pharmacies et entreprises de distribution."
+      },
+      "trust": {
+        "title": "La confiance des entreprises de santé",
+        "stat1Value": "500+",
+        "stat1Label": "Références disponibles",
+        "stat2Value": "48h",
+        "stat2Label": "Délai de réponse devis",
+        "stat3Value": "25+",
+        "stat3Label": "Pays desservis"
+      },
+      "markets": {
+        "title": "Marchés desservis",
+        "subtitle": "Nous livrons les pharmacies et distributeurs en Afrique et au Moyen-Orient."
+      },
+      "cta": {
+        "title": "Prêt à mieux vous approvisionner ?",
+        "subtitle": "Recevez un devis gratuit sous 48 heures. Prix de gros compétitifs, directement des fabricants.",
+        "primary": "Demander un devis",
+        "secondary": "Voir tous les produits"
+      }
+    },
+    "government": {
+      "meta": {
+        "title": "Achat médical pour gouvernements et ministères de la Santé",
+        "description": "Fournitures médicales pour programmes de santé publique et hôpitaux publics en Afrique et au Moyen-Orient. Produits certifiés ISO conformes aux normes internationales d'achat.",
+        "keywords": "achat médical gouvernement, fournitures médicales ministère santé, équipement hôpital public Afrique, fournisseur EPI gouvernement Moyen-Orient"
+      },
+      "hero": {
+        "eyebrow": "Pour gouvernements et santé publique",
+        "title": "Achat médical pour gouvernements et ministères de la Santé",
+        "subtitle": "Accompagnement des systèmes de santé publique avec un approvisionnement médical fiable et conforme. Des programmes hospitaliers nationaux aux initiatives sanitaires régionales.",
+        "cta": "Demander un devis"
+      },
+      "painPoints": {
+        "title": "Les défis que nous résolvons pour les achats publics",
+        "items": [
+          {
+            "title": "Conformité des marchés publics",
+            "description": "Les marchés publics exigent une documentation stricte et la conformité. Nous fournissons toutes les certifications fabricant et pistes d'audit nécessaires."
+          },
+          {
+            "title": "Exigences de volume",
+            "description": "Les programmes de santé nationaux nécessitent de grands volumes à qualité constante. Nos partenariats fabricants gèrent les commandes à fort volume de manière fiable."
+          },
+          {
+            "title": "Efficacité budgétaire",
+            "description": "Les budgets publics exigent une valeur maximale. Les prix directs fabricant assurent des coûts compétitifs sans compromis sur la qualité."
+          },
+          {
+            "title": "Coordination des livraisons",
+            "description": "La distribution multi-sites à travers districts et régions est complexe. Nous gérons la logistique vers de multiples points de livraison."
+          }
+        ]
+      },
+      "howWeHelp": {
+        "title": "Comment Watu Care accompagne les gouvernements",
+        "items": [
+          {
+            "title": "Support aux marchés publics",
+            "description": "Devis détaillés, spécifications produits et documentation de conformité formatés pour les processus d'achat gouvernementaux."
+          },
+          {
+            "title": "Capacité en volume",
+            "description": "Notre réseau de fabricants gère les commandes à grande échelle pour les programmes de santé nationaux et les systèmes hospitaliers publics."
+          },
+          {
+            "title": "Traçabilité complète",
+            "description": "Suivi des lots, certificats de conformité et rapports de tests pour une transparence totale de la chaîne d'approvisionnement."
+          },
+          {
+            "title": "Logistique multi-sites",
+            "description": "Coordonnez les livraisons vers les magasins médicaux centraux, entrepôts régionaux et établissements hospitaliers individuels."
+          }
+        ]
+      },
+      "categories": {
+        "title": "Produits pour les programmes de santé publique",
+        "subtitle": "Catégories essentielles pour les achats de santé gouvernementaux."
+      },
+      "trust": {
+        "title": "La confiance des systèmes de santé publique",
+        "stat1Value": "500+",
+        "stat1Label": "Références disponibles",
+        "stat2Value": "48h",
+        "stat2Label": "Délai de réponse devis",
+        "stat3Value": "25+",
+        "stat3Label": "Pays desservis"
+      },
+      "markets": {
+        "title": "Pays desservis",
+        "subtitle": "Nous approvisionnons les programmes de santé gouvernementaux en Afrique et au Moyen-Orient."
+      },
+      "cta": {
+        "title": "Prêt à discuter de vos besoins d'achat ?",
+        "subtitle": "Recevez un devis gratuit sous 48 heures. Documentation complète pour la conformité des marchés publics.",
+        "primary": "Demander un devis",
+        "secondary": "Voir tous les produits"
+      }
+    }
   }
 }

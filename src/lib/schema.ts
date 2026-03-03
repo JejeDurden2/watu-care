@@ -456,6 +456,44 @@ export function generateSupplierItemListSchema(
 }
 
 /**
+ * Generate WebPage + Service schema for persona landing pages
+ */
+export function generatePersonaPageSchema(
+  personaSlug: string,
+  title: string,
+  description: string,
+  locale: string,
+): Record<string, unknown> {
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'WebPage',
+    name: title,
+    description,
+    url: `${BASE_URL}/${locale}/for/${personaSlug}`,
+    inLanguage: locale,
+    about: {
+      '@type': 'MedicalBusiness',
+      '@id': `${BASE_URL}/#organization`,
+      name: 'Watu Care',
+      url: BASE_URL,
+      areaServed: ['Africa', 'Middle East'],
+    },
+    mainEntity: {
+      '@type': 'Service',
+      name: title,
+      description,
+      provider: {
+        '@type': 'Organization',
+        name: 'Watu Care',
+        url: BASE_URL,
+      },
+      areaServed: ['Africa', 'Middle East'],
+      serviceType: 'Medical Supply Wholesale',
+    },
+  };
+}
+
+/**
  * Combine multiple schemas into a @graph structure
  * This is the recommended way to include multiple schemas on a page
  */

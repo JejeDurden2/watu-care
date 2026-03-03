@@ -837,5 +837,398 @@
     "tryAgain": "Try again",
     "genericTitle": "Something went wrong",
     "genericDesc": "An unexpected error occurred. Please try again."
+  },
+  "personas": {
+    "breadcrumbLabel": "Solutions",
+    "hospitals": {
+      "meta": {
+        "title": "Medical Supplies for Hospitals — Wholesale from Asia",
+        "description": "Wholesale medical devices and PPE for hospital procurement teams in Africa and the Middle East. 500+ product lines direct from certified Asian manufacturers.",
+        "keywords": "medical supplies for hospitals, hospital medical equipment wholesale, hospital PPE supplier Africa, hospital procurement medical devices"
+      },
+      "hero": {
+        "eyebrow": "For Hospitals",
+        "title": "Medical Supplies for Hospitals",
+        "subtitle": "Trusted by hospital procurement teams across Africa and the Middle East. Direct sourcing from certified manufacturers — no intermediaries, no inflated costs.",
+        "cta": "Request a Quote"
+      },
+      "painPoints": {
+        "title": "Challenges We Solve for Hospitals",
+        "items": [
+          {
+            "title": "Supply Chain Gaps",
+            "description": "Unreliable local distributors create critical shortages. We ship directly from manufacturers, bypassing fragile local supply chains."
+          },
+          {
+            "title": "Budget Pressure",
+            "description": "Hospital procurement faces constant cost constraints. Our direct-from-manufacturer model removes distributor markups."
+          },
+          {
+            "title": "Quality Compliance",
+            "description": "Ensuring products meet WHO and local regulatory standards is non-negotiable. All our suppliers hold ISO 13485 certification."
+          },
+          {
+            "title": "Slow Quote Processes",
+            "description": "Procurement cycles lose time waiting for supplier responses. We respond to all quote requests within 48 hours."
+          }
+        ]
+      },
+      "howWeHelp": {
+        "title": "How Watu Care Serves Hospitals",
+        "items": [
+          {
+            "title": "Bulk Order Management",
+            "description": "Handle large-volume, multi-SKU orders with a single point of contact and consolidated shipping."
+          },
+          {
+            "title": "Certified Products",
+            "description": "ISO 13485-certified manufacturers and full documentation packs for hospital compliance audits."
+          },
+          {
+            "title": "Flexible Delivery",
+            "description": "Delivery direct to your central stores or multiple site locations across your hospital network."
+          },
+          {
+            "title": "Dedicated Support",
+            "description": "A dedicated contact manages your orders from quote to delivery, reducing administrative burden."
+          }
+        ]
+      },
+      "categories": {
+        "title": "Recommended Products for Hospitals",
+        "subtitle": "Our most requested categories for hospital procurement."
+      },
+      "trust": {
+        "title": "Trusted by Healthcare Facilities",
+        "stat1Value": "500+",
+        "stat1Label": "Product lines available",
+        "stat2Value": "48h",
+        "stat2Label": "Quote response time",
+        "stat3Value": "25+",
+        "stat3Label": "Countries served"
+      },
+      "markets": {
+        "title": "Markets We Serve",
+        "subtitle": "We deliver to hospital networks across Africa and the Middle East."
+      },
+      "cta": {
+        "title": "Ready to Streamline Your Hospital Procurement?",
+        "subtitle": "Get a free quote within 48 hours. No commitment required.",
+        "primary": "Request a Quote",
+        "secondary": "Browse All Products"
+      }
+    },
+    "clinics": {
+      "meta": {
+        "title": "Medical Equipment for Clinics & Health Centers — Wholesale",
+        "description": "Affordable medical supplies for clinics and health centers in Africa and the Middle East. Examination gloves, wound care, clinical consumables, and more.",
+        "keywords": "medical supplies for clinics, clinic medical equipment, health center supplies wholesale, small clinic PPE Africa"
+      },
+      "hero": {
+        "eyebrow": "For Clinics",
+        "title": "Medical Equipment for Clinics & Health Centers",
+        "subtitle": "Right-sized ordering for clinics and health centers. Access the same quality products as large hospitals, at volumes that work for you.",
+        "cta": "Request a Quote"
+      },
+      "painPoints": {
+        "title": "Challenges We Solve for Clinics",
+        "items": [
+          {
+            "title": "Minimum Order Barriers",
+            "description": "Most wholesale suppliers require massive volumes. We offer flexible MOQs adapted to clinic-sized needs."
+          },
+          {
+            "title": "Limited Product Access",
+            "description": "Clinics in remote areas struggle to find quality supplies. We deliver to healthcare facilities of all sizes, wherever you are."
+          },
+          {
+            "title": "Budget Constraints",
+            "description": "Smaller facilities need every dollar to count. Direct manufacturer pricing eliminates distributor markups."
+          },
+          {
+            "title": "Inconsistent Quality",
+            "description": "Local market products vary in quality. All our products come from ISO-certified manufacturers with consistent standards."
+          }
+        ]
+      },
+      "howWeHelp": {
+        "title": "How Watu Care Serves Clinics",
+        "items": [
+          {
+            "title": "Flexible Quantities",
+            "description": "Order volumes adapted to your clinic's consumption, without the rigid MOQs of traditional wholesalers."
+          },
+          {
+            "title": "Essential Range",
+            "description": "Curated product selection covering daily clinical needs — gloves, consumables, wound care, and basic equipment."
+          },
+          {
+            "title": "Reliable Delivery",
+            "description": "Consistent supply chain with delivery tracking so you never run out of essential supplies."
+          },
+          {
+            "title": "Simple Ordering",
+            "description": "One contact, one quote, one shipment. We handle manufacturer coordination and logistics for you."
+          }
+        ]
+      },
+      "categories": {
+        "title": "Recommended Products for Clinics",
+        "subtitle": "Essential categories for daily clinical operations."
+      },
+      "trust": {
+        "title": "Trusted by Healthcare Facilities",
+        "stat1Value": "500+",
+        "stat1Label": "Product lines available",
+        "stat2Value": "48h",
+        "stat2Label": "Quote response time",
+        "stat3Value": "25+",
+        "stat3Label": "Countries served"
+      },
+      "markets": {
+        "title": "Markets We Serve",
+        "subtitle": "We deliver to clinics and health centers across Africa and the Middle East."
+      },
+      "cta": {
+        "title": "Ready to Equip Your Clinic?",
+        "subtitle": "Get a free quote within 48 hours. No commitment, no minimum order surprises.",
+        "primary": "Request a Quote",
+        "secondary": "Browse All Products"
+      }
+    },
+    "ngos": {
+      "meta": {
+        "title": "Medical Supplies for NGOs & Humanitarian Organizations",
+        "description": "Reliable medical supply sourcing for NGOs, aid organizations, and humanitarian missions in Africa and the Middle East. Bulk PPE, wound care, and surgical kits.",
+        "keywords": "medical supplies for NGOs, humanitarian medical equipment, NGO PPE supplier, aid organization medical supplies Africa"
+      },
+      "hero": {
+        "eyebrow": "For NGOs & Humanitarian Organizations",
+        "title": "Medical Supplies for NGOs & Humanitarian Organizations",
+        "subtitle": "Fast, reliable medical supply sourcing for humanitarian missions. When lives depend on your supplies arriving on time, you need a partner you can count on.",
+        "cta": "Request a Quote"
+      },
+      "painPoints": {
+        "title": "Challenges We Solve for NGOs",
+        "items": [
+          {
+            "title": "Urgent Deployment Timelines",
+            "description": "Humanitarian missions can't wait weeks for quotes. We respond within 48 hours and prioritize urgent orders."
+          },
+          {
+            "title": "Remote Delivery Locations",
+            "description": "Field operations are often far from major ports. We coordinate logistics to reach even the most challenging destinations."
+          },
+          {
+            "title": "Budget Accountability",
+            "description": "Donor-funded budgets require transparent pricing. Our direct manufacturer pricing provides clear, auditable cost structures."
+          },
+          {
+            "title": "Compliance Documentation",
+            "description": "Donor and regulatory compliance demands full documentation. We provide certificates, test reports, and traceability records."
+          }
+        ]
+      },
+      "howWeHelp": {
+        "title": "How Watu Care Serves NGOs",
+        "items": [
+          {
+            "title": "Priority Processing",
+            "description": "Expedited quotes and order processing for time-sensitive humanitarian operations."
+          },
+          {
+            "title": "Full Documentation",
+            "description": "ISO certificates, CE markings, test reports, and customs documentation included with every shipment."
+          },
+          {
+            "title": "Multi-Site Delivery",
+            "description": "Coordinate shipments to multiple field sites, warehouses, or distribution centers in a single order."
+          },
+          {
+            "title": "Transparent Pricing",
+            "description": "Clear, itemized pricing with no hidden fees — ready for donor reporting and procurement audits."
+          }
+        ]
+      },
+      "categories": {
+        "title": "Recommended Products for NGOs",
+        "subtitle": "Essential categories for humanitarian healthcare operations."
+      },
+      "trust": {
+        "title": "Trusted by Healthcare Organizations",
+        "stat1Value": "500+",
+        "stat1Label": "Product lines available",
+        "stat2Value": "48h",
+        "stat2Label": "Quote response time",
+        "stat3Value": "25+",
+        "stat3Label": "Countries served"
+      },
+      "markets": {
+        "title": "Markets We Serve",
+        "subtitle": "We deliver to humanitarian operations across Africa and the Middle East."
+      },
+      "cta": {
+        "title": "Need Supplies for Your Mission?",
+        "subtitle": "Get a free quote within 48 hours. Priority processing for humanitarian organizations.",
+        "primary": "Request a Quote",
+        "secondary": "Browse All Products"
+      }
+    },
+    "pharmacies": {
+      "meta": {
+        "title": "Wholesale Medical Supplies for Pharmacies & Distributors",
+        "description": "Wholesale medical consumables and equipment for pharmacies and distributors in Africa and the Middle East. Direct from certified Asian manufacturers.",
+        "keywords": "wholesale medical supplies pharmacies, pharmacy medical equipment distributor, bulk medical consumables Africa, pharmacy PPE wholesale"
+      },
+      "hero": {
+        "eyebrow": "For Pharmacies & Distributors",
+        "title": "Wholesale Medical Supplies for Pharmacies & Distributors",
+        "subtitle": "Stock your shelves with quality medical products at competitive wholesale prices. Direct from certified Asian manufacturers, delivered to your warehouse.",
+        "cta": "Request a Quote"
+      },
+      "painPoints": {
+        "title": "Challenges We Solve for Pharmacies",
+        "items": [
+          {
+            "title": "Margin Pressure",
+            "description": "Multiple intermediaries erode your margins. Our direct sourcing model gives you the best possible cost basis."
+          },
+          {
+            "title": "Product Authenticity",
+            "description": "Counterfeit medical products risk patient safety and your reputation. Every product we ship comes with full manufacturer documentation."
+          },
+          {
+            "title": "Inventory Management",
+            "description": "Balancing stock levels with cash flow is critical. We offer flexible order sizes to match your sell-through rate."
+          },
+          {
+            "title": "Supplier Reliability",
+            "description": "Stockouts damage customer trust. Our stable manufacturer relationships ensure consistent supply and quality."
+          }
+        ]
+      },
+      "howWeHelp": {
+        "title": "How Watu Care Serves Pharmacies",
+        "items": [
+          {
+            "title": "Competitive Pricing",
+            "description": "Direct manufacturer access eliminates middlemen, giving you the margin room to compete."
+          },
+          {
+            "title": "Verified Products",
+            "description": "Full certification documentation for every product — CE marking, ISO certificates, and batch traceability."
+          },
+          {
+            "title": "Flexible Orders",
+            "description": "Order across multiple product categories in a single shipment to optimize your logistics costs."
+          },
+          {
+            "title": "Reorder Support",
+            "description": "Streamlined reordering process for your regular stock items, keeping your shelves consistently stocked."
+          }
+        ]
+      },
+      "categories": {
+        "title": "Recommended Products for Pharmacies",
+        "subtitle": "High-demand categories for pharmacy and distribution businesses."
+      },
+      "trust": {
+        "title": "Trusted by Healthcare Businesses",
+        "stat1Value": "500+",
+        "stat1Label": "Product lines available",
+        "stat2Value": "48h",
+        "stat2Label": "Quote response time",
+        "stat3Value": "25+",
+        "stat3Label": "Countries served"
+      },
+      "markets": {
+        "title": "Markets We Serve",
+        "subtitle": "We deliver to pharmacies and distributors across Africa and the Middle East."
+      },
+      "cta": {
+        "title": "Ready to Source Better?",
+        "subtitle": "Get a free quote within 48 hours. Competitive wholesale pricing, direct from manufacturers.",
+        "primary": "Request a Quote",
+        "secondary": "Browse All Products"
+      }
+    },
+    "government": {
+      "meta": {
+        "title": "Medical Procurement for Government & Ministries of Health",
+        "description": "Medical supplies for government health programs and public hospitals in Africa and the Middle East. ISO-certified products meeting international procurement standards.",
+        "keywords": "government medical procurement, ministry of health medical supplies, public hospital equipment Africa, government PPE supplier Middle East"
+      },
+      "hero": {
+        "eyebrow": "For Government & Public Health",
+        "title": "Medical Procurement for Government & Ministries of Health",
+        "subtitle": "Supporting public health systems with reliable, compliant medical supply sourcing. From national hospital programs to regional health initiatives.",
+        "cta": "Request a Quote"
+      },
+      "painPoints": {
+        "title": "Challenges We Solve for Government Procurement",
+        "items": [
+          {
+            "title": "Procurement Compliance",
+            "description": "Government procurement requires strict documentation and compliance. We provide full manufacturer certifications and audit trails."
+          },
+          {
+            "title": "Scale Requirements",
+            "description": "National health programs need large volumes at consistent quality. Our manufacturer partnerships handle high-volume orders reliably."
+          },
+          {
+            "title": "Budget Efficiency",
+            "description": "Public budgets demand maximum value. Direct manufacturer pricing ensures competitive costs without quality compromise."
+          },
+          {
+            "title": "Delivery Coordination",
+            "description": "Multi-site distribution across districts and regions is complex. We manage logistics to multiple delivery points."
+          }
+        ]
+      },
+      "howWeHelp": {
+        "title": "How Watu Care Serves Government",
+        "items": [
+          {
+            "title": "Procurement Support",
+            "description": "Detailed quotations, product specifications, and compliance documentation formatted for government procurement processes."
+          },
+          {
+            "title": "Volume Capacity",
+            "description": "Our manufacturer network handles large-scale orders for national health programs and public hospital systems."
+          },
+          {
+            "title": "Full Traceability",
+            "description": "Batch tracking, certificates of conformity, and test reports for complete supply chain transparency."
+          },
+          {
+            "title": "Multi-Site Logistics",
+            "description": "Coordinate deliveries to central medical stores, regional warehouses, and individual hospital facilities."
+          }
+        ]
+      },
+      "categories": {
+        "title": "Products for Public Health Programs",
+        "subtitle": "Essential categories for government health procurement."
+      },
+      "trust": {
+        "title": "Trusted by Public Health Systems",
+        "stat1Value": "500+",
+        "stat1Label": "Product lines available",
+        "stat2Value": "48h",
+        "stat2Label": "Quote response time",
+        "stat3Value": "25+",
+        "stat3Label": "Countries served"
+      },
+      "markets": {
+        "title": "Countries We Serve",
+        "subtitle": "We supply government health programs across Africa and the Middle East."
+      },
+      "cta": {
+        "title": "Ready to Discuss Your Procurement Needs?",
+        "subtitle": "Get a free quote within 48 hours. Full documentation for government procurement compliance.",
+        "primary": "Request a Quote",
+        "secondary": "Browse All Products"
+      }
+    }
   }
 }

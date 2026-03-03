@@ -1,6 +1,7 @@
 import type { MetadataRoute } from 'next';
 import { getAllCategories } from '@/lib/products';
 import { getTier1Countries } from '@/data/countries';
+import { getAllPersonas } from '@/data/personas';
 import { locales } from '@/i18n/config';
 import { BASE_URL } from '@/lib/constants';
 
@@ -13,6 +14,7 @@ const LAST_MODIFIED = {
   about: new Date('2026-02-08'),
   contact: new Date('2026-02-08'),
   faq: new Date('2026-03-03'),
+  personas: new Date('2026-03-03'),
   privacy: new Date('2026-02-08'),
   terms: new Date('2026-02-08'),
 } as const;
@@ -105,6 +107,17 @@ export default function sitemap(): MetadataRoute.Sitemap {
     })),
   );
 
+  // Persona landing pages (programmatic SEO)
+  const personas = getAllPersonas();
+  const personaPages = locales.flatMap((locale) =>
+    personas.map((persona) => ({
+      url: `${BASE_URL}/${locale}/for/${persona.slug}`,
+      lastModified: LAST_MODIFIED.personas,
+      changeFrequency: 'monthly' as const,
+      priority: 0.8,
+    })),
+  );
+
   // Supplier category-country pages (programmatic SEO)
   const supplierCategoryPages = locales.flatMap((locale) =>
     tier1Countries.flatMap((country) =>
@@ -122,6 +135,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     ...categoryPages,
     ...productPages,
     ...supplierCountryPages,
+    ...personaPages,
     ...supplierCategoryPages,
   ];
 }
