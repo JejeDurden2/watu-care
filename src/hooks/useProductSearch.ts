@@ -1,12 +1,16 @@
 'use client';
 
 import { useMemo, useState, useCallback, useEffect } from 'react';
+import { useTranslations } from 'next-intl';
 import { getAllCategories } from '@/lib/products';
 import type { Product, ProductCategory } from '@/types/product';
 
 export interface SearchResult {
   product: Product;
   category: ProductCategory;
+  translatedName: string;
+  translatedDescription: string;
+  translatedCategoryTitle: string;
 }
 
 function normalizeString(str: string): string {
@@ -25,6 +29,7 @@ export function useProductSearch(debounceMs = 300): {
   const [query, setQuery] = useState('');
   const [debouncedQuery, setDebouncedQuery] = useState('');
   const [isSearching, setIsSearching] = useState(false);
+  const t = useTranslations('products');
 
   useEffect(() => {
     if (query === '') {
@@ -51,27 +56,44 @@ export function useProductSearch(debounceMs = 300): {
     const searchResults: SearchResult[] = [];
 
     for (const category of categories) {
+      const categoryTitle = t.has(`categories.${category.slug}.title`)
+        ? t(`categories.${category.slug}.title`)
+        : category.title;
+
       for (const product of category.products) {
-        const normalizedName = normalizeString(product.name);
-        const normalizedDescription = normalizeString(product.description);
+        const productName = t.has(`items.${product.id}.name`)
+          ? t(`items.${product.id}.name`)
+          : product.name;
+        const productDescription = t.has(`items.${product.id}.description`)
+          ? t(`items.${product.id}.description`)
+          : product.description;
+
+        const normalizedName = normalizeString(productName);
+        const normalizedDescription = normalizeString(productDescription);
 
         if (
           normalizedName.includes(normalizedQuery) ||
           normalizedDescription.includes(normalizedQuery)
         ) {
-          searchResults.push({ product, category });
+          searchResults.push({
+            product,
+            category,
+            translatedName: productName,
+            translatedDescription: productDescription,
+            translatedCategoryTitle: categoryTitle,
+          });
         }
       }
     }
 
     return searchResults.sort((a, b) => {
-      const aNameMatch = normalizeString(a.product.name).includes(normalizedQuery);
-      const bNameMatch = normalizeString(b.product.name).includes(normalizedQuery);
+      const aNameMatch = normalizeString(a.translatedName).includes(normalizedQuery);
+      const bNameMatch = normalizeString(b.translatedName).includes(normalizedQuery);
       if (aNameMatch && !bNameMatch) return -1;
       if (!aNameMatch && bNameMatch) return 1;
-      return a.product.name.localeCompare(b.product.name);
+      return a.translatedName.localeCompare(b.translatedName);
     });
-  }, [debouncedQuery, categories]);
+  }, [debouncedQuery, categories, t]);
 
   const handleSetQuery = useCallback((newQuery: string) => {
     setQuery(newQuery);

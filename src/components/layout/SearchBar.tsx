@@ -93,7 +93,7 @@ export function SearchBar({ className, onResultClick }: SearchBarProps): React.R
         >
           {displayedResults.length > 0 ? (
             <ul className="divide-y divide-border">
-              {displayedResults.map(({ product, category }) => {
+              {displayedResults.map(({ product, category, translatedName, translatedCategoryTitle }) => {
                 const Icon = getCategoryIcon(category.slug);
                 const gradient = getCategoryGradient(category.slug);
                 return (
@@ -113,10 +113,10 @@ export function SearchBar({ className, onResultClick }: SearchBarProps): React.R
                       </div>
                       <div className="min-w-0 flex-1">
                         <p className="truncate text-sm font-medium text-foreground">
-                          {product.name}
+                          {translatedName}
                         </p>
                         <p className="truncate text-xs text-muted-foreground">
-                          {category.title}
+                          {translatedCategoryTitle}
                         </p>
                       </div>
                     </Link>
@@ -229,7 +229,7 @@ export function MobileSearchOverlay({
         <div className="flex-1 overflow-y-auto">
           {query.trim() && displayedResults.length > 0 ? (
             <ul className="divide-y divide-border">
-              {displayedResults.map(({ product, category }) => {
+              {displayedResults.map(({ product, category, translatedName, translatedCategoryTitle }) => {
                 const Icon = getCategoryIcon(category.slug);
                 const gradient = getCategoryGradient(category.slug);
                 return (
@@ -249,10 +249,10 @@ export function MobileSearchOverlay({
                       </div>
                       <div className="min-w-0 flex-1">
                         <p className="truncate font-medium text-foreground">
-                          {product.name}
+                          {translatedName}
                         </p>
                         <p className="truncate text-sm text-muted-foreground">
-                          {category.title}
+                          {translatedCategoryTitle}
                         </p>
                       </div>
                     </Link>
