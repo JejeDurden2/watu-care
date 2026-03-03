@@ -15,7 +15,7 @@ export async function Hero(): Promise<React.ReactElement> {
       <div className="pointer-events-none absolute inset-0">
         <Image
           src="/hero-medical.jpg"
-          alt=""
+          alt={t('heroImageAlt')}
           fill
           className="object-cover object-center"
           priority
@@ -50,6 +50,8 @@ export async function Hero(): Promise<React.ReactElement> {
                   <span className="stagger-item-dramatic stagger-delay-1 block text-lg font-semibold uppercase tracking-[0.2em] text-white/40 md:text-xl lg:text-2xl">
                     {t('headline1')}
                   </span>
+                  {/* Visually-hidden space so crawlers read "Medical Supplies for…" not "Medical Suppliesfor…" */}
+                  <span className="sr-only">{' '}</span>
                   <span className="stagger-item-dramatic stagger-delay-2 mt-1 block text-[2.5rem] font-extrabold italic leading-[0.95] text-primary sm:text-5xl md:text-6xl lg:text-[4.5rem] xl:text-[5.5rem]">
                     {t('headline2')}
                   </span>

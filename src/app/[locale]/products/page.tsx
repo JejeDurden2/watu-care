@@ -19,7 +19,7 @@ export async function generateMetadata({
   const t = await getTranslations({ locale, namespace: 'products' });
 
   const title = t('title');
-  const description = t('subtitle');
+  const description = t('metaDescription');
 
   return {
     title,

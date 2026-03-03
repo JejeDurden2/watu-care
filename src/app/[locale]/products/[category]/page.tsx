@@ -11,7 +11,8 @@ import {
 import { MapPin } from 'lucide-react';
 import { getAllCategories, getCategoryBySlug } from '@/lib/products';
 import { getTier1Countries } from '@/data/countries';
-import { generateBreadcrumbSchema } from '@/lib/schema';
+import { generateBreadcrumbSchema, generateFAQSchema } from '@/lib/schema';
+import { FAQAccordion } from '@/app/[locale]/faq/FAQAccordion';
 import { BASE_URL } from '@/lib/constants';
 
 interface CategoryPageProps {
@@ -149,6 +150,15 @@ export default async function CategoryPage({
     })),
   };
 
+  // Build category-specific FAQ items from translations
+  const faqKey = `categories.${categorySlug}.faq`;
+  const rawFaq = t.has(faqKey) ? t.raw(faqKey) as Array<{ q: string; a: string }> : [];
+  const faqItems = rawFaq.map((item) => ({
+    question: item.q,
+    answer: item.a,
+  }));
+  const faqSchema = faqItems.length > 0 ? generateFAQSchema(faqItems) : null;
+
   return (
     <main className="min-h-[100dvh]">
       {/* Breadcrumb JSON-LD */}
@@ -165,6 +175,15 @@ export default async function CategoryPage({
           __html: JSON.stringify(itemListSchema),
         }}
       />
+      {/* FAQ JSON-LD */}
+      {faqSchema && (
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(faqSchema),
+          }}
+        />
+      )}
 
       {/* Gradient hero band */}
       <section className="gradient-hero py-16 lg:py-24">
@@ -264,6 +283,18 @@ export default async function CategoryPage({
               </Button>
             </div>
           </div>
+
+          {/* Category FAQ section */}
+          {faqItems.length > 0 && (
+            <div className="mt-16">
+              <h2 className="font-display text-2xl font-bold tracking-tight text-secondary">
+                {t('faqTitle')}
+              </h2>
+              <div className="mt-4">
+                <FAQAccordion items={faqItems} />
+              </div>
+            </div>
+          )}
 
           {/* Bottom CTA strip */}
           <div className="mt-20 border-t border-border pt-12">

@@ -36,6 +36,15 @@ export interface ProductSchema {
   description: string;
   image?: string;
   url?: string;
+  brand?: {
+    '@type': 'Brand';
+    name: string;
+  };
+  material?: string;
+  audience?: {
+    '@type': 'Audience';
+    audienceType: string;
+  };
   offers: {
     '@type': 'Offer';
     availability: string;
@@ -162,13 +171,21 @@ export function generateProductSchema(
   locale: string,
   translatedDescription?: string,
 ): ProductSchema {
-  return {
+  const schema: ProductSchema = {
     '@context': 'https://schema.org',
     '@type': 'Product',
     name: product.name,
     description: translatedDescription || product.description,
     image: product.image || `${BASE_URL}/logo.png`,
     url: `${BASE_URL}/${locale}/products/${category.slug}/${product.id}`,
+    brand: {
+      '@type': 'Brand',
+      name: 'Watu Care',
+    },
+    audience: {
+      '@type': 'Audience',
+      audienceType: 'Healthcare professionals',
+    },
     offers: {
       '@type': 'Offer',
       availability: 'https://schema.org/InStock',
@@ -194,6 +211,12 @@ export function generateProductSchema(
       name: category.title,
     },
   };
+
+  if (product.materials && product.materials.length > 0) {
+    schema.material = product.materials.join(', ');
+  }
+
+  return schema;
 }
 
 /**

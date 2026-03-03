@@ -19,6 +19,21 @@ const LAST_MODIFIED = {
   terms: new Date('2026-02-08'),
 } as const;
 
+// Per-category dates give crawlers finer-grained change signals.
+// Update the relevant slug entry when that category's data changes.
+const CATEGORY_MODIFIED: Record<string, Date> = {
+  'gloves': new Date('2026-02-24'),
+  'infection-prevention-ppe': new Date('2026-02-24'),
+  'bodily-waste-management': new Date('2026-02-20'),
+  'surgical': new Date('2026-02-24'),
+  'wound-care': new Date('2026-02-18'),
+  'clinical-consumables': new Date('2026-02-22'),
+  'vascular-access-catheters': new Date('2026-02-15'),
+  'airway-respiratory': new Date('2026-02-15'),
+  'surgical-instruments-sutures': new Date('2026-02-18'),
+  'patient-care-equipment': new Date('2026-02-20'),
+};
+
 export default function sitemap(): MetadataRoute.Sitemap {
   const categories = getAllCategories();
   const tier1Countries = getTier1Countries();
@@ -79,7 +94,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const categoryPages = locales.flatMap((locale) =>
     categories.map((category) => ({
       url: `${BASE_URL}/${locale}/products/${category.slug}`,
-      lastModified: LAST_MODIFIED.products,
+      lastModified: CATEGORY_MODIFIED[category.slug] ?? LAST_MODIFIED.products,
       changeFrequency: 'weekly' as const,
       priority: 0.8,
     })),
@@ -90,7 +105,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     categories.flatMap((category) =>
       category.products.map((product) => ({
         url: `${BASE_URL}/${locale}/products/${category.slug}/${product.id}`,
-        lastModified: LAST_MODIFIED.products,
+        lastModified: CATEGORY_MODIFIED[category.slug] ?? LAST_MODIFIED.products,
         changeFrequency: 'monthly' as const,
         priority: 0.6,
       })),
@@ -119,14 +134,19 @@ export default function sitemap(): MetadataRoute.Sitemap {
   );
 
   // Supplier category-country pages (programmatic SEO)
+  // Use whichever is more recent: category data or supplier page update
   const supplierCategoryPages = locales.flatMap((locale) =>
     tier1Countries.flatMap((country) =>
-      categories.map((category) => ({
-        url: `${BASE_URL}/${locale}/suppliers/${country.slug}/${category.slug}`,
-        lastModified: LAST_MODIFIED.suppliers,
-        changeFrequency: 'weekly' as const,
-        priority: 0.75,
-      })),
+      categories.map((category) => {
+        const catDate = CATEGORY_MODIFIED[category.slug] ?? LAST_MODIFIED.products;
+        const supDate = LAST_MODIFIED.suppliers;
+        return {
+          url: `${BASE_URL}/${locale}/suppliers/${country.slug}/${category.slug}`,
+          lastModified: catDate > supDate ? catDate : supDate,
+          changeFrequency: 'weekly' as const,
+          priority: 0.75,
+        };
+      }),
     ),
   );
 
