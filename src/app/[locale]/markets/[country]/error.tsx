@@ -9,7 +9,7 @@ interface ErrorProps {
   reset: () => void;
 }
 
-export default function CountrySupplierError({
+export default function CountryMarketError({
   error,
   reset,
 }: ErrorProps): React.ReactElement {

@@ -23,7 +23,7 @@ export function Header(): React.ReactElement {
 
   const navLinks = [
     { href: '/products', label: t('products') },
-    { href: '/suppliers', label: t('suppliers') },
+    { href: '/markets', label: t('markets') },
     { href: '/about', label: t('about') },
     { href: '/contact', label: t('contact') },
     { href: '/faq', label: t('faq') },

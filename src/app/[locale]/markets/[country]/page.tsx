@@ -12,18 +12,18 @@ import {
 } from 'lucide-react';
 import { Container, Button } from '@/components/ui';
 import { Breadcrumb } from '@/components/products';
-import { CategoryCard, SupplierHeroGraphic } from '@/components/sections';
+import { CategoryCard, MarketHeroGraphic } from '@/components/sections';
 import { getAllCategories } from '@/lib/products';
 import { getTier1Countries, getCountryBySlug } from '@/data/countries';
 import {
   generateBreadcrumbSchema,
   generateLocalBusinessSchema,
-  generateSupplierItemListSchema,
+  generateMarketItemListSchema,
   combineSchemas,
 } from '@/lib/schema';
 import { Link } from '@/i18n/routing';
 import { locales, type Locale } from '@/i18n/config';
-import { SupplierQuoteButton } from './SupplierQuoteButton';
+import { MarketQuoteButton } from './MarketQuoteButton';
 import { BASE_URL } from '@/lib/constants';
 
 interface CountryPageProps {
@@ -49,7 +49,7 @@ export async function generateMetadata({
   params,
 }: CountryPageProps): Promise<Metadata> {
   const { locale, country: countrySlug } = await params;
-  const t = await getTranslations({ locale, namespace: 'suppliers' });
+  const t = await getTranslations({ locale, namespace: 'markets' });
   const country = getCountryBySlug(countrySlug);
 
   if (!country || country.tier !== 1) {
@@ -79,7 +79,7 @@ export async function generateMetadata({
       title,
       description,
       type: 'website',
-      url: `${BASE_URL}/${locale}/suppliers/${countrySlug}`,
+      url: `${BASE_URL}/${locale}/markets/${countrySlug}`,
       images: [
         {
           url: `${BASE_URL}/opengraph-image`,
@@ -90,21 +90,21 @@ export async function generateMetadata({
       ],
     },
     alternates: {
-      canonical: `${BASE_URL}/${locale}/suppliers/${countrySlug}`,
+      canonical: `${BASE_URL}/${locale}/markets/${countrySlug}`,
       languages: {
-        'x-default': `${BASE_URL}/en/suppliers/${countrySlug}`,
-        en: `${BASE_URL}/en/suppliers/${countrySlug}`,
-        fr: `${BASE_URL}/fr/suppliers/${countrySlug}`,
+        'x-default': `${BASE_URL}/en/markets/${countrySlug}`,
+        en: `${BASE_URL}/en/markets/${countrySlug}`,
+        fr: `${BASE_URL}/fr/markets/${countrySlug}`,
       },
     },
   };
 }
 
-export default async function CountrySupplierPage({
+export default async function CountryMarketPage({
   params,
 }: CountryPageProps): Promise<React.ReactElement> {
   const { locale, country: countrySlug } = await params;
-  const t = await getTranslations('suppliers');
+  const t = await getTranslations('markets');
   const tNav = await getTranslations('nav');
   const tProducts = await getTranslations('products');
 
@@ -123,7 +123,7 @@ export default async function CountrySupplierPage({
   // Generate schemas
   const breadcrumbSchema = generateBreadcrumbSchema([
     { name: tNav('home'), url: `${BASE_URL}/${locale}` },
-    { name: t('breadcrumb.suppliers'), url: `${BASE_URL}/${locale}/suppliers` },
+    { name: t('breadcrumb.markets'), url: `${BASE_URL}/${locale}/markets` },
     { name: countryName },
   ]);
 
@@ -133,12 +133,12 @@ export default async function CountrySupplierPage({
     locale
   );
 
-  const categoryListSchema = generateSupplierItemListSchema(
+  const categoryListSchema = generateMarketItemListSchema(
     categories.map((cat) => ({
       name: tProducts.has(`categories.${cat.slug}.title`)
         ? tProducts(`categories.${cat.slug}.title`)
         : cat.title,
-      url: `${BASE_URL}/${locale}/suppliers/${countrySlug}/${cat.slug}`,
+      url: `${BASE_URL}/${locale}/markets/${countrySlug}/${cat.slug}`,
     })),
     `Medical Supply Categories in ${countryName}`
   );
@@ -191,7 +191,7 @@ export default async function CountrySupplierPage({
           <Breadcrumb
             items={[
               { label: tNav('home'), href: '/' },
-              { label: t('breadcrumb.suppliers'), href: '/suppliers' },
+              { label: t('breadcrumb.markets'), href: '/markets' },
               { label: countryName },
             ]}
             variant="light"
@@ -214,7 +214,7 @@ export default async function CountrySupplierPage({
               </p>
 
               <div className="flex flex-col gap-4 sm:flex-row">
-                <SupplierQuoteButton variant="white" />
+                <MarketQuoteButton variant="white" />
                 <Button
                   size="lg"
                   variant="outline"
@@ -228,7 +228,7 @@ export default async function CountrySupplierPage({
 
             {/* Hero Graphic */}
             <div className="hidden h-72 lg:block lg:h-80">
-              <SupplierHeroGraphic countryName={countryName} />
+              <MarketHeroGraphic countryName={countryName} />
             </div>
           </div>
         </Container>
@@ -342,7 +342,7 @@ export default async function CountrySupplierPage({
                   title={categoryTitle}
                   description={categoryDesc}
                   productCount={category.products.length}
-                  href={`/suppliers/${countrySlug}/${category.slug}`}
+                  href={`/markets/${countrySlug}/${category.slug}`}
                 />
               );
             })}
@@ -371,7 +371,7 @@ export default async function CountrySupplierPage({
               return (
                 <Link
                   key={otherCountry.slug}
-                  href={`/suppliers/${otherCountry.slug}`}
+                  href={`/markets/${otherCountry.slug}`}
                   className="inline-flex items-center gap-2 rounded-full border border-border bg-white px-4 py-2 text-sm font-medium text-secondary transition-colors hover:border-primary hover:bg-primary/5"
                 >
                   <MapPin className="h-4 w-4 text-primary" />
@@ -393,7 +393,7 @@ export default async function CountrySupplierPage({
             <p className="mb-8 text-lg text-white/80">
               {t('content.requestQuoteSubtitle', { country: countryName })}
             </p>
-            <SupplierQuoteButton variant="white" />
+            <MarketQuoteButton variant="white" />
           </div>
         </Container>
       </section>

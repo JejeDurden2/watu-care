@@ -8,7 +8,7 @@
     "products": "Produits",
     "about": "À propos",
     "contact": "Contact",
-    "suppliers": "Fournisseurs",
+    "markets": "Marchés",
     "faq": "FAQ",
     "requestQuote": "Demander un devis",
     "language": "Langue",
@@ -75,9 +75,9 @@
     "viewProducts": "Voir les produits",
     "available": "disponible(s)",
     "backToCategories": "Retour aux catégories",
-    "findSuppliers": "Trouvez {category} dans votre région",
-    "findSuppliersSubtitle": "Nous livrons {category} aux établissements de santé en Afrique et au Moyen-Orient.",
-    "viewSuppliers": "Voir tous les marchés",
+    "findInRegion": "Trouvez {category} dans votre région",
+    "findInRegionSubtitle": "Nous livrons {category} aux établissements de santé en Afrique et au Moyen-Orient.",
+    "viewMarkets": "Voir tous les marchés",
     "moreInCategory": "Autres produits de cette catégorie",
     "faqTitle": "Questions fréquentes",
     "categories": {
@@ -617,7 +617,7 @@
     "products": "Produits",
     "aboutUs": "À propos",
     "howItWorks": "Comment ça marche",
-    "suppliers": "Fournisseurs",
+    "markets": "Marchés",
     "requestQuote": "Contact",
     "faq": "FAQ",
     "productsTitle": "Produits",
@@ -737,7 +737,7 @@
     "humanSupport": "Support centré sur l'humain",
     "humanSupportDesc": "Du devis à la livraison, notre équipe vous accompagne à chaque étape avec réactivité, clarté et engagement à long terme."
   },
-  "suppliers": {
+  "markets": {
     "meta": {
       "titleTemplate": "Matériel Médical en {country}",
       "descriptionTemplate": "Matériel médical pour les établissements de santé en {country}. EPI, équipement chirurgical et fournitures de fabricants asiatiques certifiés.",
@@ -745,7 +745,7 @@
       "categoryDescriptionTemplate": "{category} de qualité pour la santé en {country}. Fabricants asiatiques certifiés, prix compétitifs."
     },
     "breadcrumb": {
-      "suppliers": "Fournisseurs",
+      "markets": "Marchés",
       "home": "Accueil"
     },
     "hero": {

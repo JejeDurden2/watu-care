@@ -6,7 +6,7 @@ import { Container } from '@/components/ui';
 
 const quickLinksKeys = [
   { href: '/products', key: 'products' },
-  { href: '/suppliers', key: 'suppliers' },
+  { href: '/markets', key: 'markets' },
   { href: '/about', key: 'aboutUs' },
   { href: '/contact', key: 'requestQuote' },
   { href: '/faq', key: 'faq' },

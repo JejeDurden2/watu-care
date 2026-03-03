@@ -384,7 +384,7 @@ export function generateLocalBusinessSchema(
     '@context': 'https://schema.org',
     '@type': 'MedicalBusiness',
     name: `Watu Care - Medical Supplies in ${countryName}`,
-    url: `${BASE_URL}/${locale}/suppliers/${countryCode.toLowerCase()}`,
+    url: `${BASE_URL}/${locale}/markets/${countryCode.toLowerCase()}`,
     logo: `${BASE_URL}/logo.png`,
     description: `Trusted medical supplies supplier for healthcare facilities in ${countryName}. Quality medical devices and PPE from certified Asian manufacturers.`,
     address: {
@@ -428,7 +428,7 @@ export function generateServiceSchema(
     '@context': 'https://schema.org',
     '@type': 'Service',
     name: `${categoryName} Supply in ${countryName}`,
-    url: `${BASE_URL}/${locale}/suppliers/${countrySlug}/${categorySlug}`,
+    url: `${BASE_URL}/${locale}/markets/${countrySlug}/${categorySlug}`,
     provider: {
       '@type': 'Organization',
       name: 'Watu Care',
@@ -459,7 +459,7 @@ export function generateServiceSchema(
 /**
  * Generate ItemList schema for products available in a country/category
  */
-export function generateSupplierItemListSchema(
+export function generateMarketItemListSchema(
   items: Array<{ name: string; url: string; description?: string }>,
   listName: string,
 ): Record<string, unknown> {

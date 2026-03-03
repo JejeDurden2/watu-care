@@ -8,7 +8,7 @@ import { generateBreadcrumbSchema } from '@/lib/schema';
 import { Link } from '@/i18n/routing';
 import { BASE_URL } from '@/lib/constants';
 
-interface SuppliersPageProps {
+interface MarketsPageProps {
   params: Promise<{
     locale: string;
   }>;
@@ -16,9 +16,9 @@ interface SuppliersPageProps {
 
 export async function generateMetadata({
   params,
-}: SuppliersPageProps): Promise<Metadata> {
+}: MarketsPageProps): Promise<Metadata> {
   const { locale } = await params;
-  const t = await getTranslations({ locale, namespace: 'suppliers' });
+  const t = await getTranslations({ locale, namespace: 'markets' });
 
   const title = t('index.meta.title');
   const description = t('index.meta.description');
@@ -37,7 +37,7 @@ export async function generateMetadata({
       title,
       description,
       type: 'website',
-      url: `${BASE_URL}/${locale}/suppliers`,
+      url: `${BASE_URL}/${locale}/markets`,
       images: [
         {
           url: `${BASE_URL}/opengraph-image`,
@@ -48,21 +48,21 @@ export async function generateMetadata({
       ],
     },
     alternates: {
-      canonical: `${BASE_URL}/${locale}/suppliers`,
+      canonical: `${BASE_URL}/${locale}/markets`,
       languages: {
-        'x-default': `${BASE_URL}/en/suppliers`,
-        en: `${BASE_URL}/en/suppliers`,
-        fr: `${BASE_URL}/fr/suppliers`,
+        'x-default': `${BASE_URL}/en/markets`,
+        en: `${BASE_URL}/en/markets`,
+        fr: `${BASE_URL}/fr/markets`,
       },
     },
   };
 }
 
-export default async function SuppliersPage({
+export default async function MarketsPage({
   params,
-}: SuppliersPageProps): Promise<React.ReactElement> {
+}: MarketsPageProps): Promise<React.ReactElement> {
   const { locale } = await params;
-  const t = await getTranslations('suppliers');
+  const t = await getTranslations('markets');
   const tNav = await getTranslations('nav');
 
   const tier1Countries = getTier1Countries();
@@ -71,7 +71,7 @@ export default async function SuppliersPage({
 
   const breadcrumbSchema = generateBreadcrumbSchema([
     { name: tNav('home'), url: `${BASE_URL}/${locale}` },
-    { name: t('breadcrumb.suppliers') },
+    { name: t('breadcrumb.markets') },
   ]);
 
   return (
@@ -87,7 +87,7 @@ export default async function SuppliersPage({
           <Breadcrumb
             items={[
               { label: tNav('home'), href: '/' },
-              { label: t('breadcrumb.suppliers') },
+              { label: t('breadcrumb.markets') },
             ]}
             variant="light"
           />
@@ -120,7 +120,7 @@ export default async function SuppliersPage({
               return (
                 <Link
                   key={country.slug}
-                  href={`/suppliers/${country.slug}`}
+                  href={`/markets/${country.slug}`}
                   className="group flex items-center justify-between rounded-xl border border-border bg-white p-4 transition-all hover:border-primary hover:shadow-sm"
                 >
                   <div className="flex items-center gap-3">
@@ -153,7 +153,7 @@ export default async function SuppliersPage({
               return (
                 <Link
                   key={country.slug}
-                  href={`/suppliers/${country.slug}`}
+                  href={`/markets/${country.slug}`}
                   className="group flex items-center justify-between rounded-xl border border-border bg-white p-4 transition-all hover:border-primary hover:shadow-sm"
                 >
                   <div className="flex items-center gap-3">

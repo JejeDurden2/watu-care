@@ -15,12 +15,12 @@ import { getTier1Countries, getCountryBySlug } from '@/data/countries';
 import {
   generateBreadcrumbSchema,
   generateServiceSchema,
-  generateSupplierItemListSchema,
+  generateMarketItemListSchema,
   combineSchemas,
 } from '@/lib/schema';
 import { Link } from '@/i18n/routing';
 import { locales, type Locale } from '@/i18n/config';
-import { SupplierQuoteButton } from '../SupplierQuoteButton';
+import { MarketQuoteButton } from '../MarketQuoteButton';
 import { BASE_URL } from '@/lib/constants';
 
 interface CategoryCountryPageProps {
@@ -52,7 +52,7 @@ export async function generateMetadata({
   params,
 }: CategoryCountryPageProps): Promise<Metadata> {
   const { locale, country: countrySlug, category: categorySlug } = await params;
-  const t = await getTranslations({ locale, namespace: 'suppliers' });
+  const t = await getTranslations({ locale, namespace: 'markets' });
   const tProducts = await getTranslations({ locale, namespace: 'products' });
 
   const country = getCountryBySlug(countrySlug);
@@ -94,7 +94,7 @@ export async function generateMetadata({
       title,
       description,
       type: 'website',
-      url: `${BASE_URL}/${locale}/suppliers/${countrySlug}/${categorySlug}`,
+      url: `${BASE_URL}/${locale}/markets/${countrySlug}/${categorySlug}`,
       images: [
         {
           url: category.image || `${BASE_URL}/opengraph-image`,
@@ -105,11 +105,11 @@ export async function generateMetadata({
       ],
     },
     alternates: {
-      canonical: `${BASE_URL}/${locale}/suppliers/${countrySlug}/${categorySlug}`,
+      canonical: `${BASE_URL}/${locale}/markets/${countrySlug}/${categorySlug}`,
       languages: {
-        'x-default': `${BASE_URL}/en/suppliers/${countrySlug}/${categorySlug}`,
-        en: `${BASE_URL}/en/suppliers/${countrySlug}/${categorySlug}`,
-        fr: `${BASE_URL}/fr/suppliers/${countrySlug}/${categorySlug}`,
+        'x-default': `${BASE_URL}/en/markets/${countrySlug}/${categorySlug}`,
+        en: `${BASE_URL}/en/markets/${countrySlug}/${categorySlug}`,
+        fr: `${BASE_URL}/fr/markets/${countrySlug}/${categorySlug}`,
       },
     },
   };
@@ -119,7 +119,7 @@ export default async function CategoryCountryPage({
   params,
 }: CategoryCountryPageProps): Promise<React.ReactElement> {
   const { locale, country: countrySlug, category: categorySlug } = await params;
-  const t = await getTranslations('suppliers');
+  const t = await getTranslations('markets');
   const tNav = await getTranslations('nav');
   const tProducts = await getTranslations('products');
 
@@ -154,8 +154,8 @@ export default async function CategoryCountryPage({
   // Generate schemas
   const breadcrumbSchema = generateBreadcrumbSchema([
     { name: tNav('home'), url: `${BASE_URL}/${locale}` },
-    { name: t('breadcrumb.suppliers'), url: `${BASE_URL}/${locale}/suppliers` },
-    { name: countryName, url: `${BASE_URL}/${locale}/suppliers/${countrySlug}` },
+    { name: t('breadcrumb.markets'), url: `${BASE_URL}/${locale}/markets` },
+    { name: countryName, url: `${BASE_URL}/${locale}/markets/${countrySlug}` },
     { name: categoryName },
   ]);
 
@@ -167,7 +167,7 @@ export default async function CategoryCountryPage({
     locale
   );
 
-  const productListSchema = generateSupplierItemListSchema(
+  const productListSchema = generateMarketItemListSchema(
     category.products.map((product) => ({
       name: product.name,
       url: `${BASE_URL}/${locale}/products/${categorySlug}/${product.id}`,
@@ -200,8 +200,8 @@ export default async function CategoryCountryPage({
           <Breadcrumb
             items={[
               { label: tNav('home'), href: '/' },
-              { label: t('breadcrumb.suppliers'), href: '/suppliers' },
-              { label: countryName, href: `/suppliers/${countrySlug}` },
+              { label: t('breadcrumb.markets'), href: '/markets' },
+              { label: countryName, href: `/markets/${countrySlug}` },
               { label: categoryName },
             ]}
             variant="light"
@@ -288,7 +288,7 @@ export default async function CategoryCountryPage({
                   slug={otherCategory.slug}
                   title={otherCategoryName}
                   description={otherCategoryDesc}
-                  href={`/suppliers/${countrySlug}/${otherCategory.slug}`}
+                  href={`/markets/${countrySlug}/${otherCategory.slug}`}
                 />
               );
             })}
@@ -296,7 +296,7 @@ export default async function CategoryCountryPage({
 
           <div className="mt-8 text-center">
             <Button variant="outline" asChild>
-              <Link href={`/suppliers/${countrySlug}`}>
+              <Link href={`/markets/${countrySlug}`}>
                 {t('content.categoriesTitle', { country: countryName })}
                 <ArrowRight className="h-4 w-4" />
               </Link>
@@ -315,7 +315,7 @@ export default async function CategoryCountryPage({
             <p className="mb-8 text-white/80">
               {t('content.requestQuoteSubtitle', { country: countryName })}
             </p>
-            <SupplierQuoteButton variant="white" />
+            <MarketQuoteButton variant="white" />
           </div>
         </Container>
       </section>

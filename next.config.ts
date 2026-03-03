@@ -5,6 +5,25 @@ const withNextIntl = createNextIntlPlugin('./src/i18n/request.ts');
 
 const nextConfig: NextConfig = {
   reactStrictMode: true,
+  async redirects() {
+    return [
+      {
+        source: '/:locale/suppliers',
+        destination: '/:locale/markets',
+        permanent: true,
+      },
+      {
+        source: '/:locale/suppliers/:country',
+        destination: '/:locale/markets/:country',
+        permanent: true,
+      },
+      {
+        source: '/:locale/suppliers/:country/:category',
+        destination: '/:locale/markets/:country/:category',
+        permanent: true,
+      },
+    ];
+  },
   images: {
     remotePatterns: [],
     formats: ['image/webp', 'image/avif'],

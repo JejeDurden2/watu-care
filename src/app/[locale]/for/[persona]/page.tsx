@@ -98,7 +98,7 @@ export default async function PersonaPage({
   const t = await getTranslations('personas');
   const tNav = await getTranslations('nav');
   const tProducts = await getTranslations('products');
-  const tSuppliers = await getTranslations('suppliers');
+  const tMarkets = await getTranslations('markets');
 
   const tier1Countries = getTier1Countries();
   const Icon = PERSONA_ICONS[persona.icon] ?? Building2;
@@ -325,15 +325,15 @@ export default async function PersonaPage({
             </p>
             <div className="mt-6 flex flex-wrap gap-2.5">
               {tier1Countries.map((country) => {
-                const countryName = tSuppliers.has(
+                const countryName = tMarkets.has(
                   `countries.${country.slug}`,
                 )
-                  ? tSuppliers(`countries.${country.slug}`)
+                  ? tMarkets(`countries.${country.slug}`)
                   : country.name;
                 return (
                   <Link
                     key={country.slug}
-                    href={`/suppliers/${country.slug}`}
+                    href={`/markets/${country.slug}`}
                     className="inline-flex items-center gap-2 rounded-full border border-border bg-white px-4 py-2 text-sm font-medium text-secondary transition-colors hover:border-primary hover:bg-primary/5"
                   >
                     <MapPin

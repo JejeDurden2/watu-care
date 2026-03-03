@@ -1,7 +1,7 @@
 export { Hero } from './Hero';
 export { HeroGraphic } from './HeroGraphic';
 export { HeroTrustMarquee } from './HeroTrustMarquee';
-export { SupplierHeroGraphic } from './SupplierHeroGraphic';
+export { MarketHeroGraphic } from './MarketHeroGraphic';
 export { Stats } from './Stats';
 export { WhyUs } from './WhyUs';
 export { Categories } from './Categories';

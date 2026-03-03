@@ -1,6 +1,6 @@
 import { Container } from '@/components/ui';
 
-export default function CountrySupplierLoading(): React.ReactElement {
+export default function CountryMarketLoading(): React.ReactElement {
   return (
     <main>
       {/* Hero skeleton */}

@@ -2,11 +2,11 @@
 
 import { useEffect, useState } from 'react';
 
-interface SupplierHeroGraphicProps {
+interface MarketHeroGraphicProps {
   countryName: string;
 }
 
-export function SupplierHeroGraphic({ countryName }: SupplierHeroGraphicProps): React.ReactElement {
+export function MarketHeroGraphic({ countryName }: MarketHeroGraphicProps): React.ReactElement {
   const [isVisible, setIsVisible] = useState(false);
 
   useEffect(() => {
@@ -28,7 +28,7 @@ export function SupplierHeroGraphic({ countryName }: SupplierHeroGraphicProps): 
         {/* Background Pattern - Dot Grid */}
         <defs>
           <pattern
-            id="dotPatternSupplier"
+            id="dotPatternMarket"
             x="0"
             y="0"
             width="20"
@@ -39,13 +39,13 @@ export function SupplierHeroGraphic({ countryName }: SupplierHeroGraphicProps): 
           </pattern>
 
           {/* Gradient for connecting line */}
-          <linearGradient id="lineGradientSupplier" x1="0%" y1="0%" x2="100%" y2="0%">
+          <linearGradient id="lineGradientMarket" x1="0%" y1="0%" x2="100%" y2="0%">
             <stop offset="0%" stopColor="hsl(200, 65%, 55%)" />
             <stop offset="100%" stopColor="hsl(175, 50%, 45%)" />
           </linearGradient>
 
           {/* Glow filter */}
-          <filter id="glowSupplier" x="-50%" y="-50%" width="200%" height="200%">
+          <filter id="glowMarket" x="-50%" y="-50%" width="200%" height="200%">
             <feGaussianBlur stdDeviation="3" result="blur" />
             <feMerge>
               <feMergeNode in="blur" />
@@ -55,13 +55,13 @@ export function SupplierHeroGraphic({ countryName }: SupplierHeroGraphicProps): 
         </defs>
 
         {/* Background dots */}
-        <rect width="400" height="300" fill="url(#dotPatternSupplier)" className="text-white" />
+        <rect width="400" height="300" fill="url(#dotPatternMarket)" className="text-white" />
 
         {/* Connecting Line: Asia → Country (gentle S-curve) */}
         <g className={`transition-opacity duration-1000 ${isVisible ? 'opacity-100' : 'opacity-0'}`}>
           <path
             d="M 110 150 C 170 110, 230 190, 290 150"
-            stroke="url(#lineGradientSupplier)"
+            stroke="url(#lineGradientMarket)"
             strokeWidth="2"
             strokeDasharray="8 4"
             fill="none"
@@ -72,7 +72,7 @@ export function SupplierHeroGraphic({ countryName }: SupplierHeroGraphicProps): 
 
         {/* Traveling dots on path */}
         <g className={`transition-opacity duration-500 ${isVisible ? 'opacity-100' : 'opacity-0'}`} style={{ animationDelay: '1.5s' }}>
-          <circle r="4" fill="hsl(200, 65%, 55%)" filter="url(#glowSupplier)">
+          <circle r="4" fill="hsl(200, 65%, 55%)" filter="url(#glowMarket)">
             <animateMotion
               dur="4s"
               repeatCount="indefinite"

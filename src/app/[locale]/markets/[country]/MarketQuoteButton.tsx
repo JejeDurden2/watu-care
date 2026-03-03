@@ -6,17 +6,17 @@ import { Button } from '@/components/ui';
 import { useQuoteStore } from '@/lib/quote-store';
 import { cn } from '@/lib/utils';
 
-interface SupplierQuoteButtonProps {
+interface MarketQuoteButtonProps {
   variant?: 'primary' | 'white';
   size?: 'md' | 'lg';
   className?: string;
 }
 
-export function SupplierQuoteButton({
+export function MarketQuoteButton({
   variant = 'primary',
   size = 'lg',
   className,
-}: SupplierQuoteButtonProps): React.ReactElement {
+}: MarketQuoteButtonProps): React.ReactElement {
   const t = useTranslations('nav');
   const { openModalWithForm } = useQuoteStore();
 

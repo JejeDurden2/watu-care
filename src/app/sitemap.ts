@@ -10,7 +10,7 @@ import { BASE_URL } from '@/lib/constants';
 const LAST_MODIFIED = {
   homepage: new Date('2026-02-24'),
   products: new Date('2026-02-24'),
-  suppliers: new Date('2026-02-24'),
+  markets: new Date('2026-02-24'),
   about: new Date('2026-02-08'),
   contact: new Date('2026-02-08'),
   faq: new Date('2026-03-03'),
@@ -53,8 +53,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.9,
     },
     {
-      url: `${BASE_URL}/${locale}/suppliers`,
-      lastModified: LAST_MODIFIED.suppliers,
+      url: `${BASE_URL}/${locale}/markets`,
+      lastModified: LAST_MODIFIED.markets,
       changeFrequency: 'weekly' as const,
       priority: 0.9,
     },
@@ -112,11 +112,11 @@ export default function sitemap(): MetadataRoute.Sitemap {
     ),
   );
 
-  // Supplier country hub pages (programmatic SEO)
-  const supplierCountryPages = locales.flatMap((locale) =>
+  // Market country hub pages (programmatic SEO)
+  const marketCountryPages = locales.flatMap((locale) =>
     tier1Countries.map((country) => ({
-      url: `${BASE_URL}/${locale}/suppliers/${country.slug}`,
-      lastModified: LAST_MODIFIED.suppliers,
+      url: `${BASE_URL}/${locale}/markets/${country.slug}`,
+      lastModified: LAST_MODIFIED.markets,
       changeFrequency: 'weekly' as const,
       priority: 0.85,
     })),
@@ -133,16 +133,16 @@ export default function sitemap(): MetadataRoute.Sitemap {
     })),
   );
 
-  // Supplier category-country pages (programmatic SEO)
-  // Use whichever is more recent: category data or supplier page update
-  const supplierCategoryPages = locales.flatMap((locale) =>
+  // Market category-country pages (programmatic SEO)
+  // Use whichever is more recent: category data or market page update
+  const marketCategoryPages = locales.flatMap((locale) =>
     tier1Countries.flatMap((country) =>
       categories.map((category) => {
         const catDate = CATEGORY_MODIFIED[category.slug] ?? LAST_MODIFIED.products;
-        const supDate = LAST_MODIFIED.suppliers;
+        const mktDate = LAST_MODIFIED.markets;
         return {
-          url: `${BASE_URL}/${locale}/suppliers/${country.slug}/${category.slug}`,
-          lastModified: catDate > supDate ? catDate : supDate,
+          url: `${BASE_URL}/${locale}/markets/${country.slug}/${category.slug}`,
+          lastModified: catDate > mktDate ? catDate : mktDate,
           changeFrequency: 'weekly' as const,
           priority: 0.75,
         };
@@ -154,8 +154,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
     ...staticPages,
     ...categoryPages,
     ...productPages,
-    ...supplierCountryPages,
+    ...marketCountryPages,
     ...personaPages,
-    ...supplierCategoryPages,
+    ...marketCategoryPages,
   ];
 }

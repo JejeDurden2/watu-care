@@ -8,7 +8,7 @@
     "products": "Products",
     "about": "About",
     "contact": "Contact",
-    "suppliers": "Suppliers",
+    "markets": "Markets",
     "faq": "FAQ",
     "requestQuote": "Request a Quote",
     "language": "Language",
@@ -75,9 +75,9 @@
     "viewProducts": "View products",
     "available": "available",
     "backToCategories": "Back to All Categories",
-    "findSuppliers": "Find {category} in your region",
-    "findSuppliersSubtitle": "We deliver {category} to healthcare facilities across Africa and the Middle East.",
-    "viewSuppliers": "View all markets",
+    "findInRegion": "Find {category} in your region",
+    "findInRegionSubtitle": "We deliver {category} to healthcare facilities across Africa and the Middle East.",
+    "viewMarkets": "View all markets",
     "moreInCategory": "More in this category",
     "faqTitle": "Frequently Asked Questions",
     "categories": {
@@ -549,7 +549,7 @@
     "products": "Products",
     "aboutUs": "About Us",
     "howItWorks": "How It Works",
-    "suppliers": "Suppliers",
+    "markets": "Markets",
     "requestQuote": "Contact",
     "faq": "FAQ",
     "productsTitle": "Products",
@@ -669,7 +669,7 @@
     "humanSupport": "Human-Centered Support",
     "humanSupportDesc": "From quotation to delivery, our team supports you at every step with responsiveness, clarity and long-term commitment."
   },
-  "suppliers": {
+  "markets": {
     "meta": {
       "titleTemplate": "Medical Supplies in {country}",
       "descriptionTemplate": "Medical supplies for healthcare facilities in {country}. PPE, surgical equipment, and lab supplies from certified Asian manufacturers.",
@@ -677,7 +677,7 @@
       "categoryDescriptionTemplate": "Quality {category} for healthcare in {country}. From certified Asian manufacturers with competitive pricing."
     },
     "breadcrumb": {
-      "suppliers": "Suppliers",
+      "markets": "Markets",
       "home": "Home"
     },
     "hero": {

@@ -47,7 +47,7 @@ export function CategoryCard({
   href,
 }: CategoryCardProps): React.ReactElement {
   const t = useTranslations('products');
-  // Extract the category slug for icon lookup (handles paths like "suppliers/kenya/gloves")
+  // Extract the category slug for icon lookup (handles paths like "markets/kenya/gloves")
   const iconSlug = slug.includes('/') ? slug.split('/').pop() ?? slug : slug;
   const Icon = iconMap[iconSlug] ?? Package;
 
