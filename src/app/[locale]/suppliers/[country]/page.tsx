@@ -347,6 +347,12 @@ export default async function CountrySupplierPage({
               );
             })}
           </div>
+
+          <div className="mt-8 text-center">
+            <Button variant="outline" size="lg" asChild>
+              <Link href="/products">{t('content.viewFullCatalog')}</Link>
+            </Button>
+          </div>
         </Container>
       </section>
 

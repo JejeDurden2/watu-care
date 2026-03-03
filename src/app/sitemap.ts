@@ -12,6 +12,7 @@ const LAST_MODIFIED = {
   suppliers: new Date('2026-02-24'),
   about: new Date('2026-02-08'),
   contact: new Date('2026-02-08'),
+  faq: new Date('2026-03-03'),
   privacy: new Date('2026-02-08'),
   terms: new Date('2026-02-08'),
 } as const;
@@ -51,6 +52,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
       lastModified: LAST_MODIFIED.contact,
       changeFrequency: 'monthly' as const,
       priority: 0.8,
+    },
+    {
+      url: `${BASE_URL}/${locale}/faq`,
+      lastModified: LAST_MODIFIED.faq,
+      changeFrequency: 'monthly' as const,
+      priority: 0.6,
     },
     {
       url: `${BASE_URL}/${locale}/privacy`,

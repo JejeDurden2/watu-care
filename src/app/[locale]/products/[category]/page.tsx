@@ -8,7 +8,9 @@ import {
   CategoryIcon,
   ProductCard,
 } from '@/components/products';
+import { MapPin } from 'lucide-react';
 import { getAllCategories, getCategoryBySlug } from '@/lib/products';
+import { getTier1Countries } from '@/data/countries';
 import { generateBreadcrumbSchema } from '@/lib/schema';
 import { BASE_URL } from '@/lib/constants';
 
@@ -103,6 +105,9 @@ export default async function CategoryPage({
   if (!category) {
     notFound();
   }
+
+  const tSuppliers = await getTranslations('suppliers');
+  const tier1Countries = getTier1Countries();
 
   // Get translated category title and description
   const categoryTitle = t.has(`categories.${categorySlug}.title`)
@@ -224,6 +229,40 @@ export default async function CategoryPage({
                 <ProductCard product={product} category={category} />
               </div>
             ))}
+          </div>
+
+          {/* Cross-section: Find this category in your region */}
+          <div className="mt-16 rounded-2xl bg-muted/50 p-8 lg:p-10">
+            <div className="mb-6">
+              <h2 className="font-display text-2xl font-bold tracking-tight text-secondary">
+                {t('findSuppliers', { category: categoryTitle })}
+              </h2>
+              <p className="mt-2 text-base text-muted-foreground">
+                {t('findSuppliersSubtitle', { category: categoryTitle.toLowerCase() })}
+              </p>
+            </div>
+            <div className="flex flex-wrap gap-2.5">
+              {tier1Countries.map((country) => {
+                const countryName = tSuppliers.has(`countries.${country.slug}`)
+                  ? tSuppliers(`countries.${country.slug}`)
+                  : country.name;
+                return (
+                  <Link
+                    key={country.slug}
+                    href={`/suppliers/${country.slug}/${categorySlug}`}
+                    className="inline-flex items-center gap-2 rounded-full border border-border bg-white px-4 py-2 text-sm font-medium text-secondary transition-colors hover:border-primary hover:bg-primary/5"
+                  >
+                    <MapPin className="h-3.5 w-3.5 text-primary" />
+                    {countryName}
+                  </Link>
+                );
+              })}
+            </div>
+            <div className="mt-6">
+              <Button variant="outline" size="sm" asChild>
+                <Link href="/suppliers">{t('viewSuppliers')}</Link>
+              </Button>
+            </div>
           </div>
 
           {/* Bottom CTA strip */}

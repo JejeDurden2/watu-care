@@ -8,6 +8,8 @@
     "products": "Products",
     "about": "About",
     "contact": "Contact",
+    "suppliers": "Suppliers",
+    "faq": "FAQ",
     "requestQuote": "Request a Quote",
     "language": "Language",
     "search": "Search",
@@ -71,6 +73,9 @@
     "viewProducts": "View products",
     "available": "available",
     "backToCategories": "Back to All Categories",
+    "findSuppliers": "Find {category} in your region",
+    "findSuppliersSubtitle": "We deliver {category} to healthcare facilities across Africa and the Middle East.",
+    "viewSuppliers": "View all markets",
     "moreInCategory": "More in this category",
     "categories": {
       "title": "Ready to order?",
@@ -491,7 +496,9 @@
     "products": "Products",
     "aboutUs": "About Us",
     "howItWorks": "How It Works",
+    "suppliers": "Suppliers",
     "requestQuote": "Contact",
+    "faq": "FAQ",
     "productsTitle": "Products",
     "contact": "Contact",
     "followUs": "Follow Us",
@@ -637,6 +644,7 @@
       "categoryProductsTitle": "{category} Products",
       "categoryProductsSubtitle": "Browse our selection of {category} available for healthcare facilities in {country}.",
       "relatedCategoriesTitle": "Other Products Available in {country}",
+      "viewFullCatalog": "View Full Product Catalog",
       "otherCountriesTitle": "We Also Serve",
       "requestQuoteTitle": "Request a Quote for {country}",
       "requestQuoteSubtitle": "Get competitive pricing on medical supplies delivered to {country}. Our team responds within 24-48 hours."
@@ -711,7 +719,16 @@
     "paymentQuestion": "What payment methods do you accept?",
     "paymentAnswer": "We accept bank transfers (T/T) and letters of credit (L/C) for larger orders. Payment terms are discussed during the quotation process based on order size and relationship.",
     "supportQuestion": "What after-sales support do you provide?",
-    "supportAnswer": "Our team provides support throughout the order process and after delivery. We assist with product inquiries, documentation, and any issues that may arise with your order."
+    "supportAnswer": "Our team provides support throughout the order process and after delivery. We assist with product inquiries, documentation, and any issues that may arise with your order.",
+    "meta": {
+      "title": "Frequently Asked Questions",
+      "description": "Find answers to common questions about Watu Care's medical supplies, delivery, certifications, payment, and after-sales support."
+    },
+    "pageSubtitle": "Everything you need to know about ordering medical supplies from Watu Care.",
+    "stillHaveQuestions": "Still have questions?",
+    "stillHaveQuestionsDesc": "Our team is ready to help with any questions about our products, pricing, or delivery.",
+    "contactUs": "Contact Us",
+    "viewProducts": "View Products"
   },
   "stats": {
     "products": "Product lines",

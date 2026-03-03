@@ -8,6 +8,8 @@
     "products": "Produits",
     "about": "À propos",
     "contact": "Contact",
+    "suppliers": "Fournisseurs",
+    "faq": "FAQ",
     "requestQuote": "Demander un devis",
     "language": "Langue",
     "search": "Rechercher",
@@ -71,6 +73,9 @@
     "viewProducts": "Voir les produits",
     "available": "disponible(s)",
     "backToCategories": "Retour aux catégories",
+    "findSuppliers": "Trouvez {category} dans votre région",
+    "findSuppliersSubtitle": "Nous livrons {category} aux établissements de santé en Afrique et au Moyen-Orient.",
+    "viewSuppliers": "Voir tous les marchés",
     "moreInCategory": "Autres produits de cette catégorie",
     "categories": {
       "title": "Prêt à commander ?",
@@ -559,7 +564,9 @@
     "products": "Produits",
     "aboutUs": "À propos",
     "howItWorks": "Comment ça marche",
+    "suppliers": "Fournisseurs",
     "requestQuote": "Contact",
+    "faq": "FAQ",
     "productsTitle": "Produits",
     "contact": "Contact",
     "followUs": "Suivez-nous",
@@ -705,6 +712,7 @@
       "categoryProductsTitle": "Produits {category}",
       "categoryProductsSubtitle": "Parcourez notre sélection de {category} disponible pour les établissements de santé en {country}.",
       "relatedCategoriesTitle": "Autres Produits Disponibles en {country}",
+      "viewFullCatalog": "Voir le catalogue complet",
       "otherCountriesTitle": "Nous Servons Également",
       "requestQuoteTitle": "Demander un Devis pour {country}",
       "requestQuoteSubtitle": "Obtenez des prix compétitifs sur les fournitures médicales livrées en {country}. Notre équipe répond sous 24-48 heures."
@@ -779,7 +787,16 @@
     "paymentQuestion": "Quels modes de paiement acceptez-vous ?",
     "paymentAnswer": "Nous acceptons les virements bancaires (T/T) et les lettres de crédit (L/C) pour les commandes importantes. Les conditions de paiement sont discutées lors du processus de devis selon la taille de la commande et la relation.",
     "supportQuestion": "Quel support après-vente proposez-vous ?",
-    "supportAnswer": "Notre équipe vous accompagne tout au long du processus de commande et après la livraison. Nous vous assistons pour les questions sur les produits, la documentation et tout problème éventuel."
+    "supportAnswer": "Notre équipe vous accompagne tout au long du processus de commande et après la livraison. Nous vous assistons pour les questions sur les produits, la documentation et tout problème éventuel.",
+    "meta": {
+      "title": "Questions fréquentes",
+      "description": "Trouvez les réponses aux questions courantes sur les fournitures médicales, la livraison, les certifications, le paiement et le support après-vente de Watu Care."
+    },
+    "pageSubtitle": "Tout ce que vous devez savoir sur la commande de fournitures médicales chez Watu Care.",
+    "stillHaveQuestions": "Vous avez encore des questions ?",
+    "stillHaveQuestionsDesc": "Notre équipe est prête à vous aider pour toute question sur nos produits, nos prix ou la livraison.",
+    "contactUs": "Contactez-nous",
+    "viewProducts": "Voir les produits"
   },
   "stats": {
     "products": "Références produits",
