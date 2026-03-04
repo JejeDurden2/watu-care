@@ -50,7 +50,7 @@
 ├── public/
 │   ├── logo.png
 │   ├── hero-medical.jpg
-│   └── fluid-management.jpg
+│   └── products/              # Product images (kebab-case)
 ├── eslint.config.mjs           # ESLint 9 flat config
 ├── tailwind.config.ts
 └── package.json
