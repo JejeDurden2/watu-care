@@ -77,10 +77,10 @@ export function Header(): React.ReactElement {
               <Image
                 src="/logo.png"
                 alt="Watu Care"
-                width={240}
-                height={70}
+                width={280}
+                height={80}
                 className={cn(
-                  'h-12 w-auto drop-shadow-sm header-logo md:h-14',
+                  'h-14 w-auto drop-shadow-sm header-logo md:h-16',
                   isScrolled && 'header-logo-scrolled'
                 )}
                 style={{ width: 'auto' }}

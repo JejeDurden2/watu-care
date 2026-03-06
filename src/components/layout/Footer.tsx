@@ -36,9 +36,9 @@ export async function Footer(): Promise<React.ReactElement> {
             <Image
               src="/logo.png"
               alt="Watu Care"
-              width={140}
-              height={40}
-              className="h-10 w-auto brightness-0 invert"
+              width={180}
+              height={52}
+              className="h-14 w-auto brightness-0 invert"
               style={{ width: 'auto' }}
             />
             <p className="max-w-xs text-sm leading-relaxed text-secondary-foreground/70">
