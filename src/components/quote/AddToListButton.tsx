@@ -5,6 +5,7 @@ import { useTranslations } from 'next-intl';
 import { ListPlus, ListCheck } from 'lucide-react';
 import { toast } from 'sonner';
 import { useQuoteStore } from '@/lib/quote-store';
+import { trackProductAdd, trackProductRemove } from '@/lib/analytics';
 import { Button } from '@/components/ui';
 import type { Product, ProductCategory } from '@/types/product';
 
@@ -47,6 +48,7 @@ export function AddToListButton({
 
     if (inList) {
       removeItem(product.id);
+      trackProductRemove(product.id, category.slug);
       toast.success(t('toast.removed'));
     } else {
       addItem({
@@ -55,6 +57,7 @@ export function AddToListButton({
         categorySlug: category.slug,
         categoryTitle: category.title,
       });
+      trackProductAdd(product.id, category.slug);
       toast.success(t('toast.added'));
     }
   };

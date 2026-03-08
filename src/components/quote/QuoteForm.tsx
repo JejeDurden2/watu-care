@@ -7,6 +7,7 @@ import { useTranslations } from 'next-intl';
 import { Button } from '@/components/ui';
 import { countries } from '@/data/countries';
 import { useQuoteStore } from '@/lib/quote-store';
+import { trackFormFieldInteraction, trackQuoteFormSubmit, trackQuoteFormError } from '@/lib/analytics';
 import { cn } from '@/lib/utils';
 
 interface QuoteFormData {
@@ -113,14 +114,7 @@ export function QuoteForm({ onSuccess }: QuoteFormProps): React.ReactElement {
   }, [emailSuggestion]);
 
   const trackFieldEvent = useCallback((fieldName: string, event: 'focus' | 'blur'): void => {
-    if (typeof window !== 'undefined' && 'dataLayer' in window) {
-      (window as Window & { dataLayer: Record<string, unknown>[] }).dataLayer.push({
-        event: 'form_field_interaction',
-        form_name: 'quote_request',
-        field_name: fieldName,
-        interaction_type: event,
-      });
-    }
+    trackFormFieldInteraction('quote_request', fieldName, event);
   }, []);
 
   const handleSubmit = async (e: React.FormEvent): Promise<void> => {
@@ -136,6 +130,7 @@ export function QuoteForm({ onSuccess }: QuoteFormProps): React.ReactElement {
         fieldErrors[field] = error.message;
       });
       setErrors(fieldErrors);
+      trackQuoteFormError('validation');
 
       // Focus first error field
       const firstErrorField = result.error.issues[0]?.path[0] as string | undefined;
@@ -166,9 +161,11 @@ export function QuoteForm({ onSuccess }: QuoteFormProps): React.ReactElement {
         throw new Error('Failed to submit quote request');
       }
 
+      trackQuoteFormSubmit(items.length, formData.country);
       clearItems();
       onSuccess();
     } catch {
+      trackQuoteFormError('api_error');
       setSubmitError(t('validation.submitError'));
     } finally {
       setIsSubmitting(false);

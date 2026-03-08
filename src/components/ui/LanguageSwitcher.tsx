@@ -4,6 +4,7 @@ import { useLocale } from 'next-intl';
 import { usePathname, useRouter } from '@/i18n/routing';
 import { locales, type Locale } from '@/i18n/config';
 import { Globe } from 'lucide-react';
+import { trackLanguageSwitch } from '@/lib/analytics';
 import { cn } from '@/lib/utils';
 
 const localeLabels: Record<Locale, string> = {
@@ -21,6 +22,7 @@ export function LanguageSwitcher({ className }: LanguageSwitcherProps): React.Re
   const router = useRouter();
 
   function handleChange(newLocale: Locale): void {
+    trackLanguageSwitch(locale, newLocale);
     router.replace(pathname, { locale: newLocale });
   }
 

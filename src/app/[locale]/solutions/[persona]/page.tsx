@@ -186,6 +186,7 @@ export default async function PersonaPage({
               <QuoteModalButton
                 size="lg"
                 className="bg-white text-secondary hover:bg-white/90"
+                analyticsLocation="persona_hero"
               >
                 {t(`${personaSlug}.hero.cta`)}
               </QuoteModalButton>
@@ -370,7 +371,7 @@ export default async function PersonaPage({
               {t(`${personaSlug}.cta.subtitle`)}
             </p>
             <div className="mt-8 flex flex-col justify-center gap-4 sm:flex-row">
-              <QuoteModalButton size="lg">
+              <QuoteModalButton size="lg" analyticsLocation="persona_cta">
                 {t(`${personaSlug}.cta.primary`)}
               </QuoteModalButton>
               <Button size="lg" variant="outline" asChild>

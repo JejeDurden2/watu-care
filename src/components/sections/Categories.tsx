@@ -40,6 +40,7 @@ export async function Categories(): Promise<React.ReactElement> {
             variant="ghost"
             size="sm"
             className="inline h-auto p-0 font-medium text-accent underline-offset-4 hover:bg-transparent hover:underline"
+            analyticsLocation="categories_custom_request"
           >
             {t('customRequestLink')}
           </QuoteModalButton>

@@ -37,6 +37,7 @@ export async function CTA(): Promise<React.ReactElement> {
               <QuoteModalButton
                 size="lg"
                 className="bg-white text-secondary hover:bg-white/90"
+                analyticsLocation="cta_section"
               >
                 {t('button')}
                 <ArrowRight className="h-5 w-5" />

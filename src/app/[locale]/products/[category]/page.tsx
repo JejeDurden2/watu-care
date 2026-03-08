@@ -201,7 +201,7 @@ export default async function CategoryPage({
                 {t('productCount', { count: category.products.length })}{' '}
                 {t('available')}
               </div>
-              <QuoteModalButton size="md" className="bg-white text-secondary hover:bg-white/90">
+              <QuoteModalButton size="md" className="bg-white text-secondary hover:bg-white/90" analyticsLocation="category_header">
                 {tNav('requestQuote')}
               </QuoteModalButton>
             </div>
@@ -279,7 +279,7 @@ export default async function CategoryPage({
               {t('categories.title')}
             </p>
             <div className="flex flex-col gap-3 sm:flex-row">
-              <QuoteModalButton size="lg">{tNav('requestQuote')}</QuoteModalButton>
+              <QuoteModalButton size="lg" analyticsLocation="category_bottom">{tNav('requestQuote')}</QuoteModalButton>
               <Button variant="outline" size="lg" asChild>
                 <Link href="/products">{t('backToCategories')}</Link>
               </Button>

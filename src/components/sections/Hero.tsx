@@ -70,7 +70,7 @@ export async function Hero(): Promise<React.ReactElement> {
 
                 {/* CTAs — mobile only */}
                 <div className="stagger-item stagger-delay-5 flex flex-col gap-3 pt-1 sm:flex-row sm:items-center lg:hidden">
-                  <QuoteModalButton size="lg">
+                  <QuoteModalButton size="lg" analyticsLocation="hero_mobile">
                     {t('cta')}
                   </QuoteModalButton>
                   <Button
@@ -91,7 +91,7 @@ export async function Hero(): Promise<React.ReactElement> {
               {/* Right: CTAs — desktop only */}
               <div className="hidden shrink-0 lg:flex lg:flex-col lg:items-end lg:gap-3">
                 <div className="stagger-item stagger-delay-5 flex flex-col gap-3">
-                  <QuoteModalButton size="lg">
+                  <QuoteModalButton size="lg" analyticsLocation="hero_desktop">
                     {t('cta')}
                   </QuoteModalButton>
                   <Button

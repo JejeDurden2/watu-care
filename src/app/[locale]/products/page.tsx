@@ -113,7 +113,7 @@ export default async function ProductsPage({
             <p className="text-sm font-medium uppercase tracking-wider text-muted-foreground">
               {totalCount}+ products · {categories.length} categories
             </p>
-            <QuoteModalButton size="md">{tNav('requestQuote')}</QuoteModalButton>
+            <QuoteModalButton size="md" analyticsLocation="products_header">{tNav('requestQuote')}</QuoteModalButton>
           </div>
         </div>
 

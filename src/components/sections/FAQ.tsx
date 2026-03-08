@@ -3,6 +3,7 @@
 import { useState } from 'react';
 import { useTranslations } from 'next-intl';
 import { Container } from '@/components/ui';
+import { trackFaqOpen } from '@/lib/analytics';
 
 const faqKeys = [
   'moq',
@@ -42,7 +43,10 @@ export function FAQ(): React.ReactElement {
                 <button
                   key={key}
                   type="button"
-                  onClick={() => setActiveIndex(index)}
+                  onClick={() => {
+                    setActiveIndex(index);
+                    trackFaqOpen(key, index);
+                  }}
                   className="flex w-full items-start gap-4 py-5 text-left transition-colors duration-200"
                   aria-expanded={isActive}
                   aria-controls={`faq-answer-${index}`}

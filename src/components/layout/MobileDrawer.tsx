@@ -5,6 +5,7 @@ import Image from 'next/image';
 import { useTranslations } from 'next-intl';
 import { X, ChevronRight, Globe } from 'lucide-react';
 import { Link } from '@/i18n/routing';
+import { trackNavClick } from '@/lib/analytics';
 import { LanguageSwitcher } from '@/components/ui';
 import { cn } from '@/lib/utils';
 
@@ -130,7 +131,10 @@ export function MobileDrawer({ isOpen, navLinks, onClose }: MobileDrawerProps): 
                   'stagger-item flex items-center justify-between rounded-xl px-4 py-3.5 text-base font-medium text-secondary transition-all hover:bg-secondary/5 active:scale-[0.98]',
                   `stagger-delay-${index + 1}`
                 )}
-                onClick={handleClose}
+                onClick={() => {
+                  trackNavClick(link.href, 'mobile');
+                  handleClose();
+                }}
               >
                 {link.label}
                 <ChevronRight className="h-4 w-4 text-secondary/30" />

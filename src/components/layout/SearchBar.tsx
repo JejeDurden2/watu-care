@@ -6,6 +6,7 @@ import { useTranslations } from 'next-intl';
 import { Link } from '@/i18n/routing';
 import { useProductSearch } from '@/hooks/useProductSearch';
 import { getCategoryGradient, getCategoryIcon } from '@/lib/product-images';
+import { trackSearchQuery, trackSearchResultClick } from '@/lib/analytics';
 import { cn } from '@/lib/utils';
 
 interface SearchBarProps {
@@ -45,7 +46,19 @@ export function SearchBar({ className, onResultClick }: SearchBarProps): React.R
     };
   }, []);
 
-  const handleResultClick = () => {
+  // Track search queries when results change (debounced by useProductSearch)
+  const lastTrackedQuery = useRef('');
+  useEffect(() => {
+    if (query.trim().length >= 3 && query !== lastTrackedQuery.current && !isSearching) {
+      lastTrackedQuery.current = query;
+      trackSearchQuery(query, results.length);
+    }
+  }, [query, results.length, isSearching]);
+
+  const handleResultClick = (productId?: string) => {
+    if (productId) {
+      trackSearchResultClick(productId, query);
+    }
     setIsOpen(false);
     setQuery('');
     onResultClick?.();
@@ -100,7 +113,7 @@ export function SearchBar({ className, onResultClick }: SearchBarProps): React.R
                   <li key={`${category.slug}-${product.id}`}>
                     <Link
                       href={`/products/${category.slug}/${product.id}`}
-                      onClick={handleResultClick}
+                      onClick={() => handleResultClick(product.id)}
                       className="flex items-center gap-3 px-4 py-3 transition-colors hover:bg-muted/50"
                     >
                       <div
@@ -134,7 +147,7 @@ export function SearchBar({ className, onResultClick }: SearchBarProps): React.R
             <div className="border-t border-border px-4 py-2">
               <Link
                 href={`/products?q=${encodeURIComponent(query)}`}
-                onClick={handleResultClick}
+                onClick={() => handleResultClick()}
                 className="block text-center text-xs font-medium text-primary hover:underline"
               >
                 {t('viewAll', { count: results.length })}
@@ -184,7 +197,19 @@ export function MobileSearchOverlay({
     return () => document.removeEventListener('keydown', handleEscape);
   }, [onClose]);
 
-  const handleResultClick = () => {
+  // Track search queries when results change
+  const lastTrackedQuery = useRef('');
+  useEffect(() => {
+    if (query.trim().length >= 3 && query !== lastTrackedQuery.current && !isSearching) {
+      lastTrackedQuery.current = query;
+      trackSearchQuery(query, results.length);
+    }
+  }, [query, results.length, isSearching]);
+
+  const handleResultClick = (productId?: string) => {
+    if (productId) {
+      trackSearchResultClick(productId, query);
+    }
     setQuery('');
     onClose();
   };
@@ -236,7 +261,7 @@ export function MobileSearchOverlay({
                   <li key={`${category.slug}-${product.id}`}>
                     <Link
                       href={`/products/${category.slug}/${product.id}`}
-                      onClick={handleResultClick}
+                      onClick={() => handleResultClick(product.id)}
                       className="flex items-center gap-4 px-4 py-4 transition-colors active:bg-muted/50"
                     >
                       <div

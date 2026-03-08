@@ -2,6 +2,7 @@
 
 import { useTranslations } from 'next-intl';
 import { Link } from '@/i18n/routing';
+import { trackNavClick, trackCtaClick } from '@/lib/analytics';
 import { Button, LanguageSwitcher } from '@/components/ui';
 import { QuoteListBadge } from '@/components/quote';
 import { SearchBar } from '@/components/layout/SearchBar';
@@ -26,6 +27,7 @@ export function DesktopNav({ navLinks, onRequestQuote }: DesktopNavProps): React
           <Link
             key={link.href}
             href={link.href}
+            onClick={() => trackNavClick(link.href, 'desktop')}
             className="nav-link-underline rounded-lg px-3 py-2 text-sm font-medium text-secondary/70 transition-colors hover:text-secondary active:scale-[0.98]"
           >
             {link.label}
@@ -44,7 +46,10 @@ export function DesktopNav({ navLinks, onRequestQuote }: DesktopNavProps): React
       <div className="ml-4">
         <Button
           size="sm"
-          onClick={onRequestQuote}
+          onClick={() => {
+            trackCtaClick('desktop_nav', 'request_quote');
+            onRequestQuote();
+          }}
           className="shadow-[0_2px_12px_-3px_hsl(var(--accent)/0.4)]"
         >
           {t('requestQuote')}

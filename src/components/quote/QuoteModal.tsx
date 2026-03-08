@@ -5,6 +5,7 @@ import * as Dialog from '@radix-ui/react-dialog';
 import { X, ArrowLeft, ShoppingBag, CheckCircle2, ListX, SkipForward, Clock, Mail, FileText } from 'lucide-react';
 import { useTranslations } from 'next-intl';
 import { useQuoteStore } from '@/lib/quote-store';
+import { trackQuoteModalOpen, trackQuoteFormStart } from '@/lib/analytics';
 import { Button } from '@/components/ui';
 import { QuoteItem } from './QuoteItem';
 import { QuoteForm } from './QuoteForm';
@@ -24,9 +25,11 @@ export function QuoteModal(): React.ReactElement {
 
   useEffect(() => {
     if (isModalOpen) {
-      setModalState(showForm ? 'form' : 'list');
+      const state = showForm ? 'form' : 'list';
+      setModalState(state);
+      trackQuoteModalOpen(items.length, showForm ? 'direct' : 'list');
     }
-  }, [isModalOpen, showForm]);
+  }, [isModalOpen, showForm, items.length]);
 
   const handleOpenChange = (open: boolean): void => {
     if (!open) {
@@ -40,6 +43,7 @@ export function QuoteModal(): React.ReactElement {
   };
 
   const handleRequestQuote = (): void => {
+    trackQuoteFormStart(items.length);
     setModalState('form');
     setShowForm(true);
   };
