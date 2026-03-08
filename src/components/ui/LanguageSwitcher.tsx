@@ -22,6 +22,7 @@ export function LanguageSwitcher({ className }: LanguageSwitcherProps): React.Re
   const router = useRouter();
 
   function handleChange(newLocale: Locale): void {
+    if (newLocale === locale) return;
     trackLanguageSwitch(locale, newLocale);
     router.replace(pathname, { locale: newLocale });
   }

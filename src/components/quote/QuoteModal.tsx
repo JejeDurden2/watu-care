@@ -1,6 +1,6 @@
 'use client';
 
-import { useEffect, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import * as Dialog from '@radix-ui/react-dialog';
 import { X, ArrowLeft, ShoppingBag, CheckCircle2, ListX, SkipForward, Clock, Mail, FileText } from 'lucide-react';
 import { useTranslations } from 'next-intl';
@@ -23,12 +23,13 @@ export function QuoteModal(): React.ReactElement {
     setHydrated(true);
   }, []);
 
+  const wasOpenRef = useRef(false);
   useEffect(() => {
-    if (isModalOpen) {
-      const state = showForm ? 'form' : 'list';
-      setModalState(state);
+    if (isModalOpen && !wasOpenRef.current) {
+      setModalState(showForm ? 'form' : 'list');
       trackQuoteModalOpen(items.length, showForm ? 'direct' : 'list');
     }
+    wasOpenRef.current = isModalOpen;
   }, [isModalOpen, showForm, items.length]);
 
   const handleOpenChange = (open: boolean): void => {

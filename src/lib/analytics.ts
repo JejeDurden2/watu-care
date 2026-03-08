@@ -68,10 +68,6 @@ export function trackFormFieldInteraction(
 
 // ── Product Discovery ────────────────────────────────────────────────
 
-export function trackCategoryClick(categorySlug: string): void {
-  trackEvent('category_click', { category_slug: categorySlug });
-}
-
 export function trackSearchQuery(searchTerm: string, resultCount: number): void {
   trackEvent('search_query', { search_term: searchTerm, result_count: resultCount });
 }

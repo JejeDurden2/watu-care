@@ -1,12 +1,12 @@
 'use client';
 
-import { useState, useRef, useEffect } from 'react';
+import { useState, useRef, useEffect, useCallback } from 'react';
 import { Search, X, Loader2 } from 'lucide-react';
 import { useTranslations } from 'next-intl';
 import { Link } from '@/i18n/routing';
 import { useProductSearch } from '@/hooks/useProductSearch';
+import { useSearchTracking } from '@/hooks/useSearchTracking';
 import { getCategoryGradient, getCategoryIcon } from '@/lib/product-images';
-import { trackSearchQuery, trackSearchResultClick } from '@/lib/analytics';
 import { cn } from '@/lib/utils';
 
 interface SearchBarProps {
@@ -46,23 +46,13 @@ export function SearchBar({ className, onResultClick }: SearchBarProps): React.R
     };
   }, []);
 
-  // Track search queries when results change (debounced by useProductSearch)
-  const lastTrackedQuery = useRef('');
-  useEffect(() => {
-    if (query.trim().length >= 3 && query !== lastTrackedQuery.current && !isSearching) {
-      lastTrackedQuery.current = query;
-      trackSearchQuery(query, results.length);
-    }
-  }, [query, results.length, isSearching]);
-
-  const handleResultClick = (productId?: string) => {
-    if (productId) {
-      trackSearchResultClick(productId, query);
-    }
+  const cleanupDesktop = useCallback(() => {
     setIsOpen(false);
     setQuery('');
     onResultClick?.();
-  };
+  }, [onResultClick, setQuery]);
+
+  const handleResultClick = useSearchTracking(query, results.length, isSearching, cleanupDesktop);
 
   return (
     <div ref={containerRef} className={cn('relative', className)}>
@@ -197,22 +187,12 @@ export function MobileSearchOverlay({
     return () => document.removeEventListener('keydown', handleEscape);
   }, [onClose]);
 
-  // Track search queries when results change
-  const lastTrackedQuery = useRef('');
-  useEffect(() => {
-    if (query.trim().length >= 3 && query !== lastTrackedQuery.current && !isSearching) {
-      lastTrackedQuery.current = query;
-      trackSearchQuery(query, results.length);
-    }
-  }, [query, results.length, isSearching]);
-
-  const handleResultClick = (productId?: string) => {
-    if (productId) {
-      trackSearchResultClick(productId, query);
-    }
+  const cleanupMobile = useCallback(() => {
     setQuery('');
     onClose();
-  };
+  }, [onClose, setQuery]);
+
+  const handleResultClick = useSearchTracking(query, results.length, isSearching, cleanupMobile);
 
   if (!isOpen) return null;
 

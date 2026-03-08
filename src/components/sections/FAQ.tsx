@@ -44,8 +44,10 @@ export function FAQ(): React.ReactElement {
                   key={key}
                   type="button"
                   onClick={() => {
-                    setActiveIndex(index);
-                    trackFaqOpen(key, index);
+                    if (activeIndex !== index) {
+                      setActiveIndex(index);
+                      trackFaqOpen(key, index);
+                    }
                   }}
                   className="flex w-full items-start gap-4 py-5 text-left transition-colors duration-200"
                   aria-expanded={isActive}
