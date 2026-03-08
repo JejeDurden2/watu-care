@@ -12,8 +12,10 @@ function getResendClient(): Resend {
 }
 
 const quoteRequestSchema = z.object({
+  contactName: z.string().optional(),
   companyName: z.string().min(2),
   email: z.string().email(),
+  phone: z.string().optional(),
   country: z.string().min(2),
   message: z.string().optional(),
   products: z
@@ -142,19 +144,37 @@ function buildQuoteEmailHtml(data: z.infer<typeof quoteRequestSchema>): string {
                 </tr>
               </table>
 
-              <!-- Email -->
+              <!-- Contact & Email -->
+              <table width="100%" cellpadding="0" cellspacing="0" style="margin-top: 16px;">
+                <tr>
+                  <td width="50%" style="padding-right: 8px; vertical-align: top;">
+                    <div style="padding: 16px; background-color: #f0f9ff; border-radius: 8px;">
+                      <p style="margin: 0 0 4px; font-size: 11px; font-weight: 600; color: #0284c7; text-transform: uppercase; letter-spacing: 0.05em;">Contact</p>
+                      <p style="margin: 0; font-size: 16px; font-weight: 600; color: #0f2b3c;">${data.contactName || 'Not provided'}</p>
+                    </div>
+                  </td>
+                  <td width="50%" style="padding-left: 8px; vertical-align: top;">
+                    <div style="padding: 16px; background-color: #f0f9ff; border-radius: 8px;">
+                      <p style="margin: 0 0 4px; font-size: 11px; font-weight: 600; color: #0284c7; text-transform: uppercase; letter-spacing: 0.05em;">Email</p>
+                      <a href="mailto:${data.email}" style="font-size: 16px; font-weight: 600; color: #0f2b3c; text-decoration: none;">${data.email}</a>
+                    </div>
+                  </td>
+                </tr>
+              </table>${data.phone ? `
+
+              <!-- Phone -->
               <div style="margin-top: 16px; padding: 16px; background-color: #f0f9ff; border-radius: 8px;">
-                <p style="margin: 0 0 4px; font-size: 11px; font-weight: 600; color: #0284c7; text-transform: uppercase; letter-spacing: 0.05em;">Email</p>
-                <a href="mailto:${data.email}" style="font-size: 16px; font-weight: 600; color: #0f2b3c; text-decoration: none;">${data.email}</a>
-              </div>
+                <p style="margin: 0 0 4px; font-size: 11px; font-weight: 600; color: #0284c7; text-transform: uppercase; letter-spacing: 0.05em;">Phone</p>
+                <a href="tel:${data.phone}" style="font-size: 16px; font-weight: 600; color: #0f2b3c; text-decoration: none;">${data.phone}</a>
+              </div>` : ''}
 
               ${productsSection}
               ${messageSection}
 
               <!-- Reply CTA -->
               <div style="margin-top: 32px; text-align: center;">
-                <a href="mailto:${data.email}?subject=Re: Quote Request — ${encodeURIComponent(data.companyName)}&body=${encodeURIComponent(`Hi,\n\nThank you for your interest in Watu Care. We're happy to assist with your quote request.\n\n`)}" style="display: inline-block; padding: 14px 32px; background-color: #0284c7; color: #ffffff; font-size: 14px; font-weight: 600; text-decoration: none; border-radius: 8px;">
-                  Reply to ${data.companyName}
+                <a href="mailto:${data.email}?subject=Re: Quote Request — ${encodeURIComponent(data.companyName)}&body=${encodeURIComponent(`Hi${data.contactName ? ` ${data.contactName}` : ''},\n\nThank you for your interest in Watu Care. We're happy to assist with your quote request.\n\n`)}" style="display: inline-block; padding: 14px 32px; background-color: #0284c7; color: #ffffff; font-size: 14px; font-weight: 600; text-decoration: none; border-radius: 8px;">
+                  Reply to ${data.contactName || data.companyName}
                 </a>
               </div>
 
@@ -189,18 +209,20 @@ function buildQuoteEmailText(data: z.infer<typeof quoteRequestSchema>): string {
     `NEW QUOTE REQUEST`,
     `${'='.repeat(40)}`,
     '',
+    data.contactName ? `Contact: ${data.contactName}` : null,
     `Company: ${data.companyName}`,
     `Email:   ${data.email}`,
+    data.phone ? `Phone:   ${data.phone}` : null,
     `Country: ${countryName}`,
     '',
     `Products:`,
     productList,
     '',
-    data.message ? `Message:\n${data.message}` : '',
+    data.message ? `Message:\n${data.message}` : null,
     '',
     `Submitted: ${new Date().toISOString()}`,
   ]
-    .filter(Boolean)
+    .filter((line): line is string => line !== null)
     .join('\n');
 }
 

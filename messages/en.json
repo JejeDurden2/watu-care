@@ -578,16 +578,24 @@
     "form": {
       "title": "Request a Quote",
       "noProductsSelected": "Tell us what you need and we'll get back to you.",
+      "contactName": "Your Name",
+      "contactNamePlaceholder": "Full name",
       "company": "Company Name",
       "companyPlaceholder": "Your company",
       "email": "Email",
       "emailPlaceholder": "your@email.com",
+      "emailSuggestion": "Did you mean",
+      "phone": "Phone (optional)",
+      "phonePlaceholder": "+XXX XXX XXX XXX",
+      "phoneHint": "We'll only call if needed for your quote.",
       "country": "Country",
       "countryPlaceholder": "Select your country",
       "message": "Message (optional)",
       "messagePlaceholder": "Quantities, specifications, questions...",
-      "submit": "Send Request",
-      "submitting": "Sending..."
+      "submit": "Get My Free Quote",
+      "submitting": "Sending...",
+      "trustResponseTime": "Response within 24–48h",
+      "trustPrivacy": "We never share your info"
     },
     "success": {
       "title": "Request Sent Successfully!",

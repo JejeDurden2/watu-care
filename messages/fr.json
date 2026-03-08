@@ -646,16 +646,24 @@
     "form": {
       "title": "Demander un devis",
       "noProductsSelected": "Dites-nous ce dont vous avez besoin et nous vous répondrons.",
+      "contactName": "Votre nom",
+      "contactNamePlaceholder": "Nom complet",
       "company": "Nom de l'entreprise",
       "companyPlaceholder": "Votre entreprise",
       "email": "Email",
       "emailPlaceholder": "votre@email.com",
+      "emailSuggestion": "Vouliez-vous dire",
+      "phone": "Téléphone (optionnel)",
+      "phonePlaceholder": "+XXX XXX XXX XXX",
+      "phoneHint": "Nous n'appellerons que si nécessaire pour votre devis.",
       "country": "Pays",
       "countryPlaceholder": "Sélectionnez votre pays",
       "message": "Message (optionnel)",
       "messagePlaceholder": "Quantités, spécifications, questions...",
-      "submit": "Envoyer la demande",
-      "submitting": "Envoi en cours..."
+      "submit": "Obtenir mon devis gratuit",
+      "submitting": "Envoi en cours...",
+      "trustResponseTime": "Réponse sous 24–48h",
+      "trustPrivacy": "Vos données restent confidentielles"
     },
     "success": {
       "title": "Demande envoyée avec succès !",
