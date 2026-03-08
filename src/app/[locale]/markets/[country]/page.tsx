@@ -129,7 +129,7 @@ export default async function CountryMarketPage({
 
   const localBusinessSchema = generateLocalBusinessSchema(
     country.name,
-    country.code,
+    countrySlug,
     locale
   );
 

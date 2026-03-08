@@ -79,7 +79,7 @@ export async function generateMetadata({
     : category.title;
 
   const title = `${productName} - ${categoryTitle}`;
-  const description = `${productDesc} Source in bulk from Watu Care — wholesale B2B medical supplier for Africa and the Middle East.`;
+  const description = `${productDesc} ${t('productDescSuffix')}`;
 
   return {
     title,

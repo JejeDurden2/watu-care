@@ -192,7 +192,7 @@ export function MobileSearchOverlay({
   if (!isOpen) return null;
 
   return (
-    <div className="fixed inset-0 z-[70] bg-background">
+    <div className="fixed inset-0 z-[70] bg-background" role="dialog" aria-modal="true" aria-label={t('placeholder')}>
       <div className="flex h-full flex-col">
         <div className="flex items-center gap-3 border-b border-border px-4 py-3">
           <Search className="h-5 w-5 shrink-0 text-muted-foreground" />

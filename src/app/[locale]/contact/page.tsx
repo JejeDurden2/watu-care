@@ -65,11 +65,12 @@ export default async function ContactPage({
 }: ContactPageProps): Promise<React.ReactElement> {
   const { locale } = await params;
   const t = await getTranslations('contact');
+  const tNav = await getTranslations('nav');
 
   const pageSchema = combineSchemas(
     generateContactPageSchema(locale),
     generateBreadcrumbSchema([
-      { name: 'Home', url: `${BASE_URL}/${locale}` },
+      { name: tNav('home'), url: `${BASE_URL}/${locale}` },
       { name: t('meta.title') },
     ]),
   );

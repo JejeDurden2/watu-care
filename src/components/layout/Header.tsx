@@ -26,7 +26,6 @@ export function Header(): React.ReactElement {
     { href: '/markets', label: t('markets') },
     { href: '/about', label: t('about') },
     { href: '/contact', label: t('contact') },
-    { href: '/faq', label: t('faq') },
   ];
 
   const closeMenu = useCallback(() => {

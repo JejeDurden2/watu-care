@@ -4,7 +4,7 @@ import { MapPin, ArrowRight } from 'lucide-react';
 import { Container } from '@/components/ui';
 import { Breadcrumb } from '@/components/products';
 import { getTier1Countries } from '@/data/countries';
-import { generateBreadcrumbSchema } from '@/lib/schema';
+import { generateBreadcrumbSchema, generateMarketItemListSchema, combineSchemas } from '@/lib/schema';
 import { Link } from '@/i18n/routing';
 import { BASE_URL } from '@/lib/constants';
 
@@ -74,11 +74,23 @@ export default async function MarketsPage({
     { name: t('breadcrumb.markets') },
   ]);
 
+  const itemListSchema = generateMarketItemListSchema(
+    tier1Countries.map((country) => ({
+      name: t.has(`countries.${country.slug}`)
+        ? t(`countries.${country.slug}`)
+        : country.name,
+      url: `${BASE_URL}/${locale}/markets/${country.slug}`,
+    })),
+    t('breadcrumb.markets'),
+  );
+
+  const pageSchema = combineSchemas(breadcrumbSchema, itemListSchema);
+
   return (
     <main>
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(pageSchema) }}
       />
 
       {/* Hero */}

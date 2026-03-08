@@ -15,21 +15,34 @@ const quickLinksKeys = [
 const productCategoryLinks = [
   { slug: 'gloves', href: '/products/gloves' },
   { slug: 'infection-prevention-ppe', href: '/products/infection-prevention-ppe' },
+  { slug: 'bodily-waste-management', href: '/products/bodily-waste-management' },
   { slug: 'surgical', href: '/products/surgical' },
   { slug: 'wound-care', href: '/products/wound-care' },
+  { slug: 'clinical-consumables', href: '/products/clinical-consumables' },
+  { slug: 'vascular-access-catheters', href: '/products/vascular-access-catheters' },
   { slug: 'airway-respiratory', href: '/products/airway-respiratory' },
+  { slug: 'surgical-instruments-sutures', href: '/products/surgical-instruments-sutures' },
   { slug: 'patient-care-equipment', href: '/products/patient-care-equipment' },
+];
+
+const solutionsLinks = [
+  { slug: 'hospitals', href: '/solutions/hospitals' },
+  { slug: 'clinics', href: '/solutions/clinics' },
+  { slug: 'ngos', href: '/solutions/ngos' },
+  { slug: 'pharmacies', href: '/solutions/pharmacies' },
+  { slug: 'government', href: '/solutions/government' },
 ];
 
 export async function Footer(): Promise<React.ReactElement> {
   const t = await getTranslations('footer');
   const tProducts = await getTranslations('products');
+  const tPersonas = await getTranslations('personas');
 
   return (
     <footer className="footer-accent-border bg-secondary text-secondary-foreground">
       <Container>
-        {/* Main grid: brand column (wider) + 3 link columns */}
-        <div className="grid gap-10 py-14 md:grid-cols-2 lg:grid-cols-[2fr_1fr_1fr_1fr] lg:gap-8 lg:py-16">
+        {/* Main grid: brand column (wider) + 4 link columns */}
+        <div className="grid gap-10 py-14 md:grid-cols-2 lg:grid-cols-[2fr_1fr_1fr_1fr_1fr] lg:gap-8 lg:py-16">
 
           {/* Brand Column */}
           <div className="space-y-5">
@@ -95,6 +108,25 @@ export async function Footer(): Promise<React.ReactElement> {
                     className="text-sm text-secondary-foreground/65 transition-colors hover:text-primary"
                   >
                     {tProducts(`categories.${item.slug}.title`)}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* Solutions */}
+          <div>
+            <h4 className="mb-4 text-xs font-semibold uppercase tracking-widest text-secondary-foreground/50">
+              {t('solutionsTitle')}
+            </h4>
+            <ul className="space-y-2.5">
+              {solutionsLinks.map((item) => (
+                <li key={item.slug}>
+                  <Link
+                    href={item.href}
+                    className="text-sm text-secondary-foreground/65 transition-colors hover:text-primary"
+                  >
+                    {tPersonas(`${item.slug}.hero.eyebrow`)}
                   </Link>
                 </li>
               ))}

@@ -17,6 +17,7 @@ import { Link } from '@/i18n/routing';
 import { getAllPersonas, getPersonaBySlug } from '@/data/personas';
 import { getCategoryBySlug } from '@/lib/products';
 import { getTier1Countries } from '@/data/countries';
+import { Breadcrumb } from '@/components/products';
 import {
   generateBreadcrumbSchema,
   generatePersonaPageSchema,
@@ -67,7 +68,7 @@ export async function generateMetadata({
       title,
       description,
       type: 'website',
-      url: `${BASE_URL}/${locale}/for/${personaSlug}`,
+      url: `${BASE_URL}/${locale}/solutions/${personaSlug}`,
       images: [
         {
           url: `${BASE_URL}/opengraph-image`,
@@ -78,11 +79,11 @@ export async function generateMetadata({
       ],
     },
     alternates: {
-      canonical: `${BASE_URL}/${locale}/for/${personaSlug}`,
+      canonical: `${BASE_URL}/${locale}/solutions/${personaSlug}`,
       languages: {
-        'x-default': `${BASE_URL}/en/for/${personaSlug}`,
-        en: `${BASE_URL}/en/for/${personaSlug}`,
-        fr: `${BASE_URL}/fr/for/${personaSlug}`,
+        'x-default': `${BASE_URL}/en/solutions/${personaSlug}`,
+        en: `${BASE_URL}/en/solutions/${personaSlug}`,
+        fr: `${BASE_URL}/fr/solutions/${personaSlug}`,
       },
     },
   };
@@ -127,7 +128,7 @@ export default async function PersonaPage({
       { name: tNav('home'), url: `${BASE_URL}/${locale}` },
       {
         name: t('breadcrumbLabel'),
-        url: `${BASE_URL}/${locale}/for/${personaSlug}`,
+        url: `${BASE_URL}/${locale}/solutions`,
       },
       { name: t(`${personaSlug}.hero.title`) },
     ]),
@@ -149,6 +150,15 @@ export default async function PersonaPage({
           <div className="absolute -bottom-20 left-1/3 h-[300px] w-[300px] rounded-full bg-accent/8 blur-[100px]" />
         </div>
         <Container className="relative z-10">
+          <Breadcrumb
+            variant="light"
+            items={[
+              { label: tNav('home'), href: '/' },
+              { label: t('breadcrumbLabel') },
+              { label: t(`${personaSlug}.hero.title`) },
+            ]}
+          />
+
           <div className="mb-6 flex items-center gap-3">
             <div className="h-px w-12 bg-accent" />
             <span className="font-body text-xs font-semibold uppercase tracking-[0.18em] text-accent">

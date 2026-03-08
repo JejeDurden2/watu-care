@@ -67,11 +67,12 @@ export default async function AboutPage({
   const { locale } = await params;
   const t = await getTranslations('about');
   const tMission = await getTranslations('mission');
+  const tNav = await getTranslations('nav');
 
   const pageSchema = combineSchemas(
     generateAboutPageSchema(locale),
     generateBreadcrumbSchema([
-      { name: 'Home', url: `${BASE_URL}/${locale}` },
+      { name: tNav('home'), url: `${BASE_URL}/${locale}` },
       { name: t('meta.title') },
     ]),
   );

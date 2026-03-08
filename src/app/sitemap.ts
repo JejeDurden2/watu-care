@@ -126,7 +126,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const personas = getAllPersonas();
   const personaPages = locales.flatMap((locale) =>
     personas.map((persona) => ({
-      url: `${BASE_URL}/${locale}/for/${persona.slug}`,
+      url: `${BASE_URL}/${locale}/solutions/${persona.slug}`,
       lastModified: LAST_MODIFIED.personas,
       changeFrequency: 'monthly' as const,
       priority: 0.8,

@@ -160,8 +160,8 @@ export default async function CategoryCountryPage({
   ]);
 
   const serviceSchema = generateServiceSchema(
-    category.title,
-    country.name,
+    categoryName,
+    countryName,
     countrySlug,
     categorySlug,
     locale

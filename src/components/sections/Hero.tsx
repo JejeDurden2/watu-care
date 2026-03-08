@@ -14,7 +14,7 @@ export async function Hero(): Promise<React.ReactElement> {
       {/* Background layers */}
       <div className="pointer-events-none absolute inset-0">
         <Image
-          src="/hero-medical.jpg"
+          src="/hero-medical.webp"
           alt={t('heroImageAlt')}
           fill
           className="object-cover object-center"

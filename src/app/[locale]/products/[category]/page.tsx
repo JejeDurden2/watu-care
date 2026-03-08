@@ -55,14 +55,14 @@ export async function generateMetadata({
     ? t(`categories.${categorySlug}.longDescription`)
     : category.longDescription;
 
-  const title = `Wholesale ${categoryTitle} Supplier - Africa & Middle East`;
+  const title = t('categoryTitleTemplate', { category: categoryTitle });
   const description = `${categoryLongDesc} ${category.products.length} products available — request a wholesale quote from Watu Care.`;
 
   return {
     title,
     description,
     keywords: [
-      category.title,
+      categoryTitle,
       'medical supplies',
       'wholesale',
       'B2B',
@@ -71,7 +71,7 @@ export async function generateMetadata({
       'Middle East',
     ],
     openGraph: {
-      title: `${category.title} | Watu Care`,
+      title: `${categoryTitle} | Watu Care`,
       description,
       type: 'website',
       url: `${BASE_URL}/${locale}/products/${categorySlug}`,
@@ -80,7 +80,7 @@ export async function generateMetadata({
           url: category.image || `${BASE_URL}/opengraph-image`,
           width: 1200,
           height: 630,
-          alt: category.title,
+          alt: categoryTitle,
         },
       ],
     },

@@ -340,14 +340,14 @@ export function generateFAQSchema(
  */
 export function generateLocalBusinessSchema(
   countryName: string,
-  countryCode: string,
+  countrySlug: string,
   locale: string,
 ): Record<string, unknown> {
   return {
     '@context': 'https://schema.org',
     '@type': 'MedicalBusiness',
     name: `Watu Care - Medical Supplies in ${countryName}`,
-    url: `${BASE_URL}/${locale}/markets/${countryCode.toLowerCase()}`,
+    url: `${BASE_URL}/${locale}/markets/${countrySlug}`,
     logo: `${BASE_URL}/logo.png`,
     description: `Trusted medical supplies supplier for healthcare facilities in ${countryName}. Quality medical devices and PPE from certified Asian manufacturers.`,
     address: {
@@ -455,7 +455,7 @@ export function generatePersonaPageSchema(
     '@type': 'WebPage',
     name: title,
     description,
-    url: `${BASE_URL}/${locale}/for/${personaSlug}`,
+    url: `${BASE_URL}/${locale}/solutions/${personaSlug}`,
     inLanguage: locale,
     about: {
       '@type': 'MedicalBusiness',

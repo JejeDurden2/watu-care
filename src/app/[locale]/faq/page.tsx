@@ -121,7 +121,7 @@ export default async function FAQPage({
       <section className="py-16 lg:py-24">
         <Container>
           <div className="mx-auto max-w-3xl">
-            <FAQAccordion items={faqItems} />
+            <FAQAccordion items={faqItems} headingLevel="h2" />
           </div>
         </Container>
       </section>

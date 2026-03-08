@@ -3,7 +3,7 @@ import { getTranslations } from 'next-intl/server';
 import { Container, QuoteModalButton } from '@/components/ui';
 import { CategoryCard } from '@/components/products';
 import { getAllCategories, getTotalProductCount } from '@/lib/products';
-import { generateBreadcrumbSchema } from '@/lib/schema';
+import { generateBreadcrumbSchema, generateMarketItemListSchema, combineSchemas } from '@/lib/schema';
 import { BASE_URL } from '@/lib/constants';
 
 interface ProductsPageProps {
@@ -70,17 +70,30 @@ export default async function ProductsPage({
 
   // Generate Breadcrumb JSON-LD
   const breadcrumbSchema = generateBreadcrumbSchema([
-    { name: 'Home', url: `${BASE_URL}/${locale}` },
+    { name: tNav('home'), url: `${BASE_URL}/${locale}` },
     { name: t('title') },
   ]);
 
+  // Generate ItemList schema for category listing
+  const itemListSchema = generateMarketItemListSchema(
+    categories.map((category) => ({
+      name: t.has(`categories.${category.slug}.title`)
+        ? t(`categories.${category.slug}.title`)
+        : category.title,
+      url: `${BASE_URL}/${locale}/products/${category.slug}`,
+    })),
+    t('title'),
+  );
+
+  const pageSchema = combineSchemas(breadcrumbSchema, itemListSchema);
+
   return (
     <main className="min-h-[100dvh] py-16">
-      {/* Breadcrumb JSON-LD */}
+      {/* JSON-LD Structured Data */}
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
-          __html: JSON.stringify(breadcrumbSchema),
+          __html: JSON.stringify(pageSchema),
         }}
       />
 

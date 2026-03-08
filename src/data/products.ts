@@ -744,7 +744,7 @@ export const productCategories: ProductCategory[] = [
         name: 'O-ring Syringe',
         description:
           'Luer-lock syringe with O-ring plunger for smooth operation and leak-proof seal.',
-        image: '/products/clinical-consumables/o-ring-syringe.jpg',
+        image: '/products/clinical-consumables/o-ring-syringe.webp',
         specifications: [
           'Polypropylene barrel and plunger',
           'O-ring seal for smooth, leak-free operation',
@@ -832,7 +832,7 @@ export const productCategories: ProductCategory[] = [
         name: 'Safety Blood Collection Needle',
         description:
           'Single-use safety needle with shield mechanism to prevent needlestick injuries.',
-        image: '/products/clinical-consumables/safety-blood-collection-needle.jpg',
+        image: '/products/clinical-consumables/safety-blood-collection-needle.webp',
         specifications: [
           'Safety shield mechanism to prevent needlestick injuries',
           'Ultra-thin wall for patient comfort',
@@ -862,7 +862,7 @@ export const productCategories: ProductCategory[] = [
         name: 'Sterile Urine Container',
         description:
           'Leak-proof sterile container with screw cap and graduated markings for urine collection.',
-        image: '/products/clinical-consumables/sterile-urine-container.jpg',
+        image: '/products/clinical-consumables/sterile-urine-container.webp',
         specifications: [
           'Sterile, single-use',
           'Screw-cap lid with leak-proof seal',
@@ -1149,7 +1149,7 @@ export const productCategories: ProductCategory[] = [
         name: 'Digital Thermometer',
         description:
           'Fast, accurate digital thermometer for oral, axillary, or rectal use.',
-        image: '/products/patient-care-basic-equipment/digital-thermometer.jpg',
+        image: '/products/patient-care-basic-equipment/digital-thermometer.webp',
         specifications: [
           'LCD display',
           'Measurement range: 32°C - 42°C',

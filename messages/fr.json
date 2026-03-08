@@ -87,9 +87,18 @@
         "description": "Gants d'examen et chirurgicaux en latex, nitrile et vinyle.",
         "longDescription": "Gamme complète de gants médicaux : latex, nitrile et vinyle. Disponibles en grades examen et chirurgical stérile, poudrés ou non poudrés, pour tous les environnements cliniques.",
         "faq": [
-          { "q": "Quels types de gants médicaux proposez-vous ?", "a": "Nous fournissons des gants en latex, nitrile et vinyle, en grades examen et chirurgical stérile. Options poudrées et non poudrées, tailles XS à XL." },
-          { "q": "Quelle est la quantité minimale de commande pour les gants en gros ?", "a": "Les quantités minimales commencent à 1 000 boîtes (100 gants par boîte). Contactez-nous pour un devis personnalisé selon les volumes de votre établissement." },
-          { "q": "Vos gants sont-ils certifiés CE et ISO ?", "a": "Oui, tous les gants proviennent de fabricants asiatiques certifiés et répondent aux normes de marquage CE et ISO 13485 pour les dispositifs médicaux." }
+          {
+            "q": "Quels types de gants médicaux proposez-vous ?",
+            "a": "Nous fournissons des gants en latex, nitrile et vinyle, en grades examen et chirurgical stérile. Options poudrées et non poudrées, tailles XS à XL."
+          },
+          {
+            "q": "Quelle est la quantité minimale de commande pour les gants en gros ?",
+            "a": "Les quantités minimales commencent à 1 000 boîtes (100 gants par boîte). Contactez-nous pour un devis personnalisé selon les volumes de votre établissement."
+          },
+          {
+            "q": "Vos gants sont-ils certifiés CE et ISO ?",
+            "a": "Oui, tous les gants proviennent de fabricants asiatiques certifiés et répondent aux normes de marquage CE et ISO 13485 pour les dispositifs médicaux."
+          }
         ]
       },
       "infection-prevention-ppe": {
@@ -97,9 +106,18 @@
         "description": "Blouses, charlottes, masques et équipements de protection pour le contrôle des infections.",
         "longDescription": "Équipements de protection individuelle complets pour les professionnels de santé. Comprend blouses chirurgicales, blouses d'isolement, charlottes, masques, écrans faciaux et couvre-chaussures.",
         "faq": [
-          { "q": "Quels EPI sont disponibles pour les établissements de santé ?", "a": "Notre gamme comprend blouses chirurgicales, blouses d'isolement, charlottes, masques, écrans faciaux, couvre-chaussures et combinaisons intégrales conformes aux normes internationales." },
-          { "q": "Puis-je commander des kits EPI personnalisés pour mon hôpital ?", "a": "Oui, nous assemblons des kits EPI sur mesure adaptés aux protocoles de votre établissement. Contactez notre équipe avec vos spécifications pour un devis personnalisé." },
-          { "q": "Quelles certifications portent vos EPI ?", "a": "Nos EPI portent le marquage CE et sont conformes à la norme ISO 13485. Les blouses chirurgicales respectent les niveaux AAMI de résistance aux fluides." }
+          {
+            "q": "Quels EPI sont disponibles pour les établissements de santé ?",
+            "a": "Notre gamme comprend blouses chirurgicales, blouses d'isolement, charlottes, masques, écrans faciaux, couvre-chaussures et combinaisons intégrales conformes aux normes internationales."
+          },
+          {
+            "q": "Puis-je commander des kits EPI personnalisés pour mon hôpital ?",
+            "a": "Oui, nous assemblons des kits EPI sur mesure adaptés aux protocoles de votre établissement. Contactez notre équipe avec vos spécifications pour un devis personnalisé."
+          },
+          {
+            "q": "Quelles certifications portent vos EPI ?",
+            "a": "Nos EPI portent le marquage CE et sont conformes à la norme ISO 13485. Les blouses chirurgicales respectent les niveaux AAMI de résistance aux fluides."
+          }
         ]
       },
       "bodily-waste-management": {
@@ -107,9 +125,18 @@
         "description": "Sacs absorbants, bassins, coussinets et systèmes de drainage pour les soins aux patients.",
         "longDescription": "Solutions hygiéniques de gestion des déchets pour les soins aux patients : sacs absorbants pour chaises percées et bassins, coussinets super absorbants, bassins jetables et réutilisables, et systèmes de drainage urinaire.",
         "faq": [
-          { "q": "Quels produits de gestion des déchets proposez-vous pour les hôpitaux ?", "a": "Nous fournissons des sacs absorbants pour chaises percées et bassins, des coussinets super absorbants, des bassins jetables et réutilisables, et des systèmes de drainage urinaire fermés." },
-          { "q": "Vos produits conviennent-ils aux établissements de soins de longue durée ?", "a": "Oui, notre gamme comprend des options jetables et réutilisables adaptées aux soins de longue durée, centres de rééducation et soins aigus." },
-          { "q": "Comment garantissez-vous les normes d'hygiène ?", "a": "Tous les produits sont emballés individuellement et fabriqués sous systèmes de gestion qualité ISO 13485. Les coussinets super absorbants intègrent une technologie anti-odeurs." }
+          {
+            "q": "Quels produits de gestion des déchets proposez-vous pour les hôpitaux ?",
+            "a": "Nous fournissons des sacs absorbants pour chaises percées et bassins, des coussinets super absorbants, des bassins jetables et réutilisables, et des systèmes de drainage urinaire fermés."
+          },
+          {
+            "q": "Vos produits conviennent-ils aux établissements de soins de longue durée ?",
+            "a": "Oui, notre gamme comprend des options jetables et réutilisables adaptées aux soins de longue durée, centres de rééducation et soins aigus."
+          },
+          {
+            "q": "Comment garantissez-vous les normes d'hygiène ?",
+            "a": "Tous les produits sont emballés individuellement et fabriqués sous systèmes de gestion qualité ISO 13485. Les coussinets super absorbants intègrent une technologie anti-odeurs."
+          }
         ]
       },
       "surgical": {
@@ -117,9 +144,18 @@
         "description": "Packs stériles pré-assemblés et champs pour procédures chirurgicales.",
         "longDescription": "Gamme complète de packs chirurgicaux stériles incluant kits spécifiques par procédure, champs et couvertures chauffantes. Disponibles en configurations standard et personnalisées.",
         "faq": [
-          { "q": "Les packs chirurgicaux peuvent-ils être personnalisés ?", "a": "Oui, nous proposons des configurations sur mesure adaptées à vos protocoles opératoires. Fournissez vos spécifications et nous assemblerons les packs selon vos besoins." },
-          { "q": "Quels types de champs chirurgicaux sont inclus ?", "a": "Notre gamme comprend des champs universels, fenêtrés, fendus et spécifiques aux procédures orthopédiques, cardiovasculaires et de chirurgie générale. Tous stériles et à usage unique." },
-          { "q": "Comment les packs stériles sont-ils expédiés ?", "a": "Tous les packs sont doublement emballés et scellés en conditionnement stérile. Les conteneurs d'expédition sont contrôlés en température et humidité pour maintenir la stérilité." }
+          {
+            "q": "Les packs chirurgicaux peuvent-ils être personnalisés ?",
+            "a": "Oui, nous proposons des configurations sur mesure adaptées à vos protocoles opératoires. Fournissez vos spécifications et nous assemblerons les packs selon vos besoins."
+          },
+          {
+            "q": "Quels types de champs chirurgicaux sont inclus ?",
+            "a": "Notre gamme comprend des champs universels, fenêtrés, fendus et spécifiques aux procédures orthopédiques, cardiovasculaires et de chirurgie générale. Tous stériles et à usage unique."
+          },
+          {
+            "q": "Comment les packs stériles sont-ils expédiés ?",
+            "a": "Tous les packs sont doublement emballés et scellés en conditionnement stérile. Les conteneurs d'expédition sont contrôlés en température et humidité pour maintenir la stérilité."
+          }
         ]
       },
       "wound-care": {
@@ -127,9 +163,18 @@
         "description": "Pansements, compresses, systèmes de drainage et produits de fermeture des plaies.",
         "longDescription": "Solutions complètes pour le soin des plaies : pansements hydrocolloïdes et mousses, compresses de gaze, systèmes de drainage et bandages adhésifs. Conçus pour une cicatrisation optimale.",
         "faq": [
-          { "q": "Quels types de pansements sont disponibles ?", "a": "Nous fournissons des pansements hydrocolloïdes, en mousse, alginates, compresses de gaze, bandages adhésifs et films transparents. Chaque type est conçu pour des stades de plaie spécifiques." },
-          { "q": "Proposez-vous des systèmes de drainage des plaies ?", "a": "Oui, nous offrons des systèmes de drainage fermés de type Jackson-Pratt. Tous stériles, à usage unique, conçus pour la gestion sécurisée des fluides post-opératoires." },
-          { "q": "Puis-je commander en gros pour un réseau hospitalier ?", "a": "Absolument. Nous proposons des tarifs dégressifs pour les réseaux hospitaliers et les centrales d'achat. Contactez-nous pour un devis grossiste adapté." }
+          {
+            "q": "Quels types de pansements sont disponibles ?",
+            "a": "Nous fournissons des pansements hydrocolloïdes, en mousse, alginates, compresses de gaze, bandages adhésifs et films transparents. Chaque type est conçu pour des stades de plaie spécifiques."
+          },
+          {
+            "q": "Proposez-vous des systèmes de drainage des plaies ?",
+            "a": "Oui, nous offrons des systèmes de drainage fermés de type Jackson-Pratt. Tous stériles, à usage unique, conçus pour la gestion sécurisée des fluides post-opératoires."
+          },
+          {
+            "q": "Puis-je commander en gros pour un réseau hospitalier ?",
+            "a": "Absolument. Nous proposons des tarifs dégressifs pour les réseaux hospitaliers et les centrales d'achat. Contactez-nous pour un devis grossiste adapté."
+          }
         ]
       },
       "clinical-consumables": {
@@ -137,9 +182,18 @@
         "description": "Seringues, conteneurs à prélèvement et fournitures cliniques courantes.",
         "longDescription": "Consommables cliniques essentiels pour les opérations quotidiennes : seringues de tous types, conteneurs à prélèvement, aiguilles de prélèvement sanguin, accessoires ECG et instruments jetables.",
         "faq": [
-          { "q": "Quels consommables cliniques avez-vous en stock ?", "a": "Notre gamme couvre les seringues (Luer lock et Luer slip), conteneurs à prélèvement, aiguilles et tubes de prélèvement sanguin, électrodes ECG, pinces jetables et autres fournitures cliniques." },
-          { "q": "Les seringues sont-elles disponibles dans toutes les tailles courantes ?", "a": "Oui, nous fournissons des seringues de 1 mL à 60 mL en configurations Luer lock et Luer slip, avec ou sans aiguille montée." },
-          { "q": "Quels sont les délais de réapprovisionnement ?", "a": "Le délai standard est de 2 à 4 semaines pour les commandes en gros. Nous maintenons un stock tampon pour les articles à forte demande et proposons des expéditions accélérées en cas d'urgence." }
+          {
+            "q": "Quels consommables cliniques avez-vous en stock ?",
+            "a": "Notre gamme couvre les seringues (Luer lock et Luer slip), conteneurs à prélèvement, aiguilles et tubes de prélèvement sanguin, électrodes ECG, pinces jetables et autres fournitures cliniques."
+          },
+          {
+            "q": "Les seringues sont-elles disponibles dans toutes les tailles courantes ?",
+            "a": "Oui, nous fournissons des seringues de 1 mL à 60 mL en configurations Luer lock et Luer slip, avec ou sans aiguille montée."
+          },
+          {
+            "q": "Quels sont les délais de réapprovisionnement ?",
+            "a": "Le délai standard est de 2 à 4 semaines pour les commandes en gros. Nous maintenons un stock tampon pour les articles à forte demande et proposons des expéditions accélérées en cas d'urgence."
+          }
         ]
       },
       "vascular-access-catheters": {
@@ -147,9 +201,18 @@
         "description": "Cathéters veineux centraux, cathéters d'hémodialyse et sondes de Foley.",
         "longDescription": "Produits d'accès vasculaire avancés incluant cathéters veineux centraux avec revêtement anti-infection, cathéters d'hémodialyse et sondes urinaires de Foley. Conçus pour la sécurité des patients.",
         "faq": [
-          { "q": "Quels types de cathéters fournissez-vous ?", "a": "Nous fournissons des cathéters veineux centraux (simple, double et triple lumière), cathéters d'hémodialyse et sondes urinaires de Foley en silicone et latex. Options avec revêtement anti-infection disponibles." },
-          { "q": "Vos cathéters respectent-ils les normes internationales de sécurité ?", "a": "Oui, tous les cathéters portent le marquage CE et sont fabriqués sous systèmes qualité ISO 13485. Les variantes anti-infection utilisent des revêtements antimicrobiens éprouvés." },
-          { "q": "Quelles tailles et configurations sont disponibles ?", "a": "Les cathéters sont disponibles en tailles French de 5Fr à 24Fr selon le type. Les sondes de Foley sont proposées en configurations 2 voies et 3 voies avec différents volumes de ballonnet." }
+          {
+            "q": "Quels types de cathéters fournissez-vous ?",
+            "a": "Nous fournissons des cathéters veineux centraux (simple, double et triple lumière), cathéters d'hémodialyse et sondes urinaires de Foley en silicone et latex. Options avec revêtement anti-infection disponibles."
+          },
+          {
+            "q": "Vos cathéters respectent-ils les normes internationales de sécurité ?",
+            "a": "Oui, tous les cathéters portent le marquage CE et sont fabriqués sous systèmes qualité ISO 13485. Les variantes anti-infection utilisent des revêtements antimicrobiens éprouvés."
+          },
+          {
+            "q": "Quelles tailles et configurations sont disponibles ?",
+            "a": "Les cathéters sont disponibles en tailles French de 5Fr à 24Fr selon le type. Les sondes de Foley sont proposées en configurations 2 voies et 3 voies avec différents volumes de ballonnet."
+          }
         ]
       },
       "airway-respiratory": {
@@ -157,9 +220,18 @@
         "description": "Tubes endotrachéaux, circuits respiratoires, masques et équipements respiratoires.",
         "longDescription": "Sélection complète de produits de gestion des voies aériennes et respiratoires : tubes endotrachéaux, sondes d'aspiration, circuits respiratoires, masques nébuliseurs, stéthoscopes et masques à oxygène.",
         "faq": [
-          { "q": "Quels produits de gestion des voies aériennes sont disponibles ?", "a": "Nous fournissons des tubes endotrachéaux (avec et sans ballonnet), sondes d'aspiration, circuits respiratoires, canules de Guedel, masques laryngés et canules de trachéotomie en tailles pédiatriques à adultes." },
-          { "q": "Proposez-vous des équipements respiratoires pédiatriques ?", "a": "Oui, notre gamme respiratoire comprend des tailles pédiatriques spécifiques pour les tubes endotrachéaux, masques nébuliseurs, circuits respiratoires et masques à oxygène, à partir des tailles néonatales." },
-          { "q": "Les circuits respiratoires sont-ils disponibles en différentes configurations ?", "a": "Nous proposons des circuits respiratoires ondulés en options réutilisables et à usage unique, avec et sans pièges à eau, en longueurs adulte et pédiatrique." }
+          {
+            "q": "Quels produits de gestion des voies aériennes sont disponibles ?",
+            "a": "Nous fournissons des tubes endotrachéaux (avec et sans ballonnet), sondes d'aspiration, circuits respiratoires, canules de Guedel, masques laryngés et canules de trachéotomie en tailles pédiatriques à adultes."
+          },
+          {
+            "q": "Proposez-vous des équipements respiratoires pédiatriques ?",
+            "a": "Oui, notre gamme respiratoire comprend des tailles pédiatriques spécifiques pour les tubes endotrachéaux, masques nébuliseurs, circuits respiratoires et masques à oxygène, à partir des tailles néonatales."
+          },
+          {
+            "q": "Les circuits respiratoires sont-ils disponibles en différentes configurations ?",
+            "a": "Nous proposons des circuits respiratoires ondulés en options réutilisables et à usage unique, avec et sans pièges à eau, en longueurs adulte et pédiatrique."
+          }
         ]
       },
       "surgical-instruments-sutures": {
@@ -167,9 +239,18 @@
         "description": "Lames chirurgicales, sutures et instruments d'électrochirurgie.",
         "longDescription": "Instruments chirurgicaux de précision et sutures pour les procédures opératoires. Comprend lames chirurgicales jetables, sutures résorbables et non résorbables, et crayons d'électrochirurgie.",
         "faq": [
-          { "q": "Quels types de sutures fournissez-vous ?", "a": "Nous fournissons des sutures résorbables (acide polyglycolique, catgut chromé) et non résorbables (nylon, soie, polypropylène) dans diverses configurations d'aiguilles et calibres." },
-          { "q": "Les lames chirurgicales jetables sont-elles disponibles en tailles standard ?", "a": "Oui, nous stockons les lames chirurgicales jetables en tailles 10, 11, 12, 15, 20, 21, 22, 23 et 24, compatibles avec les manches de scalpel standard." },
-          { "q": "Proposez-vous du matériel d'électrochirurgie ?", "a": "Nous fournissons des crayons d'électrochirurgie jetables avec activation par bouton ou bascule, ainsi que des plaques de mise à la terre et accessoires pour procédures monopolaires et bipolaires." }
+          {
+            "q": "Quels types de sutures fournissez-vous ?",
+            "a": "Nous fournissons des sutures résorbables (acide polyglycolique, catgut chromé) et non résorbables (nylon, soie, polypropylène) dans diverses configurations d'aiguilles et calibres."
+          },
+          {
+            "q": "Les lames chirurgicales jetables sont-elles disponibles en tailles standard ?",
+            "a": "Oui, nous stockons les lames chirurgicales jetables en tailles 10, 11, 12, 15, 20, 21, 22, 23 et 24, compatibles avec les manches de scalpel standard."
+          },
+          {
+            "q": "Proposez-vous du matériel d'électrochirurgie ?",
+            "a": "Nous fournissons des crayons d'électrochirurgie jetables avec activation par bouton ou bascule, ainsi que des plaques de mise à la terre et accessoires pour procédures monopolaires et bipolaires."
+          }
         ]
       },
       "patient-care-equipment": {
@@ -177,9 +258,18 @@
         "description": "Thermomètres, tensiomètres, fauteuils roulants et aides à la mobilité.",
         "longDescription": "Équipements essentiels de soins aux patients : dispositifs de diagnostic, instruments de surveillance, fauteuils roulants et aides à la mobilité pour les établissements de santé.",
         "faq": [
-          { "q": "Quels équipements de diagnostic fournissez-vous ?", "a": "Nous fournissons des thermomètres numériques, tensiomètres (manuels et automatiques), oxymètres de pouls, stéthoscopes et instruments de surveillance de base pour usage clinique." },
-          { "q": "Les fauteuils roulants et aides à la mobilité sont-ils inclus dans votre catalogue ?", "a": "Oui, nous proposons des fauteuils roulants standard et légers, déambulateurs, béquilles et autres aides à la mobilité adaptés aux hôpitaux et centres de rééducation." },
-          { "q": "Peut-on commander en gros pour équiper un nouvel établissement ?", "a": "Absolument. Nous proposons des tarifs dégressifs pour l'équipement de nouveaux établissements et pouvons fournir des lots complets adaptés à vos services ou départements." }
+          {
+            "q": "Quels équipements de diagnostic fournissez-vous ?",
+            "a": "Nous fournissons des thermomètres numériques, tensiomètres (manuels et automatiques), oxymètres de pouls, stéthoscopes et instruments de surveillance de base pour usage clinique."
+          },
+          {
+            "q": "Les fauteuils roulants et aides à la mobilité sont-ils inclus dans votre catalogue ?",
+            "a": "Oui, nous proposons des fauteuils roulants standard et légers, déambulateurs, béquilles et autres aides à la mobilité adaptés aux hôpitaux et centres de rééducation."
+          },
+          {
+            "q": "Peut-on commander en gros pour équiper un nouvel établissement ?",
+            "a": "Absolument. Nous proposons des tarifs dégressifs pour l'équipement de nouveaux établissements et pouvons fournir des lots complets adaptés à vos services ou départements."
+          }
         ]
       }
     },
@@ -536,7 +626,9 @@
         "name": "Aides à la marche",
         "description": "Déambulateurs et rollateurs réglables pour le soutien à la mobilité des patients."
       }
-    }
+    },
+    "categoryTitleTemplate": "Fournisseur grossiste de {category} - Afrique & Moyen-Orient",
+    "productDescSuffix": "Commandez en gros chez Watu Care — fournisseur B2B de matériel médical pour l’Afrique et le Moyen-Orient."
   },
   "quote": {
     "listTitle": "Votre liste de produits",
@@ -621,6 +713,7 @@
     "requestQuote": "Contact",
     "faq": "FAQ",
     "productsTitle": "Produits",
+    "solutionsTitle": "Solutions",
     "contact": "Contact",
     "followUs": "Suivez-nous",
     "copyright": "Watu Care. Tous droits réservés.",

@@ -87,9 +87,18 @@
         "description": "Examination and surgical gloves in latex, nitrile, and vinyl.",
         "longDescription": "Full range of medical gloves including latex, nitrile, and vinyl options. Available in examination and sterile surgical grades, powdered or powder-free, for all clinical settings.",
         "faq": [
-          { "q": "What types of medical gloves do you supply?", "a": "We supply latex, nitrile, and vinyl gloves in both examination and sterile surgical grades. Options include powdered and powder-free varieties in sizes from XS to XL." },
-          { "q": "What is the minimum order quantity for wholesale gloves?", "a": "Minimum order quantities start at 1,000 boxes (100 gloves per box). Contact us for a custom quote based on your facility's volume needs." },
-          { "q": "Are your gloves CE and ISO certified?", "a": "Yes, all gloves are sourced from certified Asian manufacturers and meet CE marking and ISO 13485 quality management standards for medical devices." }
+          {
+            "q": "What types of medical gloves do you supply?",
+            "a": "We supply latex, nitrile, and vinyl gloves in both examination and sterile surgical grades. Options include powdered and powder-free varieties in sizes from XS to XL."
+          },
+          {
+            "q": "What is the minimum order quantity for wholesale gloves?",
+            "a": "Minimum order quantities start at 1,000 boxes (100 gloves per box). Contact us for a custom quote based on your facility's volume needs."
+          },
+          {
+            "q": "Are your gloves CE and ISO certified?",
+            "a": "Yes, all gloves are sourced from certified Asian manufacturers and meet CE marking and ISO 13485 quality management standards for medical devices."
+          }
         ]
       },
       "infection-prevention-ppe": {
@@ -97,9 +106,18 @@
         "description": "Gowns, caps, masks, and protective equipment for infection control.",
         "longDescription": "Comprehensive personal protective equipment for healthcare workers. Includes surgical gowns, isolation gowns, caps, masks, face shields, and shoe covers to maintain sterile environments and prevent cross-contamination.",
         "faq": [
-          { "q": "What PPE products are available for healthcare facilities?", "a": "Our PPE range includes surgical gowns, isolation gowns, bouffant caps, face masks, face shields, shoe covers, and full-body coveralls. All products meet international infection control standards." },
-          { "q": "Can I order custom PPE kits for my hospital?", "a": "Yes, we can assemble custom PPE kits tailored to your facility's protocols. Contact our team with your requirements for a customized quote." },
-          { "q": "What certifications do your PPE products carry?", "a": "Our PPE products carry CE marking and comply with ISO 13485. Surgical gowns meet AAMI level standards for fluid resistance and barrier protection." }
+          {
+            "q": "What PPE products are available for healthcare facilities?",
+            "a": "Our PPE range includes surgical gowns, isolation gowns, bouffant caps, face masks, face shields, shoe covers, and full-body coveralls. All products meet international infection control standards."
+          },
+          {
+            "q": "Can I order custom PPE kits for my hospital?",
+            "a": "Yes, we can assemble custom PPE kits tailored to your facility's protocols. Contact our team with your requirements for a customized quote."
+          },
+          {
+            "q": "What certifications do your PPE products carry?",
+            "a": "Our PPE products carry CE marking and comply with ISO 13485. Surgical gowns meet AAMI level standards for fluid resistance and barrier protection."
+          }
         ]
       },
       "bodily-waste-management": {
@@ -107,9 +125,18 @@
         "description": "Liners, bedpans, absorbent pads, and drainage systems for patient care.",
         "longDescription": "Hygienic waste management solutions for patient care, including absorbent liners for commodes and bedpans, super absorbent pads, disposable and reusable bedpans, and urine drainage systems.",
         "faq": [
-          { "q": "What waste management products do you offer for hospitals?", "a": "We supply absorbent liners for commodes and bedpans, super absorbent pads, disposable and reusable bedpans, and closed urine drainage systems designed for hygienic patient care." },
-          { "q": "Are your waste management products suitable for long-term care facilities?", "a": "Yes, our range includes both disposable and reusable options suited for long-term care, rehabilitation centers, and acute care settings." },
-          { "q": "How do you ensure hygiene standards in waste management products?", "a": "All products are individually sealed and manufactured under ISO 13485 quality management systems. Super absorbent pads feature odor-control technology for patient dignity." }
+          {
+            "q": "What waste management products do you offer for hospitals?",
+            "a": "We supply absorbent liners for commodes and bedpans, super absorbent pads, disposable and reusable bedpans, and closed urine drainage systems designed for hygienic patient care."
+          },
+          {
+            "q": "Are your waste management products suitable for long-term care facilities?",
+            "a": "Yes, our range includes both disposable and reusable options suited for long-term care, rehabilitation centers, and acute care settings."
+          },
+          {
+            "q": "How do you ensure hygiene standards in waste management products?",
+            "a": "All products are individually sealed and manufactured under ISO 13485 quality management systems. Super absorbent pads feature odor-control technology for patient dignity."
+          }
         ]
       },
       "surgical": {
@@ -117,9 +144,18 @@
         "description": "Pre-assembled sterile packs and drapes for surgical procedures.",
         "longDescription": "Complete range of sterile surgical packs including procedure-specific kits, drapes, and warming blankets. Available in standard and custom configurations to match your facility protocols.",
         "faq": [
-          { "q": "Can surgical packs be customized to our procedures?", "a": "Yes, we offer custom surgical pack configurations tailored to your specific procedure protocols. Provide your specifications and we will assemble packs to match your OR requirements." },
-          { "q": "What types of surgical drapes are included?", "a": "Our range includes universal drapes, fenestrated drapes, split drapes, and procedure-specific drapes for orthopedic, cardiovascular, and general surgery. All are sterile and single-use." },
-          { "q": "How are sterile surgical packs shipped?", "a": "All packs are double-wrapped and sealed in sterile packaging. Shipping containers are temperature and humidity controlled to maintain sterility throughout the supply chain." }
+          {
+            "q": "Can surgical packs be customized to our procedures?",
+            "a": "Yes, we offer custom surgical pack configurations tailored to your specific procedure protocols. Provide your specifications and we will assemble packs to match your OR requirements."
+          },
+          {
+            "q": "What types of surgical drapes are included?",
+            "a": "Our range includes universal drapes, fenestrated drapes, split drapes, and procedure-specific drapes for orthopedic, cardiovascular, and general surgery. All are sterile and single-use."
+          },
+          {
+            "q": "How are sterile surgical packs shipped?",
+            "a": "All packs are double-wrapped and sealed in sterile packaging. Shipping containers are temperature and humidity controlled to maintain sterility throughout the supply chain."
+          }
         ]
       },
       "wound-care": {
@@ -127,9 +163,18 @@
         "description": "Dressings, swabs, drainage systems, and wound closure products.",
         "longDescription": "Comprehensive wound care solutions including hydrocolloid and foam dressings, gauze swabs, wound drainage systems, and adhesive bandages. Designed for optimal healing and infection prevention.",
         "faq": [
-          { "q": "What wound dressing types are available?", "a": "We supply hydrocolloid dressings, foam dressings, alginate dressings, gauze swabs, adhesive bandages, and transparent film dressings. Each type is designed for specific wound stages and clinical needs." },
-          { "q": "Do you supply wound drainage systems?", "a": "Yes, we offer closed wound drainage systems including Jackson-Pratt style drains. All systems are sterile, single-use, and designed for safe post-operative fluid management." },
-          { "q": "Can I order wound care products in bulk for a hospital network?", "a": "Absolutely. We provide volume-based pricing for hospital networks and group purchasing organizations. Contact us for a tailored wholesale quote." }
+          {
+            "q": "What wound dressing types are available?",
+            "a": "We supply hydrocolloid dressings, foam dressings, alginate dressings, gauze swabs, adhesive bandages, and transparent film dressings. Each type is designed for specific wound stages and clinical needs."
+          },
+          {
+            "q": "Do you supply wound drainage systems?",
+            "a": "Yes, we offer closed wound drainage systems including Jackson-Pratt style drains. All systems are sterile, single-use, and designed for safe post-operative fluid management."
+          },
+          {
+            "q": "Can I order wound care products in bulk for a hospital network?",
+            "a": "Absolutely. We provide volume-based pricing for hospital networks and group purchasing organizations. Contact us for a tailored wholesale quote."
+          }
         ]
       },
       "clinical-consumables": {
@@ -137,9 +182,18 @@
         "description": "Syringes, specimen containers, and everyday clinical supplies.",
         "longDescription": "Essential clinical consumables for daily healthcare operations, including syringes of all types, specimen containers, blood collection needles, ECG accessories, and disposable instruments.",
         "faq": [
-          { "q": "What clinical consumables do you stock?", "a": "Our range covers syringes (Luer lock and Luer slip), specimen containers, blood collection needles and tubes, ECG electrodes, disposable forceps, and other everyday clinical supplies." },
-          { "q": "Are syringes available in all common sizes?", "a": "Yes, we supply syringes from 1 mL to 60 mL in both Luer lock and Luer slip configurations, with or without needles attached." },
-          { "q": "How quickly can consumables be restocked?", "a": "Standard lead time is 2 to 4 weeks for wholesale orders. We maintain buffer stock for high-demand items and can arrange expedited shipping for urgent needs." }
+          {
+            "q": "What clinical consumables do you stock?",
+            "a": "Our range covers syringes (Luer lock and Luer slip), specimen containers, blood collection needles and tubes, ECG electrodes, disposable forceps, and other everyday clinical supplies."
+          },
+          {
+            "q": "Are syringes available in all common sizes?",
+            "a": "Yes, we supply syringes from 1 mL to 60 mL in both Luer lock and Luer slip configurations, with or without needles attached."
+          },
+          {
+            "q": "How quickly can consumables be restocked?",
+            "a": "Standard lead time is 2 to 4 weeks for wholesale orders. We maintain buffer stock for high-demand items and can arrange expedited shipping for urgent needs."
+          }
         ]
       },
       "vascular-access-catheters": {
@@ -147,9 +201,18 @@
         "description": "Central venous catheters, hemodialysis catheters, and Foley catheters.",
         "longDescription": "Advanced vascular access products including central venous catheters with anti-infection coating, hemodialysis catheters, and Foley urinary catheters. Designed for patient safety and reduced infection risk.",
         "faq": [
-          { "q": "What catheter types do you supply?", "a": "We supply central venous catheters (single, double, and triple lumen), hemodialysis catheters, and Foley urinary catheters in silicone and latex. Anti-infection coated options are available." },
-          { "q": "Do your catheters meet international safety standards?", "a": "Yes, all catheters are CE marked and manufactured under ISO 13485 quality systems. Anti-infection variants use proven antimicrobial coatings to reduce catheter-related bloodstream infections." },
-          { "q": "What sizes and configurations are available?", "a": "Catheters are available in French sizes from 5Fr to 24Fr depending on the type. Foley catheters come in 2-way and 3-way configurations with various balloon volumes." }
+          {
+            "q": "What catheter types do you supply?",
+            "a": "We supply central venous catheters (single, double, and triple lumen), hemodialysis catheters, and Foley urinary catheters in silicone and latex. Anti-infection coated options are available."
+          },
+          {
+            "q": "Do your catheters meet international safety standards?",
+            "a": "Yes, all catheters are CE marked and manufactured under ISO 13485 quality systems. Anti-infection variants use proven antimicrobial coatings to reduce catheter-related bloodstream infections."
+          },
+          {
+            "q": "What sizes and configurations are available?",
+            "a": "Catheters are available in French sizes from 5Fr to 24Fr depending on the type. Foley catheters come in 2-way and 3-way configurations with various balloon volumes."
+          }
         ]
       },
       "airway-respiratory": {
@@ -157,9 +220,18 @@
         "description": "Endotracheal tubes, breathing circuits, masks, and respiratory equipment.",
         "longDescription": "Full selection of airway management and respiratory products including endotracheal tubes, suction catheters, breathing circuits, nebulizer masks, stethoscopes, and oxygen masks. Multiple sizes for pediatric to adult patients.",
         "faq": [
-          { "q": "What airway management products are available?", "a": "We supply endotracheal tubes (cuffed and uncuffed), suction catheters, breathing circuits, Guedel airways, laryngeal mask airways, and tracheostomy tubes in pediatric to adult sizes." },
-          { "q": "Do you carry pediatric respiratory equipment?", "a": "Yes, our respiratory range includes pediatric-specific sizes for endotracheal tubes, nebulizer masks, breathing circuits, and oxygen masks, starting from neonatal sizes." },
-          { "q": "Are breathing circuits available in different configurations?", "a": "We offer corrugated breathing circuits in both reusable and single-use options, with and without water traps, in adult and pediatric lengths." }
+          {
+            "q": "What airway management products are available?",
+            "a": "We supply endotracheal tubes (cuffed and uncuffed), suction catheters, breathing circuits, Guedel airways, laryngeal mask airways, and tracheostomy tubes in pediatric to adult sizes."
+          },
+          {
+            "q": "Do you carry pediatric respiratory equipment?",
+            "a": "Yes, our respiratory range includes pediatric-specific sizes for endotracheal tubes, nebulizer masks, breathing circuits, and oxygen masks, starting from neonatal sizes."
+          },
+          {
+            "q": "Are breathing circuits available in different configurations?",
+            "a": "We offer corrugated breathing circuits in both reusable and single-use options, with and without water traps, in adult and pediatric lengths."
+          }
         ]
       },
       "surgical-instruments-sutures": {
@@ -167,9 +239,18 @@
         "description": "Surgical blades, sutures, and electrosurgical instruments.",
         "longDescription": "Precision surgical instruments and sutures for operative procedures. Includes disposable surgical blades, absorbable and non-absorbable sutures, and electrosurgical pencils.",
         "faq": [
-          { "q": "What suture types do you supply?", "a": "We supply both absorbable sutures (polyglycolic acid, chromic catgut) and non-absorbable sutures (nylon, silk, polypropylene) in various needle configurations and gauge sizes." },
-          { "q": "Are disposable surgical blades available in all standard sizes?", "a": "Yes, we stock disposable surgical blades in sizes 10, 11, 12, 15, 20, 21, 22, 23, and 24 compatible with standard scalpel handles." },
-          { "q": "Do you offer electrosurgical equipment?", "a": "We supply disposable electrosurgical pencils with both button and rocker switch activation, along with grounding pads and accessories for monopolar and bipolar procedures." }
+          {
+            "q": "What suture types do you supply?",
+            "a": "We supply both absorbable sutures (polyglycolic acid, chromic catgut) and non-absorbable sutures (nylon, silk, polypropylene) in various needle configurations and gauge sizes."
+          },
+          {
+            "q": "Are disposable surgical blades available in all standard sizes?",
+            "a": "Yes, we stock disposable surgical blades in sizes 10, 11, 12, 15, 20, 21, 22, 23, and 24 compatible with standard scalpel handles."
+          },
+          {
+            "q": "Do you offer electrosurgical equipment?",
+            "a": "We supply disposable electrosurgical pencils with both button and rocker switch activation, along with grounding pads and accessories for monopolar and bipolar procedures."
+          }
         ]
       },
       "patient-care-equipment": {
@@ -177,9 +258,18 @@
         "description": "Thermometers, blood pressure monitors, wheelchairs, and mobility aids.",
         "longDescription": "Essential patient care and basic medical equipment including diagnostic devices, monitoring instruments, wheelchairs, and mobility aids for healthcare facilities.",
         "faq": [
-          { "q": "What diagnostic equipment do you supply?", "a": "We supply digital thermometers, blood pressure monitors (manual and automatic), pulse oximeters, stethoscopes, and basic patient monitoring instruments for clinical use." },
-          { "q": "Are wheelchairs and mobility aids included in your catalog?", "a": "Yes, we offer standard and lightweight wheelchairs, walking frames, crutches, and other mobility aids suitable for hospitals and rehabilitation centers." },
-          { "q": "Can equipment be ordered in bulk for new facility outfitting?", "a": "Absolutely. We provide volume pricing for new facility setups and can supply full equipment packages tailored to your ward or department needs." }
+          {
+            "q": "What diagnostic equipment do you supply?",
+            "a": "We supply digital thermometers, blood pressure monitors (manual and automatic), pulse oximeters, stethoscopes, and basic patient monitoring instruments for clinical use."
+          },
+          {
+            "q": "Are wheelchairs and mobility aids included in your catalog?",
+            "a": "Yes, we offer standard and lightweight wheelchairs, walking frames, crutches, and other mobility aids suitable for hospitals and rehabilitation centers."
+          },
+          {
+            "q": "Can equipment be ordered in bulk for new facility outfitting?",
+            "a": "Absolutely. We provide volume pricing for new facility setups and can supply full equipment packages tailored to your ward or department needs."
+          }
         ]
       }
     },
@@ -468,7 +558,9 @@
         "name": "Walking Aids",
         "description": "Adjustable walking frames and rollators for patient mobility support."
       }
-    }
+    },
+    "categoryTitleTemplate": "Wholesale {category} Supplier - Africa & Middle East",
+    "productDescSuffix": "Source in bulk from Watu Care — wholesale B2B medical supplier for Africa and the Middle East."
   },
   "quote": {
     "listTitle": "Your Product List",
@@ -553,6 +645,7 @@
     "requestQuote": "Contact",
     "faq": "FAQ",
     "productsTitle": "Products",
+    "solutionsTitle": "Solutions",
     "contact": "Contact",
     "followUs": "Follow Us",
     "copyright": "Watu Care. All rights reserved.",
