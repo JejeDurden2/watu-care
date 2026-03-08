@@ -1,4 +1,5 @@
 import type { Metadata, Viewport } from 'next';
+import { BASE_URL } from '@/lib/constants';
 import './globals.css';
 
 export const viewport: Viewport = {
@@ -12,7 +13,7 @@ export const viewport: Viewport = {
 };
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://watu-care.com'),
+  metadataBase: new URL(BASE_URL),
   title: {
     default: 'Watu Care - Medical Supplies for Africa & Middle East',
     template: '%s | Watu Care',
