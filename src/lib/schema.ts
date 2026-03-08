@@ -31,38 +31,19 @@ export interface OrganizationSchema {
 
 export interface ProductSchema {
   '@context': 'https://schema.org';
-  '@type': 'Product';
+  '@type': 'MedicalDevice';
   name: string;
   description: string;
   image?: string;
   url?: string;
-  brand?: {
-    '@type': 'Brand';
+  manufacturer?: {
+    '@type': 'Organization';
     name: string;
   };
   material?: string;
   audience?: {
-    '@type': 'Audience';
+    '@type': 'MedicalAudience';
     audienceType: string;
-  };
-  offers: {
-    '@type': 'Offer';
-    availability: string;
-    priceCurrency: string;
-    priceSpecification?: {
-      '@type': 'PriceSpecification';
-      priceCurrency: string;
-      eligibleQuantity?: {
-        '@type': 'QuantitativeValue';
-        unitText: string;
-      };
-    };
-    seller?: {
-      '@type': 'Organization';
-      name: string;
-    };
-    itemCondition?: string;
-    businessFunction?: string;
   };
   category: string;
   isRelatedTo?: {
@@ -162,8 +143,9 @@ export function generateWebSiteSchema(): WebSiteSchema {
 }
 
 /**
- * Generate Product schema for a product page
- * For B2B wholesale, we use priceSpecification to indicate quote-based pricing
+ * Generate MedicalDevice schema for a product page
+ * Uses MedicalDevice instead of Product to avoid Google's price/review requirements
+ * which don't apply to B2B wholesale with quote-based pricing
  */
 export function generateProductSchema(
   product: Product,
@@ -173,37 +155,18 @@ export function generateProductSchema(
 ): ProductSchema {
   const schema: ProductSchema = {
     '@context': 'https://schema.org',
-    '@type': 'Product',
+    '@type': 'MedicalDevice',
     name: product.name,
     description: translatedDescription || product.description,
     image: product.image || `${BASE_URL}/logo.png`,
     url: `${BASE_URL}/${locale}/products/${category.slug}/${product.id}`,
-    brand: {
-      '@type': 'Brand',
+    manufacturer: {
+      '@type': 'Organization',
       name: 'Watu Care',
     },
     audience: {
-      '@type': 'Audience',
+      '@type': 'MedicalAudience',
       audienceType: 'Healthcare professionals',
-    },
-    offers: {
-      '@type': 'Offer',
-      availability: 'https://schema.org/InStock',
-      priceCurrency: 'USD',
-      priceSpecification: {
-        '@type': 'PriceSpecification',
-        priceCurrency: 'USD',
-        eligibleQuantity: {
-          '@type': 'QuantitativeValue',
-          unitText: 'wholesale',
-        },
-      },
-      seller: {
-        '@type': 'Organization',
-        name: 'Watu Care',
-      },
-      itemCondition: 'https://schema.org/NewCondition',
-      businessFunction: 'http://purl.org/goodrelations/v1#Sell',
     },
     category: category.title,
     isRelatedTo: {
