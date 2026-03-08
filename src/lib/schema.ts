@@ -42,14 +42,10 @@ export interface ProductSchema {
   };
   material?: string;
   audience?: {
-    '@type': 'MedicalAudience';
+    '@type': 'Audience';
     audienceType: string;
   };
   category: string;
-  isRelatedTo?: {
-    '@type': 'ProductGroup';
-    name: string;
-  };
 }
 
 export interface BreadcrumbSchema {
@@ -91,6 +87,79 @@ export interface FAQSchema {
       text: string;
     };
   }>;
+}
+
+export interface MedicalBusinessSchema {
+  '@context': 'https://schema.org';
+  '@type': 'MedicalBusiness';
+  name: string;
+  url: string;
+  logo: string;
+  description: string;
+  address: { '@type': 'PostalAddress'; addressLocality: string; addressCountry: string };
+  geo: { '@type': 'GeoCoordinates'; latitude: number; longitude: number };
+  areaServed: string[];
+  hasOfferCatalog: SchemaType;
+}
+
+export interface ContactPageSchema {
+  '@context': 'https://schema.org';
+  '@type': 'ContactPage';
+  name: string;
+  url: string;
+  description: string;
+  mainEntity: SchemaType;
+}
+
+export interface AboutPageSchema {
+  '@context': 'https://schema.org';
+  '@type': 'AboutPage';
+  name: string;
+  url: string;
+  description: string;
+  mainEntity: SchemaType;
+}
+
+export interface LocalBusinessSchema {
+  '@context': 'https://schema.org';
+  '@type': 'MedicalBusiness';
+  name: string;
+  url: string;
+  logo: string;
+  description: string;
+  address: { '@type': 'PostalAddress'; addressLocality: string; addressCountry: string };
+  areaServed: SchemaType;
+  hasOfferCatalog: SchemaType;
+}
+
+export interface ServiceSchema {
+  '@context': 'https://schema.org';
+  '@type': 'Service';
+  name: string;
+  url: string;
+  provider: SchemaType;
+  areaServed: SchemaType;
+  serviceType: string;
+  description: string;
+}
+
+export interface ItemListSchema {
+  '@context': 'https://schema.org';
+  '@type': 'ItemList';
+  name: string;
+  numberOfItems: number;
+  itemListElement: SchemaType[];
+}
+
+export interface PersonaPageSchema {
+  '@context': 'https://schema.org';
+  '@type': 'WebPage';
+  name: string;
+  description: string;
+  url: string;
+  inLanguage: string;
+  about: SchemaType;
+  mainEntity: SchemaType;
 }
 
 /**
@@ -165,14 +234,10 @@ export function generateProductSchema(
       name: 'Watu Care',
     },
     audience: {
-      '@type': 'MedicalAudience',
+      '@type': 'Audience',
       audienceType: 'Healthcare professionals',
     },
     category: category.title,
-    isRelatedTo: {
-      '@type': 'ProductGroup',
-      name: category.title,
-    },
   };
 
   if (product.materials && product.materials.length > 0) {
@@ -203,7 +268,7 @@ export function generateBreadcrumbSchema(
 /**
  * Generate MedicalBusiness schema (for healthcare-specific SEO)
  */
-export function generateMedicalBusinessSchema(): Record<string, unknown> {
+export function generateMedicalBusinessSchema(): MedicalBusinessSchema {
   return {
     '@context': 'https://schema.org',
     '@type': 'MedicalBusiness',
@@ -227,16 +292,16 @@ export function generateMedicalBusinessSchema(): Record<string, unknown> {
       '@type': 'OfferCatalog',
       name: 'Medical Supplies Catalog',
       itemListElement: [
-        { '@type': 'OfferCatalog', name: 'Gloves' },
-        { '@type': 'OfferCatalog', name: 'Infection Prevention & PPE' },
-        { '@type': 'OfferCatalog', name: 'Bodily Waste & Excreta Management' },
-        { '@type': 'OfferCatalog', name: 'Surgical & Procedure Packs' },
-        { '@type': 'OfferCatalog', name: 'Wound Care & Dressing' },
-        { '@type': 'OfferCatalog', name: 'Clinical Consumables' },
-        { '@type': 'OfferCatalog', name: 'Vascular Access & Catheters' },
-        { '@type': 'OfferCatalog', name: 'Airway & Respiratory' },
-        { '@type': 'OfferCatalog', name: 'Surgical Instruments & Sutures' },
-        { '@type': 'OfferCatalog', name: 'Patient Care & Basic Equipment' },
+        { '@type': 'Offer', itemOffered: { '@type': 'Product', name: 'Gloves' } },
+        { '@type': 'Offer', itemOffered: { '@type': 'Product', name: 'Infection Prevention & PPE' } },
+        { '@type': 'Offer', itemOffered: { '@type': 'Product', name: 'Bodily Waste & Excreta Management' } },
+        { '@type': 'Offer', itemOffered: { '@type': 'Product', name: 'Surgical & Procedure Packs' } },
+        { '@type': 'Offer', itemOffered: { '@type': 'Product', name: 'Wound Care & Dressing' } },
+        { '@type': 'Offer', itemOffered: { '@type': 'Product', name: 'Clinical Consumables' } },
+        { '@type': 'Offer', itemOffered: { '@type': 'Product', name: 'Vascular Access & Catheters' } },
+        { '@type': 'Offer', itemOffered: { '@type': 'Product', name: 'Airway & Respiratory' } },
+        { '@type': 'Offer', itemOffered: { '@type': 'Product', name: 'Surgical Instruments & Sutures' } },
+        { '@type': 'Offer', itemOffered: { '@type': 'Product', name: 'Patient Care & Basic Equipment' } },
       ],
     },
   };
@@ -245,7 +310,7 @@ export function generateMedicalBusinessSchema(): Record<string, unknown> {
 /**
  * Generate ContactPage schema
  */
-export function generateContactPageSchema(locale: string): Record<string, unknown> {
+export function generateContactPageSchema(locale: string): ContactPageSchema {
   return {
     '@context': 'https://schema.org',
     '@type': 'ContactPage',
@@ -277,7 +342,7 @@ export function generateContactPageSchema(locale: string): Record<string, unknow
 /**
  * Generate AboutPage schema
  */
-export function generateAboutPageSchema(locale: string): Record<string, unknown> {
+export function generateAboutPageSchema(locale: string): AboutPageSchema {
   return {
     '@context': 'https://schema.org',
     '@type': 'AboutPage',
@@ -342,7 +407,7 @@ export function generateLocalBusinessSchema(
   countryName: string,
   countrySlug: string,
   locale: string,
-): Record<string, unknown> {
+): LocalBusinessSchema {
   return {
     '@context': 'https://schema.org',
     '@type': 'MedicalBusiness',
@@ -356,10 +421,6 @@ export function generateLocalBusinessSchema(
       addressCountry: 'HK',
     },
     areaServed: {
-      '@type': 'Country',
-      name: countryName,
-    },
-    serviceArea: {
       '@type': 'Country',
       name: countryName,
     },
@@ -386,7 +447,7 @@ export function generateServiceSchema(
   countrySlug: string,
   categorySlug: string,
   locale: string,
-): Record<string, unknown> {
+): ServiceSchema {
   return {
     '@context': 'https://schema.org',
     '@type': 'Service',
@@ -403,19 +464,6 @@ export function generateServiceSchema(
     },
     serviceType: 'Medical Supply Distribution',
     description: `Quality ${categoryName} for healthcare facilities in ${countryName}. Direct from certified Asian manufacturers with competitive pricing and reliable delivery.`,
-    offers: {
-      '@type': 'Offer',
-      availability: 'https://schema.org/InStock',
-      priceCurrency: 'USD',
-      priceSpecification: {
-        '@type': 'PriceSpecification',
-        priceCurrency: 'USD',
-        eligibleQuantity: {
-          '@type': 'QuantitativeValue',
-          unitText: 'wholesale',
-        },
-      },
-    },
   };
 }
 
@@ -425,7 +473,7 @@ export function generateServiceSchema(
 export function generateMarketItemListSchema(
   items: Array<{ name: string; url: string; description?: string }>,
   listName: string,
-): Record<string, unknown> {
+): ItemListSchema {
   return {
     '@context': 'https://schema.org',
     '@type': 'ItemList',
@@ -449,7 +497,7 @@ export function generatePersonaPageSchema(
   title: string,
   description: string,
   locale: string,
-): Record<string, unknown> {
+): PersonaPageSchema {
   return {
     '@context': 'https://schema.org',
     '@type': 'WebPage',
@@ -483,15 +531,22 @@ export function generatePersonaPageSchema(
  * Combine multiple schemas into a @graph structure
  * This is the recommended way to include multiple schemas on a page
  */
+type AnySchema =
+  | OrganizationSchema
+  | WebSiteSchema
+  | ProductSchema
+  | BreadcrumbSchema
+  | FAQSchema
+  | MedicalBusinessSchema
+  | ContactPageSchema
+  | AboutPageSchema
+  | LocalBusinessSchema
+  | ServiceSchema
+  | ItemListSchema
+  | PersonaPageSchema;
+
 export function combineSchemas(
-  ...schemas: Array<
-    | OrganizationSchema
-    | WebSiteSchema
-    | ProductSchema
-    | BreadcrumbSchema
-    | FAQSchema
-    | Record<string, unknown>
-  >
+  ...schemas: AnySchema[]
 ): GraphSchema {
   // Remove @context from individual schemas and combine into @graph
   const graphItems = schemas.map((schema) => {

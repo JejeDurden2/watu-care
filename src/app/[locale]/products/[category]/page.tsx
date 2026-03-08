@@ -11,7 +11,7 @@ import {
 import { MapPin } from 'lucide-react';
 import { getAllCategories, getCategoryBySlug } from '@/lib/products';
 import { getTier1Countries } from '@/data/countries';
-import { generateBreadcrumbSchema, generateFAQSchema } from '@/lib/schema';
+import { generateBreadcrumbSchema, generateFAQSchema, generateMarketItemListSchema, combineSchemas } from '@/lib/schema';
 import { FAQAccordion } from '@/app/[locale]/faq/FAQAccordion';
 import { BASE_URL } from '@/lib/constants';
 
@@ -132,23 +132,14 @@ export default async function CategoryPage({
   ]);
 
   // Generate ItemList schema for products
-  const itemListSchema = {
-    '@context': 'https://schema.org',
-    '@type': 'ItemList',
-    name: categoryTitle,
-    description: categoryDescription,
-    numberOfItems: category.products.length,
-    itemListElement: category.products.map((product, index) => ({
-      '@type': 'ListItem',
-      position: index + 1,
-      item: {
-        '@type': 'Product',
-        name: product.name,
-        description: getProductDescription(product.id, product.description),
-        url: `${BASE_URL}/${locale}/products/${category.slug}/${product.id}`,
-      },
+  const itemListSchema = generateMarketItemListSchema(
+    category.products.map((product) => ({
+      name: product.name,
+      url: `${BASE_URL}/${locale}/products/${category.slug}/${product.id}`,
+      description: getProductDescription(product.id, product.description),
     })),
-  };
+    categoryTitle,
+  );
 
   // Build category-specific FAQ items from translations
   const faqKey = `categories.${categorySlug}.faq`;
@@ -158,32 +149,18 @@ export default async function CategoryPage({
     answer: item.a,
   }));
   const faqSchema = faqItems.length > 0 ? generateFAQSchema(faqItems) : null;
+  const pageSchema = combineSchemas(
+    ...[breadcrumbSchema, itemListSchema, ...(faqSchema ? [faqSchema] : [])],
+  );
 
   return (
     <main className="min-h-[100dvh]">
-      {/* Breadcrumb JSON-LD */}
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
-          __html: JSON.stringify(breadcrumbSchema),
+          __html: JSON.stringify(pageSchema),
         }}
       />
-      {/* ItemList JSON-LD */}
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify(itemListSchema),
-        }}
-      />
-      {/* FAQ JSON-LD */}
-      {faqSchema && (
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{
-            __html: JSON.stringify(faqSchema),
-          }}
-        />
-      )}
 
       {/* Gradient hero band */}
       <section className="gradient-hero py-16 lg:py-24">

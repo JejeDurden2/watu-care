@@ -15,6 +15,7 @@ import {
 import {
   generateProductSchema,
   generateBreadcrumbSchema,
+  combineSchemas,
 } from '@/lib/schema';
 import { BASE_URL } from '@/lib/constants';
 
@@ -153,21 +154,14 @@ export default async function ProductPage({
     { name: categoryTitle, url: `${BASE_URL}/${locale}/products/${category.slug}` },
     { name: productName },
   ]);
+  const pageSchema = combineSchemas(productSchema, breadcrumbSchema);
 
   return (
     <main className="min-h-[100dvh] pb-24 pt-0">
-      {/* Product JSON-LD */}
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
-          __html: JSON.stringify(productSchema),
-        }}
-      />
-      {/* Breadcrumb JSON-LD */}
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify(breadcrumbSchema),
+          __html: JSON.stringify(pageSchema),
         }}
       />
 

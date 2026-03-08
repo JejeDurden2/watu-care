@@ -145,6 +145,7 @@ describe('POST /api/quote', () => {
       }),
     );
 
+    // eslint-disable-next-line no-console
     expect(console.info).toHaveBeenCalledWith(
       '[quote-request]',
       expect.objectContaining({
