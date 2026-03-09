@@ -292,16 +292,16 @@ export function generateMedicalBusinessSchema(): MedicalBusinessSchema {
       '@type': 'OfferCatalog',
       name: 'Medical Supplies Catalog',
       itemListElement: [
-        { '@type': 'Offer', itemOffered: { '@type': 'Product', name: 'Gloves' } },
-        { '@type': 'Offer', itemOffered: { '@type': 'Product', name: 'Infection Prevention & PPE' } },
-        { '@type': 'Offer', itemOffered: { '@type': 'Product', name: 'Bodily Waste & Excreta Management' } },
-        { '@type': 'Offer', itemOffered: { '@type': 'Product', name: 'Surgical & Procedure Packs' } },
-        { '@type': 'Offer', itemOffered: { '@type': 'Product', name: 'Wound Care & Dressing' } },
-        { '@type': 'Offer', itemOffered: { '@type': 'Product', name: 'Clinical Consumables' } },
-        { '@type': 'Offer', itemOffered: { '@type': 'Product', name: 'Vascular Access & Catheters' } },
-        { '@type': 'Offer', itemOffered: { '@type': 'Product', name: 'Airway & Respiratory' } },
-        { '@type': 'Offer', itemOffered: { '@type': 'Product', name: 'Surgical Instruments & Sutures' } },
-        { '@type': 'Offer', itemOffered: { '@type': 'Product', name: 'Patient Care & Basic Equipment' } },
+        { '@type': 'OfferCatalog', name: 'Gloves' },
+        { '@type': 'OfferCatalog', name: 'Infection Prevention & PPE' },
+        { '@type': 'OfferCatalog', name: 'Bodily Waste & Excreta Management' },
+        { '@type': 'OfferCatalog', name: 'Surgical & Procedure Packs' },
+        { '@type': 'OfferCatalog', name: 'Wound Care & Dressing' },
+        { '@type': 'OfferCatalog', name: 'Clinical Consumables' },
+        { '@type': 'OfferCatalog', name: 'Vascular Access & Catheters' },
+        { '@type': 'OfferCatalog', name: 'Airway & Respiratory' },
+        { '@type': 'OfferCatalog', name: 'Surgical Instruments & Sutures' },
+        { '@type': 'OfferCatalog', name: 'Patient Care & Basic Equipment' },
       ],
     },
   };
@@ -361,7 +361,7 @@ export function generateAboutPageSchema(locale: string): AboutPageSchema {
       },
       areaServed: [
         {
-          '@type': 'Continent',
+          '@type': 'Place',
           name: 'Africa',
         },
         {
@@ -428,10 +428,10 @@ export function generateLocalBusinessSchema(
       '@type': 'OfferCatalog',
       name: `Medical Supplies for ${countryName}`,
       itemListElement: [
-        { '@type': 'Offer', itemOffered: { '@type': 'Product', name: 'Personal Protective Equipment' } },
-        { '@type': 'Offer', itemOffered: { '@type': 'Product', name: 'Medical Devices' } },
-        { '@type': 'Offer', itemOffered: { '@type': 'Product', name: 'Laboratory Supplies' } },
-        { '@type': 'Offer', itemOffered: { '@type': 'Product', name: 'Surgical Equipment' } },
+        { '@type': 'OfferCatalog', name: 'Personal Protective Equipment' },
+        { '@type': 'OfferCatalog', name: 'Medical Devices' },
+        { '@type': 'OfferCatalog', name: 'Laboratory Supplies' },
+        { '@type': 'OfferCatalog', name: 'Surgical Equipment' },
       ],
     },
   };

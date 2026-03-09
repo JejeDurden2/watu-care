@@ -14,7 +14,6 @@ import { FloatingWhatsApp } from '@/components/ui/FloatingWhatsApp';
 import {
   generateOrganizationSchema,
   generateWebSiteSchema,
-  generateMedicalBusinessSchema,
   combineSchemas,
 } from '@/lib/schema';
 import { BASE_URL } from '@/lib/constants';
@@ -126,7 +125,6 @@ export default async function LocaleLayout({
   const globalSchema = combineSchemas(
     generateOrganizationSchema(),
     generateWebSiteSchema(),
-    generateMedicalBusinessSchema(),
   );
 
   return (
