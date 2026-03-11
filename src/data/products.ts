@@ -19,6 +19,10 @@ export const productCategories: ProductCategory[] = [
         description:
           'Ambidextrous latex gloves with cornstarch powder for easy donning.',
         image: '/products/gloves/latex-gloves.webp',
+        images: [
+          '/products/gloves/latex-gloves.webp',
+          '/products/gloves/latex-gloves-2.jpg',
+        ],
         specifications: [
           'Natural rubber latex',
           'Lightly powdered with cornstarch',
@@ -35,6 +39,12 @@ export const productCategories: ProductCategory[] = [
         description:
           'Powder-free latex gloves for users with powder sensitivity.',
         image: '/products/gloves/latex-powder-free-gloves.webp',
+        images: [
+          '/products/gloves/latex-powder-free-gloves.webp',
+          '/products/gloves/latex-powder-free-gloves-3.jpg',
+          '/products/gloves/latex-powder-free-gloves-4.jpg',
+          '/products/gloves/latex-powder-free-gloves-5.jpg',
+        ],
         specifications: [
           'Natural rubber latex',
           'Powder-free (chlorinated or polymer coated)',
@@ -67,6 +77,14 @@ export const productCategories: ProductCategory[] = [
         description:
           'Latex-free nitrile gloves offering superior chemical and puncture resistance.',
         image: '/products/gloves/nitrile-gloves-1.webp',
+        images: [
+          '/products/gloves/nitrile-gloves-1.webp',
+          '/products/gloves/nitrile-gloves-3.jpg',
+          '/products/gloves/nitrile-gloves-4.jpg',
+          '/products/gloves/nitrile-gloves-5.jpg',
+          '/products/gloves/nitrile-gloves-6.jpg',
+          '/products/gloves/nitrile-gloves-7.jpg',
+        ],
         specifications: [
           'Synthetic nitrile rubber (latex-free)',
           'Powder-free',
@@ -99,6 +117,11 @@ export const productCategories: ProductCategory[] = [
         description:
           'Economical vinyl gloves for low-risk, short-duration tasks. Latex-free.',
         image: '/products/gloves/vinyl-gloves.webp',
+        images: [
+          '/products/gloves/vinyl-gloves.webp',
+          '/products/gloves/vinyl-gloves-2.jpg',
+          '/products/gloves/vinyl-gloves-3.jpg',
+        ],
         specifications: [
           'Polyvinyl chloride (PVC)',
           'Powder-free',
@@ -115,6 +138,13 @@ export const productCategories: ProductCategory[] = [
         description:
           'Latex-free nitrile surgical gloves with excellent chemical resistance.',
         image: '/products/gloves/dark-blue-nitrile-gloves.webp',
+        images: [
+          '/products/gloves/dark-blue-nitrile-gloves.webp',
+          '/products/gloves/dark-blue-nitrile-gloves-2.jpg',
+          '/products/gloves/dark-blue-nitrile-gloves-3.jpg',
+          '/products/gloves/dark-blue-nitrile-gloves-4.jpg',
+          '/products/gloves/dark-blue-nitrile-gloves-5.jpg',
+        ],
         specifications: [
           'Synthetic nitrile (latex-free)',
           'Powder-free',
@@ -131,6 +161,10 @@ export const productCategories: ProductCategory[] = [
         description:
           'Extra-thick examination gloves designed for high-risk environments. Enhanced protection against chemicals and pathogens.',
         image: '/products/gloves/high-risk-latex-gloves.webp',
+        images: [
+          '/products/gloves/high-risk-latex-gloves.webp',
+          '/products/gloves/high-risk-latex-gloves-2.png',
+        ],
         specifications: [
           'Latex or nitrile material',
           'Extra thickness (≥0.2mm)',
@@ -161,6 +195,10 @@ export const productCategories: ProductCategory[] = [
         description:
           'Non-woven disposable bouffant cap for hair coverage in clinical settings.',
         image: '/products/infection-prevention-ppe/bouffant-cap.webp',
+        images: [
+          '/products/infection-prevention-ppe/bouffant-cap.webp',
+          '/products/infection-prevention-ppe/bouffant-cap-2.jpg',
+        ],
         specifications: [
           'Non-woven polypropylene',
           'Elastic band for secure fit',
@@ -206,6 +244,10 @@ export const productCategories: ProductCategory[] = [
         description:
           'Disposable isolation gown for protection during patient care and contact precautions.',
         image: '/products/infection-prevention-ppe/isolation-gown.webp',
+        images: [
+          '/products/infection-prevention-ppe/isolation-gown.webp',
+          '/products/infection-prevention-ppe/isolation-gown-2.jpg',
+        ],
         specifications: [
           'Non-woven polypropylene or SMS material',
           'Fluid-resistant',
@@ -237,6 +279,10 @@ export const productCategories: ProductCategory[] = [
         description:
           'Full-face protective shield with anti-fog coating. Adjustable headband, reusable.',
         image: '/products/infection-prevention-ppe/face-shield.webp',
+        images: [
+          '/products/infection-prevention-ppe/face-shield.webp',
+          '/products/infection-prevention-ppe/face-shield-2.png',
+        ],
         specifications: [
           'Clear PET or polycarbonate visor',
           'Full-face coverage (chin to forehead)',
@@ -252,6 +298,10 @@ export const productCategories: ProductCategory[] = [
         description:
           'Disposable shoe covers for contamination control in clinical areas.',
         image: '/products/infection-prevention-ppe/shoe-cover.webp',
+        images: [
+          '/products/infection-prevention-ppe/shoe-cover.webp',
+          '/products/infection-prevention-ppe/shoe-cover-2.jpg',
+        ],
         specifications: [
           'Non-woven polypropylene or CPE',
           'Elastic ankle band',
@@ -280,6 +330,12 @@ export const productCategories: ProductCategory[] = [
         description:
           'Disposable 3-layer face mask with ear loops for general protection.',
         image: '/products/infection-prevention-ppe/3-ply-mask.webp',
+        images: [
+          '/products/infection-prevention-ppe/3-ply-mask.webp',
+          '/products/infection-prevention-ppe/3-ply-mask-2.jpg',
+          '/products/infection-prevention-ppe/3-ply-mask-3.jpg',
+          '/products/infection-prevention-ppe/3-ply-mask-4.jpg',
+        ],
         specifications: [
           '3-ply construction: spunbond, meltblown filter, soft inner layer',
           'Bacterial Filtration Efficiency (BFE) ≥ 95%',
@@ -352,6 +408,7 @@ export const productCategories: ProductCategory[] = [
         name: 'Urinal Bag with Absorbent Pad',
         description:
           'Disposable urinal bag with integrated absorbent pad for spill-free use.',
+        image: '/products/bodily-waste-excreta-management/urinal-bag.jpg',
         specifications: [
           'Leak-proof construction',
           'Integrated absorbent pad',
@@ -367,6 +424,10 @@ export const productCategories: ProductCategory[] = [
         description:
           'Disposable vomit bag with absorbent lining for nausea management.',
         image: '/products/bodily-waste-excreta-management/disposable-vomit-bag.webp',
+        images: [
+          '/products/bodily-waste-excreta-management/disposable-vomit-bag.webp',
+          '/products/bodily-waste-excreta-management/disposable-vomit-bag-2.jpg',
+        ],
         specifications: [
           'Leak-proof seal',
           'Integrated absorbent pad',
@@ -382,6 +443,10 @@ export const productCategories: ProductCategory[] = [
         description:
           'High-capacity absorbent pad for fluid management in clinical settings.',
         image: '/products/bodily-waste-excreta-management/absorbent-pad.webp',
+        images: [
+          '/products/bodily-waste-excreta-management/absorbent-pad.webp',
+          '/products/bodily-waste-excreta-management/absorbent-pad-2.jpg',
+        ],
         specifications: [
           'Super absorbent polymer core',
           'Non-woven surface layer',
@@ -397,6 +462,10 @@ export const productCategories: ProductCategory[] = [
         description:
           'Durable polypropylene bedpan for bedridden patients. Autoclavable and reusable.',
         image: '/products/bodily-waste-excreta-management/bedpan.webp',
+        images: [
+          '/products/bodily-waste-excreta-management/bedpan.webp',
+          '/products/bodily-waste-excreta-management/bedpan-2.png',
+        ],
         specifications: [
           'Polypropylene (PP) material',
           'Smooth, easy-to-clean surface',
@@ -411,6 +480,10 @@ export const productCategories: ProductCategory[] = [
         description:
           'Sterile closed drainage bag with anti-reflux valve for catheterized patients.',
         image: '/products/bodily-waste-excreta-management/urine-drainage-bag.webp',
+        images: [
+          '/products/bodily-waste-excreta-management/urine-drainage-bag.webp',
+          '/products/bodily-waste-excreta-management/urine-drainage-bag-2.png',
+        ],
         specifications: [
           'Sterile, single-use',
           'Anti-reflux valve to prevent backflow',
@@ -425,6 +498,7 @@ export const productCategories: ProductCategory[] = [
         name: 'Disposable Pulp Bedpan',
         description:
           'Single-use biodegradable pulp bedpan for hygienic and eco-friendly patient care.',
+        image: '/products/bodily-waste-excreta-management/disposable-pulp-bedpan.png',
         specifications: [
           'Moulded pulp material (biodegradable)',
           'Single-use for maximum hygiene',
@@ -469,6 +543,10 @@ export const productCategories: ProductCategory[] = [
         description:
           'Universal pack with reinforced surgical gowns for enhanced protection during general surgical procedures.',
         image: '/products/surgical-procedure-packs/reinforced-universal-pack.webp',
+        images: [
+          '/products/surgical-procedure-packs/reinforced-universal-pack.webp',
+          '/products/surgical-procedure-packs/reinforced-universal-pack-2.jpg',
+        ],
         specifications: [
           '1PC Instrument table cover 150x200cm',
           '1PC Mayo stand cover 80x145cm',
@@ -502,6 +580,10 @@ export const productCategories: ProductCategory[] = [
         description:
           'Complete C-section pack with baby wrapper, bulb syringe, and umbilical cord clamp.',
         image: '/products/surgical-procedure-packs/c-section-pack.webp',
+        images: [
+          '/products/surgical-procedure-packs/c-section-pack.webp',
+          '/products/surgical-procedure-packs/c-section-pack-2.jpg',
+        ],
         specifications: [
           '1PC Instrument table cover 150x200cm',
           '1PC Mayo stand cover 80x145cm',
@@ -625,6 +707,12 @@ export const productCategories: ProductCategory[] = [
         description:
           'Advanced wound dressing promoting moist wound healing and autolytic debridement.',
         image: '/products/wound-care-dressing/hydrocolloid-dressing.webp',
+        images: [
+          '/products/wound-care-dressing/hydrocolloid-dressing.webp',
+          '/products/wound-care-dressing/hydrocolloid-dressing-2.png',
+          '/products/wound-care-dressing/hydrocolloid-dressing-3.png',
+          '/products/wound-care-dressing/hydrocolloid-dressing-4.png',
+        ],
         specifications: [
           'Sterile, self-adhesive',
           'Maintains moist wound environment',
@@ -640,6 +728,10 @@ export const productCategories: ProductCategory[] = [
         description:
           'Absorbent polyurethane foam dressing for moderate exudate wounds.',
         image: '/products/wound-care-dressing/foam-dressing.webp',
+        images: [
+          '/products/wound-care-dressing/foam-dressing.webp',
+          '/products/wound-care-dressing/foam-dressing-2.png',
+        ],
         specifications: [
           'Soft polyurethane foam',
           'Absorbs and retains exudate',
@@ -654,6 +746,11 @@ export const productCategories: ProductCategory[] = [
         description:
           'Traditional cotton gauze swabs for wound care and cleaning.',
         image: '/products/wound-care-dressing/gauze-swab-sterile.webp',
+        images: [
+          '/products/wound-care-dressing/gauze-swab-sterile.webp',
+          '/products/wound-care-dressing/gauze-swab-sterile-2.png',
+          '/products/wound-care-dressing/gauze-swab-sterile-3.jpg',
+        ],
         specifications: [
           '100% cotton gauze',
           '12-ply or 16-ply',
@@ -683,6 +780,10 @@ export const productCategories: ProductCategory[] = [
         description:
           'Elastic adhesive bandage for wound support, compression, and dressing fixation.',
         image: '/products/wound-care-dressing/adhesive-bandage.webp',
+        images: [
+          '/products/wound-care-dressing/adhesive-bandage.webp',
+          '/products/wound-care-dressing/adhesive-bandage-2.jpg',
+        ],
         specifications: [
           'Elastic cotton/polyester blend',
           'Zinc oxide or acrylic adhesive',
@@ -730,6 +831,12 @@ export const productCategories: ProductCategory[] = [
         name: 'Insulin Syringe',
         description:
           'Precision insulin syringe with ultra-fine needle for subcutaneous injection. Low dead-space design.',
+        image: '/products/clinical-consumables/insulin-syringe.jpg',
+        images: [
+          '/products/clinical-consumables/insulin-syringe.jpg',
+          '/products/clinical-consumables/insulin-syringe-2.jpg',
+          '/products/clinical-consumables/insulin-syringe-3.png',
+        ],
         specifications: [
           'Graduated in insulin units (U-40 or U-100)',
           'Ultra-fine needle (29G-31G)',
@@ -745,6 +852,11 @@ export const productCategories: ProductCategory[] = [
         description:
           'Luer-lock syringe with O-ring plunger for smooth operation and leak-proof seal.',
         image: '/products/clinical-consumables/o-ring-syringe.webp',
+        images: [
+          '/products/clinical-consumables/o-ring-syringe.webp',
+          '/products/clinical-consumables/o-ring-syringe-2.jpg',
+          '/products/clinical-consumables/o-ring-syringe-3.jpg',
+        ],
         specifications: [
           'Polypropylene barrel and plunger',
           'O-ring seal for smooth, leak-free operation',
@@ -759,6 +871,11 @@ export const productCategories: ProductCategory[] = [
         name: 'Three Parts Syringe',
         description:
           'Standard three-part syringe (barrel, plunger, rubber gasket) for general injection and aspiration.',
+        image: '/products/clinical-consumables/three-parts-syringe.png',
+        images: [
+          '/products/clinical-consumables/three-parts-syringe.png',
+          '/products/clinical-consumables/three-parts-syringe-2.jpg',
+        ],
         specifications: [
           'Three-component design (barrel, plunger, rubber gasket)',
           'Polypropylene barrel',
@@ -774,6 +891,12 @@ export const productCategories: ProductCategory[] = [
         name: 'Two Parts Syringe',
         description:
           'Economical two-part syringe (barrel and plunger) for general-purpose use.',
+        image: '/products/clinical-consumables/two-parts-syringe.jpg',
+        images: [
+          '/products/clinical-consumables/two-parts-syringe.jpg',
+          '/products/clinical-consumables/two-parts-syringe-2.png',
+          '/products/clinical-consumables/two-parts-syringe-3.jpg',
+        ],
         specifications: [
           'Two-component design (barrel and plunger)',
           'Polypropylene construction',
@@ -790,6 +913,10 @@ export const productCategories: ProductCategory[] = [
         description:
           'Leak-proof specimen collection container with screw cap for urine, stool, and general samples.',
         image: '/products/clinical-consumables/specimen-urine-container.webp',
+        images: [
+          '/products/clinical-consumables/specimen-urine-container.webp',
+          '/products/clinical-consumables/specimen-urine-container-2.png',
+        ],
         specifications: [
           'Transparent polypropylene',
           'Screw-cap lid with leak-proof seal',
@@ -805,6 +932,11 @@ export const productCategories: ProductCategory[] = [
         name: 'Medicine Cup',
         description:
           'Graduated disposable medicine cup for accurate oral medication dosing.',
+        image: '/products/clinical-consumables/medicine-cup.png',
+        images: [
+          '/products/clinical-consumables/medicine-cup.png',
+          '/products/clinical-consumables/medicine-cup-2.png',
+        ],
         specifications: [
           'Transparent polypropylene',
           'Graduated markings (ml and oz)',
@@ -847,6 +979,13 @@ export const productCategories: ProductCategory[] = [
         description:
           'Pre-gelled disposable electrodes for ECG monitoring. Available in adult and pediatric sizes.',
         image: '/products/clinical-consumables/disposable-ecg-adult.webp',
+        images: [
+          '/products/clinical-consumables/disposable-ecg-adult.webp',
+          '/products/clinical-consumables/disposable-ecg-adult-2.jpg',
+          '/products/clinical-consumables/disposable-ecg-adult-3.png',
+          '/products/clinical-consumables/disposable-ecg-child.jpg',
+          '/products/clinical-consumables/disposable-ecg-child-2.jpg',
+        ],
         specifications: [
           'Pre-gelled for immediate use',
           'Excellent signal quality',
@@ -871,6 +1010,27 @@ export const productCategories: ProductCategory[] = [
         ],
         sizes: ['30ml', '60ml', '100ml', '120ml'],
       },
+      {
+        id: 'disposable-examination-couch-roll',
+        name: 'Disposable Medical Examination Couch Roll',
+        description:
+          'Single-use paper couch roll for hygienic examination table coverage between patients.',
+        image: '/products/clinical-consumables/examination-couch-roll.png',
+        images: [
+          '/products/clinical-consumables/examination-couch-roll.png',
+          '/products/clinical-consumables/examination-couch-roll-2.jpg',
+          '/products/clinical-consumables/examination-couch-roll-3.jpg',
+          '/products/clinical-consumables/examination-couch-roll-4.png',
+        ],
+        specifications: [
+          'Two-ply tissue paper',
+          'Perforated for easy tearing',
+          'Soft and comfortable for patients',
+          'Disposable, single-use',
+          'Reduces cross-contamination risk',
+        ],
+        sizes: ['50cm x 50m', '60cm x 50m', '60cm x 100m'],
+      },
     ],
   },
   {
@@ -883,12 +1043,20 @@ export const productCategories: ProductCategory[] = [
     longDescription:
       'Advanced vascular access products including central venous catheters with anti-infection coating, hemodialysis catheters, and Foley urinary catheters. Designed for patient safety and reduced infection risk.',
     color: 'bg-accent/20 text-accent-foreground',
+    image: '/products/vascular-access-catheters/category-vascular-access.png',
     products: [
       {
         id: 'central-venous-catheter',
         name: 'Central Venous Catheter',
         description:
           'High-quality TPU central venous catheter with excellent radiopacity. Latex-free with soft tip for reduced vessel trauma.',
+        image: '/products/vascular-access-catheters/central-venous-catheter.png',
+        images: [
+          '/products/vascular-access-catheters/central-venous-catheter.png',
+          '/products/vascular-access-catheters/central-venous-catheter-2.png',
+          '/products/vascular-access-catheters/central-venous-catheter-3.png',
+          '/products/vascular-access-catheters/central-venous-catheter-4.jpg',
+        ],
         specifications: [
           'Latex-free TPU material',
           'Excellent radiopacity',
@@ -908,6 +1076,7 @@ export const productCategories: ProductCategory[] = [
         name: 'Anti-Infection CVC',
         description:
           'Antimicrobial-coated catheter with rifampicin and minocycline. Reduces infection and prolongs indwelling time.',
+        image: '/products/vascular-access-catheters/iv-catheter.png',
         specifications: [
           'Antimicrobial drug coating',
           'Rifampicin and Minocycline',
@@ -927,6 +1096,11 @@ export const productCategories: ProductCategory[] = [
         name: 'Hemodialysis Catheter',
         description:
           'High-quality TPU and silicone hemodialysis catheter. Precurved and straight options with antimicrobial customization.',
+        image: '/products/vascular-access-catheters/hemodialysis-catheter.png',
+        images: [
+          '/products/vascular-access-catheters/hemodialysis-catheter.png',
+          '/products/vascular-access-catheters/hemodialysis-catheter-2.png',
+        ],
         specifications: [
           'Latex-free TPU material',
           'Transparent silicone extension tube',
@@ -945,6 +1119,13 @@ export const productCategories: ProductCategory[] = [
         name: 'Foley Catheter',
         description:
           'Indwelling urinary catheter with inflatable balloon for bladder drainage. Available in latex and silicone.',
+        image: '/products/vascular-access-catheters/foley-catheter.jpg',
+        images: [
+          '/products/vascular-access-catheters/foley-catheter.jpg',
+          '/products/vascular-access-catheters/foley-catheter-2.jpg',
+          '/products/vascular-access-catheters/foley-catheter-3.jpg',
+          '/products/vascular-access-catheters/foley-catheter-4.png',
+        ],
         specifications: [
           'Latex or 100% silicone material',
           'Inflatable retention balloon (5ml, 10ml, 30ml)',
@@ -975,6 +1156,13 @@ export const productCategories: ProductCategory[] = [
         description:
           'High-volume, low-pressure cuffed tubes with clearly marked developer line for accurate placement.',
         image: '/products/airway-respiratory/et-tube-with-cuff.webp',
+        images: [
+          '/products/airway-respiratory/et-tube-with-cuff.webp',
+          '/products/airway-respiratory/et-tube-with-cuff-2.jpg',
+          '/products/airway-respiratory/et-tube-with-cuff-3.jpg',
+          '/products/airway-respiratory/et-tube-with-cuff-4.png',
+          '/products/airway-respiratory/et-tube-with-cuff-5.jpg',
+        ],
         specifications: [
           'Medical polyurethane material',
           'Good biocompatibility',
@@ -990,6 +1178,10 @@ export const productCategories: ProductCategory[] = [
         description:
           'Disposable suction catheter with lateral eyes for effective airway secretion removal.',
         image: '/products/airway-respiratory/suction-catheter.webp',
+        images: [
+          '/products/airway-respiratory/suction-catheter.webp',
+          '/products/airway-respiratory/suction-connecting-tube.png',
+        ],
         specifications: [
           'Medical-grade PVC material',
           'Smooth, rounded tip',
@@ -1050,6 +1242,10 @@ export const productCategories: ProductCategory[] = [
         description:
           'Flexible oxygen delivery mask with elastic head strap. Delivers 60-80% oxygen concentration.',
         image: '/products/airway-respiratory/oxygen-mask.webp',
+        images: [
+          '/products/airway-respiratory/oxygen-mask.webp',
+          '/products/airway-respiratory/oxygen-mask-2.png',
+        ],
         specifications: [
           'Flexible plastic construction',
           'Elastic head strap',
@@ -1079,6 +1275,10 @@ export const productCategories: ProductCategory[] = [
         description:
           'Precision stainless steel or carbon steel surgical blade. Individually foil-wrapped and sterile.',
         image: '/products/surgical-instruments-sutures/surgical-blades.webp',
+        images: [
+          '/products/surgical-instruments-sutures/surgical-blades.webp',
+          '/products/surgical-instruments-sutures/surgical-blades-2.png',
+        ],
         specifications: [
           'Stainless steel or carbon steel',
           'Ultra-sharp cutting edge',
@@ -1165,6 +1365,10 @@ export const productCategories: ProductCategory[] = [
         description:
           'Automatic upper arm blood pressure monitor with irregular heartbeat detection.',
         image: '/products/patient-care-basic-equipment/blood-pressure-monitor.webp',
+        images: [
+          '/products/patient-care-basic-equipment/blood-pressure-monitor.webp',
+          '/products/patient-care-basic-equipment/blood-pressure-monitor-2.png',
+        ],
         specifications: [
           'Oscillometric measurement method',
           'LCD display (SYS, DIA, Pulse)',
@@ -1179,6 +1383,10 @@ export const productCategories: ProductCategory[] = [
         description:
           'Lightweight aluminium wheelchair with folding frame for easy transport and storage.',
         image: '/products/patient-care-basic-equipment/aluminium-wheelchairs.webp',
+        images: [
+          '/products/patient-care-basic-equipment/aluminium-wheelchairs.webp',
+          '/products/patient-care-basic-equipment/aluminium-wheelchairs-2.png',
+        ],
         specifications: [
           'Aluminium alloy frame',
           'Foldable design for transport',
@@ -1195,6 +1403,10 @@ export const productCategories: ProductCategory[] = [
         description:
           'Adjustable aluminium crutches for temporary or long-term mobility support.',
         image: '/products/patient-care-basic-equipment/crutches.webp',
+        images: [
+          '/products/patient-care-basic-equipment/crutches.webp',
+          '/products/patient-care-basic-equipment/crutches-2.png',
+        ],
         specifications: [
           'Lightweight aluminium construction',
           'Height adjustable',
@@ -1211,6 +1423,11 @@ export const productCategories: ProductCategory[] = [
         description:
           'Adjustable walking frames and rollators for patient mobility support and rehabilitation.',
         image: '/products/patient-care-basic-equipment/walking-aids.webp',
+        images: [
+          '/products/patient-care-basic-equipment/walking-aids.webp',
+          '/products/patient-care-basic-equipment/walking-aids-2.png',
+          '/products/patient-care-basic-equipment/walking-aids-3.png',
+        ],
         specifications: [
           'Lightweight aluminium frame',
           'Height adjustable legs',

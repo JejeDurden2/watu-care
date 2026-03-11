@@ -482,6 +482,10 @@
         "name": "Sterile Urine Container",
         "description": "Leak-proof sterile container with screw cap for urine collection."
       },
+      "disposable-examination-couch-roll": {
+        "name": "Disposable Medical Examination Couch Roll",
+        "description": "Single-use paper couch roll for hygienic examination table coverage between patients."
+      },
       "central-venous-catheter": {
         "name": "Central Venous Catheter",
         "description": "High-quality TPU central venous catheter. Latex-free with soft tip for reduced vessel trauma."

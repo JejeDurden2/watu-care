@@ -79,7 +79,7 @@ export function Header(): React.ReactElement {
                 width={280}
                 height={80}
                 className={cn(
-                  'h-14 w-auto drop-shadow-sm header-logo md:h-16',
+                  'h-16 w-auto drop-shadow-sm header-logo md:h-20',
                   isScrolled && 'header-logo-scrolled'
                 )}
                 style={{ width: 'auto' }}

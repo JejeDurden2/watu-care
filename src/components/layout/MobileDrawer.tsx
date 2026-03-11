@@ -3,7 +3,7 @@
 import { useEffect, useRef, useCallback } from 'react';
 import Image from 'next/image';
 import { useTranslations } from 'next-intl';
-import { X, ChevronRight, Globe } from 'lucide-react';
+import { X, ChevronRight, Globe, Linkedin } from 'lucide-react';
 import { Link } from '@/i18n/routing';
 import { trackNavClick } from '@/lib/analytics';
 import { LanguageSwitcher } from '@/components/ui';
@@ -161,7 +161,19 @@ export function MobileDrawer({ isOpen, navLinks, onClose }: MobileDrawerProps): 
 
         {/* Drawer Footer */}
         <div className="border-t border-border/30 px-5 py-4 bg-muted/30">
-          <p className="text-center text-xs text-secondary/30">
+          <div className="flex items-center justify-center gap-3">
+            <a
+              href="https://www.linkedin.com/company/watu-care"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-1.5 text-secondary/40 transition-colors hover:text-primary"
+              aria-label="Watu Care on LinkedIn"
+            >
+              <Linkedin className="h-4 w-4" />
+              <span className="text-xs font-medium">LinkedIn</span>
+            </a>
+          </div>
+          <p className="mt-2 text-center text-xs text-secondary/30">
             &copy; {new Date().getFullYear()} Watu Care
           </p>
         </div>

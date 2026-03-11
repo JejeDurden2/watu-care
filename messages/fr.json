@@ -122,12 +122,12 @@
       },
       "bodily-waste-management": {
         "title": "Gestion des déchets corporels",
-        "description": "Sacs absorbants, bassins, coussinets et systèmes de drainage pour les soins aux patients.",
-        "longDescription": "Solutions hygiéniques de gestion des déchets pour les soins aux patients : sacs absorbants pour chaises percées et bassins, coussinets super absorbants, bassins jetables et réutilisables, et systèmes de drainage urinaire.",
+        "description": "Sacs absorbants, bassins de lit, tampons et systèmes de drainage pour les soins aux patients.",
+        "longDescription": "Solutions hygiéniques de gestion des déchets pour les soins aux patients : sacs absorbants pour chaises percées et bassins de lit, tampons super absorbants, bassins de lit jetables et réutilisables, et systèmes de drainage urinaire.",
         "faq": [
           {
             "q": "Quels produits de gestion des déchets proposez-vous pour les hôpitaux ?",
-            "a": "Nous fournissons des sacs absorbants pour chaises percées et bassins, des coussinets super absorbants, des bassins jetables et réutilisables, et des systèmes de drainage urinaire fermés."
+            "a": "Nous fournissons des sacs absorbants pour chaises percées et bassins de lit, des tampons super absorbants, des bassins de lit jetables et réutilisables, et des systèmes de drainage urinaire fermés."
           },
           {
             "q": "Vos produits conviennent-ils aux établissements de soins de longue durée ?",
@@ -135,7 +135,7 @@
           },
           {
             "q": "Comment garantissez-vous les normes d'hygiène ?",
-            "a": "Tous les produits sont emballés individuellement et fabriqués sous systèmes de gestion qualité ISO 13485. Les coussinets super absorbants intègrent une technologie anti-odeurs."
+            "a": "Tous les produits sont emballés individuellement et fabriqués sous systèmes de gestion qualité ISO 13485. Les tampons super absorbants intègrent une technologie anti-odeurs."
           }
         ]
       },
@@ -347,28 +347,28 @@
         "description": "Masque chirurgical de grade médical avec haute efficacité de filtration bactérienne."
       },
       "commode-liner": {
-        "name": "Sac pour chaise percée avec coussin absorbant",
-        "description": "Sac jetable pour chaise percée avec coussin absorbant intégré pour un confinement hygiénique."
+        "name": "Sac pour chaise percée avec tampon absorbant",
+        "description": "Sac jetable pour chaise percée avec tampon absorbant intégré pour un confinement hygiénique."
       },
       "bedpan-liner": {
-        "name": "Sac pour bassin avec coussin absorbant",
-        "description": "Sac jetable pour bassin avec noyau absorbant pour solidifier les liquides et réduire les odeurs."
+        "name": "Sac pour bassin de lit avec tampon absorbant",
+        "description": "Sac jetable pour bassin de lit avec noyau absorbant pour solidifier les liquides et réduire les odeurs."
       },
       "urinal-bag-absorbent": {
-        "name": "Sac urinaire avec coussin absorbant",
-        "description": "Sac urinaire jetable avec coussin absorbant intégré pour une utilisation sans éclaboussures."
+        "name": "Sac urinaire avec tampon absorbant",
+        "description": "Sac urinaire jetable avec tampon absorbant intégré pour une utilisation sans éclaboussures."
       },
       "vomit-bag-absorbent": {
-        "name": "Sac vomitoire avec coussin absorbant",
+        "name": "Sac vomitoire avec tampon absorbant",
         "description": "Sac vomitoire jetable avec doublure absorbante pour la gestion des nausées."
       },
       "super-absorbent-pad": {
-        "name": "Coussin super absorbant",
-        "description": "Coussin absorbant haute capacité pour la gestion des fluides en milieu clinique."
+        "name": "Tampon super absorbant",
+        "description": "Tampon absorbant haute capacité pour la gestion des fluides en milieu clinique."
       },
       "pp-bedpan": {
-        "name": "Bassin en PP",
-        "description": "Bassin hygiénique en polypropylène durable. Autoclavable et réutilisable."
+        "name": "Bassin de lit en PP",
+        "description": "Bassin de lit hygiénique en polypropylène durable. Autoclavable et réutilisable."
       },
       "urine-drainage-bag": {
         "name": "Sac de drainage urinaire",
@@ -549,6 +549,10 @@
       "sterile-urine-container": {
         "name": "Conteneur à urine stérile",
         "description": "Conteneur stérile étanche avec bouchon vissé et graduations pour le recueil d'urine."
+      },
+      "disposable-examination-couch-roll": {
+        "name": "Drap d'examen jetable en rouleau",
+        "description": "Rouleau de papier jetable pour couverture hygiénique de la table d'examen entre chaque patient."
       },
       "central-venous-catheter": {
         "name": "Cathéter veineux central",

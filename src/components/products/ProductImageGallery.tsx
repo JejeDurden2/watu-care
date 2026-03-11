@@ -45,7 +45,7 @@ export function ProductImageGallery({
           src={images[selectedIndex]}
           alt={`${alt} - Image ${selectedIndex + 1}`}
           fill
-          className="object-cover"
+          className="object-contain p-3"
           onError={() => setImageError(true)}
           priority={priority}
           sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
@@ -69,7 +69,7 @@ export function ProductImageGallery({
                 src={image}
                 alt={`${alt} - Thumbnail ${index + 1}`}
                 fill
-                className="object-cover"
+                className="object-contain p-1"
                 sizes="100px"
               />
             </button>

@@ -37,12 +37,12 @@ export function ProductImage({
   }
 
   return (
-    <div className={`relative overflow-hidden ${className}`}>
+    <div className={`relative overflow-hidden bg-muted ${className}`}>
       <Image
         src={src}
         alt={alt}
         fill
-        className="object-cover"
+        className="object-contain p-2"
         onError={() => setImageError(true)}
         priority={priority}
         sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"

@@ -3,6 +3,7 @@
 import { useTranslations } from 'next-intl';
 import { Link } from '@/i18n/routing';
 import { trackNavClick, trackCtaClick } from '@/lib/analytics';
+import { Linkedin } from 'lucide-react';
 import { Button, LanguageSwitcher } from '@/components/ui';
 import { QuoteListBadge } from '@/components/quote';
 import { SearchBar } from '@/components/layout/SearchBar';
@@ -39,6 +40,15 @@ export function DesktopNav({ navLinks, onRequestQuote }: DesktopNavProps): React
 
       <div className="flex items-center gap-3">
         <SearchBar className="w-44 xl:w-52" />
+        <a
+          href="https://www.linkedin.com/company/watu-care"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="inline-flex h-9 w-9 items-center justify-center rounded-lg text-secondary/50 transition-colors hover:text-primary"
+          aria-label="Watu Care on LinkedIn"
+        >
+          <Linkedin className="h-4 w-4" />
+        </a>
         <LanguageSwitcher />
         <QuoteListBadge />
       </div>
