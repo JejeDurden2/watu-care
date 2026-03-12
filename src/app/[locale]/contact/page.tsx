@@ -1,6 +1,6 @@
 import type { Metadata } from 'next';
 import { getTranslations } from 'next-intl/server';
-import { Mail, MapPin, Phone, Clock } from 'lucide-react';
+import { Mail, MapPin, Phone, Clock, Linkedin } from 'lucide-react';
 import { Container, Button } from '@/components/ui';
 import { Link } from '@/i18n/routing';
 import {
@@ -176,6 +176,25 @@ export default async function ContactPage({
                     <p className="mt-0.5 font-body text-base text-white/70">
                       {t('info.hoursValue')}
                     </p>
+                  </div>
+                </div>
+
+                <div className="flex items-center gap-5 py-6">
+                  <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-white/8">
+                    <Linkedin className="h-5 w-5 text-primary" aria-hidden="true" />
+                  </div>
+                  <div>
+                    <p className="font-body text-xs font-semibold uppercase tracking-[0.14em] text-white/40">
+                      LinkedIn
+                    </p>
+                    <a
+                      href="https://www.linkedin.com/company/watu-care"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="mt-0.5 block font-body text-lg font-medium text-white transition-colors hover:text-primary"
+                    >
+                      {t('info.linkedinValue')}
+                    </a>
                   </div>
                 </div>
 

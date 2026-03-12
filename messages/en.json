@@ -717,7 +717,8 @@
       "email": "Email",
       "phone": "Phone",
       "hours": "Business Hours",
-      "hoursValue": "Mon - Fri, 9:00 AM - 6:00 PM (HKT)"
+      "hoursValue": "Mon - Fri, 9:00 AM - 6:00 PM (HKT)",
+      "linkedinValue": "Follow us on LinkedIn"
     },
     "cta": {
       "title": "Ready to Get Started?",

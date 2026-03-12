@@ -785,7 +785,8 @@
       "email": "Email",
       "phone": "Téléphone",
       "hours": "Horaires d'ouverture",
-      "hoursValue": "Lun - Ven, 9h00 - 18h00 (HKT)"
+      "hoursValue": "Lun - Ven, 9h00 - 18h00 (HKT)",
+      "linkedinValue": "Suivez-nous sur LinkedIn"
     },
     "cta": {
       "title": "Prêt à commencer ?",
