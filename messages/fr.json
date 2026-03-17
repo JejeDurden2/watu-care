@@ -1067,6 +1067,16 @@
   },
   "personas": {
     "breadcrumbLabel": "Solutions",
+    "index": {
+      "meta": {
+        "title": "Solutions par secteur — Fournitures médicales pour chaque prestataire de santé",
+        "description": "Watu Care propose des solutions d'approvisionnement médical adaptées aux hôpitaux, cliniques, ONG, pharmacies et ministères de la Santé en Afrique et au Moyen-Orient."
+      },
+      "title": "Solutions par secteur",
+      "subtitle": "Nous adaptons nos solutions d'approvisionnement médical aux besoins spécifiques de chaque secteur de santé — des grands réseaux hospitaliers aux opérations humanitaires de première ligne.",
+      "count": "{count} secteurs desservis",
+      "learnMore": "En savoir plus"
+    },
     "hospitals": {
       "meta": {
         "title": "Fournitures médicales pour hôpitaux — Grossiste depuis l'Asie",

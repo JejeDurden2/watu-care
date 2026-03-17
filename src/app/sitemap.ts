@@ -88,6 +88,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: 'yearly' as const,
       priority: 0.3,
     },
+    {
+      url: `${BASE_URL}/${locale}/solutions`,
+      lastModified: LAST_MODIFIED.personas,
+      changeFrequency: 'monthly' as const,
+      priority: 0.8,
+    },
   ]);
 
   // Category pages for each locale
@@ -133,22 +139,10 @@ export default function sitemap(): MetadataRoute.Sitemap {
     })),
   );
 
-  // Market category-country pages (programmatic SEO)
-  // Use whichever is more recent: category data or market page update
-  const marketCategoryPages = locales.flatMap((locale) =>
-    tier1Countries.flatMap((country) =>
-      categories.map((category) => {
-        const catDate = CATEGORY_MODIFIED[category.slug] ?? LAST_MODIFIED.products;
-        const mktDate = LAST_MODIFIED.markets;
-        return {
-          url: `${BASE_URL}/${locale}/markets/${country.slug}/${category.slug}`,
-          lastModified: catDate > mktDate ? catDate : mktDate,
-          changeFrequency: 'weekly' as const,
-          priority: 0.75,
-        };
-      }),
-    ),
-  );
+  // Market category-country pages (/markets/{country}/{category}) are omitted
+  // from the sitemap to improve crawl budget efficiency. These 480+ pages have
+  // similar template content across countries and Google was not indexing them.
+  // They remain live and crawlable via internal links from country hub pages.
 
   return [
     ...staticPages,
@@ -156,6 +150,5 @@ export default function sitemap(): MetadataRoute.Sitemap {
     ...productPages,
     ...marketCountryPages,
     ...personaPages,
-    ...marketCategoryPages,
   ];
 }

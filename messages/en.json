@@ -999,6 +999,16 @@
   },
   "personas": {
     "breadcrumbLabel": "Solutions",
+    "index": {
+      "meta": {
+        "title": "Solutions by Sector — Medical Supplies for Every Healthcare Provider",
+        "description": "Watu Care delivers tailored medical supply solutions for hospitals, clinics, NGOs, pharmacies, and government health ministries across Africa and the Middle East."
+      },
+      "title": "Solutions by Sector",
+      "subtitle": "We tailor our medical supply solutions to the specific needs of each healthcare sector — from large hospital networks to frontline humanitarian operations.",
+      "count": "{count} sectors served",
+      "learnMore": "Learn more"
+    },
     "hospitals": {
       "meta": {
         "title": "Medical Supplies for Hospitals — Wholesale from Asia",
