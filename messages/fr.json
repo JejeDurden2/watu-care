@@ -554,6 +554,26 @@
         "name": "Drap d'examen jetable en rouleau",
         "description": "Rouleau de papier jetable pour couverture hygiénique de la table d'examen entre chaque patient."
       },
+      "vacutainer-edta-tube": {
+        "name": "Tube Vacutainer EDTA",
+        "description": "Tube de prélèvement sanguin sous vide avec anticoagulant EDTA pour analyses hématologiques."
+      },
+      "vacutainer-citrate-tube": {
+        "name": "Tube Vacutainer Citrate",
+        "description": "Tube de prélèvement sanguin sous vide au citrate de sodium pour tests de coagulation."
+      },
+      "vacutainer-fluoride-tube": {
+        "name": "Tube Vacutainer Fluorure",
+        "description": "Tube sous vide au fluorure de sodium pour dosage du glucose et du lactate."
+      },
+      "vacutainer-heparin-tube": {
+        "name": "Tube Vacutainer Héparine",
+        "description": "Tube sous vide à l'héparine de lithium ou sodium pour analyses biochimiques et immunologiques."
+      },
+      "vacutainer-plain-tube": {
+        "name": "Tube Vacutainer Sec",
+        "description": "Tube de prélèvement sanguin sous vide sans additif pour sérologie et biochimie."
+      },
       "central-venous-catheter": {
         "name": "Cathéter veineux central",
         "description": "Cathéter veineux central en TPU de haute qualité. Sans latex avec embout souple."
@@ -621,6 +641,22 @@
       "aluminium-wheelchairs": {
         "name": "Fauteuils roulants en aluminium",
         "description": "Fauteuil roulant léger en aluminium avec cadre pliable pour un transport facile."
+      },
+      "electric-wheelchair": {
+        "name": "Fauteuil roulant électrique",
+        "description": "Fauteuil roulant électrique avec commande par joystick pour une mobilité autonome."
+      },
+      "manual-wheelchair": {
+        "name": "Fauteuil roulant manuel",
+        "description": "Fauteuil roulant manuel standard avec cadre en acier et design pliable pour un usage quotidien."
+      },
+      "reclining-commode-wheelchair": {
+        "name": "Fauteuil roulant inclinable avec chaise percée",
+        "description": "Fauteuil roulant multifonction inclinable avec chaise percée intégrée pour patients à mobilité réduite."
+      },
+      "reclining-manual-wheelchair": {
+        "name": "Fauteuil roulant manuel inclinable",
+        "description": "Fauteuil roulant manuel avec dossier inclinable pour un confort prolongé et le positionnement du patient."
       },
       "crutches": {
         "name": "Béquilles",

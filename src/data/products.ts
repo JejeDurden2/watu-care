@@ -1021,6 +1021,7 @@ export const productCategories: ProductCategory[] = [
           '/products/clinical-consumables/examination-couch-roll-2.jpg',
           '/products/clinical-consumables/examination-couch-roll-3.jpg',
           '/products/clinical-consumables/examination-couch-roll-4.png',
+          '/products/clinical-consumables/examination-couch-roll-5.jpg',
         ],
         specifications: [
           'Two-ply tissue paper',
@@ -1030,6 +1031,102 @@ export const productCategories: ProductCategory[] = [
           'Reduces cross-contamination risk',
         ],
         sizes: ['50cm x 50m', '60cm x 50m', '60cm x 100m'],
+      },
+      {
+        id: 'vacutainer-edta-tube',
+        name: 'Vacutainer EDTA Tube',
+        description:
+          'EDTA anticoagulant vacuum blood collection tube for hematology testing.',
+        image: '/products/clinical-consumables/vacutainer-edta-tube.webp',
+        images: [
+          '/products/clinical-consumables/vacutainer-edta-tube.webp',
+          '/products/clinical-consumables/vacutainer-edta-tube-2.png',
+        ],
+        specifications: [
+          'K2 or K3 EDTA anticoagulant',
+          'Vacuum-sealed for accurate draw volume',
+          'Color-coded lavender/purple cap',
+          'PET plastic tube',
+          'Sterile, single-use',
+        ],
+        sizes: ['2ml', '3ml', '4ml', '5ml'],
+      },
+      {
+        id: 'vacutainer-citrate-tube',
+        name: 'Vacutainer Citrate Tube',
+        description:
+          'Sodium citrate vacuum blood collection tube for coagulation testing.',
+        image: '/products/clinical-consumables/vacutainer-citrate-tube.webp',
+        images: [
+          '/products/clinical-consumables/vacutainer-citrate-tube.webp',
+          '/products/clinical-consumables/vacutainer-citrate-tube-2.png',
+        ],
+        specifications: [
+          '3.2% or 3.8% sodium citrate',
+          'Vacuum-sealed for accurate draw volume',
+          'Color-coded light blue cap',
+          'PET plastic tube',
+          'Sterile, single-use',
+        ],
+        sizes: ['1.8ml', '2.7ml', '3.2ml'],
+      },
+      {
+        id: 'vacutainer-fluoride-tube',
+        name: 'Vacutainer Fluoride Tube',
+        description:
+          'Sodium fluoride/potassium oxalate vacuum tube for glucose and lactate testing.',
+        image: '/products/clinical-consumables/vacutainer-fluoride-tube.webp',
+        images: [
+          '/products/clinical-consumables/vacutainer-fluoride-tube.webp',
+          '/products/clinical-consumables/vacutainer-fluoride-tube-2.png',
+        ],
+        specifications: [
+          'Sodium fluoride/potassium oxalate additive',
+          'Glycolysis inhibitor for glucose stability',
+          'Vacuum-sealed for accurate draw volume',
+          'Color-coded grey cap',
+          'PET plastic tube',
+          'Sterile, single-use',
+        ],
+        sizes: ['2ml', '3ml', '4ml'],
+      },
+      {
+        id: 'vacutainer-heparin-tube',
+        name: 'Vacutainer Heparin Tube',
+        description:
+          'Lithium or sodium heparin vacuum blood collection tube for chemistry and immunology testing.',
+        image: '/products/clinical-consumables/vacutainer-heparin-tube.webp',
+        images: [
+          '/products/clinical-consumables/vacutainer-heparin-tube.webp',
+          '/products/clinical-consumables/vacutainer-heparin-tube-2.png',
+        ],
+        specifications: [
+          'Lithium heparin or sodium heparin',
+          'Vacuum-sealed for accurate draw volume',
+          'Color-coded green cap',
+          'PET plastic tube',
+          'Sterile, single-use',
+        ],
+        sizes: ['2ml', '3ml', '4ml', '5ml'],
+      },
+      {
+        id: 'vacutainer-plain-tube',
+        name: 'Vacutainer Plain Tube',
+        description:
+          'No-additive vacuum blood collection tube for serum chemistry and serology testing.',
+        image: '/products/clinical-consumables/vacutainer-plain-tube.webp',
+        images: [
+          '/products/clinical-consumables/vacutainer-plain-tube.webp',
+          '/products/clinical-consumables/vacutainer-plain-tube-2.png',
+        ],
+        specifications: [
+          'No additive (clot activator optional)',
+          'Vacuum-sealed for accurate draw volume',
+          'Color-coded red cap',
+          'PET plastic tube',
+          'Sterile, single-use',
+        ],
+        sizes: ['3ml', '4ml', '5ml', '7ml', '10ml'],
       },
     ],
   },
@@ -1435,6 +1532,69 @@ export const productCategories: ProductCategory[] = [
           'Non-slip rubber ferrules',
           'Optional wheels (2-wheel or 4-wheel rollator)',
           'Weight capacity: 100-150kg',
+        ],
+      },
+      {
+        id: 'electric-wheelchair',
+        name: 'Electric Wheelchair',
+        description:
+          'Battery-powered electric wheelchair with joystick control for independent mobility.',
+        image: '/products/patient-care-basic-equipment/electric-wheelchair.webp',
+        specifications: [
+          'Electric motor with joystick control',
+          'Rechargeable battery (20-25km range)',
+          'Adjustable seat and backrest',
+          'Electromagnetic brakes',
+          'Removable footrests',
+          'Weight capacity: 100-120kg',
+        ],
+      },
+      {
+        id: 'manual-wheelchair',
+        name: 'Manual Wheelchair',
+        description:
+          'Standard manual wheelchair with steel frame and folding design for daily use.',
+        image: '/products/patient-care-basic-equipment/manual-wheelchair.webp',
+        specifications: [
+          'Steel frame construction',
+          'Foldable for transport and storage',
+          'Padded seat and backrest',
+          'Swing-away footrests',
+          'Solid or pneumatic rear wheels',
+          'Weight capacity: 100-120kg',
+        ],
+        sizes: ['16 inch seat', '18 inch seat', '20 inch seat'],
+      },
+      {
+        id: 'reclining-commode-wheelchair',
+        name: 'Reclining Commode Wheelchair',
+        description:
+          'Multi-function reclining wheelchair with built-in commode for patients with limited mobility.',
+        image:
+          '/products/patient-care-basic-equipment/reclining-commode-wheelchair.webp',
+        specifications: [
+          'Reclining backrest (adjustable angle)',
+          'Built-in commode with removable bucket',
+          'Elevating leg rests',
+          'Padded armrests',
+          'Four rear wheel brakes',
+          'Weight capacity: 100-120kg',
+        ],
+      },
+      {
+        id: 'reclining-manual-wheelchair',
+        name: 'Reclining Manual Wheelchair',
+        description:
+          'Manual wheelchair with reclining backrest for extended comfort and patient positioning.',
+        image:
+          '/products/patient-care-basic-equipment/reclining-manual-wheelchair.webp',
+        specifications: [
+          'Reclining backrest (up to 180°)',
+          'Steel or aluminium frame',
+          'Elevating leg rests',
+          'Detachable headrest',
+          'Foldable for transport',
+          'Weight capacity: 100-120kg',
         ],
       },
     ],

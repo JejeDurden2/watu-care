@@ -486,6 +486,26 @@
         "name": "Disposable Medical Examination Couch Roll",
         "description": "Single-use paper couch roll for hygienic examination table coverage between patients."
       },
+      "vacutainer-edta-tube": {
+        "name": "Vacutainer EDTA Tube",
+        "description": "EDTA anticoagulant vacuum blood collection tube for hematology testing."
+      },
+      "vacutainer-citrate-tube": {
+        "name": "Vacutainer Citrate Tube",
+        "description": "Sodium citrate vacuum blood collection tube for coagulation testing."
+      },
+      "vacutainer-fluoride-tube": {
+        "name": "Vacutainer Fluoride Tube",
+        "description": "Sodium fluoride vacuum tube for glucose and lactate testing."
+      },
+      "vacutainer-heparin-tube": {
+        "name": "Vacutainer Heparin Tube",
+        "description": "Lithium or sodium heparin vacuum tube for chemistry and immunology testing."
+      },
+      "vacutainer-plain-tube": {
+        "name": "Vacutainer Plain Tube",
+        "description": "No-additive vacuum blood collection tube for serum chemistry and serology testing."
+      },
       "central-venous-catheter": {
         "name": "Central Venous Catheter",
         "description": "High-quality TPU central venous catheter. Latex-free with soft tip for reduced vessel trauma."
@@ -553,6 +573,22 @@
       "aluminium-wheelchairs": {
         "name": "Aluminium Wheelchairs",
         "description": "Lightweight aluminium wheelchair with folding frame for easy transport."
+      },
+      "electric-wheelchair": {
+        "name": "Electric Wheelchair",
+        "description": "Battery-powered electric wheelchair with joystick control for independent mobility."
+      },
+      "manual-wheelchair": {
+        "name": "Manual Wheelchair",
+        "description": "Standard manual wheelchair with steel frame and folding design for daily use."
+      },
+      "reclining-commode-wheelchair": {
+        "name": "Reclining Commode Wheelchair",
+        "description": "Multi-function reclining wheelchair with built-in commode for patients with limited mobility."
+      },
+      "reclining-manual-wheelchair": {
+        "name": "Reclining Manual Wheelchair",
+        "description": "Manual wheelchair with reclining backrest for extended comfort and patient positioning."
       },
       "crutches": {
         "name": "Crutches",
