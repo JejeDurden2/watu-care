@@ -97,11 +97,9 @@ export async function WhyUs(): Promise<React.ReactElement> {
               {t('catalogDesc')}
             </p>
           </div>
-          <div className="shrink-0 rounded-full border border-accent/30 px-4 py-1.5">
-            <span className="font-body text-xs font-semibold uppercase tracking-wider text-accent">
-              500+ SKUs
-            </span>
-          </div>
+          <span className="shrink-0 font-body text-sm text-white/50">
+            500+ SKUs
+          </span>
         </div>
 
       </Container>

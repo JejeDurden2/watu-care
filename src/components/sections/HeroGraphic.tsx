@@ -394,48 +394,6 @@ function DestinationCluster({ isVisible }: { isVisible: boolean }): React.ReactE
 }
 
 /* ------------------------------------------------------------------ */
-/*  Layer 3 — Floating data badges                                     */
-/* ------------------------------------------------------------------ */
-
-function DataBadges({ isVisible }: { isVisible: boolean }): React.ReactElement {
-  const badges = [
-    { x: 310, y: 38, label: 'ISO 13485', width: 74, delay: '1s', animClass: 'animate-hero-net-float' },
-    { x: 625, y: 170, label: '25+ Countries', width: 96, delay: '1.2s', animClass: 'animate-hero-net-float-alt' },
-  ];
-
-  return (
-    <g>
-      {badges.map((b, i) => (
-        <g
-          key={`badge-${i}`}
-          className={isVisible ? b.animClass : ''}
-          style={{
-            opacity: isVisible ? 1 : 0,
-            transition: `opacity 0.5s cubic-bezier(0.16, 1, 0.3, 1) ${b.delay}`,
-          }}
-        >
-          <rect x={b.x} y={b.y} width={b.width} height="22" rx="11"
-            fill="hsl(206, 50%, 16%)" fillOpacity="0.85"
-            stroke="hsl(175, 50%, 45%)" strokeWidth="0.6" strokeOpacity="0.25" />
-          <line
-            x1={b.x + 10} y1={b.y + 1} x2={b.x + b.width - 10} y2={b.y + 1}
-            stroke="white" strokeOpacity="0.06" strokeWidth="0.8"
-          />
-          <text
-            x={b.x + b.width / 2} y={b.y + 14.5}
-            textAnchor="middle" fill="hsl(175, 50%, 60%)" fontSize="8"
-            fontWeight="600" letterSpacing="0.8"
-            fontFamily="var(--font-body), system-ui, sans-serif"
-          >
-            {b.label}
-          </text>
-        </g>
-      ))}
-    </g>
-  );
-}
-
-/* ------------------------------------------------------------------ */
 /*  Mobile — Glassmorphic node badges with gradient connector          */
 /* ------------------------------------------------------------------ */
 
@@ -457,7 +415,9 @@ function MobileNodeBadge({
             : 'border-white/10 bg-white/5 shadow-[inset_0_1px_0_rgba(255,255,255,0.06)]'
         }`}
       >
-        <div className={`h-2 w-2 rounded-full ${isAccent ? 'bg-accent' : 'bg-primary'}`} />
+        <span className={`text-xs font-bold ${isAccent ? 'text-accent' : 'text-primary'}`}>
+          {isAccent ? '+' : ''}
+        </span>
       </div>
       <span
         className={`text-[10px] font-bold uppercase tracking-wider ${
@@ -544,8 +504,7 @@ export function HeroGraphic(): React.ReactElement {
           <CenterHub isVisible={isVisible} reducedMotion={reducedMotion} />
           <DestinationCluster isVisible={isVisible} />
 
-          {/* Layer 3 — Data badges */}
-          <DataBadges isVisible={isVisible} />
+          {/* Data badges removed — info already in trust marquee & stats */}
 
           {/* Decorative corner brackets */}
           <g opacity="0.06">

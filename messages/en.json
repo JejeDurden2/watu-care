@@ -48,13 +48,13 @@
     "title": "Why Watu Care",
     "subtitle": "We connect healthcare providers with quality medical supplies from Asia.",
     "hubTitle": "Direct Sourcing",
-    "hubDesc": "Products ship directly from certified Asian manufacturers to healthcare facilities across Africa and the Middle East — no intermediary, no extra costs.",
+    "hubDesc": "Products ship directly from certified Asian manufacturers to healthcare facilities across Africa and the Middle East. No intermediary, no extra costs.",
     "directTitle": "Direct Relationships",
     "directDesc": "We work directly with manufacturers to ensure quality products and competitive pricing.",
     "serviceTitle": "Responsive Service",
-    "serviceDesc": "Quick quote turnaround and dedicated support throughout your order process.",
+    "serviceDesc": "Quick quote turnaround and support throughout your order process.",
     "catalogTitle": "Wide Catalog",
-    "catalogDesc": "Comprehensive range of medical supplies across multiple categories to meet your facility's needs."
+    "catalogDesc": "Wide range of medical supplies across multiple categories to meet your facility's needs."
   },
   "categories": {
     "title": "Our Products",
@@ -112,7 +112,7 @@
           },
           {
             "q": "Can I order custom PPE kits for my hospital?",
-            "a": "Yes, we can assemble custom PPE kits tailored to your facility's protocols. Contact our team with your requirements for a customized quote."
+            "a": "Yes, we can assemble custom PPE kits adapted to your facility's protocols. Contact our team with your requirements for a customized quote."
           },
           {
             "q": "What certifications do your PPE products carry?",
@@ -146,7 +146,7 @@
         "faq": [
           {
             "q": "Can surgical packs be customized to our procedures?",
-            "a": "Yes, we offer custom surgical pack configurations tailored to your specific procedure protocols. Provide your specifications and we will assemble packs to match your OR requirements."
+            "a": "Yes, we offer custom surgical pack configurations adapted to your specific procedure protocols. Provide your specifications and we will assemble packs to match your OR requirements."
           },
           {
             "q": "What types of surgical drapes are included?",
@@ -173,7 +173,7 @@
           },
           {
             "q": "Can I order wound care products in bulk for a hospital network?",
-            "a": "Absolutely. We provide volume-based pricing for hospital networks and group purchasing organizations. Contact us for a tailored wholesale quote."
+            "a": "Absolutely. We provide volume-based pricing for hospital networks and group purchasing organizations. Contact us for a wholesale quote."
           }
         ]
       },
@@ -268,7 +268,7 @@
           },
           {
             "q": "Can equipment be ordered in bulk for new facility outfitting?",
-            "a": "Absolutely. We provide volume pricing for new facility setups and can supply full equipment packages tailored to your ward or department needs."
+            "a": "Absolutely. We provide volume pricing for new facility setups and can supply full equipment packages adapted to your ward or department needs."
           }
         ]
       }
@@ -600,7 +600,7 @@
       }
     },
     "categoryTitleTemplate": "Wholesale {category} Supplier - Africa & Middle East",
-    "productDescSuffix": "Source in bulk from Watu Care — wholesale B2B medical supplier for Africa and the Middle East."
+    "productDescSuffix": "Source in bulk from Watu Care, wholesale B2B medical supplier for Africa and the Middle East."
   },
   "quote": {
     "listTitle": "Your Product List",
@@ -643,7 +643,7 @@
       "step1Title": "Confirmation email sent",
       "step1Desc": "Check your inbox for a copy of your request.",
       "step2Title": "Quote within 24–48 hours",
-      "step2Desc": "A dedicated account manager will prepare your personalized quote.",
+      "step2Desc": "Your account manager will prepare your personalized quote.",
       "step3Title": "Detailed proposal",
       "step3Desc": "You'll receive pricing, lead times, and shipping options for your region.",
       "close": "Done"
@@ -667,11 +667,11 @@
     "title": "How It Works",
     "subtitle": "Three steps to get the medical supplies you need.",
     "step1": "Submit Your Request",
-    "step1Desc": "Tell us what you need — products, quantities, and delivery destination. Our form takes under 2 minutes.",
+    "step1Desc": "Tell us what you need: products, quantities, and delivery destination. Our form takes under 2 minutes.",
     "step2": "Receive Your Quote",
     "step2Desc": "Within 48 hours, receive a detailed quote including product pricing, shipping options, and delivery timeline.",
     "step3": "Get Your Products",
-    "step3Desc": "We manage everything — manufacturer coordination, quality checks, and logistics — until your order is delivered."
+    "step3Desc": "We manage everything: manufacturer coordination, quality checks, and logistics, until your order is delivered."
   },
   "cta": {
     "title": "Ready to Get Started?",
@@ -717,7 +717,7 @@
       "subtitle": "We are Medical Device Supply Experts, operating across Asia, Africa and the Middle East.",
       "mission": "Our mission is to enable sustainable access to essential medical devices through compliant sourcing, structured supply chains and strong partnerships.",
       "quality": "Quality First",
-      "qualityDesc": "We work exclusively with approved and trusted manufacturers in Asia, ensuring medical devices that meet international standards and deliver consistent, reliable performance.",
+      "qualityDesc": "We work exclusively with approved and trusted manufacturers in Asia, so our medical devices meet international standards and deliver consistent, reliable performance.",
       "reliability": "Reliable Supply Chain",
       "reliabilityDesc": "Our sourcing model is built directly with selected manufacturers, allowing us to ensure full traceability, controlled logistics and dependable delivery across Africa and the Middle East.",
       "support": "Human-Centered Support",
@@ -776,14 +776,14 @@
     "title": "Why",
     "titleHighlight": "Watu",
     "titleEnd": "",
-    "subtitle": "\"Watu\" means People in Swahili — and that is exactly what drives us.",
+    "subtitle": "\"Watu\" means People in Swahili, and that is exactly what drives us.",
     "description1": "Watu Care was born from a simple belief:",
     "highlight1": "healthcare should never be limited by geography, origin or background",
     "and": "and",
     "highlight2": "access to essential medical supplies should be possible for everyone, everywhere",
-    "description2": "Our team comes from different countries, cultures and professional paths, but we share one common purpose — to make access to essential medical supplies possible for everyone, everywhere.",
+    "description2": "Our team comes from different countries, cultures and professional paths, but we share one common purpose: to make access to essential medical supplies possible for everyone, everywhere.",
     "asiaHub": "Asia Sourcing",
-    "asiaHubDesc": "We connect certified Asian manufacturers directly to healthcare facilities — products ship straight from the source.",
+    "asiaHubDesc": "We connect certified Asian manufacturers directly to healthcare facilities. Products ship straight from the source.",
     "healthcareFocus": "Healthcare Focus",
     "healthcareFocusDesc": "At Watu Care, we believe healthcare is, above all, a human story.",
     "developingEconomies": "Emerging Markets",
@@ -791,17 +791,17 @@
     "story1": "Watu Care was born from a simple belief: healthcare should never be limited by geography, origin or background.",
     "story2": "Our team comes from different countries, cultures and professional paths, but we share one common purpose - to make access to essential medical supplies possible for everyone, everywhere.",
     "story3": "At Watu Care, we believe healthcare is, above all, a human story.",
-    "story4": "Behind every medical device, every order and every shipment, there is a healthcare professional doing their best — and a patient hoping for better care.",
+    "story4": "Behind every medical device, every order and every shipment, there is a healthcare professional doing their best, and a patient hoping for better care.",
     "story5": "\"Watu\" reminds us every day that people come first.",
     "story6": "Not markets. Not volumes. Not margins.",
-    "story7": "But doctors, nurses, buyers, logisticians — and the patients they serve.",
+    "story7": "But doctors, nurses, buyers, logisticians, and the patients they serve.",
     "story8": "At Watu Care, we don't just move products. We build bridges between people, markets, and better healthcare."
   },
   "valueProps": {
     "title": "Why Partner with Watu Care?",
     "subtitle": "We connect healthcare providers with quality medical supplies.",
     "qualityFirst": "Quality First",
-    "qualityFirstDesc": "We work exclusively with approved and trusted manufacturers in Asia, ensuring medical devices that meet international standards and deliver consistent, reliable performance.",
+    "qualityFirstDesc": "We work exclusively with approved and trusted manufacturers in Asia, so our medical devices meet international standards and deliver consistent, reliable performance.",
     "priceCommitment": "Price Commitment",
     "priceCommitmentDesc": "We are committed to fair, stable and transparent pricing. By working directly with manufacturers and optimizing our sourcing model, we ensure cost-efficiency without compromising on quality or compliance.",
     "supplyChain": "Reliable & Transparent Supply Chain",
@@ -904,11 +904,11 @@
     "title": "Frequently Asked Questions",
     "subtitle": "Find answers to common questions about working with Watu Care.",
     "moqQuestion": "What is the minimum order quantity (MOQ)?",
-    "moqAnswer": "MOQ varies by product category. For most items, we work with quantities suitable for healthcare facilities of all sizes. Contact us with your specific needs and we'll provide tailored options.",
+    "moqAnswer": "MOQ varies by product category. For most items, we work with quantities suitable for healthcare facilities of all sizes. Contact us with your specific needs and we'll find options that fit.",
     "deliveryQuestion": "What are the delivery times?",
     "deliveryAnswer": "Delivery timelines depend on the shipping method you choose. Sea freight usually takes around 30–50 days, while air freight options allow delivery within 6–9 days.",
     "regionsQuestion": "Which regions do you deliver to?",
-    "regionsAnswer": "We deliver to healthcare facilities across Africa and the Middle East, and we can also provide quotations for other countries worldwide upon request. Our team supports international shipments through reliable logistics partners, ensuring efficient and well-managed delivery wherever our clients operate.",
+    "regionsAnswer": "We deliver to healthcare facilities across Africa and the Middle East, and we can also provide quotations for other countries worldwide upon request. Our team supports international shipments through reliable logistics partners for dependable delivery wherever our clients operate.",
     "certificationsQuestion": "What certifications do your products have?",
     "certificationsAnswer": "Our products come from manufacturers that meet international quality standards including CE marking and ISO certifications. We can provide specific certification documents upon request.",
     "paymentQuestion": "What payment methods do you accept?",
@@ -1037,24 +1037,24 @@
     "breadcrumbLabel": "Solutions",
     "index": {
       "meta": {
-        "title": "Solutions by Sector — Medical Supplies for Every Healthcare Provider",
-        "description": "Watu Care delivers tailored medical supply solutions for hospitals, clinics, NGOs, pharmacies, and government health ministries across Africa and the Middle East."
+        "title": "Solutions by Sector",
+        "description": "Watu Care supplies medical equipment for hospitals, clinics, NGOs, pharmacies, and government health ministries across Africa and the Middle East."
       },
       "title": "Solutions by Sector",
-      "subtitle": "We tailor our medical supply solutions to the specific needs of each healthcare sector — from large hospital networks to frontline humanitarian operations.",
+      "subtitle": "We adapt our medical supply offer to each healthcare sector, from large hospital networks to frontline humanitarian operations.",
       "count": "{count} sectors served",
       "learnMore": "Learn more"
     },
     "hospitals": {
       "meta": {
-        "title": "Medical Supplies for Hospitals — Wholesale from Asia",
+        "title": "Medical Supplies for Hospitals",
         "description": "Wholesale medical devices and PPE for hospital procurement teams in Africa and the Middle East. 500+ product lines direct from certified Asian manufacturers.",
         "keywords": "medical supplies for hospitals, hospital medical equipment wholesale, hospital PPE supplier Africa, hospital procurement medical devices"
       },
       "hero": {
         "eyebrow": "For Hospitals",
         "title": "Medical Supplies for Hospitals",
-        "subtitle": "Trusted by hospital procurement teams across Africa and the Middle East. Direct sourcing from certified manufacturers — no intermediaries, no inflated costs.",
+        "subtitle": "Trusted by hospital procurement teams across Africa and the Middle East. Direct sourcing from certified manufacturers, no intermediaries, no inflated costs.",
         "cta": "Request a Quote"
       },
       "painPoints": {
@@ -1070,7 +1070,7 @@
           },
           {
             "title": "Quality Compliance",
-            "description": "Ensuring products meet WHO and local regulatory standards is non-negotiable. All our suppliers hold ISO 13485 certification."
+            "description": "Products must meet WHO and local regulatory standards. All our suppliers hold ISO 13485 certification."
           },
           {
             "title": "Slow Quote Processes",
@@ -1094,8 +1094,8 @@
             "description": "Delivery direct to your central stores or multiple site locations across your hospital network."
           },
           {
-            "title": "Dedicated Support",
-            "description": "A dedicated contact manages your orders from quote to delivery, reducing administrative burden."
+            "title": "Your Contact",
+            "description": "A single contact manages your orders from quote to delivery, reducing administrative burden."
           }
         ]
       },
@@ -1117,7 +1117,7 @@
         "subtitle": "We deliver to hospital networks across Africa and the Middle East."
       },
       "cta": {
-        "title": "Ready to Streamline Your Hospital Procurement?",
+        "title": "Ready to Order?",
         "subtitle": "Get a free quote within 48 hours. No commitment required.",
         "primary": "Request a Quote",
         "secondary": "Browse All Products"
@@ -1125,7 +1125,7 @@
     },
     "clinics": {
       "meta": {
-        "title": "Medical Equipment for Clinics & Health Centers — Wholesale",
+        "title": "Medical Equipment for Clinics & Health Centers",
         "description": "Affordable medical supplies for clinics and health centers in Africa and the Middle East. Examination gloves, wound care, clinical consumables, and more.",
         "keywords": "medical supplies for clinics, clinic medical equipment, health center supplies wholesale, small clinic PPE Africa"
       },
@@ -1165,7 +1165,7 @@
           },
           {
             "title": "Essential Range",
-            "description": "Curated product selection covering daily clinical needs — gloves, consumables, wound care, and basic equipment."
+            "description": "Product selection covering daily clinical needs: gloves, consumables, wound care, and basic equipment."
           },
           {
             "title": "Reliable Delivery",
@@ -1251,7 +1251,7 @@
           },
           {
             "title": "Transparent Pricing",
-            "description": "Clear, itemized pricing with no hidden fees — ready for donor reporting and procurement audits."
+            "description": "Clear, itemized pricing with no hidden fees, ready for donor reporting and procurement audits."
           }
         ]
       },
@@ -1321,7 +1321,7 @@
           },
           {
             "title": "Verified Products",
-            "description": "Full certification documentation for every product — CE marking, ISO certificates, and batch traceability."
+            "description": "Full certification documentation for every product: CE marking, ISO certificates, and batch traceability."
           },
           {
             "title": "Flexible Orders",
@@ -1329,7 +1329,7 @@
           },
           {
             "title": "Reorder Support",
-            "description": "Streamlined reordering process for your regular stock items, keeping your shelves consistently stocked."
+            "description": "Simple reordering for your regular stock items, keeping your shelves consistently stocked."
           }
         ]
       },

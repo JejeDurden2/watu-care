@@ -73,7 +73,7 @@ export function CategoryCard({
       {/* Footer - Product count or arrow */}
       <div className="relative flex items-center gap-2 text-sm font-medium text-primary">
         {productCount !== undefined ? (
-          <span className="rounded-full bg-accent/10 px-3 py-1 text-accent">
+          <span className="text-sm text-muted-foreground">
             {t('productCount', { count: productCount })}
           </span>
         ) : (

@@ -53,12 +53,6 @@ export function FAQ(): React.ReactElement {
                   aria-expanded={isActive}
                   aria-controls={`faq-answer-${index}`}
                 >
-                  {/* Active indicator */}
-                  <span
-                    className={`mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full transition-colors duration-200 ${
-                      isActive ? 'bg-accent' : 'bg-border'
-                    }`}
-                  />
                   <span
                     className={`font-body text-base transition-all duration-200 ${
                       isActive
