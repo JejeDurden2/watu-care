@@ -42,10 +42,10 @@ const tier1Countries: Country[] = [
       'Strict quality standards (DOH, DHA)',
     ],
     keyFacilities: [
-      'Cleveland Clinic Abu Dhabi',
-      'Mediclinic',
-      'NMC Healthcare',
-      'Aster DM Healthcare',
+      'Private hospital groups',
+      'Government hospitals',
+      'Specialized clinics',
+      'Medical tourism facilities',
     ],
   },
   {
@@ -68,10 +68,10 @@ const tier1Countries: Country[] = [
       'SFDA regulatory framework',
     ],
     keyFacilities: [
-      'King Faisal Specialist Hospital',
-      'Saudi German Hospitals',
-      'Dr. Sulaiman Al Habib Medical Group',
-      'National Guard Health Affairs',
+      'Specialist referral hospitals',
+      'Private hospital networks',
+      'Government healthcare programs',
+      'Military medical facilities',
     ],
   },
   {
@@ -93,10 +93,10 @@ const tier1Countries: Country[] = [
       'Growing middle class',
     ],
     keyFacilities: [
-      'Aga Khan University Hospital',
-      'Nairobi Hospital',
-      'Kenyatta National Hospital',
-      'MP Shah Hospital',
+      'University teaching hospitals',
+      'National referral hospitals',
+      'Private hospital groups',
+      'Community health centers',
     ],
   },
   {
@@ -118,10 +118,10 @@ const tier1Countries: Country[] = [
       'SAHPRA regulatory standards',
     ],
     keyFacilities: [
-      'Netcare',
-      'Mediclinic Southern Africa',
-      'Life Healthcare',
-      'Groote Schuur Hospital',
+      'Private hospital groups',
+      'Academic teaching hospitals',
+      'Public regional hospitals',
+      'Specialized care centers',
     ],
   },
   {
@@ -143,10 +143,10 @@ const tier1Countries: Country[] = [
       'NAFDAC regulatory oversight',
     ],
     keyFacilities: [
-      'Lagos University Teaching Hospital',
-      'Eko Hospital',
-      'St. Nicholas Hospital',
-      'Reddington Hospital',
+      'University teaching hospitals',
+      'Private hospital networks',
+      'Federal medical centers',
+      'Specialist clinics',
     ],
   },
   // Tier 2 promoted to Tier 1
@@ -170,10 +170,10 @@ const tier1Countries: Country[] = [
       'MOPH regulatory standards',
     ],
     keyFacilities: [
-      'Hamad Medical Corporation',
-      'Sidra Medicine',
-      'Qatar Red Crescent',
-      'Aspetar Sports Medicine Hospital',
+      'Government medical centers',
+      'Specialist women & children hospitals',
+      'Humanitarian organizations',
+      'Sports medicine facilities',
     ],
   },
   {
@@ -196,10 +196,10 @@ const tier1Countries: Country[] = [
       'MOH procurement standards',
     ],
     keyFacilities: [
-      'Kuwait Ministry of Health Hospitals',
-      'Dar Al Shifa Hospital',
-      'Al Salam International Hospital',
-      'New Mowasat Hospital',
+      'Ministry of Health hospitals',
+      'Private general hospitals',
+      'International medical centers',
+      'Specialized clinics',
     ],
   },
   {
@@ -222,10 +222,10 @@ const tier1Countries: Country[] = [
       'EDA regulatory framework',
     ],
     keyFacilities: [
-      'Ain Shams University Hospitals',
-      'Cairo University Hospitals',
-      'As-Salam International Hospital',
-      'Cleopatra Hospital Group',
+      'University hospital complexes',
+      'Private hospital groups',
+      'International medical centers',
+      'Government general hospitals',
     ],
   },
   {
@@ -247,10 +247,10 @@ const tier1Countries: Country[] = [
       'FDA Ghana regulatory oversight',
     ],
     keyFacilities: [
-      'Korle Bu Teaching Hospital',
-      'Komfo Anokye Teaching Hospital',
-      '37 Military Hospital',
-      'Nyaho Medical Centre',
+      'Teaching hospitals',
+      'Regional hospitals',
+      'Military medical facilities',
+      'Private medical centers',
     ],
   },
   {
@@ -272,10 +272,10 @@ const tier1Countries: Country[] = [
       'TFDA regulatory framework',
     ],
     keyFacilities: [
-      'Muhimbili National Hospital',
-      'Aga Khan Hospital Dar es Salaam',
-      'Bugando Medical Centre',
-      'Regency Medical Centre',
+      'National referral hospitals',
+      'Private hospital networks',
+      'Regional medical centers',
+      'Specialized care facilities',
     ],
   },
   // Tier 3 promoted to Tier 1
@@ -299,10 +299,10 @@ const tier1Countries: Country[] = [
       'ANAM regulatory framework',
     ],
     keyFacilities: [
-      'CHU Ibn Sina',
-      'Cheikh Khalifa Hospital',
-      'Clinique Internationale de Marrakech',
-      'Hôpital Cheikh Zaid',
+      'University hospital centers (CHU)',
+      'Private international clinics',
+      'Public regional hospitals',
+      'Specialized care centers',
     ],
   },
   {
@@ -324,10 +324,10 @@ const tier1Countries: Country[] = [
       'EFDA regulatory oversight',
     ],
     keyFacilities: [
-      'Black Lion Hospital',
-      'St. Paul Hospital Millennium Medical College',
-      'Tikur Anbessa Specialized Hospital',
-      'Myungsung Christian Medical Center',
+      'Specialized referral hospitals',
+      'University medical colleges',
+      'Government general hospitals',
+      'Faith-based medical centers',
     ],
   },
   {
@@ -349,10 +349,10 @@ const tier1Countries: Country[] = [
       'NDA regulatory framework',
     ],
     keyFacilities: [
-      'Mulago National Referral Hospital',
-      'Aga Khan Hospital Kampala',
-      'Nsambya Hospital',
-      'Case Hospital',
+      'National referral hospitals',
+      'Private hospital networks',
+      'Faith-based hospitals',
+      'Specialized clinics',
     ],
   },
   {
@@ -374,10 +374,10 @@ const tier1Countries: Country[] = [
       'Rwanda FDA oversight',
     ],
     keyFacilities: [
-      'King Faisal Hospital',
-      'CHUK (University Teaching Hospital)',
-      'Rwanda Military Hospital',
-      'Legacy Clinics',
+      'Referral hospitals',
+      'University teaching hospitals',
+      'Military medical facilities',
+      'Private clinics',
     ],
   },
   {
@@ -399,10 +399,10 @@ const tier1Countries: Country[] = [
       'Regional health organizations',
     ],
     keyFacilities: [
-      'Hôpital Principal de Dakar',
-      'Hôpital Aristide Le Dantec',
-      'Clinique de la Madeleine',
-      'Centre Hospitalier Abass Ndao',
+      'Public general hospitals',
+      'University hospital centers',
+      'Private clinics',
+      'Regional health centers',
     ],
   },
   {
@@ -424,10 +424,10 @@ const tier1Countries: Country[] = [
       'Strong economic growth',
     ],
     keyFacilities: [
-      'CHU de Cocody',
-      'CHU de Treichville',
-      'Polyclinique Internationale Sainte Anne-Marie',
-      'Clinique Procréa',
+      'University hospital centers (CHU)',
+      'International polyclinics',
+      'Private specialized clinics',
+      'Public regional hospitals',
     ],
   },
   {
@@ -450,10 +450,10 @@ const tier1Countries: Country[] = [
       'Competitive healthcare costs',
     ],
     keyFacilities: [
-      'Hôpital Charles Nicolle',
-      'Clinique Taoufik',
-      'Clinique El Manar',
-      'Hôpital Militaire de Tunis',
+      'Public university hospitals',
+      'Private clinics',
+      'Medical tourism facilities',
+      'Military hospitals',
     ],
   },
   {
@@ -475,10 +475,10 @@ const tier1Countries: Country[] = [
       'Regional referral services',
     ],
     keyFacilities: [
-      'Yaoundé General Hospital',
-      'Douala General Hospital',
-      'Laquintinie Hospital',
-      'Centre Hospitalier Dominicain Saint Martin de Porres',
+      'General hospitals',
+      'Regional referral hospitals',
+      'Private medical centers',
+      'Faith-based health facilities',
     ],
   },
   {
@@ -501,10 +501,10 @@ const tier1Countries: Country[] = [
       'MOH regulatory standards',
     ],
     keyFacilities: [
-      'Royal Hospital',
-      'Sultan Qaboos University Hospital',
-      'Khoula Hospital',
-      'Muscat Private Hospital',
+      'Royal & government hospitals',
+      'University hospitals',
+      'Specialized care centers',
+      'Private hospitals',
     ],
   },
   {
@@ -527,10 +527,10 @@ const tier1Countries: Country[] = [
       'NHRA regulatory framework',
     ],
     keyFacilities: [
-      'Salmaniya Medical Complex',
-      'King Hamad University Hospital',
-      'Bahrain Specialist Hospital',
-      'American Mission Hospital',
+      'Government medical complexes',
+      'University hospitals',
+      'Specialist hospitals',
+      'International medical centers',
     ],
   },
   {
@@ -553,10 +553,10 @@ const tier1Countries: Country[] = [
       'JFDA regulatory standards',
     ],
     keyFacilities: [
-      'King Hussein Cancer Center',
-      'Jordan Hospital',
-      'Specialty Hospital',
-      'King Abdullah University Hospital',
+      'Specialized cancer centers',
+      'Private general hospitals',
+      'University teaching hospitals',
+      'Medical tourism facilities',
     ],
   },
   {
@@ -579,10 +579,10 @@ const tier1Countries: Country[] = [
       'Growing private healthcare',
     ],
     keyFacilities: [
-      'Baghdad Medical City',
-      'Basra General Hospital',
-      'Erbil Teaching Hospital',
-      'Ibn Sina Hospital',
+      'Medical city complexes',
+      'General hospitals',
+      'Teaching hospitals',
+      'Regional referral centers',
     ],
   },
 ];
