@@ -50,9 +50,9 @@ export function CategoryCard({
           </div>
 
           {/* Category Title */}
-          <h3 className="mb-3 text-xl font-semibold text-secondary transition-colors group-hover:text-primary">
+          <h2 className="mb-3 text-xl font-semibold text-secondary transition-colors group-hover:text-primary">
             {title}
-          </h3>
+          </h2>
 
           {/* Category Description */}
           <p className="mb-4 flex-grow text-sm text-foreground/70">
