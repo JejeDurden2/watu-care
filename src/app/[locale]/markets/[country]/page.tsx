@@ -9,10 +9,14 @@ import {
   DollarSign,
   Building2,
   CheckCircle,
+  Hospital,
+  Stethoscope,
+  HeartPulse,
+  Users,
 } from 'lucide-react';
 import { Container, Button } from '@/components/ui';
 import { Breadcrumb } from '@/components/products';
-import { CategoryCard, MarketHeroGraphic } from '@/components/sections';
+import { CategoryCard, PseoHeroBackground, PseoHeroPulse } from '@/components/sections';
 import { getAllCategories } from '@/lib/products';
 import { getTier1Countries, getCountryBySlug } from '@/data/countries';
 import {
@@ -182,10 +186,8 @@ export default async function CountryMarketPage({
       />
 
       {/* Hero Section */}
-      <section className="relative overflow-hidden bg-gradient-to-br from-secondary via-secondary to-primary/20 py-16 lg:py-24">
-        <div className="absolute inset-0 opacity-5">
-          <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_20%,white_1px,transparent_1px)] bg-[length:40px_40px]" />
-        </div>
+      <section className="relative overflow-hidden bg-secondary py-16 lg:py-24">
+        <PseoHeroBackground />
 
         <Container className="relative z-10">
           <Breadcrumb
@@ -197,7 +199,7 @@ export default async function CountryMarketPage({
             variant="light"
           />
 
-          <div className="mt-8 grid items-center gap-12 lg:grid-cols-2">
+          <div className="mt-8 grid items-center gap-12 lg:grid-cols-[1fr_auto]">
             <div className="max-w-xl">
               <div className="mb-4 inline-flex items-center gap-2 rounded-full bg-white/10 px-4 py-2 text-sm text-white/90">
                 <MapPin className="h-4 w-4" />
@@ -226,10 +228,8 @@ export default async function CountryMarketPage({
               </div>
             </div>
 
-            {/* Hero Graphic */}
-            <div className="hidden h-72 lg:block lg:h-80">
-              <MarketHeroGraphic countryName={countryName} />
-            </div>
+            {/* Pulse — right side, desktop only */}
+            <PseoHeroPulse />
           </div>
         </Container>
       </section>
@@ -289,24 +289,34 @@ export default async function CountryMarketPage({
               </div>
 
               {country.keyFacilities && (
-                <div className="rounded-2xl bg-muted/50 p-8">
-                  <div className="mb-6 flex items-center gap-3">
-                    <Building2 className="h-6 w-6 text-primary" />
-                    <h3 className="text-xl font-semibold text-secondary">
+                <div className="self-start">
+                  <div className="mb-1 flex items-center gap-3">
+                    <Building2 className="h-5 w-5 text-primary" strokeWidth={1.5} />
+                    <h3 className="font-display text-lg font-semibold tracking-tight text-secondary">
                       {t('content.keyFacilitiesTitle')}
                     </h3>
                   </div>
-                  <ul className="space-y-4">
-                    {country.keyFacilities.map((facility) => (
-                      <li
-                        key={facility}
-                        className="flex items-center gap-3 rounded-lg bg-white p-4 shadow-sm"
-                      >
-                        <div className="h-2 w-2 rounded-full bg-accent" />
-                        <span className="font-medium text-secondary">{facility}</span>
-                      </li>
-                    ))}
-                  </ul>
+                  <p className="mb-6 text-sm text-muted-foreground">
+                    {t('content.keyFacilitiesSubtitle', { country: countryName })}
+                  </p>
+                  <div className="grid grid-cols-2 gap-4">
+                    {country.keyFacilities.map((facility, index) => {
+                      const FacilityIcon = [Hospital, Stethoscope, HeartPulse, Users][index % 4];
+                      return (
+                        <div
+                          key={facility}
+                          className="rounded-xl border border-border bg-white p-5"
+                        >
+                          <div className="mb-3 flex h-9 w-9 items-center justify-center rounded-lg bg-primary/8">
+                            <FacilityIcon className="h-4.5 w-4.5 text-primary" strokeWidth={1.5} />
+                          </div>
+                          <p className="text-sm font-medium leading-snug text-secondary">
+                            {facility}
+                          </p>
+                        </div>
+                      );
+                    })}
+                  </div>
                 </div>
               )}
             </div>
