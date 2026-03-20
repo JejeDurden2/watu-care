@@ -891,6 +891,360 @@
       "central-africa": "Central Africa",
       "levant": "Levant"
     },
+    "countryData": {
+      "uae": {
+        "subRegion": "Gulf States",
+        "healthcareContext": "The UAE has one of the most advanced healthcare systems in the Middle East, with world-class hospitals in Dubai and Abu Dhabi. The government has invested heavily in healthcare infrastructure, attracting international medical tourism and requiring high-quality medical supplies.",
+        "marketHighlights": [
+          "Advanced healthcare infrastructure",
+          "High purchasing power",
+          "Medical tourism hub",
+          "Strict quality standards (DOH, DHA)"
+        ],
+        "keyFacilities": [
+          "Private hospital groups",
+          "Government hospitals",
+          "Specialized clinics",
+          "Medical tourism facilities"
+        ]
+      },
+      "saudi-arabia": {
+        "subRegion": "Gulf States",
+        "healthcareContext": "Saudi Arabia is the largest healthcare market in the Gulf region, with Vision 2030 driving massive investments in healthcare infrastructure. The kingdom is expanding hospital capacity and localizing medical supply chains.",
+        "marketHighlights": [
+          "Largest Gulf healthcare market",
+          "Vision 2030 healthcare investments",
+          "Growing private sector",
+          "SFDA regulatory framework"
+        ],
+        "keyFacilities": [
+          "Specialist referral hospitals",
+          "Private hospital networks",
+          "Government healthcare programs",
+          "Military medical facilities"
+        ]
+      },
+      "kenya": {
+        "subRegion": "East Africa",
+        "healthcareContext": "Kenya serves as the healthcare hub for East Africa, with Nairobi hosting regional offices of major health organizations. The country has a growing network of private hospitals and clinics serving both local and regional patients.",
+        "marketHighlights": [
+          "East African healthcare hub",
+          "Strong private hospital sector",
+          "Medical tourism from neighboring countries",
+          "Growing middle class"
+        ],
+        "keyFacilities": [
+          "University teaching hospitals",
+          "National referral hospitals",
+          "Private hospital groups",
+          "Community health centers"
+        ]
+      },
+      "south-africa": {
+        "subRegion": "Southern Africa",
+        "healthcareContext": "South Africa has the most developed healthcare system in sub-Saharan Africa, with world-class private hospitals and a strong pharmaceutical industry. The country serves as a gateway for medical supplies entering the Southern African region.",
+        "marketHighlights": [
+          "Most advanced African healthcare system",
+          "Strong private hospital groups",
+          "Regional distribution hub",
+          "SAHPRA regulatory standards"
+        ],
+        "keyFacilities": [
+          "Private hospital groups",
+          "Academic teaching hospitals",
+          "Public regional hospitals",
+          "Specialized care centers"
+        ]
+      },
+      "nigeria": {
+        "subRegion": "West Africa",
+        "healthcareContext": "Nigeria is Africa's largest economy with over 200 million people, creating massive demand for medical supplies. The growing middle class and expanding private healthcare sector present significant opportunities for quality medical supply partnerships.",
+        "marketHighlights": [
+          "Africa's largest population",
+          "Rapidly growing private healthcare",
+          "High demand, limited supply",
+          "NAFDAC regulatory oversight"
+        ],
+        "keyFacilities": [
+          "University teaching hospitals",
+          "Private hospital networks",
+          "Federal medical centers",
+          "Specialist clinics"
+        ]
+      },
+      "qatar": {
+        "subRegion": "Gulf States",
+        "healthcareContext": "Qatar has rapidly developed its healthcare infrastructure, positioning itself as a regional medical hub. The country hosts world-class facilities and has invested heavily in healthcare technology and specialist services, with strict quality standards for medical supplies.",
+        "marketHighlights": [
+          "Highest GDP per capita globally",
+          "Rapid healthcare expansion",
+          "World-class medical facilities",
+          "MOPH regulatory standards"
+        ],
+        "keyFacilities": [
+          "Government medical centers",
+          "Specialist women & children hospitals",
+          "Humanitarian organizations",
+          "Sports medicine facilities"
+        ]
+      },
+      "kuwait": {
+        "subRegion": "Gulf States",
+        "healthcareContext": "Kuwait offers free healthcare to citizens and has a well-developed public hospital system. The country is expanding private healthcare options and modernizing medical infrastructure, creating demand for quality medical supplies and equipment.",
+        "marketHighlights": [
+          "Strong public healthcare system",
+          "Growing private sector",
+          "High healthcare spending per capita",
+          "MOH procurement standards"
+        ],
+        "keyFacilities": [
+          "Ministry of Health hospitals",
+          "Private general hospitals",
+          "International medical centers",
+          "Specialized clinics"
+        ]
+      },
+      "egypt": {
+        "subRegion": "North Africa",
+        "healthcareContext": "Egypt is the most populous Arab country with over 100 million people and a large healthcare sector. The government is investing in universal health coverage and expanding hospital capacity, creating significant demand for medical supplies across public and private facilities.",
+        "marketHighlights": [
+          "Largest Arab population",
+          "Universal health coverage expansion",
+          "Growing medical tourism",
+          "EDA regulatory framework"
+        ],
+        "keyFacilities": [
+          "University hospital complexes",
+          "Private hospital groups",
+          "International medical centers",
+          "Government general hospitals"
+        ]
+      },
+      "ghana": {
+        "subRegion": "West Africa",
+        "healthcareContext": "Ghana is one of the most stable economies in West Africa with a growing healthcare sector. The country has implemented national health insurance and is expanding healthcare access, driving demand for quality medical supplies across its hospital network.",
+        "marketHighlights": [
+          "Stable West African economy",
+          "National health insurance system",
+          "Growing private healthcare",
+          "FDA Ghana regulatory oversight"
+        ],
+        "keyFacilities": [
+          "Teaching hospitals",
+          "Regional hospitals",
+          "Military medical facilities",
+          "Private medical centers"
+        ]
+      },
+      "tanzania": {
+        "subRegion": "East Africa",
+        "healthcareContext": "Tanzania is a growing East African economy with improving healthcare infrastructure. The government is investing in healthcare facilities across the country, and the private sector is expanding to meet rising demand for quality medical services and supplies.",
+        "marketHighlights": [
+          "Growing East African economy",
+          "Healthcare infrastructure investment",
+          "Expanding private hospital sector",
+          "TFDA regulatory framework"
+        ],
+        "keyFacilities": [
+          "National referral hospitals",
+          "Private hospital networks",
+          "Regional medical centers",
+          "Specialized care facilities"
+        ]
+      },
+      "morocco": {
+        "subRegion": "North Africa",
+        "healthcareContext": "Morocco has developed a strong healthcare system with significant investment in medical infrastructure. The country is a regional leader in medical tourism and pharmaceutical manufacturing, with modern hospitals in major cities like Casablanca and Marrakech.",
+        "marketHighlights": [
+          "Regional medical tourism destination",
+          "Strong pharmaceutical industry",
+          "Growing private healthcare sector",
+          "ANAM regulatory framework"
+        ],
+        "keyFacilities": [
+          "University hospital centers (CHU)",
+          "Private international clinics",
+          "Public regional hospitals",
+          "Specialized care centers"
+        ]
+      },
+      "ethiopia": {
+        "subRegion": "East Africa",
+        "healthcareContext": "Ethiopia is Africa's second most populous country with over 120 million people. The government is rapidly expanding healthcare infrastructure through its Health Sector Transformation Plan, creating significant demand for medical supplies and equipment.",
+        "marketHighlights": [
+          "Africa's second largest population",
+          "Rapid healthcare expansion",
+          "Growing pharmaceutical sector",
+          "EFDA regulatory oversight"
+        ],
+        "keyFacilities": [
+          "Specialized referral hospitals",
+          "University medical colleges",
+          "Government general hospitals",
+          "Faith-based medical centers"
+        ]
+      },
+      "uganda": {
+        "subRegion": "East Africa",
+        "healthcareContext": "Uganda has a growing healthcare sector with increasing private investment. The country serves as a healthcare destination for neighboring countries and is expanding hospital capacity to meet rising demand for quality medical services.",
+        "marketHighlights": [
+          "Growing healthcare investment",
+          "Regional healthcare destination",
+          "Expanding private hospital network",
+          "NDA regulatory framework"
+        ],
+        "keyFacilities": [
+          "National referral hospitals",
+          "Private hospital networks",
+          "Faith-based hospitals",
+          "Specialized clinics"
+        ]
+      },
+      "rwanda": {
+        "subRegion": "East Africa",
+        "healthcareContext": "Rwanda has made remarkable progress in healthcare development, achieving near-universal health insurance coverage. The country is known for innovative healthcare delivery and is building a reputation as a medical hub for specialized care in East Africa.",
+        "marketHighlights": [
+          "Near-universal health insurance",
+          "Innovative healthcare delivery",
+          "Growing medical tourism",
+          "Rwanda FDA oversight"
+        ],
+        "keyFacilities": [
+          "Referral hospitals",
+          "University teaching hospitals",
+          "Military medical facilities",
+          "Private clinics"
+        ]
+      },
+      "senegal": {
+        "subRegion": "West Africa",
+        "healthcareContext": "Senegal is a healthcare hub for francophone West Africa, with Dakar hosting regional health organizations and research centers. The country has a well-developed hospital network and is expanding healthcare access across urban and rural areas.",
+        "marketHighlights": [
+          "Francophone West Africa hub",
+          "Strong healthcare research sector",
+          "Growing private healthcare",
+          "Regional health organizations"
+        ],
+        "keyFacilities": [
+          "Public general hospitals",
+          "University hospital centers",
+          "Private clinics",
+          "Regional health centers"
+        ]
+      },
+      "cote-divoire": {
+        "subRegion": "West Africa",
+        "healthcareContext": "Côte d'Ivoire is the largest economy in francophone West Africa with a rapidly developing healthcare sector. The government is investing in universal health coverage and modernizing hospital infrastructure across the country.",
+        "marketHighlights": [
+          "Largest francophone West African economy",
+          "Universal health coverage expansion",
+          "Growing pharmaceutical market",
+          "Strong economic growth"
+        ],
+        "keyFacilities": [
+          "University hospital centers (CHU)",
+          "International polyclinics",
+          "Private specialized clinics",
+          "Public regional hospitals"
+        ]
+      },
+      "tunisia": {
+        "subRegion": "North Africa",
+        "healthcareContext": "Tunisia has one of the most developed healthcare systems in Africa, known for medical tourism and high-quality private hospitals. The country attracts patients from across Africa and Europe for specialized medical procedures.",
+        "marketHighlights": [
+          "Leading African medical tourism destination",
+          "High-quality private hospitals",
+          "Strong medical education",
+          "Competitive healthcare costs"
+        ],
+        "keyFacilities": [
+          "Public university hospitals",
+          "Private clinics",
+          "Medical tourism facilities",
+          "Military hospitals"
+        ]
+      },
+      "cameroon": {
+        "subRegion": "Central Africa",
+        "healthcareContext": "Cameroon is a healthcare hub for Central Africa, serving patients from neighboring countries. The bilingual nation has a mix of public and private healthcare facilities, with ongoing investment in hospital modernization and capacity expansion.",
+        "marketHighlights": [
+          "Central African healthcare hub",
+          "Bilingual healthcare system",
+          "Growing private sector",
+          "Regional referral services"
+        ],
+        "keyFacilities": [
+          "General hospitals",
+          "Regional referral hospitals",
+          "Private medical centers",
+          "Faith-based health facilities"
+        ]
+      },
+      "oman": {
+        "subRegion": "Gulf States",
+        "healthcareContext": "Oman has developed a comprehensive healthcare system with free services for citizens. The Sultanate is investing in healthcare infrastructure as part of its Vision 2040, expanding hospital capacity and attracting private healthcare investment.",
+        "marketHighlights": [
+          "Comprehensive public healthcare",
+          "Vision 2040 healthcare investment",
+          "Growing private sector",
+          "MOH regulatory standards"
+        ],
+        "keyFacilities": [
+          "Royal & government hospitals",
+          "University hospitals",
+          "Specialized care centers",
+          "Private hospitals"
+        ]
+      },
+      "bahrain": {
+        "subRegion": "Gulf States",
+        "healthcareContext": "Bahrain is a healthcare hub in the Gulf with world-class medical facilities. The kingdom offers free healthcare to citizens and has developed strong private healthcare options, attracting medical tourists from the region.",
+        "marketHighlights": [
+          "Gulf healthcare hub",
+          "High-quality medical facilities",
+          "Medical tourism destination",
+          "NHRA regulatory framework"
+        ],
+        "keyFacilities": [
+          "Government medical complexes",
+          "University hospitals",
+          "Specialist hospitals",
+          "International medical centers"
+        ]
+      },
+      "jordan": {
+        "subRegion": "Levant",
+        "healthcareContext": "Jordan is renowned as a medical tourism destination, attracting patients from across the Middle East and beyond. The country has world-class hospitals with internationally trained physicians, making it a regional healthcare leader.",
+        "marketHighlights": [
+          "Top medical tourism destination",
+          "World-class hospitals",
+          "Internationally trained physicians",
+          "JFDA regulatory standards"
+        ],
+        "keyFacilities": [
+          "Specialized cancer centers",
+          "Private general hospitals",
+          "University teaching hospitals",
+          "Medical tourism facilities"
+        ]
+      },
+      "iraq": {
+        "subRegion": "Levant",
+        "healthcareContext": "Iraq is rebuilding its healthcare infrastructure with significant investment in hospital construction and medical equipment. The country has a large population of over 40 million, creating substantial demand for medical supplies across public and private sectors.",
+        "marketHighlights": [
+          "Large population (40M+)",
+          "Healthcare reconstruction",
+          "Significant infrastructure investment",
+          "Growing private healthcare"
+        ],
+        "keyFacilities": [
+          "Medical city complexes",
+          "General hospitals",
+          "Teaching hospitals",
+          "Regional referral centers"
+        ]
+      }
+    },
     "index": {
       "title": "Medical Supplies by Country",
       "description": "Quality medical devices and PPE delivered to healthcare facilities across Africa and the Middle East.",

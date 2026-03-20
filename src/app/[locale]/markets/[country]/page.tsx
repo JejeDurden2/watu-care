@@ -7,16 +7,10 @@ import {
   Truck,
   Shield,
   DollarSign,
-  Building2,
-  CheckCircle,
-  Hospital,
-  Stethoscope,
-  HeartPulse,
-  Users,
 } from 'lucide-react';
 import { Container, Button } from '@/components/ui';
 import { Breadcrumb } from '@/components/products';
-import { CategoryCard, PseoHeroBackground, PseoHeroPulse } from '@/components/sections';
+import { CategoryCard, PseoHeroBackground, PseoHeroPulse, PseoHealthcareContext } from '@/components/sections';
 import { getAllCategories } from '@/lib/products';
 import { getTier1Countries, getCountryBySlug } from '@/data/countries';
 import {
@@ -124,6 +118,19 @@ export default async function CountryMarketPage({
     ? t(`countries.${countrySlug}`)
     : country.name;
 
+  // Resolve translated country data (falls back to data file)
+  const healthcareContext = t.has(`countryData.${countrySlug}.healthcareContext`)
+    ? t(`countryData.${countrySlug}.healthcareContext`)
+    : country.healthcareContext;
+
+  const marketHighlights: string[] | undefined = t.has(`countryData.${countrySlug}.marketHighlights`)
+    ? (t.raw(`countryData.${countrySlug}.marketHighlights`) as string[])
+    : country.marketHighlights;
+
+  const keyFacilities: string[] | undefined = t.has(`countryData.${countrySlug}.keyFacilities`)
+    ? (t.raw(`countryData.${countrySlug}.keyFacilities`) as string[])
+    : country.keyFacilities;
+
   // Generate schemas
   const breadcrumbSchema = generateBreadcrumbSchema([
     { name: tNav('home'), url: `${BASE_URL}/${locale}` },
@@ -203,7 +210,9 @@ export default async function CountryMarketPage({
             <div className="max-w-xl">
               <div className="mb-4 inline-flex items-center gap-2 rounded-full bg-white/10 px-4 py-2 text-sm text-white/90">
                 <MapPin className="h-4 w-4" />
-                {country.subRegion}
+                {t.has(`countryData.${countrySlug}.subRegion`)
+                  ? t(`countryData.${countrySlug}.subRegion`)
+                  : country.subRegion}
               </div>
 
               <h1 className="mb-6 text-4xl font-bold text-white md:text-5xl lg:text-6xl">
@@ -259,69 +268,16 @@ export default async function CountryMarketPage({
       </section>
 
       {/* Healthcare Market Context */}
-      {country.healthcareContext && (
-        <section className="py-16">
-          <Container>
-            <div className="grid gap-12 lg:grid-cols-2">
-              <div>
-                <h2 className="mb-6 text-3xl font-bold text-secondary">
-                  {t('content.healthcareMarketTitle', { country: countryName })}
-                </h2>
-                <p className="text-lg leading-relaxed text-foreground/80">
-                  {country.healthcareContext}
-                </p>
-
-                {country.marketHighlights && (
-                  <div className="mt-8">
-                    <h3 className="mb-4 font-semibold text-secondary">
-                      {t('content.marketHighlightsTitle')}
-                    </h3>
-                    <ul className="space-y-3">
-                      {country.marketHighlights.map((highlight) => (
-                        <li key={highlight} className="flex items-start gap-3">
-                          <CheckCircle className="mt-0.5 h-5 w-5 shrink-0 text-accent" />
-                          <span className="text-foreground/80">{highlight}</span>
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-                )}
-              </div>
-
-              {country.keyFacilities && (
-                <div className="self-start">
-                  <div className="mb-1 flex items-center gap-3">
-                    <Building2 className="h-5 w-5 text-primary" strokeWidth={1.5} />
-                    <h3 className="font-display text-lg font-semibold tracking-tight text-secondary">
-                      {t('content.keyFacilitiesTitle')}
-                    </h3>
-                  </div>
-                  <p className="mb-6 text-sm text-muted-foreground">
-                    {t('content.keyFacilitiesSubtitle', { country: countryName })}
-                  </p>
-                  <div className="grid grid-cols-2 gap-4">
-                    {country.keyFacilities.map((facility, index) => {
-                      const FacilityIcon = [Hospital, Stethoscope, HeartPulse, Users][index % 4];
-                      return (
-                        <div
-                          key={facility}
-                          className="rounded-xl border border-border bg-white p-5"
-                        >
-                          <div className="mb-3 flex h-9 w-9 items-center justify-center rounded-lg bg-primary/8">
-                            <FacilityIcon className="h-4.5 w-4.5 text-primary" strokeWidth={1.5} />
-                          </div>
-                          <p className="text-sm font-medium leading-snug text-secondary">
-                            {facility}
-                          </p>
-                        </div>
-                      );
-                    })}
-                  </div>
-                </div>
-              )}
-            </div>
-          </Container>
-        </section>
+      {healthcareContext && (
+        <PseoHealthcareContext
+          healthcareTitle={t('content.healthcareMarketTitle', { country: countryName })}
+          healthcareContext={healthcareContext}
+          highlightsTitle={t('content.marketHighlightsTitle')}
+          highlights={marketHighlights}
+          facilitiesTitle={t('content.keyFacilitiesTitle')}
+          facilitiesSubtitle={t('content.keyFacilitiesSubtitle', { country: countryName })}
+          facilities={keyFacilities}
+        />
       )}
 
       {/* Product Categories */}

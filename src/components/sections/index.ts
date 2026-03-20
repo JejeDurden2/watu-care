@@ -10,3 +10,4 @@ export { CategoryCard } from './CategoryCard';
 export { HowItWorks } from './HowItWorks';
 export { FAQ } from './FAQ';
 export { CTA } from './CTA';
+export { PseoHealthcareContext } from './PseoHealthcareContext';

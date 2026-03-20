@@ -14,7 +14,7 @@ import {
 import type { LucideIcon } from 'lucide-react';
 import { Container, Button, QuoteModalButton } from '@/components/ui';
 import { Link } from '@/i18n/routing';
-import { PseoHeroBackground, PseoHeroPulse } from '@/components/sections';
+import { PseoHeroBackground, PseoHeroPulse, PseoHealthcareContext } from '@/components/sections';
 import { getPersonaBySlug } from '@/data/personas';
 import { getCategoryBySlug } from '@/lib/products';
 import { getTier1Countries, getCountryBySlug } from '@/data/countries';
@@ -146,6 +146,19 @@ export default async function PersonaCountryPage({
     ? tMarkets(`countries.${countrySlug}`)
     : country.name;
 
+  // Resolve translated country data (falls back to data file)
+  const healthcareContext = tMarkets.has(`countryData.${countrySlug}.healthcareContext`)
+    ? tMarkets(`countryData.${countrySlug}.healthcareContext`)
+    : country.healthcareContext;
+
+  const marketHighlights: string[] | undefined = tMarkets.has(`countryData.${countrySlug}.marketHighlights`)
+    ? (tMarkets.raw(`countryData.${countrySlug}.marketHighlights`) as string[])
+    : country.marketHighlights;
+
+  const keyFacilities: string[] | undefined = tMarkets.has(`countryData.${countrySlug}.keyFacilities`)
+    ? (tMarkets.raw(`countryData.${countrySlug}.keyFacilities`) as string[])
+    : country.keyFacilities;
+
   // Reuse persona pain points and how-we-help
   const painPointItems = t.raw(
     `${personaSlug}.painPoints.items`,
@@ -227,15 +240,17 @@ export default async function PersonaCountryPage({
 
           <div className="grid items-center gap-12 lg:grid-cols-[1fr_auto]">
             <div>
-              <div
-                className={`mb-6 inline-flex h-14 w-14 items-center justify-center rounded-xl ${persona.color}`}
-              >
-                <Icon className="h-7 w-7" aria-hidden="true" />
-              </div>
+              <div className="mb-6 flex flex-wrap items-center gap-3">
+                <div
+                  className={`inline-flex h-14 w-14 items-center justify-center rounded-xl ${persona.color}`}
+                >
+                  <Icon className="h-7 w-7" aria-hidden="true" />
+                </div>
 
-              <div className="mb-4 inline-flex items-center gap-2 rounded-full bg-white/10 px-3 py-1.5 text-sm text-white/90">
-                <MapPin className="h-4 w-4" />
-                {countryName}
+                <div className="inline-flex items-center gap-2 rounded-full bg-white/10 px-3 py-1.5 text-sm text-white/90">
+                  <MapPin className="h-4 w-4" />
+                  {countryName}
+                </div>
               </div>
 
               <h1 className="font-display text-4xl font-bold tracking-tighter text-white md:text-5xl lg:text-6xl">
@@ -266,67 +281,16 @@ export default async function PersonaCountryPage({
       </section>
 
       {/* Healthcare Context */}
-      {country.healthcareContext && (
-        <section className="py-16 lg:py-24">
-          <Container>
-            <div className="grid gap-12 lg:grid-cols-2">
-              <div>
-                <div className="mb-5 h-px w-16 bg-accent" />
-                <h2 className="font-display text-3xl font-bold tracking-tighter text-secondary">
-                  {t('countryPage.healthcareTitle', { country: countryName })}
-                </h2>
-                <p className="mt-4 text-lg leading-relaxed text-foreground/80">
-                  {country.healthcareContext}
-                </p>
-
-                {country.marketHighlights && (
-                  <div className="mt-8">
-                    <h3 className="mb-4 font-semibold text-secondary">
-                      {t('countryPage.highlightsTitle', {
-                        country: countryName,
-                      })}
-                    </h3>
-                    <ul className="space-y-3">
-                      {country.marketHighlights.map((highlight) => (
-                        <li key={highlight} className="flex items-start gap-3">
-                          <CheckCircle className="mt-0.5 h-5 w-5 shrink-0 text-accent" />
-                          <span className="text-foreground/80">
-                            {highlight}
-                          </span>
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-                )}
-              </div>
-
-              {country.keyFacilities && (
-                <div className="self-start rounded-2xl border border-border bg-white p-8 lg:p-10">
-                  <h3 className="font-display text-lg font-semibold tracking-tight text-secondary">
-                    {t('countryPage.facilitiesTitle', {
-                      country: countryName,
-                    })}
-                  </h3>
-                  <p className="mb-8 text-sm text-muted-foreground">
-                    {t('countryPage.facilitiesSubtitle', {
-                      country: countryName,
-                    })}
-                  </p>
-                  <ul className="space-y-3">
-                    {country.keyFacilities.map((facility) => (
-                      <li
-                        key={facility}
-                        className="border-l-2 border-primary/25 py-1.5 pl-4 font-medium text-secondary"
-                      >
-                        {facility}
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              )}
-            </div>
-          </Container>
-        </section>
+      {healthcareContext && (
+        <PseoHealthcareContext
+          healthcareTitle={t('countryPage.healthcareTitle', { country: countryName })}
+          healthcareContext={healthcareContext}
+          highlightsTitle={t('countryPage.highlightsTitle', { country: countryName })}
+          highlights={marketHighlights}
+          facilitiesTitle={t('countryPage.facilitiesTitle', { country: countryName })}
+          facilitiesSubtitle={t('countryPage.facilitiesSubtitle', { country: countryName })}
+          facilities={keyFacilities}
+        />
       )}
 
       {/* Pain Points */}

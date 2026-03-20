@@ -959,6 +959,360 @@
       "central-africa": "Afrique Centrale",
       "levant": "Levant"
     },
+    "countryData": {
+      "uae": {
+        "subRegion": "États du Golfe",
+        "healthcareContext": "Les Émirats arabes unis disposent de l'un des systèmes de santé les plus avancés du Moyen-Orient, avec des hôpitaux de classe mondiale à Dubaï et Abu Dhabi. Le gouvernement a massivement investi dans les infrastructures de santé, attirant le tourisme médical international et exigeant des fournitures médicales de haute qualité.",
+        "marketHighlights": [
+          "Infrastructures de santé avancées",
+          "Fort pouvoir d'achat",
+          "Pôle de tourisme médical",
+          "Normes de qualité strictes (DOH, DHA)"
+        ],
+        "keyFacilities": [
+          "Groupes hospitaliers privés",
+          "Hôpitaux publics",
+          "Cliniques spécialisées",
+          "Établissements de tourisme médical"
+        ]
+      },
+      "saudi-arabia": {
+        "subRegion": "États du Golfe",
+        "healthcareContext": "L'Arabie saoudite est le plus grand marché de santé du Golfe, avec la Vision 2030 qui impulse des investissements massifs dans les infrastructures de santé. Le royaume étend ses capacités hospitalières et localise ses chaînes d'approvisionnement en matériel médical.",
+        "marketHighlights": [
+          "Plus grand marché de santé du Golfe",
+          "Investissements de la Vision 2030 dans la santé",
+          "Secteur privé en croissance",
+          "Cadre réglementaire SFDA"
+        ],
+        "keyFacilities": [
+          "Hôpitaux de référence spécialisés",
+          "Réseaux hospitaliers privés",
+          "Programmes de santé publique",
+          "Établissements médicaux militaires"
+        ]
+      },
+      "kenya": {
+        "subRegion": "Afrique de l'Est",
+        "healthcareContext": "Le Kenya est le pôle de santé de l'Afrique de l'Est, avec Nairobi qui accueille les bureaux régionaux des grandes organisations de santé. Le pays dispose d'un réseau croissant d'hôpitaux et de cliniques privés desservant les patients locaux et régionaux.",
+        "marketHighlights": [
+          "Pôle de santé en Afrique de l'Est",
+          "Secteur hospitalier privé solide",
+          "Tourisme médical des pays voisins",
+          "Classe moyenne en expansion"
+        ],
+        "keyFacilities": [
+          "Hôpitaux universitaires",
+          "Hôpitaux nationaux de référence",
+          "Groupes hospitaliers privés",
+          "Centres de santé communautaires"
+        ]
+      },
+      "south-africa": {
+        "subRegion": "Afrique Australe",
+        "healthcareContext": "L'Afrique du Sud possède le système de santé le plus développé d'Afrique subsaharienne, avec des hôpitaux privés de classe mondiale et une industrie pharmaceutique solide. Le pays sert de porte d'entrée pour les fournitures médicales destinées à la région d'Afrique australe.",
+        "marketHighlights": [
+          "Système de santé le plus avancé d'Afrique",
+          "Groupes hospitaliers privés solides",
+          "Pôle de distribution régional",
+          "Normes réglementaires SAHPRA"
+        ],
+        "keyFacilities": [
+          "Groupes hospitaliers privés",
+          "Hôpitaux universitaires",
+          "Hôpitaux régionaux publics",
+          "Centres de soins spécialisés"
+        ]
+      },
+      "nigeria": {
+        "subRegion": "Afrique de l'Ouest",
+        "healthcareContext": "Le Nigéria est la plus grande économie d'Afrique avec plus de 200 millions d'habitants, ce qui génère une demande massive en fournitures médicales. La classe moyenne croissante et l'essor du secteur privé de la santé offrent des opportunités significatives pour des partenariats en matériel médical de qualité.",
+        "marketHighlights": [
+          "Plus grande population d'Afrique",
+          "Secteur privé de la santé en forte croissance",
+          "Forte demande, offre limitée",
+          "Supervision réglementaire NAFDAC"
+        ],
+        "keyFacilities": [
+          "Hôpitaux universitaires",
+          "Réseaux hospitaliers privés",
+          "Centres médicaux fédéraux",
+          "Cliniques spécialisées"
+        ]
+      },
+      "qatar": {
+        "subRegion": "États du Golfe",
+        "healthcareContext": "Le Qatar a rapidement développé ses infrastructures de santé, se positionnant comme un pôle médical régional. Le pays accueille des établissements de classe mondiale et a investi massivement dans les technologies de santé et les services spécialisés, avec des normes de qualité strictes pour les fournitures médicales.",
+        "marketHighlights": [
+          "PIB par habitant le plus élevé au monde",
+          "Expansion rapide du secteur de la santé",
+          "Établissements médicaux de classe mondiale",
+          "Normes réglementaires MOPH"
+        ],
+        "keyFacilities": [
+          "Centres médicaux publics",
+          "Hôpitaux spécialisés femmes et enfants",
+          "Organisations humanitaires",
+          "Établissements de médecine du sport"
+        ]
+      },
+      "kuwait": {
+        "subRegion": "États du Golfe",
+        "healthcareContext": "Le Koweït offre des soins de santé gratuits à ses citoyens et dispose d'un système hospitalier public bien développé. Le pays étend ses options de soins privés et modernise ses infrastructures médicales, créant une demande en fournitures et équipements médicaux de qualité.",
+        "marketHighlights": [
+          "Système de santé publique solide",
+          "Secteur privé en croissance",
+          "Dépenses de santé élevées par habitant",
+          "Normes d'approvisionnement du MOH"
+        ],
+        "keyFacilities": [
+          "Hôpitaux du Ministère de la Santé",
+          "Hôpitaux généraux privés",
+          "Centres médicaux internationaux",
+          "Cliniques spécialisées"
+        ]
+      },
+      "egypt": {
+        "subRegion": "Afrique du Nord",
+        "healthcareContext": "L'Égypte est le pays arabe le plus peuplé avec plus de 100 millions d'habitants et un vaste secteur de santé. Le gouvernement investit dans la couverture santé universelle et l'extension des capacités hospitalières, créant une demande significative en fournitures médicales dans les établissements publics et privés.",
+        "marketHighlights": [
+          "Plus grande population arabe",
+          "Extension de la couverture santé universelle",
+          "Tourisme médical en croissance",
+          "Cadre réglementaire EDA"
+        ],
+        "keyFacilities": [
+          "Complexes hospitaliers universitaires",
+          "Groupes hospitaliers privés",
+          "Centres médicaux internationaux",
+          "Hôpitaux généraux publics"
+        ]
+      },
+      "ghana": {
+        "subRegion": "Afrique de l'Ouest",
+        "healthcareContext": "Le Ghana est l'une des économies les plus stables d'Afrique de l'Ouest avec un secteur de santé en pleine croissance. Le pays a mis en place une assurance maladie nationale et élargit l'accès aux soins, stimulant la demande en fournitures médicales de qualité dans son réseau hospitalier.",
+        "marketHighlights": [
+          "Économie stable en Afrique de l'Ouest",
+          "Système d'assurance maladie nationale",
+          "Secteur privé de la santé en croissance",
+          "Supervision réglementaire FDA Ghana"
+        ],
+        "keyFacilities": [
+          "Hôpitaux universitaires",
+          "Hôpitaux régionaux",
+          "Établissements médicaux militaires",
+          "Centres médicaux privés"
+        ]
+      },
+      "tanzania": {
+        "subRegion": "Afrique de l'Est",
+        "healthcareContext": "La Tanzanie est une économie est-africaine en croissance avec des infrastructures de santé en amélioration. Le gouvernement investit dans les établissements de santé à travers le pays, et le secteur privé se développe pour répondre à la demande croissante de services et fournitures médicales de qualité.",
+        "marketHighlights": [
+          "Économie est-africaine en croissance",
+          "Investissement dans les infrastructures de santé",
+          "Secteur hospitalier privé en expansion",
+          "Cadre réglementaire TFDA"
+        ],
+        "keyFacilities": [
+          "Hôpitaux nationaux de référence",
+          "Réseaux hospitaliers privés",
+          "Centres médicaux régionaux",
+          "Établissements de soins spécialisés"
+        ]
+      },
+      "morocco": {
+        "subRegion": "Afrique du Nord",
+        "healthcareContext": "Le Maroc a développé un système de santé solide avec des investissements importants dans les infrastructures médicales. Le pays est un leader régional du tourisme médical et de l'industrie pharmaceutique, avec des hôpitaux modernes dans les grandes villes comme Casablanca et Marrakech.",
+        "marketHighlights": [
+          "Destination de tourisme médical régional",
+          "Industrie pharmaceutique solide",
+          "Secteur privé de la santé en croissance",
+          "Cadre réglementaire ANAM"
+        ],
+        "keyFacilities": [
+          "Centres hospitaliers universitaires (CHU)",
+          "Cliniques privées internationales",
+          "Hôpitaux régionaux publics",
+          "Centres de soins spécialisés"
+        ]
+      },
+      "ethiopia": {
+        "subRegion": "Afrique de l'Est",
+        "healthcareContext": "L'Éthiopie est le deuxième pays le plus peuplé d'Afrique avec plus de 120 millions d'habitants. Le gouvernement développe rapidement les infrastructures de santé à travers son Plan de transformation du secteur de la santé, créant une demande significative en fournitures et équipements médicaux.",
+        "marketHighlights": [
+          "Deuxième plus grande population d'Afrique",
+          "Expansion rapide du secteur de la santé",
+          "Secteur pharmaceutique en croissance",
+          "Supervision réglementaire EFDA"
+        ],
+        "keyFacilities": [
+          "Hôpitaux de référence spécialisés",
+          "Facultés de médecine universitaires",
+          "Hôpitaux généraux publics",
+          "Centres médicaux confessionnels"
+        ]
+      },
+      "uganda": {
+        "subRegion": "Afrique de l'Est",
+        "healthcareContext": "L'Ouganda dispose d'un secteur de santé en pleine croissance avec des investissements privés en hausse. Le pays est une destination de soins pour les pays voisins et étend ses capacités hospitalières pour répondre à la demande croissante en services médicaux de qualité.",
+        "marketHighlights": [
+          "Investissements croissants dans la santé",
+          "Destination de soins régionale",
+          "Réseau hospitalier privé en expansion",
+          "Cadre réglementaire NDA"
+        ],
+        "keyFacilities": [
+          "Hôpitaux nationaux de référence",
+          "Réseaux hospitaliers privés",
+          "Hôpitaux confessionnels",
+          "Cliniques spécialisées"
+        ]
+      },
+      "rwanda": {
+        "subRegion": "Afrique de l'Est",
+        "healthcareContext": "Le Rwanda a réalisé des progrès remarquables dans le développement de la santé, atteignant une couverture d'assurance maladie quasi universelle. Le pays est reconnu pour ses solutions de santé innovantes et construit sa réputation de pôle médical pour les soins spécialisés en Afrique de l'Est.",
+        "marketHighlights": [
+          "Assurance maladie quasi universelle",
+          "Prestation de soins innovante",
+          "Tourisme médical en croissance",
+          "Supervision Rwanda FDA"
+        ],
+        "keyFacilities": [
+          "Hôpitaux de référence",
+          "Hôpitaux universitaires",
+          "Établissements médicaux militaires",
+          "Cliniques privées"
+        ]
+      },
+      "senegal": {
+        "subRegion": "Afrique de l'Ouest",
+        "healthcareContext": "Le Sénégal est un pôle de santé pour l'Afrique de l'Ouest francophone, avec Dakar qui accueille les organisations de santé régionales et les centres de recherche. Le pays dispose d'un réseau hospitalier bien développé et élargit l'accès aux soins en milieu urbain et rural.",
+        "marketHighlights": [
+          "Pôle de l'Afrique de l'Ouest francophone",
+          "Secteur de recherche en santé solide",
+          "Secteur privé de la santé en croissance",
+          "Organisations de santé régionales"
+        ],
+        "keyFacilities": [
+          "Hôpitaux généraux publics",
+          "Centres hospitaliers universitaires",
+          "Cliniques privées",
+          "Centres de santé régionaux"
+        ]
+      },
+      "cote-divoire": {
+        "subRegion": "Afrique de l'Ouest",
+        "healthcareContext": "La Côte d'Ivoire est la plus grande économie de l'Afrique de l'Ouest francophone avec un secteur de santé en développement rapide. Le gouvernement investit dans la couverture santé universelle et la modernisation des infrastructures hospitalières à travers le pays.",
+        "marketHighlights": [
+          "Plus grande économie de l'Afrique de l'Ouest francophone",
+          "Extension de la couverture santé universelle",
+          "Marché pharmaceutique en croissance",
+          "Forte croissance économique"
+        ],
+        "keyFacilities": [
+          "Centres hospitaliers universitaires (CHU)",
+          "Polycliniques internationales",
+          "Cliniques privées spécialisées",
+          "Hôpitaux régionaux publics"
+        ]
+      },
+      "tunisia": {
+        "subRegion": "Afrique du Nord",
+        "healthcareContext": "La Tunisie possède l'un des systèmes de santé les plus développés d'Afrique, reconnue pour son tourisme médical et ses hôpitaux privés de haute qualité. Le pays attire des patients de toute l'Afrique et d'Europe pour des actes médicaux spécialisés.",
+        "marketHighlights": [
+          "Première destination de tourisme médical en Afrique",
+          "Hôpitaux privés de haute qualité",
+          "Formation médicale solide",
+          "Coûts de santé compétitifs"
+        ],
+        "keyFacilities": [
+          "Hôpitaux universitaires publics",
+          "Cliniques privées",
+          "Établissements de tourisme médical",
+          "Hôpitaux militaires"
+        ]
+      },
+      "cameroon": {
+        "subRegion": "Afrique Centrale",
+        "healthcareContext": "Le Cameroun est un pôle de santé pour l'Afrique centrale, accueillant des patients des pays voisins. Cette nation bilingue dispose d'un ensemble d'établissements de santé publics et privés, avec des investissements continus dans la modernisation et l'extension des capacités hospitalières.",
+        "marketHighlights": [
+          "Pôle de santé en Afrique centrale",
+          "Système de santé bilingue",
+          "Secteur privé en croissance",
+          "Services de référence régionaux"
+        ],
+        "keyFacilities": [
+          "Hôpitaux généraux",
+          "Hôpitaux régionaux de référence",
+          "Centres médicaux privés",
+          "Établissements de santé confessionnels"
+        ]
+      },
+      "oman": {
+        "subRegion": "États du Golfe",
+        "healthcareContext": "Oman a développé un système de santé complet avec des services gratuits pour les citoyens. Le Sultanat investit dans les infrastructures de santé dans le cadre de sa Vision 2040, étendant les capacités hospitalières et attirant les investissements privés dans le secteur de la santé.",
+        "marketHighlights": [
+          "Système de santé publique complet",
+          "Investissements de la Vision 2040 dans la santé",
+          "Secteur privé en croissance",
+          "Normes réglementaires du MOH"
+        ],
+        "keyFacilities": [
+          "Hôpitaux royaux et publics",
+          "Hôpitaux universitaires",
+          "Centres de soins spécialisés",
+          "Hôpitaux privés"
+        ]
+      },
+      "bahrain": {
+        "subRegion": "États du Golfe",
+        "healthcareContext": "Bahreïn est un pôle de santé du Golfe avec des établissements médicaux de classe mondiale. Le royaume offre des soins de santé gratuits à ses citoyens et a développé de solides options de santé privée, attirant le tourisme médical de la région.",
+        "marketHighlights": [
+          "Pôle de santé du Golfe",
+          "Établissements médicaux de haute qualité",
+          "Destination de tourisme médical",
+          "Cadre réglementaire NHRA"
+        ],
+        "keyFacilities": [
+          "Complexes médicaux publics",
+          "Hôpitaux universitaires",
+          "Hôpitaux spécialisés",
+          "Centres médicaux internationaux"
+        ]
+      },
+      "jordan": {
+        "subRegion": "Levant",
+        "healthcareContext": "La Jordanie est renommée comme destination de tourisme médical, attirant des patients de tout le Moyen-Orient et au-delà. Le pays dispose d'hôpitaux de classe mondiale avec des médecins formés à l'international, ce qui en fait un leader régional de la santé.",
+        "marketHighlights": [
+          "Première destination de tourisme médical",
+          "Hôpitaux de classe mondiale",
+          "Médecins formés à l'international",
+          "Normes réglementaires JFDA"
+        ],
+        "keyFacilities": [
+          "Centres spécialisés en oncologie",
+          "Hôpitaux généraux privés",
+          "Hôpitaux universitaires",
+          "Établissements de tourisme médical"
+        ]
+      },
+      "iraq": {
+        "subRegion": "Levant",
+        "healthcareContext": "L'Irak reconstruit ses infrastructures de santé avec des investissements importants dans la construction d'hôpitaux et l'équipement médical. Le pays compte plus de 40 millions d'habitants, créant une demande substantielle en fournitures médicales dans les secteurs public et privé.",
+        "marketHighlights": [
+          "Population importante (40M+)",
+          "Reconstruction du secteur de la santé",
+          "Investissements significatifs en infrastructures",
+          "Secteur privé de la santé en croissance"
+        ],
+        "keyFacilities": [
+          "Complexes de cités médicales",
+          "Hôpitaux généraux",
+          "Hôpitaux universitaires",
+          "Centres de référence régionaux"
+        ]
+      }
+    },
     "index": {
       "title": "Fournitures médicales par pays",
       "description": "Dispositifs médicaux et EPI de qualité livrés aux établissements de santé en Afrique et au Moyen-Orient.",
