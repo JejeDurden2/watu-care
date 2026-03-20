@@ -228,6 +228,7 @@ export default async function PersonaPage({
                 <div className="mb-4 flex h-10 w-10 items-center justify-center rounded-xl bg-primary/10">
                   <CheckCircle
                     className="h-5 w-5 text-primary"
+                    strokeWidth={1.5}
                     aria-hidden="true"
                   />
                 </div>

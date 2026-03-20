@@ -73,7 +73,7 @@ export function PseoHealthcareContext({
                       key={facility}
                       className="rounded-xl border border-border bg-white p-5"
                     >
-                      <div className="mb-3 flex h-9 w-9 items-center justify-center rounded-lg bg-primary/8">
+                      <div className="mb-3 flex h-9 w-9 items-center justify-center rounded-lg bg-primary/10">
                         <FacilityIcon className="h-4.5 w-4.5 text-primary" strokeWidth={1.5} />
                       </div>
                       <p className="text-sm font-medium leading-snug text-secondary">

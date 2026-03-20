@@ -17,9 +17,9 @@ export function PseoHeroPulse(): React.ReactElement {
       >
         <defs>
           <radialGradient id="pseo-pulse-ambient" cx="50%" cy="50%" r="50%">
-            <stop offset="0%" stopColor="hsl(175 50% 55%)" stopOpacity="0.10" />
-            <stop offset="60%" stopColor="hsl(175 50% 55%)" stopOpacity="0.03" />
-            <stop offset="100%" stopColor="hsl(175 50% 55%)" stopOpacity="0" />
+            <stop offset="0%" stopColor="hsl(var(--accent))" stopOpacity="0.10" />
+            <stop offset="60%" stopColor="hsl(var(--accent))" stopOpacity="0.03" />
+            <stop offset="100%" stopColor="hsl(var(--accent))" stopOpacity="0" />
           </radialGradient>
           <filter id="pseo-trace-glow">
             <feGaussianBlur stdDeviation="5" />
@@ -44,7 +44,7 @@ export function PseoHeroPulse(): React.ReactElement {
         {/* Wide aura glow */}
         <path
           d={ECG_PATH}
-          stroke="hsl(175 50% 55%)"
+          stroke="hsl(var(--accent))"
           strokeWidth="8"
           strokeLinecap="round"
           strokeLinejoin="round"
@@ -56,7 +56,7 @@ export function PseoHeroPulse(): React.ReactElement {
         {/* Inner glow trace */}
         <path
           d={ECG_PATH}
-          stroke="hsl(175 50% 55%)"
+          stroke="hsl(var(--accent))"
           strokeWidth="3"
           strokeLinecap="round"
           strokeLinejoin="round"
@@ -68,7 +68,7 @@ export function PseoHeroPulse(): React.ReactElement {
         {/* Sharp crisp trace */}
         <path
           d={ECG_PATH}
-          stroke="hsl(175 50% 60%)"
+          stroke="hsl(var(--accent))"
           strokeWidth="1.5"
           strokeLinecap="round"
           strokeLinejoin="round"

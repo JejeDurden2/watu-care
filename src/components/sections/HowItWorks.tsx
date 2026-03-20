@@ -45,7 +45,7 @@ export async function HowItWorks(): Promise<React.ReactElement> {
                 </p>
 
                 {/* Icon */}
-                <div className="mb-5 flex h-12 w-12 items-center justify-center rounded-xl bg-primary/8 text-primary transition-colors duration-300 group-hover:bg-primary/15">
+                <div className="mb-5 flex h-12 w-12 items-center justify-center rounded-xl bg-primary/10 text-primary transition-colors duration-300 group-hover:bg-primary/15">
                   <Icon className="h-6 w-6" strokeWidth={1.5} />
                 </div>
 

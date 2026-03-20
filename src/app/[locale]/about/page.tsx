@@ -275,8 +275,8 @@ export default async function AboutPage({
                 </span>
 
                 {/* Icon — desktop only */}
-                <div className="hidden h-14 w-14 shrink-0 items-center justify-center rounded-xl bg-primary/8 transition-colors duration-200 group-hover:bg-primary/15 lg:flex">
-                  <value.icon className="h-7 w-7 text-primary" aria-hidden="true" />
+                <div className="hidden h-14 w-14 shrink-0 items-center justify-center rounded-xl bg-primary/10 transition-colors duration-200 group-hover:bg-primary/15 lg:flex">
+                  <value.icon className="h-7 w-7 text-primary" strokeWidth={1.5} aria-hidden="true" />
                 </div>
 
                 {/* Content */}
@@ -319,8 +319,8 @@ export default async function AboutPage({
           <div className="grid gap-10 sm:grid-cols-3 sm:gap-0 sm:divide-x sm:divide-white/10">
 
             <div className="sm:pr-10 lg:pr-16">
-              <div className="mb-5 flex h-12 w-12 items-center justify-center rounded-xl bg-primary/20">
-                <Globe className="h-6 w-6 text-primary" aria-hidden="true" />
+              <div className="mb-5 flex h-12 w-12 items-center justify-center rounded-xl bg-primary/15">
+                <Globe className="h-6 w-6 text-primary" strokeWidth={1.5} aria-hidden="true" />
               </div>
               <h3 className="font-display text-xl font-semibold tracking-tight text-white lg:text-2xl">
                 {tMission('asiaHub')}
@@ -331,8 +331,8 @@ export default async function AboutPage({
             </div>
 
             <div className="sm:px-10 lg:px-16">
-              <div className="mb-5 flex h-12 w-12 items-center justify-center rounded-xl bg-accent/20">
-                <Heart className="h-6 w-6 text-accent" aria-hidden="true" />
+              <div className="mb-5 flex h-12 w-12 items-center justify-center rounded-xl bg-accent/15">
+                <Heart className="h-6 w-6 text-accent" strokeWidth={1.5} aria-hidden="true" />
               </div>
               <h3 className="font-display text-xl font-semibold tracking-tight text-white lg:text-2xl">
                 {tMission('healthcareFocus')}
@@ -343,8 +343,8 @@ export default async function AboutPage({
             </div>
 
             <div className="sm:pl-10 lg:pl-16">
-              <div className="mb-5 flex h-12 w-12 items-center justify-center rounded-xl bg-primary/20">
-                <Users className="h-6 w-6 text-primary" aria-hidden="true" />
+              <div className="mb-5 flex h-12 w-12 items-center justify-center rounded-xl bg-primary/15">
+                <Users className="h-6 w-6 text-primary" strokeWidth={1.5} aria-hidden="true" />
               </div>
               <h3 className="font-display text-xl font-semibold tracking-tight text-white lg:text-2xl">
                 {tMission('developingEconomies')}

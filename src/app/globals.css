@@ -11,6 +11,8 @@
   --secondary-foreground: 0 0% 100%; /* White */
 
   --accent: 175 50% 45%;            /* Teal green */
+
+  --primary-light: 200 65% 70%;     /* Lighter primary for mesh gradients */
   --accent-foreground: 0 0% 100%;   /* White */
 
   --background: 210 20% 98%;        /* Light gray-blue */
@@ -844,11 +846,11 @@ html {
 .hero-text-shimmer {
   background: linear-gradient(
     120deg,
-    hsl(200 65% 60%) 0%,
-    hsl(188 58% 55%) 25%,
-    hsl(200 65% 65%) 45%,
-    hsl(175 50% 50%) 65%,
-    hsl(200 65% 60%) 100%
+    hsl(var(--primary)) 0%,
+    hsl(var(--accent)) 25%,
+    hsl(var(--primary-light)) 45%,
+    hsl(var(--accent)) 65%,
+    hsl(var(--primary)) 100%
   );
   background-size: 250% 100%;
   -webkit-background-clip: text;

@@ -45,33 +45,33 @@ function SvgDefs(): React.ReactElement {
 
       {/* Path gradients */}
       <linearGradient id="hgPathGrad" x1="190" y1="110" x2="810" y2="110" gradientUnits="userSpaceOnUse">
-        <stop offset="0%" stopColor="hsl(200, 65%, 55%)" />
-        <stop offset="50%" stopColor="hsl(188, 55%, 50%)" />
-        <stop offset="100%" stopColor="hsl(175, 50%, 45%)" />
+        <stop offset="0%" stopColor="hsl(var(--primary))" />
+        <stop offset="50%" stopColor="hsl(var(--accent))" />
+        <stop offset="100%" stopColor="hsl(var(--accent))" />
       </linearGradient>
 
       {/* Center hub atmospheric glow */}
       <radialGradient id="hgCenterGlow" cx="500" cy="110" r="120" gradientUnits="userSpaceOnUse">
-        <stop offset="0%" stopColor="hsl(175, 50%, 45%)" stopOpacity="0.12" />
-        <stop offset="100%" stopColor="hsl(175, 50%, 45%)" stopOpacity="0" />
+        <stop offset="0%" stopColor="hsl(var(--accent))" stopOpacity="0.12" />
+        <stop offset="100%" stopColor="hsl(var(--accent))" stopOpacity="0" />
       </radialGradient>
 
       {/* Source glow */}
       <radialGradient id="hgSourceGlow" cx="160" cy="100" r="100" gradientUnits="userSpaceOnUse">
-        <stop offset="0%" stopColor="hsl(200, 65%, 55%)" stopOpacity="0.06" />
-        <stop offset="100%" stopColor="hsl(200, 65%, 55%)" stopOpacity="0" />
+        <stop offset="0%" stopColor="hsl(var(--primary))" stopOpacity="0.06" />
+        <stop offset="100%" stopColor="hsl(var(--primary))" stopOpacity="0" />
       </radialGradient>
 
       {/* Destination glow */}
       <radialGradient id="hgDestGlow" cx="840" cy="110" r="110" gradientUnits="userSpaceOnUse">
-        <stop offset="0%" stopColor="hsl(175, 50%, 45%)" stopOpacity="0.06" />
-        <stop offset="100%" stopColor="hsl(175, 50%, 45%)" stopOpacity="0" />
+        <stop offset="0%" stopColor="hsl(var(--accent))" stopOpacity="0.06" />
+        <stop offset="100%" stopColor="hsl(var(--accent))" stopOpacity="0" />
       </radialGradient>
 
       {/* Particle glow filter */}
       <filter id="hgGlow" x="-80%" y="-80%" width="260%" height="260%">
         <feGaussianBlur stdDeviation="5" result="blur" />
-        <feFlood floodColor="hsl(200, 65%, 55%)" floodOpacity="0.7" result="color" />
+        <feFlood floodColor="hsl(var(--primary))" floodOpacity="0.7" result="color" />
         <feComposite in="color" in2="blur" operator="in" result="glow" />
         <feMerge>
           <feMergeNode in="glow" />
@@ -82,7 +82,7 @@ function SvgDefs(): React.ReactElement {
       {/* Accent particle glow */}
       <filter id="hgGlowAccent" x="-80%" y="-80%" width="260%" height="260%">
         <feGaussianBlur stdDeviation="4" result="blur" />
-        <feFlood floodColor="hsl(175, 50%, 45%)" floodOpacity="0.6" result="color" />
+        <feFlood floodColor="hsl(var(--accent))" floodOpacity="0.6" result="color" />
         <feComposite in="color" in2="blur" operator="in" result="glow" />
         <feMerge>
           <feMergeNode in="glow" />
@@ -187,7 +187,7 @@ function TravelingParticles({
         <circle
           key={`particle-${i}`}
           r={p.r}
-          fill={p.filter === 'hgGlow' ? 'hsl(200, 65%, 62%)' : 'hsl(175, 50%, 55%)'}
+          fill={p.filter === 'hgGlow' ? 'hsl(var(--primary))' : 'hsl(var(--accent))'}
           filter={`url(#${p.filter})`}
         >
           <animateMotion
@@ -218,8 +218,8 @@ function SourceCluster({ isVisible }: { isVisible: boolean }): React.ReactElemen
         }}
       >
         {/* Card body */}
-        <rect width="80" height="56" rx="12" fill="hsl(206, 50%, 16%)" fillOpacity="0.9"
-          stroke="hsl(200, 65%, 55%)" strokeWidth="1" strokeOpacity="0.35" className="animate-hero-net-breathe" />
+        <rect width="80" height="56" rx="12" fill="hsl(var(--secondary))" fillOpacity="0.9"
+          stroke="hsl(var(--primary))" strokeWidth="1" strokeOpacity="0.35" className="animate-hero-net-breathe" />
         {/* Glass refraction top edge */}
         <line x1="14" y1="1" x2="66" y2="1" stroke="white" strokeOpacity="0.08" strokeWidth="1" />
         {/* Factory icon */}
@@ -249,8 +249,8 @@ function SourceCluster({ isVisible }: { isVisible: boolean }): React.ReactElemen
           transition: 'opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1) 0.5s, transform 0.6s cubic-bezier(0.16, 1, 0.3, 1) 0.5s',
         }}
       >
-        <rect width="64" height="38" rx="10" fill="hsl(206, 50%, 16%)" fillOpacity="0.75"
-          stroke="hsl(200, 65%, 55%)" strokeWidth="0.8" strokeOpacity="0.2" />
+        <rect width="64" height="38" rx="10" fill="hsl(var(--secondary))" fillOpacity="0.75"
+          stroke="hsl(var(--primary))" strokeWidth="0.8" strokeOpacity="0.2" />
         <line x1="12" y1="1" x2="52" y2="1" stroke="white" strokeOpacity="0.05" strokeWidth="1" />
         {/* Chip / circuit icon */}
         <g transform="translate(20, 6)">
@@ -286,7 +286,7 @@ function CenterHub({
       {/* Outer pulse ring */}
       <ellipse
         cx="500" cy="110" rx="52" ry="52"
-        fill="none" stroke="hsl(175, 50%, 45%)" strokeWidth="1"
+        fill="none" stroke="hsl(var(--accent))" strokeWidth="1"
         className="animate-hero-pulse-ring"
         style={{
           opacity: isVisible ? 0.25 : 0,
@@ -306,11 +306,11 @@ function CenterHub({
       >
         <ellipse
           cx="500" cy="110" rx="42" ry="42"
-          fill="none" stroke="hsl(175, 50%, 45%)" strokeWidth="0.5" strokeOpacity="0.2"
+          fill="none" stroke="hsl(var(--accent))" strokeWidth="0.5" strokeOpacity="0.2"
           strokeDasharray="4 8"
         />
         {/* Orbital dot */}
-        <circle cx="542" cy="110" r="2.5" fill="hsl(175, 50%, 55%)" opacity="0.7" />
+        <circle cx="542" cy="110" r="2.5" fill="hsl(var(--accent))" opacity="0.7" />
       </g>
 
       {/* Hub body */}
@@ -323,14 +323,14 @@ function CenterHub({
         }}
       >
         <rect x="458" y="90" width="84" height="40" rx="20"
-          fill="hsl(206, 50%, 16%)" fillOpacity="0.95"
-          stroke="hsl(175, 50%, 45%)" strokeWidth="1.2" strokeOpacity="0.6" />
+          fill="hsl(var(--secondary))" fillOpacity="0.95"
+          stroke="hsl(var(--accent))" strokeWidth="1.2" strokeOpacity="0.6" />
         {/* Glass refraction */}
         <line x1="474" y1="91" x2="526" y2="91" stroke="white" strokeOpacity="0.1" strokeWidth="1" />
         {/* Inner glow dot */}
-        <circle cx="474" cy="110" r="3" fill="hsl(175, 50%, 55%)" opacity="0.5" />
+        <circle cx="474" cy="110" r="3" fill="hsl(var(--accent))" opacity="0.5" />
         {/* Label */}
-        <text x="504" y="114" textAnchor="middle" fill="hsl(175, 50%, 70%)" fontSize="9.5"
+        <text x="504" y="114" textAnchor="middle" fill="hsl(var(--accent))" fontSize="9.5"
           fontWeight="700" letterSpacing="1.8" fontFamily="var(--font-body), system-ui, sans-serif">
           WATU CARE
         </text>
@@ -354,8 +354,8 @@ function DestinationCluster({ isVisible }: { isVisible: boolean }): React.ReactE
           transition: 'opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1) 0.7s, transform 0.6s cubic-bezier(0.16, 1, 0.3, 1) 0.7s',
         }}
       >
-        <rect width="80" height="56" rx="12" fill="hsl(206, 50%, 16%)" fillOpacity="0.9"
-          stroke="hsl(175, 50%, 45%)" strokeWidth="1" strokeOpacity="0.35" className="animate-hero-net-breathe" />
+        <rect width="80" height="56" rx="12" fill="hsl(var(--secondary))" fillOpacity="0.9"
+          stroke="hsl(var(--accent))" strokeWidth="1" strokeOpacity="0.35" className="animate-hero-net-breathe" />
         <line x1="14" y1="1" x2="66" y2="1" stroke="white" strokeOpacity="0.08" strokeWidth="1" />
         {/* Medical cross icon */}
         <g transform="translate(26, 8)">
@@ -376,8 +376,8 @@ function DestinationCluster({ isVisible }: { isVisible: boolean }): React.ReactE
           transition: 'opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1) 0.8s, transform 0.6s cubic-bezier(0.16, 1, 0.3, 1) 0.8s',
         }}
       >
-        <rect width="64" height="38" rx="10" fill="hsl(206, 50%, 16%)" fillOpacity="0.75"
-          stroke="hsl(175, 50%, 45%)" strokeWidth="0.8" strokeOpacity="0.2" />
+        <rect width="64" height="38" rx="10" fill="hsl(var(--secondary))" fillOpacity="0.75"
+          stroke="hsl(var(--accent))" strokeWidth="0.8" strokeOpacity="0.2" />
         <line x1="12" y1="1" x2="52" y2="1" stroke="white" strokeOpacity="0.05" strokeWidth="1" />
         {/* Heartbeat / health icon */}
         <g transform="translate(18, 5)">
@@ -441,7 +441,7 @@ function MobileNetworkView(): React.ReactElement {
         <div
           className="h-px w-full"
           style={{
-            background: 'linear-gradient(90deg, hsl(200 65% 55% / 0.4), hsl(175 50% 45% / 0.4), hsl(200 65% 55% / 0.4))',
+            background: 'linear-gradient(90deg, hsl(var(--primary) / 0.4), hsl(var(--accent) / 0.4), hsl(var(--primary) / 0.4))',
             backgroundSize: '200% 100%',
             animation: 'gradient-drift 8s linear infinite',
           }}

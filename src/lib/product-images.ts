@@ -46,16 +46,16 @@ export function getCategoryIcon(slug: string): LucideIcon {
  */
 export function getCategoryGradient(categorySlug: string): string {
   const gradients: Record<string, string> = {
-    gloves: 'from-emerald-500 to-emerald-700',
-    'infection-prevention-ppe': 'from-blue-500 to-blue-700',
-    'bodily-waste-management': 'from-slate-500 to-slate-700',
-    surgical: 'from-blue-500 to-blue-700',
-    'wound-care': 'from-teal-500 to-teal-700',
-    'clinical-consumables': 'from-violet-500 to-violet-700',
-    'vascular-access-catheters': 'from-indigo-500 to-indigo-700',
-    'airway-respiratory': 'from-cyan-500 to-cyan-700',
-    'surgical-instruments-sutures': 'from-rose-500 to-rose-700',
-    'patient-care-equipment': 'from-sky-500 to-sky-700',
+    gloves: 'from-accent to-accent/80',
+    'infection-prevention-ppe': 'from-primary to-primary/80',
+    'bodily-waste-management': 'from-secondary to-secondary/80',
+    surgical: 'from-primary to-accent',
+    'wound-care': 'from-accent to-primary',
+    'clinical-consumables': 'from-primary/90 to-primary',
+    'vascular-access-catheters': 'from-primary to-secondary',
+    'airway-respiratory': 'from-accent/90 to-accent',
+    'surgical-instruments-sutures': 'from-secondary to-primary',
+    'patient-care-equipment': 'from-primary to-accent/80',
   };
 
   return gradients[categorySlug] || 'from-primary to-accent';

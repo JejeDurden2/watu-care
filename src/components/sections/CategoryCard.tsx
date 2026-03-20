@@ -3,32 +3,7 @@
 import { Link } from '@/i18n/routing';
 import { useTranslations } from 'next-intl';
 import { ArrowRight } from 'lucide-react';
-import {
-  Package,
-  Activity,
-  Syringe,
-  Bandage,
-  Hand,
-  ShieldCheck,
-  Recycle,
-  Wind,
-  Scissors,
-  Stethoscope,
-  type LucideIcon,
-} from 'lucide-react';
-
-const iconMap: Record<string, LucideIcon> = {
-  gloves: Hand,
-  'infection-prevention-ppe': ShieldCheck,
-  'bodily-waste-management': Recycle,
-  surgical: Package,
-  'wound-care': Bandage,
-  'clinical-consumables': Syringe,
-  'vascular-access-catheters': Activity,
-  'airway-respiratory': Wind,
-  'surgical-instruments-sutures': Scissors,
-  'patient-care-equipment': Stethoscope,
-};
+import { getCategoryIcon } from '@/lib/product-images';
 
 interface CategoryCardProps {
   slug: string;
@@ -48,7 +23,7 @@ export function CategoryCard({
 }: CategoryCardProps): React.ReactElement {
   const t = useTranslations('products');
   const iconSlug = slug.includes('/') ? slug.split('/').pop() ?? slug : slug;
-  const Icon = iconMap[iconSlug] ?? Package;
+  const Icon = getCategoryIcon(iconSlug);
 
   return (
     <Link
@@ -57,7 +32,7 @@ export function CategoryCard({
     >
 
       {/* Icon badge */}
-      <div className="mb-5 flex h-12 w-12 items-center justify-center rounded-xl bg-primary/8 transition-colors duration-300 group-hover:bg-primary/15">
+      <div className="mb-5 flex h-12 w-12 items-center justify-center rounded-xl bg-primary/10 transition-colors duration-300 group-hover:bg-primary/15">
         <Icon className="h-6 w-6 text-primary" strokeWidth={1.5} />
       </div>
 

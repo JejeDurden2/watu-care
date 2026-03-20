@@ -31,7 +31,7 @@ export async function WhyUs(): Promise<React.ReactElement> {
 
           {/* Anchor card — row-span-2 on desktop */}
           <div className="card-glow-dark group row-span-1 rounded-2xl border border-white/10 bg-white/[0.04] p-8 lg:row-span-2 lg:p-10">
-            <div className="mb-6 flex h-12 w-12 items-center justify-center rounded-xl bg-accent/15 text-accent">
+            <div className="mb-6 flex h-12 w-12 items-center justify-center rounded-xl bg-accent/10 text-accent">
               <ArrowRightLeft className="h-6 w-6" strokeWidth={1.5} />
             </div>
             <h3 className="mb-3 font-display text-2xl font-bold tracking-tight text-white lg:text-3xl">
@@ -51,7 +51,7 @@ export async function WhyUs(): Promise<React.ReactElement> {
 
           {/* Supporting card — Direct sourcing */}
           <div className="card-glow-dark group flex items-start gap-5 rounded-2xl border border-white/10 p-7">
-            <div className="mt-0.5 flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-primary/15 text-primary">
+            <div className="mt-0.5 flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-primary/10 text-primary">
               <Handshake className="h-5 w-5" strokeWidth={1.5} />
             </div>
             <div>
@@ -66,7 +66,7 @@ export async function WhyUs(): Promise<React.ReactElement> {
 
           {/* Supporting card — Service */}
           <div className="card-glow-dark group flex items-start gap-5 rounded-2xl border border-white/10 p-7">
-            <div className="mt-0.5 flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-primary/15 text-primary">
+            <div className="mt-0.5 flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-primary/10 text-primary">
               <MessageCircle className="h-5 w-5" strokeWidth={1.5} />
             </div>
             <div>
@@ -83,7 +83,7 @@ export async function WhyUs(): Promise<React.ReactElement> {
 
         {/* Full-width bottom card — Catalog */}
         <div className="card-glow-dark mt-4 flex flex-col items-start gap-4 rounded-2xl border border-white/10 p-7 sm:flex-row sm:items-center">
-          <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-accent/15 text-accent">
+          <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-accent/10 text-accent">
             <LayoutGrid className="h-5 w-5" strokeWidth={1.5} />
           </div>
           <div className="flex-1">

@@ -12,5 +12,5 @@ export function CategoryIcon({
   className = 'h-8 w-8',
 }: CategoryIconProps): React.ReactElement {
   const Icon = getCategoryIcon(slug);
-  return <Icon className={className} />;
+  return <Icon className={className} strokeWidth={1.5} />;
 }

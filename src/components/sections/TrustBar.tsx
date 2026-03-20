@@ -6,9 +6,9 @@ export async function TrustBar(): Promise<React.ReactElement> {
   const t = await getTranslations('trustBar');
 
   const trustItems = [
-    { icon: ShieldCheck, label: t('isoCertified'), color: 'text-accent' },
+    { icon: ShieldCheck, label: t('isoCertified'), color: 'text-primary' },
     { icon: Globe2, label: t('countries'), color: 'text-primary' },
-    { icon: Clock, label: t('responseTime'), color: 'text-accent' },
+    { icon: Clock, label: t('responseTime'), color: 'text-primary' },
     { icon: Award, label: t('qualityGuaranteed'), color: 'text-primary' },
   ];
 
