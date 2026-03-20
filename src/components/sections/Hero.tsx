@@ -23,25 +23,25 @@ export async function Hero(): Promise<React.ReactElement> {
         {/* Living mesh blobs */}
         <div
           className="hero-mesh-1 absolute -left-[20%] -top-[20%] h-[80%] w-[70%] rounded-full"
-          style={{ background: 'radial-gradient(circle, hsl(200 65% 55%), transparent 70%)' }}
+          style={{ background: 'radial-gradient(circle, hsl(var(--primary)), transparent 70%)' }}
         />
         <div
           className="hero-mesh-2 absolute -bottom-[25%] -right-[15%] h-[75%] w-[65%] rounded-full"
-          style={{ background: 'radial-gradient(circle, hsl(175 50% 45%), transparent 70%)' }}
+          style={{ background: 'radial-gradient(circle, hsl(var(--accent)), transparent 70%)' }}
         />
         <div
           className="hero-mesh-3 absolute left-[20%] top-[15%] h-[60%] w-[55%] rounded-full"
-          style={{ background: 'radial-gradient(circle, hsl(200 65% 70%), transparent 65%)' }}
+          style={{ background: 'radial-gradient(circle, hsl(var(--primary-light)), transparent 65%)' }}
         />
         <div
           className="hero-mesh-4 absolute -right-[10%] -top-[15%] h-[55%] w-[50%] rounded-full"
-          style={{ background: 'radial-gradient(circle, hsl(175 50% 50%), transparent 70%)' }}
+          style={{ background: 'radial-gradient(circle, hsl(var(--accent)), transparent 70%)' }}
         />
 
         {/* Central spotlight */}
         <div
           className="hero-spotlight absolute left-1/2 top-[40%] h-[50%] w-[60%] -translate-x-1/2 -translate-y-1/2 rounded-full"
-          style={{ background: 'radial-gradient(ellipse, hsl(200 65% 55% / 0.12), hsl(175 50% 45% / 0.04) 50%, transparent 70%)' }}
+          style={{ background: 'radial-gradient(ellipse, hsl(var(--primary) / 0.12), hsl(var(--accent) / 0.04) 50%, transparent 70%)' }}
         />
 
         {/* Dot pattern */}
@@ -50,7 +50,7 @@ export async function Hero(): Promise<React.ReactElement> {
         {/* Edge vignette */}
         <div
           className="absolute inset-0"
-          style={{ background: 'radial-gradient(ellipse at center, transparent 30%, hsl(206 50% 10% / 0.6) 100%)' }}
+          style={{ background: 'radial-gradient(ellipse at center, transparent 30%, hsl(var(--secondary) / 0.6) 100%)' }}
         />
       </div>
 
@@ -70,15 +70,15 @@ export async function Hero(): Promise<React.ReactElement> {
           <Container className="py-16 pt-20 lg:py-8">
             <div className="mx-auto max-w-3xl text-center">
 
-              <span className="stagger-item stagger-delay-1 block font-body text-sm font-semibold uppercase tracking-[0.2em] text-white/40 lg:text-base">
-                {t('headline1')}
-              </span>
-
-              <h1 className="hero-headline-reveal mt-5 font-display tracking-tighter lg:mt-6">
+              <h1 className="hero-headline-reveal font-display tracking-tighter">
                 <span className="hero-text-shimmer block text-[2.5rem] font-extrabold italic leading-[0.95] sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl">
-                  {t('headline2')}
+                  {t('headline1')}
                 </span>
               </h1>
+
+              <span className="stagger-item stagger-delay-1 mt-5 block font-body text-sm font-semibold uppercase tracking-[0.2em] text-white/40 lg:mt-6 lg:text-base">
+                {t('headline2')}
+              </span>
 
               <p className="stagger-item stagger-delay-4 mx-auto mt-6 max-w-xl font-body text-sm leading-relaxed text-white/50 lg:mt-8 lg:text-base">
                 {t('subtitle')}
@@ -118,9 +118,9 @@ export async function Hero(): Promise<React.ReactElement> {
             >
               <defs>
                 <radialGradient id="hero-pulse-ambient" cx="50%" cy="50%" r="50%">
-                  <stop offset="0%" stopColor="hsl(175 50% 55%)" stopOpacity="0.10" />
-                  <stop offset="60%" stopColor="hsl(175 50% 55%)" stopOpacity="0.03" />
-                  <stop offset="100%" stopColor="hsl(175 50% 55%)" stopOpacity="0" />
+                  <stop offset="0%" stopColor="hsl(var(--accent))" stopOpacity="0.10" />
+                  <stop offset="60%" stopColor="hsl(var(--accent))" stopOpacity="0.03" />
+                  <stop offset="100%" stopColor="hsl(var(--accent))" stopOpacity="0" />
                 </radialGradient>
                 <filter id="hero-trace-glow">
                   <feGaussianBlur stdDeviation="5" />
@@ -146,7 +146,7 @@ export async function Hero(): Promise<React.ReactElement> {
               {/* Wide aura glow — big, soft halo around the trace */}
               <path
                 d={ECG_WIDE}
-                stroke="hsl(175 50% 55%)"
+                stroke="hsl(var(--accent))"
                 strokeWidth="8"
                 strokeLinecap="round"
                 strokeLinejoin="round"
@@ -158,7 +158,7 @@ export async function Hero(): Promise<React.ReactElement> {
               {/* Inner glow trace */}
               <path
                 d={ECG_WIDE}
-                stroke="hsl(175 50% 55%)"
+                stroke="hsl(var(--accent))"
                 strokeWidth="3"
                 strokeLinecap="round"
                 strokeLinejoin="round"
@@ -170,7 +170,7 @@ export async function Hero(): Promise<React.ReactElement> {
               {/* Sharp crisp trace */}
               <path
                 d={ECG_WIDE}
-                stroke="hsl(175 50% 60%)"
+                stroke="hsl(var(--accent))"
                 strokeWidth="1.5"
                 strokeLinecap="round"
                 strokeLinejoin="round"
@@ -188,8 +188,8 @@ export async function Hero(): Promise<React.ReactElement> {
                 </filter>
               </defs>
               <path d={ECG_MOBILE} stroke="rgba(255,255,255,0.05)" strokeWidth="1" strokeLinecap="round" strokeLinejoin="round" />
-              <path d={ECG_MOBILE} stroke="hsl(175 50% 55%)" strokeWidth="4" strokeLinecap="round" strokeLinejoin="round" filter="url(#hero-trace-glow-m)" className="hero-pulse-trace-mobile" opacity="0.25" />
-              <path d={ECG_MOBILE} stroke="hsl(175 50% 55%)" strokeWidth="1" strokeLinecap="round" strokeLinejoin="round" className="hero-pulse-trace-mobile" />
+              <path d={ECG_MOBILE} stroke="hsl(var(--accent))" strokeWidth="4" strokeLinecap="round" strokeLinejoin="round" filter="url(#hero-trace-glow-m)" className="hero-pulse-trace-mobile" opacity="0.25" />
+              <path d={ECG_MOBILE} stroke="hsl(var(--accent))" strokeWidth="1" strokeLinecap="round" strokeLinejoin="round" className="hero-pulse-trace-mobile" />
             </svg>
           </div>
         </div>
