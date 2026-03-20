@@ -158,7 +158,9 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
               }}
             />
             <Header />
-            {children}
+            <div className="pb-24 lg:pb-0">
+              {children}
+            </div>
             <Footer />
             <QuoteModal />
             <ScrollAnimations />

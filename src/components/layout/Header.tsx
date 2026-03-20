@@ -3,21 +3,21 @@
 import { useState, useEffect, useCallback, useRef } from 'react';
 import Image from 'next/image';
 import { useTranslations } from 'next-intl';
-import { Menu, X, Search } from 'lucide-react';
 import { Link } from '@/i18n/routing';
-import { Button, Container } from '@/components/ui';
-import { QuoteListBadge } from '@/components/quote';
+import { Container } from '@/components/ui';
 import { useQuoteStore } from '@/lib/quote-store';
 import { MobileSearchOverlay } from '@/components/layout/SearchBar';
 import { DesktopNav } from '@/components/layout/DesktopNav';
-import { MobileDrawer } from '@/components/layout/MobileDrawer';
+import { MobileNavOverlay } from '@/components/layout/MobileNavOverlay';
+import { MobileBottomBar } from '@/components/layout/MobileBottomBar';
 import { cn } from '@/lib/utils';
 
 export function Header(): React.ReactElement {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isSearchOpen, setIsSearchOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
-  const menuButtonRef = useRef<HTMLButtonElement>(null);
+  const [scrollDirection, setScrollDirection] = useState<'up' | 'down'>('up');
+  const lastScrollYRef = useRef(0);
   const t = useTranslations('nav');
   const openModal = useQuoteStore((state) => state.openModal);
 
@@ -30,16 +30,28 @@ export function Header(): React.ReactElement {
 
   const closeMenu = useCallback(() => {
     setIsMenuOpen(false);
-    menuButtonRef.current?.focus();
   }, []);
 
-  // Scroll detection for header state (throttled via rAF)
+  const toggleMenu = useCallback(() => {
+    setIsMenuOpen((prev) => !prev);
+  }, []);
+
+  // Scroll detection: isScrolled + scroll direction (throttled via rAF)
   useEffect(() => {
     let rafId = 0;
     const handleScroll = (): void => {
       if (rafId) return;
       rafId = requestAnimationFrame(() => {
-        setIsScrolled(window.scrollY > 20);
+        const currentScrollY = window.scrollY;
+        setIsScrolled(currentScrollY > 20);
+
+        if (currentScrollY > lastScrollYRef.current + 5) {
+          setScrollDirection('down');
+        } else if (currentScrollY < lastScrollYRef.current - 5) {
+          setScrollDirection('up');
+        }
+
+        lastScrollYRef.current = currentScrollY;
         rafId = 0;
       });
     };
@@ -53,12 +65,16 @@ export function Header(): React.ReactElement {
     };
   }, []);
 
+  // Smart header hidden on mobile when scrolling down (and not at top)
+  const isSmartHidden = scrollDirection === 'down' && isScrolled;
+
   return (
     <>
       <header
         className={cn(
-          'sticky top-0 z-50 header-glass',
-          isScrolled && 'header-glass-scrolled'
+          'sticky top-0 z-50 header-glass header-smart',
+          isScrolled && 'header-glass-scrolled',
+          isSmartHidden && 'header-smart-hidden lg:transform-none'
         )}
       >
         <Container>
@@ -89,40 +105,20 @@ export function Header(): React.ReactElement {
 
             {/* Desktop Navigation */}
             <DesktopNav navLinks={navLinks} onRequestQuote={openModal} />
-
-            {/* Mobile: Actions + Menu Button */}
-            <div className="flex items-center gap-1.5 lg:hidden">
-              <button
-                type="button"
-                onClick={() => setIsSearchOpen(true)}
-                className="inline-flex h-11 w-11 items-center justify-center rounded-lg text-secondary/70 transition-colors hover:bg-secondary/5 hover:text-secondary active:scale-[0.97]"
-                aria-label={t('search')}
-              >
-                <Search className="h-5 w-5" />
-              </button>
-              <QuoteListBadge />
-              <Button size="sm" onClick={openModal}>
-                {t('requestQuote')}
-              </Button>
-              <button
-                ref={menuButtonRef}
-                type="button"
-                className="relative z-50 inline-flex h-11 w-11 items-center justify-center rounded-lg text-secondary/70 transition-colors hover:bg-secondary/5 hover:text-secondary active:scale-[0.97]"
-                onClick={() => setIsMenuOpen(!isMenuOpen)}
-                aria-expanded={isMenuOpen}
-                aria-controls="mobile-menu"
-                aria-label={isMenuOpen ? t('closeNavigation') : t('openNavigation')}
-              >
-                <span className="sr-only">{isMenuOpen ? t('closeMenu') : t('openMenu')}</span>
-                {isMenuOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
-              </button>
-            </div>
           </nav>
         </Container>
       </header>
 
-      {/* Mobile Navigation Drawer - Outside header to avoid backdrop-filter containment */}
-      <MobileDrawer isOpen={isMenuOpen} navLinks={navLinks} onClose={closeMenu} />
+      {/* Mobile Bottom Dock — fixed at bottom, thumb-friendly */}
+      <MobileBottomBar
+        isMenuOpen={isMenuOpen}
+        onToggleMenu={toggleMenu}
+        onOpenSearch={() => setIsSearchOpen(true)}
+        onRequestQuote={openModal}
+      />
+
+      {/* Mobile Navigation Overlay — full-screen */}
+      <MobileNavOverlay isOpen={isMenuOpen} navLinks={navLinks} onClose={closeMenu} />
 
       {/* Mobile Search Overlay */}
       <MobileSearchOverlay isOpen={isSearchOpen} onClose={() => setIsSearchOpen(false)} />

@@ -81,6 +81,32 @@
     @apply shadow-soft-lg border-primary/30;
   }
 
+  /* Premium card hover — light backgrounds (glow border + lift) */
+  .card-glow {
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .card-glow:hover {
+    border-color: hsl(var(--primary) / 0.2);
+    box-shadow:
+      0 0 0 1px hsl(var(--primary) / 0.06),
+      0 8px 32px -8px hsl(var(--primary) / 0.1);
+    transform: translateY(-2px);
+  }
+
+  /* Premium card hover — dark backgrounds (glow border + subtle fill) */
+  .card-glow-dark {
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .card-glow-dark:hover {
+    border-color: rgba(255, 255, 255, 0.15);
+    background: rgba(255, 255, 255, 0.06);
+    box-shadow:
+      0 0 0 1px rgba(255, 255, 255, 0.04),
+      0 8px 32px -8px hsl(var(--primary) / 0.12);
+  }
+
   /* Geometric Patterns */
   .pattern-dots {
     background-image: radial-gradient(circle at 1px 1px, hsl(var(--primary) / 0.12) 1px, transparent 1px);
@@ -194,6 +220,51 @@
 
   .header-logo-scrolled {
     transform: scale(0.85);
+  }
+
+  /* Smart header — hide on scroll-down, show on scroll-up (mobile only) */
+  .header-smart {
+    transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  .header-smart-hidden {
+    transform: translateY(-100%);
+  }
+
+  /* Mobile bottom dock — glass pill */
+  .bottom-dock {
+    background: rgba(255, 255, 255, 0.82);
+    backdrop-filter: blur(24px) saturate(180%);
+    -webkit-backdrop-filter: blur(24px) saturate(180%);
+    border: 1px solid rgba(255, 255, 255, 0.35);
+    box-shadow:
+      0 -4px 32px -8px rgba(0, 0, 0, 0.08),
+      0 -1px 6px rgba(0, 0, 0, 0.04),
+      inset 0 1px 0 rgba(255, 255, 255, 0.2);
+  }
+
+  /* Animated hamburger — 3 bars morphing to X */
+  .hamburger-bar {
+    display: block;
+    width: 18px;
+    height: 2px;
+    background: currentColor;
+    border-radius: 1px;
+    transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1),
+                opacity 0.2s ease;
+  }
+
+  .hamburger-open .hamburger-bar:nth-child(1) {
+    transform: translateY(6px) rotate(45deg);
+  }
+
+  .hamburger-open .hamburger-bar:nth-child(2) {
+    opacity: 0;
+    transform: scaleX(0);
+  }
+
+  .hamburger-open .hamburger-bar:nth-child(3) {
+    transform: translateY(-6px) rotate(-45deg);
   }
 
   /* Section backgrounds */
@@ -329,6 +400,34 @@ html {
 
 .animate-backdrop-fade-in {
   animation: backdrop-fade-in 0.25s ease-out forwards;
+}
+
+@keyframes slide-up-dock {
+  0% {
+    transform: translateY(100%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.animate-slide-up-dock {
+  animation: slide-up-dock 0.4s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes nav-overlay-in {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.animate-nav-overlay-in {
+  animation: nav-overlay-in 0.3s cubic-bezier(0.16, 1, 0.3, 1) forwards;
 }
 
 .animate-pulse-subtle {
@@ -611,6 +710,215 @@ html {
 
 .animate-hero-net-breathe {
   animation: hero-net-breathe 3s ease-in-out infinite;
+}
+
+/* Hero bento — bar chart grow animation */
+@keyframes hero-bar-grow {
+  from { transform: scaleX(0); }
+  to { transform: scaleX(1); }
+}
+
+.hero-bar {
+  transform-origin: left;
+  transform: scaleX(0);
+  animation: hero-bar-grow 1.2s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+/* Hero bento — dot indicator pop-in */
+@keyframes hero-dot-in {
+  from {
+    opacity: 0;
+    transform: scale(0);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.hero-dot {
+  opacity: 0;
+  animation: hero-dot-in 0.4s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+/* ── Hero v2 — living mesh gradient blobs ── */
+@keyframes hero-mesh-drift-1 {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  33% { transform: translate(4%, 6%) scale(1.06); }
+  66% { transform: translate(-2%, -4%) scale(0.96); }
+}
+
+@keyframes hero-mesh-drift-2 {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  33% { transform: translate(-5%, -3%) scale(1.04); }
+  66% { transform: translate(3%, 5%) scale(0.97); }
+}
+
+@keyframes hero-mesh-drift-3 {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  33% { transform: translate(4%, -5%) scale(1.05); }
+  66% { transform: translate(-3%, 2%) scale(0.94); }
+}
+
+.hero-mesh-1 {
+  opacity: 0.15;
+  will-change: transform;
+  animation: hero-mesh-drift-1 20s ease-in-out infinite;
+}
+
+.hero-mesh-2 {
+  opacity: 0.12;
+  will-change: transform;
+  animation: hero-mesh-drift-2 25s ease-in-out infinite;
+}
+
+.hero-mesh-3 {
+  opacity: 0.08;
+  will-change: transform;
+  animation: hero-mesh-drift-3 22s ease-in-out infinite;
+}
+
+.hero-mesh-4 {
+  opacity: 0.06;
+  will-change: transform;
+  animation: hero-mesh-drift-2 28s ease-in-out infinite reverse;
+}
+
+/* ── Hero v2 — central spotlight breathing ── */
+.hero-spotlight {
+  will-change: transform;
+  animation: hero-spotlight-breathe 8s ease-in-out infinite;
+}
+
+@keyframes hero-spotlight-breathe {
+  0%, 100% { opacity: 1; transform: translate(-50%, -50%) scale(1); }
+  50% { opacity: 0.7; transform: translate(-50%, -50%) scale(1.06); }
+}
+
+/* ── Hero v2 — concentric rings pulse ── */
+@keyframes hero-ring-pulse {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.5; transform: scale(1.03); }
+}
+
+.hero-ring-1 {
+  animation: hero-ring-pulse 7s ease-in-out infinite;
+}
+
+.hero-ring-2 {
+  animation: hero-ring-pulse 7s ease-in-out 1s infinite;
+}
+
+.hero-ring-3 {
+  animation: hero-ring-pulse 7s ease-in-out 2s infinite;
+}
+
+/* ── Hero v2 — headline blur-to-sharp reveal ── */
+@keyframes hero-headline-reveal {
+  0% {
+    opacity: 0;
+    filter: blur(16px);
+    transform: translateY(40px);
+  }
+  60% {
+    filter: blur(0);
+  }
+  100% {
+    opacity: 1;
+    filter: blur(0);
+    transform: translateY(0);
+  }
+}
+
+.hero-headline-reveal {
+  opacity: 0;
+  animation: hero-headline-reveal 1.2s cubic-bezier(0.16, 1, 0.3, 1) 0.1s forwards;
+}
+
+/* ── Hero v2 — gradient text shimmer ── */
+@keyframes hero-text-shimmer {
+  0% { background-position: 250% center; }
+  100% { background-position: 0% center; }
+}
+
+.hero-text-shimmer {
+  background: linear-gradient(
+    120deg,
+    hsl(200 65% 60%) 0%,
+    hsl(188 58% 55%) 25%,
+    hsl(200 65% 65%) 45%,
+    hsl(175 50% 50%) 65%,
+    hsl(200 65% 60%) 100%
+  );
+  background-size: 250% 100%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: hero-text-shimmer 8s ease-in-out infinite;
+}
+
+/* ── Hero v2 — pulse line visualization ── */
+.hero-pulse-container {
+  opacity: 0;
+  animation: hero-pulse-appear 1.2s ease-out 0.8s forwards;
+}
+
+@keyframes hero-pulse-appear {
+  to { opacity: 0.85; }
+}
+
+@keyframes hero-pulse-travel {
+  from { stroke-dashoffset: 900; }
+  to { stroke-dashoffset: -900; }
+}
+
+.hero-pulse-trace {
+  stroke-dasharray: 120 780;
+  animation: hero-pulse-travel 4s ease-in-out infinite;
+}
+
+.hero-pulse-breathe {
+  transform-origin: center;
+  transform-box: fill-box;
+  animation: hero-pulse-breathe-anim 6s ease-in-out infinite;
+}
+
+@keyframes hero-pulse-breathe-anim {
+  0%, 100% { opacity: 0.5; transform: scale(1); }
+  50% { opacity: 1; transform: scale(1.12); }
+}
+
+/* ── Hero v2 — full-width pulse trace ── */
+@keyframes hero-pulse-travel-wide {
+  from { stroke-dashoffset: 1200; }
+  to { stroke-dashoffset: -1200; }
+}
+
+.hero-pulse-trace-wide {
+  stroke-dasharray: 150 1050;
+  animation: hero-pulse-travel-wide 10s linear infinite;
+}
+
+/* ── Hero v2 — secondary waveform trace (slower rhythm) ── */
+@keyframes hero-pulse-travel-slow {
+  from { stroke-dashoffset: 750; }
+  to { stroke-dashoffset: -750; }
+}
+
+.hero-pulse-trace-slow {
+  stroke-dasharray: 150 600;
+  animation: hero-pulse-travel-slow 6s ease-in-out infinite;
+}
+
+/* ── Hero v2 — mobile pulse trace ── */
+@keyframes hero-pulse-travel-mobile {
+  from { stroke-dashoffset: 600; }
+  to { stroke-dashoffset: -600; }
+}
+
+.hero-pulse-trace-mobile {
+  stroke-dasharray: 80 520;
+  animation: hero-pulse-travel-mobile 7s linear infinite;
 }
 
 /* Reduced motion */

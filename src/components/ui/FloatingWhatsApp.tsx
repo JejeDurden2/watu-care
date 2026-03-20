@@ -12,7 +12,7 @@ export const FloatingWhatsApp = async () => {
       rel="noopener noreferrer"
       aria-label={t('ariaLabel')}
       className={cn(
-        'fixed bottom-6 right-6 z-50',
+        'fixed bottom-24 right-6 z-50 lg:bottom-6',
         'flex h-14 w-14 items-center justify-center',
         'rounded-2xl border border-white/20',
         'bg-[#25D366]/90 backdrop-blur-md',
