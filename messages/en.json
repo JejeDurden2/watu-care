@@ -1037,6 +1037,17 @@
   },
   "personas": {
     "breadcrumbLabel": "Solutions",
+    "countryPage": {
+      "metaTitle": "{persona} in {country}",
+      "metaDescription": "{persona} in {country}. Quality medical supplies from certified Asian manufacturers with direct delivery. Request a wholesale quote from Watu Care.",
+      "heroSubtitle": "Reliable medical supply partner for {persona} operating in {country}. Quality products from certified manufacturers with direct delivery.",
+      "healthcareTitle": "Healthcare in {country}",
+      "categoriesTitle": "Products Available in {country}",
+      "categoriesSubtitle": "Browse our product categories for {persona} with delivery to {country}.",
+      "facilitiesTitle": "Key Healthcare Facilities in {country}",
+      "facilitiesSubtitle": "Major facilities we serve in {country}.",
+      "highlightsTitle": "Why {country}?"
+    },
     "index": {
       "meta": {
         "title": "Solutions by Sector",
@@ -1274,6 +1285,14 @@
         "title": "Markets We Serve",
         "subtitle": "We deliver to humanitarian operations across Africa and the Middle East."
       },
+      "faqTitle": "Frequently Asked Questions",
+      "faq": [
+        { "q": "What certifications do your products carry?", "a": "All products carry CE marking and are manufactured under ISO 13485 quality management systems. We source from WHO-prequalified suppliers wherever applicable, and provide full certification documentation with every shipment." },
+        { "q": "Can you deliver to remote field locations?", "a": "Yes. We coordinate logistics to challenging destinations across Africa and the Middle East, including remote field sites. We work with specialized freight partners experienced in humanitarian supply chains." },
+        { "q": "What is the minimum order quantity?", "a": "We offer flexible minimum order quantities adapted to humanitarian operations. For emergency deployments, we can work with smaller quantities to meet urgent needs. Contact us to discuss your specific requirements." },
+        { "q": "Do you provide documentation for donor compliance?", "a": "Every shipment includes full audit trails, certificates of conformity, batch records, and test reports suitable for donor reporting requirements from organizations such as USAID, EU, and UN agencies." },
+        { "q": "How quickly can you process urgent orders?", "a": "We provide quotes within 48 hours and offer expedited processing for emergency humanitarian operations. For time-critical needs, we prioritize order handling and can coordinate air freight when required." }
+      ],
       "cta": {
         "title": "Need Supplies for Your Mission?",
         "subtitle": "Get a free quote within 48 hours. Priority processing for humanitarian organizations.",
@@ -1368,8 +1387,8 @@
       "hero": {
         "eyebrow": "For Government & Public Health",
         "title": "Medical Procurement for Government & Ministries of Health",
-        "subtitle": "Supporting public health systems with reliable, compliant medical supply sourcing. From national hospital programs to regional health initiatives.",
-        "cta": "Request a Quote"
+        "subtitle": "Tender-ready medical supply sourcing with full procurement compliance documentation. Proforma invoices, certificates of conformity, and audit trails for national health programs and public hospital tenders.",
+        "cta": "Request a Tender Quotation"
       },
       "painPoints": {
         "title": "Challenges We Solve for Government Procurement",
@@ -1396,8 +1415,8 @@
         "title": "How Watu Care Serves Government",
         "items": [
           {
-            "title": "Procurement Support",
-            "description": "Detailed quotations, product specifications, and compliance documentation formatted for government procurement processes."
+            "title": "Tender-Ready Documentation",
+            "description": "Proforma invoices, product specifications, certificates of conformity, and compliance documentation formatted for government tender submissions."
           },
           {
             "title": "Volume Capacity",
@@ -1430,10 +1449,18 @@
         "title": "Countries We Serve",
         "subtitle": "We supply government health programs across Africa and the Middle East."
       },
+      "faqTitle": "Frequently Asked Questions",
+      "faq": [
+        { "q": "Can you provide proforma invoices for tender submissions?", "a": "Yes. We provide detailed proforma invoices formatted for government procurement processes and tender submissions, including full product specifications, unit pricing, and delivery terms." },
+        { "q": "What international standards do your products meet?", "a": "Our products meet CE marking requirements and are manufactured under ISO 13485 quality management systems. We source from WHO-prequalified suppliers where applicable and provide all relevant certificates of conformity." },
+        { "q": "Can you handle large-volume national procurement orders?", "a": "Yes. Our manufacturer network has the capacity to fulfill large-scale national procurement orders with consistent quality across all batches. We support phased delivery schedules to match your distribution timeline." },
+        { "q": "Do you support multi-site delivery across districts?", "a": "We coordinate deliveries to central medical stores, regional warehouses, and individual hospital facilities. A single order can be split across multiple delivery points to match your distribution structure." },
+        { "q": "What documentation do you provide for procurement audits?", "a": "We provide full traceability documentation including batch records, certificates of conformity, manufacturer test reports, customs clearance documents, and delivery confirmation for each shipment." }
+      ],
       "cta": {
-        "title": "Ready to Discuss Your Procurement Needs?",
-        "subtitle": "Get a free quote within 48 hours. Full documentation for government procurement compliance.",
-        "primary": "Request a Quote",
+        "title": "Ready to Respond to Your Next Tender?",
+        "subtitle": "Get a tender-ready quotation within 48 hours. Proforma invoices and compliance documentation included.",
+        "primary": "Request a Tender Quotation",
         "secondary": "Browse All Products"
       }
     }

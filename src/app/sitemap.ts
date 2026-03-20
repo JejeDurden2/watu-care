@@ -139,16 +139,39 @@ export default function sitemap(): MetadataRoute.Sitemap {
     })),
   );
 
-  // Market category-country pages (/markets/{country}/{category}) are omitted
-  // from the sitemap to improve crawl budget efficiency. These 480+ pages have
-  // similar template content across countries and Google was not indexing them.
-  // They remain live and crawlable via internal links from country hub pages.
+  // Market category-country pages (/markets/{country}/{category})
+  // Re-included with lower priority to support crawl discovery alongside
+  // internal links from country hub pages.
+  const marketCategoryPages = locales.flatMap((locale) =>
+    tier1Countries.flatMap((country) =>
+      categories.map((category) => ({
+        url: `${BASE_URL}/${locale}/markets/${country.slug}/${category.slug}`,
+        lastModified: CATEGORY_MODIFIED[category.slug] ?? LAST_MODIFIED.markets,
+        changeFrequency: 'monthly' as const,
+        priority: 0.5,
+      })),
+    ),
+  );
+
+  // Persona-country pages (/solutions/{persona}/{country}) for NGOs + Government
+  const personaCountryPages = locales.flatMap((locale) =>
+    ['ngos', 'government'].flatMap((persona) =>
+      tier1Countries.map((country) => ({
+        url: `${BASE_URL}/${locale}/solutions/${persona}/${country.slug}`,
+        lastModified: LAST_MODIFIED.personas,
+        changeFrequency: 'monthly' as const,
+        priority: 0.7,
+      })),
+    ),
+  );
 
   return [
     ...staticPages,
     ...categoryPages,
     ...productPages,
     ...marketCountryPages,
+    ...marketCategoryPages,
     ...personaPages,
+    ...personaCountryPages,
   ];
 }

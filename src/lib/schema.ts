@@ -468,6 +468,36 @@ export function generateServiceSchema(
 }
 
 /**
+ * Generate Service schema for persona-country pages
+ * Shows persona-specific service availability in a country
+ */
+export function generatePersonaCountryServiceSchema(
+  personaTitle: string,
+  countryName: string,
+  countrySlug: string,
+  personaSlug: string,
+  locale: string,
+): ServiceSchema {
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'Service',
+    name: `${personaTitle} in ${countryName}`,
+    url: `${BASE_URL}/${locale}/solutions/${personaSlug}/${countrySlug}`,
+    provider: {
+      '@type': 'Organization',
+      name: 'Watu Care',
+      url: BASE_URL,
+    },
+    areaServed: {
+      '@type': 'Country',
+      name: countryName,
+    },
+    serviceType: 'Medical Supply Distribution',
+    description: `Quality medical supplies for ${personaTitle.toLowerCase()} in ${countryName}. Direct from certified Asian manufacturers with competitive pricing and reliable delivery.`,
+  };
+}
+
+/**
  * Generate ItemList schema for products available in a country/category
  */
 export function generateMarketItemListSchema(

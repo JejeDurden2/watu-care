@@ -15,20 +15,22 @@ import type { LucideIcon } from 'lucide-react';
 import { Container, Button, QuoteModalButton } from '@/components/ui';
 import { Link } from '@/i18n/routing';
 import { PseoHeroBackground, PseoHeroPulse } from '@/components/sections';
-import { getAllPersonas, getPersonaBySlug } from '@/data/personas';
+import { getPersonaBySlug } from '@/data/personas';
 import { getCategoryBySlug } from '@/lib/products';
-import { getTier1Countries } from '@/data/countries';
+import { getTier1Countries, getCountryBySlug } from '@/data/countries';
 import { Breadcrumb } from '@/components/products';
 import {
   generateBreadcrumbSchema,
-  generatePersonaPageSchema,
+  generatePersonaCountryServiceSchema,
   generateFAQSchema,
   combineSchemas,
 } from '@/lib/schema';
 import { FAQAccordion } from '@/app/[locale]/faq/FAQAccordion';
 import { BASE_URL } from '@/lib/constants';
 
-// Static icon lookup — avoids dynamic imports
+/** Personas that have country-specific pages */
+const COUNTRY_PAGE_PERSONAS = ['ngos', 'government'] as const;
+
 const PERSONA_ICONS: Record<string, LucideIcon> = {
   Building2,
   Stethoscope,
@@ -37,41 +39,70 @@ const PERSONA_ICONS: Record<string, LucideIcon> = {
   Landmark,
 };
 
-interface PersonaPageProps {
-  params: Promise<{ locale: string; persona: string }>;
+interface PersonaCountryPageProps {
+  params: Promise<{ locale: string; persona: string; country: string }>;
 }
 
 export async function generateStaticParams(): Promise<
-  Array<{ locale: string; persona: string }>
+  Array<{ locale: string; persona: string; country: string }>
 > {
   const { locales } = await import('@/i18n/config');
-  const personas = getAllPersonas();
+  const tier1Countries = getTier1Countries();
+
   return locales.flatMap((locale) =>
-    personas.map((p) => ({ locale, persona: p.slug })),
+    COUNTRY_PAGE_PERSONAS.flatMap((persona) =>
+      tier1Countries.map((country) => ({
+        locale,
+        persona,
+        country: country.slug,
+      })),
+    ),
   );
 }
 
 export async function generateMetadata({
   params,
-}: PersonaPageProps): Promise<Metadata> {
-  const { locale, persona: personaSlug } = await params;
+}: PersonaCountryPageProps): Promise<Metadata> {
+  const { locale, persona: personaSlug, country: countrySlug } = await params;
   const persona = getPersonaBySlug(personaSlug);
-  if (!persona) return { title: 'Not Found' };
+  const country = getCountryBySlug(countrySlug);
+
+  if (!persona || !country || country.tier !== 1) {
+    return { title: 'Not Found' };
+  }
 
   const t = await getTranslations({ locale, namespace: 'personas' });
-  const title = t(`${personaSlug}.meta.title`);
-  const description = t(`${personaSlug}.meta.description`);
-  const keywordsRaw = t(`${personaSlug}.meta.keywords`);
+  const tMarkets = await getTranslations({ locale, namespace: 'markets' });
+
+  const personaTitle = t(`${personaSlug}.hero.title`);
+  const countryName = tMarkets.has(`countries.${countrySlug}`)
+    ? tMarkets(`countries.${countrySlug}`)
+    : country.name;
+
+  const title = t('countryPage.metaTitle', {
+    persona: personaTitle,
+    country: countryName,
+  });
+  const description = t('countryPage.metaDescription', {
+    persona: personaTitle,
+    country: countryName,
+  });
 
   return {
     title,
     description,
-    keywords: keywordsRaw.split(',').map((k) => k.trim()),
+    keywords: [
+      `${personaTitle} ${countryName}`,
+      `medical supplies ${countryName}`,
+      `${personaSlug} medical equipment ${countryName}`,
+      'wholesale medical supplies',
+      'B2B healthcare',
+    ],
     openGraph: {
       title,
       description,
       type: 'website',
-      url: `${BASE_URL}/${locale}/solutions/${personaSlug}`,
+      url: `${BASE_URL}/${locale}/solutions/${personaSlug}/${countrySlug}`,
       images: [
         {
           url: `${BASE_URL}/opengraph-image`,
@@ -82,43 +113,40 @@ export async function generateMetadata({
       ],
     },
     alternates: {
-      canonical: `${BASE_URL}/${locale}/solutions/${personaSlug}`,
+      canonical: `${BASE_URL}/${locale}/solutions/${personaSlug}/${countrySlug}`,
       languages: {
-        'x-default': `${BASE_URL}/en/solutions/${personaSlug}`,
-        en: `${BASE_URL}/en/solutions/${personaSlug}`,
-        fr: `${BASE_URL}/fr/solutions/${personaSlug}`,
+        'x-default': `${BASE_URL}/en/solutions/${personaSlug}/${countrySlug}`,
+        en: `${BASE_URL}/en/solutions/${personaSlug}/${countrySlug}`,
+        fr: `${BASE_URL}/fr/solutions/${personaSlug}/${countrySlug}`,
       },
     },
   };
 }
 
-export default async function PersonaPage({
+export default async function PersonaCountryPage({
   params,
-}: PersonaPageProps): Promise<React.ReactElement> {
-  const { locale, persona: personaSlug } = await params;
+}: PersonaCountryPageProps): Promise<React.ReactElement> {
+  const { locale, persona: personaSlug, country: countrySlug } = await params;
   const persona = getPersonaBySlug(personaSlug);
-  if (!persona) notFound();
+  const country = getCountryBySlug(countrySlug);
+
+  if (!persona || !country || country.tier !== 1) {
+    notFound();
+  }
 
   const t = await getTranslations('personas');
   const tNav = await getTranslations('nav');
   const tProducts = await getTranslations('products');
   const tMarkets = await getTranslations('markets');
 
-  const tier1Countries = getTier1Countries();
-  const hasCountryPages = ['ngos', 'government'].includes(personaSlug);
   const Icon = PERSONA_ICONS[persona.icon] ?? Building2;
 
-  const title = t(`${personaSlug}.meta.title`);
-  const description = t(`${personaSlug}.meta.description`);
+  const personaTitle = t(`${personaSlug}.hero.title`);
+  const countryName = tMarkets.has(`countries.${countrySlug}`)
+    ? tMarkets(`countries.${countrySlug}`)
+    : country.name;
 
-  // Resolve recommended categories
-  const recommendedCategories = persona.recommendedCategories
-    .map((slug) => getCategoryBySlug(slug))
-    .filter(
-      (c): c is NonNullable<typeof c> => c !== undefined,
-    );
-
-  // Retrieve typed arrays from i18n
+  // Reuse persona pain points and how-we-help
   const painPointItems = t.raw(
     `${personaSlug}.painPoints.items`,
   ) as Array<{ title: string; description: string }>;
@@ -126,7 +154,12 @@ export default async function PersonaPage({
     `${personaSlug}.howWeHelp.items`,
   ) as Array<{ title: string; description: string }>;
 
-  // FAQ data (optional per persona)
+  // Resolve recommended categories
+  const recommendedCategories = persona.recommendedCategories
+    .map((slug) => getCategoryBySlug(slug))
+    .filter((c): c is NonNullable<typeof c> => c !== undefined);
+
+  // FAQ (reuse persona FAQ if exists)
   const faqKey = `${personaSlug}.faq`;
   const rawFaq = t.has(faqKey)
     ? (t.raw(faqKey) as Array<{ q: string; a: string }>)
@@ -145,9 +178,19 @@ export default async function PersonaPage({
         name: t('breadcrumbLabel'),
         url: `${BASE_URL}/${locale}/solutions`,
       },
-      { name: t(`${personaSlug}.hero.title`) },
+      {
+        name: personaTitle,
+        url: `${BASE_URL}/${locale}/solutions/${personaSlug}`,
+      },
+      { name: countryName },
     ]),
-    generatePersonaPageSchema(personaSlug, title, description, locale),
+    generatePersonaCountryServiceSchema(
+      personaTitle,
+      countryName,
+      countrySlug,
+      personaSlug,
+      locale,
+    ),
     ...(faqSchema ? [faqSchema] : []),
   );
 
@@ -166,8 +209,12 @@ export default async function PersonaPage({
             variant="light"
             items={[
               { label: tNav('home'), href: '/' },
-              { label: t('breadcrumbLabel') },
-              { label: t(`${personaSlug}.hero.title`) },
+              { label: t('breadcrumbLabel'), href: '/solutions' },
+              {
+                label: personaTitle,
+                href: `/solutions/${personaSlug}`,
+              },
+              { label: countryName },
             ]}
           />
 
@@ -186,29 +233,101 @@ export default async function PersonaPage({
                 <Icon className="h-7 w-7" aria-hidden="true" />
               </div>
 
+              <div className="mb-4 inline-flex items-center gap-2 rounded-full bg-white/10 px-3 py-1.5 text-sm text-white/90">
+                <MapPin className="h-4 w-4" />
+                {countryName}
+              </div>
+
               <h1 className="font-display text-4xl font-bold tracking-tighter text-white md:text-5xl lg:text-6xl">
-                {t(`${personaSlug}.hero.title`)}
+                {personaTitle}{' '}
+                <span className="text-accent">{countryName}</span>
               </h1>
               <p className="mt-4 max-w-2xl font-body text-lg leading-relaxed text-white/70">
-                {t(`${personaSlug}.hero.subtitle`)}
+                {t('countryPage.heroSubtitle', {
+                  persona: personaTitle.toLowerCase(),
+                  country: countryName,
+                })}
               </p>
 
               <div className="mt-6">
                 <QuoteModalButton
                   size="lg"
                   className="bg-white text-secondary hover:bg-white/90"
-                  analyticsLocation="persona_hero"
+                  analyticsLocation="persona_country_hero"
                 >
                   {t(`${personaSlug}.hero.cta`)}
                 </QuoteModalButton>
               </div>
             </div>
 
-            {/* Pulse — right side, desktop only */}
             <PseoHeroPulse />
           </div>
         </Container>
       </section>
+
+      {/* Healthcare Context */}
+      {country.healthcareContext && (
+        <section className="py-16 lg:py-24">
+          <Container>
+            <div className="grid gap-12 lg:grid-cols-2">
+              <div>
+                <div className="mb-5 h-px w-16 bg-accent" />
+                <h2 className="font-display text-3xl font-bold tracking-tighter text-secondary">
+                  {t('countryPage.healthcareTitle', { country: countryName })}
+                </h2>
+                <p className="mt-4 text-lg leading-relaxed text-foreground/80">
+                  {country.healthcareContext}
+                </p>
+
+                {country.marketHighlights && (
+                  <div className="mt-8">
+                    <h3 className="mb-4 font-semibold text-secondary">
+                      {t('countryPage.highlightsTitle', {
+                        country: countryName,
+                      })}
+                    </h3>
+                    <ul className="space-y-3">
+                      {country.marketHighlights.map((highlight) => (
+                        <li key={highlight} className="flex items-start gap-3">
+                          <CheckCircle className="mt-0.5 h-5 w-5 shrink-0 text-accent" />
+                          <span className="text-foreground/80">
+                            {highlight}
+                          </span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                )}
+              </div>
+
+              {country.keyFacilities && (
+                <div className="self-start rounded-2xl border border-border bg-white p-8 lg:p-10">
+                  <h3 className="font-display text-lg font-semibold tracking-tight text-secondary">
+                    {t('countryPage.facilitiesTitle', {
+                      country: countryName,
+                    })}
+                  </h3>
+                  <p className="mb-8 text-sm text-muted-foreground">
+                    {t('countryPage.facilitiesSubtitle', {
+                      country: countryName,
+                    })}
+                  </p>
+                  <ul className="space-y-3">
+                    {country.keyFacilities.map((facility) => (
+                      <li
+                        key={facility}
+                        className="border-l-2 border-primary/25 py-1.5 pl-4 font-medium text-secondary"
+                      >
+                        {facility}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              )}
+            </div>
+          </Container>
+        </section>
+      )}
 
       {/* Pain Points */}
       <section className="section-muted py-20 lg:py-32" data-animate>
@@ -277,23 +396,26 @@ export default async function PersonaPage({
         </Container>
       </section>
 
-      {/* Recommended Categories */}
+      {/* Recommended Categories — links to /markets/{country}/{category} */}
       <section className="py-20 lg:py-32" data-animate>
         <Container>
           <div className="mb-12 max-w-xl">
             <div className="mb-5 h-px w-16 bg-accent" />
             <h2 className="font-display text-4xl font-bold tracking-tighter text-secondary">
-              {t(`${personaSlug}.categories.title`)}
+              {t('countryPage.categoriesTitle', { country: countryName })}
             </h2>
             <p className="mt-4 font-body text-lg text-muted-foreground">
-              {t(`${personaSlug}.categories.subtitle`)}
+              {t('countryPage.categoriesSubtitle', {
+                persona: personaTitle.toLowerCase(),
+                country: countryName,
+              })}
             </p>
           </div>
           <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
             {recommendedCategories.map((category) => (
               <Link
                 key={category.slug}
-                href={`/products/${category.slug}`}
+                href={`/markets/${countrySlug}/${category.slug}`}
                 className="group stagger-item flex items-center justify-between rounded-xl border border-border bg-white p-6 transition-all hover:border-primary hover:shadow-sm"
               >
                 <div>
@@ -314,67 +436,6 @@ export default async function PersonaPage({
                 />
               </Link>
             ))}
-          </div>
-        </Container>
-      </section>
-
-      {/* Trust Stats */}
-      <section className="section-muted py-16 lg:py-20" data-animate>
-        <Container>
-          <h2 className="mb-10 font-display text-3xl font-bold tracking-tighter text-secondary">
-            {t(`${personaSlug}.trust.title`)}
-          </h2>
-          <div className="grid gap-8 sm:grid-cols-3">
-            {(['1', '2', '3'] as const).map((n) => (
-              <div key={n} className="stagger-item text-center">
-                <p className="font-display text-5xl font-bold tracking-tighter text-primary">
-                  {t(`${personaSlug}.trust.stat${n}Value`)}
-                </p>
-                <p className="mt-2 font-body text-sm font-semibold uppercase tracking-wider text-muted-foreground">
-                  {t(`${personaSlug}.trust.stat${n}Label`)}
-                </p>
-              </div>
-            ))}
-          </div>
-        </Container>
-      </section>
-
-      {/* Markets We Serve */}
-      <section className="py-16 lg:py-24" data-animate>
-        <Container>
-          <div className="rounded-2xl bg-muted/50 p-8 lg:p-10">
-            <h2 className="font-display text-2xl font-bold tracking-tight text-secondary">
-              {t(`${personaSlug}.markets.title`)}
-            </h2>
-            <p className="mt-2 font-body text-base text-muted-foreground">
-              {t(`${personaSlug}.markets.subtitle`)}
-            </p>
-            <div className="mt-6 flex flex-wrap gap-2.5">
-              {tier1Countries.map((country) => {
-                const countryName = tMarkets.has(
-                  `countries.${country.slug}`,
-                )
-                  ? tMarkets(`countries.${country.slug}`)
-                  : country.name;
-                return (
-                  <Link
-                    key={country.slug}
-                    href={
-                      hasCountryPages
-                        ? `/solutions/${personaSlug}/${country.slug}`
-                        : `/markets/${country.slug}`
-                    }
-                    className="inline-flex items-center gap-2 rounded-full border border-border bg-white px-4 py-2 text-sm font-medium text-secondary transition-colors hover:border-primary hover:bg-primary/5"
-                  >
-                    <MapPin
-                      className="h-3.5 w-3.5 text-primary"
-                      aria-hidden="true"
-                    />
-                    {countryName}
-                  </Link>
-                );
-              })}
-            </div>
           </div>
         </Container>
       </section>
@@ -405,7 +466,10 @@ export default async function PersonaPage({
               {t(`${personaSlug}.cta.subtitle`)}
             </p>
             <div className="mt-8 flex flex-col justify-center gap-4 sm:flex-row">
-              <QuoteModalButton size="lg" analyticsLocation="persona_cta">
+              <QuoteModalButton
+                size="lg"
+                analyticsLocation="persona_country_cta"
+              >
                 {t(`${personaSlug}.cta.primary`)}
               </QuoteModalButton>
               <Button size="lg" variant="outline" asChild>

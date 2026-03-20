@@ -1105,6 +1105,17 @@
   },
   "personas": {
     "breadcrumbLabel": "Solutions",
+    "countryPage": {
+      "metaTitle": "{persona} au {country}",
+      "metaDescription": "{persona} au {country}. Fournitures médicales de qualité de fabricants asiatiques certifiés avec livraison directe. Demandez un devis de gros chez Watu Care.",
+      "heroSubtitle": "Partenaire fiable en approvisionnement médical pour {persona} opérant au {country}. Produits de qualité de fabricants certifiés avec livraison directe.",
+      "healthcareTitle": "Santé au {country}",
+      "categoriesTitle": "Produits disponibles au {country}",
+      "categoriesSubtitle": "Parcourez nos catégories de produits pour {persona} avec livraison au {country}.",
+      "facilitiesTitle": "Établissements de santé clés au {country}",
+      "facilitiesSubtitle": "Principaux établissements que nous desservons au {country}.",
+      "highlightsTitle": "Pourquoi le {country} ?"
+    },
     "index": {
       "meta": {
         "title": "Solutions par secteur",
@@ -1342,6 +1353,14 @@
         "title": "Marchés desservis",
         "subtitle": "Nous livrons les opérations humanitaires en Afrique et au Moyen-Orient."
       },
+      "faqTitle": "Questions fréquentes",
+      "faq": [
+        { "q": "Quelles certifications portent vos produits ?", "a": "Tous les produits portent le marquage CE et sont fabriqués sous systèmes de gestion qualité ISO 13485. Nous nous approvisionnons auprès de fournisseurs pré-qualifiés OMS lorsque possible, et fournissons la documentation de certification complète avec chaque expédition." },
+        { "q": "Pouvez-vous livrer dans des zones isolées ?", "a": "Oui. Nous coordonnons la logistique vers des destinations difficiles d'accès en Afrique et au Moyen-Orient, y compris les sites terrain isolés. Nous travaillons avec des partenaires de fret spécialisés dans les chaînes d'approvisionnement humanitaires." },
+        { "q": "Quelle est la quantité minimum de commande ?", "a": "Nous offrons des quantités minimales flexibles adaptées aux opérations humanitaires. Pour les déploiements d'urgence, nous pouvons travailler avec des quantités réduites pour répondre aux besoins urgents. Contactez-nous pour discuter de vos besoins spécifiques." },
+        { "q": "Fournissez-vous la documentation pour la conformité des donateurs ?", "a": "Chaque expédition inclut des pistes d'audit complètes, certificats de conformité, relevés de lots et rapports de tests adaptés aux exigences de reporting des donateurs tels que l'USAID, l'UE et les agences des Nations Unies." },
+        { "q": "Avec quelle rapidité pouvez-vous traiter les commandes urgentes ?", "a": "Nous fournissons des devis sous 48 heures et offrons un traitement accéléré pour les opérations humanitaires d'urgence. Pour les besoins critiques, nous priorisons le traitement des commandes et pouvons coordonner le fret aérien si nécessaire." }
+      ],
       "cta": {
         "title": "Besoin de fournitures pour votre mission ?",
         "subtitle": "Recevez un devis gratuit sous 48 heures. Traitement prioritaire pour les organisations humanitaires.",
@@ -1436,8 +1455,8 @@
       "hero": {
         "eyebrow": "Pour gouvernements et santé publique",
         "title": "Achat médical pour gouvernements et ministères de la Santé",
-        "subtitle": "Accompagnement des systèmes de santé publique avec un approvisionnement médical fiable et conforme. Des programmes hospitaliers nationaux aux initiatives sanitaires régionales.",
-        "cta": "Demander un devis"
+        "subtitle": "Approvisionnement médical prêt pour les appels d'offres avec documentation complète de conformité. Factures proforma, certificats de conformité et pistes d'audit pour les programmes de santé nationaux et les marchés publics hospitaliers.",
+        "cta": "Demander un devis d'appel d'offres"
       },
       "painPoints": {
         "title": "Les défis que nous résolvons pour les achats publics",
@@ -1464,8 +1483,8 @@
         "title": "Comment Watu Care accompagne les gouvernements",
         "items": [
           {
-            "title": "Support aux marchés publics",
-            "description": "Devis détaillés, spécifications produits et documentation de conformité formatés pour les processus d'achat gouvernementaux."
+            "title": "Documentation prête pour les appels d'offres",
+            "description": "Factures proforma, spécifications produits, certificats de conformité et documentation de conformité formatés pour les soumissions aux appels d'offres publics."
           },
           {
             "title": "Capacité en volume",
@@ -1498,10 +1517,18 @@
         "title": "Pays desservis",
         "subtitle": "Nous approvisionnons les programmes de santé gouvernementaux en Afrique et au Moyen-Orient."
       },
+      "faqTitle": "Questions fréquentes",
+      "faq": [
+        { "q": "Pouvez-vous fournir des factures proforma pour les soumissions d'appels d'offres ?", "a": "Oui. Nous fournissons des factures proforma détaillées formatées pour les processus d'achat gouvernementaux et les soumissions aux appels d'offres, incluant les spécifications produits complètes, les prix unitaires et les conditions de livraison." },
+        { "q": "Quelles normes internationales vos produits respectent-ils ?", "a": "Nos produits respectent les exigences du marquage CE et sont fabriqués sous systèmes de gestion qualité ISO 13485. Nous nous approvisionnons auprès de fournisseurs pré-qualifiés OMS lorsque possible et fournissons tous les certificats de conformité pertinents." },
+        { "q": "Pouvez-vous gérer des commandes nationales de gros volume ?", "a": "Oui. Notre réseau de fabricants a la capacité de satisfaire les commandes d'achat national à grande échelle avec une qualité constante sur tous les lots. Nous proposons des calendriers de livraison échelonnés adaptés à votre planning de distribution." },
+        { "q": "Proposez-vous la livraison multi-sites à travers les districts ?", "a": "Nous coordonnons les livraisons vers les magasins médicaux centraux, entrepôts régionaux et établissements hospitaliers individuels. Une seule commande peut être répartie sur plusieurs points de livraison selon votre structure de distribution." },
+        { "q": "Quelle documentation fournissez-vous pour les audits d'achat ?", "a": "Nous fournissons une documentation de traçabilité complète incluant les relevés de lots, certificats de conformité, rapports de tests fabricant, documents de dédouanement et confirmation de livraison pour chaque expédition." }
+      ],
       "cta": {
-        "title": "Prêt à discuter de vos besoins d'achat ?",
-        "subtitle": "Recevez un devis gratuit sous 48 heures. Documentation complète pour la conformité des marchés publics.",
-        "primary": "Demander un devis",
+        "title": "Prêt pour votre prochain appel d'offres ?",
+        "subtitle": "Recevez un devis prêt pour soumission sous 48 heures. Factures proforma et documentation de conformité incluses.",
+        "primary": "Demander un devis d'appel d'offres",
         "secondary": "Voir tous les produits"
       }
     }
