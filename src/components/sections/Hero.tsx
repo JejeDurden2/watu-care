@@ -1,9 +1,15 @@
-import Image from 'next/image';
 import { getTranslations } from 'next-intl/server';
 import { Button, Container, QuoteModalButton } from '@/components/ui';
 import { Link } from '@/i18n/routing';
-import { HeroGraphic } from './HeroGraphic';
 import { HeroTrustMarquee } from './HeroTrustMarquee';
+
+/* ECG with two heartbeats */
+const ECG_WIDE =
+  'M 0 60 H 120 C 130 60 138 53 145 60 H 175 L 192 18 L 210 102 L 228 60 C 240 53 255 55 268 60 H 440 C 450 60 458 53 465 60 H 495 L 512 18 L 530 102 L 548 60 C 560 53 575 55 588 60 H 800';
+
+/* Mobile: two heartbeats, compact */
+const ECG_MOBILE =
+  'M 0 30 H 60 C 66 30 70 27 74 30 H 90 L 100 8 L 110 52 L 120 30 C 126 27 132 28 136 30 H 220 C 226 30 230 27 234 30 H 250 L 260 8 L 270 52 L 280 30 C 286 27 292 28 296 30 H 400';
 
 export async function Hero(): Promise<React.ReactElement> {
   const t = await getTranslations('hero');
@@ -11,123 +17,189 @@ export async function Hero(): Promise<React.ReactElement> {
   return (
     <section className="relative min-h-[calc(100dvh-4rem)] overflow-hidden bg-secondary lg:min-h-[calc(100dvh-5rem)]">
 
-      {/* Background layers */}
-      <div className="pointer-events-none absolute inset-0">
-        <Image
-          src="/hero-medical.webp"
-          alt={t('heroImageAlt')}
-          fill
-          className="object-cover object-center"
-          priority
-          quality={85}
-          sizes="100vw"
-        />
-        <div className="absolute inset-0 bg-secondary/85" />
+      {/* ── Background: mesh gradient + atmosphere ── */}
+      <div className="pointer-events-none absolute inset-0" aria-hidden="true">
+
+        {/* Living mesh blobs */}
         <div
-          className="animate-gradient-drift absolute inset-0"
-          style={{
-            backgroundImage: `radial-gradient(ellipse at 20% 50%, hsl(200 65% 55% / 0.08) 0%, transparent 50%),
-                              radial-gradient(ellipse at 80% 20%, hsl(175 50% 45% / 0.06) 0%, transparent 50%),
-                              radial-gradient(ellipse at 60% 80%, hsl(200 65% 55% / 0.04) 0%, transparent 50%)`,
-          }}
+          className="hero-mesh-1 absolute -left-[20%] -top-[20%] h-[80%] w-[70%] rounded-full"
+          style={{ background: 'radial-gradient(circle, hsl(200 65% 55%), transparent 70%)' }}
         />
-        <div className="hero-text-guard absolute inset-0" />
-        <div className="pattern-dots-light absolute inset-0" />
-        <div className="absolute inset-x-0 top-0 h-48 bg-gradient-to-b from-secondary/60 to-transparent" />
+        <div
+          className="hero-mesh-2 absolute -bottom-[25%] -right-[15%] h-[75%] w-[65%] rounded-full"
+          style={{ background: 'radial-gradient(circle, hsl(175 50% 45%), transparent 70%)' }}
+        />
+        <div
+          className="hero-mesh-3 absolute left-[20%] top-[15%] h-[60%] w-[55%] rounded-full"
+          style={{ background: 'radial-gradient(circle, hsl(200 65% 70%), transparent 65%)' }}
+        />
+        <div
+          className="hero-mesh-4 absolute -right-[10%] -top-[15%] h-[55%] w-[50%] rounded-full"
+          style={{ background: 'radial-gradient(circle, hsl(175 50% 50%), transparent 70%)' }}
+        />
+
+        {/* Central spotlight */}
+        <div
+          className="hero-spotlight absolute left-1/2 top-[40%] h-[50%] w-[60%] -translate-x-1/2 -translate-y-1/2 rounded-full"
+          style={{ background: 'radial-gradient(ellipse, hsl(200 65% 55% / 0.12), hsl(175 50% 45% / 0.04) 50%, transparent 70%)' }}
+        />
+
+        {/* Dot pattern */}
+        <div className="pattern-dots-light absolute inset-0 opacity-30" />
+
+        {/* Edge vignette */}
+        <div
+          className="absolute inset-0"
+          style={{ background: 'radial-gradient(ellipse at center, transparent 30%, hsl(206 50% 10% / 0.6) 100%)' }}
+        />
       </div>
 
-      {/* Main content — pinned to remaining viewport after sticky header (h-16 mobile / h-20 desktop) */}
-      <div className="relative z-10 flex h-[calc(100dvh-4rem)] w-full flex-col overflow-clip lg:h-[calc(100dvh-5rem)]">
+      {/* ── Concentric rings (lg+) ── */}
+      <div className="pointer-events-none absolute inset-0 hidden lg:flex lg:items-center lg:justify-center" aria-hidden="true">
+        <div className="relative h-[500px] w-[500px] xl:h-[600px] xl:w-[600px]" style={{ marginTop: '-3%' }}>
+          <div className="hero-ring-1 absolute inset-0 rounded-full border border-white/[0.03]" />
+          <div className="hero-ring-2 absolute inset-[18%] rounded-full border border-white/[0.04]" />
+          <div className="hero-ring-3 absolute inset-[36%] rounded-full border border-white/[0.05]" />
+        </div>
+      </div>
 
-        {/* Row 1: Text content — shrinks to fit, pushes content to bottom */}
-        <div className="flex min-h-0 flex-1 flex-col justify-center overflow-hidden">
-          <Container className="py-6 pt-20 lg:py-8 lg:pt-28">
-            <div className="flex flex-col gap-6 lg:flex-row lg:items-end lg:justify-between lg:gap-12">
+      {/* ── Content ── */}
+      <div className="relative z-10 flex min-h-[calc(100dvh-4rem)] flex-col lg:min-h-[calc(100dvh-5rem)]">
 
-              {/* Left: headline + subtitle */}
-              <div className="max-w-3xl space-y-4 lg:space-y-5">
-                <h1 className="font-display tracking-tighter text-white">
-                  <span className="stagger-item-dramatic stagger-delay-1 block text-lg font-semibold uppercase tracking-[0.2em] text-white/40 md:text-xl lg:text-2xl">
-                    {t('headline1')}
-                  </span>
-                  {/* Visually-hidden space so crawlers read "Medical Supplies for…" not "Medical Suppliesfor…" */}
-                  <span className="sr-only">{' '}</span>
-                  <span className="stagger-item-dramatic stagger-delay-2 mt-1 block text-[2.5rem] font-extrabold italic leading-[0.95] text-primary sm:text-5xl md:text-6xl lg:text-[4.5rem] xl:text-[5.5rem]">
-                    {t('headline2')}
-                  </span>
-                </h1>
+        <div className="flex w-full flex-1 items-center">
+          <Container className="py-16 pt-20 lg:py-8">
+            <div className="mx-auto max-w-3xl text-center">
 
-                <div
-                  className="animate-reveal-line stagger-delay-3 h-px w-20 lg:w-32"
-                  style={{
-                    backgroundImage: 'linear-gradient(to right, hsl(200 65% 55%), hsl(175 50% 45%), transparent)',
-                  }}
-                />
+              <span className="stagger-item stagger-delay-1 block font-body text-sm font-semibold uppercase tracking-[0.2em] text-white/40 lg:text-base">
+                {t('headline1')}
+              </span>
 
-                <p className="stagger-item stagger-delay-4 max-w-lg font-body text-sm leading-relaxed text-white/55 lg:text-base">
-                  {t('subtitle')}
-                </p>
+              <h1 className="hero-headline-reveal mt-5 font-display tracking-tighter lg:mt-6">
+                <span className="hero-text-shimmer block text-[2.5rem] font-extrabold italic leading-[0.95] sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl">
+                  {t('headline2')}
+                </span>
+              </h1>
 
-                {/* CTAs — mobile only */}
-                <div className="stagger-item stagger-delay-5 flex flex-col gap-3 pt-1 sm:flex-row sm:items-center lg:hidden">
-                  <QuoteModalButton size="lg" analyticsLocation="hero_mobile">
-                    {t('cta')}
-                  </QuoteModalButton>
-                  <Button
-                    size="lg"
-                    variant="outline"
-                    className="border-white/20 text-white hover:bg-white hover:text-secondary active:-translate-y-[1px]"
-                    asChild
-                  >
-                    <Link href="/products">{t('ctaSecondary')}</Link>
-                  </Button>
-                </div>
+              <p className="stagger-item stagger-delay-4 mx-auto mt-6 max-w-xl font-body text-sm leading-relaxed text-white/50 lg:mt-8 lg:text-base">
+                {t('subtitle')}
+              </p>
 
-                <p className="stagger-item stagger-delay-5 font-body text-xs text-white/35 lg:hidden">
-                  {t('reassurance')}
-                </p>
+              <div className="stagger-item stagger-delay-5 mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row lg:mt-10">
+                <QuoteModalButton size="lg" analyticsLocation="hero">
+                  {t('cta')}
+                </QuoteModalButton>
+                <Button
+                  size="lg"
+                  variant="outline"
+                  className="border-white/15 text-white hover:bg-white hover:text-secondary active:-translate-y-[1px]"
+                  asChild
+                >
+                  <Link href="/products">{t('ctaSecondary')}</Link>
+                </Button>
               </div>
 
-              {/* Right: CTAs — desktop only */}
-              <div className="hidden shrink-0 lg:flex lg:flex-col lg:items-end lg:gap-3">
-                <div className="stagger-item stagger-delay-5 flex flex-col gap-3">
-                  <QuoteModalButton size="lg" analyticsLocation="hero_desktop">
-                    {t('cta')}
-                  </QuoteModalButton>
-                  <Button
-                    size="lg"
-                    variant="outline"
-                    className="border-white/20 text-white hover:bg-white hover:text-secondary active:-translate-y-[1px]"
-                    asChild
-                  >
-                    <Link href="/products">{t('ctaSecondary')}</Link>
-                  </Button>
-                </div>
-                <p className="stagger-item stagger-delay-6 text-right font-body text-sm text-white/35">
-                  {t('reassurance')}
-                </p>
-              </div>
+              <p className="stagger-item stagger-delay-6 mt-5 font-body text-xs text-white/30">
+                {t('reassurance')}
+              </p>
 
             </div>
           </Container>
         </div>
 
-        {/* Row 2: Full-width supply chain graphic band */}
-        <div className="stagger-item stagger-delay-6 w-full shrink-0 pb-12 pt-2 lg:pb-14 lg:pt-4">
-          <Container>
-            <HeroGraphic />
-          </Container>
+        {/* ── Pulse line — imposing, full-width ── */}
+        <div className="hero-pulse-container w-full shrink-0" aria-hidden="true">
+          {/* Desktop */}
+          <div className="hidden lg:block">
+            <svg
+              viewBox="0 0 800 120"
+              className="h-auto w-full"
+              preserveAspectRatio="none"
+              fill="none"
+            >
+              <defs>
+                <radialGradient id="hero-pulse-ambient" cx="50%" cy="50%" r="50%">
+                  <stop offset="0%" stopColor="hsl(175 50% 55%)" stopOpacity="0.10" />
+                  <stop offset="60%" stopColor="hsl(175 50% 55%)" stopOpacity="0.03" />
+                  <stop offset="100%" stopColor="hsl(175 50% 55%)" stopOpacity="0" />
+                </radialGradient>
+                <filter id="hero-trace-glow">
+                  <feGaussianBlur stdDeviation="5" />
+                </filter>
+                <filter id="hero-trace-glow-wide">
+                  <feGaussianBlur stdDeviation="8" />
+                </filter>
+              </defs>
+
+              {/* Breathing glow at the QRS peaks */}
+              <circle cx="210" cy="60" r="80" fill="url(#hero-pulse-ambient)" className="hero-pulse-breathe" />
+              <circle cx="530" cy="60" r="80" fill="url(#hero-pulse-ambient)" className="hero-pulse-breathe" style={{ animationDelay: '5s' }} />
+
+              {/* Base track */}
+              <path
+                d={ECG_WIDE}
+                stroke="rgba(255,255,255,0.05)"
+                strokeWidth="1.5"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              />
+
+              {/* Wide aura glow — big, soft halo around the trace */}
+              <path
+                d={ECG_WIDE}
+                stroke="hsl(175 50% 55%)"
+                strokeWidth="8"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                filter="url(#hero-trace-glow-wide)"
+                className="hero-pulse-trace-wide"
+                opacity="0.15"
+              />
+
+              {/* Inner glow trace */}
+              <path
+                d={ECG_WIDE}
+                stroke="hsl(175 50% 55%)"
+                strokeWidth="3"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                filter="url(#hero-trace-glow)"
+                className="hero-pulse-trace-wide"
+                opacity="0.4"
+              />
+
+              {/* Sharp crisp trace */}
+              <path
+                d={ECG_WIDE}
+                stroke="hsl(175 50% 60%)"
+                strokeWidth="1.5"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                className="hero-pulse-trace-wide"
+              />
+            </svg>
+          </div>
+
+          {/* Mobile */}
+          <div className="px-4 lg:hidden">
+            <svg viewBox="0 0 400 60" className="h-auto w-full" fill="none">
+              <defs>
+                <filter id="hero-trace-glow-m">
+                  <feGaussianBlur stdDeviation="4" />
+                </filter>
+              </defs>
+              <path d={ECG_MOBILE} stroke="rgba(255,255,255,0.05)" strokeWidth="1" strokeLinecap="round" strokeLinejoin="round" />
+              <path d={ECG_MOBILE} stroke="hsl(175 50% 55%)" strokeWidth="4" strokeLinecap="round" strokeLinejoin="round" filter="url(#hero-trace-glow-m)" className="hero-pulse-trace-mobile" opacity="0.25" />
+              <path d={ECG_MOBILE} stroke="hsl(175 50% 55%)" strokeWidth="1" strokeLinecap="round" strokeLinejoin="round" className="hero-pulse-trace-mobile" />
+            </svg>
+          </div>
         </div>
 
-        {/* Row 3: Trust marquee band (edge-to-edge, always visible) */}
-        <div className="stagger-item stagger-delay-7 w-full shrink-0">
+        {/* Trust marquee */}
+        <div className="stagger-item stagger-delay-8 w-full shrink-0">
           <HeroTrustMarquee />
         </div>
 
       </div>
-
-      {/* Bottom fade into next section */}
-      <div className="pointer-events-none absolute bottom-0 left-0 right-0 h-16 bg-gradient-to-t from-secondary to-transparent" />
     </section>
   );
 }

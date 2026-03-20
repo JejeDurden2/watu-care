@@ -9,6 +9,7 @@ import {
   ProductCard,
 } from '@/components/products';
 import { MapPin } from 'lucide-react';
+import { PseoHeroBackground, PseoHeroPulse } from '@/components/sections';
 import { getAllCategories, getCategoryBySlug } from '@/lib/products';
 import { getTier1Countries } from '@/data/countries';
 import { generateBreadcrumbSchema, generateFAQSchema, generateMarketItemListSchema, combineSchemas } from '@/lib/schema';
@@ -162,9 +163,10 @@ export default async function CategoryPage({
         }}
       />
 
-      {/* Gradient hero band */}
-      <section className="gradient-hero py-16 lg:py-24">
-        <Container>
+      {/* Hero */}
+      <section className="relative overflow-hidden bg-secondary py-16 lg:py-24">
+        <PseoHeroBackground />
+        <Container className="relative z-10">
           <Breadcrumb
             variant="light"
             items={[
@@ -174,8 +176,7 @@ export default async function CategoryPage({
             ]}
           />
 
-          {/* Asymmetric split: content left, count + CTA right */}
-          <div className="grid gap-8 lg:grid-cols-[1fr_auto] lg:items-end">
+          <div className="grid items-center gap-8 lg:grid-cols-[1fr_auto]">
             <div>
               {/* Icon badge */}
               <div
@@ -193,18 +194,20 @@ export default async function CategoryPage({
               <p className="stagger-item stagger-delay-2 mt-4 max-w-2xl text-lg leading-relaxed text-white/70">
                 {categoryDescription}
               </p>
+
+              <div className="stagger-item stagger-delay-3 mt-6 flex flex-wrap items-center gap-4">
+                <div className="rounded-full border border-white/20 bg-white/10 px-5 py-2 text-sm font-medium text-white backdrop-blur-sm">
+                  {t('productCount', { count: category.products.length })}{' '}
+                  {t('available')}
+                </div>
+                <QuoteModalButton size="md" className="bg-white text-secondary hover:bg-white/90" analyticsLocation="category_header">
+                  {tNav('requestQuote')}
+                </QuoteModalButton>
+              </div>
             </div>
 
-            {/* Right: count + quote CTA */}
-            <div className="stagger-item stagger-delay-3 flex flex-col items-start gap-4 lg:items-end lg:pb-1">
-              <div className="rounded-full border border-white/20 bg-white/10 px-5 py-2 text-sm font-medium text-white backdrop-blur-sm">
-                {t('productCount', { count: category.products.length })}{' '}
-                {t('available')}
-              </div>
-              <QuoteModalButton size="md" className="bg-white text-secondary hover:bg-white/90" analyticsLocation="category_header">
-                {tNav('requestQuote')}
-              </QuoteModalButton>
-            </div>
+            {/* Pulse — right side, desktop only */}
+            <PseoHeroPulse />
           </div>
         </Container>
       </section>

@@ -1,7 +1,8 @@
 export { Hero } from './Hero';
 export { HeroGraphic } from './HeroGraphic';
 export { HeroTrustMarquee } from './HeroTrustMarquee';
-export { MarketHeroGraphic } from './MarketHeroGraphic';
+export { PseoHeroBackground } from './PseoHeroBackground';
+export { PseoHeroPulse } from './PseoHeroPulse';
 export { Stats } from './Stats';
 export { WhyUs } from './WhyUs';
 export { Categories } from './Categories';

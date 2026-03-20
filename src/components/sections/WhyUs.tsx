@@ -11,72 +11,69 @@ export async function WhyUs(): Promise<React.ReactElement> {
       className="relative overflow-hidden bg-secondary py-20 lg:py-28"
       data-animate
     >
-      {/* Ambient background */}
-      <div className="pointer-events-none absolute inset-0">
-        <div className="pattern-dots-light absolute inset-0" />
-        <div className="absolute right-0 top-0 h-[400px] w-[400px] rounded-full bg-primary/8 blur-[120px]" />
-      </div>
+      {/* Background pattern */}
+      <div className="pointer-events-none absolute inset-0 pattern-dots-light" />
 
       <Container className="relative">
-        {/* Left-aligned header */}
+        {/* Header */}
         <div className="mb-14 max-w-xl lg:mb-16">
           <div className="mb-5 h-px w-16 bg-accent" />
           <h2 className="font-display text-4xl font-bold tracking-tighter text-white lg:text-5xl">
             {t('title')}
           </h2>
-          <p className="mt-4 max-w-lg font-body text-lg leading-relaxed text-white/55">
+          <p className="mt-4 max-w-lg font-body text-lg leading-relaxed text-white/50">
             {t('subtitle')}
           </p>
         </div>
 
-        {/* Asymmetric bento: anchor card (left, spans 2 rows) + 2 compact (right) */}
+        {/* Asymmetric bento: anchor (left, 2 rows) + 2 supporting (right) */}
         <div className="grid gap-4 lg:grid-cols-[1.4fr_1fr] lg:grid-rows-2">
 
           {/* Anchor card — row-span-2 on desktop */}
-          <div className="group relative row-span-2 overflow-hidden rounded-3xl border border-white/10 bg-white/5 p-10 transition-all duration-300 hover:border-white/20 hover:bg-white/8">
-            <div className="mb-6 flex h-16 w-16 items-center justify-center rounded-2xl bg-accent/20 text-accent transition-colors duration-300 group-hover:bg-accent/30">
-              <ArrowRightLeft className="h-8 w-8" />
+          <div className="card-glow-dark group row-span-1 rounded-2xl border border-white/10 bg-white/[0.04] p-8 lg:row-span-2 lg:p-10">
+            <div className="mb-6 flex h-12 w-12 items-center justify-center rounded-xl bg-accent/15 text-accent">
+              <ArrowRightLeft className="h-6 w-6" strokeWidth={1.5} />
             </div>
-            <h3 className="mb-4 font-display text-2xl font-bold tracking-tight text-white lg:text-3xl">
+            <h3 className="mb-3 font-display text-2xl font-bold tracking-tight text-white lg:text-3xl">
               {t('hubTitle')}
             </h3>
-            <p className="mb-10 font-body text-base leading-relaxed text-white/55">
+            <p className="mb-8 font-body text-base leading-relaxed text-white/50">
               {t('hubDesc')}
             </p>
-            {/* Stat */}
-            <div className="border-t border-white/10 pt-6">
-              <p className="font-display text-5xl font-bold text-accent">30+</p>
-              <p className="mt-1 font-body text-xs font-semibold uppercase tracking-widest text-white/35">
+            {/* Stat divider */}
+            <div className="border-t border-white/8 pt-6">
+              <p className="font-display text-4xl font-bold text-accent lg:text-5xl">30+</p>
+              <p className="mt-1 font-body text-xs font-medium uppercase tracking-widest text-white/30">
                 Countries served
               </p>
             </div>
           </div>
 
           {/* Supporting card — Direct sourcing */}
-          <div className="group flex items-start gap-5 rounded-3xl border border-white/10 p-7 transition-all duration-300 hover:border-white/20 hover:bg-white/5">
-            <div className="mt-1 flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-primary/20 text-primary transition-colors duration-300 group-hover:bg-primary/30">
-              <Handshake className="h-5 w-5" />
+          <div className="card-glow-dark group flex items-start gap-5 rounded-2xl border border-white/10 p-7">
+            <div className="mt-0.5 flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-primary/15 text-primary">
+              <Handshake className="h-5 w-5" strokeWidth={1.5} />
             </div>
             <div>
-              <h3 className="mb-2 font-display text-lg font-semibold text-white">
+              <h3 className="mb-1.5 font-display text-lg font-semibold text-white">
                 {t('directTitle')}
               </h3>
-              <p className="font-body text-sm leading-relaxed text-white/50">
+              <p className="font-body text-sm leading-relaxed text-white/45">
                 {t('directDesc')}
               </p>
             </div>
           </div>
 
           {/* Supporting card — Service */}
-          <div className="group flex items-start gap-5 rounded-3xl border border-white/10 p-7 transition-all duration-300 hover:border-white/20 hover:bg-white/5">
-            <div className="mt-1 flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-primary/20 text-primary transition-colors duration-300 group-hover:bg-primary/30">
-              <MessageCircle className="h-5 w-5" />
+          <div className="card-glow-dark group flex items-start gap-5 rounded-2xl border border-white/10 p-7">
+            <div className="mt-0.5 flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-primary/15 text-primary">
+              <MessageCircle className="h-5 w-5" strokeWidth={1.5} />
             </div>
             <div>
-              <h3 className="mb-2 font-display text-lg font-semibold text-white">
+              <h3 className="mb-1.5 font-display text-lg font-semibold text-white">
                 {t('serviceTitle')}
               </h3>
-              <p className="font-body text-sm leading-relaxed text-white/50">
+              <p className="font-body text-sm leading-relaxed text-white/45">
                 {t('serviceDesc')}
               </p>
             </div>
@@ -84,20 +81,20 @@ export async function WhyUs(): Promise<React.ReactElement> {
 
         </div>
 
-        {/* Full-width bottom row card */}
-        <div className="mt-4 flex flex-col items-start gap-4 rounded-3xl border border-white/10 p-7 transition-all duration-300 hover:border-white/20 hover:bg-white/5 sm:flex-row sm:items-center">
-          <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-accent/20 text-accent">
-            <LayoutGrid className="h-5 w-5" />
+        {/* Full-width bottom card — Catalog */}
+        <div className="card-glow-dark mt-4 flex flex-col items-start gap-4 rounded-2xl border border-white/10 p-7 sm:flex-row sm:items-center">
+          <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-accent/15 text-accent">
+            <LayoutGrid className="h-5 w-5" strokeWidth={1.5} />
           </div>
           <div className="flex-1">
             <h3 className="font-display text-lg font-semibold text-white">
               {t('catalogTitle')}
             </h3>
-            <p className="mt-1 font-body text-sm leading-relaxed text-white/50">
+            <p className="mt-1 font-body text-sm leading-relaxed text-white/45">
               {t('catalogDesc')}
             </p>
           </div>
-          <span className="shrink-0 font-body text-sm text-white/50">
+          <span className="shrink-0 font-body text-sm text-white/40">
             500+ SKUs
           </span>
         </div>

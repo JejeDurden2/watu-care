@@ -47,31 +47,30 @@ export function CategoryCard({
   href,
 }: CategoryCardProps): React.ReactElement {
   const t = useTranslations('products');
-  // Extract the category slug for icon lookup (handles paths like "markets/kenya/gloves")
   const iconSlug = slug.includes('/') ? slug.split('/').pop() ?? slug : slug;
   const Icon = iconMap[iconSlug] ?? Package;
 
   return (
     <Link
       href={href ?? `/products/${slug}`}
-      className="group relative flex flex-col overflow-hidden rounded-2xl border border-border bg-white p-6 transition-all duration-300 hover:-translate-y-2 hover:border-primary/30 hover:shadow-depth-md"
+      className="card-glow group flex flex-col rounded-2xl border border-border bg-white p-6"
     >
 
-      {/* Animated icon badge */}
-      <div className="relative mb-5 flex h-16 w-16 items-center justify-center rounded-2xl bg-primary/10 transition-all duration-300 group-hover:bg-primary group-hover:scale-110 group-hover:rotate-3">
-        <Icon className="h-8 w-8 text-primary transition-all duration-300 group-hover:text-white group-hover:scale-110" />
+      {/* Icon badge */}
+      <div className="mb-5 flex h-12 w-12 items-center justify-center rounded-xl bg-primary/8 transition-colors duration-300 group-hover:bg-primary/15">
+        <Icon className="h-6 w-6 text-primary" strokeWidth={1.5} />
       </div>
 
       {/* Content */}
-      <h3 className="relative mb-2 text-lg font-semibold text-secondary transition-colors duration-200 group-hover:text-primary">
+      <h3 className="mb-2 text-lg font-semibold text-secondary">
         {title}
       </h3>
-      <p className="relative mb-4 flex-1 text-sm leading-relaxed text-muted-foreground">
+      <p className="mb-4 flex-1 text-sm leading-relaxed text-muted-foreground">
         {description}
       </p>
 
-      {/* Footer - Product count or arrow */}
-      <div className="relative flex items-center gap-2 text-sm font-medium text-primary">
+      {/* Footer */}
+      <div className="flex items-center gap-2 text-sm font-medium text-primary">
         {productCount !== undefined ? (
           <span className="text-sm text-muted-foreground">
             {t('productCount', { count: productCount })}

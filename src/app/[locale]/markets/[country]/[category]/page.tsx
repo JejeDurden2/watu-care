@@ -9,7 +9,7 @@ import {
   ProductCard,
   ProductGrid,
 } from '@/components/products';
-import { CategoryCard } from '@/components/sections';
+import { CategoryCard, PseoHeroBackground, PseoHeroPulse } from '@/components/sections';
 import { getAllCategories, getCategoryBySlug } from '@/lib/products';
 import { getTier1Countries, getCountryBySlug } from '@/data/countries';
 import {
@@ -191,10 +191,8 @@ export default async function CategoryCountryPage({
       />
 
       {/* Hero Section */}
-      <section className="relative overflow-hidden bg-gradient-to-br from-secondary via-secondary to-primary/20 py-16 lg:py-20">
-        <div className="absolute inset-0 opacity-5">
-          <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_20%,white_1px,transparent_1px)] bg-[length:40px_40px]" />
-        </div>
+      <section className="relative overflow-hidden bg-secondary py-16 lg:py-20">
+        <PseoHeroBackground />
 
         <Container className="relative z-10">
           <Breadcrumb
@@ -207,30 +205,35 @@ export default async function CategoryCountryPage({
             variant="light"
           />
 
-          <div className="mt-6 flex items-start gap-6">
-            <div
-              className={`hidden h-20 w-20 shrink-0 items-center justify-center rounded-2xl bg-white/10 md:flex`}
-            >
-              <CategoryIcon slug={category.iconSlug} className="h-10 w-10 text-white" />
-            </div>
-
-            <div className="max-w-3xl">
-              <div className="mb-3 inline-flex items-center gap-2 rounded-full bg-white/10 px-3 py-1.5 text-sm text-white/90">
-                <MapPin className="h-4 w-4" />
-                {countryName}
+          <div className="mt-6 grid items-center gap-8 lg:grid-cols-[1fr_auto]">
+            <div className="flex items-start gap-6">
+              <div
+                className={`hidden h-20 w-20 shrink-0 items-center justify-center rounded-2xl bg-white/10 md:flex`}
+              >
+                <CategoryIcon slug={category.iconSlug} className="h-10 w-10 text-white" />
               </div>
 
-              <h1 className="mb-4 text-3xl font-bold text-white md:text-4xl lg:text-5xl">
-                {categoryName}
-              </h1>
+              <div className="max-w-2xl">
+                <div className="mb-3 inline-flex items-center gap-2 rounded-full bg-white/10 px-3 py-1.5 text-sm text-white/90">
+                  <MapPin className="h-4 w-4" />
+                  {countryName}
+                </div>
 
-              <p className="mb-6 text-lg text-white/80">{categoryDesc}</p>
+                <h1 className="mb-4 text-3xl font-bold text-white md:text-4xl lg:text-5xl">
+                  {categoryName}
+                </h1>
 
-              <p className="text-sm font-medium text-accent">
-                {tProducts('productCount', { count: category.products.length })}{' '}
-                {tProducts('available')}
-              </p>
+                <p className="mb-6 text-lg text-white/80">{categoryDesc}</p>
+
+                <p className="text-sm font-medium text-accent">
+                  {tProducts('productCount', { count: category.products.length })}{' '}
+                  {tProducts('available')}
+                </p>
+              </div>
             </div>
+
+            {/* Pulse — right side, desktop only */}
+            <PseoHeroPulse />
           </div>
         </Container>
       </section>

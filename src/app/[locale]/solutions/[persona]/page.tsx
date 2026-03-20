@@ -14,6 +14,7 @@ import {
 import type { LucideIcon } from 'lucide-react';
 import { Container, Button, QuoteModalButton } from '@/components/ui';
 import { Link } from '@/i18n/routing';
+import { PseoHeroBackground, PseoHeroPulse } from '@/components/sections';
 import { getAllPersonas, getPersonaBySlug } from '@/data/personas';
 import { getCategoryBySlug } from '@/lib/products';
 import { getTier1Countries } from '@/data/countries';
@@ -143,12 +144,8 @@ export default async function PersonaPage({
       />
 
       {/* Hero */}
-      <section className="gradient-hero relative overflow-hidden py-20 lg:py-28">
-        <div className="pointer-events-none absolute inset-0">
-          <div className="pattern-dots-light absolute inset-0" />
-          <div className="absolute right-0 top-1/4 h-[500px] w-[500px] rounded-full bg-primary/10 blur-[140px]" />
-          <div className="absolute -bottom-20 left-1/3 h-[300px] w-[300px] rounded-full bg-accent/8 blur-[100px]" />
-        </div>
+      <section className="relative overflow-hidden bg-secondary py-20 lg:py-28">
+        <PseoHeroBackground />
         <Container className="relative z-10">
           <Breadcrumb
             variant="light"
@@ -180,17 +177,20 @@ export default async function PersonaPage({
               <p className="mt-4 max-w-2xl font-body text-lg leading-relaxed text-white/70">
                 {t(`${personaSlug}.hero.subtitle`)}
               </p>
+
+              <div className="mt-6">
+                <QuoteModalButton
+                  size="lg"
+                  className="bg-white text-secondary hover:bg-white/90"
+                  analyticsLocation="persona_hero"
+                >
+                  {t(`${personaSlug}.hero.cta`)}
+                </QuoteModalButton>
+              </div>
             </div>
 
-            <div className="flex flex-col items-start gap-4 lg:items-end lg:pb-1">
-              <QuoteModalButton
-                size="lg"
-                className="bg-white text-secondary hover:bg-white/90"
-                analyticsLocation="persona_hero"
-              >
-                {t(`${personaSlug}.hero.cta`)}
-              </QuoteModalButton>
-            </div>
+            {/* Pulse — right side, desktop only */}
+            <PseoHeroPulse />
           </div>
         </Container>
       </section>
