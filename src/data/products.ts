@@ -602,6 +602,10 @@ export const productCategories: ProductCategory[] = [
         name: 'Ophthalmology Pack',
         description:
           'Specialized sterile pack for ophthalmic surgical procedures with eye drape and fenestration.',
+        image: '/products/surgical-procedure-packs/ophthalmology-pack.webp',
+        images: [
+          '/products/surgical-procedure-packs/ophthalmology-pack.webp',
+        ],
         specifications: [
           '1PC Eye drape with pouch 75x75cm',
           '1PC Instrument table cover 150x200cm',
@@ -631,6 +635,10 @@ export const productCategories: ProductCategory[] = [
         name: 'ENT Pack',
         description:
           'Ear, nose, and throat procedure pack with U split drape and head drape.',
+        image: '/products/surgical-procedure-packs/ent-pack.webp',
+        images: [
+          '/products/surgical-procedure-packs/ent-pack.webp',
+        ],
         specifications: [
           '1PC Mayo stand cover 80x145cm',
           '1PC Instrument table cover 150x200cm',
@@ -1140,18 +1148,18 @@ export const productCategories: ProductCategory[] = [
     longDescription:
       'Advanced vascular access products including central venous catheters with anti-infection coating, hemodialysis catheters, and Foley urinary catheters. Designed for patient safety and reduced infection risk.',
     color: 'bg-accent/20 text-accent-foreground',
-    image: '/products/vascular-access-catheters/category-vascular-access.png',
+    image: '/products/vascular-access-catheters/category-vascular-access.webp',
     products: [
       {
         id: 'central-venous-catheter',
         name: 'Central Venous Catheter',
         description:
           'High-quality TPU central venous catheter with excellent radiopacity. Latex-free with soft tip for reduced vessel trauma.',
-        image: '/products/vascular-access-catheters/central-venous-catheter.png',
+        image: '/products/vascular-access-catheters/central-venous-catheter.webp',
         images: [
-          '/products/vascular-access-catheters/central-venous-catheter.png',
-          '/products/vascular-access-catheters/central-venous-catheter-2.png',
-          '/products/vascular-access-catheters/central-venous-catheter-3.png',
+          '/products/vascular-access-catheters/central-venous-catheter.webp',
+          '/products/vascular-access-catheters/central-venous-catheter-2.webp',
+          '/products/vascular-access-catheters/central-venous-catheter-3.webp',
           '/products/vascular-access-catheters/central-venous-catheter-4.jpg',
         ],
         specifications: [
@@ -1173,7 +1181,7 @@ export const productCategories: ProductCategory[] = [
         name: 'Anti-Infection CVC',
         description:
           'Antimicrobial-coated catheter with rifampicin and minocycline. Reduces infection and prolongs indwelling time.',
-        image: '/products/vascular-access-catheters/iv-catheter.png',
+        image: '/products/vascular-access-catheters/iv-catheter.webp',
         specifications: [
           'Antimicrobial drug coating',
           'Rifampicin and Minocycline',
@@ -1193,10 +1201,10 @@ export const productCategories: ProductCategory[] = [
         name: 'Hemodialysis Catheter',
         description:
           'High-quality TPU and silicone hemodialysis catheter. Precurved and straight options with antimicrobial customization.',
-        image: '/products/vascular-access-catheters/hemodialysis-catheter.png',
+        image: '/products/vascular-access-catheters/hemodialysis-catheter.webp',
         images: [
-          '/products/vascular-access-catheters/hemodialysis-catheter.png',
-          '/products/vascular-access-catheters/hemodialysis-catheter-2.png',
+          '/products/vascular-access-catheters/hemodialysis-catheter.webp',
+          '/products/vascular-access-catheters/hemodialysis-catheter-2.webp',
         ],
         specifications: [
           'Latex-free TPU material',
@@ -1221,7 +1229,7 @@ export const productCategories: ProductCategory[] = [
           '/products/vascular-access-catheters/foley-catheter.jpg',
           '/products/vascular-access-catheters/foley-catheter-2.jpg',
           '/products/vascular-access-catheters/foley-catheter-3.jpg',
-          '/products/vascular-access-catheters/foley-catheter-4.png',
+          '/products/vascular-access-catheters/foley-catheter-4.webp',
         ],
         specifications: [
           'Latex or 100% silicone material',
@@ -1232,6 +1240,27 @@ export const productCategories: ProductCategory[] = [
           'Color-coded funnel end',
         ],
         sizes: ['8Fr', '10Fr', '12Fr', '14Fr', '16Fr', '18Fr', '20Fr', '22Fr', '24Fr'],
+      },
+      {
+        id: 'hemostatic-valve',
+        name: 'Hemostatic Valve',
+        description:
+          'Hemostatic valve for catheter introduction and guidewire passage. Prevents blood backflow during vascular access procedures.',
+        image: '/products/vascular-access-catheters/hemostatic-valve.webp',
+        images: [
+          '/products/vascular-access-catheters/hemostatic-valve.webp',
+          '/products/vascular-access-catheters/hemostatic-valve-2.webp',
+          '/products/vascular-access-catheters/hemostatic-valve-3.webp',
+        ],
+        specifications: [
+          'Hemostatic seal to prevent blood backflow',
+          'Side port with stopcock for flushing',
+          'Rotating adapter for catheter compatibility',
+          'Transparent housing for visual inspection',
+          'Latex-free, DEHP-free materials',
+          'Luer-lock compatible',
+          'Sterile, single-use',
+        ],
       },
     ],
   },
@@ -1374,7 +1403,7 @@ export const productCategories: ProductCategory[] = [
         image: '/products/surgical-instruments-sutures/surgical-blades.webp',
         images: [
           '/products/surgical-instruments-sutures/surgical-blades.webp',
-          '/products/surgical-instruments-sutures/surgical-blades-2.png',
+          '/products/surgical-instruments-sutures/surgical-blades-2.webp',
         ],
         specifications: [
           'Stainless steel or carbon steel',
@@ -1390,6 +1419,10 @@ export const productCategories: ProductCategory[] = [
         name: 'Absorbable Sutures',
         description:
           'Sterile absorbable surgical sutures with attached needle. Various materials and absorption profiles available.',
+        image: '/products/surgical-instruments-sutures/resorbable-suture.webp',
+        images: [
+          '/products/surgical-instruments-sutures/resorbable-suture.webp',
+        ],
         specifications: [
           'Materials: Polyglycolic acid (PGA), Polyglactin 910 (Vicryl-type), Poliglecaprone (Monocryl-type)',
           'Braided or monofilament construction',
@@ -1404,6 +1437,10 @@ export const productCategories: ProductCategory[] = [
         name: 'Disposable Electrosurgical Pencil',
         description:
           'Single-use electrosurgical pencil (ESU) for cutting and coagulation during surgical procedures.',
+        image: '/products/surgical-instruments-sutures/disposable-electrosurgical-pen.webp',
+        images: [
+          '/products/surgical-instruments-sutures/disposable-electrosurgical-pen.webp',
+        ],
         specifications: [
           'Single-use, sterile',
           'Standard 3-pin connector (Valleylab-type)',
@@ -1418,6 +1455,10 @@ export const productCategories: ProductCategory[] = [
         name: 'Non-Absorbable Sutures',
         description:
           'Sterile non-absorbable surgical sutures for permanent wound closure and tissue approximation.',
+        image: '/products/surgical-instruments-sutures/non-resorbable-suture.webp',
+        images: [
+          '/products/surgical-instruments-sutures/non-resorbable-suture.webp',
+        ],
         specifications: [
           'Materials: Nylon (Polyamide), Polypropylene, Silk',
           'Monofilament or braided construction',
@@ -1540,6 +1581,9 @@ export const productCategories: ProductCategory[] = [
         description:
           'Battery-powered electric wheelchair with joystick control for independent mobility.',
         image: '/products/patient-care-basic-equipment/electric-wheelchair.webp',
+        images: [
+          '/products/patient-care-basic-equipment/electric-wheelchair.webp',
+        ],
         specifications: [
           'Electric motor with joystick control',
           'Rechargeable battery (20-25km range)',
@@ -1555,6 +1599,9 @@ export const productCategories: ProductCategory[] = [
         description:
           'Standard manual wheelchair with steel frame and folding design for daily use.',
         image: '/products/patient-care-basic-equipment/manual-wheelchair.webp',
+        images: [
+          '/products/patient-care-basic-equipment/manual-wheelchair.webp',
+        ],
         specifications: [
           'Steel frame construction',
           'Foldable for transport and storage',
@@ -1572,6 +1619,9 @@ export const productCategories: ProductCategory[] = [
           'Multi-function reclining wheelchair with built-in commode for patients with limited mobility.',
         image:
           '/products/patient-care-basic-equipment/reclining-commode-wheelchair.webp',
+        images: [
+          '/products/patient-care-basic-equipment/reclining-commode-wheelchair.webp',
+        ],
         specifications: [
           'Reclining backrest (adjustable angle)',
           'Built-in commode with removable bucket',
@@ -1588,6 +1638,9 @@ export const productCategories: ProductCategory[] = [
           'Manual wheelchair with reclining backrest for extended comfort and patient positioning.',
         image:
           '/products/patient-care-basic-equipment/reclining-manual-wheelchair.webp',
+        images: [
+          '/products/patient-care-basic-equipment/reclining-manual-wheelchair.webp',
+        ],
         specifications: [
           'Reclining backrest (up to 180°)',
           'Steel or aluminium frame',
