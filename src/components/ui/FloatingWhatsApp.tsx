@@ -23,7 +23,7 @@ export const FloatingWhatsApp = async () => {
         'group'
       )}
     >
-      <MessageCircle className="h-7 w-7 text-white drop-shadow-sm" />
+      <MessageCircle className="h-7 w-7 text-white drop-shadow-sm" aria-hidden="true" />
       <span
         className={cn(
           'absolute right-full mr-3',

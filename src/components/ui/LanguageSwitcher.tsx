@@ -29,7 +29,7 @@ export function LanguageSwitcher({ className }: LanguageSwitcherProps): React.Re
 
   return (
     <div className={cn('flex items-center gap-1', className)}>
-      <Globe className="h-4 w-4 text-muted-foreground" />
+      <Globe className="h-4 w-4 text-muted-foreground" aria-hidden="true" />
       <div className="flex rounded-lg border border-white/20 bg-white/50 p-0.5 backdrop-blur-sm">
         {locales.map((l) => (
           <button

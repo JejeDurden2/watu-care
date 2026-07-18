@@ -57,7 +57,7 @@ export function SearchBar({ className, onResultClick }: SearchBarProps): React.R
   return (
     <div ref={containerRef} className={cn('relative', className)}>
       <div className="relative">
-        <Search className="absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-muted-foreground" />
+        <Search className="absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-muted-foreground" aria-hidden="true" />
         <input
           ref={inputRef}
           type="search"
@@ -80,9 +80,9 @@ export function SearchBar({ className, onResultClick }: SearchBarProps): React.R
             aria-label={t('clear')}
           >
             {isSearching ? (
-              <Loader2 className="h-4 w-4 animate-spin" />
+              <Loader2 className="h-4 w-4 animate-spin" aria-hidden="true" />
             ) : (
-              <X className="h-4 w-4" />
+              <X className="h-4 w-4" aria-hidden="true" />
             )}
           </button>
         )}
@@ -112,7 +112,7 @@ export function SearchBar({ className, onResultClick }: SearchBarProps): React.R
                           gradient
                         )}
                       >
-                        <Icon className="h-4 w-4" />
+                        <Icon className="h-4 w-4" aria-hidden="true" />
                       </div>
                       <div className="min-w-0 flex-1">
                         <p className="truncate text-sm font-medium text-foreground">
@@ -200,7 +200,7 @@ export function MobileSearchOverlay({
     <div className="fixed inset-0 z-[70] bg-background" role="dialog" aria-modal="true" aria-label={t('placeholder')}>
       <div className="flex h-full flex-col">
         <div className="flex items-center gap-3 border-b border-border px-4 py-3">
-          <Search className="h-5 w-5 shrink-0 text-muted-foreground" />
+          <Search className="h-5 w-5 shrink-0 text-muted-foreground" aria-hidden="true" />
           <input
             ref={inputRef}
             type="search"
@@ -211,7 +211,7 @@ export function MobileSearchOverlay({
             aria-label={t('placeholder')}
           />
           {isSearching ? (
-            <Loader2 className="h-5 w-5 animate-spin text-muted-foreground" />
+            <Loader2 className="h-5 w-5 animate-spin text-muted-foreground" aria-hidden="true" />
           ) : query ? (
             <button
               type="button"
@@ -219,7 +219,7 @@ export function MobileSearchOverlay({
               className="rounded p-1 text-muted-foreground hover:text-foreground"
               aria-label={t('clear')}
             >
-              <X className="h-5 w-5" />
+              <X className="h-5 w-5" aria-hidden="true" />
             </button>
           ) : null}
           <button
@@ -250,7 +250,7 @@ export function MobileSearchOverlay({
                           gradient
                         )}
                       >
-                        <Icon className="h-5 w-5" />
+                        <Icon className="h-5 w-5" aria-hidden="true" />
                       </div>
                       <div className="min-w-0 flex-1">
                         <p className="truncate font-medium text-foreground">

@@ -70,7 +70,7 @@ export async function Footer(): Promise<React.ReactElement> {
                 className="inline-flex items-center gap-2 text-secondary-foreground/50 transition-colors hover:text-primary"
                 aria-label="Watu Care on LinkedIn"
               >
-                <Linkedin className="h-4 w-4" />
+                <Linkedin className="h-4 w-4" aria-hidden="true" />
                 <span className="text-xs font-medium tracking-wide">LinkedIn</span>
               </a>
             </div>
@@ -140,13 +140,13 @@ export async function Footer(): Promise<React.ReactElement> {
             </h4>
             <ul className="space-y-3">
               <li className="flex items-start gap-3">
-                <MapPin className="mt-0.5 h-4 w-4 shrink-0 text-accent/70" />
+                <MapPin className="mt-0.5 h-4 w-4 shrink-0 text-accent/70" aria-hidden="true" />
                 <span className="text-sm text-secondary-foreground/65">
                   {t('location')}
                 </span>
               </li>
               <li className="flex items-center gap-3">
-                <Mail className="h-4 w-4 shrink-0 text-accent/70" />
+                <Mail className="h-4 w-4 shrink-0 text-accent/70" aria-hidden="true" />
                 <a
                   href={`mailto:${t('email')}`}
                   className="text-sm text-secondary-foreground/65 transition-colors hover:text-primary"
@@ -155,7 +155,7 @@ export async function Footer(): Promise<React.ReactElement> {
                 </a>
               </li>
               <li className="flex items-center gap-3">
-                <Phone className="h-4 w-4 shrink-0 text-accent/70" />
+                <Phone className="h-4 w-4 shrink-0 text-accent/70" aria-hidden="true" />
                 <span className="text-sm text-secondary-foreground/65">
                   {t('phone')}
                 </span>

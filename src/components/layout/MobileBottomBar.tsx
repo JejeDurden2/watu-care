@@ -52,7 +52,7 @@ export function MobileBottomBar({
           className="flex h-11 w-11 items-center justify-center rounded-xl text-secondary/70 transition-colors hover:bg-secondary/5 hover:text-secondary active:scale-[0.95]"
           aria-label={t('search')}
         >
-          <Search className="h-5 w-5" />
+          <Search className="h-5 w-5" aria-hidden="true" />
         </button>
 
         {/* Quote list badge */}
@@ -64,7 +64,7 @@ export function MobileBottomBar({
           onClick={onRequestQuote}
           className="flex h-9 items-center gap-1.5 rounded-xl bg-accent px-4 text-sm font-semibold text-white shadow-[0_2px_12px_-3px_hsl(var(--accent)/0.4)] transition-all hover:brightness-110 active:scale-[0.97]"
         >
-          <ClipboardList className="h-3.5 w-3.5" />
+          <ClipboardList className="h-3.5 w-3.5" aria-hidden="true" />
           {t('quote')}
         </button>
       </nav>

@@ -4,7 +4,7 @@ import { useEffect, useRef, useCallback } from 'react';
 import Image from 'next/image';
 import { useTranslations } from 'next-intl';
 import { X, Globe, Linkedin } from 'lucide-react';
-import { Link } from '@/i18n/routing';
+import { Link, usePathname } from '@/i18n/routing';
 import { trackNavClick } from '@/lib/analytics';
 import { LanguageSwitcher } from '@/components/ui';
 import { cn } from '@/lib/utils';
@@ -27,6 +27,7 @@ export function MobileNavOverlay({
 }: MobileNavOverlayProps): React.ReactElement | null {
   const overlayRef = useRef<HTMLDivElement>(null);
   const t = useTranslations('nav');
+  const pathname = usePathname();
 
   const handleClose = useCallback(() => {
     onClose();
@@ -113,30 +114,38 @@ export function MobileNavOverlay({
           className="inline-flex h-10 w-10 items-center justify-center rounded-xl text-secondary/50 transition-colors hover:bg-secondary/5 hover:text-secondary active:scale-[0.95]"
           aria-label={t('closeNavigation')}
         >
-          <X className="h-5 w-5" />
+          <X className="h-5 w-5" aria-hidden="true" />
         </button>
       </div>
 
       {/* Navigation Links — large, left-aligned with accent bars */}
       <nav className="flex-1 overflow-y-auto px-6 py-8">
         <div className="space-y-2">
-          {navLinks.map((link, index) => (
-            <Link
-              key={link.href}
-              href={link.href}
-              className={cn(
-                'stagger-item block border-l-[3px] border-accent/60 py-3 pl-6 text-2xl font-bold text-secondary transition-all hover:border-accent hover:text-accent active:scale-[0.98]',
-                `stagger-delay-${index + 1}`
-              )}
-              style={{ fontFamily: 'var(--font-display), system-ui, sans-serif' }}
-              onClick={() => {
-                trackNavClick(link.href, 'mobile');
-                handleClose();
-              }}
-            >
-              {link.label}
-            </Link>
-          ))}
+          {navLinks.map((link, index) => {
+            const isActive =
+              pathname === link.href || pathname.startsWith(`${link.href}/`);
+            return (
+              <Link
+                key={link.href}
+                href={link.href}
+                aria-current={isActive ? 'page' : undefined}
+                className={cn(
+                  'stagger-item block border-l-[3px] py-3 pl-6 text-2xl font-bold transition-all hover:border-accent hover:text-accent active:scale-[0.98]',
+                  isActive
+                    ? 'border-accent text-accent'
+                    : 'border-accent/60 text-secondary',
+                  `stagger-delay-${index + 1}`
+                )}
+                style={{ fontFamily: 'var(--font-display), system-ui, sans-serif' }}
+                onClick={() => {
+                  trackNavClick(link.href, 'mobile');
+                  handleClose();
+                }}
+              >
+                {link.label}
+              </Link>
+            );
+          })}
         </div>
 
         {/* Language Section */}
@@ -147,7 +156,7 @@ export function MobileNavOverlay({
               'stagger-delay-5'
             )}
           >
-            <Globe className="h-3.5 w-3.5" />
+            <Globe className="h-3.5 w-3.5" aria-hidden="true" />
             {t('language')}
           </div>
           <div className={cn('stagger-item', 'stagger-delay-6')}>
@@ -169,7 +178,7 @@ export function MobileNavOverlay({
             className="inline-flex items-center gap-1.5 text-secondary/35 transition-colors hover:text-primary"
             aria-label="Watu Care on LinkedIn"
           >
-            <Linkedin className="h-4 w-4" />
+            <Linkedin className="h-4 w-4" aria-hidden="true" />
             <span className="text-xs font-medium">LinkedIn</span>
           </a>
         </div>

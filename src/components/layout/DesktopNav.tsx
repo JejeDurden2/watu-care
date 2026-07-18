@@ -1,12 +1,13 @@
 'use client';
 
 import { useTranslations } from 'next-intl';
-import { Link } from '@/i18n/routing';
+import { Link, usePathname } from '@/i18n/routing';
 import { trackNavClick, trackCtaClick } from '@/lib/analytics';
 import { Linkedin } from 'lucide-react';
 import { Button, LanguageSwitcher } from '@/components/ui';
 import { QuoteListBadge } from '@/components/quote';
 import { SearchBar } from '@/components/layout/SearchBar';
+import { cn } from '@/lib/utils';
 
 interface NavLink {
   href: string;
@@ -20,22 +21,31 @@ interface DesktopNavProps {
 
 export function DesktopNav({ navLinks, onRequestQuote }: DesktopNavProps): React.ReactElement {
   const t = useTranslations('nav');
+  const pathname = usePathname();
 
   return (
     <div className="hidden items-center lg:flex">
       {/* Accent divider + nav links */}
       <div className="flex items-center border-l-[3px] border-accent/50 pl-4">
         <div className="flex items-center gap-1">
-          {navLinks.map((link) => (
-            <Link
-              key={link.href}
-              href={link.href}
-              onClick={() => trackNavClick(link.href, 'desktop')}
-              className="nav-link-underline rounded-lg px-3 py-2 text-sm font-medium text-secondary/70 transition-colors hover:text-secondary active:scale-[0.98]"
-            >
-              {link.label}
-            </Link>
-          ))}
+          {navLinks.map((link) => {
+            const isActive =
+              pathname === link.href || pathname.startsWith(`${link.href}/`);
+            return (
+              <Link
+                key={link.href}
+                href={link.href}
+                aria-current={isActive ? 'page' : undefined}
+                onClick={() => trackNavClick(link.href, 'desktop')}
+                className={cn(
+                  'nav-link-underline rounded-lg px-3 py-2 text-sm font-medium transition-colors active:scale-[0.98]',
+                  isActive ? 'text-secondary' : 'text-secondary/70 hover:text-secondary'
+                )}
+              >
+                {link.label}
+              </Link>
+            );
+          })}
         </div>
       </div>
 
@@ -52,7 +62,7 @@ export function DesktopNav({ navLinks, onRequestQuote }: DesktopNavProps): React
           className="inline-flex h-8 w-8 items-center justify-center rounded-lg text-secondary/50 transition-colors hover:text-primary"
           aria-label="Watu Care on LinkedIn"
         >
-          <Linkedin className="h-4 w-4" />
+          <Linkedin className="h-4 w-4" aria-hidden="true" />
         </a>
         <LanguageSwitcher />
         <QuoteListBadge />

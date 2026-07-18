@@ -120,6 +120,7 @@ export default async function LocaleLayout({
   }
 
   const messages = await getMessages();
+  const t = await getTranslations({ locale, namespace: 'nav' });
 
   // Generate JSON-LD structured data using @graph for cleaner implementation
   const globalSchema = combineSchemas(
@@ -138,6 +139,13 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 })(window,document,'script','dataLayer','GTM-NNHGQDH2');`}
       </Script>
       <body className="font-sans" suppressHydrationWarning>
+        {/* Skip to main content — first focusable element, visible on keyboard focus */}
+        <a
+          href="#main-content"
+          className="sr-only focus:not-sr-only focus:absolute focus:left-4 focus:top-4 focus:z-[100] focus:rounded-lg focus:bg-primary focus:px-4 focus:py-2 focus:text-sm focus:font-medium focus:text-primary-foreground focus:shadow-lg"
+        >
+          {t('skipToContent')}
+        </a>
         {/* Google Tag Manager (noscript) */}
         <noscript>
           <iframe
@@ -158,7 +166,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
               }}
             />
             <Header />
-            <div className="pb-24 lg:pb-0">
+            <div id="main-content" tabIndex={-1} className="pb-24 lg:pb-0 focus:outline-none">
               {children}
             </div>
             <Footer />
