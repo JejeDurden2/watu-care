@@ -6,6 +6,7 @@ import {
   Categories,
   Stats,
   HowItWorks,
+  QualityCompliance,
   FAQ,
   CTA,
 } from '@/components/sections';
@@ -104,6 +105,7 @@ export default async function Home({
       <Categories />
       <WhyUs />
       <HowItWorks />
+      <QualityCompliance />
       <Stats />
       <FAQ />
       <CTA />

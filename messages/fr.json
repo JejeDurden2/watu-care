@@ -57,6 +57,18 @@
     "catalogTitle": "Large Catalogue",
     "catalogDesc": "Gamme complète de fournitures médicales dans plusieurs catégories pour répondre aux besoins de votre établissement."
   },
+  "qualityCompliance": {
+    "title": "Qualité & Conformité",
+    "subtitle": "Documentation réglementaire et traçabilité à l'appui des appels d'offres hospitaliers, publics et des ONG.",
+    "item1Title": "Fabricants certifiés ISO 13485",
+    "item1Desc": "Nos produits proviennent de fabricants certifiés ISO 13485, la norme qualité applicable aux dispositifs médicaux.",
+    "item2Title": "Gammes marquées CE",
+    "item2Desc": "Nos gammes de produits portent le marquage CE, conforme aux exigences des marchés de dispositifs médicaux réglementés.",
+    "item3Title": "Documentation à chaque commande",
+    "item3Desc": "Rapports d'essais, certificats d'analyse et traçabilité des lots sont fournis avec chaque expédition.",
+    "item4Title": "Appui aux appels d'offres et à l'import",
+    "item4Desc": "Nous préparons les documents de certification et de douane requis pour les marchés publics et les achats des ONG."
+  },
   "categories": {
     "title": "Nos Produits",
     "subtitle": "Découvrez notre gamme de fournitures médicales de fabricants asiatiques.",

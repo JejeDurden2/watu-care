@@ -57,6 +57,18 @@
     "catalogTitle": "Wide Catalog",
     "catalogDesc": "Wide range of medical supplies across multiple categories to meet your facility's needs."
   },
+  "qualityCompliance": {
+    "title": "Quality & Compliance",
+    "subtitle": "Regulatory documentation and traceability to support hospital, NGO, and government procurement.",
+    "item1Title": "ISO 13485 Manufacturers",
+    "item1Desc": "Products are sourced from manufacturers certified to ISO 13485, the quality standard for medical devices.",
+    "item2Title": "CE-Marked Product Lines",
+    "item2Desc": "Our product lines carry CE marking, meeting the requirements for regulated medical device markets.",
+    "item3Title": "Documentation With Every Order",
+    "item3Desc": "Test reports, certificates of analysis, and batch traceability are provided with each shipment.",
+    "item4Title": "Tender & Import Support",
+    "item4Desc": "We prepare the certification and customs documentation required for government tenders and NGO procurement."
+  },
   "categories": {
     "title": "Our Products",
     "subtitle": "Explore our range of medical supplies from Asian manufacturers.",
