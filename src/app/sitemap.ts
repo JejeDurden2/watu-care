@@ -34,6 +34,16 @@ const CATEGORY_MODIFIED: Record<string, Date> = {
   'patient-care-equipment': new Date('2026-02-20'),
 };
 
+// Declares the en/fr equivalents for a locale-independent path (e.g. '/products').
+function langAlternates(path: string): { languages: Record<string, string> } {
+  return {
+    languages: {
+      en: `${BASE_URL}/en${path}`,
+      fr: `${BASE_URL}/fr${path}`,
+    },
+  };
+}
+
 export default function sitemap(): MetadataRoute.Sitemap {
   const categories = getAllCategories();
   const tier1Countries = getTier1Countries();
@@ -45,54 +55,63 @@ export default function sitemap(): MetadataRoute.Sitemap {
       lastModified: LAST_MODIFIED.homepage,
       changeFrequency: 'weekly' as const,
       priority: 1.0,
+      alternates: langAlternates(''),
     },
     {
       url: `${BASE_URL}/${locale}/products`,
       lastModified: LAST_MODIFIED.products,
       changeFrequency: 'weekly' as const,
       priority: 0.9,
+      alternates: langAlternates('/products'),
     },
     {
       url: `${BASE_URL}/${locale}/markets`,
       lastModified: LAST_MODIFIED.markets,
       changeFrequency: 'weekly' as const,
       priority: 0.9,
+      alternates: langAlternates('/markets'),
     },
     {
       url: `${BASE_URL}/${locale}/about`,
       lastModified: LAST_MODIFIED.about,
       changeFrequency: 'monthly' as const,
       priority: 0.7,
+      alternates: langAlternates('/about'),
     },
     {
       url: `${BASE_URL}/${locale}/contact`,
       lastModified: LAST_MODIFIED.contact,
       changeFrequency: 'monthly' as const,
       priority: 0.8,
+      alternates: langAlternates('/contact'),
     },
     {
       url: `${BASE_URL}/${locale}/faq`,
       lastModified: LAST_MODIFIED.faq,
       changeFrequency: 'monthly' as const,
       priority: 0.6,
+      alternates: langAlternates('/faq'),
     },
     {
       url: `${BASE_URL}/${locale}/privacy`,
       lastModified: LAST_MODIFIED.privacy,
       changeFrequency: 'yearly' as const,
       priority: 0.3,
+      alternates: langAlternates('/privacy'),
     },
     {
       url: `${BASE_URL}/${locale}/terms`,
       lastModified: LAST_MODIFIED.terms,
       changeFrequency: 'yearly' as const,
       priority: 0.3,
+      alternates: langAlternates('/terms'),
     },
     {
       url: `${BASE_URL}/${locale}/solutions`,
       lastModified: LAST_MODIFIED.personas,
       changeFrequency: 'monthly' as const,
       priority: 0.8,
+      alternates: langAlternates('/solutions'),
     },
   ]);
 
@@ -103,6 +122,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
       lastModified: CATEGORY_MODIFIED[category.slug] ?? LAST_MODIFIED.products,
       changeFrequency: 'weekly' as const,
       priority: 0.8,
+      alternates: langAlternates(`/products/${category.slug}`),
     })),
   );
 
@@ -114,6 +134,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
         lastModified: CATEGORY_MODIFIED[category.slug] ?? LAST_MODIFIED.products,
         changeFrequency: 'monthly' as const,
         priority: 0.6,
+        alternates: langAlternates(`/products/${category.slug}/${product.id}`),
       })),
     ),
   );
@@ -125,6 +146,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
       lastModified: LAST_MODIFIED.markets,
       changeFrequency: 'weekly' as const,
       priority: 0.85,
+      alternates: langAlternates(`/markets/${country.slug}`),
     })),
   );
 
@@ -136,6 +158,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
       lastModified: LAST_MODIFIED.personas,
       changeFrequency: 'monthly' as const,
       priority: 0.8,
+      alternates: langAlternates(`/solutions/${persona.slug}`),
     })),
   );
 
@@ -149,6 +172,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
         lastModified: CATEGORY_MODIFIED[category.slug] ?? LAST_MODIFIED.markets,
         changeFrequency: 'monthly' as const,
         priority: 0.5,
+        alternates: langAlternates(`/markets/${country.slug}/${category.slug}`),
       })),
     ),
   );
@@ -161,6 +185,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
         lastModified: LAST_MODIFIED.personas,
         changeFrequency: 'monthly' as const,
         priority: 0.7,
+        alternates: langAlternates(`/solutions/${persona}/${country.slug}`),
       })),
     ),
   );
