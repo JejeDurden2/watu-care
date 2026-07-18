@@ -1,7 +1,8 @@
 import type { Metadata } from 'next';
 import { getTranslations } from 'next-intl/server';
-import { Mail, MapPin, Phone, Clock, Linkedin } from 'lucide-react';
+import { Mail, MapPin, Phone, Clock } from 'lucide-react';
 import { Container, Button } from '@/components/ui';
+import { ContactForm } from '@/components/quote';
 import { Link } from '@/i18n/routing';
 import {
   generateContactPageSchema,
@@ -93,10 +94,10 @@ export default async function ContactPage({
         </div>
 
         <Container className="relative z-10">
-          <div className="grid min-h-[90dvh] items-center lg:grid-cols-2">
+          <div className="grid items-center gap-12 py-20 lg:min-h-[90dvh] lg:grid-cols-2 lg:gap-16 lg:py-28">
 
             {/* Left — text block */}
-            <div className="py-24 lg:py-32 lg:pr-16">
+            <div className="lg:pr-8">
               <div className="stagger-item stagger-delay-1 mb-5 flex items-center gap-3">
                 <div className="h-px w-12 bg-accent" />
                 <span className="font-body text-xs font-semibold uppercase tracking-[0.18em] text-accent">
@@ -113,94 +114,90 @@ export default async function ContactPage({
               </p>
             </div>
 
-            {/* Right — contact rows */}
-            <div className="stagger-item stagger-delay-4 border-t border-white/10 pb-16 pt-8 lg:border-l lg:border-t-0 lg:py-32 lg:pl-16">
-              <div className="divide-y divide-white/10">
-
-                <div className="flex items-center gap-5 py-6">
-                  <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-white/8">
-                    <MapPin className="h-5 w-5 text-primary" aria-hidden="true" />
-                  </div>
-                  <div>
-                    <p className="font-body text-xs font-semibold uppercase tracking-[0.14em] text-white/40">
-                      {t('info.location')}
-                    </p>
-                    <p className="mt-0.5 font-body text-lg font-medium text-white">
-                      Hong Kong SAR
-                    </p>
-                  </div>
+            {/* Right — inquiry form (visual priority) */}
+            <div className="stagger-item stagger-delay-4">
+              <div className="rounded-2xl border border-white/10 bg-white p-6 shadow-2xl shadow-black/30 sm:p-8">
+                <h2 className="font-display text-2xl font-bold tracking-tight text-secondary">
+                  {t('form.heading')}
+                </h2>
+                <p className="mt-1 font-body text-sm text-muted-foreground">
+                  {t('form.subheading')}
+                </p>
+                <div className="mt-6">
+                  <ContactForm />
                 </div>
-
-                <div className="flex items-center gap-5 py-6">
-                  <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-white/8">
-                    <Mail className="h-5 w-5 text-primary" aria-hidden="true" />
-                  </div>
-                  <div>
-                    <p className="font-body text-xs font-semibold uppercase tracking-[0.14em] text-white/40">
-                      {t('info.email')}
-                    </p>
-                    <a
-                      href="mailto:contact@watu-care.com"
-                      className="mt-0.5 block font-body text-lg font-medium text-white transition-colors hover:text-primary"
-                    >
-                      contact@watu-care.com
-                    </a>
-                  </div>
-                </div>
-
-                <div className="flex items-center gap-5 py-6">
-                  <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-white/8">
-                    <Phone className="h-5 w-5 text-primary" aria-hidden="true" />
-                  </div>
-                  <div>
-                    <p className="font-body text-xs font-semibold uppercase tracking-[0.14em] text-white/40">
-                      {t('info.phone')}
-                    </p>
-                    <a
-                      href="tel:+212662258045"
-                      className="mt-0.5 block font-body text-lg font-medium text-white transition-colors hover:text-primary"
-                    >
-                      +212 662 258 045
-                    </a>
-                  </div>
-                </div>
-
-                <div className="flex items-center gap-5 py-6">
-                  <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-white/8">
-                    <Clock className="h-5 w-5 text-accent" aria-hidden="true" />
-                  </div>
-                  <div>
-                    <p className="font-body text-xs font-semibold uppercase tracking-[0.14em] text-white/40">
-                      {t('info.hours')}
-                    </p>
-                    <p className="mt-0.5 font-body text-base text-white/70">
-                      {t('info.hoursValue')}
-                    </p>
-                  </div>
-                </div>
-
-                <div className="flex items-center gap-5 py-6">
-                  <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-white/8">
-                    <Linkedin className="h-5 w-5 text-primary" aria-hidden="true" />
-                  </div>
-                  <div>
-                    <p className="font-body text-xs font-semibold uppercase tracking-[0.14em] text-white/40">
-                      LinkedIn
-                    </p>
-                    <a
-                      href="https://www.linkedin.com/company/watu-care"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="mt-0.5 block font-body text-lg font-medium text-white transition-colors hover:text-primary"
-                    >
-                      {t('info.linkedinValue')}
-                    </a>
-                  </div>
-                </div>
-
               </div>
             </div>
 
+          </div>
+
+          {/* Contact info strip */}
+          <div className="stagger-item stagger-delay-4 border-t border-white/10 pb-16 pt-8">
+            <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
+
+              <div className="flex items-center gap-4">
+                <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-white/8">
+                  <MapPin className="h-5 w-5 text-primary" aria-hidden="true" />
+                </div>
+                <div>
+                  <p className="font-body text-xs font-semibold uppercase tracking-[0.14em] text-white/40">
+                    {t('info.location')}
+                  </p>
+                  <p className="mt-0.5 font-body text-base font-medium text-white">
+                    Hong Kong SAR
+                  </p>
+                </div>
+              </div>
+
+              <div className="flex items-center gap-4">
+                <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-white/8">
+                  <Mail className="h-5 w-5 text-primary" aria-hidden="true" />
+                </div>
+                <div>
+                  <p className="font-body text-xs font-semibold uppercase tracking-[0.14em] text-white/40">
+                    {t('info.email')}
+                  </p>
+                  <a
+                    href="mailto:contact@watu-care.com"
+                    className="mt-0.5 block font-body text-base font-medium text-white transition-colors hover:text-primary"
+                  >
+                    contact@watu-care.com
+                  </a>
+                </div>
+              </div>
+
+              <div className="flex items-center gap-4">
+                <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-white/8">
+                  <Phone className="h-5 w-5 text-primary" aria-hidden="true" />
+                </div>
+                <div>
+                  <p className="font-body text-xs font-semibold uppercase tracking-[0.14em] text-white/40">
+                    {t('info.phone')}
+                  </p>
+                  <a
+                    href="tel:+212662258045"
+                    className="mt-0.5 block font-body text-base font-medium text-white transition-colors hover:text-primary"
+                  >
+                    +212 662 258 045
+                  </a>
+                </div>
+              </div>
+
+              <div className="flex items-center gap-4">
+                <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-white/8">
+                  <Clock className="h-5 w-5 text-accent" aria-hidden="true" />
+                </div>
+                <div>
+                  <p className="font-body text-xs font-semibold uppercase tracking-[0.14em] text-white/40">
+                    {t('info.hours')}
+                  </p>
+                  <p className="mt-0.5 font-body text-sm text-white/70">
+                    {t('info.hoursValue')}
+                  </p>
+                </div>
+              </div>
+
+            </div>
           </div>
         </Container>
       </section>

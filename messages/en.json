@@ -18,7 +18,8 @@
     "closeMenu": "Close menu",
     "openNavigation": "Open navigation menu",
     "closeNavigation": "Close navigation menu",
-    "mobileNav": "Mobile navigation"
+    "mobileNav": "Mobile navigation",
+    "skipToContent": "Skip to main content"
   },
   "search": {
     "placeholder": "Search products...",
@@ -769,6 +770,40 @@
       "hoursValue": "Mon - Fri, 9:00 AM - 6:00 PM (HKT)",
       "linkedinValue": "Follow us on LinkedIn"
     },
+    "form": {
+      "heading": "Request a Free Quote",
+      "subheading": "Tell us what you need. Our Hong Kong team replies within 24–48 hours.",
+      "name": "Your Name",
+      "namePlaceholder": "Full name",
+      "company": "Company Name",
+      "companyPlaceholder": "Your company",
+      "email": "Email",
+      "emailPlaceholder": "your@email.com",
+      "phone": "Phone (optional)",
+      "phonePlaceholder": "+XXX XXX XXX XXX",
+      "country": "Country",
+      "countryPlaceholder": "Select your country",
+      "message": "Message (optional)",
+      "messagePlaceholder": "Products, quantities, questions...",
+      "submit": "Get My Free Quote",
+      "submitting": "Sending...",
+      "trustResponseTime": "Response within 24–48h",
+      "trustPrivacy": "We never share your info",
+      "regions": {
+        "africa": "Africa",
+        "middleEast": "Middle East"
+      },
+      "validation": {
+        "companyRequired": "Company name is required",
+        "emailInvalid": "Please enter a valid email",
+        "countryRequired": "Please select a country",
+        "submitError": "Something went wrong. Please try again."
+      },
+      "success": {
+        "title": "Request Sent!",
+        "message": "Thank you. Our team in Hong Kong has received your request and will respond within 24–48 hours."
+      }
+    },
     "cta": {
       "title": "Ready to Get Started?",
       "description": "Send us an email with your requirements and our team will get back to you.",
@@ -1298,6 +1333,13 @@
     "countries": "Countries served",
     "facilities": "Healthcare facilities",
     "orders": "Orders delivered"
+  },
+  "marketsServed": {
+    "eyebrow": "Global reach",
+    "title": "Where we deliver",
+    "subtitle": "We supply medical devices and PPE to healthcare providers across Africa and the Middle East. Select your market to see local delivery, compliance, and sourcing details.",
+    "countryCount": "{count} countries",
+    "viewAll": "View all markets"
   },
   "trustBar": {
     "isoCertified": "ISO Certified Products",

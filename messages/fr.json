@@ -18,7 +18,8 @@
     "closeMenu": "Fermer le menu",
     "openNavigation": "Ouvrir le menu de navigation",
     "closeNavigation": "Fermer le menu de navigation",
-    "mobileNav": "Navigation mobile"
+    "mobileNav": "Navigation mobile",
+    "skipToContent": "Aller au contenu principal"
   },
   "search": {
     "placeholder": "Rechercher des produits...",
@@ -837,6 +838,40 @@
       "hoursValue": "Lun - Ven, 9h00 - 18h00 (HKT)",
       "linkedinValue": "Suivez-nous sur LinkedIn"
     },
+    "form": {
+      "heading": "Demander un devis gratuit",
+      "subheading": "Dites-nous ce dont vous avez besoin. Notre équipe à Hong Kong répond sous 24–48 heures.",
+      "name": "Votre nom",
+      "namePlaceholder": "Nom complet",
+      "company": "Nom de l'entreprise",
+      "companyPlaceholder": "Votre entreprise",
+      "email": "Email",
+      "emailPlaceholder": "votre@email.com",
+      "phone": "Téléphone (optionnel)",
+      "phonePlaceholder": "+XXX XXX XXX XXX",
+      "country": "Pays",
+      "countryPlaceholder": "Sélectionnez votre pays",
+      "message": "Message (optionnel)",
+      "messagePlaceholder": "Produits, quantités, questions...",
+      "submit": "Obtenir mon devis gratuit",
+      "submitting": "Envoi en cours...",
+      "trustResponseTime": "Réponse sous 24–48h",
+      "trustPrivacy": "Vos données restent confidentielles",
+      "regions": {
+        "africa": "Afrique",
+        "middleEast": "Moyen-Orient"
+      },
+      "validation": {
+        "companyRequired": "Le nom de l'entreprise est requis",
+        "emailInvalid": "Veuillez entrer un email valide",
+        "countryRequired": "Veuillez sélectionner un pays",
+        "submitError": "Une erreur est survenue. Veuillez réessayer."
+      },
+      "success": {
+        "title": "Demande envoyée !",
+        "message": "Merci. Notre équipe à Hong Kong a bien reçu votre demande et vous répondra sous 24–48 heures."
+      }
+    },
     "cta": {
       "title": "Prêt à commencer ?",
       "description": "Envoyez-nous un email avec vos besoins et notre équipe vous répondra.",
@@ -1366,6 +1401,13 @@
     "countries": "Pays desservis",
     "facilities": "Établissements de santé",
     "orders": "Commandes livrées"
+  },
+  "marketsServed": {
+    "eyebrow": "Portée internationale",
+    "title": "Où nous livrons",
+    "subtitle": "Nous fournissons des dispositifs médicaux et des EPI aux établissements de santé à travers l'Afrique et le Moyen-Orient. Sélectionnez votre marché pour découvrir la livraison locale, la conformité et l'approvisionnement.",
+    "countryCount": "{count} pays",
+    "viewAll": "Voir tous les marchés"
   },
   "trustBar": {
     "isoCertified": "Produits certifiés ISO",
