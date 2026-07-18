@@ -81,6 +81,14 @@ export default tseslint.config(
     },
   },
 
+  // Node build scripts
+  {
+    files: ['**/*.mjs'],
+    languageOptions: {
+      globals: globals.node,
+    },
+  },
+
   // Prettier config (must be last)
   prettierConfig
 );
