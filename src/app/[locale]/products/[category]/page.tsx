@@ -76,14 +76,7 @@ export async function generateMetadata({
       description,
       type: 'website',
       url: `${BASE_URL}/${locale}/products/${categorySlug}`,
-      images: [
-        {
-          url: category.image || `${BASE_URL}/opengraph-image`,
-          width: 1200,
-          height: 630,
-          alt: categoryTitle,
-        },
-      ],
+      // OG image comes from the file-convention opengraph-image.tsx in this route.
     },
     alternates: {
       canonical: `${BASE_URL}/${locale}/products/${categorySlug}`,
