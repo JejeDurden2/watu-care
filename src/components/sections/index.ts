@@ -9,6 +9,7 @@ export { Categories } from './Categories';
 export { CategoryCard } from './CategoryCard';
 export { HowItWorks } from './HowItWorks';
 export { QualityCompliance } from './QualityCompliance';
+export { MarketsServed } from './MarketsServed';
 export { FAQ } from './FAQ';
 export { CTA } from './CTA';
 export { PseoHealthcareContext } from './PseoHealthcareContext';

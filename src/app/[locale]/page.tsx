@@ -7,6 +7,7 @@ import {
   Stats,
   HowItWorks,
   QualityCompliance,
+  MarketsServed,
   FAQ,
   CTA,
 } from '@/components/sections';
@@ -107,6 +108,7 @@ export default async function Home({
       <HowItWorks />
       <QualityCompliance />
       <Stats />
+      <MarketsServed />
       <FAQ />
       <CTA />
     </main>
