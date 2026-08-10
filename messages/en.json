@@ -886,6 +886,32 @@
       "competitivePricing": "Competitive Pricing",
       "competitivePricingDesc": "Direct manufacturer relationships for best value"
     },
+    "faq": {
+      "title": "Supplying {country} — common questions",
+      "deliveryQuestion": "How long does delivery to {country} take?",
+      "deliveryAnswer": "Sea freight to {country} takes roughly 30–50 days from order confirmation; air freight takes 6–9 days. We quote both routes separately so you can weigh landed cost against urgency, and every shipment travels with its test reports, certificates of analysis and batch traceability.",
+      "moqQuestion": "What is the minimum order quantity for {country}?",
+      "moqAnswer": "Minimum order quantities are set per product line, not per country, and start at roughly one full carton for consumables. Buyers in {country} can combine categories to reach a shippable pallet or container volume. Send us your facility's monthly usage and we structure the order around it.",
+      "certificationsQuestion": "Are your products certified for import into {country}?",
+      "certificationsAnswer": "Every manufacturer we source from is certified to ISO 13485, and the product lines we supply to {country} carry CE marking. Test reports, certificates of analysis and batch traceability ship with each consignment, which is what import files and local regulatory registration normally require.",
+      "pricingQuestion": "How much do medical supplies cost in {country}?",
+      "pricingAnswer": "Pricing is quote-based rather than published, because it depends on volume, product mix and freight route. Quotes for {country} are priced per unit and per line, with sea and air freight shown separately, and are returned within 48 business hours of the request.",
+      "paymentQuestion": "How do buyers in {country} pay?",
+      "paymentAnswer": "We accept bank transfer (T/T) and letter of credit (L/C). L/C is common for first orders and larger volumes into {country}; T/T is faster once a trading relationship exists. Terms are confirmed in writing on the proforma invoice before production starts.",
+      "buyersQuestion": "Who does Watu Care supply in {country}?",
+      "buyersAnswer": "We supply hospitals, clinics, NGOs, pharmacies and government procurement bodies in {country}. Watu Care is a wholesaler, not a manufacturer: we source from certified Asian factories and handle consolidation, documentation and freight, so you deal with one supplier instead of ten."
+    },
+    "categoryFaq": {
+      "title": "{category} in {country} — common questions",
+      "deliveryQuestion": "How long does delivery of {category} to {country} take?",
+      "deliveryAnswer": "Sea freight to {country} takes roughly 30–50 days; air freight takes 6–9 days and suits urgent or low-volume {category} orders. Both routes are costed separately on every quotation so you can weigh landed cost against how quickly you need stock on the shelf.",
+      "moqQuestion": "What is the minimum order for {category} in {country}?",
+      "moqAnswer": "Minimum order quantities are set per product line within {category}, not per country. Buyers in {country} can combine several lines, or mix in other categories, to reach a shippable pallet or container volume. Send us your usage figures and we build the order around them.",
+      "certificationsQuestion": "Are these {category} products certified?",
+      "certificationsAnswer": "The {category} lines we ship to {country} come from manufacturers certified to ISO 13485 and carry CE marking. Test reports, certificates of analysis and batch traceability travel with every consignment — the documents your import file and any local regulatory registration will ask for.",
+      "quoteQuestion": "How do I request a {category} quote for {country}?",
+      "quoteAnswer": "Add the {category} lines you need to your quote list, or email us with your quantities and delivery city in {country}. We reply within 48 business hours with per-unit pricing, per-line totals, and sea and air freight costed separately."
+    },
     "countries": {
       "uae": "United Arab Emirates",
       "saudi-arabia": "Saudi Arabia",

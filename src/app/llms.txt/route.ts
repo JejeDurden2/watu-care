@@ -84,6 +84,7 @@ ${solutions}
 
 ## Machine-readable
 
+- [Pricing and commercial terms](${BASE_URL}/pricing.md): how quotes are priced, MOQ, lead times, payment
 - [Full catalogue as text](${BASE_URL}/llms-full.txt): every product with its description and specifications
 - [Sitemap](${BASE_URL}/sitemap.xml)
 `;

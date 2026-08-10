@@ -9,15 +9,19 @@ import { getAllCategories, getCategoryBySlug } from '@/lib/products';
 import { getTier1Countries, getCountryBySlug } from '@/data/countries';
 import {
   generateBreadcrumbSchema,
+  generateFAQSchema,
   generateServiceSchema,
   generateMarketItemListSchema,
   combineSchemas,
 } from '@/lib/schema';
+import { FAQAccordion } from '@/app/[locale]/faq/FAQAccordion';
 import { Link } from '@/i18n/routing';
 import { locales, type Locale } from '@/i18n/config';
 import { MarketQuoteButton } from '../MarketQuoteButton';
 import { notFoundTitle } from '@/lib/metadata';
 import { BASE_URL } from '@/lib/constants';
+
+const CATEGORY_FAQ_KEYS = ['delivery', 'moq', 'certifications', 'quote'] as const;
 
 interface CategoryCountryPageProps {
   params: Promise<{
@@ -182,7 +186,19 @@ export default async function CategoryCountryPage({
     `${categoryName} Available in ${countryName}`,
   );
 
-  const combinedSchema = combineSchemas(breadcrumbSchema, serviceSchema, productListSchema);
+  // Country + category FAQ — the answers vary by both, so each page carries its
+  // own extractable Q&A rather than a copy of the generic category FAQ.
+  const faqItems = CATEGORY_FAQ_KEYS.map((key) => ({
+    question: t(`categoryFaq.${key}Question`, { category: categoryName, country: countryName }),
+    answer: t(`categoryFaq.${key}Answer`, { category: categoryName, country: countryName }),
+  }));
+
+  const combinedSchema = combineSchemas(
+    breadcrumbSchema,
+    serviceSchema,
+    productListSchema,
+    generateFAQSchema(faqItems),
+  );
 
   return (
     <main>
@@ -305,6 +321,20 @@ export default async function CategoryCountryPage({
                 <ArrowRight className="h-4 w-4" />
               </Link>
             </Button>
+          </div>
+        </Container>
+      </section>
+
+      {/* FAQ — mirrors the FAQPage schema above; the answers must stay visible
+          on the page for the markup to be eligible. */}
+      <section className="border-t border-border py-16">
+        <Container>
+          <div className="mb-5 h-px w-16 bg-accent" />
+          <h2 className="font-display text-2xl font-bold tracking-tight text-secondary md:text-3xl">
+            {t('categoryFaq.title', { category: categoryName, country: countryName })}
+          </h2>
+          <div className="mt-4 max-w-3xl">
+            <FAQAccordion items={faqItems} />
           </div>
         </Container>
       </section>
