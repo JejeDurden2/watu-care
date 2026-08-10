@@ -18,10 +18,12 @@ export function getCategoryBySlug(slug: string): ProductCategory | undefined {
 /**
  * Get a product by its ID across all categories
  */
-export function getProductById(productId: string): {
-  product: Product;
-  category: ProductCategory;
-} | undefined {
+export function getProductById(productId: string):
+  | {
+      product: Product;
+      category: ProductCategory;
+    }
+  | undefined {
   for (const category of productCategories) {
     const product = category.products.find((p) => p.id === productId);
     if (product) {
@@ -34,10 +36,7 @@ export function getProductById(productId: string): {
 /**
  * Get a product by category slug and product ID
  */
-export function getProductBySlug(
-  categorySlug: string,
-  productId: string,
-): Product | undefined {
+export function getProductBySlug(categorySlug: string, productId: string): Product | undefined {
   const category = getCategoryBySlug(categorySlug);
   if (!category) return undefined;
   return category.products.find((p) => p.id === productId);
@@ -61,27 +60,20 @@ export function getRelatedProducts(
   const category = getCategoryBySlug(categorySlug);
   if (!category) return [];
 
-  return category.products
-    .filter((p) => p.id !== currentProductId)
-    .slice(0, limit);
+  return category.products.filter((p) => p.id !== currentProductId).slice(0, limit);
 }
 
 /**
  * Get total product count
  */
 export function getTotalProductCount(): number {
-  return productCategories.reduce(
-    (total, category) => total + category.products.length,
-    0,
-  );
+  return productCategories.reduce((total, category) => total + category.products.length, 0);
 }
 
 /**
  * Get product count by category
  */
-export function getProductCountByCategory(
-  categorySlug: string,
-): number | undefined {
+export function getProductCountByCategory(categorySlug: string): number | undefined {
   const category = getCategoryBySlug(categorySlug);
   return category?.products.length;
 }

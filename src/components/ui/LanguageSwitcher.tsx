@@ -39,7 +39,7 @@ export function LanguageSwitcher({ className }: LanguageSwitcherProps): React.Re
               'rounded-md px-2.5 py-1 text-sm font-medium transition-all',
               locale === l
                 ? 'bg-white text-secondary shadow-sm'
-                : 'text-muted-foreground hover:text-secondary'
+                : 'text-muted-foreground hover:text-secondary',
             )}
           >
             {localeLabels[l]}

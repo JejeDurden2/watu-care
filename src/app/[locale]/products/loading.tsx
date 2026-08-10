@@ -20,10 +20,7 @@ export default function ProductsLoading(): React.ReactElement {
         {/* Categories grid skeleton */}
         <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3">
           {Array.from({ length: 10 }).map((_, i) => (
-            <div
-              key={i}
-              className="overflow-hidden rounded-xl border border-border bg-white"
-            >
+            <div key={i} className="overflow-hidden rounded-xl border border-border bg-white">
               <div className="h-48 bg-muted" />
               <div className="space-y-3 p-6">
                 <div className="h-12 w-12 rounded-lg bg-muted" />

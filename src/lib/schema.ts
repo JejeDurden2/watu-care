@@ -1,5 +1,5 @@
 import type { Product, ProductCategory } from '@/types/product';
-import { BASE_URL } from '@/lib/constants';
+import { BASE_URL, CONTACT_EMAIL, CONTENT_UPDATED, SALES_PHONE } from '@/lib/constants';
 
 // Schema.org type definitions
 type SchemaType = Record<string, unknown>;
@@ -18,13 +18,14 @@ export interface OrganizationSchema {
   logo: string;
   description: string;
   email: string;
-  telephone: string;
   address: {
     '@type': 'PostalAddress';
     addressLocality: string;
     addressRegion: string;
     addressCountry: string;
   };
+  contactPoint: SchemaType;
+  knowsAbout: string[];
   areaServed: string[];
   sameAs: string[];
 }
@@ -36,11 +37,14 @@ export interface ProductSchema {
   description: string;
   image?: string;
   url?: string;
-  manufacturer?: {
+  /** Watu Care distributes these devices; it does not manufacture them. */
+  provider?: {
     '@type': 'Organization';
+    '@id': string;
     name: string;
   };
   material?: string;
+  dateModified?: string;
   audience?: {
     '@type': 'Audience';
     audienceType: string;
@@ -65,6 +69,8 @@ export interface WebSiteSchema {
   name: string;
   url: string;
   description: string;
+  /** Freshness signal — AI answer engines weight recency when picking sources. */
+  dateModified: string;
   inLanguage: string[];
   publisher: {
     '@type': 'Organization';
@@ -175,14 +181,32 @@ export function generateOrganizationSchema(): OrganizationSchema {
     logo: `${BASE_URL}/logo.png`,
     description:
       'Connecting Asian manufacturers with healthcare providers across Africa and the Middle East. Medical devices and PPE wholesale.',
-    email: 'contact@watu-care.com',
-    telephone: '+212662258045',
+    email: CONTACT_EMAIL,
     address: {
       '@type': 'PostalAddress',
       addressLocality: 'Hong Kong',
       addressRegion: 'Hong Kong',
       addressCountry: 'HK',
     },
+    // The sales line is Moroccan; declaring it here as the Organization
+    // telephone alongside a Hong Kong address reads as an inconsistent NAP,
+    // so it lives on the ContactPoint that states what it is.
+    contactPoint: {
+      '@type': 'ContactPoint',
+      contactType: 'sales',
+      email: CONTACT_EMAIL,
+      telephone: SALES_PHONE,
+      areaServed: ['Africa', 'Middle East'],
+      availableLanguage: ['English', 'French'],
+    },
+    knowsAbout: [
+      'Medical devices',
+      'Personal protective equipment',
+      'ISO 13485 manufacturing',
+      'CE marking',
+      'B2B medical wholesale',
+      'Healthcare procurement',
+    ],
     areaServed: ['Africa', 'Middle East'],
     sameAs: ['https://www.linkedin.com/company/watu-care'],
   };
@@ -199,6 +223,7 @@ export function generateWebSiteSchema(): WebSiteSchema {
     url: BASE_URL,
     description:
       'Medical devices and PPE wholesale. Connecting Asian manufacturers with healthcare providers in Africa and the Middle East.',
+    dateModified: CONTENT_UPDATED,
     inLanguage: ['en', 'fr'],
     publisher: {
       '@type': 'Organization',
@@ -227,12 +252,15 @@ export function generateProductSchema(
     '@type': 'MedicalDevice',
     name: product.name,
     description: translatedDescription || product.description,
-    image: product.image || `${BASE_URL}/logo.png`,
+    // schema.org requires an absolute URL; product.image is a site-root path.
+    image: product.image ? `${BASE_URL}${product.image}` : `${BASE_URL}/logo.png`,
     url: `${BASE_URL}/${locale}/products/${category.slug}/${product.id}`,
-    manufacturer: {
+    provider: {
       '@type': 'Organization',
+      '@id': `${BASE_URL}/#organization`,
       name: 'Watu Care',
     },
+    dateModified: CONTENT_UPDATED,
     audience: {
       '@type': 'Audience',
       audienceType: 'Healthcare professionals',
@@ -316,12 +344,13 @@ export function generateContactPageSchema(locale: string): ContactPageSchema {
     '@type': 'ContactPage',
     name: 'Contact Watu Care',
     url: `${BASE_URL}/${locale}/contact`,
-    description: 'Contact Watu Care for B2B medical supplies inquiries. Get a quote within 24-48 hours.',
+    description:
+      'Contact Watu Care for B2B medical supplies inquiries. Get a quote within 24-48 hours.',
     mainEntity: {
       '@type': 'Organization',
       name: 'Watu Care',
-      email: 'contact@watu-care.com',
-      telephone: '+212662258045',
+      email: CONTACT_EMAIL,
+      telephone: SALES_PHONE,
       address: {
         '@type': 'PostalAddress',
         addressLocality: 'Hong Kong',
@@ -330,8 +359,8 @@ export function generateContactPageSchema(locale: string): ContactPageSchema {
       contactPoint: {
         '@type': 'ContactPoint',
         contactType: 'sales',
-        email: 'contact@watu-care.com',
-        telephone: '+212662258045',
+        email: CONTACT_EMAIL,
+        telephone: SALES_PHONE,
         areaServed: ['Africa', 'Middle East'],
         availableLanguage: ['English', 'French'],
       },
@@ -348,7 +377,8 @@ export function generateAboutPageSchema(locale: string): AboutPageSchema {
     '@type': 'AboutPage',
     name: 'About Watu Care',
     url: `${BASE_URL}/${locale}/about`,
-    description: 'Learn about Watu Care - connecting Asian medical manufacturers with healthcare providers across Africa and the Middle East.',
+    description:
+      'Learn about Watu Care - connecting Asian medical manufacturers with healthcare providers across Africa and the Middle East.',
     mainEntity: {
       '@type': 'Organization',
       '@id': `${BASE_URL}/#organization`,
@@ -382,9 +412,7 @@ export function generateAboutPageSchema(locale: string): AboutPageSchema {
 /**
  * Generate FAQ schema for rich snippets
  */
-export function generateFAQSchema(
-  items: Array<{ question: string; answer: string }>,
-): FAQSchema {
+export function generateFAQSchema(items: Array<{ question: string; answer: string }>): FAQSchema {
   return {
     '@context': 'https://schema.org',
     '@type': 'FAQPage',
@@ -575,9 +603,7 @@ type AnySchema =
   | ItemListSchema
   | PersonaPageSchema;
 
-export function combineSchemas(
-  ...schemas: AnySchema[]
-): GraphSchema {
+export function combineSchemas(...schemas: AnySchema[]): GraphSchema {
   // Remove @context from individual schemas and combine into @graph
   const graphItems = schemas.map((schema) => {
     const result: SchemaType = {};

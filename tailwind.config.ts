@@ -11,6 +11,7 @@ const config: Config = {
       colors: {
         primary: {
           DEFAULT: 'hsl(var(--primary))',
+          light: 'hsl(var(--primary-light))',
           foreground: 'hsl(var(--primary-foreground))',
         },
         secondary: {
@@ -19,6 +20,8 @@ const config: Config = {
         },
         accent: {
           DEFAULT: 'hsl(var(--accent))',
+          // Use on the navy sections — the base accent fails contrast there.
+          light: 'hsl(var(--accent-light))',
           foreground: 'hsl(var(--accent-foreground))',
         },
         background: 'hsl(var(--background))',
@@ -35,14 +38,20 @@ const config: Config = {
         sans: ['var(--font-body)', 'system-ui', 'sans-serif'], // Default
       },
       fontSize: {
-        'display-lg': ['4.5rem', { lineHeight: '1.1', letterSpacing: '-0.02em', fontWeight: '800' }],
-        'display': ['3.75rem', { lineHeight: '1.1', letterSpacing: '-0.02em', fontWeight: '800' }],
+        'display-lg': [
+          '4.5rem',
+          { lineHeight: '1.1', letterSpacing: '-0.02em', fontWeight: '800' },
+        ],
+        display: ['3.75rem', { lineHeight: '1.1', letterSpacing: '-0.02em', fontWeight: '800' }],
         'display-sm': ['3rem', { lineHeight: '1.15', letterSpacing: '-0.02em', fontWeight: '700' }],
-        'heading-lg': ['2.5rem', { lineHeight: '1.2', letterSpacing: '-0.01em', fontWeight: '700' }],
-        'heading': ['2rem', { lineHeight: '1.25', letterSpacing: '-0.01em', fontWeight: '700' }],
+        'heading-lg': [
+          '2.5rem',
+          { lineHeight: '1.2', letterSpacing: '-0.01em', fontWeight: '700' },
+        ],
+        heading: ['2rem', { lineHeight: '1.25', letterSpacing: '-0.01em', fontWeight: '700' }],
         'heading-sm': ['1.5rem', { lineHeight: '1.3', fontWeight: '600' }],
         'body-lg': ['1.25rem', { lineHeight: '1.6' }],
-        'body': ['1rem', { lineHeight: '1.7' }],
+        body: ['1rem', { lineHeight: '1.7' }],
         'body-sm': ['0.875rem', { lineHeight: '1.6' }],
       },
       boxShadow: {
@@ -53,9 +62,12 @@ const config: Config = {
         'glow-primary': '0 0 24px -4px hsl(var(--primary) / 0.3)',
         'glow-accent': '0 0 24px -4px hsl(var(--accent) / 0.3)',
         // Enhanced depth system
-        'depth-sm': '0 1px 2px rgba(0,0,0,0.04), 0 2px 8px rgba(0,0,0,0.06), 0 8px 24px rgba(0,0,0,0.04)',
-        'depth-md': '0 2px 4px rgba(0,0,0,0.06), 0 8px 16px rgba(0,0,0,0.08), 0 16px 48px rgba(0,0,0,0.06)',
-        'depth-lg': '0 4px 8px rgba(0,0,0,0.08), 0 16px 32px rgba(0,0,0,0.10), 0 32px 64px rgba(0,0,0,0.08)',
+        'depth-sm':
+          '0 1px 2px rgba(0,0,0,0.04), 0 2px 8px rgba(0,0,0,0.06), 0 8px 24px rgba(0,0,0,0.04)',
+        'depth-md':
+          '0 2px 4px rgba(0,0,0,0.06), 0 8px 16px rgba(0,0,0,0.08), 0 16px 48px rgba(0,0,0,0.06)',
+        'depth-lg':
+          '0 4px 8px rgba(0,0,0,0.08), 0 16px 32px rgba(0,0,0,0.10), 0 32px 64px rgba(0,0,0,0.08)',
       },
       borderRadius: {
         xl: '1rem',

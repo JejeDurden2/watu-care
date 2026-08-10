@@ -1,14 +1,10 @@
 import type { Metadata } from 'next';
-import { getTranslations } from 'next-intl/server';
+import { getTranslations, setRequestLocale } from 'next-intl/server';
 import { Globe, Users, Shield, Truck, Headphones, Heart } from 'lucide-react';
 import { Container, Button } from '@/components/ui';
 import { Link } from '@/i18n/routing';
-import {
-  generateAboutPageSchema,
-  generateBreadcrumbSchema,
-  combineSchemas,
-} from '@/lib/schema';
-import { BASE_URL } from '@/lib/constants';
+import { generateAboutPageSchema, generateBreadcrumbSchema, combineSchemas } from '@/lib/schema';
+import { BASE_URL, COUNTRIES_SERVED_LABEL, PRODUCT_LINES, UNITS_DELIVERED } from '@/lib/constants';
 
 interface AboutPageProps {
   params: Promise<{
@@ -16,9 +12,7 @@ interface AboutPageProps {
   }>;
 }
 
-export async function generateMetadata({
-  params,
-}: AboutPageProps): Promise<Metadata> {
+export async function generateMetadata({ params }: AboutPageProps): Promise<Metadata> {
   const { locale } = await params;
   const t = await getTranslations({ locale, namespace: 'about' });
 
@@ -61,10 +55,11 @@ export async function generateMetadata({
   };
 }
 
-export default async function AboutPage({
-  params,
-}: AboutPageProps): Promise<React.ReactElement> {
+export default async function AboutPage({ params }: AboutPageProps): Promise<React.ReactElement> {
   const { locale } = await params;
+
+  // Opt into static rendering — without this next-intl forces every page dynamic.
+  setRequestLocale(locale);
   const t = await getTranslations('about');
   const tMission = await getTranslations('mission');
   const tNav = await getTranslations('nav');
@@ -114,12 +109,11 @@ export default async function AboutPage({
 
         <Container className="relative z-10 py-24 lg:py-32">
           <div className="grid items-center gap-12 lg:grid-cols-[1fr_0.65fr] lg:gap-20">
-
             {/* Left — text block */}
             <div>
               <div className="stagger-item stagger-delay-1 mb-6 flex items-center gap-3">
                 <div className="h-px w-12 bg-accent" />
-                <span className="font-body text-xs font-semibold uppercase tracking-[0.18em] text-accent">
+                <span className="font-body text-xs font-semibold uppercase tracking-[0.18em] text-accent-light">
                   {t('ourStory')}
                 </span>
               </div>
@@ -153,32 +147,31 @@ export default async function AboutPage({
                 <div className="divide-y divide-white/10">
                   <div className="bg-white/4 px-8 py-8">
                     <p className="font-display text-6xl font-bold tracking-tighter text-white">
-                      {t('stats.skus')}
+                      {PRODUCT_LINES}
                     </p>
-                    <p className="mt-2 font-body text-xs font-semibold uppercase tracking-[0.18em] text-white/35">
+                    <p className="mt-2 font-body text-xs font-semibold uppercase tracking-[0.18em] text-white/60">
                       {t('stats.skusLabel')}
                     </p>
                   </div>
                   <div className="px-8 py-8">
-                    <p className="font-display text-6xl font-bold tracking-tighter text-accent">
-                      {t('stats.countries')}
+                    <p className="font-display text-6xl font-bold tracking-tighter text-accent-light">
+                      {COUNTRIES_SERVED_LABEL}
                     </p>
-                    <p className="mt-2 font-body text-xs font-semibold uppercase tracking-[0.18em] text-white/35">
+                    <p className="mt-2 font-body text-xs font-semibold uppercase tracking-[0.18em] text-white/60">
                       {t('stats.countriesLabel')}
                     </p>
                   </div>
                   <div className="px-8 py-8">
                     <p className="font-display text-6xl font-bold tracking-tighter text-white">
-                      {t('stats.units')}
+                      {UNITS_DELIVERED}
                     </p>
-                    <p className="mt-2 font-body text-xs font-semibold uppercase tracking-[0.18em] text-white/35">
+                    <p className="mt-2 font-body text-xs font-semibold uppercase tracking-[0.18em] text-white/60">
                       {t('stats.unitsLabel')}
                     </p>
                   </div>
                 </div>
               </div>
             </div>
-
           </div>
         </Container>
       </section>
@@ -187,7 +180,6 @@ export default async function AboutPage({
       <section className="section-muted py-20 lg:py-32" data-animate>
         <Container>
           <div className="grid gap-12 lg:grid-cols-[1fr_2.5fr] lg:gap-20">
-
             {/* Left — decorative column */}
             <div className="flex flex-col items-start">
               <span
@@ -242,7 +234,6 @@ export default async function AboutPage({
                 {tMission('story8')}
               </p>
             </div>
-
           </div>
         </Container>
       </section>
@@ -250,16 +241,13 @@ export default async function AboutPage({
       {/* ── Values: Numbered Rows ───────────────────────────────────────── */}
       <section className="bg-background py-20 lg:py-28" data-animate>
         <Container>
-
           {/* Section header — left aligned */}
           <div className="mb-14 max-w-xl">
             <div className="mb-5 h-px w-16 bg-accent" />
             <h2 className="font-display text-4xl font-bold tracking-tighter text-secondary lg:text-5xl">
               {t('values.title')}
             </h2>
-            <p className="mt-4 font-body text-lg text-muted-foreground">
-              {t('values.subtitle')}
-            </p>
+            <p className="mt-4 font-body text-lg text-muted-foreground">{t('values.subtitle')}</p>
           </div>
 
           {/* Numbered rows */}
@@ -276,7 +264,11 @@ export default async function AboutPage({
 
                 {/* Icon — desktop only */}
                 <div className="hidden h-14 w-14 shrink-0 items-center justify-center rounded-xl bg-primary/10 transition-colors duration-200 group-hover:bg-primary/15 lg:flex">
-                  <value.icon className="h-7 w-7 text-primary" strokeWidth={1.5} aria-hidden="true" />
+                  <value.icon
+                    className="h-7 w-7 text-primary"
+                    strokeWidth={1.5}
+                    aria-hidden="true"
+                  />
                 </div>
 
                 {/* Content */}
@@ -296,7 +288,6 @@ export default async function AboutPage({
           <p className="mt-14 max-w-3xl border-t border-border pt-10 font-body text-lg leading-relaxed text-muted-foreground">
             {t('values.mission')}
           </p>
-
         </Container>
       </section>
 
@@ -308,16 +299,14 @@ export default async function AboutPage({
         </div>
 
         <Container className="relative">
-
           <div className="mb-14 flex items-center gap-4">
             <div className="h-px w-12 bg-accent" />
-            <span className="font-body text-xs font-semibold uppercase tracking-[0.18em] text-accent">
+            <span className="font-body text-xs font-semibold uppercase tracking-[0.18em] text-accent-light">
               {t('howWeWork')}
             </span>
           </div>
 
           <div className="grid gap-10 sm:grid-cols-3 sm:gap-0 sm:divide-x sm:divide-white/10">
-
             <div className="sm:pr-10 lg:pr-16">
               <div className="mb-5 flex h-12 w-12 items-center justify-center rounded-xl bg-primary/15">
                 <Globe className="h-6 w-6 text-primary" strokeWidth={1.5} aria-hidden="true" />
@@ -332,7 +321,7 @@ export default async function AboutPage({
 
             <div className="sm:px-10 lg:px-16">
               <div className="mb-5 flex h-12 w-12 items-center justify-center rounded-xl bg-accent/15">
-                <Heart className="h-6 w-6 text-accent" strokeWidth={1.5} aria-hidden="true" />
+                <Heart className="h-6 w-6 text-accent-light" strokeWidth={1.5} aria-hidden="true" />
               </div>
               <h3 className="font-display text-xl font-semibold tracking-tight text-white lg:text-2xl">
                 {tMission('healthcareFocus')}
@@ -353,7 +342,6 @@ export default async function AboutPage({
                 {tMission('developingEconomiesDesc')}
               </p>
             </div>
-
           </div>
         </Container>
       </section>

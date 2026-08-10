@@ -29,8 +29,7 @@ export function DesktopNav({ navLinks, onRequestQuote }: DesktopNavProps): React
       <div className="flex items-center border-l-[3px] border-accent/50 pl-4">
         <div className="flex items-center gap-1">
           {navLinks.map((link) => {
-            const isActive =
-              pathname === link.href || pathname.startsWith(`${link.href}/`);
+            const isActive = pathname === link.href || pathname.startsWith(`${link.href}/`);
             return (
               <Link
                 key={link.href}
@@ -39,7 +38,7 @@ export function DesktopNav({ navLinks, onRequestQuote }: DesktopNavProps): React
                 onClick={() => trackNavClick(link.href, 'desktop')}
                 className={cn(
                   'nav-link-underline rounded-lg px-3 py-2 text-sm font-medium transition-colors active:scale-[0.98]',
-                  isActive ? 'text-secondary' : 'text-secondary/70 hover:text-secondary'
+                  isActive ? 'text-secondary' : 'text-secondary/70 hover:text-secondary',
                 )}
               >
                 {link.label}

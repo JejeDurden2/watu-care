@@ -22,10 +22,10 @@ const LAST_MODIFIED = {
 // Per-category dates give crawlers finer-grained change signals.
 // Update the relevant slug entry when that category's data changes.
 const CATEGORY_MODIFIED: Record<string, Date> = {
-  'gloves': new Date('2026-02-24'),
+  gloves: new Date('2026-02-24'),
   'infection-prevention-ppe': new Date('2026-02-24'),
   'bodily-waste-management': new Date('2026-02-20'),
-  'surgical': new Date('2026-02-24'),
+  surgical: new Date('2026-02-24'),
   'wound-care': new Date('2026-02-18'),
   'clinical-consumables': new Date('2026-02-22'),
   'vascular-access-catheters': new Date('2026-02-15'),
@@ -162,20 +162,9 @@ export default function sitemap(): MetadataRoute.Sitemap {
     })),
   );
 
-  // Market category-country pages (/markets/{country}/{category})
-  // Re-included with lower priority to support crawl discovery alongside
-  // internal links from country hub pages.
-  const marketCategoryPages = locales.flatMap((locale) =>
-    tier1Countries.flatMap((country) =>
-      categories.map((category) => ({
-        url: `${BASE_URL}/${locale}/markets/${country.slug}/${category.slug}`,
-        lastModified: CATEGORY_MODIFIED[category.slug] ?? LAST_MODIFIED.markets,
-        changeFrequency: 'monthly' as const,
-        priority: 0.5,
-        alternates: langAlternates(`/markets/${country.slug}/${category.slug}`),
-      })),
-    ),
-  );
+  // /markets/{country}/{category} is deliberately absent: those 480 pages are
+  // noindex until they carry country-specific content. See the robots directive
+  // in markets/[country]/[category]/page.tsx.
 
   // Persona-country pages (/solutions/{persona}/{country}) for NGOs + Government
   const personaCountryPages = locales.flatMap((locale) =>
@@ -195,7 +184,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
     ...categoryPages,
     ...productPages,
     ...marketCountryPages,
-    ...marketCategoryPages,
     ...personaPages,
     ...personaCountryPages,
   ];

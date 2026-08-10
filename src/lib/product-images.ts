@@ -40,7 +40,6 @@ export function getCategoryIcon(slug: string): LucideIcon {
   return categoryIconMap[slug] ?? Package;
 }
 
-
 /**
  * Generate gradient background as fallback
  */

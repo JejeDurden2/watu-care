@@ -1,17 +1,14 @@
 import type { Metadata } from 'next';
-import { getTranslations } from 'next-intl/server';
+import { getTranslations, setRequestLocale } from 'next-intl/server';
 import { Container, Button } from '@/components/ui';
 import { Link } from '@/i18n/routing';
-import {
-  generateFAQSchema,
-  generateBreadcrumbSchema,
-  combineSchemas,
-} from '@/lib/schema';
+import { generateFAQSchema, generateBreadcrumbSchema, combineSchemas } from '@/lib/schema';
 import { BASE_URL } from '@/lib/constants';
 import { FAQAccordion } from './FAQAccordion';
 
 const FAQ_KEYS = [
   'moq',
+  'pricing',
   'delivery',
   'regions',
   'certifications',
@@ -25,9 +22,7 @@ interface FAQPageProps {
   }>;
 }
 
-export async function generateMetadata({
-  params,
-}: FAQPageProps): Promise<Metadata> {
+export async function generateMetadata({ params }: FAQPageProps): Promise<Metadata> {
   const { locale } = await params;
   const t = await getTranslations({ locale, namespace: 'faq' });
 
@@ -71,10 +66,11 @@ export async function generateMetadata({
   };
 }
 
-export default async function FAQPage({
-  params,
-}: FAQPageProps): Promise<React.ReactElement> {
+export default async function FAQPage({ params }: FAQPageProps): Promise<React.ReactElement> {
   const { locale } = await params;
+
+  // Opt into static rendering — without this next-intl forces every page dynamic.
+  setRequestLocale(locale);
   const t = await getTranslations('faq');
   const tNav = await getTranslations('nav');
 

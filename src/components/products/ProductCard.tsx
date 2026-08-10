@@ -12,10 +12,7 @@ interface ProductCardProps {
   category: ProductCategory;
 }
 
-export function ProductCard({
-  product,
-  category,
-}: ProductCardProps): React.ReactElement {
+export function ProductCard({ product, category }: ProductCardProps): React.ReactElement {
   const t = useTranslations('products');
 
   return (
@@ -25,25 +22,18 @@ export function ProductCard({
         <AddToListButton product={product} category={category} variant="icon" />
       </div>
 
-      <Link
-        href={`/products/${category.slug}/${product.id}`}
-        className="flex h-full flex-col"
-      >
+      <Link href={`/products/${category.slug}/${product.id}`} className="flex h-full flex-col">
         {/* Header with image or placeholder */}
         <div className="relative h-36">
           {product.image ? (
-            <ProductImage
-              src={product.image}
-              alt={product.name}
-              className="h-full w-full"
-            />
+            <ProductImage src={product.image} alt={product.name} className="h-full w-full" />
           ) : (
             <div className="flex h-full flex-col items-center justify-center gap-2 bg-primary">
               <div className="flex h-10 w-10 items-center justify-center rounded-full bg-white/15">
                 <Camera className="h-5 w-5 text-white/80" strokeWidth={1.5} />
               </div>
               <span className="text-[11px] font-medium tracking-wide text-white/90">
-                Photos coming soon
+                {t('photosComingSoon')}
               </span>
             </div>
           )}
@@ -66,9 +56,7 @@ export function ProductCard({
         {/* Product Content */}
         <div className="flex flex-1 flex-col p-5">
           <h3 className="mb-2 font-semibold text-secondary transition-colors group-hover:text-primary">
-            {t.has(`items.${product.id}.name`)
-              ? t(`items.${product.id}.name`)
-              : product.name}
+            {t.has(`items.${product.id}.name`) ? t(`items.${product.id}.name`) : product.name}
           </h3>
 
           <p className="line-clamp-2 flex-grow text-sm leading-relaxed text-muted-foreground">

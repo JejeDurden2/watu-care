@@ -56,8 +56,7 @@ export const useQuoteStore = create<QuoteStore>()(
 
       setShowForm: (show) => set({ showForm: show }),
 
-      isInList: (productId) =>
-        get().items.some((i) => i.productId === productId),
+      isInList: (productId) => get().items.some((i) => i.productId === productId),
     }),
     {
       name: 'watu-care-product-list',

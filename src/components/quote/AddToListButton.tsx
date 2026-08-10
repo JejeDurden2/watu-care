@@ -100,11 +100,7 @@ export function AddToListButton({
   }
 
   return (
-    <Button
-      variant={inList ? 'secondary' : 'outline'}
-      onClick={handleClick}
-      className={className}
-    >
+    <Button variant={inList ? 'secondary' : 'outline'} onClick={handleClick} className={className}>
       {inList ? (
         <>
           <ListCheck className="mr-2 h-4 w-4" />

@@ -2,7 +2,17 @@
 
 import { useEffect, useRef, useState } from 'react';
 import * as Dialog from '@radix-ui/react-dialog';
-import { X, ArrowLeft, ShoppingBag, CheckCircle2, ListX, SkipForward, Clock, Mail, FileText } from 'lucide-react';
+import {
+  X,
+  ArrowLeft,
+  ShoppingBag,
+  CheckCircle2,
+  ListX,
+  SkipForward,
+  Clock,
+  Mail,
+  FileText,
+} from 'lucide-react';
 import { useTranslations } from 'next-intl';
 import { useQuoteStore } from '@/lib/quote-store';
 import { trackQuoteModalOpen, trackQuoteFormStart } from '@/lib/analytics';
@@ -97,12 +107,8 @@ export function QuoteModal(): React.ReactElement {
                   <div className="mx-auto mb-4 flex h-16 w-16 items-center justify-center rounded-full bg-muted">
                     <ListX className="h-8 w-8 text-muted-foreground" />
                   </div>
-                  <h3 className="mb-2 font-medium text-secondary">
-                    {t('emptyList')}
-                  </h3>
-                  <p className="mb-6 text-sm text-muted-foreground">
-                    {t('emptyListDesc')}
-                  </p>
+                  <h3 className="mb-2 font-medium text-secondary">{t('emptyList')}</h3>
+                  <p className="mb-6 text-sm text-muted-foreground">{t('emptyListDesc')}</p>
                   <div className="flex flex-col gap-3 sm:flex-row sm:justify-center">
                     <Dialog.Close asChild>
                       <Button variant="outline" asChild>
@@ -112,9 +118,7 @@ export function QuoteModal(): React.ReactElement {
                         </Link>
                       </Button>
                     </Dialog.Close>
-                    <Button onClick={handleRequestQuote}>
-                      {t('requestQuote')}
-                    </Button>
+                    <Button onClick={handleRequestQuote}>{t('requestQuote')}</Button>
                   </div>
                 </div>
               ) : (
@@ -172,8 +176,7 @@ export function QuoteModal(): React.ReactElement {
               <p className="mb-6 text-sm text-muted-foreground">
                 {items.length > 0
                   ? t('itemCount', { count: items.length })
-                  : t('form.noProductsSelected')
-                }
+                  : t('form.noProductsSelected')}
               </p>
 
               <QuoteForm onSuccess={handleFormSuccess} />
@@ -189,9 +192,7 @@ export function QuoteModal(): React.ReactElement {
               <Dialog.Title className="mb-2 text-xl font-bold text-secondary">
                 {t('success.title')}
               </Dialog.Title>
-              <p className="mb-6 text-muted-foreground">
-                {t('success.message')}
-              </p>
+              <p className="mb-6 text-muted-foreground">{t('success.message')}</p>
 
               {/* Next steps */}
               <div className="mb-6 space-y-3 text-left">
@@ -218,7 +219,9 @@ export function QuoteModal(): React.ReactElement {
                 </div>
               </div>
 
-              <Button onClick={handleCloseSuccess} className="w-full">{t('success.close')}</Button>
+              <Button onClick={handleCloseSuccess} className="w-full">
+                {t('success.close')}
+              </Button>
             </div>
           )}
         </Dialog.Content>

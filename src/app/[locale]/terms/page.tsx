@@ -1,5 +1,5 @@
 import type { Metadata } from 'next';
-import { getTranslations } from 'next-intl/server';
+import { getTranslations, setRequestLocale } from 'next-intl/server';
 import { Container } from '@/components/ui';
 import { generateBreadcrumbSchema } from '@/lib/schema';
 import { BASE_URL } from '@/lib/constants';
@@ -18,9 +18,7 @@ const sectionKeys = [
   'contact',
 ] as const;
 
-export async function generateMetadata({
-  params,
-}: TermsPageProps): Promise<Metadata> {
+export async function generateMetadata({ params }: TermsPageProps): Promise<Metadata> {
   const { locale } = await params;
   const t = await getTranslations({ locale, namespace: 'terms' });
 
@@ -38,10 +36,11 @@ export async function generateMetadata({
   };
 }
 
-export default async function TermsPage({
-  params,
-}: TermsPageProps): Promise<React.ReactElement> {
+export default async function TermsPage({ params }: TermsPageProps): Promise<React.ReactElement> {
   const { locale } = await params;
+
+  // Opt into static rendering — without this next-intl forces every page dynamic.
+  setRequestLocale(locale);
   const t = await getTranslations('terms');
   const tNav = await getTranslations('nav');
 
@@ -58,12 +57,8 @@ export default async function TermsPage({
       />
       <Container>
         <div className="mx-auto max-w-3xl">
-          <h1 className="mb-2 text-3xl font-bold text-secondary">
-            {t('title')}
-          </h1>
-          <p className="mb-8 text-sm text-muted-foreground">
-            {t('lastUpdated')}
-          </p>
+          <h1 className="mb-2 text-3xl font-bold text-secondary">{t('title')}</h1>
+          <p className="mb-8 text-sm text-muted-foreground">{t('lastUpdated')}</p>
           <p className="mb-8 text-foreground/80">{t('intro')}</p>
 
           <div className="space-y-8">
@@ -72,9 +67,7 @@ export default async function TermsPage({
                 <h2 className="mb-3 text-xl font-semibold text-secondary">
                   {t(`sections.${key}.title`)}
                 </h2>
-                <p className="leading-relaxed text-foreground/80">
-                  {t(`sections.${key}.content`)}
-                </p>
+                <p className="leading-relaxed text-foreground/80">{t(`sections.${key}.content`)}</p>
               </section>
             ))}
           </div>

@@ -9,7 +9,11 @@ interface QuoteModalButtonProps extends Omit<ButtonProps, 'onClick'> {
   analyticsLocation?: string;
 }
 
-export function QuoteModalButton({ children, analyticsLocation, ...props }: QuoteModalButtonProps): React.ReactElement {
+export function QuoteModalButton({
+  children,
+  analyticsLocation,
+  ...props
+}: QuoteModalButtonProps): React.ReactElement {
   const openModal = useQuoteStore((state) => state.openModal);
 
   const handleClick = (): void => {

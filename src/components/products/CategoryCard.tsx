@@ -11,10 +11,7 @@ interface CategoryCardProps {
   locale: string;
 }
 
-export function CategoryCard({
-  category,
-  locale,
-}: CategoryCardProps): React.ReactElement {
+export function CategoryCard({ category, locale }: CategoryCardProps): React.ReactElement {
   const t = useTranslations('products');
   const Icon = getCategoryIcon(category.iconSlug);
   const imageUrl = category.image || undefined;
@@ -34,11 +31,7 @@ export function CategoryCard({
     >
       <div className="flex h-full flex-col">
         {/* Category Image */}
-        <ProductImage
-          src={imageUrl}
-          alt={title}
-          className="h-48 w-full"
-        />
+        <ProductImage src={imageUrl} alt={title} className="h-48 w-full" />
 
         {/* Category Content */}
         <div className="flex flex-1 flex-col p-6">
@@ -55,9 +48,7 @@ export function CategoryCard({
           </h2>
 
           {/* Category Description */}
-          <p className="mb-4 flex-grow text-sm text-foreground/70">
-            {description}
-          </p>
+          <p className="mb-4 flex-grow text-sm text-foreground/70">{description}</p>
 
           {/* Product Count */}
           <div className="text-sm font-medium text-primary">

@@ -1,6 +1,6 @@
 import type { Metadata } from 'next';
 import { notFound } from 'next/navigation';
-import { getTranslations } from 'next-intl/server';
+import { getTranslations, setRequestLocale } from 'next-intl/server';
 import {
   Building2,
   Stethoscope,
@@ -26,6 +26,7 @@ import {
   combineSchemas,
 } from '@/lib/schema';
 import { FAQAccordion } from '@/app/[locale]/faq/FAQAccordion';
+import { notFoundTitle } from '@/lib/metadata';
 import { BASE_URL } from '@/lib/constants';
 
 /** Personas that have country-specific pages */
@@ -60,15 +61,16 @@ export async function generateStaticParams(): Promise<
   );
 }
 
-export async function generateMetadata({
-  params,
-}: PersonaCountryPageProps): Promise<Metadata> {
+export async function generateMetadata({ params }: PersonaCountryPageProps): Promise<Metadata> {
   const { locale, persona: personaSlug, country: countrySlug } = await params;
   const persona = getPersonaBySlug(personaSlug);
   const country = getCountryBySlug(countrySlug);
 
   if (!persona || !country || country.tier !== 1) {
-    return { title: 'Not Found' };
+    return {
+      title: await notFoundTitle(locale),
+      robots: { index: false, follow: false },
+    };
   }
 
   const t = await getTranslations({ locale, namespace: 'personas' });
@@ -127,6 +129,9 @@ export default async function PersonaCountryPage({
   params,
 }: PersonaCountryPageProps): Promise<React.ReactElement> {
   const { locale, persona: personaSlug, country: countrySlug } = await params;
+
+  // Opt into static rendering — without this next-intl forces every page dynamic.
+  setRequestLocale(locale);
   const persona = getPersonaBySlug(personaSlug);
   const country = getCountryBySlug(countrySlug);
 
@@ -151,21 +156,27 @@ export default async function PersonaCountryPage({
     ? tMarkets(`countryData.${countrySlug}.healthcareContext`)
     : country.healthcareContext;
 
-  const marketHighlights: string[] | undefined = tMarkets.has(`countryData.${countrySlug}.marketHighlights`)
+  const marketHighlights: string[] | undefined = tMarkets.has(
+    `countryData.${countrySlug}.marketHighlights`,
+  )
     ? (tMarkets.raw(`countryData.${countrySlug}.marketHighlights`) as string[])
     : country.marketHighlights;
 
-  const keyFacilities: string[] | undefined = tMarkets.has(`countryData.${countrySlug}.keyFacilities`)
+  const keyFacilities: string[] | undefined = tMarkets.has(
+    `countryData.${countrySlug}.keyFacilities`,
+  )
     ? (tMarkets.raw(`countryData.${countrySlug}.keyFacilities`) as string[])
     : country.keyFacilities;
 
   // Reuse persona pain points and how-we-help
-  const painPointItems = t.raw(
-    `${personaSlug}.painPoints.items`,
-  ) as Array<{ title: string; description: string }>;
-  const howWeHelpItems = t.raw(
-    `${personaSlug}.howWeHelp.items`,
-  ) as Array<{ title: string; description: string }>;
+  const painPointItems = t.raw(`${personaSlug}.painPoints.items`) as Array<{
+    title: string;
+    description: string;
+  }>;
+  const howWeHelpItems = t.raw(`${personaSlug}.howWeHelp.items`) as Array<{
+    title: string;
+    description: string;
+  }>;
 
   // Resolve recommended categories
   const recommendedCategories = persona.recommendedCategories
@@ -174,9 +185,7 @@ export default async function PersonaCountryPage({
 
   // FAQ (reuse persona FAQ if exists)
   const faqKey = `${personaSlug}.faq`;
-  const rawFaq = t.has(faqKey)
-    ? (t.raw(faqKey) as Array<{ q: string; a: string }>)
-    : [];
+  const rawFaq = t.has(faqKey) ? (t.raw(faqKey) as Array<{ q: string; a: string }>) : [];
   const faqItems = rawFaq.map((item) => ({
     question: item.q,
     answer: item.a,
@@ -233,7 +242,7 @@ export default async function PersonaCountryPage({
 
           <div className="mb-6 flex items-center gap-3">
             <div className="h-px w-12 bg-accent" />
-            <span className="font-body text-xs font-semibold uppercase tracking-[0.18em] text-accent">
+            <span className="font-body text-xs font-semibold uppercase tracking-[0.18em] text-accent-light">
               {t(`${personaSlug}.hero.eyebrow`)}
             </span>
           </div>
@@ -254,8 +263,7 @@ export default async function PersonaCountryPage({
               </div>
 
               <h1 className="font-display text-4xl font-bold tracking-tighter text-white md:text-5xl lg:text-6xl">
-                {personaTitle}{' '}
-                <span className="text-accent">{countryName}</span>
+                {personaTitle} <span className="text-accent-light">{countryName}</span>
               </h1>
               <p className="mt-4 max-w-2xl font-body text-lg leading-relaxed text-white/70">
                 {t('countryPage.heroSubtitle', {
@@ -328,10 +336,7 @@ export default async function PersonaCountryPage({
       </section>
 
       {/* How We Help */}
-      <section
-        className="section-dark relative overflow-hidden py-20 lg:py-28"
-        data-animate
-      >
+      <section className="section-dark relative overflow-hidden py-20 lg:py-28" data-animate>
         <div className="pointer-events-none absolute inset-0">
           <div className="pattern-dots-light absolute inset-0" />
           <div className="absolute -bottom-10 left-0 h-[350px] w-[350px] rounded-full bg-accent/8 blur-[120px]" />
@@ -431,16 +436,11 @@ export default async function PersonaCountryPage({
               {t(`${personaSlug}.cta.subtitle`)}
             </p>
             <div className="mt-8 flex flex-col justify-center gap-4 sm:flex-row">
-              <QuoteModalButton
-                size="lg"
-                analyticsLocation="persona_country_cta"
-              >
+              <QuoteModalButton size="lg" analyticsLocation="persona_country_cta">
                 {t(`${personaSlug}.cta.primary`)}
               </QuoteModalButton>
               <Button size="lg" variant="outline" asChild>
-                <Link href="/products">
-                  {t(`${personaSlug}.cta.secondary`)}
-                </Link>
+                <Link href="/products">{t(`${personaSlug}.cta.secondary`)}</Link>
               </Button>
             </div>
           </div>

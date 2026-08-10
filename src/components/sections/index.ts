@@ -1,5 +1,4 @@
 export { Hero } from './Hero';
-export { HeroGraphic } from './HeroGraphic';
 export { HeroTrustMarquee } from './HeroTrustMarquee';
 export { PseoHeroBackground } from './PseoHeroBackground';
 export { PseoHeroPulse } from './PseoHeroPulse';

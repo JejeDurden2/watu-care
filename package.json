@@ -16,7 +16,7 @@
     "prepare": "husky",
     "optimize:images": "node scripts/optimize-images.mjs",
     "normalize:paths": "node scripts/normalize-paths.mjs",
-    "generate:blur-placeholders": "node scripts/generate-blur-placeholders.mjs"
+    "shrink:images": "node scripts/shrink-images.mjs"
   },
   "dependencies": {
     "@radix-ui/react-dialog": "^1.1.15",

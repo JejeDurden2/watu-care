@@ -74,21 +74,18 @@ export function Header(): React.ReactElement {
         className={cn(
           'sticky top-0 z-50 header-glass header-smart',
           isScrolled && 'header-glass-scrolled',
-          isSmartHidden && 'header-smart-hidden lg:transform-none'
+          isSmartHidden && 'header-smart-hidden lg:transform-none',
         )}
       >
         <Container>
           <nav
             className={cn(
               'flex items-center justify-between transition-[height] duration-300 ease-out',
-              isScrolled ? 'h-14 lg:h-16' : 'h-16 lg:h-20'
+              isScrolled ? 'h-14 lg:h-16' : 'h-16 lg:h-20',
             )}
           >
             {/* Logo */}
-            <Link
-              href="/"
-              className="relative z-50 flex items-center gap-2 rounded-lg"
-            >
+            <Link href="/" className="relative z-50 flex items-center gap-2 rounded-lg">
               <Image
                 src="/logo.png"
                 alt="Watu Care"
@@ -96,7 +93,7 @@ export function Header(): React.ReactElement {
                 height={80}
                 className={cn(
                   'h-16 w-auto drop-shadow-sm header-logo md:h-20',
-                  isScrolled && 'header-logo-scrolled'
+                  isScrolled && 'header-logo-scrolled',
                 )}
                 style={{ width: 'auto' }}
                 priority

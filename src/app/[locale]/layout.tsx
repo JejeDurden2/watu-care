@@ -2,7 +2,7 @@ import type { Metadata } from 'next';
 import Script from 'next/script';
 import { Nunito, IBM_Plex_Sans } from 'next/font/google';
 import { NextIntlClientProvider } from 'next-intl';
-import { getMessages, getTranslations } from 'next-intl/server';
+import { getMessages, getTranslations, setRequestLocale } from 'next-intl/server';
 import { notFound } from 'next/navigation';
 import { routing } from '@/i18n/routing';
 import { locales, type Locale } from '@/i18n/config';
@@ -11,11 +11,7 @@ import { QuoteProvider } from '@/components/providers/QuoteProvider';
 import { ScrollAnimations } from '@/components/providers/ScrollAnimations';
 import { QuoteModal } from '@/components/quote';
 import { FloatingWhatsApp } from '@/components/ui/FloatingWhatsApp';
-import {
-  generateOrganizationSchema,
-  generateWebSiteSchema,
-  combineSchemas,
-} from '@/lib/schema';
+import { generateOrganizationSchema, generateWebSiteSchema, combineSchemas } from '@/lib/schema';
 import { BASE_URL } from '@/lib/constants';
 
 const nunito = Nunito({
@@ -115,21 +111,44 @@ export default async function LocaleLayout({
 }: Props): Promise<React.ReactElement> {
   const { locale } = await params;
 
+  // Opt into static rendering — without this next-intl forces every page dynamic.
+  setRequestLocale(locale);
+
   if (!routing.locales.includes(locale as Locale)) {
     notFound();
   }
 
-  const messages = await getMessages();
+  const allMessages = await getMessages();
   const t = await getTranslations({ locale, namespace: 'nav' });
 
-  // Generate JSON-LD structured data using @graph for cleaner implementation
-  const globalSchema = combineSchemas(
-    generateOrganizationSchema(),
-    generateWebSiteSchema(),
+  // Only the namespaces reached by a `use client` component are shipped to the
+  // browser. Handing NextIntlClientProvider the whole catalogue put ~80 KB of
+  // JSON in the RSC payload of every page, most of it (markets, personas,
+  // about, legal) rendered server-side and never read on the client.
+  const clientNamespaces = [
+    'contact',
+    'errors',
+    'faq',
+    'hero',
+    'nav',
+    'products',
+    'quote',
+    'search',
+  ] as const;
+  const messages = Object.fromEntries(
+    clientNamespaces.filter((ns) => ns in allMessages).map((ns) => [ns, allMessages[ns]]),
   );
 
+  // Generate JSON-LD structured data using @graph for cleaner implementation
+  const globalSchema = combineSchemas(generateOrganizationSchema(), generateWebSiteSchema());
+
   return (
-    <html lang={locale} className={`${nunito.variable} ${ibmPlexSans.variable}`} suppressHydrationWarning data-scroll-behavior="smooth">
+    <html
+      lang={locale}
+      className={`${nunito.variable} ${ibmPlexSans.variable}`}
+      suppressHydrationWarning
+      data-scroll-behavior="smooth"
+    >
       {/* Google Tag Manager */}
       <Script id="gtm" strategy="afterInteractive">
         {`(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':

@@ -78,7 +78,10 @@ export async function MarketsServed(): Promise<React.ReactElement> {
                             </span>
                           </span>
                         </span>
-                        <ArrowRight className="h-4 w-4 shrink-0 text-muted-foreground transition-transform duration-300 group-hover:translate-x-1 group-hover:text-primary" aria-hidden="true" />
+                        <ArrowRight
+                          className="h-4 w-4 shrink-0 text-muted-foreground transition-transform duration-300 group-hover:translate-x-1 group-hover:text-primary"
+                          aria-hidden="true"
+                        />
                       </Link>
                     </li>
                   ))}

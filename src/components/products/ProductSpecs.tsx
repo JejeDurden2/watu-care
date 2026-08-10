@@ -29,9 +29,7 @@ export function ProductSpecs({
     <div className={`space-y-6 ${className}`}>
       {/* Specifications */}
       <div>
-        <h3 className="mb-4 text-lg font-semibold text-secondary">
-          {t('specifications')}
-        </h3>
+        <h3 className="mb-4 text-lg font-semibold text-secondary">{t('specifications')}</h3>
         <ul className="space-y-2">
           {translatedSpecs.map((spec, index) => (
             <li key={index} className="flex items-start gap-3">
@@ -45,9 +43,7 @@ export function ProductSpecs({
       {/* Sizes */}
       {sizes && sizes.length > 0 && (
         <div>
-          <h3 className="mb-4 text-lg font-semibold text-secondary">
-            {t('availableSizes')}
-          </h3>
+          <h3 className="mb-4 text-lg font-semibold text-secondary">{t('availableSizes')}</h3>
           <div className="flex flex-wrap gap-2">
             {sizes.map((size, index) => (
               <span
@@ -64,9 +60,7 @@ export function ProductSpecs({
       {/* Materials */}
       {materials && materials.length > 0 && (
         <div>
-          <h3 className="mb-4 text-lg font-semibold text-secondary">
-            {t('materials')}
-          </h3>
+          <h3 className="mb-4 text-lg font-semibold text-secondary">{t('materials')}</h3>
           <ul className="space-y-2">
             {materials.map((material, index) => (
               <li key={index} className="flex items-start gap-3">

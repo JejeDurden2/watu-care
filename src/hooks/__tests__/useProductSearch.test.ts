@@ -136,9 +136,7 @@ describe('useProductSearch', () => {
     // Name matches should come first
     const results = result.current.results;
     if (results.length > 1) {
-      const firstHasNameMatch = results[0].translatedName
-        .toLowerCase()
-        .includes('gloves');
+      const firstHasNameMatch = results[0].translatedName.toLowerCase().includes('gloves');
       expect(firstHasNameMatch).toBe(true);
     }
   });
@@ -188,9 +186,7 @@ describe('useProductSearch', () => {
 
     expect(result.current.results.length).toBeGreaterThan(0);
     expect(
-      result.current.results.some((r) =>
-        r.translatedName.toLowerCase().includes('gants'),
-      ),
+      result.current.results.some((r) => r.translatedName.toLowerCase().includes('gants')),
     ).toBe(true);
   });
 

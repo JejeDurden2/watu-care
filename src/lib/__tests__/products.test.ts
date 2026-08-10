@@ -86,10 +86,7 @@ describe('getAllProducts', () => {
   it('returns all products flattened', () => {
     const products = getAllProducts();
     const categories = getAllCategories();
-    const expectedCount = categories.reduce(
-      (sum, cat) => sum + cat.products.length,
-      0,
-    );
+    const expectedCount = categories.reduce((sum, cat) => sum + cat.products.length, 0);
 
     expect(products.length).toBe(expectedCount);
   });

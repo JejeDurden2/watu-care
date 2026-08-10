@@ -6,8 +6,7 @@ export const productCategories: ProductCategory[] = [
     iconSlug: 'gloves',
     title: 'Gloves',
     slug: 'gloves',
-    description:
-      'Examination and surgical gloves in latex, nitrile, and vinyl.',
+    description: 'Examination and surgical gloves in latex, nitrile, and vinyl.',
     longDescription:
       'Full range of medical gloves including latex, nitrile, and vinyl options. Available in examination and sterile surgical grades, powdered or powder-free, for all clinical settings.',
     color: 'bg-accent/10 text-accent',
@@ -16,13 +15,9 @@ export const productCategories: ProductCategory[] = [
       {
         id: 'latex-exam-gloves-powdered',
         name: 'Powdered Latex Exam Gloves',
-        description:
-          'Ambidextrous latex gloves with cornstarch powder for easy donning.',
+        description: 'Ambidextrous latex gloves with cornstarch powder for easy donning.',
         image: '/products/gloves/latex-gloves.webp',
-        images: [
-          '/products/gloves/latex-gloves.webp',
-          '/products/gloves/latex-gloves-2.jpg',
-        ],
+        images: ['/products/gloves/latex-gloves.webp', '/products/gloves/latex-gloves-2.jpg'],
         specifications: [
           'Natural rubber latex',
           'Lightly powdered with cornstarch',
@@ -36,8 +31,7 @@ export const productCategories: ProductCategory[] = [
       {
         id: 'latex-exam-gloves-powder-free',
         name: 'Powder Free Latex Exam Gloves',
-        description:
-          'Powder-free latex gloves for users with powder sensitivity.',
+        description: 'Powder-free latex gloves for users with powder sensitivity.',
         image: '/products/gloves/latex-powder-free-gloves.webp',
         images: [
           '/products/gloves/latex-powder-free-gloves.webp',
@@ -58,8 +52,7 @@ export const productCategories: ProductCategory[] = [
       {
         id: 'surgical-gloves-latex-powder-free',
         name: 'Powder Free Latex Surgical Gloves Sterile',
-        description:
-          'Powder-free sterile latex surgical gloves with low protein content.',
+        description: 'Powder-free sterile latex surgical gloves with low protein content.',
         image: '/products/gloves/latex-powder-free-gloves-2.webp',
         specifications: [
           'Natural rubber latex',
@@ -114,8 +107,7 @@ export const productCategories: ProductCategory[] = [
       {
         id: 'vinyl-exam-gloves-powder-free',
         name: 'Powder-Free Vinyl Exam Gloves',
-        description:
-          'Economical vinyl gloves for low-risk, short-duration tasks. Latex-free.',
+        description: 'Economical vinyl gloves for low-risk, short-duration tasks. Latex-free.',
         image: '/products/gloves/vinyl-gloves.webp',
         images: [
           '/products/gloves/vinyl-gloves.webp',
@@ -135,8 +127,7 @@ export const productCategories: ProductCategory[] = [
       {
         id: 'surgical-gloves-nitrile-powder-free',
         name: 'Powder-Free Nitrile Surgical Gloves',
-        description:
-          'Latex-free nitrile surgical gloves with excellent chemical resistance.',
+        description: 'Latex-free nitrile surgical gloves with excellent chemical resistance.',
         image: '/products/gloves/dark-blue-nitrile-gloves.webp',
         images: [
           '/products/gloves/dark-blue-nitrile-gloves.webp',
@@ -182,8 +173,7 @@ export const productCategories: ProductCategory[] = [
     iconSlug: 'infection-prevention-ppe',
     title: 'Infection Prevention & PPE',
     slug: 'infection-prevention-ppe',
-    description:
-      'Gowns, caps, masks, and protective equipment for infection control.',
+    description: 'Gowns, caps, masks, and protective equipment for infection control.',
     longDescription:
       'Comprehensive personal protective equipment for healthcare workers. Includes surgical gowns, isolation gowns, caps, masks, face shields, and shoe covers to maintain sterile environments and prevent cross-contamination.',
     color: 'bg-primary/10 text-primary',
@@ -192,8 +182,7 @@ export const productCategories: ProductCategory[] = [
       {
         id: 'bouffant-cap',
         name: 'Bouffant Cap',
-        description:
-          'Non-woven disposable bouffant cap for hair coverage in clinical settings.',
+        description: 'Non-woven disposable bouffant cap for hair coverage in clinical settings.',
         image: '/products/infection-prevention-ppe/bouffant-cap.webp',
         images: [
           '/products/infection-prevention-ppe/bouffant-cap.webp',
@@ -295,8 +284,7 @@ export const productCategories: ProductCategory[] = [
       {
         id: 'shoe-cover',
         name: 'Shoe Cover',
-        description:
-          'Disposable shoe covers for contamination control in clinical areas.',
+        description: 'Disposable shoe covers for contamination control in clinical areas.',
         image: '/products/infection-prevention-ppe/shoe-cover.webp',
         images: [
           '/products/infection-prevention-ppe/shoe-cover.webp',
@@ -327,8 +315,7 @@ export const productCategories: ProductCategory[] = [
       {
         id: 'disposable-mask-3ply',
         name: '3 Ply Disposable Mask',
-        description:
-          'Disposable 3-layer face mask with ear loops for general protection.',
+        description: 'Disposable 3-layer face mask with ear loops for general protection.',
         image: '/products/infection-prevention-ppe/3-ply-mask.webp',
         images: [
           '/products/infection-prevention-ppe/3-ply-mask.webp',
@@ -367,8 +354,7 @@ export const productCategories: ProductCategory[] = [
     iconSlug: 'bodily-waste-management',
     title: 'Bodily Waste & Excreta Management',
     slug: 'bodily-waste-management',
-    description:
-      'Liners, bedpans, absorbent pads, and drainage systems for patient care.',
+    description: 'Liners, bedpans, absorbent pads, and drainage systems for patient care.',
     longDescription:
       'Hygienic waste management solutions for patient care, including absorbent liners for commodes and bedpans, super absorbent pads, disposable and reusable bedpans, and urine drainage systems.',
     color: 'bg-accent/10 text-accent',
@@ -379,7 +365,9 @@ export const productCategories: ProductCategory[] = [
         name: 'Commode Liner with Absorbent Pad',
         description:
           'Disposable commode liner with integrated absorbent pad for hygienic waste containment.',
-        image: '/products/bodily-waste-excreta-management/commode-liners.webp',
+        // No photo shot yet — the referenced file never existed, so every card
+        // fired a 404 before falling back. Omitting it takes the placeholder
+        // path directly.
         specifications: [
           'Leak-proof polyethylene liner',
           'Integrated super absorbent pad',
@@ -406,8 +394,7 @@ export const productCategories: ProductCategory[] = [
       {
         id: 'urinal-bag-absorbent',
         name: 'Urinal Bag with Absorbent Pad',
-        description:
-          'Disposable urinal bag with integrated absorbent pad for spill-free use.',
+        description: 'Disposable urinal bag with integrated absorbent pad for spill-free use.',
         image: '/products/bodily-waste-excreta-management/urinal-bag.jpg',
         specifications: [
           'Leak-proof construction',
@@ -421,8 +408,7 @@ export const productCategories: ProductCategory[] = [
       {
         id: 'vomit-bag-absorbent',
         name: 'Vomit Bag with Absorbent Pad',
-        description:
-          'Disposable vomit bag with absorbent lining for nausea management.',
+        description: 'Disposable vomit bag with absorbent lining for nausea management.',
         image: '/products/bodily-waste-excreta-management/disposable-vomit-bag.webp',
         images: [
           '/products/bodily-waste-excreta-management/disposable-vomit-bag.webp',
@@ -440,8 +426,7 @@ export const productCategories: ProductCategory[] = [
       {
         id: 'super-absorbent-pad',
         name: 'Super Absorbent Pad',
-        description:
-          'High-capacity absorbent pad for fluid management in clinical settings.',
+        description: 'High-capacity absorbent pad for fluid management in clinical settings.',
         image: '/products/bodily-waste-excreta-management/absorbent-pad.webp',
         images: [
           '/products/bodily-waste-excreta-management/absorbent-pad.webp',
@@ -514,8 +499,7 @@ export const productCategories: ProductCategory[] = [
     iconSlug: 'surgical',
     title: 'Surgical & Procedure Packs',
     slug: 'surgical',
-    description:
-      'Pre-assembled sterile packs and drapes for surgical procedures.',
+    description: 'Pre-assembled sterile packs and drapes for surgical procedures.',
     longDescription:
       'Complete range of sterile surgical packs including procedure-specific kits, drapes, and warming blankets. Available in standard and custom configurations to match your facility protocols.',
     color: 'bg-primary/10 text-primary',
@@ -603,9 +587,7 @@ export const productCategories: ProductCategory[] = [
         description:
           'Specialized sterile pack for ophthalmic surgical procedures with eye drape and fenestration.',
         image: '/products/surgical-procedure-packs/ophthalmology-pack.webp',
-        images: [
-          '/products/surgical-procedure-packs/ophthalmology-pack.webp',
-        ],
+        images: ['/products/surgical-procedure-packs/ophthalmology-pack.webp'],
         specifications: [
           '1PC Eye drape with pouch 75x75cm',
           '1PC Instrument table cover 150x200cm',
@@ -633,12 +615,9 @@ export const productCategories: ProductCategory[] = [
       {
         id: 'ent-pack',
         name: 'ENT Pack',
-        description:
-          'Ear, nose, and throat procedure pack with U split drape and head drape.',
+        description: 'Ear, nose, and throat procedure pack with U split drape and head drape.',
         image: '/products/surgical-procedure-packs/ent-pack.webp',
-        images: [
-          '/products/surgical-procedure-packs/ent-pack.webp',
-        ],
+        images: ['/products/surgical-procedure-packs/ent-pack.webp'],
         specifications: [
           '1PC Mayo stand cover 80x145cm',
           '1PC Instrument table cover 150x200cm',
@@ -670,8 +649,7 @@ export const productCategories: ProductCategory[] = [
       {
         id: 'skin-traction-kit',
         name: 'Skin Traction Kit',
-        description:
-          'Complete kit for applying skin traction to lower extremities.',
+        description: 'Complete kit for applying skin traction to lower extremities.',
         image: '/products/surgical-procedure-packs/skin-traction-kit.webp',
         specifications: [
           'Foam-backed traction strips',
@@ -702,8 +680,7 @@ export const productCategories: ProductCategory[] = [
     iconSlug: 'wound-care',
     title: 'Wound Care & Dressing',
     slug: 'wound-care',
-    description:
-      'Dressings, swabs, drainage systems, and wound closure products.',
+    description: 'Dressings, swabs, drainage systems, and wound closure products.',
     longDescription:
       'Comprehensive wound care solutions including hydrocolloid and foam dressings, gauze swabs, wound drainage systems, and adhesive bandages. Designed for optimal healing and infection prevention.',
     color: 'bg-accent/10 text-accent',
@@ -733,8 +710,7 @@ export const productCategories: ProductCategory[] = [
       {
         id: 'foam-dressing',
         name: 'Foam Dressing',
-        description:
-          'Absorbent polyurethane foam dressing for moderate exudate wounds.',
+        description: 'Absorbent polyurethane foam dressing for moderate exudate wounds.',
         image: '/products/wound-care-dressing/foam-dressing.webp',
         images: [
           '/products/wound-care-dressing/foam-dressing.webp',
@@ -751,8 +727,7 @@ export const productCategories: ProductCategory[] = [
       {
         id: 'gauze-swabs',
         name: 'Gauze Swabs',
-        description:
-          'Traditional cotton gauze swabs for wound care and cleaning.',
+        description: 'Traditional cotton gauze swabs for wound care and cleaning.',
         image: '/products/wound-care-dressing/gauze-swab-sterile.webp',
         images: [
           '/products/wound-care-dressing/gauze-swab-sterile.webp',
@@ -804,8 +779,7 @@ export const productCategories: ProductCategory[] = [
       {
         id: 'adhesive-wound-plaster',
         name: 'Adhesive Wound Plaster',
-        description:
-          'Ready-to-use adhesive plasters for minor cuts and abrasions.',
+        description: 'Ready-to-use adhesive plasters for minor cuts and abrasions.',
         image: '/products/wound-care-dressing/adhesive-wound-plaster.webp',
         specifications: [
           'Hypoallergenic adhesive',
@@ -813,12 +787,7 @@ export const productCategories: ProductCategory[] = [
           'Breathable fabric or plastic backing',
           'Various shapes (strips, knuckle, fingertip)',
         ],
-        sizes: [
-          '72x19mm strips',
-          '72x25mm strips',
-          'Knuckle plasters',
-          'Fingertip plasters',
-        ],
+        sizes: ['72x19mm strips', '72x25mm strips', 'Knuckle plasters', 'Fingertip plasters'],
       },
     ],
   },
@@ -827,8 +796,7 @@ export const productCategories: ProductCategory[] = [
     iconSlug: 'clinical-consumables',
     title: 'Clinical Consumables',
     slug: 'clinical-consumables',
-    description:
-      'Syringes, specimen containers, and everyday clinical supplies.',
+    description: 'Syringes, specimen containers, and everyday clinical supplies.',
     longDescription:
       'Essential clinical consumables for daily healthcare operations, including syringes of all types, specimen containers, blood collection needles, ECG accessories, and disposable instruments.',
     color: 'bg-primary/10 text-primary',
@@ -897,8 +865,7 @@ export const productCategories: ProductCategory[] = [
       {
         id: 'two-parts-syringe',
         name: 'Two Parts Syringe',
-        description:
-          'Economical two-part syringe (barrel and plunger) for general-purpose use.',
+        description: 'Economical two-part syringe (barrel and plunger) for general-purpose use.',
         image: '/products/clinical-consumables/two-parts-syringe.jpg',
         images: [
           '/products/clinical-consumables/two-parts-syringe.jpg',
@@ -938,8 +905,7 @@ export const productCategories: ProductCategory[] = [
       {
         id: 'medicine-cup',
         name: 'Medicine Cup',
-        description:
-          'Graduated disposable medicine cup for accurate oral medication dosing.',
+        description: 'Graduated disposable medicine cup for accurate oral medication dosing.',
         image: '/products/clinical-consumables/medicine-cup.png',
         images: [
           '/products/clinical-consumables/medicine-cup.png',
@@ -956,8 +922,7 @@ export const productCategories: ProductCategory[] = [
       {
         id: 'tongue-depressor',
         name: 'Tongue Depressor',
-        description:
-          'Smooth wooden tongue depressor for oral examination. Individually wrapped.',
+        description: 'Smooth wooden tongue depressor for oral examination. Individually wrapped.',
         image: '/products/clinical-consumables/tongue-depressor.webp',
         specifications: [
           'Smooth birch wood',
@@ -1043,8 +1008,7 @@ export const productCategories: ProductCategory[] = [
       {
         id: 'vacutainer-edta-tube',
         name: 'Vacutainer EDTA Tube',
-        description:
-          'EDTA anticoagulant vacuum blood collection tube for hematology testing.',
+        description: 'EDTA anticoagulant vacuum blood collection tube for hematology testing.',
         image: '/products/clinical-consumables/vacutainer-edta-tube.webp',
         images: [
           '/products/clinical-consumables/vacutainer-edta-tube.webp',
@@ -1062,8 +1026,7 @@ export const productCategories: ProductCategory[] = [
       {
         id: 'vacutainer-citrate-tube',
         name: 'Vacutainer Citrate Tube',
-        description:
-          'Sodium citrate vacuum blood collection tube for coagulation testing.',
+        description: 'Sodium citrate vacuum blood collection tube for coagulation testing.',
         image: '/products/clinical-consumables/vacutainer-citrate-tube.webp',
         images: [
           '/products/clinical-consumables/vacutainer-citrate-tube.webp',
@@ -1143,8 +1106,7 @@ export const productCategories: ProductCategory[] = [
     iconSlug: 'vascular-access-catheters',
     title: 'Vascular Access & Catheters',
     slug: 'vascular-access-catheters',
-    description:
-      'Central venous catheters, hemodialysis catheters, and Foley catheters.',
+    description: 'Central venous catheters, hemodialysis catheters, and Foley catheters.',
     longDescription:
       'Advanced vascular access products including central venous catheters with anti-infection coating, hemodialysis catheters, and Foley urinary catheters. Designed for patient safety and reduced infection risk.',
     color: 'bg-accent/20 text-accent-foreground',
@@ -1213,11 +1175,7 @@ export const productCategories: ProductCategory[] = [
           'Precurved and straight options',
           'Antimicrobial coating customizable',
         ],
-        sizes: [
-          'Single Lumen (8F)',
-          'Double Lumen (6.5F-12F)',
-          'Triple Lumen (11.5F-12F)',
-        ],
+        sizes: ['Single Lumen (8F)', 'Double Lumen (6.5F-12F)', 'Triple Lumen (11.5F-12F)'],
       },
       {
         id: 'foley-catheter',
@@ -1269,8 +1227,7 @@ export const productCategories: ProductCategory[] = [
     iconSlug: 'airway-respiratory',
     title: 'Airway & Respiratory',
     slug: 'airway-respiratory',
-    description:
-      'Endotracheal tubes, breathing circuits, masks, and respiratory equipment.',
+    description: 'Endotracheal tubes, breathing circuits, masks, and respiratory equipment.',
     longDescription:
       'Full selection of airway management and respiratory products including endotracheal tubes, suction catheters, breathing circuits, nebulizer masks, stethoscopes, and oxygen masks. Multiple sizes for pediatric to adult patients.',
     color: 'bg-secondary/10 text-secondary',
@@ -1388,8 +1345,7 @@ export const productCategories: ProductCategory[] = [
     iconSlug: 'surgical-instruments-sutures',
     title: 'Surgical Instruments & Sutures',
     slug: 'surgical-instruments-sutures',
-    description:
-      'Surgical blades, sutures, and electrosurgical instruments.',
+    description: 'Surgical blades, sutures, and electrosurgical instruments.',
     longDescription:
       'Precision surgical instruments and sutures for operative procedures. Includes disposable surgical blades, absorbable and non-absorbable sutures, and electrosurgical pencils.',
     color: 'bg-primary/10 text-primary',
@@ -1420,9 +1376,7 @@ export const productCategories: ProductCategory[] = [
         description:
           'Sterile absorbable surgical sutures with attached needle. Various materials and absorption profiles available.',
         image: '/products/surgical-instruments-sutures/resorbable-suture.webp',
-        images: [
-          '/products/surgical-instruments-sutures/resorbable-suture.webp',
-        ],
+        images: ['/products/surgical-instruments-sutures/resorbable-suture.webp'],
         specifications: [
           'Materials: Polyglycolic acid (PGA), Polyglactin 910 (Vicryl-type), Poliglecaprone (Monocryl-type)',
           'Braided or monofilament construction',
@@ -1438,9 +1392,7 @@ export const productCategories: ProductCategory[] = [
         description:
           'Single-use electrosurgical pencil (ESU) for cutting and coagulation during surgical procedures.',
         image: '/products/surgical-instruments-sutures/disposable-electrosurgical-pen.webp',
-        images: [
-          '/products/surgical-instruments-sutures/disposable-electrosurgical-pen.webp',
-        ],
+        images: ['/products/surgical-instruments-sutures/disposable-electrosurgical-pen.webp'],
         specifications: [
           'Single-use, sterile',
           'Standard 3-pin connector (Valleylab-type)',
@@ -1456,9 +1408,7 @@ export const productCategories: ProductCategory[] = [
         description:
           'Sterile non-absorbable surgical sutures for permanent wound closure and tissue approximation.',
         image: '/products/surgical-instruments-sutures/non-resorbable-suture.webp',
-        images: [
-          '/products/surgical-instruments-sutures/non-resorbable-suture.webp',
-        ],
+        images: ['/products/surgical-instruments-sutures/non-resorbable-suture.webp'],
         specifications: [
           'Materials: Nylon (Polyamide), Polypropylene, Silk',
           'Monofilament or braided construction',
@@ -1475,8 +1425,7 @@ export const productCategories: ProductCategory[] = [
     iconSlug: 'patient-care-equipment',
     title: 'Patient Care & Basic Equipment',
     slug: 'patient-care-equipment',
-    description:
-      'Thermometers, blood pressure monitors, wheelchairs, and mobility aids.',
+    description: 'Thermometers, blood pressure monitors, wheelchairs, and mobility aids.',
     longDescription:
       'Essential patient care and basic medical equipment including diagnostic devices, monitoring instruments, wheelchairs, and mobility aids for healthcare facilities.',
     color: 'bg-accent/10 text-accent',
@@ -1485,8 +1434,7 @@ export const productCategories: ProductCategory[] = [
       {
         id: 'digital-thermometer',
         name: 'Digital Thermometer',
-        description:
-          'Fast, accurate digital thermometer for oral, axillary, or rectal use.',
+        description: 'Fast, accurate digital thermometer for oral, axillary, or rectal use.',
         image: '/products/patient-care-basic-equipment/digital-thermometer.webp',
         specifications: [
           'LCD display',
@@ -1538,8 +1486,7 @@ export const productCategories: ProductCategory[] = [
       {
         id: 'crutches',
         name: 'Crutches',
-        description:
-          'Adjustable aluminium crutches for temporary or long-term mobility support.',
+        description: 'Adjustable aluminium crutches for temporary or long-term mobility support.',
         image: '/products/patient-care-basic-equipment/crutches.webp',
         images: [
           '/products/patient-care-basic-equipment/crutches.webp',
@@ -1581,9 +1528,7 @@ export const productCategories: ProductCategory[] = [
         description:
           'Battery-powered electric wheelchair with joystick control for independent mobility.',
         image: '/products/patient-care-basic-equipment/electric-wheelchair.webp',
-        images: [
-          '/products/patient-care-basic-equipment/electric-wheelchair.webp',
-        ],
+        images: ['/products/patient-care-basic-equipment/electric-wheelchair.webp'],
         specifications: [
           'Electric motor with joystick control',
           'Rechargeable battery (20-25km range)',
@@ -1599,9 +1544,7 @@ export const productCategories: ProductCategory[] = [
         description:
           'Standard manual wheelchair with steel frame and folding design for daily use.',
         image: '/products/patient-care-basic-equipment/manual-wheelchair.webp',
-        images: [
-          '/products/patient-care-basic-equipment/manual-wheelchair.webp',
-        ],
+        images: ['/products/patient-care-basic-equipment/manual-wheelchair.webp'],
         specifications: [
           'Steel frame construction',
           'Foldable for transport and storage',
@@ -1617,11 +1560,8 @@ export const productCategories: ProductCategory[] = [
         name: 'Reclining Commode Wheelchair',
         description:
           'Multi-function reclining wheelchair with built-in commode for patients with limited mobility.',
-        image:
-          '/products/patient-care-basic-equipment/reclining-commode-wheelchair.webp',
-        images: [
-          '/products/patient-care-basic-equipment/reclining-commode-wheelchair.webp',
-        ],
+        image: '/products/patient-care-basic-equipment/reclining-commode-wheelchair.webp',
+        images: ['/products/patient-care-basic-equipment/reclining-commode-wheelchair.webp'],
         specifications: [
           'Reclining backrest (adjustable angle)',
           'Built-in commode with removable bucket',
@@ -1636,11 +1576,8 @@ export const productCategories: ProductCategory[] = [
         name: 'Reclining Manual Wheelchair',
         description:
           'Manual wheelchair with reclining backrest for extended comfort and patient positioning.',
-        image:
-          '/products/patient-care-basic-equipment/reclining-manual-wheelchair.webp',
-        images: [
-          '/products/patient-care-basic-equipment/reclining-manual-wheelchair.webp',
-        ],
+        image: '/products/patient-care-basic-equipment/reclining-manual-wheelchair.webp',
+        images: ['/products/patient-care-basic-equipment/reclining-manual-wheelchair.webp'],
         specifications: [
           'Reclining backrest (up to 180°)',
           'Steel or aluminium frame',

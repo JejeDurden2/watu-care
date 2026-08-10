@@ -1,9 +1,13 @@
 import type { Metadata } from 'next';
-import { getTranslations } from 'next-intl/server';
+import { getTranslations, setRequestLocale } from 'next-intl/server';
 import { Container, QuoteModalButton } from '@/components/ui';
 import { CategoryCard } from '@/components/products';
 import { getAllCategories, getTotalProductCount } from '@/lib/products';
-import { generateBreadcrumbSchema, generateMarketItemListSchema, combineSchemas } from '@/lib/schema';
+import {
+  generateBreadcrumbSchema,
+  generateMarketItemListSchema,
+  combineSchemas,
+} from '@/lib/schema';
 import { BASE_URL } from '@/lib/constants';
 
 interface ProductsPageProps {
@@ -12,9 +16,7 @@ interface ProductsPageProps {
   }>;
 }
 
-export async function generateMetadata({
-  params,
-}: ProductsPageProps): Promise<Metadata> {
+export async function generateMetadata({ params }: ProductsPageProps): Promise<Metadata> {
   const { locale } = await params;
   const t = await getTranslations({ locale, namespace: 'products' });
 
@@ -63,6 +65,9 @@ export default async function ProductsPage({
   params,
 }: ProductsPageProps): Promise<React.ReactElement> {
   const { locale } = await params;
+
+  // Opt into static rendering — without this next-intl forces every page dynamic.
+  setRequestLocale(locale);
   const t = await getTranslations('products');
   const tNav = await getTranslations('nav');
   const categories = getAllCategories();
@@ -113,7 +118,9 @@ export default async function ProductsPage({
             <p className="text-sm font-medium uppercase tracking-wider text-muted-foreground">
               {totalCount}+ products · {categories.length} categories
             </p>
-            <QuoteModalButton size="md" analyticsLocation="products_header">{tNav('requestQuote')}</QuoteModalButton>
+            <QuoteModalButton size="md" analyticsLocation="products_header">
+              {tNav('requestQuote')}
+            </QuoteModalButton>
           </div>
         </div>
 
@@ -128,10 +135,7 @@ export default async function ProductsPage({
               className="stagger-item"
               style={{ animationDelay: `${index * 70}ms` } as React.CSSProperties}
             >
-              <CategoryCard
-                category={category}
-                locale={locale}
-              />
+              <CategoryCard category={category} locale={locale} />
             </div>
           ))}
         </div>

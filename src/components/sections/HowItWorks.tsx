@@ -14,7 +14,11 @@ export async function HowItWorks(): Promise<React.ReactElement> {
   const t = await getTranslations('howItWorks');
 
   return (
-    <section id="how-it-works" className="overflow-hidden bg-background py-20 lg:py-28" data-animate>
+    <section
+      id="how-it-works"
+      className="overflow-hidden bg-background py-20 lg:py-28"
+      data-animate
+    >
       <Container>
         {/* Left-aligned header */}
         <div className="mb-14 max-w-xl lg:mb-16">

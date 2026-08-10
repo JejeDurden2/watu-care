@@ -1,5 +1,7 @@
 'use client';
 
+import { useTranslations } from 'next-intl';
+
 import { useState } from 'react';
 import Image from 'next/image';
 import { Camera } from 'lucide-react';
@@ -19,6 +21,7 @@ export function ProductImageGallery({
   className = '',
   priority = false,
 }: ProductImageGalleryProps): React.ReactElement {
+  const t = useTranslations('products');
   const [selectedIndex, setSelectedIndex] = useState(0);
   const [imageError, setImageError] = useState(false);
 
@@ -31,7 +34,7 @@ export function ProductImageGallery({
           <Camera className="h-7 w-7 text-white/80" strokeWidth={1.5} />
         </div>
         <span className="text-sm font-medium tracking-wide text-white/90">
-          Photos coming soon
+          {t('photosComingSoon')}
         </span>
       </div>
     );

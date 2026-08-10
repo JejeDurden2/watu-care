@@ -58,7 +58,7 @@ const nextConfig: NextConfig = {
               "img-src 'self' data: blob: https://www.googletagmanager.com https://www.google-analytics.com",
               "font-src 'self' data:",
               "connect-src 'self' https://www.google-analytics.com https://www.googletagmanager.com https://analytics.google.com https://region1.google-analytics.com",
-              "frame-src https://www.googletagmanager.com",
+              'frame-src https://www.googletagmanager.com',
               "frame-ancestors 'none'",
             ].join('; '),
           },

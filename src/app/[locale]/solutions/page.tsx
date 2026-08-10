@@ -1,13 +1,6 @@
 import type { Metadata } from 'next';
-import { getTranslations } from 'next-intl/server';
-import {
-  Building2,
-  Stethoscope,
-  Heart,
-  Pill,
-  Landmark,
-  ArrowRight,
-} from 'lucide-react';
+import { getTranslations, setRequestLocale } from 'next-intl/server';
+import { Building2, Stethoscope, Heart, Pill, Landmark, ArrowRight } from 'lucide-react';
 import type { LucideIcon } from 'lucide-react';
 import { Container } from '@/components/ui';
 import { Breadcrumb } from '@/components/products';
@@ -32,16 +25,12 @@ interface SolutionsPageProps {
   params: Promise<{ locale: string }>;
 }
 
-export async function generateStaticParams(): Promise<
-  Array<{ locale: string }>
-> {
+export async function generateStaticParams(): Promise<Array<{ locale: string }>> {
   const { locales } = await import('@/i18n/config');
   return locales.map((locale) => ({ locale }));
 }
 
-export async function generateMetadata({
-  params,
-}: SolutionsPageProps): Promise<Metadata> {
+export async function generateMetadata({ params }: SolutionsPageProps): Promise<Metadata> {
   const { locale } = await params;
   const t = await getTranslations({ locale, namespace: 'personas' });
 
@@ -88,6 +77,9 @@ export default async function SolutionsPage({
   params,
 }: SolutionsPageProps): Promise<React.ReactElement> {
   const { locale } = await params;
+
+  // Opt into static rendering — without this next-intl forces every page dynamic.
+  setRequestLocale(locale);
   const t = await getTranslations('personas');
   const tNav = await getTranslations('nav');
 
@@ -119,20 +111,13 @@ export default async function SolutionsPage({
       <section className="bg-gradient-to-br from-secondary via-secondary to-primary/20 py-16 lg:py-24">
         <Container>
           <Breadcrumb
-            items={[
-              { label: tNav('home'), href: '/' },
-              { label: t('breadcrumbLabel') },
-            ]}
+            items={[{ label: tNav('home'), href: '/' }, { label: t('breadcrumbLabel') }]}
             variant="light"
           />
           <div className="mt-8 max-w-2xl">
-            <h1 className="mb-4 text-4xl font-bold text-white md:text-5xl">
-              {t('index.title')}
-            </h1>
-            <p className="text-lg text-white/80">
-              {t('index.subtitle')}
-            </p>
-            <p className="mt-4 text-sm font-medium text-accent">
+            <h1 className="mb-4 text-4xl font-bold text-white md:text-5xl">{t('index.title')}</h1>
+            <p className="text-lg text-white/80">{t('index.subtitle')}</p>
+            <p className="mt-4 text-sm font-medium text-accent-light">
               {t('index.count', { count: personas.length })}
             </p>
           </div>
@@ -171,7 +156,10 @@ export default async function SolutionsPage({
                   </p>
                   <div className="mt-auto flex items-center gap-1 pt-4 text-sm font-medium text-primary">
                     {t('index.learnMore')}
-                    <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" aria-hidden="true" />
+                    <ArrowRight
+                      className="h-4 w-4 transition-transform group-hover:translate-x-1"
+                      aria-hidden="true"
+                    />
                   </div>
                 </Link>
               );

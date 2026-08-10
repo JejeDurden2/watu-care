@@ -31,15 +31,11 @@ export function PseoHealthcareContext({
             <h2 className="font-display text-3xl font-bold tracking-tighter text-secondary">
               {healthcareTitle}
             </h2>
-            <p className="mt-4 text-lg leading-relaxed text-foreground/80">
-              {healthcareContext}
-            </p>
+            <p className="mt-4 text-lg leading-relaxed text-foreground/80">{healthcareContext}</p>
 
             {highlights && highlights.length > 0 && highlightsTitle && (
               <div className="mt-8">
-                <h3 className="mb-4 font-semibold text-secondary">
-                  {highlightsTitle}
-                </h3>
+                <h3 className="mb-4 font-semibold text-secondary">{highlightsTitle}</h3>
                 <ul className="space-y-3">
                   {highlights.map((highlight) => (
                     <li key={highlight} className="flex items-start gap-3">
@@ -61,24 +57,17 @@ export function PseoHealthcareContext({
                 </h3>
               </div>
               {facilitiesSubtitle && (
-                <p className="mb-6 text-sm text-muted-foreground">
-                  {facilitiesSubtitle}
-                </p>
+                <p className="mb-6 text-sm text-muted-foreground">{facilitiesSubtitle}</p>
               )}
               <div className="grid grid-cols-2 gap-4">
                 {facilities.map((facility, index) => {
                   const FacilityIcon = FACILITY_ICONS[index % FACILITY_ICONS.length];
                   return (
-                    <div
-                      key={facility}
-                      className="rounded-xl border border-border bg-white p-5"
-                    >
+                    <div key={facility} className="rounded-xl border border-border bg-white p-5">
                       <div className="mb-3 flex h-9 w-9 items-center justify-center rounded-lg bg-primary/10">
                         <FacilityIcon className="h-4.5 w-4.5 text-primary" strokeWidth={1.5} />
                       </div>
-                      <p className="text-sm font-medium leading-snug text-secondary">
-                        {facility}
-                      </p>
+                      <p className="text-sm font-medium leading-snug text-secondary">{facility}</p>
                     </div>
                   );
                 })}

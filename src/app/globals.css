@@ -3,25 +3,30 @@
 @tailwind utilities;
 
 :root {
-  /* Watu Care Brand Colors */
-  --primary: 200 65% 55%;           /* Medical blue */
-  --primary-foreground: 0 0% 100%;  /* White */
+  /* Watu Care Brand Colors
+     Two tiers per hue: the base token carries text (buttons, links, icons on
+     light backgrounds) and is dark enough for WCAG AA; the -light token is for
+     text and graphics sitting on the navy sections, where the base would fail.
+     Contrast ratios below are measured against #ffffff / --secondary. */
+  --primary: 200 70% 38%; /* Medical blue — 4.9:1 with white */
+  --primary-foreground: 0 0% 100%; /* White */
 
-  --secondary: 206 50% 13%;         /* Dark navy */
+  --secondary: 206 50% 13%; /* Dark navy */
   --secondary-foreground: 0 0% 100%; /* White */
 
-  --accent: 175 50% 45%;            /* Teal green */
+  --accent: 175 55% 32%; /* Teal green — 4.8:1 with white */
 
-  --primary-light: 200 65% 70%;     /* Lighter primary for mesh gradients */
-  --accent-foreground: 0 0% 100%;   /* White */
+  --primary-light: 200 65% 70%; /* On navy: 8.9:1 — mesh gradients, dark-section text */
+  --accent-light: 175 55% 58%; /* On navy: 8.5:1 — dark-section text, hero pulse */
+  --accent-foreground: 0 0% 100%; /* White */
 
-  --background: 210 20% 98%;        /* Light gray-blue */
-  --foreground: 206 50% 13%;        /* Dark navy */
+  --background: 210 20% 98%; /* Light gray-blue */
+  --foreground: 206 50% 13%; /* Dark navy */
 
-  --muted: 210 20% 96%;             /* Muted background */
-  --muted-foreground: 206 20% 40%;  /* Muted text */
+  --muted: 210 20% 96%; /* Muted background */
+  --muted-foreground: 206 20% 40%; /* Muted text */
 
-  --border: 210 20% 90%;            /* Border color */
+  --border: 210 20% 90%; /* Border color */
 }
 
 @layer base {
@@ -32,11 +37,18 @@
   body {
     @apply bg-background text-foreground antialiased;
     font-family: var(--font-body), system-ui, sans-serif;
-    font-feature-settings: "rlig" 1, "calt" 1;
+    font-feature-settings:
+      'rlig' 1,
+      'calt' 1;
   }
 
   /* Enhanced Typography */
-  h1, h2, h3, h4, h5, h6 {
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
     font-family: var(--font-display), system-ui, sans-serif;
   }
 
@@ -55,13 +67,17 @@
     letter-spacing: -0.025em;
   }
 
-  h4, h5, h6 {
+  h4,
+  h5,
+  h6 {
     @apply text-secondary font-semibold tracking-tight;
     letter-spacing: -0.015em;
   }
 
   /* UI elements use body font (IBM Plex Sans) — display font is serif */
-  button, .nav-item, .ui-label {
+  button,
+  .nav-item,
+  .ui-label {
     font-family: var(--font-body), system-ui, sans-serif;
   }
 }
@@ -111,12 +127,20 @@
 
   /* Geometric Patterns */
   .pattern-dots {
-    background-image: radial-gradient(circle at 1px 1px, hsl(var(--primary) / 0.12) 1px, transparent 1px);
+    background-image: radial-gradient(
+      circle at 1px 1px,
+      hsl(var(--primary) / 0.12) 1px,
+      transparent 1px
+    );
     background-size: 32px 32px;
   }
 
   .pattern-dots-light {
-    background-image: radial-gradient(circle at 1px 1px, hsl(var(--primary) / 0.06) 1px, transparent 1px);
+    background-image: radial-gradient(
+      circle at 1px 1px,
+      hsl(var(--primary) / 0.06) 1px,
+      transparent 1px
+    );
     background-size: 40px 40px;
   }
 
@@ -138,8 +162,15 @@
   }
 
   /* Gradient backgrounds */
+  /* End stop kept at 16% so white/50 text still clears 4.5:1 on the lightest
+     corner of the gradient — at the previous 25% it dropped to 3.6:1. */
   .gradient-hero {
-    background: linear-gradient(135deg, hsl(var(--secondary)) 0%, hsl(206 50% 18%) 50%, hsl(200 65% 25%) 100%);
+    background: linear-gradient(
+      135deg,
+      hsl(var(--secondary)) 0%,
+      hsl(206 50% 15%) 50%,
+      hsl(200 65% 16%) 100%
+    );
   }
 
   .gradient-accent {
@@ -252,8 +283,9 @@
     height: 2px;
     background: currentColor;
     border-radius: 1px;
-    transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1),
-                opacity 0.2s ease;
+    transition:
+      transform 0.3s cubic-bezier(0.16, 1, 0.3, 1),
+      opacity 0.2s ease;
   }
 
   .hamburger-open .hamburger-bar:nth-child(1) {
@@ -287,7 +319,12 @@
     border-top: 1px solid transparent;
     background-image:
       linear-gradient(hsl(var(--secondary)), hsl(var(--secondary))),
-      linear-gradient(90deg, hsl(var(--primary) / 0.55) 0%, hsl(var(--accent) / 0.45) 40%, transparent 70%);
+      linear-gradient(
+        90deg,
+        hsl(var(--primary-light) / 0.55) 0%,
+        hsl(var(--accent-light) / 0.45) 40%,
+        transparent 70%
+      );
     background-origin: border-box;
     background-clip: padding-box, border-box;
   }
@@ -349,7 +386,8 @@ html {
 }
 
 @keyframes pulse-subtle {
-  0%, 100% {
+  0%,
+  100% {
     opacity: 1;
   }
   50% {
@@ -396,8 +434,12 @@ html {
 }
 
 @keyframes backdrop-fade-in {
-  0% { opacity: 0; }
-  100% { opacity: 1; }
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }
 
 .animate-backdrop-fade-in {
@@ -447,11 +489,21 @@ html {
 }
 
 /* Animation delays */
-.delay-100 { animation-delay: 100ms; }
-.delay-200 { animation-delay: 200ms; }
-.delay-300 { animation-delay: 300ms; }
-.delay-400 { animation-delay: 400ms; }
-.delay-500 { animation-delay: 500ms; }
+.delay-100 {
+  animation-delay: 100ms;
+}
+.delay-200 {
+  animation-delay: 200ms;
+}
+.delay-300 {
+  animation-delay: 300ms;
+}
+.delay-400 {
+  animation-delay: 400ms;
+}
+.delay-500 {
+  animation-delay: 500ms;
+}
 
 /* Staggered entrance animations */
 @keyframes fade-in-up-stagger {
@@ -471,15 +523,33 @@ html {
 }
 
 /* Stagger delay utilities */
-.stagger-delay-1 { animation-delay: 0ms; }
-.stagger-delay-2 { animation-delay: 100ms; }
-.stagger-delay-3 { animation-delay: 200ms; }
-.stagger-delay-4 { animation-delay: 300ms; }
-.stagger-delay-5 { animation-delay: 400ms; }
-.stagger-delay-6 { animation-delay: 500ms; }
-.stagger-delay-7 { animation-delay: 600ms; }
-.stagger-delay-8 { animation-delay: 700ms; }
-.stagger-delay-9 { animation-delay: 800ms; }
+.stagger-delay-1 {
+  animation-delay: 0ms;
+}
+.stagger-delay-2 {
+  animation-delay: 100ms;
+}
+.stagger-delay-3 {
+  animation-delay: 200ms;
+}
+.stagger-delay-4 {
+  animation-delay: 300ms;
+}
+.stagger-delay-5 {
+  animation-delay: 400ms;
+}
+.stagger-delay-6 {
+  animation-delay: 500ms;
+}
+.stagger-delay-7 {
+  animation-delay: 600ms;
+}
+.stagger-delay-8 {
+  animation-delay: 700ms;
+}
+.stagger-delay-9 {
+  animation-delay: 800ms;
+}
 
 /* Fallback: ensure content visible if CSS animations fail to fire */
 @supports not (animation-fill-mode: forwards) {
@@ -491,9 +561,15 @@ html {
 
 /* Button enhancements */
 @keyframes button-press {
-  0% { transform: scale(1); }
-  50% { transform: scale(0.96); }
-  100% { transform: scale(1); }
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(0.96);
+  }
+  100% {
+    transform: scale(1);
+  }
 }
 
 .button-enhanced {
@@ -521,7 +597,9 @@ html {
 
 .button-enhanced:hover {
   transform: translateY(-2px);
-  box-shadow: 0 8px 24px -8px rgba(0,0,0,0.2), 0 16px 48px -16px rgba(0,0,0,0.15);
+  box-shadow:
+    0 8px 24px -8px rgba(0, 0, 0, 0.2),
+    0 16px 48px -16px rgba(0, 0, 0, 0.15);
 }
 
 .button-press:active {
@@ -532,7 +610,9 @@ html {
 [data-animate] {
   opacity: 0;
   transform: translateY(28px);
-  transition: opacity 0.65s cubic-bezier(0.16, 1, 0.3, 1), transform 0.65s cubic-bezier(0.16, 1, 0.3, 1);
+  transition:
+    opacity 0.65s cubic-bezier(0.16, 1, 0.3, 1),
+    transform 0.65s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 [data-animate].is-visible {
@@ -540,9 +620,15 @@ html {
   transform: translateY(0);
 }
 
-[data-animate][data-animate-delay="100"] { transition-delay: 100ms; }
-[data-animate][data-animate-delay="200"] { transition-delay: 200ms; }
-[data-animate][data-animate-delay="300"] { transition-delay: 300ms; }
+[data-animate][data-animate-delay='100'] {
+  transition-delay: 100ms;
+}
+[data-animate][data-animate-delay='200'] {
+  transition-delay: 200ms;
+}
+[data-animate][data-animate-delay='300'] {
+  transition-delay: 300ms;
+}
 
 /* Hero redesign — accent line reveal (scaleX from left) */
 @keyframes reveal-line {
@@ -567,7 +653,8 @@ html {
 
 /* Hero redesign — hub node outer ring pulse */
 @keyframes hero-pulse-ring {
-  0%, 100% {
+  0%,
+  100% {
     transform: scale(1);
     opacity: 0.25;
   }
@@ -597,7 +684,8 @@ html {
 
 /* Hero redesign — background gradient mesh drift */
 @keyframes gradient-drift {
-  0%, 100% {
+  0%,
+  100% {
     background-position: 0% 50%;
   }
   25% {
@@ -642,8 +730,12 @@ html {
 
 /* Hero network — flowing dash animation for paths */
 @keyframes hero-net-flow {
-  0% { stroke-dashoffset: 0; }
-  100% { stroke-dashoffset: -40; }
+  0% {
+    stroke-dashoffset: 0;
+  }
+  100% {
+    stroke-dashoffset: -40;
+  }
 }
 
 .animate-hero-net-flow {
@@ -656,8 +748,13 @@ html {
 
 /* Hero network — slow float for badges and nodes */
 @keyframes hero-net-float {
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-6px); }
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-6px);
+  }
 }
 
 .animate-hero-net-float {
@@ -671,8 +768,12 @@ html {
 
 /* Hero network — orbital ring rotation */
 @keyframes hero-net-orbit {
-  0% { transform: rotate(0deg); }
-  100% { transform: rotate(360deg); }
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
 }
 
 .animate-hero-net-orbit {
@@ -682,32 +783,59 @@ html {
 
 /* Hero network — entrance: slide from left */
 @keyframes hero-net-enter-left {
-  0% { opacity: 0; transform: translateX(-30px); }
-  100% { opacity: 1; transform: translateX(0); }
+  0% {
+    opacity: 0;
+    transform: translateX(-30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
 }
 
 /* Hero network — entrance: slide from right */
 @keyframes hero-net-enter-right {
-  0% { opacity: 0; transform: translateX(30px); }
-  100% { opacity: 1; transform: translateX(0); }
+  0% {
+    opacity: 0;
+    transform: translateX(30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
 }
 
 /* Hero network — entrance: scale from center */
 @keyframes hero-net-enter-scale {
-  0% { opacity: 0; transform: scale(0.7); }
-  100% { opacity: 1; transform: scale(1); }
+  0% {
+    opacity: 0;
+    transform: scale(0.7);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
 }
 
 /* Hero network — entrance: fade in */
 @keyframes hero-net-enter-fade {
-  0% { opacity: 0; }
-  100% { opacity: 1; }
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }
 
 /* Hero network — node border breathing */
 @keyframes hero-net-breathe {
-  0%, 100% { stroke-opacity: 0.4; }
-  50% { stroke-opacity: 0.8; }
+  0%,
+  100% {
+    stroke-opacity: 0.4;
+  }
+  50% {
+    stroke-opacity: 0.8;
+  }
 }
 
 .animate-hero-net-breathe {
@@ -716,8 +844,12 @@ html {
 
 /* Hero bento — bar chart grow animation */
 @keyframes hero-bar-grow {
-  from { transform: scaleX(0); }
-  to { transform: scaleX(1); }
+  from {
+    transform: scaleX(0);
+  }
+  to {
+    transform: scaleX(1);
+  }
 }
 
 .hero-bar {
@@ -745,21 +877,42 @@ html {
 
 /* ── Hero v2 — living mesh gradient blobs ── */
 @keyframes hero-mesh-drift-1 {
-  0%, 100% { transform: translate(0, 0) scale(1); }
-  33% { transform: translate(4%, 6%) scale(1.06); }
-  66% { transform: translate(-2%, -4%) scale(0.96); }
+  0%,
+  100% {
+    transform: translate(0, 0) scale(1);
+  }
+  33% {
+    transform: translate(4%, 6%) scale(1.06);
+  }
+  66% {
+    transform: translate(-2%, -4%) scale(0.96);
+  }
 }
 
 @keyframes hero-mesh-drift-2 {
-  0%, 100% { transform: translate(0, 0) scale(1); }
-  33% { transform: translate(-5%, -3%) scale(1.04); }
-  66% { transform: translate(3%, 5%) scale(0.97); }
+  0%,
+  100% {
+    transform: translate(0, 0) scale(1);
+  }
+  33% {
+    transform: translate(-5%, -3%) scale(1.04);
+  }
+  66% {
+    transform: translate(3%, 5%) scale(0.97);
+  }
 }
 
 @keyframes hero-mesh-drift-3 {
-  0%, 100% { transform: translate(0, 0) scale(1); }
-  33% { transform: translate(4%, -5%) scale(1.05); }
-  66% { transform: translate(-3%, 2%) scale(0.94); }
+  0%,
+  100% {
+    transform: translate(0, 0) scale(1);
+  }
+  33% {
+    transform: translate(4%, -5%) scale(1.05);
+  }
+  66% {
+    transform: translate(-3%, 2%) scale(0.94);
+  }
 }
 
 .hero-mesh-1 {
@@ -793,14 +946,28 @@ html {
 }
 
 @keyframes hero-spotlight-breathe {
-  0%, 100% { opacity: 1; transform: translate(-50%, -50%) scale(1); }
-  50% { opacity: 0.7; transform: translate(-50%, -50%) scale(1.06); }
+  0%,
+  100% {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1);
+  }
+  50% {
+    opacity: 0.7;
+    transform: translate(-50%, -50%) scale(1.06);
+  }
 }
 
 /* ── Hero v2 — concentric rings pulse ── */
 @keyframes hero-ring-pulse {
-  0%, 100% { opacity: 1; transform: scale(1); }
-  50% { opacity: 0.5; transform: scale(1.03); }
+  0%,
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.5;
+    transform: scale(1.03);
+  }
 }
 
 .hero-ring-1 {
@@ -839,18 +1006,23 @@ html {
 
 /* ── Hero v2 — gradient text shimmer ── */
 @keyframes hero-text-shimmer {
-  0% { background-position: 250% center; }
-  100% { background-position: 0% center; }
+  0% {
+    background-position: 250% center;
+  }
+  100% {
+    background-position: 0% center;
+  }
 }
 
 .hero-text-shimmer {
+  /* Light tokens only — this gradient paints the H1 on the navy hero. */
   background: linear-gradient(
     120deg,
-    hsl(var(--primary)) 0%,
-    hsl(var(--accent)) 25%,
+    hsl(var(--primary-light)) 0%,
+    hsl(var(--accent-light)) 25%,
     hsl(var(--primary-light)) 45%,
-    hsl(var(--accent)) 65%,
-    hsl(var(--primary)) 100%
+    hsl(var(--accent-light)) 65%,
+    hsl(var(--primary-light)) 100%
   );
   background-size: 250% 100%;
   -webkit-background-clip: text;
@@ -866,12 +1038,18 @@ html {
 }
 
 @keyframes hero-pulse-appear {
-  to { opacity: 0.85; }
+  to {
+    opacity: 0.85;
+  }
 }
 
 @keyframes hero-pulse-travel {
-  from { stroke-dashoffset: 900; }
-  to { stroke-dashoffset: -900; }
+  from {
+    stroke-dashoffset: 900;
+  }
+  to {
+    stroke-dashoffset: -900;
+  }
 }
 
 .hero-pulse-trace {
@@ -886,14 +1064,25 @@ html {
 }
 
 @keyframes hero-pulse-breathe-anim {
-  0%, 100% { opacity: 0.5; transform: scale(1); }
-  50% { opacity: 1; transform: scale(1.12); }
+  0%,
+  100% {
+    opacity: 0.5;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.12);
+  }
 }
 
 /* ── Hero v2 — full-width pulse trace ── */
 @keyframes hero-pulse-travel-wide {
-  from { stroke-dashoffset: 1200; }
-  to { stroke-dashoffset: -1200; }
+  from {
+    stroke-dashoffset: 1200;
+  }
+  to {
+    stroke-dashoffset: -1200;
+  }
 }
 
 .hero-pulse-trace-wide {
@@ -903,8 +1092,12 @@ html {
 
 /* ── Hero v2 — secondary waveform trace (slower rhythm) ── */
 @keyframes hero-pulse-travel-slow {
-  from { stroke-dashoffset: 750; }
-  to { stroke-dashoffset: -750; }
+  from {
+    stroke-dashoffset: 750;
+  }
+  to {
+    stroke-dashoffset: -750;
+  }
 }
 
 .hero-pulse-trace-slow {
@@ -914,8 +1107,12 @@ html {
 
 /* ── Hero v2 — mobile pulse trace ── */
 @keyframes hero-pulse-travel-mobile {
-  from { stroke-dashoffset: 600; }
-  to { stroke-dashoffset: -600; }
+  from {
+    stroke-dashoffset: 600;
+  }
+  to {
+    stroke-dashoffset: -600;
+  }
 }
 
 .hero-pulse-trace-mobile {

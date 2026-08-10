@@ -33,10 +33,7 @@ export default function PersonaCountryLoading(): React.ReactElement {
           </div>
           <div className="grid gap-6 sm:grid-cols-2">
             {Array.from({ length: 4 }).map((_, i) => (
-              <div
-                key={i}
-                className="rounded-2xl border border-border bg-white p-8"
-              >
+              <div key={i} className="rounded-2xl border border-border bg-white p-8">
                 <div className="mb-4 h-10 w-10 rounded-xl bg-muted" />
                 <div className="mb-2 h-5 w-3/4 rounded bg-muted" />
                 <div className="h-4 w-full rounded bg-muted" />

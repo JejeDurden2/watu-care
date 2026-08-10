@@ -1,22 +1,11 @@
 import type { Metadata } from 'next';
 import { notFound } from 'next/navigation';
-import { getTranslations } from 'next-intl/server';
+import { getTranslations, setRequestLocale } from 'next-intl/server';
 import { Container } from '@/components/ui';
-import {
-  Breadcrumb,
-  ProductDetail,
-  RelatedProducts,
-} from '@/components/products';
-import {
-  getAllCategories,
-  getCategoryBySlug,
-  getProductBySlug,
-} from '@/lib/products';
-import {
-  generateProductSchema,
-  generateBreadcrumbSchema,
-  combineSchemas,
-} from '@/lib/schema';
+import { Breadcrumb, ProductDetail, RelatedProducts } from '@/components/products';
+import { getAllCategories, getCategoryBySlug, getProductBySlug } from '@/lib/products';
+import { generateProductSchema, generateBreadcrumbSchema, combineSchemas } from '@/lib/schema';
+import { notFoundTitle } from '@/lib/metadata';
 import { BASE_URL } from '@/lib/constants';
 
 interface ProductPageProps {
@@ -49,20 +38,15 @@ export async function generateStaticParams(): Promise<
   return params;
 }
 
-export async function generateMetadata({
-  params,
-}: ProductPageProps): Promise<Metadata> {
-  const {
-    locale,
-    category: categorySlug,
-    product: productId,
-  } = await params;
+export async function generateMetadata({ params }: ProductPageProps): Promise<Metadata> {
+  const { locale, category: categorySlug, product: productId } = await params;
   const category = getCategoryBySlug(categorySlug);
   const product = getProductBySlug(categorySlug, productId);
 
   if (!category || !product) {
     return {
-      title: 'Product Not Found',
+      title: await notFoundTitle(locale),
+      robots: { index: false, follow: false },
     };
   }
 
@@ -115,6 +99,9 @@ export default async function ProductPage({
   params,
 }: ProductPageProps): Promise<React.ReactElement> {
   const { locale, category: categorySlug, product: productId } = await params;
+
+  // Opt into static rendering — without this next-intl forces every page dynamic.
+  setRequestLocale(locale);
   const t = await getTranslations('products');
   const tNav = await getTranslations('nav');
   const category = getCategoryBySlug(categorySlug);
@@ -180,11 +167,7 @@ export default async function ProductPage({
 
           {/* Related Products */}
           <div className="stagger-item stagger-delay-3">
-            <RelatedProducts
-              categorySlug={categorySlug}
-              currentProductId={productId}
-              limit={3}
-            />
+            <RelatedProducts categorySlug={categorySlug} currentProductId={productId} limit={3} />
           </div>
         </Container>
       </div>

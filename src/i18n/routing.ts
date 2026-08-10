@@ -9,5 +9,4 @@ export const routing = defineRouting({
   alternateLinks: false, // Handled per-page via metadata alternates
 });
 
-export const { Link, redirect, usePathname, useRouter, getPathname } =
-  createNavigation(routing);
+export const { Link, redirect, usePathname, useRouter, getPathname } = createNavigation(routing);

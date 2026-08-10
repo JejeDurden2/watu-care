@@ -10,16 +10,12 @@ const ECG_PATH =
 export function PseoHeroPulse(): React.ReactElement {
   return (
     <div className="hero-pulse-container hidden items-center lg:flex" aria-hidden="true">
-      <svg
-        viewBox="0 0 280 160"
-        className="h-auto w-full"
-        fill="none"
-      >
+      <svg viewBox="0 0 280 160" className="h-auto w-full" fill="none">
         <defs>
           <radialGradient id="pseo-pulse-ambient" cx="50%" cy="50%" r="50%">
-            <stop offset="0%" stopColor="hsl(var(--accent))" stopOpacity="0.10" />
-            <stop offset="60%" stopColor="hsl(var(--accent))" stopOpacity="0.03" />
-            <stop offset="100%" stopColor="hsl(var(--accent))" stopOpacity="0" />
+            <stop offset="0%" stopColor="hsl(var(--accent-light))" stopOpacity="0.10" />
+            <stop offset="60%" stopColor="hsl(var(--accent-light))" stopOpacity="0.03" />
+            <stop offset="100%" stopColor="hsl(var(--accent-light))" stopOpacity="0" />
           </radialGradient>
           <filter id="pseo-trace-glow">
             <feGaussianBlur stdDeviation="5" />
@@ -30,7 +26,13 @@ export function PseoHeroPulse(): React.ReactElement {
         </defs>
 
         {/* Breathing glow at QRS peak */}
-        <circle cx="146" cy="80" r="70" fill="url(#pseo-pulse-ambient)" className="hero-pulse-breathe" />
+        <circle
+          cx="146"
+          cy="80"
+          r="70"
+          fill="url(#pseo-pulse-ambient)"
+          className="hero-pulse-breathe"
+        />
 
         {/* Base track */}
         <path
@@ -44,7 +46,7 @@ export function PseoHeroPulse(): React.ReactElement {
         {/* Wide aura glow */}
         <path
           d={ECG_PATH}
-          stroke="hsl(var(--accent))"
+          stroke="hsl(var(--accent-light))"
           strokeWidth="8"
           strokeLinecap="round"
           strokeLinejoin="round"
@@ -56,7 +58,7 @@ export function PseoHeroPulse(): React.ReactElement {
         {/* Inner glow trace */}
         <path
           d={ECG_PATH}
-          stroke="hsl(var(--accent))"
+          stroke="hsl(var(--accent-light))"
           strokeWidth="3"
           strokeLinecap="round"
           strokeLinejoin="round"
@@ -68,7 +70,7 @@ export function PseoHeroPulse(): React.ReactElement {
         {/* Sharp crisp trace */}
         <path
           d={ECG_PATH}
-          stroke="hsl(var(--accent))"
+          stroke="hsl(var(--accent-light))"
           strokeWidth="1.5"
           strokeLinecap="round"
           strokeLinejoin="round"

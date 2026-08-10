@@ -1,19 +1,21 @@
 import type { Metadata } from 'next';
 import { notFound } from 'next/navigation';
-import { getTranslations } from 'next-intl/server';
+import { getTranslations, setRequestLocale } from 'next-intl/server';
 import { Container, Button, QuoteModalButton } from '@/components/ui';
 import { Link } from '@/i18n/routing';
-import {
-  Breadcrumb,
-  CategoryIcon,
-  ProductCard,
-} from '@/components/products';
+import { Breadcrumb, CategoryIcon, ProductCard } from '@/components/products';
 import { MapPin } from 'lucide-react';
 import { PseoHeroBackground, PseoHeroPulse } from '@/components/sections';
 import { getAllCategories, getCategoryBySlug } from '@/lib/products';
 import { getTier1Countries } from '@/data/countries';
-import { generateBreadcrumbSchema, generateFAQSchema, generateMarketItemListSchema, combineSchemas } from '@/lib/schema';
+import {
+  generateBreadcrumbSchema,
+  generateFAQSchema,
+  generateMarketItemListSchema,
+  combineSchemas,
+} from '@/lib/schema';
 import { FAQAccordion } from '@/app/[locale]/faq/FAQAccordion';
+import { notFoundTitle } from '@/lib/metadata';
 import { BASE_URL } from '@/lib/constants';
 
 interface CategoryPageProps {
@@ -23,26 +25,23 @@ interface CategoryPageProps {
   }>;
 }
 
-export async function generateStaticParams(): Promise<
-  Array<{ locale: string; category: string }>
-> {
+export async function generateStaticParams(): Promise<Array<{ locale: string; category: string }>> {
   const { locales } = await import('@/i18n/config');
   const categories = getAllCategories();
   return locales.flatMap((locale) =>
-    categories.map((category) => ({ locale, category: category.slug }))
+    categories.map((category) => ({ locale, category: category.slug })),
   );
 }
 
-export async function generateMetadata({
-  params,
-}: CategoryPageProps): Promise<Metadata> {
+export async function generateMetadata({ params }: CategoryPageProps): Promise<Metadata> {
   const { locale, category: categorySlug } = await params;
   const t = await getTranslations({ locale, namespace: 'products' });
   const category = getCategoryBySlug(categorySlug);
 
   if (!category) {
     return {
-      title: 'Category Not Found',
+      title: await notFoundTitle(locale),
+      robots: { index: false, follow: false },
     };
   }
 
@@ -93,6 +92,9 @@ export default async function CategoryPage({
   params,
 }: CategoryPageProps): Promise<React.ReactElement> {
   const { locale, category: categorySlug } = await params;
+
+  // Opt into static rendering — without this next-intl forces every page dynamic.
+  setRequestLocale(locale);
   const t = await getTranslations('products');
   const tNav = await getTranslations('nav');
   const category = getCategoryBySlug(categorySlug);
@@ -114,9 +116,7 @@ export default async function CategoryPage({
 
   // Helper to get translated product description
   const getProductDescription = (productId: string, fallback: string): string =>
-    t.has(`items.${productId}.description`)
-      ? t(`items.${productId}.description`)
-      : fallback;
+    t.has(`items.${productId}.description`) ? t(`items.${productId}.description`) : fallback;
 
   // Generate Breadcrumb JSON-LD
   const breadcrumbSchema = generateBreadcrumbSchema([
@@ -137,7 +137,7 @@ export default async function CategoryPage({
 
   // Build category-specific FAQ items from translations
   const faqKey = `categories.${categorySlug}.faq`;
-  const rawFaq = t.has(faqKey) ? t.raw(faqKey) as Array<{ q: string; a: string }> : [];
+  const rawFaq = t.has(faqKey) ? (t.raw(faqKey) as Array<{ q: string; a: string }>) : [];
   const faqItems = rawFaq.map((item) => ({
     question: item.q,
     answer: item.a,
@@ -190,10 +190,13 @@ export default async function CategoryPage({
 
               <div className="stagger-item stagger-delay-3 mt-6 flex flex-wrap items-center gap-4">
                 <div className="rounded-full border border-white/20 bg-white/10 px-5 py-2 text-sm font-medium text-white backdrop-blur-sm">
-                  {t('productCount', { count: category.products.length })}{' '}
-                  {t('available')}
+                  {t('productCount', { count: category.products.length })} {t('available')}
                 </div>
-                <QuoteModalButton size="md" className="bg-white text-secondary hover:bg-white/90" analyticsLocation="category_header">
+                <QuoteModalButton
+                  size="md"
+                  className="bg-white text-secondary hover:bg-white/90"
+                  analyticsLocation="category_header"
+                >
                   {tNav('requestQuote')}
                 </QuoteModalButton>
               </div>
@@ -275,7 +278,9 @@ export default async function CategoryPage({
               {t('categories.title')}
             </p>
             <div className="flex flex-col gap-3 sm:flex-row">
-              <QuoteModalButton size="lg" analyticsLocation="category_bottom">{tNav('requestQuote')}</QuoteModalButton>
+              <QuoteModalButton size="lg" analyticsLocation="category_bottom">
+                {tNav('requestQuote')}
+              </QuoteModalButton>
               <Button variant="outline" size="lg" asChild>
                 <Link href="/products">{t('backToCategories')}</Link>
               </Button>

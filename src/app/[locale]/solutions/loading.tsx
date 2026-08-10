@@ -20,10 +20,7 @@ export default function SolutionsLoading(): React.ReactElement {
         <Container>
           <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
             {Array.from({ length: 5 }).map((_, i) => (
-              <div
-                key={i}
-                className="rounded-2xl border border-border bg-white p-8"
-              >
+              <div key={i} className="rounded-2xl border border-border bg-white p-8">
                 <div className="mb-5 h-14 w-14 rounded-xl bg-muted" />
                 <div className="mb-3 h-6 w-3/4 rounded bg-muted" />
                 <div className="mb-2 h-4 w-full rounded bg-muted" />

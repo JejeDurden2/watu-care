@@ -2,17 +2,36 @@
 
 import { useTranslations } from 'next-intl';
 
-const trustItems = [
-  { value: '25+', labelKey: 'countries' },
-  { value: 'ISO 13485', labelKey: 'iso' },
-  { value: '10M+', labelKey: 'units' },
-  { value: '500+', labelKey: 'products' },
-  { value: '48h', labelKey: 'response' },
-  { value: '100+', labelKey: 'facilities' },
-] as const;
+// Values are passed in from the server parent rather than imported: this is a
+// client component, and @/lib/constants pulls in the full country and product
+// data. Keys must match hero.trustMarquee in the message files.
+export interface HeroTrustMarqueeProps {
+  countries: string;
+  standard: string;
+  units: string;
+  products: string;
+  response: string;
+  facilities: string;
+}
 
-export function HeroTrustMarquee(): React.ReactElement {
+export function HeroTrustMarquee({
+  countries,
+  standard,
+  units,
+  products,
+  response,
+  facilities,
+}: HeroTrustMarqueeProps): React.ReactElement {
   const t = useTranslations('hero.trustMarquee');
+
+  const trustItems = [
+    { value: countries, labelKey: 'countries' },
+    { value: standard, labelKey: 'iso' },
+    { value: units, labelKey: 'units' },
+    { value: products, labelKey: 'products' },
+    { value: response, labelKey: 'response' },
+    { value: facilities, labelKey: 'facilities' },
+  ];
 
   return (
     <div className="group hero-glass-band relative overflow-hidden py-4">
@@ -23,7 +42,7 @@ export function HeroTrustMarquee(): React.ReactElement {
             <span className="font-display text-lg font-bold tracking-tight text-white">
               {item.value}
             </span>
-            <span className="font-body text-xs uppercase tracking-[0.15em] text-white/35">
+            <span className="font-body text-xs uppercase tracking-[0.15em] text-white/60">
               {t(item.labelKey)}
             </span>
             <span className="ml-4 h-1 w-1 rounded-full bg-white/20" aria-hidden="true" />

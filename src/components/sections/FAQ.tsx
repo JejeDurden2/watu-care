@@ -7,6 +7,7 @@ import { trackFaqOpen } from '@/lib/analytics';
 
 const faqKeys = [
   'moq',
+  'pricing',
   'delivery',
   'regions',
   'certifications',
@@ -34,7 +35,6 @@ export function FAQ(): React.ReactElement {
 
         {/* Split-screen layout */}
         <div className="grid gap-8 lg:grid-cols-[1fr_1.2fr] lg:gap-16">
-
           {/* Left: question list */}
           <div className="divide-y divide-border">
             {faqKeys.map((key, index) => {
@@ -98,7 +98,6 @@ export function FAQ(): React.ReactElement {
               );
             })}
           </div>
-
         </div>
       </Container>
     </section>

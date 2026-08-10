@@ -34,7 +34,7 @@ export function MobileBottomBar({
           onClick={onToggleMenu}
           className={cn(
             'flex h-11 w-11 flex-col items-center justify-center gap-[5px] rounded-xl text-secondary/70 transition-colors hover:bg-secondary/5 hover:text-secondary active:scale-[0.95]',
-            isMenuOpen && 'hamburger-open'
+            isMenuOpen && 'hamburger-open',
           )}
           aria-label={isMenuOpen ? t('closeNavigation') : t('openNavigation')}
           aria-expanded={isMenuOpen}

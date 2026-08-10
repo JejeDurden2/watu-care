@@ -48,15 +48,17 @@
   },
   "whyUs": {
     "title": "Pourquoi Watu Care",
-    "subtitle": "Nous connectons les prestataires de santé avec des fournitures médicales de qualité provenant d'Asie.",
-    "hubTitle": "Sourcing Direct",
-    "hubDesc": "Les produits sont expédiés directement depuis les fabricants asiatiques certifiés vers les établissements de santé en Afrique et au Moyen-Orient. Sans intermédiaire, sans coûts supplémentaires.",
-    "directTitle": "Relations Directes",
-    "directDesc": "Nous travaillons directement avec les fabricants pour garantir des produits de qualité à prix compétitifs.",
-    "serviceTitle": "Service Réactif",
-    "serviceDesc": "Réponse rapide aux devis et support tout au long de votre commande.",
-    "catalogTitle": "Large Catalogue",
-    "catalogDesc": "Gamme complète de fournitures médicales dans plusieurs catégories pour répondre aux besoins de votre établissement."
+    "subtitle": "Un seul interlocuteur à Hong Kong entre votre établissement et des fabricants asiatiques certifiés ISO 13485 — devis sous 48 h, documentation à la livraison.",
+    "hubTitle": "Sourcing direct",
+    "hubDesc": "Les commandes partent de fabricants certifiés ISO 13485 en Asie directement vers votre établissement en Afrique ou au Moyen-Orient. Sans société de négoce au milieu, sans marge empilée sur une marge.",
+    "directTitle": "Contrats avec les usines",
+    "directDesc": "Nous contractons avec les fabricants eux-mêmes : ce que vous payez, c'est le prix usine plus notre marge — pas une chaîne d'intermédiaires.",
+    "serviceTitle": "Devis sous 48 h",
+    "serviceDesc": "Envoyez votre liste, recevez un devis chiffré avec les options fret maritime et aérien et une fenêtre de livraison sous deux jours ouvrés. Un seul contact du devis à la livraison.",
+    "catalogTitle": "10 catégories, un seul fournisseur",
+    "catalogDesc": "Gants, EPI, pansements, packs chirurgicaux, cathéters, respiratoire, consommables et plus — regroupés en une expédition, un jeu de documents, une facture.",
+    "countriesServed": "Pays desservis",
+    "skuCount": "{count} références"
   },
   "qualityCompliance": {
     "title": "Qualité & Conformité",
@@ -682,7 +684,8 @@
       }
     },
     "categoryTitleTemplate": "Fournisseur grossiste de {category} - Afrique & Moyen-Orient",
-    "productDescSuffix": "Commandez en gros chez Watu Care, fournisseur B2B de matériel médical pour l’Afrique et le Moyen-Orient."
+    "productDescSuffix": "Commandez en gros chez Watu Care, fournisseur B2B de matériel médical pour l’Afrique et le Moyen-Orient.",
+    "photosComingSoon": "Photos à venir"
   },
   "quote": {
     "listTitle": "Votre liste de produits",
@@ -756,8 +759,8 @@
     "step3Desc": "Nous gérons tout : coordination avec les fabricants, contrôle qualité et logistique, jusqu'à la livraison de votre commande."
   },
   "cta": {
-    "title": "Prêt à commencer ?",
-    "subtitle": "Demandez un devis pour les fournitures médicales dont vous avez besoin. Notre équipe vous répondra sous 24-48 heures.",
+    "title": "Envoyez votre liste, recevez un prix sous 48 h",
+    "subtitle": "Indiquez les produits, les quantités et la destination. Vous recevez le prix unitaire, les options de fret maritime et aérien et une fenêtre de livraison — sans compte à créer, sans engagement.",
     "button": "Obtenir un devis gratuit",
     "buttonSecondary": "Nous contacter",
     "reassurance": "Réponse sous 48 heures",
@@ -811,11 +814,8 @@
     "getInTouch": "Nous contacter",
     "browseProducts": "Voir les produits",
     "stats": {
-      "skus": "500+",
       "skusLabel": "Références médicales",
-      "countries": "30+",
       "countriesLabel": "Pays desservis",
-      "units": "10M+",
       "unitsLabel": "Unités livrées"
     }
   },
@@ -880,11 +880,8 @@
       "response": "Nous répondons à toutes les demandes sous 24-48 heures."
     },
     "stats": {
-      "iso": "ISO",
       "isoLabel": "Produits certifiés",
-      "response": "48h",
       "responseLabel": "Délai de réponse",
-      "countries": "30+",
       "countriesLabel": "Pays desservis"
     }
   },
@@ -913,20 +910,6 @@
     "story7": "Mais les médecins, les infirmières, les acheteurs, les logisticiens, et les patients qu'ils servent.",
     "story8": "Chez Watu Care, nous ne faisons pas que transporter des produits. Nous construisons des ponts entre les personnes, les marchés et de meilleurs soins de santé."
   },
-  "valueProps": {
-    "title": "Pourquoi choisir Watu Care ?",
-    "subtitle": "Nous connectons les prestataires de santé avec des fournitures médicales de qualité.",
-    "qualityFirst": "La qualité avant tout",
-    "qualityFirstDesc": "Nous travaillons exclusivement avec des fabricants approuvés et de confiance en Asie. Nos dispositifs médicaux sont conformes aux normes internationales et offrent des performances constantes et fiables.",
-    "priceCommitment": "Engagement sur les prix",
-    "priceCommitmentDesc": "Nous nous engageons à des prix justes, stables et transparents. En travaillant directement avec les fabricants et en optimisant notre modèle d'approvisionnement, nous garantissons une efficacité économique sans compromis sur la qualité ou la conformité.",
-    "supplyChain": "Chaîne d'approvisionnement fiable et transparente",
-    "supplyChainDesc": "Notre modèle d'approvisionnement est construit directement avec des fabricants sélectionnés, nous permettant d'assurer une traçabilité complète, une logistique maîtrisée et une livraison fiable en Afrique et au Moyen-Orient.",
-    "rdFocus": "Focus Recherche & Développement",
-    "rdFocusDesc": "Nous collaborons activement avec nos partenaires fabricants sur l'amélioration des produits, l'adaptation aux besoins locaux et la conformité réglementaire. Notre approche R&D garantit que les dispositifs sont non seulement conformes, mais aussi pertinents, pratiques et évolutifs pour les marchés que nous servons.",
-    "humanSupport": "Support centré sur l'humain",
-    "humanSupportDesc": "Du devis à la livraison, notre équipe vous accompagne à chaque étape avec réactivité, clarté et engagement à long terme."
-  },
   "markets": {
     "meta": {
       "titleTemplate": "Matériel Médical en {country}",
@@ -949,7 +932,7 @@
       "whyChooseIntro": "Les établissements de santé en {country} font confiance à Watu Care pour des partenariats fiables en fournitures médicales.",
       "healthcareMarketTitle": "Marché de la Santé en {country}",
       "keyFacilitiesTitle": "Conçu Pour",
-      "keyFacilitiesSubtitle": "Types d\u0027établissements que nous approvisionnons en {country}",
+      "keyFacilitiesSubtitle": "Types d'établissements que nous approvisionnons en {country}",
       "marketHighlightsTitle": "Points Forts du Marché",
       "categoriesTitle": "Catégories de Produits Disponibles en {country}",
       "categoriesSubtitle": "Parcourez notre gamme complète de fournitures médicales disponibles pour livraison en {country}.",
@@ -1375,13 +1358,13 @@
     "title": "Questions fréquentes",
     "subtitle": "Trouvez les réponses aux questions courantes sur notre collaboration.",
     "moqQuestion": "Quelle est la quantité minimum de commande (MOQ) ?",
-    "moqAnswer": "La MOQ varie selon la catégorie de produits. Pour la plupart des articles, nous travaillons avec des quantités adaptées aux établissements de santé de toutes tailles. Contactez-nous avec vos besoins spécifiques et nous trouverons les options qui vous conviennent.",
+    "moqAnswer": "La MOQ est fixée par référence et dépend du mode d'expédition. Le fret maritime se chiffre à la palette ou au conteneur, le fret aérien au carton, et nous regroupons plusieurs catégories dans une même expédition pour que les établissements plus petits atteignent un volume viable. Envoyez-nous votre liste et votre destination : la MOQ de chaque référence figure dans le devis.",
     "deliveryQuestion": "Quels sont les délais de livraison ?",
     "deliveryAnswer": "Les délais de livraison dépendent du mode d'expédition que vous choisissez. Le fret maritime prend généralement entre 30 et 50 jours, tandis que les options de fret aérien permettent une livraison en 6 à 9 jours.",
     "regionsQuestion": "Dans quelles régions livrez-vous ?",
     "regionsAnswer": "Nous livrons aux établissements de santé en Afrique et au Moyen-Orient, et nous pouvons également fournir des devis pour d'autres pays dans le monde sur demande. Notre équipe accompagne les expéditions internationales avec des partenaires logistiques fiables pour une livraison efficace où que nos clients opèrent.",
     "certificationsQuestion": "Quelles certifications ont vos produits ?",
-    "certificationsAnswer": "Nos produits proviennent de fabricants qui respectent les normes de qualité internationales, notamment le marquage CE et les certifications ISO. Nous pouvons fournir les documents de certification spécifiques sur demande.",
+    "certificationsAnswer": "Nos fabricants sont certifiés ISO 13485, la norme de management de la qualité des dispositifs médicaux, et les gammes que nous fournissons portent le marquage CE. Rapports d'essai, certificats d'analyse et documents de traçabilité par lot accompagnent chaque commande, et nous pouvons transmettre les certificats d'une référence précise avant commande.",
     "paymentQuestion": "Quels modes de paiement acceptez-vous ?",
     "paymentAnswer": "Nous acceptons les virements bancaires (T/T) et les lettres de crédit (L/C) pour les commandes importantes. Les conditions de paiement sont discutées lors du processus de devis selon la taille de la commande et la relation.",
     "supportQuestion": "Quel support après-vente proposez-vous ?",
@@ -1394,7 +1377,9 @@
     "stillHaveQuestions": "Vous avez encore des questions ?",
     "stillHaveQuestionsDesc": "Notre équipe est prête à vous aider pour toute question sur nos produits, nos prix ou la livraison.",
     "contactUs": "Contactez-nous",
-    "viewProducts": "Voir les produits"
+    "viewProducts": "Voir les produits",
+    "pricingQuestion": "Comment les prix sont-ils fixés, et sont-ils consultables en ligne ?",
+    "pricingAnswer": "Les prix ne sont pas publiés car ils varient avec le volume, le mode de fret et la destination. Chaque devis est chiffré à l'unité et par référence, avec le fret et la fenêtre de livraison indiqués séparément, ce qui permet de comparer un scénario maritime et un scénario aérien côte à côte. Les devis sont émis sous 48 heures ouvrées et le paiement se fait par virement bancaire (T/T) ou lettre de crédit (L/C)."
   },
   "stats": {
     "products": "Références produits",
@@ -1408,12 +1393,6 @@
     "subtitle": "Nous fournissons des dispositifs médicaux et des EPI aux établissements de santé à travers l'Afrique et le Moyen-Orient. Sélectionnez votre marché pour découvrir la livraison locale, la conformité et l'approvisionnement.",
     "countryCount": "{count} pays",
     "viewAll": "Voir tous les marchés"
-  },
-  "trustBar": {
-    "isoCertified": "Produits certifiés ISO",
-    "countries": "Plus de 25 pays desservis",
-    "responseTime": "Réponse devis en 48h",
-    "qualityGuaranteed": "Qualité garantie"
   },
   "whatsapp": {
     "chatWithUs": "Discutez avec nous",
@@ -1763,11 +1742,26 @@
       },
       "faqTitle": "Questions fréquentes",
       "faq": [
-        { "q": "Quelles certifications portent vos produits ?", "a": "Tous les produits portent le marquage CE et sont fabriqués sous systèmes de gestion qualité ISO 13485. Nous nous approvisionnons auprès de fournisseurs pré-qualifiés OMS lorsque possible, et fournissons la documentation de certification complète avec chaque expédition." },
-        { "q": "Pouvez-vous livrer dans des zones isolées ?", "a": "Oui. Nous coordonnons la logistique vers des destinations difficiles d'accès en Afrique et au Moyen-Orient, y compris les sites terrain isolés. Nous travaillons avec des partenaires de fret spécialisés dans les chaînes d'approvisionnement humanitaires." },
-        { "q": "Quelle est la quantité minimum de commande ?", "a": "Nous offrons des quantités minimales flexibles adaptées aux opérations humanitaires. Pour les déploiements d'urgence, nous pouvons travailler avec des quantités réduites pour répondre aux besoins urgents. Contactez-nous pour discuter de vos besoins spécifiques." },
-        { "q": "Fournissez-vous la documentation pour la conformité des donateurs ?", "a": "Chaque expédition inclut des pistes d'audit complètes, certificats de conformité, relevés de lots et rapports de tests adaptés aux exigences de reporting des donateurs tels que l'USAID, l'UE et les agences des Nations Unies." },
-        { "q": "Avec quelle rapidité pouvez-vous traiter les commandes urgentes ?", "a": "Nous fournissons des devis sous 48 heures et offrons un traitement accéléré pour les opérations humanitaires d'urgence. Pour les besoins critiques, nous priorisons le traitement des commandes et pouvons coordonner le fret aérien si nécessaire." }
+        {
+          "q": "Quelles certifications portent vos produits ?",
+          "a": "Tous les produits portent le marquage CE et sont fabriqués sous systèmes de gestion qualité ISO 13485. Nous nous approvisionnons auprès de fournisseurs pré-qualifiés OMS lorsque possible, et fournissons la documentation de certification complète avec chaque expédition."
+        },
+        {
+          "q": "Pouvez-vous livrer dans des zones isolées ?",
+          "a": "Oui. Nous coordonnons la logistique vers des destinations difficiles d'accès en Afrique et au Moyen-Orient, y compris les sites terrain isolés. Nous travaillons avec des partenaires de fret spécialisés dans les chaînes d'approvisionnement humanitaires."
+        },
+        {
+          "q": "Quelle est la quantité minimum de commande ?",
+          "a": "Nous offrons des quantités minimales flexibles adaptées aux opérations humanitaires. Pour les déploiements d'urgence, nous pouvons travailler avec des quantités réduites pour répondre aux besoins urgents. Contactez-nous pour discuter de vos besoins spécifiques."
+        },
+        {
+          "q": "Fournissez-vous la documentation pour la conformité des donateurs ?",
+          "a": "Chaque expédition inclut des pistes d'audit complètes, certificats de conformité, relevés de lots et rapports de tests adaptés aux exigences de reporting des donateurs tels que l'USAID, l'UE et les agences des Nations Unies."
+        },
+        {
+          "q": "Avec quelle rapidité pouvez-vous traiter les commandes urgentes ?",
+          "a": "Nous fournissons des devis sous 48 heures et offrons un traitement accéléré pour les opérations humanitaires d'urgence. Pour les besoins critiques, nous priorisons le traitement des commandes et pouvons coordonner le fret aérien si nécessaire."
+        }
       ],
       "cta": {
         "title": "Besoin de fournitures pour votre mission ?",
@@ -1927,11 +1921,26 @@
       },
       "faqTitle": "Questions fréquentes",
       "faq": [
-        { "q": "Pouvez-vous fournir des factures proforma pour les soumissions d'appels d'offres ?", "a": "Oui. Nous fournissons des factures proforma détaillées formatées pour les processus d'achat gouvernementaux et les soumissions aux appels d'offres, incluant les spécifications produits complètes, les prix unitaires et les conditions de livraison." },
-        { "q": "Quelles normes internationales vos produits respectent-ils ?", "a": "Nos produits respectent les exigences du marquage CE et sont fabriqués sous systèmes de gestion qualité ISO 13485. Nous nous approvisionnons auprès de fournisseurs pré-qualifiés OMS lorsque possible et fournissons tous les certificats de conformité pertinents." },
-        { "q": "Pouvez-vous gérer des commandes nationales de gros volume ?", "a": "Oui. Notre réseau de fabricants a la capacité de satisfaire les commandes d'achat national à grande échelle avec une qualité constante sur tous les lots. Nous proposons des calendriers de livraison échelonnés adaptés à votre planning de distribution." },
-        { "q": "Proposez-vous la livraison multi-sites à travers les districts ?", "a": "Nous coordonnons les livraisons vers les magasins médicaux centraux, entrepôts régionaux et établissements hospitaliers individuels. Une seule commande peut être répartie sur plusieurs points de livraison selon votre structure de distribution." },
-        { "q": "Quelle documentation fournissez-vous pour les audits d'achat ?", "a": "Nous fournissons une documentation de traçabilité complète incluant les relevés de lots, certificats de conformité, rapports de tests fabricant, documents de dédouanement et confirmation de livraison pour chaque expédition." }
+        {
+          "q": "Pouvez-vous fournir des factures proforma pour les soumissions d'appels d'offres ?",
+          "a": "Oui. Nous fournissons des factures proforma détaillées formatées pour les processus d'achat gouvernementaux et les soumissions aux appels d'offres, incluant les spécifications produits complètes, les prix unitaires et les conditions de livraison."
+        },
+        {
+          "q": "Quelles normes internationales vos produits respectent-ils ?",
+          "a": "Nos produits respectent les exigences du marquage CE et sont fabriqués sous systèmes de gestion qualité ISO 13485. Nous nous approvisionnons auprès de fournisseurs pré-qualifiés OMS lorsque possible et fournissons tous les certificats de conformité pertinents."
+        },
+        {
+          "q": "Pouvez-vous gérer des commandes nationales de gros volume ?",
+          "a": "Oui. Notre réseau de fabricants a la capacité de satisfaire les commandes d'achat national à grande échelle avec une qualité constante sur tous les lots. Nous proposons des calendriers de livraison échelonnés adaptés à votre planning de distribution."
+        },
+        {
+          "q": "Proposez-vous la livraison multi-sites à travers les districts ?",
+          "a": "Nous coordonnons les livraisons vers les magasins médicaux centraux, entrepôts régionaux et établissements hospitaliers individuels. Une seule commande peut être répartie sur plusieurs points de livraison selon votre structure de distribution."
+        },
+        {
+          "q": "Quelle documentation fournissez-vous pour les audits d'achat ?",
+          "a": "Nous fournissons une documentation de traçabilité complète incluant les relevés de lots, certificats de conformité, rapports de tests fabricant, documents de dédouanement et confirmation de livraison pour chaque expédition."
+        }
       ],
       "cta": {
         "title": "Prêt pour votre prochain appel d'offres ?",

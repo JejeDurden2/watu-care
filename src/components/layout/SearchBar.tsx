@@ -57,7 +57,10 @@ export function SearchBar({ className, onResultClick }: SearchBarProps): React.R
   return (
     <div ref={containerRef} className={cn('relative', className)}>
       <div className="relative">
-        <Search className="absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-muted-foreground" aria-hidden="true" />
+        <Search
+          className="absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-muted-foreground"
+          aria-hidden="true"
+        />
         <input
           ref={inputRef}
           type="search"
@@ -96,36 +99,38 @@ export function SearchBar({ className, onResultClick }: SearchBarProps): React.R
         >
           {displayedResults.length > 0 ? (
             <ul className="divide-y divide-border">
-              {displayedResults.map(({ product, category, translatedName, translatedCategoryTitle }) => {
-                const Icon = getCategoryIcon(category.slug);
-                const gradient = getCategoryGradient(category.slug);
-                return (
-                  <li key={`${category.slug}-${product.id}`}>
-                    <Link
-                      href={`/products/${category.slug}/${product.id}`}
-                      onClick={() => handleResultClick(product.id)}
-                      className="flex items-center gap-3 px-4 py-3 transition-colors hover:bg-muted/50"
-                    >
-                      <div
-                        className={cn(
-                          'flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-gradient-to-br text-white',
-                          gradient
-                        )}
+              {displayedResults.map(
+                ({ product, category, translatedName, translatedCategoryTitle }) => {
+                  const Icon = getCategoryIcon(category.slug);
+                  const gradient = getCategoryGradient(category.slug);
+                  return (
+                    <li key={`${category.slug}-${product.id}`}>
+                      <Link
+                        href={`/products/${category.slug}/${product.id}`}
+                        onClick={() => handleResultClick(product.id)}
+                        className="flex items-center gap-3 px-4 py-3 transition-colors hover:bg-muted/50"
                       >
-                        <Icon className="h-4 w-4" aria-hidden="true" />
-                      </div>
-                      <div className="min-w-0 flex-1">
-                        <p className="truncate text-sm font-medium text-foreground">
-                          {translatedName}
-                        </p>
-                        <p className="truncate text-xs text-muted-foreground">
-                          {translatedCategoryTitle}
-                        </p>
-                      </div>
-                    </Link>
-                  </li>
-                );
-              })}
+                        <div
+                          className={cn(
+                            'flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-gradient-to-br text-white',
+                            gradient,
+                          )}
+                        >
+                          <Icon className="h-4 w-4" aria-hidden="true" />
+                        </div>
+                        <div className="min-w-0 flex-1">
+                          <p className="truncate text-sm font-medium text-foreground">
+                            {translatedName}
+                          </p>
+                          <p className="truncate text-xs text-muted-foreground">
+                            {translatedCategoryTitle}
+                          </p>
+                        </div>
+                      </Link>
+                    </li>
+                  );
+                },
+              )}
             </ul>
           ) : (
             <div className="px-4 py-6 text-center text-sm text-muted-foreground">
@@ -197,7 +202,12 @@ export function MobileSearchOverlay({
   if (!isOpen) return null;
 
   return (
-    <div className="fixed inset-0 z-[70] bg-background" role="dialog" aria-modal="true" aria-label={t('placeholder')}>
+    <div
+      className="fixed inset-0 z-[70] bg-background"
+      role="dialog"
+      aria-modal="true"
+      aria-label={t('placeholder')}
+    >
       <div className="flex h-full flex-col">
         <div className="flex items-center gap-3 border-b border-border px-4 py-3">
           <Search className="h-5 w-5 shrink-0 text-muted-foreground" aria-hidden="true" />
@@ -222,11 +232,7 @@ export function MobileSearchOverlay({
               <X className="h-5 w-5" aria-hidden="true" />
             </button>
           ) : null}
-          <button
-            type="button"
-            onClick={onClose}
-            className="ml-2 text-sm font-medium text-primary"
-          >
+          <button type="button" onClick={onClose} className="ml-2 text-sm font-medium text-primary">
             {t('cancel')}
           </button>
         </div>
@@ -234,45 +240,41 @@ export function MobileSearchOverlay({
         <div className="flex-1 overflow-y-auto">
           {query.trim() && displayedResults.length > 0 ? (
             <ul className="divide-y divide-border">
-              {displayedResults.map(({ product, category, translatedName, translatedCategoryTitle }) => {
-                const Icon = getCategoryIcon(category.slug);
-                const gradient = getCategoryGradient(category.slug);
-                return (
-                  <li key={`${category.slug}-${product.id}`}>
-                    <Link
-                      href={`/products/${category.slug}/${product.id}`}
-                      onClick={() => handleResultClick(product.id)}
-                      className="flex items-center gap-4 px-4 py-4 transition-colors active:bg-muted/50"
-                    >
-                      <div
-                        className={cn(
-                          'flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-gradient-to-br text-white',
-                          gradient
-                        )}
+              {displayedResults.map(
+                ({ product, category, translatedName, translatedCategoryTitle }) => {
+                  const Icon = getCategoryIcon(category.slug);
+                  const gradient = getCategoryGradient(category.slug);
+                  return (
+                    <li key={`${category.slug}-${product.id}`}>
+                      <Link
+                        href={`/products/${category.slug}/${product.id}`}
+                        onClick={() => handleResultClick(product.id)}
+                        className="flex items-center gap-4 px-4 py-4 transition-colors active:bg-muted/50"
                       >
-                        <Icon className="h-5 w-5" aria-hidden="true" />
-                      </div>
-                      <div className="min-w-0 flex-1">
-                        <p className="truncate font-medium text-foreground">
-                          {translatedName}
-                        </p>
-                        <p className="truncate text-sm text-muted-foreground">
-                          {translatedCategoryTitle}
-                        </p>
-                      </div>
-                    </Link>
-                  </li>
-                );
-              })}
+                        <div
+                          className={cn(
+                            'flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-gradient-to-br text-white',
+                            gradient,
+                          )}
+                        >
+                          <Icon className="h-5 w-5" aria-hidden="true" />
+                        </div>
+                        <div className="min-w-0 flex-1">
+                          <p className="truncate font-medium text-foreground">{translatedName}</p>
+                          <p className="truncate text-sm text-muted-foreground">
+                            {translatedCategoryTitle}
+                          </p>
+                        </div>
+                      </Link>
+                    </li>
+                  );
+                },
+              )}
             </ul>
           ) : query.trim() ? (
-            <div className="px-4 py-12 text-center text-muted-foreground">
-              {t('noResults')}
-            </div>
+            <div className="px-4 py-12 text-center text-muted-foreground">{t('noResults')}</div>
           ) : (
-            <div className="px-4 py-12 text-center text-muted-foreground">
-              {t('startTyping')}
-            </div>
+            <div className="px-4 py-12 text-center text-muted-foreground">{t('startTyping')}</div>
           )}
         </div>
       </div>

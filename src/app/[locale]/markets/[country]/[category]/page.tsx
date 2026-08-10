@@ -1,14 +1,9 @@
 import type { Metadata } from 'next';
 import { notFound } from 'next/navigation';
-import { getTranslations } from 'next-intl/server';
+import { getTranslations, setRequestLocale } from 'next-intl/server';
 import { MapPin, ArrowRight } from 'lucide-react';
 import { Container, Button } from '@/components/ui';
-import {
-  Breadcrumb,
-  CategoryIcon,
-  ProductCard,
-  ProductGrid,
-} from '@/components/products';
+import { Breadcrumb, CategoryIcon, ProductCard, ProductGrid } from '@/components/products';
 import { CategoryCard, PseoHeroBackground, PseoHeroPulse } from '@/components/sections';
 import { getAllCategories, getCategoryBySlug } from '@/lib/products';
 import { getTier1Countries, getCountryBySlug } from '@/data/countries';
@@ -21,6 +16,7 @@ import {
 import { Link } from '@/i18n/routing';
 import { locales, type Locale } from '@/i18n/config';
 import { MarketQuoteButton } from '../MarketQuoteButton';
+import { notFoundTitle } from '@/lib/metadata';
 import { BASE_URL } from '@/lib/constants';
 
 interface CategoryCountryPageProps {
@@ -43,14 +39,12 @@ export async function generateStaticParams(): Promise<
         locale,
         country: country.slug,
         category: category.slug,
-      }))
-    )
+      })),
+    ),
   );
 }
 
-export async function generateMetadata({
-  params,
-}: CategoryCountryPageProps): Promise<Metadata> {
+export async function generateMetadata({ params }: CategoryCountryPageProps): Promise<Metadata> {
   const { locale, country: countrySlug, category: categorySlug } = await params;
   const t = await getTranslations({ locale, namespace: 'markets' });
   const tProducts = await getTranslations({ locale, namespace: 'products' });
@@ -59,7 +53,10 @@ export async function generateMetadata({
   const category = getCategoryBySlug(categorySlug);
 
   if (!country || country.tier !== 1 || !category) {
-    return { title: 'Not Found' };
+    return {
+      title: await notFoundTitle(locale),
+      robots: { index: false, follow: false },
+    };
   }
 
   const countryName = t.has(`countries.${countrySlug}`)
@@ -112,6 +109,12 @@ export async function generateMetadata({
         fr: `${BASE_URL}/fr/markets/${countrySlug}/${categorySlug}`,
       },
     },
+    // 24 countries x 10 categories x 2 locales = 480 pages whose only variable
+    // content is the country name in the headings. Until each combination
+    // carries genuinely local content (import rules, lead times, regulator),
+    // these are doorway pages. Kept crawlable for internal navigation, out of
+    // the index, and out of the sitemap.
+    robots: { index: false, follow: true },
   };
 }
 
@@ -119,6 +122,9 @@ export default async function CategoryCountryPage({
   params,
 }: CategoryCountryPageProps): Promise<React.ReactElement> {
   const { locale, country: countrySlug, category: categorySlug } = await params;
+
+  // Opt into static rendering — without this next-intl forces every page dynamic.
+  setRequestLocale(locale);
   const t = await getTranslations('markets');
   const tNav = await getTranslations('nav');
   const tProducts = await getTranslations('products');
@@ -164,7 +170,7 @@ export default async function CategoryCountryPage({
     countryName,
     countrySlug,
     categorySlug,
-    locale
+    locale,
   );
 
   const productListSchema = generateMarketItemListSchema(
@@ -173,14 +179,10 @@ export default async function CategoryCountryPage({
       url: `${BASE_URL}/${locale}/products/${categorySlug}/${product.id}`,
       description: getProductDescription(product.id, product.description),
     })),
-    `${categoryName} Available in ${countryName}`
+    `${categoryName} Available in ${countryName}`,
   );
 
-  const combinedSchema = combineSchemas(
-    breadcrumbSchema,
-    serviceSchema,
-    productListSchema
-  );
+  const combinedSchema = combineSchemas(breadcrumbSchema, serviceSchema, productListSchema);
 
   return (
     <main>
@@ -219,13 +221,18 @@ export default async function CategoryCountryPage({
                   {countryName}
                 </div>
 
+                {/* Match the <title> — a bare category name here read as a
+                    generic listing while the title promised a country page. */}
                 <h1 className="mb-4 text-3xl font-bold text-white md:text-4xl lg:text-5xl">
-                  {categoryName}
+                  {t('meta.categoryTitleTemplate', {
+                    category: categoryName,
+                    country: countryName,
+                  })}
                 </h1>
 
                 <p className="mb-6 text-lg text-white/80">{categoryDesc}</p>
 
-                <p className="text-sm font-medium text-accent">
+                <p className="text-sm font-medium text-accent-light">
                   {tProducts('productCount', { count: category.products.length })}{' '}
                   {tProducts('available')}
                 </p>
@@ -255,11 +262,7 @@ export default async function CategoryCountryPage({
 
           <ProductGrid>
             {category.products.map((product) => (
-              <ProductCard
-                key={product.id}
-                product={product}
-                category={category}
-              />
+              <ProductCard key={product.id} product={product} category={category} />
             ))}
           </ProductGrid>
         </Container>
@@ -274,13 +277,11 @@ export default async function CategoryCountryPage({
 
           <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
             {otherCategories.map((otherCategory) => {
-              const otherCategoryName = tProducts.has(
-                `categories.${otherCategory.slug}.title`
-              )
+              const otherCategoryName = tProducts.has(`categories.${otherCategory.slug}.title`)
                 ? tProducts(`categories.${otherCategory.slug}.title`)
                 : otherCategory.title;
               const otherCategoryDesc = tProducts.has(
-                `categories.${otherCategory.slug}.description`
+                `categories.${otherCategory.slug}.description`,
               )
                 ? tProducts(`categories.${otherCategory.slug}.description`)
                 : otherCategory.description;

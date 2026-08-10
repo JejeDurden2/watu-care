@@ -13,10 +13,7 @@ interface BreadcrumbProps {
   variant?: 'default' | 'light';
 }
 
-export function Breadcrumb({
-  items,
-  variant = 'default',
-}: BreadcrumbProps): React.ReactElement {
+export function Breadcrumb({ items, variant = 'default' }: BreadcrumbProps): React.ReactElement {
   const isLight = variant === 'light';
 
   return (
@@ -24,7 +21,7 @@ export function Breadcrumb({
       <ol
         className={cn(
           'flex flex-wrap items-center gap-2 text-sm',
-          isLight ? 'text-white/70' : 'text-muted-foreground'
+          isLight ? 'text-white/70' : 'text-muted-foreground',
         )}
       >
         {items.map((item, index) => {
@@ -37,7 +34,7 @@ export function Breadcrumb({
                   href={item.href}
                   className={cn(
                     'transition-colors',
-                    isLight ? 'hover:text-white' : 'hover:text-foreground'
+                    isLight ? 'hover:text-white' : 'hover:text-foreground',
                   )}
                 >
                   {item.label}
@@ -46,7 +43,7 @@ export function Breadcrumb({
                 <span
                   className={cn(
                     isLast && 'font-medium',
-                    isLast && (isLight ? 'text-white' : 'text-foreground')
+                    isLast && (isLight ? 'text-white' : 'text-foreground'),
                   )}
                 >
                   {item.label}

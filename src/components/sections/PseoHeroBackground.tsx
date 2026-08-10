@@ -27,7 +27,10 @@ export function PseoHeroBackground(): React.ReactElement {
       {/* Central spotlight */}
       <div
         className="hero-spotlight absolute left-1/2 top-[40%] h-[50%] w-[60%] -translate-x-1/2 -translate-y-1/2 rounded-full"
-        style={{ background: 'radial-gradient(ellipse, hsl(200 65% 55% / 0.12), hsl(175 50% 45% / 0.04) 50%, transparent 70%)' }}
+        style={{
+          background:
+            'radial-gradient(ellipse, hsl(200 65% 55% / 0.12), hsl(175 50% 45% / 0.04) 50%, transparent 70%)',
+        }}
       />
 
       {/* Dot pattern */}
@@ -36,7 +39,10 @@ export function PseoHeroBackground(): React.ReactElement {
       {/* Edge vignette */}
       <div
         className="absolute inset-0"
-        style={{ background: 'radial-gradient(ellipse at center, transparent 30%, hsl(206 50% 10% / 0.6) 100%)' }}
+        style={{
+          background:
+            'radial-gradient(ellipse at center, transparent 30%, hsl(206 50% 10% / 0.6) 100%)',
+        }}
       />
     </div>
   );

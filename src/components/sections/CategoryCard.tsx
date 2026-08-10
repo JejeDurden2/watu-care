@@ -22,7 +22,7 @@ export function CategoryCard({
   href,
 }: CategoryCardProps): React.ReactElement {
   const t = useTranslations('products');
-  const iconSlug = slug.includes('/') ? slug.split('/').pop() ?? slug : slug;
+  const iconSlug = slug.includes('/') ? (slug.split('/').pop() ?? slug) : slug;
   const Icon = getCategoryIcon(iconSlug);
 
   return (
@@ -30,19 +30,14 @@ export function CategoryCard({
       href={href ?? `/products/${slug}`}
       className="card-glow group flex flex-col rounded-2xl border border-border bg-white p-6"
     >
-
       {/* Icon badge */}
       <div className="mb-5 flex h-12 w-12 items-center justify-center rounded-xl bg-primary/10 transition-colors duration-300 group-hover:bg-primary/15">
         <Icon className="h-6 w-6 text-primary" strokeWidth={1.5} />
       </div>
 
       {/* Content */}
-      <h3 className="mb-2 text-lg font-semibold text-secondary">
-        {title}
-      </h3>
-      <p className="mb-4 flex-1 text-sm leading-relaxed text-muted-foreground">
-        {description}
-      </p>
+      <h3 className="mb-2 text-lg font-semibold text-secondary">{title}</h3>
+      <p className="mb-4 flex-1 text-sm leading-relaxed text-muted-foreground">{description}</p>
 
       {/* Footer */}
       <div className="flex items-center gap-2 text-sm font-medium text-primary">

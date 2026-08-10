@@ -14,7 +14,7 @@ export function useScrollReveal(threshold = 0.1) {
           observer.disconnect();
         }
       },
-      { threshold, rootMargin: '50px' }
+      { threshold, rootMargin: '50px' },
     );
 
     if (ref.current) observer.observe(ref.current);

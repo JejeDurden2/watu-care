@@ -48,15 +48,17 @@
   },
   "whyUs": {
     "title": "Why Watu Care",
-    "subtitle": "We connect healthcare providers with quality medical supplies from Asia.",
+    "subtitle": "One Hong Kong desk between your facility and ISO 13485 manufacturers in Asia — quoted in 48 hours, documented on arrival.",
     "hubTitle": "Direct Sourcing",
-    "hubDesc": "Products ship directly from certified Asian manufacturers to healthcare facilities across Africa and the Middle East. No intermediary, no extra costs.",
-    "directTitle": "Direct Relationships",
-    "directDesc": "We work directly with manufacturers to ensure quality products and competitive pricing.",
-    "serviceTitle": "Responsive Service",
-    "serviceDesc": "Quick quote turnaround and support throughout your order process.",
-    "catalogTitle": "Wide Catalog",
-    "catalogDesc": "Wide range of medical supplies across multiple categories to meet your facility's needs."
+    "hubDesc": "Orders ship from ISO 13485-certified manufacturers in Asia straight to your facility in Africa or the Middle East. No trading company in the middle, no margin stacked on top of a margin.",
+    "directTitle": "Contracts With the Factories",
+    "directDesc": "We contract with the manufacturers themselves, so what you pay is the factory price plus our margin — not a chain of intermediaries.",
+    "serviceTitle": "48-Hour Quotes",
+    "serviceDesc": "Send your list, get a priced quote with sea and air freight options and a delivery window within two business days. One contact from quote to delivery.",
+    "catalogTitle": "10 Categories, One Supplier",
+    "catalogDesc": "Gloves, PPE, wound care, surgical packs, catheters, respiratory, consumables and more — consolidated into one shipment, one set of documents, one invoice.",
+    "countriesServed": "Countries served",
+    "skuCount": "{count} product lines"
   },
   "qualityCompliance": {
     "title": "Quality & Compliance",
@@ -614,7 +616,8 @@
       }
     },
     "categoryTitleTemplate": "Wholesale {category} Supplier - Africa & Middle East",
-    "productDescSuffix": "Source in bulk from Watu Care, wholesale B2B medical supplier for Africa and the Middle East."
+    "productDescSuffix": "Source in bulk from Watu Care, wholesale B2B medical supplier for Africa and the Middle East.",
+    "photosComingSoon": "Photos coming soon"
   },
   "quote": {
     "listTitle": "Your Product List",
@@ -688,8 +691,8 @@
     "step3Desc": "We manage everything: manufacturer coordination, quality checks, and logistics, until your order is delivered."
   },
   "cta": {
-    "title": "Ready to Get Started?",
-    "subtitle": "Request a quote for the medical supplies you need. Our team will respond within 24-48 hours.",
+    "title": "Send us your list, get a price in 48 hours",
+    "subtitle": "Tell us the products, the quantities and the destination. You get unit pricing, sea and air freight options, and a delivery window — no account, no commitment.",
     "button": "Get a Free Quote",
     "buttonSecondary": "Contact Us",
     "reassurance": "Response within 48 hours",
@@ -743,11 +746,8 @@
     "getInTouch": "Get in Touch",
     "browseProducts": "Browse Products",
     "stats": {
-      "skus": "500+",
       "skusLabel": "Medical SKUs",
-      "countries": "30+",
       "countriesLabel": "Countries Served",
-      "units": "10M+",
       "unitsLabel": "Units Delivered"
     }
   },
@@ -812,11 +812,8 @@
       "response": "We respond to all inquiries within 24-48 hours."
     },
     "stats": {
-      "iso": "ISO",
       "isoLabel": "Certified products",
-      "response": "48h",
       "responseLabel": "Response time",
-      "countries": "30+",
       "countriesLabel": "Countries served"
     }
   },
@@ -844,20 +841,6 @@
     "story6": "Not markets. Not volumes. Not margins.",
     "story7": "But doctors, nurses, buyers, logisticians, and the patients they serve.",
     "story8": "At Watu Care, we don't just move products. We build bridges between people, markets, and better healthcare."
-  },
-  "valueProps": {
-    "title": "Why Partner with Watu Care?",
-    "subtitle": "We connect healthcare providers with quality medical supplies.",
-    "qualityFirst": "Quality First",
-    "qualityFirstDesc": "We work exclusively with approved and trusted manufacturers in Asia, so our medical devices meet international standards and deliver consistent, reliable performance.",
-    "priceCommitment": "Price Commitment",
-    "priceCommitmentDesc": "We are committed to fair, stable and transparent pricing. By working directly with manufacturers and optimizing our sourcing model, we ensure cost-efficiency without compromising on quality or compliance.",
-    "supplyChain": "Reliable & Transparent Supply Chain",
-    "supplyChainDesc": "Our sourcing model is built directly with selected manufacturers, allowing us to ensure full traceability, controlled logistics and dependable delivery across Africa and the Middle East.",
-    "rdFocus": "Research & Development Focus",
-    "rdFocusDesc": "We actively collaborate with our manufacturing partners on product improvement, adaptation to local needs and regulatory alignment. Our R&D approach ensures that devices are not only compliant, but also relevant, practical and scalable for the markets we serve.",
-    "humanSupport": "Human-Centered Support",
-    "humanSupportDesc": "From quotation to delivery, our team supports you at every step with responsiveness, clarity and long-term commitment."
   },
   "markets": {
     "meta": {
@@ -1307,13 +1290,13 @@
     "title": "Frequently Asked Questions",
     "subtitle": "Find answers to common questions about working with Watu Care.",
     "moqQuestion": "What is the minimum order quantity (MOQ)?",
-    "moqAnswer": "MOQ varies by product category. For most items, we work with quantities suitable for healthcare facilities of all sizes. Contact us with your specific needs and we'll find options that fit.",
+    "moqAnswer": "MOQ is set per product line and depends on how you ship. Sea freight is quoted by the pallet or container, air freight by the carton, and we consolidate several categories into a single shipment so smaller facilities still reach a workable volume. Send us your list and your destination — the MOQ for each line is stated in the quote.",
     "deliveryQuestion": "What are the delivery times?",
     "deliveryAnswer": "Delivery timelines depend on the shipping method you choose. Sea freight usually takes around 30–50 days, while air freight options allow delivery within 6–9 days.",
     "regionsQuestion": "Which regions do you deliver to?",
     "regionsAnswer": "We deliver to healthcare facilities across Africa and the Middle East, and we can also provide quotations for other countries worldwide upon request. Our team supports international shipments through reliable logistics partners for dependable delivery wherever our clients operate.",
     "certificationsQuestion": "What certifications do your products have?",
-    "certificationsAnswer": "Our products come from manufacturers that meet international quality standards including CE marking and ISO certifications. We can provide specific certification documents upon request.",
+    "certificationsAnswer": "Our manufacturers are certified to ISO 13485, the quality management standard for medical devices, and the product lines we supply carry CE marking. Test reports, certificates of analysis and batch traceability documents ship with every order, and we can send the certificates for a specific reference before you order.",
     "paymentQuestion": "What payment methods do you accept?",
     "paymentAnswer": "We accept bank transfers (T/T) and letters of credit (L/C) for larger orders. Payment terms are discussed during the quotation process based on order size and relationship.",
     "supportQuestion": "What after-sales support do you provide?",
@@ -1326,7 +1309,9 @@
     "stillHaveQuestions": "Still have questions?",
     "stillHaveQuestionsDesc": "Our team is ready to help with any questions about our products, pricing, or delivery.",
     "contactUs": "Contact Us",
-    "viewProducts": "View Products"
+    "viewProducts": "View Products",
+    "pricingQuestion": "How is pricing set, and can I see prices online?",
+    "pricingAnswer": "Prices are not published because they move with volume, freight mode and destination. Every quote is priced per unit and per line, with the freight and delivery window shown separately, so you can compare a sea and an air scenario side by side. Quotes are issued within 48 business hours and payment is by bank transfer (T/T) or letter of credit (L/C)."
   },
   "stats": {
     "products": "Product lines",
@@ -1340,12 +1325,6 @@
     "subtitle": "We supply medical devices and PPE to healthcare providers across Africa and the Middle East. Select your market to see local delivery, compliance, and sourcing details.",
     "countryCount": "{count} countries",
     "viewAll": "View all markets"
-  },
-  "trustBar": {
-    "isoCertified": "ISO Certified Products",
-    "countries": "25+ Countries Served",
-    "responseTime": "48h Quote Response",
-    "qualityGuaranteed": "Quality Guaranteed"
   },
   "whatsapp": {
     "chatWithUs": "Chat with us",
@@ -1695,11 +1674,26 @@
       },
       "faqTitle": "Frequently Asked Questions",
       "faq": [
-        { "q": "What certifications do your products carry?", "a": "All products carry CE marking and are manufactured under ISO 13485 quality management systems. We source from WHO-prequalified suppliers wherever applicable, and provide full certification documentation with every shipment." },
-        { "q": "Can you deliver to remote field locations?", "a": "Yes. We coordinate logistics to challenging destinations across Africa and the Middle East, including remote field sites. We work with specialized freight partners experienced in humanitarian supply chains." },
-        { "q": "What is the minimum order quantity?", "a": "We offer flexible minimum order quantities adapted to humanitarian operations. For emergency deployments, we can work with smaller quantities to meet urgent needs. Contact us to discuss your specific requirements." },
-        { "q": "Do you provide documentation for donor compliance?", "a": "Every shipment includes full audit trails, certificates of conformity, batch records, and test reports suitable for donor reporting requirements from organizations such as USAID, EU, and UN agencies." },
-        { "q": "How quickly can you process urgent orders?", "a": "We provide quotes within 48 hours and offer expedited processing for emergency humanitarian operations. For time-critical needs, we prioritize order handling and can coordinate air freight when required." }
+        {
+          "q": "What certifications do your products carry?",
+          "a": "All products carry CE marking and are manufactured under ISO 13485 quality management systems. We source from WHO-prequalified suppliers wherever applicable, and provide full certification documentation with every shipment."
+        },
+        {
+          "q": "Can you deliver to remote field locations?",
+          "a": "Yes. We coordinate logistics to challenging destinations across Africa and the Middle East, including remote field sites. We work with specialized freight partners experienced in humanitarian supply chains."
+        },
+        {
+          "q": "What is the minimum order quantity?",
+          "a": "We offer flexible minimum order quantities adapted to humanitarian operations. For emergency deployments, we can work with smaller quantities to meet urgent needs. Contact us to discuss your specific requirements."
+        },
+        {
+          "q": "Do you provide documentation for donor compliance?",
+          "a": "Every shipment includes full audit trails, certificates of conformity, batch records, and test reports suitable for donor reporting requirements from organizations such as USAID, EU, and UN agencies."
+        },
+        {
+          "q": "How quickly can you process urgent orders?",
+          "a": "We provide quotes within 48 hours and offer expedited processing for emergency humanitarian operations. For time-critical needs, we prioritize order handling and can coordinate air freight when required."
+        }
       ],
       "cta": {
         "title": "Need Supplies for Your Mission?",
@@ -1859,11 +1853,26 @@
       },
       "faqTitle": "Frequently Asked Questions",
       "faq": [
-        { "q": "Can you provide proforma invoices for tender submissions?", "a": "Yes. We provide detailed proforma invoices formatted for government procurement processes and tender submissions, including full product specifications, unit pricing, and delivery terms." },
-        { "q": "What international standards do your products meet?", "a": "Our products meet CE marking requirements and are manufactured under ISO 13485 quality management systems. We source from WHO-prequalified suppliers where applicable and provide all relevant certificates of conformity." },
-        { "q": "Can you handle large-volume national procurement orders?", "a": "Yes. Our manufacturer network has the capacity to fulfill large-scale national procurement orders with consistent quality across all batches. We support phased delivery schedules to match your distribution timeline." },
-        { "q": "Do you support multi-site delivery across districts?", "a": "We coordinate deliveries to central medical stores, regional warehouses, and individual hospital facilities. A single order can be split across multiple delivery points to match your distribution structure." },
-        { "q": "What documentation do you provide for procurement audits?", "a": "We provide full traceability documentation including batch records, certificates of conformity, manufacturer test reports, customs clearance documents, and delivery confirmation for each shipment." }
+        {
+          "q": "Can you provide proforma invoices for tender submissions?",
+          "a": "Yes. We provide detailed proforma invoices formatted for government procurement processes and tender submissions, including full product specifications, unit pricing, and delivery terms."
+        },
+        {
+          "q": "What international standards do your products meet?",
+          "a": "Our products meet CE marking requirements and are manufactured under ISO 13485 quality management systems. We source from WHO-prequalified suppliers where applicable and provide all relevant certificates of conformity."
+        },
+        {
+          "q": "Can you handle large-volume national procurement orders?",
+          "a": "Yes. Our manufacturer network has the capacity to fulfill large-scale national procurement orders with consistent quality across all batches. We support phased delivery schedules to match your distribution timeline."
+        },
+        {
+          "q": "Do you support multi-site delivery across districts?",
+          "a": "We coordinate deliveries to central medical stores, regional warehouses, and individual hospital facilities. A single order can be split across multiple delivery points to match your distribution structure."
+        },
+        {
+          "q": "What documentation do you provide for procurement audits?",
+          "a": "We provide full traceability documentation including batch records, certificates of conformity, manufacturer test reports, customs clearance documents, and delivery confirmation for each shipment."
+        }
       ],
       "cta": {
         "title": "Ready to Respond to Your Next Tender?",

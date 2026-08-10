@@ -24,10 +24,7 @@ export function MarketQuoteButton({
     <Button
       size={size}
       variant="primary"
-      className={cn(
-        variant === 'white' && 'bg-white text-secondary hover:bg-white/90',
-        className
-      )}
+      className={cn(variant === 'white' && 'bg-white text-secondary hover:bg-white/90', className)}
       onClick={openModalWithForm}
     >
       {t('requestQuote')}

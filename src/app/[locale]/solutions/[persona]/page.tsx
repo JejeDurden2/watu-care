@@ -1,6 +1,6 @@
 import type { Metadata } from 'next';
 import { notFound } from 'next/navigation';
-import { getTranslations } from 'next-intl/server';
+import { getTranslations, setRequestLocale } from 'next-intl/server';
 import {
   Building2,
   Stethoscope,
@@ -26,6 +26,7 @@ import {
   combineSchemas,
 } from '@/lib/schema';
 import { FAQAccordion } from '@/app/[locale]/faq/FAQAccordion';
+import { notFoundTitle } from '@/lib/metadata';
 import { BASE_URL } from '@/lib/constants';
 
 // Static icon lookup — avoids dynamic imports
@@ -41,22 +42,20 @@ interface PersonaPageProps {
   params: Promise<{ locale: string; persona: string }>;
 }
 
-export async function generateStaticParams(): Promise<
-  Array<{ locale: string; persona: string }>
-> {
+export async function generateStaticParams(): Promise<Array<{ locale: string; persona: string }>> {
   const { locales } = await import('@/i18n/config');
   const personas = getAllPersonas();
-  return locales.flatMap((locale) =>
-    personas.map((p) => ({ locale, persona: p.slug })),
-  );
+  return locales.flatMap((locale) => personas.map((p) => ({ locale, persona: p.slug })));
 }
 
-export async function generateMetadata({
-  params,
-}: PersonaPageProps): Promise<Metadata> {
+export async function generateMetadata({ params }: PersonaPageProps): Promise<Metadata> {
   const { locale, persona: personaSlug } = await params;
   const persona = getPersonaBySlug(personaSlug);
-  if (!persona) return { title: 'Not Found' };
+  if (!persona)
+    return {
+      title: await notFoundTitle(locale),
+      robots: { index: false, follow: false },
+    };
 
   const t = await getTranslations({ locale, namespace: 'personas' });
   const title = t(`${personaSlug}.meta.title`);
@@ -89,6 +88,9 @@ export default async function PersonaPage({
   params,
 }: PersonaPageProps): Promise<React.ReactElement> {
   const { locale, persona: personaSlug } = await params;
+
+  // Opt into static rendering — without this next-intl forces every page dynamic.
+  setRequestLocale(locale);
   const persona = getPersonaBySlug(personaSlug);
   if (!persona) notFound();
 
@@ -107,23 +109,21 @@ export default async function PersonaPage({
   // Resolve recommended categories
   const recommendedCategories = persona.recommendedCategories
     .map((slug) => getCategoryBySlug(slug))
-    .filter(
-      (c): c is NonNullable<typeof c> => c !== undefined,
-    );
+    .filter((c): c is NonNullable<typeof c> => c !== undefined);
 
   // Retrieve typed arrays from i18n
-  const painPointItems = t.raw(
-    `${personaSlug}.painPoints.items`,
-  ) as Array<{ title: string; description: string }>;
-  const howWeHelpItems = t.raw(
-    `${personaSlug}.howWeHelp.items`,
-  ) as Array<{ title: string; description: string }>;
+  const painPointItems = t.raw(`${personaSlug}.painPoints.items`) as Array<{
+    title: string;
+    description: string;
+  }>;
+  const howWeHelpItems = t.raw(`${personaSlug}.howWeHelp.items`) as Array<{
+    title: string;
+    description: string;
+  }>;
 
   // FAQ data (optional per persona)
   const faqKey = `${personaSlug}.faq`;
-  const rawFaq = t.has(faqKey)
-    ? (t.raw(faqKey) as Array<{ q: string; a: string }>)
-    : [];
+  const rawFaq = t.has(faqKey) ? (t.raw(faqKey) as Array<{ q: string; a: string }>) : [];
   const faqItems = rawFaq.map((item) => ({
     question: item.q,
     answer: item.a,
@@ -166,7 +166,7 @@ export default async function PersonaPage({
 
           <div className="mb-6 flex items-center gap-3">
             <div className="h-px w-12 bg-accent" />
-            <span className="font-body text-xs font-semibold uppercase tracking-[0.18em] text-accent">
+            <span className="font-body text-xs font-semibold uppercase tracking-[0.18em] text-accent-light">
               {t(`${personaSlug}.hero.eyebrow`)}
             </span>
           </div>
@@ -238,10 +238,7 @@ export default async function PersonaPage({
       </section>
 
       {/* How We Help */}
-      <section
-        className="section-dark relative overflow-hidden py-20 lg:py-28"
-        data-animate
-      >
+      <section className="section-dark relative overflow-hidden py-20 lg:py-28" data-animate>
         <div className="pointer-events-none absolute inset-0">
           <div className="pattern-dots-light absolute inset-0" />
           <div className="absolute -bottom-10 left-0 h-[350px] w-[350px] rounded-full bg-accent/8 blur-[120px]" />
@@ -345,9 +342,7 @@ export default async function PersonaPage({
             </p>
             <div className="mt-6 flex flex-wrap gap-2.5">
               {tier1Countries.map((country) => {
-                const countryName = tMarkets.has(
-                  `countries.${country.slug}`,
-                )
+                const countryName = tMarkets.has(`countries.${country.slug}`)
                   ? tMarkets(`countries.${country.slug}`)
                   : country.name;
                 return (
@@ -360,10 +355,7 @@ export default async function PersonaPage({
                     }
                     className="inline-flex items-center gap-2 rounded-full border border-border bg-white px-4 py-2 text-sm font-medium text-secondary transition-colors hover:border-primary hover:bg-primary/5"
                   >
-                    <MapPin
-                      className="h-3.5 w-3.5 text-primary"
-                      aria-hidden="true"
-                    />
+                    <MapPin className="h-3.5 w-3.5 text-primary" aria-hidden="true" />
                     {countryName}
                   </Link>
                 );
@@ -403,9 +395,7 @@ export default async function PersonaPage({
                 {t(`${personaSlug}.cta.primary`)}
               </QuoteModalButton>
               <Button size="lg" variant="outline" asChild>
-                <Link href="/products">
-                  {t(`${personaSlug}.cta.secondary`)}
-                </Link>
+                <Link href="/products">{t(`${personaSlug}.cta.secondary`)}</Link>
               </Button>
             </div>
           </div>

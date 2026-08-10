@@ -1,16 +1,15 @@
 import type { Metadata } from 'next';
 import { notFound } from 'next/navigation';
-import { getTranslations } from 'next-intl/server';
-import {
-  MapPin,
-  Clock,
-  Truck,
-  Shield,
-  DollarSign,
-} from 'lucide-react';
+import { getTranslations, setRequestLocale } from 'next-intl/server';
+import { MapPin, Clock, Truck, Shield, DollarSign } from 'lucide-react';
 import { Container, Button } from '@/components/ui';
 import { Breadcrumb } from '@/components/products';
-import { CategoryCard, PseoHeroBackground, PseoHeroPulse, PseoHealthcareContext } from '@/components/sections';
+import {
+  CategoryCard,
+  PseoHeroBackground,
+  PseoHeroPulse,
+  PseoHealthcareContext,
+} from '@/components/sections';
 import { getAllCategories } from '@/lib/products';
 import { getTier1Countries, getCountryBySlug } from '@/data/countries';
 import {
@@ -22,6 +21,7 @@ import {
 import { Link } from '@/i18n/routing';
 import { locales, type Locale } from '@/i18n/config';
 import { MarketQuoteButton } from './MarketQuoteButton';
+import { notFoundTitle } from '@/lib/metadata';
 import { BASE_URL } from '@/lib/constants';
 
 interface CountryPageProps {
@@ -31,27 +31,26 @@ interface CountryPageProps {
   }>;
 }
 
-export async function generateStaticParams(): Promise<
-  Array<{ locale: Locale; country: string }>
-> {
+export async function generateStaticParams(): Promise<Array<{ locale: Locale; country: string }>> {
   const tier1Countries = getTier1Countries();
   return locales.flatMap((locale) =>
     tier1Countries.map((country) => ({
       locale,
       country: country.slug,
-    }))
+    })),
   );
 }
 
-export async function generateMetadata({
-  params,
-}: CountryPageProps): Promise<Metadata> {
+export async function generateMetadata({ params }: CountryPageProps): Promise<Metadata> {
   const { locale, country: countrySlug } = await params;
   const t = await getTranslations({ locale, namespace: 'markets' });
   const country = getCountryBySlug(countrySlug);
 
   if (!country || country.tier !== 1) {
-    return { title: 'Not Found' };
+    return {
+      title: await notFoundTitle(locale),
+      robots: { index: false, follow: false },
+    };
   }
 
   const countryName = t.has(`countries.${countrySlug}`)
@@ -95,6 +94,9 @@ export default async function CountryMarketPage({
   params,
 }: CountryPageProps): Promise<React.ReactElement> {
   const { locale, country: countrySlug } = await params;
+
+  // Opt into static rendering — without this next-intl forces every page dynamic.
+  setRequestLocale(locale);
   const t = await getTranslations('markets');
   const tNav = await getTranslations('nav');
   const tProducts = await getTranslations('products');
@@ -116,7 +118,9 @@ export default async function CountryMarketPage({
     ? t(`countryData.${countrySlug}.healthcareContext`)
     : country.healthcareContext;
 
-  const marketHighlights: string[] | undefined = t.has(`countryData.${countrySlug}.marketHighlights`)
+  const marketHighlights: string[] | undefined = t.has(
+    `countryData.${countrySlug}.marketHighlights`,
+  )
     ? (t.raw(`countryData.${countrySlug}.marketHighlights`) as string[])
     : country.marketHighlights;
 
@@ -131,11 +135,7 @@ export default async function CountryMarketPage({
     { name: countryName },
   ]);
 
-  const localBusinessSchema = generateLocalBusinessSchema(
-    country.name,
-    countrySlug,
-    locale
-  );
+  const localBusinessSchema = generateLocalBusinessSchema(country.name, countrySlug, locale);
 
   const categoryListSchema = generateMarketItemListSchema(
     categories.map((cat) => ({
@@ -144,14 +144,10 @@ export default async function CountryMarketPage({
         : cat.title,
       url: `${BASE_URL}/${locale}/markets/${countrySlug}/${cat.slug}`,
     })),
-    `Medical Supply Categories in ${countryName}`
+    `Medical Supply Categories in ${countryName}`,
   );
 
-  const combinedSchema = combineSchemas(
-    breadcrumbSchema,
-    localBusinessSchema,
-    categoryListSchema
-  );
+  const combinedSchema = combineSchemas(breadcrumbSchema, localBusinessSchema, categoryListSchema);
 
   // Features with translations
   const features = [
@@ -209,13 +205,10 @@ export default async function CountryMarketPage({
               </div>
 
               <h1 className="mb-6 text-4xl font-bold text-white md:text-5xl lg:text-6xl">
-                {t('hero.titlePrefix')}{' '}
-                <span className="text-accent">{countryName}</span>
+                {t('hero.titlePrefix')} <span className="text-accent-light">{countryName}</span>
               </h1>
 
-              <p className="mb-8 text-lg text-white/80 md:text-xl">
-                {t('hero.subtitle')}
-              </p>
+              <p className="mb-8 text-lg text-white/80 md:text-xl">{t('hero.subtitle')}</p>
 
               <div className="flex flex-col gap-4 sm:flex-row">
                 <MarketQuoteButton variant="white" />
@@ -241,18 +234,13 @@ export default async function CountryMarketPage({
         <Container>
           <dl className="grid gap-px bg-border sm:grid-cols-2 lg:grid-cols-4">
             {features.map((feature) => (
-              <div
-                key={feature.title}
-                className="flex items-start gap-4 bg-background px-6 py-8"
-              >
+              <div key={feature.title} className="flex items-start gap-4 bg-background px-6 py-8">
                 <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-primary/10">
                   <feature.icon className="h-5 w-5 text-primary" strokeWidth={1.5} />
                 </div>
                 <div>
                   <dt className="font-semibold text-secondary">{feature.title}</dt>
-                  <dd className="mt-1 text-sm text-muted-foreground">
-                    {feature.description}
-                  </dd>
+                  <dd className="mt-1 text-sm text-muted-foreground">{feature.description}</dd>
                 </div>
               </div>
             ))}

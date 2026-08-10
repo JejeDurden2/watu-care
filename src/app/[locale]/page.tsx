@@ -1,5 +1,5 @@
 import type { Metadata } from 'next';
-import { getTranslations } from 'next-intl/server';
+import { getTranslations, setRequestLocale } from 'next-intl/server';
 import {
   Hero,
   WhyUs,
@@ -16,6 +16,7 @@ import { BASE_URL } from '@/lib/constants';
 
 const faqKeys = [
   'moq',
+  'pricing',
   'delivery',
   'regions',
   'certifications',
@@ -29,9 +30,7 @@ interface HomePageProps {
   }>;
 }
 
-export async function generateMetadata({
-  params,
-}: HomePageProps): Promise<Metadata> {
+export async function generateMetadata({ params }: HomePageProps): Promise<Metadata> {
   const { locale } = await params;
   const t = await getTranslations({ locale, namespace: 'meta' });
 
@@ -79,10 +78,11 @@ export async function generateMetadata({
   };
 }
 
-export default async function Home({
-  params,
-}: HomePageProps): Promise<React.ReactElement> {
+export default async function Home({ params }: HomePageProps): Promise<React.ReactElement> {
   const { locale } = await params;
+
+  // Opt into static rendering — without this next-intl forces every page dynamic.
+  setRequestLocale(locale);
   const t = await getTranslations({ locale, namespace: 'faq' });
 
   // Generate FAQ schema for rich snippets

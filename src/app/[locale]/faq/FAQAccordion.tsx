@@ -14,7 +14,10 @@ interface FAQAccordionProps {
   headingLevel?: 'h2' | 'h3';
 }
 
-export function FAQAccordion({ items, headingLevel = 'h3' }: FAQAccordionProps): React.ReactElement {
+export function FAQAccordion({
+  items,
+  headingLevel = 'h3',
+}: FAQAccordionProps): React.ReactElement {
   const [openIndex, setOpenIndex] = useState<number>(0);
   const Heading = headingLevel;
 
@@ -35,7 +38,7 @@ export function FAQAccordion({ items, headingLevel = 'h3' }: FAQAccordionProps):
               <Heading
                 className={cn(
                   'font-display text-lg font-semibold tracking-tight transition-colors lg:text-xl',
-                  isOpen ? 'text-secondary' : 'text-secondary/70 hover:text-secondary'
+                  isOpen ? 'text-secondary' : 'text-secondary/70 hover:text-secondary',
                 )}
               >
                 {item.question}
@@ -43,7 +46,7 @@ export function FAQAccordion({ items, headingLevel = 'h3' }: FAQAccordionProps):
               <ChevronDown
                 className={cn(
                   'h-5 w-5 shrink-0 text-muted-foreground transition-transform duration-200',
-                  isOpen && 'rotate-180'
+                  isOpen && 'rotate-180',
                 )}
               />
             </button>
@@ -52,7 +55,7 @@ export function FAQAccordion({ items, headingLevel = 'h3' }: FAQAccordionProps):
               role="region"
               className={cn(
                 'grid transition-all duration-200 ease-out',
-                isOpen ? 'grid-rows-[1fr] opacity-100' : 'grid-rows-[0fr] opacity-0'
+                isOpen ? 'grid-rows-[1fr] opacity-100' : 'grid-rows-[0fr] opacity-0',
               )}
             >
               <div className="overflow-hidden">

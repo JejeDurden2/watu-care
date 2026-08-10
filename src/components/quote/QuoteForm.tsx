@@ -7,7 +7,11 @@ import { useTranslations } from 'next-intl';
 import { Button } from '@/components/ui';
 import { countries } from '@/data/countries';
 import { useQuoteStore } from '@/lib/quote-store';
-import { trackFormFieldInteraction, trackQuoteFormSubmit, trackQuoteFormError } from '@/lib/analytics';
+import {
+  trackFormFieldInteraction,
+  trackQuoteFormSubmit,
+  trackQuoteFormError,
+} from '@/lib/analytics';
 import { cn } from '@/lib/utils';
 
 interface QuoteFormData {
@@ -92,7 +96,10 @@ export function QuoteForm({ onSuccess }: QuoteFormProps): React.ReactElement {
     const { name, value } = e.target;
     setFormData((prev: QuoteFormData) => ({ ...prev, [name]: value }));
     if (errors[name as keyof QuoteFormData]) {
-      setErrors((prev: Partial<Record<keyof QuoteFormData, string>>) => ({ ...prev, [name]: undefined }));
+      setErrors((prev: Partial<Record<keyof QuoteFormData, string>>) => ({
+        ...prev,
+        [name]: undefined,
+      }));
     }
     if (name === 'email') {
       setEmailSuggestion(null);
@@ -172,16 +179,14 @@ export function QuoteForm({ onSuccess }: QuoteFormProps): React.ReactElement {
     }
   };
 
-  const inputClasses = 'w-full rounded-lg border bg-background px-4 py-3 text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary';
+  const inputClasses =
+    'w-full rounded-lg border bg-background px-4 py-3 text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary';
 
   return (
     <form ref={formRef} onSubmit={handleSubmit} className="space-y-4">
       {/* Contact Name (optional) */}
       <div>
-        <label
-          htmlFor="contactName"
-          className="mb-1 block text-sm font-medium text-foreground"
-        >
+        <label htmlFor="contactName" className="mb-1 block text-sm font-medium text-foreground">
           {t('form.contactName')}
         </label>
         <input
@@ -200,10 +205,7 @@ export function QuoteForm({ onSuccess }: QuoteFormProps): React.ReactElement {
 
       {/* Company Name */}
       <div>
-        <label
-          htmlFor="companyName"
-          className="mb-1 block text-sm font-medium text-foreground"
-        >
+        <label htmlFor="companyName" className="mb-1 block text-sm font-medium text-foreground">
           {t('form.company')} *
         </label>
         <input
@@ -218,17 +220,12 @@ export function QuoteForm({ onSuccess }: QuoteFormProps): React.ReactElement {
           autoComplete="organization"
           className={cn(inputClasses, errors.companyName ? 'border-red-500' : 'border-border')}
         />
-        {errors.companyName && (
-          <p className="mt-1 text-sm text-red-500">{errors.companyName}</p>
-        )}
+        {errors.companyName && <p className="mt-1 text-sm text-red-500">{errors.companyName}</p>}
       </div>
 
       {/* Email */}
       <div>
-        <label
-          htmlFor="email"
-          className="mb-1 block text-sm font-medium text-foreground"
-        >
+        <label htmlFor="email" className="mb-1 block text-sm font-medium text-foreground">
           {t('form.email')} *
         </label>
         <input
@@ -247,9 +244,7 @@ export function QuoteForm({ onSuccess }: QuoteFormProps): React.ReactElement {
           autoComplete="email"
           className={cn(inputClasses, errors.email ? 'border-red-500' : 'border-border')}
         />
-        {errors.email && (
-          <p className="mt-1 text-sm text-red-500">{errors.email}</p>
-        )}
+        {errors.email && <p className="mt-1 text-sm text-red-500">{errors.email}</p>}
         {emailSuggestion && !errors.email && (
           <p className="mt-1 text-sm text-amber-600">
             {t('form.emailSuggestion')}{' '}
@@ -267,10 +262,7 @@ export function QuoteForm({ onSuccess }: QuoteFormProps): React.ReactElement {
 
       {/* Phone (optional) */}
       <div>
-        <label
-          htmlFor="phone"
-          className="mb-1 block text-sm font-medium text-foreground"
-        >
+        <label htmlFor="phone" className="mb-1 block text-sm font-medium text-foreground">
           {t('form.phone')}
         </label>
         <input
@@ -286,17 +278,12 @@ export function QuoteForm({ onSuccess }: QuoteFormProps): React.ReactElement {
           autoComplete="tel"
           className={cn(inputClasses, 'border-border')}
         />
-        <p className="mt-1 text-xs text-muted-foreground">
-          {t('form.phoneHint')}
-        </p>
+        <p className="mt-1 text-xs text-muted-foreground">{t('form.phoneHint')}</p>
       </div>
 
       {/* Country */}
       <div>
-        <label
-          htmlFor="country"
-          className="mb-1 block text-sm font-medium text-foreground"
-        >
+        <label htmlFor="country" className="mb-1 block text-sm font-medium text-foreground">
           {t('form.country')} *
         </label>
         <select
@@ -325,17 +312,12 @@ export function QuoteForm({ onSuccess }: QuoteFormProps): React.ReactElement {
             ))}
           </optgroup>
         </select>
-        {errors.country && (
-          <p className="mt-1 text-sm text-red-500">{errors.country}</p>
-        )}
+        {errors.country && <p className="mt-1 text-sm text-red-500">{errors.country}</p>}
       </div>
 
       {/* Message */}
       <div>
-        <label
-          htmlFor="message"
-          className="mb-1 block text-sm font-medium text-foreground"
-        >
+        <label htmlFor="message" className="mb-1 block text-sm font-medium text-foreground">
           {t('form.message')}
         </label>
         <textarea
@@ -353,18 +335,16 @@ export function QuoteForm({ onSuccess }: QuoteFormProps): React.ReactElement {
 
       {/* Submit Error */}
       {submitError && (
-        <div className="rounded-lg border border-red-200 bg-red-50 px-4 py-3 text-sm text-red-700" role="alert">
+        <div
+          className="rounded-lg border border-red-200 bg-red-50 px-4 py-3 text-sm text-red-700"
+          role="alert"
+        >
           {submitError}
         </div>
       )}
 
       {/* Submit Button */}
-      <Button
-        type="submit"
-        size="lg"
-        className="w-full"
-        disabled={isSubmitting}
-      >
+      <Button type="submit" size="lg" className="w-full" disabled={isSubmitting}>
         {isSubmitting ? (
           <>
             <Loader2 className="mr-2 h-4 w-4 animate-spin" />

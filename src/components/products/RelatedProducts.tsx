@@ -18,11 +18,7 @@ export function RelatedProducts({
 }: RelatedProductsProps): React.ReactElement | null {
   const t = useTranslations('products');
   const category = getCategoryBySlug(categorySlug);
-  const relatedProducts = getRelatedProducts(
-    categorySlug,
-    currentProductId,
-    limit,
-  );
+  const relatedProducts = getRelatedProducts(categorySlug, currentProductId, limit);
 
   if (!category || relatedProducts.length === 0) {
     return null;
@@ -30,16 +26,10 @@ export function RelatedProducts({
 
   return (
     <section className="mt-16">
-      <h2 className="mb-8 text-2xl font-bold text-secondary">
-        {t('moreInCategory')}
-      </h2>
+      <h2 className="mb-8 text-2xl font-bold text-secondary">{t('moreInCategory')}</h2>
       <ProductGrid>
         {relatedProducts.map((product) => (
-          <ProductCard
-            key={product.id}
-            product={product}
-            category={category}
-          />
+          <ProductCard key={product.id} product={product} category={category} />
         ))}
       </ProductGrid>
     </section>

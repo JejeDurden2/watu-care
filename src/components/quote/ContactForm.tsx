@@ -6,11 +6,7 @@ import { Send, Loader2, Shield, Clock, CheckCircle2 } from 'lucide-react';
 import { useTranslations } from 'next-intl';
 import { Button } from '@/components/ui';
 import { countries } from '@/data/countries';
-import {
-  trackQuoteFormStart,
-  trackQuoteFormSubmit,
-  trackQuoteFormError,
-} from '@/lib/analytics';
+import { trackQuoteFormStart, trackQuoteFormSubmit, trackQuoteFormError } from '@/lib/analytics';
 import { cn } from '@/lib/utils';
 
 interface ContactFormData {

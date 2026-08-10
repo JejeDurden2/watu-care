@@ -1,5 +1,6 @@
 import { MessageCircle } from 'lucide-react';
 import { getTranslations } from 'next-intl/server';
+import { WHATSAPP_URL } from '@/lib/constants';
 import { cn } from '@/lib/utils';
 
 export const FloatingWhatsApp = async () => {
@@ -7,7 +8,7 @@ export const FloatingWhatsApp = async () => {
 
   return (
     <a
-      href="https://wa.me/212662258045"
+      href={WHATSAPP_URL}
       target="_blank"
       rel="noopener noreferrer"
       aria-label={t('ariaLabel')}
@@ -20,7 +21,7 @@ export const FloatingWhatsApp = async () => {
         'transition-all duration-200 ease-out',
         'hover:scale-105 hover:bg-[#25D366]',
         'focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2',
-        'group'
+        'group',
       )}
     >
       <MessageCircle className="h-7 w-7 text-white drop-shadow-sm" aria-hidden="true" />
@@ -32,7 +33,7 @@ export const FloatingWhatsApp = async () => {
           'text-sm font-medium text-secondary',
           'opacity-0 shadow-soft transition-all duration-200 ease-out',
           'group-hover:opacity-100',
-          'whitespace-nowrap'
+          'whitespace-nowrap',
         )}
       >
         {t('chatWithUs')}

@@ -24,9 +24,12 @@
 
 ```css
 :root {
-  --primary: 200 65% 55%;      /* Medical blue */
+  --primary: 200 70% 38%;      /* Medical blue — carries text, 4.9:1 on white */
   --secondary: 206 50% 13%;    /* Dark navy */
-  --accent: 175 50% 45%;       /* Teal green */
+  --accent: 175 55% 32%;       /* Teal green — carries text, 4.8:1 on white */
+
+  --primary-light: 200 65% 70%; /* Text/graphics on the navy sections */
+  --accent-light: 175 55% 58%;  /* Text/graphics on the navy sections */
 }
 ```
 

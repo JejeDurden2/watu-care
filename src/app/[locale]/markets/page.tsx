@@ -1,10 +1,14 @@
 import type { Metadata } from 'next';
-import { getTranslations } from 'next-intl/server';
+import { getTranslations, setRequestLocale } from 'next-intl/server';
 import { MapPin, ArrowRight } from 'lucide-react';
 import { Container } from '@/components/ui';
 import { Breadcrumb } from '@/components/products';
 import { getTier1Countries } from '@/data/countries';
-import { generateBreadcrumbSchema, generateMarketItemListSchema, combineSchemas } from '@/lib/schema';
+import {
+  generateBreadcrumbSchema,
+  generateMarketItemListSchema,
+  combineSchemas,
+} from '@/lib/schema';
 import { Link } from '@/i18n/routing';
 import { BASE_URL } from '@/lib/constants';
 
@@ -14,9 +18,7 @@ interface MarketsPageProps {
   }>;
 }
 
-export async function generateMetadata({
-  params,
-}: MarketsPageProps): Promise<Metadata> {
+export async function generateMetadata({ params }: MarketsPageProps): Promise<Metadata> {
   const { locale } = await params;
   const t = await getTranslations({ locale, namespace: 'markets' });
 
@@ -62,6 +64,9 @@ export default async function MarketsPage({
   params,
 }: MarketsPageProps): Promise<React.ReactElement> {
   const { locale } = await params;
+
+  // Opt into static rendering — without this next-intl forces every page dynamic.
+  setRequestLocale(locale);
   const t = await getTranslations('markets');
   const tNav = await getTranslations('nav');
 
@@ -76,9 +81,7 @@ export default async function MarketsPage({
 
   const itemListSchema = generateMarketItemListSchema(
     tier1Countries.map((country) => ({
-      name: t.has(`countries.${country.slug}`)
-        ? t(`countries.${country.slug}`)
-        : country.name,
+      name: t.has(`countries.${country.slug}`) ? t(`countries.${country.slug}`) : country.name,
       url: `${BASE_URL}/${locale}/markets/${country.slug}`,
     })),
     t('breadcrumb.markets'),
@@ -97,20 +100,13 @@ export default async function MarketsPage({
       <section className="bg-gradient-to-br from-secondary via-secondary to-primary/20 py-16 lg:py-24">
         <Container>
           <Breadcrumb
-            items={[
-              { label: tNav('home'), href: '/' },
-              { label: t('breadcrumb.markets') },
-            ]}
+            items={[{ label: tNav('home'), href: '/' }, { label: t('breadcrumb.markets') }]}
             variant="light"
           />
           <div className="mt-8 max-w-2xl">
-            <h1 className="mb-4 text-4xl font-bold text-white md:text-5xl">
-              {t('index.title')}
-            </h1>
-            <p className="text-lg text-white/80">
-              {t('index.description')}
-            </p>
-            <p className="mt-4 text-sm font-medium text-accent">
+            <h1 className="mb-4 text-4xl font-bold text-white md:text-5xl">{t('index.title')}</h1>
+            <p className="text-lg text-white/80">{t('index.description')}</p>
+            <p className="mt-4 text-sm font-medium text-accent-light">
               {t('index.countriesCount', { count: tier1Countries.length })}
             </p>
           </div>
@@ -120,9 +116,7 @@ export default async function MarketsPage({
       {/* Africa */}
       <section className="py-16">
         <Container>
-          <h2 className="mb-8 text-2xl font-bold text-secondary">
-            {t('regions.africa')}
-          </h2>
+          <h2 className="mb-8 text-2xl font-bold text-secondary">{t('regions.africa')}</h2>
           <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
             {africaCountries.map((country) => {
               const countryName = t.has(`countries.${country.slug}`)
@@ -153,9 +147,7 @@ export default async function MarketsPage({
       {/* Middle East */}
       <section className="border-t border-border bg-muted/30 py-16">
         <Container>
-          <h2 className="mb-8 text-2xl font-bold text-secondary">
-            {t('regions.middle-east')}
-          </h2>
+          <h2 className="mb-8 text-2xl font-bold text-secondary">{t('regions.middle-east')}</h2>
           <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
             {middleEastCountries.map((country) => {
               const countryName = t.has(`countries.${country.slug}`)

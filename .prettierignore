@@ -5,3 +5,7 @@ dist
 coverage
 package-lock.json
 pnpm-lock.yaml
+
+# Vendored agent skills — third-party content, do not reformat
+.agents
+.claude/skills

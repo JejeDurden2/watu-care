@@ -43,7 +43,6 @@ export async function Footer(): Promise<React.ReactElement> {
       <Container>
         {/* Main grid: brand column (wider) + 4 link columns */}
         <div className="grid gap-10 py-14 md:grid-cols-2 lg:grid-cols-[2fr_1fr_1fr_1fr_1fr] lg:gap-8 lg:py-16">
-
           {/* Brand Column */}
           <div className="space-y-5">
             <Image
@@ -58,7 +57,7 @@ export async function Footer(): Promise<React.ReactElement> {
               {t('description')}
             </p>
             {/* Geographic tagline */}
-            <p className="text-xs tracking-widest text-accent/60 uppercase">
+            <p className="text-xs tracking-widest text-accent-light/60 uppercase">
               Asia &middot; Africa &middot; Middle East
             </p>
             {/* LinkedIn — integrated in brand column */}
@@ -140,13 +139,14 @@ export async function Footer(): Promise<React.ReactElement> {
             </h4>
             <ul className="space-y-3">
               <li className="flex items-start gap-3">
-                <MapPin className="mt-0.5 h-4 w-4 shrink-0 text-accent/70" aria-hidden="true" />
-                <span className="text-sm text-secondary-foreground/65">
-                  {t('location')}
-                </span>
+                <MapPin
+                  className="mt-0.5 h-4 w-4 shrink-0 text-accent-light/70"
+                  aria-hidden="true"
+                />
+                <span className="text-sm text-secondary-foreground/65">{t('location')}</span>
               </li>
               <li className="flex items-center gap-3">
-                <Mail className="h-4 w-4 shrink-0 text-accent/70" aria-hidden="true" />
+                <Mail className="h-4 w-4 shrink-0 text-accent-light/70" aria-hidden="true" />
                 <a
                   href={`mailto:${t('email')}`}
                   className="text-sm text-secondary-foreground/65 transition-colors hover:text-primary"
@@ -155,10 +155,8 @@ export async function Footer(): Promise<React.ReactElement> {
                 </a>
               </li>
               <li className="flex items-center gap-3">
-                <Phone className="h-4 w-4 shrink-0 text-accent/70" aria-hidden="true" />
-                <span className="text-sm text-secondary-foreground/65">
-                  {t('phone')}
-                </span>
+                <Phone className="h-4 w-4 shrink-0 text-accent-light/70" aria-hidden="true" />
+                <span className="text-sm text-secondary-foreground/65">{t('phone')}</span>
               </li>
             </ul>
           </div>

@@ -62,7 +62,7 @@ export function MobileNavOverlay({
     if (!isOpen || !overlayRef.current) return;
 
     const focusableElements = overlayRef.current.querySelectorAll<HTMLElement>(
-      'a[href], button:not([disabled]), [tabindex]:not([tabindex="-1"])'
+      'a[href], button:not([disabled]), [tabindex]:not([tabindex="-1"])',
     );
     const firstElement = focusableElements[0];
     const lastElement = focusableElements[focusableElements.length - 1];
@@ -122,8 +122,7 @@ export function MobileNavOverlay({
       <nav className="flex-1 overflow-y-auto px-6 py-8">
         <div className="space-y-2">
           {navLinks.map((link, index) => {
-            const isActive =
-              pathname === link.href || pathname.startsWith(`${link.href}/`);
+            const isActive = pathname === link.href || pathname.startsWith(`${link.href}/`);
             return (
               <Link
                 key={link.href}
@@ -131,10 +130,8 @@ export function MobileNavOverlay({
                 aria-current={isActive ? 'page' : undefined}
                 className={cn(
                   'stagger-item block border-l-[3px] py-3 pl-6 text-2xl font-bold transition-all hover:border-accent hover:text-accent active:scale-[0.98]',
-                  isActive
-                    ? 'border-accent text-accent'
-                    : 'border-accent/60 text-secondary',
-                  `stagger-delay-${index + 1}`
+                  isActive ? 'border-accent text-accent' : 'border-accent/60 text-secondary',
+                  `stagger-delay-${index + 1}`,
                 )}
                 style={{ fontFamily: 'var(--font-display), system-ui, sans-serif' }}
                 onClick={() => {
@@ -153,7 +150,7 @@ export function MobileNavOverlay({
           <div
             className={cn(
               'stagger-item mb-4 flex items-center gap-2 text-xs font-medium uppercase tracking-wider text-secondary/40',
-              'stagger-delay-5'
+              'stagger-delay-5',
             )}
           >
             <Globe className="h-3.5 w-3.5" aria-hidden="true" />
@@ -168,9 +165,7 @@ export function MobileNavOverlay({
       {/* Footer */}
       <div className="border-t border-border/20 px-6 py-5">
         <div className="flex items-center justify-between">
-          <p className="text-xs text-secondary/30">
-            &copy; {new Date().getFullYear()} Watu Care
-          </p>
+          <p className="text-xs text-secondary/30">&copy; {new Date().getFullYear()} Watu Care</p>
           <a
             href="https://www.linkedin.com/company/watu-care"
             target="_blank"

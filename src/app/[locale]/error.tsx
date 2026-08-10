@@ -9,10 +9,7 @@ interface ErrorProps {
   reset: () => void;
 }
 
-export default function LocaleError({
-  error,
-  reset,
-}: ErrorProps): React.ReactElement {
+export default function LocaleError({ error, reset }: ErrorProps): React.ReactElement {
   const t = useTranslations('errors');
 
   useEffect(() => {
@@ -23,12 +20,8 @@ export default function LocaleError({
     <section className="py-24">
       <Container>
         <div className="mx-auto max-w-md text-center">
-          <h2 className="mb-2 text-2xl font-bold text-secondary">
-            {t('genericTitle')}
-          </h2>
-          <p className="mb-8 text-muted-foreground">
-            {t('genericDesc')}
-          </p>
+          <h2 className="mb-2 text-2xl font-bold text-secondary">{t('genericTitle')}</h2>
+          <p className="mb-8 text-muted-foreground">{t('genericDesc')}</p>
           <Button onClick={reset}>{t('tryAgain')}</Button>
         </div>
       </Container>

@@ -26,10 +26,7 @@ interface ProductDetailProps {
   category: ProductCategory;
 }
 
-export function ProductDetail({
-  product,
-  category,
-}: ProductDetailProps): React.ReactElement {
+export function ProductDetail({ product, category }: ProductDetailProps): React.ReactElement {
   const t = useTranslations('products');
   const Icon = getCategoryIcon(category.iconSlug);
   const imageUrl = product.image || undefined;
@@ -52,11 +49,7 @@ export function ProductDetail({
         {/* Product Image or Gallery */}
         <div className="overflow-hidden rounded-lg">
           {hasMultipleImages ? (
-            <ProductImageGallery
-              images={product.images!}
-              alt={productName}
-              priority
-            />
+            <ProductImageGallery images={product.images!} alt={productName} priority />
           ) : (
             <ProductImage
               src={imageUrl}

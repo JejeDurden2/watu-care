@@ -11,12 +11,8 @@ export default function NotFound(): React.ReactElement {
       <Container>
         <div className="mx-auto max-w-lg text-center">
           <p className="mb-4 text-7xl font-bold text-primary/20">404</p>
-          <h1 className="mb-4 text-3xl font-bold text-secondary">
-            {t('title')}
-          </h1>
-          <p className="mb-8 text-lg text-muted-foreground">
-            {t('description')}
-          </p>
+          <h1 className="mb-4 text-3xl font-bold text-secondary">{t('title')}</h1>
+          <p className="mb-8 text-lg text-muted-foreground">{t('description')}</p>
           <div className="flex flex-col items-center justify-center gap-4 sm:flex-row">
             <Button asChild>
               <Link href="/">

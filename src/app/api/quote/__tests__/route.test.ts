@@ -15,10 +15,18 @@ vi.stubEnv('RESEND_API_KEY', 're_test_123');
 
 import { POST } from '@/app/api/quote/route';
 
-function createRequest(body: unknown): Request {
+// The route rate-limits per client IP, so each request gets its own unless a
+// test deliberately reuses one.
+let ipCounter = 0;
+
+function createRequest(body: unknown, ip?: string): Request {
+  ipCounter += 1;
   return new Request('http://localhost/api/quote', {
     method: 'POST',
-    headers: { 'Content-Type': 'application/json' },
+    headers: {
+      'Content-Type': 'application/json',
+      'x-forwarded-for': ip ?? `10.0.0.${ipCounter}`,
+    },
     body: JSON.stringify(body),
   });
 }
@@ -154,5 +162,60 @@ describe('POST /api/quote', () => {
         country: 'AE',
       }),
     );
+  });
+
+  it('escapes attacker-controlled fields in the notification email', async () => {
+    await POST(
+      createRequest({
+        companyName: '<script>alert(1)</script>',
+        email: 'test@example.com',
+        country: 'AE',
+        message: '<a href="https://evil.test">click me</a>',
+        products: [
+          {
+            productId: 'x',
+            productName: '<img src=x onerror=alert(1)>',
+            category: 'Gloves',
+          },
+        ],
+      }),
+    );
+
+    const { html } = mockSend.mock.calls[0][0];
+    expect(html).not.toContain('<script>');
+    expect(html).not.toContain('<a href="https://evil.test"');
+    expect(html).not.toContain('<img src=x');
+    expect(html).toContain('&lt;script&gt;');
+    expect(html).toContain('&lt;img src=x');
+  });
+
+  it('rate-limits repeated submissions from the same IP', async () => {
+    const payload = {
+      companyName: 'Flooder',
+      email: 'flood@example.com',
+      country: 'AE',
+    };
+
+    const statuses: number[] = [];
+    for (let i = 0; i < 7; i += 1) {
+      const response = await POST(createRequest(payload, '203.0.113.9'));
+      statuses.push(response.status);
+    }
+
+    expect(statuses.slice(0, 5)).toEqual([200, 200, 200, 200, 200]);
+    expect(statuses.slice(5)).toEqual([429, 429]);
+  });
+
+  it('rejects a message longer than the schema allows', async () => {
+    const response = await POST(
+      createRequest({
+        companyName: 'Test Hospital',
+        email: 'test@example.com',
+        country: 'AE',
+        message: 'x'.repeat(4001),
+      }),
+    );
+
+    expect(response.status).toBe(400);
   });
 });

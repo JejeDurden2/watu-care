@@ -1,15 +1,19 @@
 import type { Metadata } from 'next';
-import { getTranslations } from 'next-intl/server';
+import { getTranslations, setRequestLocale } from 'next-intl/server';
 import { Mail, MapPin, Phone, Clock } from 'lucide-react';
 import { Container, Button } from '@/components/ui';
 import { ContactForm } from '@/components/quote';
 import { Link } from '@/i18n/routing';
+import { generateContactPageSchema, generateBreadcrumbSchema, combineSchemas } from '@/lib/schema';
 import {
-  generateContactPageSchema,
-  generateBreadcrumbSchema,
-  combineSchemas,
-} from '@/lib/schema';
-import { BASE_URL } from '@/lib/constants';
+  BASE_URL,
+  COUNTRIES_SERVED_LABEL,
+  CONTACT_EMAIL,
+  MANUFACTURER_STANDARD,
+  SALES_PHONE,
+  SALES_PHONE_DISPLAY,
+  QUOTE_RESPONSE,
+} from '@/lib/constants';
 
 interface ContactPageProps {
   params: Promise<{
@@ -17,9 +21,7 @@ interface ContactPageProps {
   }>;
 }
 
-export async function generateMetadata({
-  params,
-}: ContactPageProps): Promise<Metadata> {
+export async function generateMetadata({ params }: ContactPageProps): Promise<Metadata> {
   const { locale } = await params;
   const t = await getTranslations({ locale, namespace: 'contact' });
 
@@ -65,6 +67,9 @@ export default async function ContactPage({
   params,
 }: ContactPageProps): Promise<React.ReactElement> {
   const { locale } = await params;
+
+  // Opt into static rendering — without this next-intl forces every page dynamic.
+  setRequestLocale(locale);
   const t = await getTranslations('contact');
   const tNav = await getTranslations('nav');
 
@@ -95,12 +100,11 @@ export default async function ContactPage({
 
         <Container className="relative z-10">
           <div className="grid items-center gap-12 py-20 lg:min-h-[90dvh] lg:grid-cols-2 lg:gap-16 lg:py-28">
-
             {/* Left — text block */}
             <div className="lg:pr-8">
               <div className="stagger-item stagger-delay-1 mb-5 flex items-center gap-3">
                 <div className="h-px w-12 bg-accent" />
-                <span className="font-body text-xs font-semibold uppercase tracking-[0.18em] text-accent">
+                <span className="font-body text-xs font-semibold uppercase tracking-[0.18em] text-accent-light">
                   Watu Care
                 </span>
               </div>
@@ -128,24 +132,20 @@ export default async function ContactPage({
                 </div>
               </div>
             </div>
-
           </div>
 
           {/* Contact info strip */}
           <div className="stagger-item stagger-delay-4 border-t border-white/10 pb-16 pt-8">
             <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
-
               <div className="flex items-center gap-4">
                 <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-white/8">
                   <MapPin className="h-5 w-5 text-primary" aria-hidden="true" />
                 </div>
                 <div>
-                  <p className="font-body text-xs font-semibold uppercase tracking-[0.14em] text-white/40">
+                  <p className="font-body text-xs font-semibold uppercase tracking-[0.14em] text-white/60">
                     {t('info.location')}
                   </p>
-                  <p className="mt-0.5 font-body text-base font-medium text-white">
-                    Hong Kong SAR
-                  </p>
+                  <p className="mt-0.5 font-body text-base font-medium text-white">Hong Kong SAR</p>
                 </div>
               </div>
 
@@ -154,14 +154,14 @@ export default async function ContactPage({
                   <Mail className="h-5 w-5 text-primary" aria-hidden="true" />
                 </div>
                 <div>
-                  <p className="font-body text-xs font-semibold uppercase tracking-[0.14em] text-white/40">
+                  <p className="font-body text-xs font-semibold uppercase tracking-[0.14em] text-white/60">
                     {t('info.email')}
                   </p>
                   <a
-                    href="mailto:contact@watu-care.com"
+                    href={`mailto:${CONTACT_EMAIL}`}
                     className="mt-0.5 block font-body text-base font-medium text-white transition-colors hover:text-primary"
                   >
-                    contact@watu-care.com
+                    {CONTACT_EMAIL}
                   </a>
                 </div>
               </div>
@@ -171,32 +171,29 @@ export default async function ContactPage({
                   <Phone className="h-5 w-5 text-primary" aria-hidden="true" />
                 </div>
                 <div>
-                  <p className="font-body text-xs font-semibold uppercase tracking-[0.14em] text-white/40">
+                  <p className="font-body text-xs font-semibold uppercase tracking-[0.14em] text-white/60">
                     {t('info.phone')}
                   </p>
                   <a
-                    href="tel:+212662258045"
+                    href={`tel:${SALES_PHONE}`}
                     className="mt-0.5 block font-body text-base font-medium text-white transition-colors hover:text-primary"
                   >
-                    +212 662 258 045
+                    {SALES_PHONE_DISPLAY}
                   </a>
                 </div>
               </div>
 
               <div className="flex items-center gap-4">
                 <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-white/8">
-                  <Clock className="h-5 w-5 text-accent" aria-hidden="true" />
+                  <Clock className="h-5 w-5 text-accent-light" aria-hidden="true" />
                 </div>
                 <div>
-                  <p className="font-body text-xs font-semibold uppercase tracking-[0.14em] text-white/40">
+                  <p className="font-body text-xs font-semibold uppercase tracking-[0.14em] text-white/60">
                     {t('info.hours')}
                   </p>
-                  <p className="mt-0.5 font-body text-sm text-white/70">
-                    {t('info.hoursValue')}
-                  </p>
+                  <p className="mt-0.5 font-body text-sm text-white/70">{t('info.hoursValue')}</p>
                 </div>
               </div>
-
             </div>
           </div>
         </Container>
@@ -205,7 +202,6 @@ export default async function ContactPage({
       {/* ── CTA Strip: Full-Width Dark ───────────────────────────────────── */}
       <section className="overflow-hidden bg-secondary" aria-label="Contact call to action">
         <div className="grid lg:grid-cols-[1.2fr_0.8fr] lg:min-h-[380px]">
-
           {/* Left — primary CTA */}
           <div className="relative flex flex-col justify-center overflow-hidden px-8 py-16 lg:px-16 lg:py-20">
             <div className="pointer-events-none absolute -bottom-10 -left-10 h-[300px] w-[300px] rounded-full bg-primary/15 blur-[100px]" />
@@ -218,12 +214,8 @@ export default async function ContactPage({
                 {t('cta.description')}
               </p>
               <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:items-center">
-                <Button
-                  size="lg"
-                  className="bg-white text-secondary hover:bg-white/90"
-                  asChild
-                >
-                  <a href="mailto:contact@watu-care.com">
+                <Button size="lg" className="bg-white text-secondary hover:bg-white/90" asChild>
+                  <a href={`mailto:${CONTACT_EMAIL}`}>
                     <Mail className="mr-2 h-5 w-5" aria-hidden="true" />
                     {t('cta.emailButton')}
                   </a>
@@ -237,9 +229,7 @@ export default async function ContactPage({
                   <Link href="/products">{t('cta.productsButton')}</Link>
                 </Button>
               </div>
-              <p className="mt-6 font-body text-sm text-white/35">
-                {t('cta.response')}
-              </p>
+              <p className="mt-6 font-body text-sm text-white/60">{t('cta.response')}</p>
             </div>
           </div>
 
@@ -250,33 +240,32 @@ export default async function ContactPage({
               aria-hidden="true"
             />
             <div className="relative space-y-10">
-              <div className="border-l-2 border-accent/40 pl-5">
+              <div className="border-l-2 border-accent-light/40 pl-5">
                 <p className="font-display text-4xl font-bold tracking-tighter text-white">
-                  {t('stats.iso')}
+                  {MANUFACTURER_STANDARD}
                 </p>
-                <p className="mt-1 font-body text-xs font-semibold uppercase tracking-[0.18em] text-white/40">
+                <p className="mt-1 font-body text-xs font-semibold uppercase tracking-[0.18em] text-white/60">
                   {t('stats.isoLabel')}
                 </p>
               </div>
-              <div className="border-l-2 border-accent/40 pl-5">
+              <div className="border-l-2 border-accent-light/40 pl-5">
                 <p className="font-display text-4xl font-bold tracking-tighter text-white">
-                  {t('stats.response')}
+                  {QUOTE_RESPONSE}
                 </p>
-                <p className="mt-1 font-body text-xs font-semibold uppercase tracking-[0.18em] text-white/40">
+                <p className="mt-1 font-body text-xs font-semibold uppercase tracking-[0.18em] text-white/60">
                   {t('stats.responseLabel')}
                 </p>
               </div>
-              <div className="border-l-2 border-accent/40 pl-5">
+              <div className="border-l-2 border-accent-light/40 pl-5">
                 <p className="font-display text-4xl font-bold tracking-tighter text-white">
-                  {t('stats.countries')}
+                  {COUNTRIES_SERVED_LABEL}
                 </p>
-                <p className="mt-1 font-body text-xs font-semibold uppercase tracking-[0.18em] text-white/40">
+                <p className="mt-1 font-body text-xs font-semibold uppercase tracking-[0.18em] text-white/60">
                   {t('stats.countriesLabel')}
                 </p>
               </div>
             </div>
           </div>
-
         </div>
       </section>
     </main>
