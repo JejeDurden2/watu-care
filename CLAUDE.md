@@ -1,5 +1,7 @@
 # Watu Care - Claude Instructions
 
+Shared engineering and copy rules live in the global `~/.claude/engineering-rules.md` (loaded automatically). This file only holds what is specific to this project.
+
 ## Project Overview
 
 **Watu Care** is a B2B medical wholesale landing page connecting Asia's medical manufacturers with healthcare providers across Africa and the Middle East.
@@ -89,40 +91,16 @@ npm run test          # Vitest
 
 ---
 
-## Rules for Claude
+## Project-specific rules
 
-### ALWAYS
-
-1. Create reusable, typed components
-2. Implement mobile-first responsive design
-3. Add proper TypeScript types with explicit return types
-4. Consider SEO impact (metadata, Core Web Vitals)
-5. Use conventional commits with proper scope
-6. Write tests for complex logic
-7. Self-review code before committing
-8. Optimize images (Next.js Image component)
-9. Implement proper loading states
-10. Use semantic HTML for accessibility
-
-### NEVER
-
-11. Use `any` type — use `unknown` + type guards
-12. Skip validation (use Zod)
-13. Hardcode values — use env vars or constants
-14. Commit without running lint and type-check
-15. Skip alt text on images
-16. Use generic error messages
-17. Ignore accessibility (a11y)
-18. Use inline styles (use Tailwind)
-
-### PREFER
-
-19. Composition over inheritance
-20. Small, focused components (< 100 lines)
-21. Named exports over default exports
-22. Server Components by default
-23. Early returns over nested conditions
-24. Explicit over implicit
+1. Optimize images (Next.js Image component); never skip alt text
+2. Implement proper loading states
+3. Use semantic HTML for accessibility; never ignore a11y
+4. Server Components by default
+5. Small, focused components (< 100 lines)
+6. No inline styles — use Tailwind
+7. Validation with Zod
+8. No generic error messages
 
 ---
 
@@ -147,10 +125,3 @@ vercel --prod  # Production
 Environment variables:
 - `NEXT_PUBLIC_APP_URL=https://watu-care.com`
 - `NEXT_PUBLIC_APP_NAME=Watu Care`
-
----
-
-## Plan Mode
-
-- Make plans extremely concise
-- List unresolved questions at end
