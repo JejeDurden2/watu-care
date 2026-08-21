@@ -27,6 +27,38 @@
   --muted-foreground: 206 20% 40%; /* Muted text */
 
   --border: 210 20% 90%; /* Border color */
+
+  /* Motion tokens (transitions.dev shared scale) */
+  /* Durations */
+  --duration-stagger: 40ms; /* per-item stagger offset */
+  --duration-micro: 80ms; /* tooltip/path delay, shake segment, large stagger */
+  --duration-quick: 150ms; /* modal/dropdown close, text swap, tooltip appear */
+  --duration-fast: 250ms; /* icon swap, dropdown/modal open, tabs sliding, page slide */
+  --duration-medium: 350ms; /* panel close, toast close */
+  --duration-slow: 400ms; /* panel open, skeleton content reveal, input clear */
+  --duration-very-slow: 500ms; /* emphasis moments, badge appear, text reveal, success check */
+  /* Easings */
+  --ease-smooth-out: cubic-bezier(0.22, 1, 0.36, 1); /* modal/dropdown/panel open + close, page slide, resize, position change */
+  --ease-in-out: ease-in-out; /* icon swap, text swap, text reveal, skeleton reveal */
+  --ease-out: ease-out; /* tooltip open / close */
+  --ease-linear: linear; /* shimmer, skeleton pulse, spinner */
+  --ease-bounce: cubic-bezier(0.34, 1.36, 0.64, 1); /* badge pop open */
+  --ease-bounce-strong: cubic-bezier(0.34, 3.85, 0.64, 1); /* bouncy hover-out (avatar return) */
+  /* Distances */
+  --distance-micro: 4px; /* text swap */
+  --distance-small: 6px; /* error shake (small segment) */
+  --distance-base: 8px; /* badge diagonal reveal, page slide, error shake (large segment) */
+  --distance-medium: 12px; /* text reveal */
+  --distance-large: 30px; /* check badge appear */
+  /* Scales */
+  --scale-large: 0.96; /* modal open / close */
+  --scale-medium: 0.97; /* dropdown open */
+  --scale-small: 0.98; /* tooltip open */
+  --scale-tiny: 0.99; /* dropdown close */
+  /* Blur */
+  --blur-small: 2px; /* panel reveal, icon swap, text swap, skeleton reveal, number pop-in */
+  --blur-medium: 3px; /* page slide, text reveal */
+  --blur-large: 8px; /* success check open */
 }
 
 @layer base {
@@ -97,7 +129,7 @@
 @layer components {
   /* Card with hover lift effect */
   .card-hover {
-    @apply transition-[transform,box-shadow,border-color] duration-200 ease-out;
+    @apply transition-[transform,box-shadow,border-color] duration-[var(--duration-fast)] ease-[var(--ease-smooth-out)];
   }
 
   .card-hover:hover {
@@ -108,10 +140,10 @@
   /* Premium card hover — light backgrounds (glow border + lift) */
   .card-glow {
     transition:
-      border-color 0.3s cubic-bezier(0.4, 0, 0.2, 1),
-      background-color 0.3s cubic-bezier(0.4, 0, 0.2, 1),
-      box-shadow 0.3s cubic-bezier(0.4, 0, 0.2, 1),
-      transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      border-color var(--duration-fast) var(--ease-smooth-out),
+      background-color var(--duration-fast) var(--ease-smooth-out),
+      box-shadow var(--duration-fast) var(--ease-smooth-out),
+      transform var(--duration-fast) var(--ease-smooth-out);
   }
 
   .card-glow:hover {
@@ -252,7 +284,7 @@
     border-radius: 1px;
     transform: scaleX(0);
     transform-origin: center;
-    transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    transition: transform var(--duration-fast) var(--ease-smooth-out);
   }
 
   .nav-link-underline:hover::after {
@@ -271,11 +303,12 @@
 
   /* Smart header — hide on scroll-down, show on scroll-up (mobile only) */
   .header-smart {
-    transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+    transition: transform var(--duration-slow) var(--ease-smooth-out);
   }
 
   .header-smart-hidden {
     transform: translateY(-100%);
+    transition-duration: var(--duration-medium);
   }
 
   /* Mobile bottom dock — glass pill */
@@ -298,8 +331,8 @@
     background: currentColor;
     border-radius: 1px;
     transition:
-      transform 0.3s cubic-bezier(0.16, 1, 0.3, 1),
-      opacity 0.2s ease;
+      transform var(--duration-fast) var(--ease-in-out),
+      opacity var(--duration-fast) var(--ease-in-out);
   }
 
   .hamburger-open .hamburger-bar:nth-child(1) {
@@ -472,7 +505,7 @@ html {
 }
 
 .animate-slide-up-dock {
-  animation: slide-up-dock 0.4s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  animation: slide-up-dock var(--duration-slow) var(--ease-smooth-out) forwards;
 }
 
 @keyframes nav-overlay-in {
@@ -485,7 +518,7 @@ html {
 }
 
 .animate-nav-overlay-in {
-  animation: nav-overlay-in 0.3s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  animation: nav-overlay-in var(--duration-fast) var(--ease-smooth-out) forwards;
 }
 
 .animate-pulse-subtle {
@@ -523,7 +556,7 @@ html {
 @keyframes fade-in-up-stagger {
   0% {
     opacity: 0;
-    transform: translateY(32px);
+    transform: translateY(var(--distance-medium));
   }
   100% {
     opacity: 1;
@@ -533,7 +566,7 @@ html {
 
 .stagger-item {
   opacity: 0;
-  animation: fade-in-up-stagger 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  animation: fade-in-up-stagger var(--duration-very-slow) var(--ease-smooth-out) forwards;
 }
 
 /* Stagger delay utilities */
@@ -541,28 +574,28 @@ html {
   animation-delay: 0ms;
 }
 .stagger-delay-2 {
-  animation-delay: 100ms;
+  animation-delay: calc(1 * var(--duration-stagger));
 }
 .stagger-delay-3 {
-  animation-delay: 200ms;
+  animation-delay: calc(2 * var(--duration-stagger));
 }
 .stagger-delay-4 {
-  animation-delay: 300ms;
+  animation-delay: calc(3 * var(--duration-stagger));
 }
 .stagger-delay-5 {
-  animation-delay: 400ms;
+  animation-delay: calc(4 * var(--duration-stagger));
 }
 .stagger-delay-6 {
-  animation-delay: 500ms;
+  animation-delay: calc(5 * var(--duration-stagger));
 }
 .stagger-delay-7 {
-  animation-delay: 600ms;
+  animation-delay: calc(6 * var(--duration-stagger));
 }
 .stagger-delay-8 {
-  animation-delay: 700ms;
+  animation-delay: calc(7 * var(--duration-stagger));
 }
 .stagger-delay-9 {
-  animation-delay: 800ms;
+  animation-delay: calc(8 * var(--duration-stagger));
 }
 
 /* Fallback: ensure content visible if CSS animations fail to fire */
@@ -1000,8 +1033,8 @@ html {
 @keyframes hero-headline-reveal {
   0% {
     opacity: 0;
-    filter: blur(16px);
-    transform: translateY(40px);
+    filter: blur(var(--blur-medium));
+    transform: translateY(var(--distance-medium));
   }
   60% {
     filter: blur(0);
@@ -1015,7 +1048,7 @@ html {
 
 .hero-headline-reveal {
   opacity: 0;
-  animation: hero-headline-reveal 1.2s cubic-bezier(0.16, 1, 0.3, 1) 0.1s forwards;
+  animation: hero-headline-reveal var(--duration-very-slow) var(--ease-smooth-out) var(--duration-stagger) forwards;
 }
 
 /* ── Hero v2 — gradient text shimmer ── */
@@ -1042,7 +1075,7 @@ html {
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
-  animation: hero-text-shimmer 8s ease-in-out infinite;
+  animation: hero-text-shimmer 8s var(--ease-linear) infinite;
 }
 
 /* ── Hero v2 — pulse line visualization ── */

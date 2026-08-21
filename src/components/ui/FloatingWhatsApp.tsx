@@ -18,7 +18,7 @@ export const FloatingWhatsApp = async () => {
         'rounded-2xl border border-white/20',
         'bg-[#25D366]/90 backdrop-blur-md',
         'shadow-soft-md hover:shadow-soft-lg',
-        'transition-[transform,box-shadow,background-color] duration-200 ease-out',
+        'transition-[transform,box-shadow,background-color] duration-[var(--duration-fast)] ease-[var(--ease-smooth-out)]',
         'hover:scale-105 hover:bg-[#25D366]',
         'focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2',
         'group',
@@ -31,8 +31,8 @@ export const FloatingWhatsApp = async () => {
           'rounded-xl border border-border/50 px-3 py-1.5',
           'bg-background/95 backdrop-blur-md',
           'text-sm font-medium text-secondary',
-          'opacity-0 shadow-soft transition-opacity duration-200 ease-out',
-          'group-hover:opacity-100',
+          'opacity-0 shadow-soft transition-opacity duration-[var(--duration-quick)] ease-[var(--ease-out)]',
+          'group-hover:opacity-100 group-hover:delay-[var(--duration-micro)]',
           'whitespace-nowrap',
         )}
       >

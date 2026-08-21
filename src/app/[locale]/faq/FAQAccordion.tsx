@@ -45,7 +45,7 @@ export function FAQAccordion({
               </Heading>
               <ChevronDown
                 className={cn(
-                  'h-5 w-5 shrink-0 text-muted-foreground transition-transform duration-200',
+                  'h-5 w-5 shrink-0 text-muted-foreground transition-transform duration-[var(--duration-fast)] ease-[var(--ease-smooth-out)]',
                   isOpen && 'rotate-180',
                 )}
               />
@@ -54,7 +54,7 @@ export function FAQAccordion({
               id={panelId}
               role="region"
               className={cn(
-                'grid transition-[grid-template-rows,opacity] duration-200 ease-out',
+                'grid transition-[grid-template-rows,opacity] duration-[var(--duration-fast)] ease-[var(--ease-smooth-out)]',
                 isOpen ? 'grid-rows-[1fr] opacity-100' : 'grid-rows-[0fr] opacity-0',
               )}
             >

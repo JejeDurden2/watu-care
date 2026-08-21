@@ -16,7 +16,7 @@ export function ProductCard({ product, category }: ProductCardProps): React.Reac
   const t = useTranslations('products');
 
   return (
-    <div className="group relative h-full overflow-hidden rounded-2xl border border-border bg-white transition-[transform,border-color,box-shadow] duration-300 hover:-translate-y-1 hover:border-primary/30 hover:shadow-depth-md">
+    <div className="group relative h-full overflow-hidden rounded-2xl border border-border bg-white transition-[transform,border-color,box-shadow] duration-[var(--duration-fast)] ease-[var(--ease-smooth-out)] hover:-translate-y-1 hover:border-primary/30 hover:shadow-depth-md">
       {/* Add to List Button — always visible */}
       <div className="absolute right-3 top-3 z-10">
         <AddToListButton product={product} category={category} variant="icon" />

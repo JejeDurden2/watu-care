@@ -77,10 +77,10 @@ export function FAQ(): React.ReactElement {
                   id={`faq-answer-${index}`}
                   role="region"
                   aria-label={t(`${key}Question`)}
-                  className={`absolute inset-0 rounded-2xl border border-border/60 bg-white p-8 shadow-depth-sm transition-[opacity,transform] duration-300 lg:p-10 ${
+                  className={`absolute inset-0 rounded-2xl border border-border/60 bg-white p-8 shadow-depth-sm transition-[opacity,transform] duration-[var(--duration-quick)] ease-[var(--ease-in-out)] lg:p-10 ${
                     isActive
                       ? 'opacity-100 translate-y-0 pointer-events-auto'
-                      : 'opacity-0 translate-y-2 pointer-events-none'
+                      : 'opacity-0 translate-y-[var(--distance-micro)] pointer-events-none'
                   }`}
                   style={{ position: index === 0 ? 'relative' : 'absolute' }}
                 >

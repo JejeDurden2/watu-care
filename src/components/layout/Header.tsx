@@ -80,7 +80,7 @@ export function Header(): React.ReactElement {
         <Container>
           <nav
             className={cn(
-              'flex items-center justify-between transition-[height] duration-300 ease-out',
+              'flex items-center justify-between transition-[height] duration-300 ease-[var(--ease-smooth-out)]',
               isScrolled ? 'h-14 lg:h-16' : 'h-16 lg:h-20',
             )}
           >
