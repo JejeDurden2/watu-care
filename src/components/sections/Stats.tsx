@@ -26,7 +26,7 @@ export async function Stats(): Promise<React.ReactElement> {
               {/* text-7xl in a 2-column grid overflowed a 360px viewport —
                   four glyphs at 72px need more room than half the container. */}
               <p
-                className={`font-display text-5xl font-bold leading-none tracking-tighter sm:text-7xl lg:text-8xl xl:text-9xl ${stat.accent ? 'text-accent-light' : 'text-white'}`}
+                className={`font-display text-5xl font-bold leading-none tracking-tighter tabular-nums sm:text-7xl lg:text-8xl xl:text-9xl ${stat.accent ? 'text-accent-light' : 'text-white'}`}
               >
                 {stat.value}
               </p>

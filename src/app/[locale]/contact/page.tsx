@@ -241,7 +241,7 @@ export default async function ContactPage({
             />
             <div className="relative space-y-10">
               <div className="border-l-2 border-accent-light/40 pl-5">
-                <p className="font-display text-4xl font-bold tracking-tighter text-white">
+                <p className="font-display text-4xl font-bold tabular-nums tracking-tighter text-white">
                   {MANUFACTURER_STANDARD}
                 </p>
                 <p className="mt-1 font-body text-xs font-semibold uppercase tracking-[0.18em] text-white/60">
@@ -249,7 +249,7 @@ export default async function ContactPage({
                 </p>
               </div>
               <div className="border-l-2 border-accent-light/40 pl-5">
-                <p className="font-display text-4xl font-bold tracking-tighter text-white">
+                <p className="font-display text-4xl font-bold tabular-nums tracking-tighter text-white">
                   {QUOTE_RESPONSE}
                 </p>
                 <p className="mt-1 font-body text-xs font-semibold uppercase tracking-[0.18em] text-white/60">
@@ -257,7 +257,7 @@ export default async function ContactPage({
                 </p>
               </div>
               <div className="border-l-2 border-accent-light/40 pl-5">
-                <p className="font-display text-4xl font-bold tracking-tighter text-white">
+                <p className="font-display text-4xl font-bold tabular-nums tracking-tighter text-white">
                   {COUNTRIES_SERVED_LABEL}
                 </p>
                 <p className="mt-1 font-body text-xs font-semibold uppercase tracking-[0.18em] text-white/60">

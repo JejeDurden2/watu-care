@@ -69,6 +69,7 @@ export function AddToListButton({
         <button
           className={`flex h-10 w-10 items-center justify-center rounded-full bg-white/90 shadow-md backdrop-blur-sm ${className}`}
           disabled
+          aria-label={t('addToList')}
         >
           <ListPlus className="h-5 w-5 text-primary" />
         </button>
@@ -86,7 +87,7 @@ export function AddToListButton({
     return (
       <button
         onClick={handleClick}
-        className={`flex h-10 w-10 items-center justify-center rounded-full bg-white/90 shadow-md backdrop-blur-sm transition-all hover:scale-110 hover:bg-white ${className}`}
+        className={`flex h-10 w-10 items-center justify-center rounded-full bg-white/90 shadow-md backdrop-blur-sm transition-[transform,background-color] hover:scale-110 hover:bg-white ${className}`}
         aria-label={inList ? t('removeFromList') : t('addToList')}
         title={inList ? t('removeFromList') : t('addToList')}
       >

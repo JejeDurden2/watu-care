@@ -27,7 +27,7 @@ export function CategoryCard({ category, locale }: CategoryCardProps): React.Rea
   return (
     <Link
       href={`/${locale}/products/${category.slug}`}
-      className="group block h-full overflow-hidden rounded-xl border border-white/20 bg-white/70 backdrop-blur-sm transition-all hover:border-primary/50 hover:shadow-soft-md"
+      className="group block h-full overflow-hidden rounded-xl border border-white/20 bg-white/70 backdrop-blur-sm transition-[border-color,box-shadow] hover:border-primary/50 hover:shadow-soft-md"
     >
       <div className="flex h-full flex-col">
         {/* Category Image */}

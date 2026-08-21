@@ -36,7 +36,7 @@ export function LanguageSwitcher({ className }: LanguageSwitcherProps): React.Re
             key={l}
             onClick={() => handleChange(l)}
             className={cn(
-              'rounded-md px-2.5 py-1 text-sm font-medium transition-all',
+              'rounded-md px-2.5 py-1 text-sm font-medium transition-[color,background-color,box-shadow]',
               locale === l
                 ? 'bg-white text-secondary shadow-sm'
                 : 'text-muted-foreground hover:text-secondary',

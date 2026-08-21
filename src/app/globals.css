@@ -52,6 +52,12 @@
     font-family: var(--font-display), system-ui, sans-serif;
   }
 
+  h1,
+  h2,
+  h3 {
+    text-wrap: balance;
+  }
+
   h1 {
     @apply text-4xl font-bold tracking-tight md:text-5xl lg:text-6xl;
     letter-spacing: -0.04em;
@@ -91,7 +97,7 @@
 @layer components {
   /* Card with hover lift effect */
   .card-hover {
-    @apply transition-all duration-200 ease-out;
+    @apply transition-[transform,box-shadow,border-color] duration-200 ease-out;
   }
 
   .card-hover:hover {
@@ -101,7 +107,11 @@
 
   /* Premium card hover — light backgrounds (glow border + lift) */
   .card-glow {
-    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    transition:
+      border-color 0.3s cubic-bezier(0.4, 0, 0.2, 1),
+      background-color 0.3s cubic-bezier(0.4, 0, 0.2, 1),
+      box-shadow 0.3s cubic-bezier(0.4, 0, 0.2, 1),
+      transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   }
 
   .card-glow:hover {
@@ -114,7 +124,11 @@
 
   /* Premium card hover — dark backgrounds (glow border + subtle fill) */
   .card-glow-dark {
-    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    transition:
+      border-color 0.3s cubic-bezier(0.4, 0, 0.2, 1),
+      background-color 0.3s cubic-bezier(0.4, 0, 0.2, 1),
+      box-shadow 0.3s cubic-bezier(0.4, 0, 0.2, 1),
+      transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   }
 
   .card-glow-dark:hover {

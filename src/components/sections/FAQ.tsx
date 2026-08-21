@@ -54,7 +54,7 @@ export function FAQ(): React.ReactElement {
                   aria-controls={`faq-answer-${index}`}
                 >
                   <span
-                    className={`font-body text-base transition-all duration-200 ${
+                    className={`font-body text-base transition-colors duration-200 ${
                       isActive
                         ? 'font-semibold text-secondary'
                         : 'font-normal text-muted-foreground hover:text-secondary/70'
@@ -77,7 +77,7 @@ export function FAQ(): React.ReactElement {
                   id={`faq-answer-${index}`}
                   role="region"
                   aria-label={t(`${key}Question`)}
-                  className={`absolute inset-0 rounded-2xl border border-border/60 bg-white p-8 shadow-depth-sm transition-all duration-300 lg:p-10 ${
+                  className={`absolute inset-0 rounded-2xl border border-border/60 bg-white p-8 shadow-depth-sm transition-[opacity,transform] duration-300 lg:p-10 ${
                     isActive
                       ? 'opacity-100 translate-y-0 pointer-events-auto'
                       : 'opacity-0 translate-y-2 pointer-events-none'

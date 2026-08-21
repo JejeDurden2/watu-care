@@ -23,7 +23,7 @@
   },
   "search": {
     "placeholder": "Search products...",
-    "noResults": "No products found",
+    "noResults": "No products match your search. Try another word or browse the catalog.",
     "viewAll": "View all {count} results",
     "clear": "Clear search",
     "cancel": "Cancel",
@@ -632,6 +632,7 @@
     "continueAdding": "Continue Browsing",
     "back": "Back",
     "skipProducts": "Skip product selection",
+    "closeDialog": "Close",
     "form": {
       "title": "Request a Quote",
       "noProductsSelected": "Tell us what you need and we'll get back to you.",

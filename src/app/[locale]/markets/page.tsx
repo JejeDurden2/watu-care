@@ -127,7 +127,7 @@ export default async function MarketsPage({
                 <Link
                   key={country.slug}
                   href={`/markets/${country.slug}`}
-                  className="group flex items-center justify-between rounded-xl border border-border bg-white p-4 transition-all hover:border-primary hover:shadow-sm"
+                  className="group flex items-center justify-between rounded-xl border border-border bg-white p-4 transition-[border-color,box-shadow] hover:border-primary hover:shadow-sm"
                 >
                   <div className="flex items-center gap-3">
                     <MapPin className="h-5 w-5 text-primary" />
@@ -158,7 +158,7 @@ export default async function MarketsPage({
                 <Link
                   key={country.slug}
                   href={`/markets/${country.slug}`}
-                  className="group flex items-center justify-between rounded-xl border border-border bg-white p-4 transition-all hover:border-primary hover:shadow-sm"
+                  className="group flex items-center justify-between rounded-xl border border-border bg-white p-4 transition-[border-color,box-shadow] hover:border-primary hover:shadow-sm"
                 >
                   <div className="flex items-center gap-3">
                     <MapPin className="h-5 w-5 text-primary" />

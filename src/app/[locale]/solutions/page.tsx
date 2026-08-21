@@ -134,7 +134,7 @@ export default async function SolutionsPage({
                 <Link
                   key={persona.slug}
                   href={`/solutions/${persona.slug}`}
-                  className="group flex flex-col rounded-xl border border-border bg-white p-6 transition-all hover:border-primary hover:shadow-sm"
+                  className="group flex flex-col rounded-xl border border-border bg-white p-6 transition-[border-color,box-shadow] hover:border-primary hover:shadow-sm"
                 >
                   <div className="flex items-center gap-4">
                     <div

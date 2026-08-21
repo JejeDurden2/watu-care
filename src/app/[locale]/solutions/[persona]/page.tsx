@@ -285,7 +285,7 @@ export default async function PersonaPage({
               <Link
                 key={category.slug}
                 href={`/products/${category.slug}`}
-                className="group stagger-item flex items-center justify-between rounded-xl border border-border bg-white p-6 transition-all hover:border-primary hover:shadow-sm"
+                className="group stagger-item flex items-center justify-between rounded-xl border border-border bg-white p-6 transition-[border-color,box-shadow] hover:border-primary hover:shadow-sm"
               >
                 <div>
                   <p className="font-display font-semibold text-secondary group-hover:text-primary">
@@ -318,7 +318,7 @@ export default async function PersonaPage({
           <div className="grid gap-8 sm:grid-cols-3">
             {(['1', '2', '3'] as const).map((n) => (
               <div key={n} className="stagger-item text-center">
-                <p className="font-display text-5xl font-bold tracking-tighter text-primary">
+                <p className="font-display text-5xl font-bold tabular-nums tracking-tighter text-primary">
                   {t(`${personaSlug}.trust.stat${n}Value`)}
                 </p>
                 <p className="mt-2 font-body text-sm font-semibold uppercase tracking-wider text-muted-foreground">

@@ -64,6 +64,7 @@ export function SearchBar({ className, onResultClick }: SearchBarProps): React.R
         <input
           ref={inputRef}
           type="search"
+          inputMode="search"
           role="combobox"
           value={query}
           onChange={(e) => setQuery(e.target.value)}

@@ -23,7 +23,7 @@
   },
   "search": {
     "placeholder": "Rechercher des produits...",
-    "noResults": "Aucun produit trouvé",
+    "noResults": "Aucun produit ne correspond à votre recherche. Essayez un autre mot ou parcourez le catalogue.",
     "viewAll": "Voir les {count} résultats",
     "clear": "Effacer la recherche",
     "cancel": "Annuler",
@@ -700,6 +700,7 @@
     "continueAdding": "Continuer à parcourir",
     "back": "Retour",
     "skipProducts": "Passer la sélection de produits",
+    "closeDialog": "Fermer",
     "form": {
       "title": "Demander un devis",
       "noProductsSelected": "Dites-nous ce dont vous avez besoin et nous vous répondrons.",

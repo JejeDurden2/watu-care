@@ -386,7 +386,7 @@ export default async function PersonaCountryPage({
               <Link
                 key={category.slug}
                 href={`/markets/${countrySlug}/${category.slug}`}
-                className="group stagger-item flex items-center justify-between rounded-xl border border-border bg-white p-6 transition-all hover:border-primary hover:shadow-sm"
+                className="group stagger-item flex items-center justify-between rounded-xl border border-border bg-white p-6 transition-[border-color,box-shadow] hover:border-primary hover:shadow-sm"
               >
                 <div>
                   <p className="font-display font-semibold text-secondary group-hover:text-primary">

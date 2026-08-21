@@ -62,7 +62,7 @@ export function MobileBottomBar({
         <button
           type="button"
           onClick={onRequestQuote}
-          className="flex h-9 items-center gap-1.5 rounded-xl bg-accent px-4 text-sm font-semibold text-white shadow-[0_2px_12px_-3px_hsl(var(--accent)/0.4)] transition-all hover:brightness-110 active:scale-[0.97]"
+          className="flex h-9 items-center gap-1.5 rounded-xl bg-accent px-4 text-sm font-semibold text-white shadow-[0_2px_12px_-3px_hsl(var(--accent)/0.4)] transition-[filter,transform] hover:brightness-110 active:scale-[0.97]"
         >
           <ClipboardList className="h-3.5 w-3.5" aria-hidden="true" />
           {t('quote')}

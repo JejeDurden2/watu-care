@@ -112,6 +112,7 @@ Extended docs in `.claude/skills/`:
 - **seo.md** - Metadata, JSON-LD, Core Web Vitals
 - **code-quality.md** - ESLint, Prettier, pre-commit
 - **design-system.md** - Colors, typography, glassmorphism
+- **interface-cheat-sheet** (global, `~/.agents/skills/interface-cheat-sheet`): UI craft rules from interfaces.dev. Apply on every frontend change.
 
 ---
 

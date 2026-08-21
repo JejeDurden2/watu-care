@@ -62,7 +62,7 @@ export function ProductImageGallery({
             <button
               key={index}
               onClick={() => setSelectedIndex(index)}
-              className={`relative aspect-square overflow-hidden rounded-lg border-2 transition-all ${
+              className={`relative aspect-square overflow-hidden rounded-lg border-2 transition-[border-color,box-shadow] ${
                 selectedIndex === index
                   ? 'border-primary ring-2 ring-primary/20'
                   : 'border-transparent hover:border-primary/50'

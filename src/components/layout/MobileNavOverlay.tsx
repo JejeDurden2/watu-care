@@ -129,7 +129,7 @@ export function MobileNavOverlay({
                 href={link.href}
                 aria-current={isActive ? 'page' : undefined}
                 className={cn(
-                  'stagger-item block border-l-[3px] py-3 pl-6 text-2xl font-bold transition-all hover:border-accent hover:text-accent active:scale-[0.98]',
+                  'stagger-item block border-l-[3px] py-3 pl-6 text-2xl font-bold transition-[border-color,color,transform] hover:border-accent hover:text-accent active:scale-[0.98]',
                   isActive ? 'border-accent text-accent' : 'border-accent/60 text-secondary',
                   `stagger-delay-${index + 1}`,
                 )}

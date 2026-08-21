@@ -146,7 +146,7 @@ export default async function AboutPage({ params }: AboutPageProps): Promise<Rea
               <div className="overflow-hidden rounded-3xl border border-white/10">
                 <div className="divide-y divide-white/10">
                   <div className="bg-white/4 px-8 py-8">
-                    <p className="font-display text-6xl font-bold tracking-tighter text-white">
+                    <p className="font-display text-6xl font-bold tabular-nums tracking-tighter text-white">
                       {PRODUCT_LINES}
                     </p>
                     <p className="mt-2 font-body text-xs font-semibold uppercase tracking-[0.18em] text-white/60">
@@ -154,7 +154,7 @@ export default async function AboutPage({ params }: AboutPageProps): Promise<Rea
                     </p>
                   </div>
                   <div className="px-8 py-8">
-                    <p className="font-display text-6xl font-bold tracking-tighter text-accent-light">
+                    <p className="font-display text-6xl font-bold tabular-nums tracking-tighter text-accent-light">
                       {COUNTRIES_SERVED_LABEL}
                     </p>
                     <p className="mt-2 font-body text-xs font-semibold uppercase tracking-[0.18em] text-white/60">
@@ -162,7 +162,7 @@ export default async function AboutPage({ params }: AboutPageProps): Promise<Rea
                     </p>
                   </div>
                   <div className="px-8 py-8">
-                    <p className="font-display text-6xl font-bold tracking-tighter text-white">
+                    <p className="font-display text-6xl font-bold tabular-nums tracking-tighter text-white">
                       {UNITS_DELIVERED}
                     </p>
                     <p className="mt-2 font-body text-xs font-semibold uppercase tracking-[0.18em] text-white/60">
